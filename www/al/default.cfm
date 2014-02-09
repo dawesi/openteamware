@@ -1,5 +1,7 @@
 <!--- //
 
+
+
 	autologin
 
 	
@@ -50,7 +52,9 @@
 <!--- check if the user is already logged in ... if yes, logout ... --->
 <cfif IsDefined("request.stSecurityContext.myuserid")>
   <!--- end a possible session --->
-    <cfset tmp = structclear(session) />
+  <cflock type="exclusive" scope="session" timeout="3">
+    <cfset tmp = structclear(session)>
+  </cflock>
 </cfif>
 
 <cfset a_str_key = trim(url.key)>

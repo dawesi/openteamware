@@ -1,0 +1,27 @@
+
+<cfinclude template="../dsp_inc_select_company.cfm">
+
+<cfparam name="url.entrykey" type="string" default="">
+
+<cfquery name="q_select_invoices" datasource="#request.a_str_db_users#">
+SELECT
+	pdffile
+FROM
+	invoices
+WHERE
+	entrykey = <cfqueryparam cfsqltype="cf_sql_varchar" value="#url.entrykey#">
+	AND
+	companykey = <cfqueryparam cfsqltype="cf_sql_varchar" value="#url.companykey#">
+;
+</cfquery>
+
+<cfset a_bin_pdf = ToBinary(q_select_invoices.pdffile)>
+
+<cfset a_str_file = request.a_str_temp_directory & request.a_str_dir_separator & CreateUUID()>
+
+<cffile action="write" addnewline="no" file="#a_str_file#" output="#a_bin_pdf#">
+<!--- 
+<cfcontent type="application/pdf" file="#a_str_file#" deletefile="no">
+ --->
+
+<cflocation addtoken="false" url="/tools/download/dl.cfm?filename=invoice.pdf&source=#GetFileFromPath(a_str_file)#&app=#urlencodedformat(application.applicationname)#&cfid=#client.CFID#&cftoken=#client.CFToken#">

@@ -1,0 +1,10 @@
+<actions>
+	<action name="logbook">
+		<params>
+			
+		</params>
+		<description>
+			Provides access to the security notebook
+		</description>
+	</action>
+</actions>

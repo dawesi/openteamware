@@ -1,0 +1,6 @@
+<!--- //
+
+	delete a sales project
+	
+	// --->
+	

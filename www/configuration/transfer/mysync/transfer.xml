@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transfer xsi:noNamespaceSchemaLocation="../../../transfer/resources/xsd/transfer.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<!-- 
+	This section defines how Objects
+	are cached in this system.
+	
+	It does not need to be set, as there are
+	default settings for caching.
+	 -->
+	<objectCache>
+		<!-- 
+		'defaultcache' is the setting for
+		all classes not specified by a 'cache' element.
+		
+		Here we have set the scope of all the
+		objects to be cached in the 'instance', scope as
+		an example.
+		
+		Instance scope is the default scope for caching,
+		as changing the scope is generally not required.
+		It simply means that caching happens within the Transfer
+		library itself, rather than a shared scope like 
+		application or session.
+		 -->
+		<defaultcache>
+			<scope type="instance"/>
+		</defaultcache>
+		<!-- 
+		Tells the system to only 
+		have a maximum 100 Post objects
+		in cache at any one time
+		 -->
+		<cache class="post.Post">
+			<maxobjects value="100"/>
+		</cache>
+	</objectCache>
+	<objectDefinitions>
+	  	<package name="user">
+		  	<!-- User details -->
+	  		<object name="User" table="tbl_User">
+	  			<id name="IDUser" type="numeric"/>
+	  			<property name="Name" type="string" column="user_Name"/>
+	  			<property name="Email" type="string" column="user_Email"/>
+	  		</object>
+	  	</package>
+	  	<package name="system">
+	  		<!-- Different categories for Blog Posts -->
+	  		<object name="Category" table="tbl_Category">
+	  			<id name="IDCategory" type="numeric"/>
+	  			<property name="Name" type="string" column="category_Name"/>
+	  			<property name="OrderIndex" type="numeric" column="category_OrderIndex"/>
+	  		</object>
+	  	</package>
+	  	<package name="post">
+	  		<!-- A Blog Post, with a Decorator of type com.Post -->
+	  		<object name="Post" table="tbl_Post" decorator="tblog.com.Post">
+	  			<id name="IDPost" type="numeric"/>
+	  			<property name="Title" type="string" column="post_Title"/>
+	  			<property name="Body" type="string" column="post_Body"/>
+	  			<property name="DateTime" type="date" column="post_DateTime"/>
+	  			<!-- Link between a Post and the User it who wrote it -->
+	  			<manytoone name="User">
+	  				<!-- 
+	  				The column on the Post table that links
+	  				to the primary key on the User
+	  				 -->
+	  				<link to="user.User" column="lnkIDUser"/>
+	  			</manytoone>
+	  			<!-- 
+	  			Link between a post and it's array of Comments
+	  			 -->
+				<onetomany name="Comment">
+					<!-- 
+					The column on the Comment table that
+					links back to the Post table.
+					 -->
+					<link to="post.Comment" column="lnkIDPost"/>
+					
+					<!-- 
+					Specifying the collection is an array and is
+					ordered by the dateTime property of the Comment
+					-->
+					<collection type="array">
+						<order property="DateTime" order="asc"/>
+					</collection>
+				</onetomany>
+				<!-- 
+				Link between the many Categories that 
+				Posts can fall under.  This is provided by
+				and intermediate table between the category table
+				and the post table.
+				 -->
+	  			<manytomany name="Category" table="lnk_PostCategory">
+	  				<!-- 
+	  				The column on the intermediary table that links back
+	  				to the primary key on the Post table
+	  				 -->
+	  				<link to="post.Post" column="lnkIDPost"/>
+	  				<!-- 
+	  				The column on hte intermediary table that links back
+	  				to the primary key on the Category table
+	  				 -->
+	  				<link to="system.Category" column="lnkIDCategory"/>
+	  				
+					<!-- 
+					Specifying the collection is an array and is
+					ordered by the orderIndex property of the Category
+					-->  				
+	  				<collection type="array">
+		  				<order property="OrderIndex" order="asc"/>
+	  				</collection>
+	  			</manytomany>
+	  		</object>
+	  		<!-- A comment for a blog post -->
+	  		<object name="Comment" table="tbl_Comment">
+	  			<id name="IDComment" type="numeric"/>
+	  			<property name="Name" type="string" column="comment_Name"/>
+	  			<property name="Value" type="string" column="comment_Value"/>
+	  			<property name="DateTime" type="date" column="comment_DateTime"/>
+	  		</object>
+	  	</package>
+	</objectDefinitions>
+</transfer>

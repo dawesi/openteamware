@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transfer xsi:noNamespaceSchemaLocation="/transfer/resources/xsd/transfer.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<!-- 
+	This section defines how Objects
+	are cached in this system.
+	
+	It does not need to be set, as there are
+	default settings for caching.
+	 -->
+	<objectCache>
+		<defaultcache>
+			<scope type="instance"/>
+		</defaultcache>
+	</objectCache>
+	<objectDefinitions>
+		<package name="Filters">
+			<!-- CRM filter ... -->
+		</package>
+		<package name="History">
+			<object name="historyitems" table="history">
+				<id name="entrykey" type="UUID" />
+				<property name="createdbyuserkey" type="string" />
+				<property name="objectkey" type="string" />
+				<property name="servicekey" type="string" />
+				<property name="subject" type="string" />
+				<property name="comment" type="string" />
+				<property name="projectkey" type="string" />
+				<property name="categories" type="string" />
+				<property name="linked_servicekey" type="string" />
+				<property name="linked_objectkey" type="string" />
+				<property name="hash_unique" type="string" />
+				<property name="dt_created" type="date" />
+				<property name="dt_lastmodified" type="date" />
+				<property name="item_type" type="numeric" />
+				<property name="dt_created_internally" type="date" />
+			</object>				
+		</package>
+		<package name="ProductAdministration">
+		  	<!-- Product groups -->
+	  		<object name="ProductGroups" table="productgroups">
+	  			<id name="entrykey" type="UUID"/>
+	  			<property name="companykey" type="string" column="companykey"/>
+	  			<property name="productgroupname" type="string" column="productgroupname"/>
+	  			<property name="dt_created" type="date" column="dt_created"/>
+	  			<property name="createdbyuserkey" type="string" column="createdbyuserkey"/>
+	  			<property name="description" type="string" column="description"/>
+	  			<property name="parentproductgroupentrykey" type="string" column="parentproductgroupentrykey"/>
+	  			<property name="category1" type="string" column="category1"/>
+	  			<property name="category2" type="string" column="category2"/>
+	  			<property name="lasteditedbyuserkey" type="string" column="lasteditedbyuserkey"/>
+	  		</object>
+	  	</package>
+	  	<package name="Extensions">
+	  		<!-- Recording of travelling km -->
+	  		<object name="TravellingKilometers" table="travellingkilometers">
+	  			<id name="entrykey" type="UUID"/>
+	  			<property name="createdbyuserkey" type="string" column="createdbyuserkey"/>
+	  			<property name="dt_added" type="date" column="dt_added"/>
+	  			<property name="kilometers" type="numeric" column="kilometers"/>
+	  		</object>
+	  	</package>
+	</objectDefinitions>
+</transfer>

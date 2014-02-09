@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<query>
+	<row>
+		<addvalidation>0</addvalidation>
+		<callbackfunctionname><![CDATA[]]></callbackfunctionname>
+		<callbackfunctionnamenecessaryarguments><![CDATA[]]></callbackfunctionnamenecessaryarguments>
+		<colspan>1</colspan>
+		<css><![CDATA[]]></css>
+		<datatype><![CDATA[string]]></datatype>
+		<db_fieldname><![CDATA[title]]></db_fieldname>
+		<defaultvalue><![CDATA[]]></defaultvalue>
+		<default_parameter_name><![CDATA[title]]></default_parameter_name>
+		<default_parameter_scope><![CDATA[url]]></default_parameter_scope>
+		<dt_created><![CDATA[2006-09-13 22:50:43.0]]></dt_created>
+		<entrykey><![CDATA[A8F22382-E0FA-F633-692C54DA66C29345]]></entrykey>
+		<field_name><![CDATA[%LANG_cm_wd_title%]]></field_name>
+		<formkey><![CDATA[A8F0B6BC-A811-428F-1F1374CA8D7446EF]]></formkey>
+		<id>65</id>
+		<input_name><![CDATA[frmTitle]]></input_name>
+		<internal_description><![CDATA[title of appointment]]></internal_description>
+		<jsselectorfunction><![CDATA[]]></jsselectorfunction>
+		<onchange><![CDATA[]]></onchange>
+		<options><![CDATA[]]></options>
+		<orderno>-41</orderno>
+		<output_only>0</output_only>
+		<parameters><![CDATA[]]></parameters>
+		<required>1</required>
+		<tr_id><![CDATA[]]></tr_id>
+		<useuniversalselectorjsfunction>0</useuniversalselectorjsfunction>
+		<useuniversalselectorjsfunction_type><![CDATA[]]></useuniversalselectorjsfunction_type>
+		<visible_description><![CDATA[]]></visible_description>
+	</row>
+	<row>
+		<addvalidation>0</addvalidation>
+		<callbackfunctionname><![CDATA[]]></callbackfunctionname>
+		<callbackfunctionnamenecessaryarguments><![CDATA[]]></callbackfunctionnamenecessaryarguments>
+		<colspan>1</colspan>
+		<css><![CDATA[]]></css>
+		<datatype><![CDATA[string]]></datatype>
+		<db_fieldname><![CDATA[location]]></db_fieldname>
+		<defaultvalue><![CDATA[]]></defaultvalue>
+		<default_parameter_name><![CDATA[location]]></default_parameter_name>
+		<default_parameter_scope><![CDATA[url]]></default_parameter_scope>
+		<dt_created><![CDATA[2006-09-13 22:51:11.0]]></dt_created>
+		<entrykey><![CDATA[A8F28E81-FC0B-86E9-7DE941F27C8545BA]]></entrykey>
+		<field_name><![CDATA[%LANG_cal_wd_location%]]></field_name>
+		<formkey><![CDATA[A8F0B6BC-A811-428F-1F1374CA8D7446EF]]></formkey>
+		<id>66</id>
+		<input_name><![CDATA[frmLocation]]></input_name>
+		<internal_description><![CDATA[location of event]]></internal_description>
+		<jsselectorfunction><![CDATA[]]></jsselectorfunction>
+		<onchange><![CDATA[]]></onchange>
+		<options><![CDATA[]]></options>
+		<orderno>-35</orderno>
+		<output_only>0</output_only>
+		<parameters><![CDATA[]]></parameters>
+		<required>0</required>
+		<tr_id><![CDATA[]]></tr_id>
+		<useuniversalselectorjsfunction>0</useuniversalselectorjsfunction>
+		<useuniversalselectorjsfunction_type><![CDATA[]]></useuniversalselectorjsfunction_type>
+		<visible_description><![CDATA[]]></visible_description>
+	</row>
+	<row>
+		<addvalidation>0</addvalidation>
+		<callbackfunctionname><![CDATA[]]></callbackfunctionname>
+		<callbackfunctionnamenecessaryarguments><![CDATA[]]></callbackfunctionnamenecessaryarguments>
+		<colspan>1</colspan>
+		<css><![CDATA[]]></css>
+		<datatype><![CDATA[datetime]]></datatype>
+		<db_fieldname><![CDATA[dt_start]]></db_fieldname>
+		<defaultvalue><![CDATA[]]></defaultvalue>
+		<default_parameter_name><![CDATA[start]]></default_parameter_name>
+		<default_parameter_scope><![CDATA[url]]></default_parameter_scope>
+		<dt_created><![CDATA[2006-09-13 22:52:23.0]]></dt_created>
+		<entrykey><![CDATA[A8F3AA3E-9FBF-DFF6-00B4A967CF66E8C3]]></entrykey>
+		<field_name><![CDATA[%LANG_cal_wd_begin%]]></field_name>
+		<formkey><![CDATA[A8F0B6BC-A811-428F-1F1374CA8D7446EF]]></formkey>
+		<id>67</id>
+		<input_name><![CDATA[frmdt_begin]]></input_name>
+		<internal_description><![CDATA[start (date/time)]]></internal_description>
+		<jsselectorfunction><![CDATA[]]></jsselectorfunction>
+		<onchange><![CDATA[]]></onchange>
+		<options><![CDATA[]]></options>
+		<orderno>-27</orderno>
+		<output_only>0</output_only>
+		<parameters><![CDATA[]]></parameters>
+		<required>1</required>
+		<tr_id><![CDATA[]]></tr_id>
+		<useuniversalselectorjsfunction>0</useuniversalselectorjsfunction>
+		<useuniversalselectorjsfunction_type><![CDATA[]]></useuniversalselectorjsfunction_type>
+		<visible_description><![CDATA[]]></visible_description>
+	</row>
+	<row>
+		<addvalidation>0</addvalidation>
+		<callbackfunctionname><![CDATA[]]></callbackfunctionname>
+		<callbackfunctionnamenecessaryarguments><![CDATA[]]></callbackfunctionnamenecessaryarguments>
+		<colspan>1</colspan>
+		<css><![CDATA[]]></css>
+		<datatype><![CDATA[options]]></datatype>
+		<db_fieldname><![CDATA[]]></db_fieldname>
+		<defaultvalue>1</defaultvalue>
+		<default_parameter_name><![CDATA[duration]]></default_parameter_name>
+		<default_parameter_scope><![CDATA[url]]></default_parameter_scope>
+		<dt_created><![CDATA[2006-09-13 22:53:24.0]]></dt_created>
+		<entrykey><![CDATA[A8F4977D-D9DF-E24A-011B4340D80F38E5]]></entrykey>
+		<field_name><![CDATA[%lang_cal_wd_duration%]]></field_name>
+		<formkey><![CDATA[A8F0B6BC-A811-428F-1F1374CA8D7446EF]]></formkey>
+		<id>68</id>
+		<input_name><![CDATA[frmduration]]></input_name>
+		<internal_description><![CDATA[duration of event]]></internal_description>
+		<jsselectorfunction><![CDATA[]]></jsselectorfunction>
+		<onchange><![CDATA[]]></onchange>
+		<options><![CDATA[1|1
+2|2
+3|3
+4|4
+5|5]]></options>
+		<orderno>-19</orderno>
+		<output_only>0</output_only>
+		<parameters><![CDATA[]]></parameters>
+		<required>1</required>
+		<tr_id><![CDATA[]]></tr_id>
+		<useuniversalselectorjsfunction>0</useuniversalselectorjsfunction>
+		<useuniversalselectorjsfunction_type><![CDATA[]]></useuniversalselectorjsfunction_type>
+		<visible_description><![CDATA[%LANG_cm_wd_hours%]]></visible_description>
+	</row>
+	<row>
+		<addvalidation>0</addvalidation>
+		<callbackfunctionname><![CDATA[]]></callbackfunctionname>
+		<callbackfunctionnamenecessaryarguments><![CDATA[]]></callbackfunctionnamenecessaryarguments>
+		<colspan>1</colspan>
+		<css><![CDATA[]]></css>
+		<datatype><![CDATA[memo]]></datatype>
+		<db_fieldname><![CDATA[description]]></db_fieldname>
+		<defaultvalue><![CDATA[]]></defaultvalue>
+		<default_parameter_name><![CDATA[description]]></default_parameter_name>
+		<default_parameter_scope><![CDATA[url]]></default_parameter_scope>
+		<dt_created><![CDATA[2006-09-13 22:54:10.0]]></dt_created>
+		<entrykey><![CDATA[A8F54CDB-9D9B-825B-19B3FC23AC66A27E]]></entrykey>
+		<field_name><![CDATA[%lang_cm_wd_description%]]></field_name>
+		<formkey><![CDATA[A8F0B6BC-A811-428F-1F1374CA8D7446EF]]></formkey>
+		<id>69</id>
+		<input_name><![CDATA[frmdescription]]></input_name>
+		<internal_description><![CDATA[notices]]></internal_description>
+		<jsselectorfunction><![CDATA[]]></jsselectorfunction>
+		<onchange><![CDATA[]]></onchange>
+		<options><![CDATA[]]></options>
+		<orderno>-3</orderno>
+		<output_only>0</output_only>
+		<parameters><![CDATA[]]></parameters>
+		<required>0</required>
+		<tr_id><![CDATA[]]></tr_id>
+		<useuniversalselectorjsfunction>0</useuniversalselectorjsfunction>
+		<useuniversalselectorjsfunction_type><![CDATA[]]></useuniversalselectorjsfunction_type>
+		<visible_description><![CDATA[]]></visible_description>
+	</row>
+	<row>
+		<addvalidation>0</addvalidation>
+		<callbackfunctionname><![CDATA[]]></callbackfunctionname>
+		<callbackfunctionnamenecessaryarguments><![CDATA[]]></callbackfunctionnamenecessaryarguments>
+		<colspan>1</colspan>
+		<css><![CDATA[]]></css>
+		<datatype><![CDATA[submit]]></datatype>
+		<db_fieldname><![CDATA[]]></db_fieldname>
+		<defaultvalue><![CDATA[]]></defaultvalue>
+		<default_parameter_name><![CDATA[]]></default_parameter_name>
+		<default_parameter_scope><![CDATA[]]></default_parameter_scope>
+		<dt_created><![CDATA[2006-09-13 22:54:37.0]]></dt_created>
+		<entrykey><![CDATA[A8F5B494-A1C1-BC62-D86E39E8A21D59A2]]></entrykey>
+		<field_name><![CDATA[%LANG_cm_wd_save_button_caption%]]></field_name>
+		<formkey><![CDATA[A8F0B6BC-A811-428F-1F1374CA8D7446EF]]></formkey>
+		<id>70</id>
+		<input_name><![CDATA[frmsubmit]]></input_name>
+		<internal_description><![CDATA[submit button]]></internal_description>
+		<jsselectorfunction><![CDATA[]]></jsselectorfunction>
+		<onchange><![CDATA[]]></onchange>
+		<options><![CDATA[]]></options>
+		<orderno>7</orderno>
+		<output_only>0</output_only>
+		<parameters><![CDATA[]]></parameters>
+		<required>0</required>
+		<tr_id><![CDATA[]]></tr_id>
+		<useuniversalselectorjsfunction>0</useuniversalselectorjsfunction>
+		<useuniversalselectorjsfunction_type><![CDATA[]]></useuniversalselectorjsfunction_type>
+		<visible_description><![CDATA[]]></visible_description>
+	</row>
+</query>

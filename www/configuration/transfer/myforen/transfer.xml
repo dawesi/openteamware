@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transfer xsi:noNamespaceSchemaLocation="/transfer/resources/xsd/transfer.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<!-- 
+	This section defines how Objects
+	are cached in this system.
+	
+	It does not need to be set, as there are
+	default settings for caching.
+	 -->
+	<objectCache>
+		<defaultcache>
+			<scope type="instance"/>
+		</defaultcache>
+	</objectCache>
+	<objectDefinitions>
+		<package name="Postings">
+		  	<!-- Product groups -->
+	  		<object name="Posting" table="postings">
+	  			<id name="entrykey" type="UUID"/>
+	  			<property name="userkey" type="string" column="userkey"/>
+	  			<property name="forumkey" type="string" column="forumkey"/>
+	  			<property name="dt_created" type="date" column="dt_created"/>
+	  			<property name="dt_threadlastmodified" type="date" column="dt_threadlastmodified"/>
+	  			<property name="subject" type="string" column="subject"/>
+	  			<property name="postingbody" type="string" column="postingbody"/>
+	  			<property name="parentpostingkey" type="string" column="parentpostingkey"/>
+	  			<property name="mood" type="numeric" column="mood"/>
+	  			<property name="lastpostinguserkey" type="string" column="lastpostinguserkey"/>
+	  			<property name="subpostingscount" type="numeric" column="subpostingscount"/>
+	  			<property name="postingid" type="numeric" column="postingid"/>
+	  			<property name="postingbody_plaintext" type="string" column="postingbody_plaintext"/>
+	  			<property name="dt_last_updated_by_user" type="string" column="dt_last_updated_by_user"/>
+	  			<property name="closedthread" type="numeric" column="closedthread"/>
+	  		</object>
+	  	</package>
+	  	<package name="Foren">
+	  		<!-- Recording of travelling km -->
+	  		<object name="Forum" table="foren">
+	  			<id name="entrykey" type="UUID"/>
+	  			<property name="companykey" type="string" column="companykey"/>
+	  			<property name="dt_created" type="date" column="dt_created"/>
+	  			<property name="forumname" type="string" column="forumname"/>
+	  		</object>
+	  	</package>
+	</objectDefinitions>
+</transfer>

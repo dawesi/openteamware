@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<query>
+	<row>
+		<description>Create and maintain own databases</description>
+		<entrykey>5084CF0A-0DAE-09E6-3C5171B204B4B26E</entrykey>
+		<servicename>Own databases</servicename>
+		<version></version>
+	</row>
+	<row>
+		<description>CRM Basis</description>
+		<entrykey>52227624-9DAA-05E9-0892A27198268072</entrykey>
+		<servicename>Address Book</servicename>
+		<version></version>
+	</row>
+	<row>
+		<description></description>
+		<entrykey>5222B55D-B96B-1960-70BF55BD1435D273</entrykey>
+		<servicename>Calendar</servicename>
+		<version></version>
+	</row>
+	<row>
+		<description></description>
+		<entrykey>52228B55-B4D7-DFDF-4AC7CFB5BDA95AC5</entrykey>
+		<servicename>E-Mail</servicename>
+		<version></version>
+	</row>
+	<row>
+		<description></description>
+		<entrykey>5222D2A5-A805-6E44-12EB911441BD3306</entrykey>
+		<servicename>Bookmarks</servicename>
+		<version></version>
+	</row>
+	<row>
+		<description></description>
+		<entrykey>5222ECD3-06C4-3804-E92ED804C82B68A2</entrykey>
+		<servicename>Storage</servicename>
+		<version></version>
+	</row>
+	<row>
+		<description></description>
+		<entrykey>52230718-D5B0-0538-D2D90BB6450697D1</entrykey>
+		<servicename>Tasks</servicename>
+		<version></version>
+	</row>
+	<row>
+		<description></description>
+		<entrykey>522325E3-E2D5-DD8F-BE9F72004234BA83</entrykey>
+		<servicename>Scratchpad</servicename>
+		<version></version>
+	</row>
+	<row>
+		<description></description>
+		<entrykey>5220B02E-0133-5B37-F5E6B92CC3B3FC47</entrykey>
+		<servicename>Undefined</servicename>
+		<version></version>
+	</row>
+	<row>
+		<description></description>
+		<entrykey>C1BFA8CE-0408-0029-B03AE9825AD3BA02</entrykey>
+		<servicename>Fax</servicename>
+		<version></version>
+	</row>
+	<row>
+		<description></description>
+		<entrykey>239EF5A3-D4AA-6480-143F31C64958383C</entrykey>
+		<servicename>IM</servicename>
+		<version></version>
+	</row>
+	<row>
+		<description>Send letters from the Internet</description>
+		<entrykey>26260BDB-AE2C-DC52-A0574AFA712B3A25</entrykey>
+		<servicename>iLetter</servicename>
+		<version></version>
+	</row>
+	<row>
+		<description></description>
+		<entrykey>D75E148E-FEAE-3127-45680CAB99B70763</entrykey>
+		<servicename>ebay</servicename>
+		<version></version>
+	</row>
+	<row>
+		<description>Forum</description>
+		<entrykey>66A3CE92-923A-0620-7656393EA07FAB3B</entrykey>
+		<servicename>forum</servicename>
+		<version></version>
+	</row>
+	<row>
+		<description>import module</description>
+		<entrykey>65CF16AB-D219-2662-A7B7189E96F9261A</entrykey>
+		<servicename>import</servicename>
+		<version></version>
+	</row>
+	<row>
+		<description></description>
+		<entrykey>designguidelines</entrykey>
+		<servicename>designguidelines</servicename>
+		<version></version>
+	</row>
+	<row>
+		<description>mailing tool</description>
+		<entrykey>7E6F3B98-F885-03B7-FC68D096FD692F66</entrykey>
+		<servicename>newsletter</servicename>
+		<version></version>
+	</row>
+	<row>
+		<description></description>
+		<entrykey>9992B55D-B96B-1960-70BF55BD1435DAC3</entrykey>
+		<servicename>info</servicename>
+		<version></version>
+	</row>
+	<row>
+		<description></description>
+		<entrykey>5137784B-C09F-24D5-396734F6193D879D</entrykey>
+		<servicename>project</servicename>
+		<version></version>
+	</row>
+</query>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<query>
+	<row>
+		<addvalidation>0</addvalidation>
+		<callbackfunctionname></callbackfunctionname>
+		<callbackfunctionnamenecessaryarguments></callbackfunctionnamenecessaryarguments>
+		<colspan>1</colspan>
+		<css></css>
+		<datatype>hidden</datatype>
+		<db_fieldname>entrykey</db_fieldname>
+		<defaultvalue></defaultvalue>
+		<default_parameter_name></default_parameter_name>
+		<default_parameter_scope></default_parameter_scope>
+		<dt_created>2006-11-08 16:13:11.0</dt_created>
+		<entrykey>C8213F2C-0DAF-D53F-FBAE44612441028D</entrykey>
+		<field_name></field_name>
+		<formkey>C8209A8D-B27F-85D1-9FF9EDC96127EB9F</formkey>
+		<id>88</id>
+		<input_name>frmentrykey</input_name>
+		<internal_description>entrykey of contact</internal_description>
+		<jsselectorfunction></jsselectorfunction>
+		<onchange></onchange>
+		<options></options>
+		<orderno>-42</orderno>
+		<output_only>0</output_only>
+		<parameters></parameters>
+		<required>0</required>
+		<tr_id></tr_id>
+		<useuniversalselectorjsfunction>0</useuniversalselectorjsfunction>
+		<useuniversalselectorjsfunction_type></useuniversalselectorjsfunction_type>
+		<visible_description></visible_description>
+	</row>
+</query>

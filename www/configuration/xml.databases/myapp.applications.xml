@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<query>
+	<row>
+		<about_company><![CDATA[openTeamWare]]></about_company>
+		<allowforeigndomainlogins>1</allowforeigndomainlogins>
+		<appname><![CDATA[openTeamWare]]></appname>
+		<db_addressbook><![CDATA[mycrm]]></db_addressbook>
+		<db_bookmarks><![CDATA[mycrm]]></db_bookmarks>
+		<db_calendar><![CDATA[mycrm]]></db_calendar>
+		<db_users><![CDATA[mycrm]]></db_users>
+		<defaultdomain><![CDATA[openTeamware.com]]></defaultdomain>
+		<defaultencoding><![CDATA[UTF-8]]></defaultencoding>
+		<defaultlanguage>0</defaultlanguage>
+		<default_stylesheet><![CDATA[08157A5F-A19B-29A3-9E95FB9C0442E545]]></default_stylesheet>
+		<description><![CDATA[openTeamWare]]></description>
+		<domainalias1><![CDATA[]]></domainalias1>
+		<domainalias2><![CDATA[]]></domainalias2>
+		<domainalias3><![CDATA[]]></domainalias3>
+		<dt_created><![CDATA[2001-01-01 00:00:00.0]]></dt_created>
+		<entrykey><![CDATA[576FCC20-D206-4FB1-AD2215D7C03A709C]]></entrykey>
+		<generateprocmailconfigurl><![CDATA[http://mail.openTeamWare.com/cgi-bin/generateprocmailconfig.pl?username=]]></generateprocmailconfigurl>
+		<hostnames><![CDATA[]]></hostnames>
+		<id>1</id>
+		<include_about><![CDATA[]]></include_about>
+		<include_footer><![CDATA[]]></include_footer>
+		<include_header><![CDATA[]]></include_header>
+		<include_startpage><![CDATA[]]></include_startpage>
+		<pdaurl><![CDATA[]]></pdaurl>
+		<productname><![CDATA[openTeamWare]]></productname>
+		<redirect_when_not_logged_in><![CDATA[]]></redirect_when_not_logged_in>
+		<reseller><![CDATA[]]></reseller>
+		<tempdir><![CDATA[/tmp/]]></tempdir>
+		<wapurl><![CDATA[]]></wapurl>
+	</row>
+</query>

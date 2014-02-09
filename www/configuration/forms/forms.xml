@@ -1,0 +1,343 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<query>
+	<row>
+		<autopickup>0</autopickup>
+		<autopickup_functionname></autopickup_functionname>
+		<db_datasource></db_datasource>
+		<db_table></db_table>
+		<db_primary></db_primary>
+		<columns>2</columns>
+		<create_url>act_create_contact.cfm</create_url>
+		<css_style> </css_style>
+		<description></description>
+		<dt_created>2006-11-08 16:12:29.0</dt_created>
+		<dt_lastmodified></dt_lastmodified>
+		<entrykey>C8209A8D-B27F-85D1-9FF9EDC96127EB9F</entrykey>
+		<form_id>frmcreatecontact</form_id>
+		<form_name>create a new contact</form_name>
+		<method>POST</method>
+		<onsubmit></onsubmit>
+		<query_name>q_select_contact</query_name>
+		<servicekey>52227624-9DAA-05E9-0892A27198268072</servicekey>
+		<update_url>act_update_contact.cfm</update_url>
+	</row>
+	<row>
+		<autopickup>1</autopickup>
+		<autopickup_functionname>CreateUpdateProject</autopickup_functionname>
+		<db_datasource>#request.a_str_db_crm#</db_datasource>
+		<db_table>projects</db_table>
+		<db_primary>entrykey</db_primary>
+		<columns>1</columns>
+		<create_url>actions/act_create_project.cfm</create_url>
+		<css_style></css_style>
+		<description>Create/Edit Sales Project</description>
+		<dt_created>2006-08-21 18:02:14.0</dt_created>
+		<dt_lastmodified></dt_lastmodified>
+		<entrykey>3177C2F6-E0F2-06FE-A904CB04E3D19D52</entrykey>
+		<form_id></form_id>
+		<form_name>create_edit_project</form_name>
+		<id>1</id>
+		<method>POST</method>
+		<onsubmit></onsubmit>
+		<query_name></query_name>
+		<servicekey>5137784B-C09F-24D5-396734F6193D879D</servicekey>
+		<update_url>actions/act_update_project.cfm</update_url>
+	</row>
+	<row>
+		<autopickup>1</autopickup>
+		<autopickup_functionname>CreateUpdateFollowup</autopickup_functionname>
+		<db_datasource></db_datasource>
+		<db_table></db_table>
+		<db_primary></db_primary>
+		<columns>1</columns>
+		<create_url></create_url>
+		<css_style></css_style>
+		<description>create or edit a followup</description>
+		<dt_created>2006-08-22 17:28:06.0</dt_created>
+		<dt_lastmodified></dt_lastmodified>
+		<entrykey>367EDCE2-01C6-59CB-46081CFA4FDD9927</entrykey>
+		<form_id>form_create_edit_followup</form_id>
+		<form_name>create_edit_followup</form_name>
+		<id>2</id>
+		<method>POST</method>
+		<onsubmit></onsubmit>
+		<query_name></query_name>
+		<servicekey>followups</servicekey>
+		<update_url></update_url>
+	</row>
+	<row>
+		<autopickup>1</autopickup>
+		<autopickup_functionname>CreateUpdateHistoryItem</autopickup_functionname>
+		<db_datasource></db_datasource>
+		<db_table></db_table>
+		<db_primary></db_primary>
+		<columns>1</columns>
+		<create_url></create_url>
+		<css_style></css_style>
+		<description></description>
+		<dt_created>2006-08-24 00:51:00.0</dt_created>
+		<dt_lastmodified></dt_lastmodified>
+		<entrykey>3D3AB522-0B36-420D-0CC42CD6A02397ED</entrykey>
+		<form_id></form_id>
+		<form_name>new/edit history element</form_name>
+		<id>3</id>
+		<method>POST</method>
+		<onsubmit></onsubmit>
+		<query_name>q_select_history</query_name>
+		<servicekey>7E68B84A-BB31-FCC0-56E6125343C704EF</servicekey>
+		<update_url></update_url>
+	</row>
+	<row>
+		<autopickup>1</autopickup>
+		<autopickup_functionname>CreateOrUpdatePostingEx</autopickup_functionname>
+		<db_datasource>#request.a_str_db_tools#</db_datasource>
+		<db_table>postings</db_table>
+		<db_primary>entrykey</db_primary>
+		<columns>1</columns>
+		<create_url>act_new_posting.cfm</create_url>
+		<css_style></css_style>
+		<description></description>
+		<dt_created>2006-09-07 19:37:09.0</dt_created>
+		<dt_lastmodified></dt_lastmodified>
+		<entrykey>895AC2ED-B0C8-81A6-87DD7B09EE105677</entrykey>
+		<form_id>formpostings</form_id>
+		<form_name>form for new postings in the forum</form_name>
+		<id>4</id>
+		<method>POST</method>
+		<onsubmit></onsubmit>
+		<query_name>q_select_raw_posting</query_name>
+		<servicekey>66A3CE92-923A-0620-7656393EA07FAB3B</servicekey>
+		<update_url>act_new_posting.cfm</update_url>
+	</row>
+	<row>
+		<autopickup>0</autopickup>
+		<autopickup_functionname></autopickup_functionname>
+		<db_datasource></db_datasource>
+		<db_table></db_table>
+		<db_primary></db_primary>
+		<columns>1</columns>
+		<create_url>act_create_contact_simple.cfm</create_url>
+		<css_style></css_style>
+		<description></description>
+		<dt_created>2006-09-13 18:41:38.0</dt_created>
+		<dt_lastmodified></dt_lastmodified>
+		<entrykey>A80E19A8-E62D-4219-972809B6ACC361FF</entrykey>
+		<form_id>frmsimplecreateeditcontact</form_id>
+		<form_name>Simple form for new contacts</form_name>
+		<id>5</id>
+		<method>POST</method>
+		<onsubmit></onsubmit>
+		<query_name>q_select_contact</query_name>
+		<servicekey>crm</servicekey>
+		<update_url>act_update_contact_simple.cfm</update_url>
+	</row>
+	<row>
+		<autopickup>0</autopickup>
+		<autopickup_functionname></autopickup_functionname>
+		<db_datasource></db_datasource>
+		<db_table></db_table>
+		<db_primary></db_primary>
+		<columns>1</columns>
+		<create_url>act_create_appointment_simple.cfm</create_url>
+		<css_style></css_style>
+		<description></description>
+		<dt_created>2006-09-13 22:49:10.0</dt_created>
+		<dt_lastmodified></dt_lastmodified>
+		<entrykey>A8F0B6BC-A811-428F-1F1374CA8D7446EF</entrykey>
+		<form_id>formcreateeditappointment</form_id>
+		<form_name>Very simple form for events (new/update)</form_name>
+		<id>6</id>
+		<method>POST</method>
+		<onsubmit></onsubmit>
+		<query_name>q_select_appointment</query_name>
+		<servicekey>5222B55D-B96B-1960-70BF55BD1435D273</servicekey>
+		<update_url>act_update_appointment_simple.cfm</update_url>
+	</row>
+	<row>
+		<autopickup>0</autopickup>
+		<autopickup_functionname></autopickup_functionname>
+		<db_datasource></db_datasource>
+		<db_table></db_table>
+		<db_primary></db_primary>
+		<columns>2</columns>
+		<create_url>default.cfm?action=DoCreateNewItem</create_url>
+		<css_style></css_style>
+		<description></description>
+		<dt_created>2006-09-13 23:36:57.0</dt_created>
+		<dt_lastmodified></dt_lastmodified>
+		<entrykey>A91C770B-ED89-F6E4-7A78E991E6FEFCD1</entrykey>
+		<form_id>formcreateeditcontact</form_id>
+		<form_name>default form for creating or editing a new contact in the web office</form_name>
+		<id>7</id>
+		<method>POST</method>
+		<onsubmit></onsubmit>
+		<query_name>q_select_contact</query_name>
+		<servicekey>52227624-9DAA-05E9-0892A27198268072</servicekey>
+		<update_url>default.cfm?action=DoUpdateItem</update_url>
+	</row>
+	<row>
+		<autopickup>0</autopickup>
+		<autopickup_functionname></autopickup_functionname>
+		<db_datasource></db_datasource>
+		<db_table></db_table>
+		<db_primary></db_primary>
+		<columns>1</columns>
+		<create_url></create_url>
+		<css_style></css_style>
+		<description></description>
+		<dt_created>2006-12-07 17:24:08.0</dt_created>
+		<dt_lastmodified></dt_lastmodified>
+		<entrykey>5DBA9EA2-06FA-08D2-D53612D253CFC017</entrykey>
+		<form_id>idformactivatereinpage</form_id>
+		<form_name>active remote edit in page</form_name>
+		<id>9</id>
+		<method>POST</method>
+		<onsubmit>DoActivateREInpage();return false;</onsubmit>
+		<query_name></query_name>
+		<servicekey>52227624-9DAA-05E9-0892A27198268072</servicekey>
+		<update_url></update_url>
+	</row>
+	<row>
+		<autopickup>0</autopickup>
+		<autopickup_functionname></autopickup_functionname>
+		<db_datasource></db_datasource>
+		<db_table></db_table>
+		<db_primary></db_primary>
+		<columns>1</columns>
+		<create_url></create_url>
+		<css_style></css_style>
+		<description>create an exclusive lock in an inpage form</description>
+		<dt_created>2006-12-07 17:24:08.0</dt_created>
+		<dt_lastmodified></dt_lastmodified>
+		<entrykey>437E3BF8-9E9E-9E94-936C5CFB456D10CF</entrykey>
+		<form_id>formcreateexclusivelock</form_id>
+		<form_name>Create an exclusive lock</form_name>
+		<id>9</id>
+		<method>POST</method>
+		<onsubmit>DoCreateExclusiveLock();return false;</onsubmit>
+		<query_name></query_name>
+		<servicekey>52227624-9DAA-05E9-0892A27198268072</servicekey>
+		<update_url></update_url>
+	</row>
+	<row>
+		<autopickup>0</autopickup>
+		<autopickup_functionname></autopickup_functionname>
+		<db_datasource></db_datasource>
+		<db_table></db_table>
+		<db_primary></db_primary>
+		<columns>1</columns>
+		<create_url>act_new_folder.cfm</create_url>
+		<css_style></css_style>
+		<description></description>
+		<dt_created>2007-01-08 12:00:44.0</dt_created>
+		<dt_lastmodified></dt_lastmodified>
+		<entrykey>015E0954-9378-26B4-70B934FC599EA701</entrykey>
+		<form_id>formnewfolder</form_id>
+		<form_name>create a new folder</form_name>
+		<id>10</id>
+		<method>POST</method>
+		<onsubmit></onsubmit>
+		<query_name></query_name>
+		<servicekey>52228B55-B4D7-DFDF-4AC7CFB5BDA95AC5</servicekey>
+		<update_url></update_url>
+	</row>
+	<row>
+		<autopickup>1</autopickup>
+		<autopickup_functionname>CreateUpdateVirtualCalendar</autopickup_functionname>
+		<db_datasource></db_datasource>
+		<db_table></db_table>
+		<db_primary></db_primary>
+		<columns>1</columns>
+		<create_url></create_url>
+		<css_style></css_style>
+		<description></description>
+		<dt_created>2007-01-09 10:47:35.0</dt_created>
+		<dt_lastmodified></dt_lastmodified>
+		<entrykey>06416CCA-9C64-D99E-87D50A76C0667C0D</entrykey>
+		<form_id>form_create_edit_virtual_calendar</form_id>
+		<form_name>Create/Edit virtual calendar</form_name>
+		<id>11</id>
+		<method>POST</method>
+		<onsubmit></onsubmit>
+		<query_name></query_name>
+		<servicekey>5222B55D-B96B-1960-70BF55BD1435D273</servicekey>
+		<update_url></update_url>
+	</row>
+	<row>
+		<autopickup>1</autopickup>
+		<autopickup_functionname>CreateUpdateProductGroup</autopickup_functionname>
+		<db_datasource></db_datasource>
+		<db_table></db_table>
+		<db_primary></db_primary>
+		<columns>1</columns>
+		<create_url/>
+		<css_style/>
+		<description/>
+		<dt_created>2007-05-14 13:02:03.0</dt_created>
+		<entrykey>8A40857D-9DAE-CF24-C0CFFE0DF0D03DF2</entrykey>
+		<form_id>frmcreateproductgroup</form_id>
+		<form_name>Create/Edit Product Groups</form_name>
+		<method>POST</method>
+		<onsubmit/>
+		<query_name/>
+		<servicekey>94B39162-C7B4-5158-7A8C67BCF820D9E5</servicekey>
+		<update_url/>
+	</row>
+	<row>
+		<autopickup>1</autopickup>
+		<autopickup_functionname>CreateUpdateProduct</autopickup_functionname>
+		<db_datasource></db_datasource>
+		<db_table></db_table>
+		<db_primary></db_primary>
+		<columns>1</columns>
+		<create_url/>
+		<css_style/>
+		<description/>
+		<dt_created>2007-05-14 13:02:03.0</dt_created>
+		<entrykey>95027218-957A-CA40-96183465710B6D14</entrykey>
+		<form_id>frmcreateproduct</form_id>
+		<form_name>Create/Edit Product</form_name>
+		<method>POST</method>
+		<onsubmit/>
+		<query_name/>
+		<servicekey>94B39162-C7B4-5158-7A8C67BCF820D9E5</servicekey>
+		<update_url/>
+	</row>
+	<row>
+		<autopickup>1</autopickup>
+		<autopickup_functionname>AddProductToContact</autopickup_functionname>
+		<db_datasource></db_datasource>
+		<db_table></db_table>
+		<db_primary></db_primary>
+		<columns>1</columns>
+		<create_url/>
+		<css_style/>
+		<description/>
+		<dt_created>2007-05-14 13:02:03.0</dt_created>
+		<entrykey>C2666138-DD0C-8898-2BF91C0FAF72AA9D</entrykey>
+		<form_id>frmaddproduct</form_id>
+		<form_name>Add Product To Contact</form_name>
+		<method>POST</method>
+		<onsubmit/>
+		<query_name/>
+		<servicekey>94B39162-C7B4-5158-7A8C67BCF820D9E5</servicekey>
+		<update_url/>
+	</row>
+<row>
+	<autopickup>0</autopickup>
+	<autopickup_functionname/>
+	<columns>1</columns>
+	<create_url>default.cfm?action=setRecordKilometers</create_url>
+	<css_style/>
+	<description/>
+	<dt_created>{ts '2007-08-06 16:12:57'}</dt_created>
+	<entrykey>3B857AFB-98D0-6E75-FF9C5AACABCCB771</entrykey>
+	<form_id>formidrecordkm</form_id>
+	<form_name>record travelling km</form_name>
+	<method>POST</method>
+	<onsubmit/>
+	<query_name/>
+	<servicekey>crm</servicekey>
+	<update_url/>
+</row>
+</query>

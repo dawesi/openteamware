@@ -1,0 +1,6 @@
+.div_top_menu_outer {display:none;}
+.div_left_nav_outer {display:none;width:0px;}
+.div_main_content_top_menu {display:none;height:0px;}
+.div_main_content_outer {margin-left:0px;height:auto;}
+.body_standard {background-color:white;border:white solid 2px;overflow:auto;background-image:URL(/images/space_1_1.gif);}
+BODY {background-color:white;border:white solid 2px;}

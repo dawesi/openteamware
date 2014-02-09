@@ -1,0 +1,47 @@
+<service>
+	<servicekey>9992B55D-B96B-1960-70BF55BD1435DAC3</servicekey>
+	<basedirectory>/info/</basedirectory>
+	<defaultaction>showwelcome</defaultaction>
+	<frontend>www</frontend>
+	<headerinclude>dsp_inc_nav_top.cfm</headerinclude>
+	<leftinclude>dsp_inc_left_nav.cfm</leftinclude>
+<actions>	
+	<item>
+		<name>showwelcome</name>
+		<description>show welcome screen</description>
+		<template>dsp_show_welcome.cfm</template>
+		<checkframeset>1</checkframeset>
+		<setservice>0</setservice>
+	</item>	
+	<item>
+		<name>ShowError</name>
+		<description>show error screen</description>
+		<template>dsp_show_error.cfm</template>
+		<checkframeset>1</checkframeset>
+		<setservice>0</setservice>
+	</item>
+	<item>
+		<name>FileBugReport</name>
+		<description>file a bug report</description>
+		<template>dsp_bug_report.cfm</template>
+		<checkframeset>1</checkframeset>
+		<setservice>0</setservice>
+	</item>	
+	<item>
+		<name>DoFileBugReport</name>
+		<type>action</type>
+		<directory>actions</directory>
+		<description>file a bug report</description>
+		<template>act_report_bug.cfm</template>
+		<checkframeset>1</checkframeset>
+		<setservice>0</setservice>
+	</item>	
+	<item>
+		<name>ThanksForBugReport</name>
+		<description>file a bug report</description>
+		<template>dsp_thank_for_bug_report.cfm</template>
+		<checkframeset>1</checkframeset>
+		<setservice>0</setservice>
+	</item>	
+</actions>
+</service>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<transfer xsi:noNamespaceSchemaLocation="/transfer/resources/xsd/transfer.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<!-- 
+	This section defines how Objects
+	are cached in this system.
+	
+	It does not need to be set, as there are
+	default settings for caching.
+	 -->
+	<objectCache>
+		<defaultcache>
+			<scope type="instance"/>
+		</defaultcache>
+	</objectCache>
+	<objectDefinitions>
+		<package name="rss">
+			<object name="rssnewsfeeds" table="rssnewsfeeds">
+				<id name="id" type="integer" />
+				<property name="feedname" type="string" />
+				<property name="description" type="string" />
+				<property name="language" type="integer" />
+				<property name="sourceurl" type="string" />
+				<property name="logoimg" type="string" />
+				<property name="encoding" type="string" />
+			</object>				
+		</package>
+	</objectDefinitions>
+</transfer>

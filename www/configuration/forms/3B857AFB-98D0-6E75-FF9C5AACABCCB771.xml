@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<query>
+	<row>
+		<addvalidation>0</addvalidation>
+		<callbackfunctionname />
+		<callbackfunctionnamenecessaryarguments />
+		<colspan>1</colspan>
+		<css />
+		<datatype>date</datatype>
+		<db_fieldname>dt_added</db_fieldname>
+		<defaultvalue><![CDATA[]]></defaultvalue>
+		<default_parameter_name><![CDATA[]]></default_parameter_name>
+		<default_parameter_scope><![CDATA[url]]></default_parameter_scope>
+		<dt_created><![CDATA[2006-08-22 12:18:29.0]]></dt_created>
+		<entrykey>3B857AFB-PPPS-6E75-FF9C5AACABCPDO</entrykey>
+		<field_name><![CDATA[%LANG_cal_wd_date%]]></field_name>
+		<formkey>3B857AFB-98D0-6E75-FF9C5AACABCCB771</formkey>
+		<id>3</id>
+		<input_name>frmdate</input_name>
+		<internal_description>DT added to database</internal_description>
+		<jsselectorfunction><![CDATA[]]></jsselectorfunction>
+		<onchange><![CDATA[]]></onchange>
+		<options><![CDATA[]]></options>
+		<orderno>-52</orderno>
+		<output_only>0</output_only>
+		<parameters><![CDATA[]]></parameters>
+		<required>0</required>
+		<tr_id><![CDATA[]]></tr_id>
+		<useuniversalselectorjsfunction>0</useuniversalselectorjsfunction>
+		<useuniversalselectorjsfunction_type><![CDATA[]]></useuniversalselectorjsfunction_type>
+		<visible_description><![CDATA[]]></visible_description>
+	</row>
+	<row>
+		<addvalidation>0</addvalidation>
+		<callbackfunctionname/>
+		<callbackfunctionnamenecessaryarguments/>
+		<colspan>1</colspan>
+		<css>1</css>
+		<datatype>integer</datatype>
+		<db_fieldname>kilometers</db_fieldname>
+		<defaultvalue/>
+		<default_parameter_name/>
+		<default_parameter_scope/>
+		<dt_created>{ts '2007-08-06 16:17:15'}</dt_created>
+		<entrykey>3B896CEC-A4A6-EA19-986BBD26FFE8FFAF</entrykey>
+		<field_name>%LANG_adrb_wd_kilometers%</field_name>
+		<formkey>3B857AFB-98D0-6E75-FF9C5AACABCCB771</formkey>
+		<input_name>frmkm</input_name>
+		<internal_description>number of km</internal_description>
+		<jsselectorfunction/>
+		<onchange/>
+		<options/>
+		<output_only>0</output_only>
+		<parameters/>
+		<required>1</required>
+		<tr_id/>
+		<useuniversalselectorjsfunction>0</useuniversalselectorjsfunction>
+		<useuniversalselectorjsfunction_type/>
+		<visible_description/>
+	</row>
+	<row>
+		<addvalidation>0</addvalidation>
+		<callbackfunctionname/>
+		<callbackfunctionnamenecessaryarguments/>
+		<colspan>1</colspan>
+		<css>1</css>
+		<datatype>submit</datatype>
+		<db_fieldname/>
+		<defaultvalue/>
+		<default_parameter_name/>
+		<default_parameter_scope/>
+		<dt_created>{ts '2007-08-06 16:19:36'}</dt_created>
+		<entrykey>3B8B9186-ECD5-A616-357AEEC7C4E65B0E</entrykey>
+		<field_name>%LANG_cm_wd_add%</field_name>
+		<formkey>3B857AFB-98D0-6E75-FF9C5AACABCCB771</formkey>
+		<input_name>frmsubmit</input_name>
+		<internal_description/>
+		<jsselectorfunction/>
+		<onchange/>
+		<options/>
+		<output_only>0</output_only>
+		<parameters/>
+		<required>0</required>
+		<tr_id/>
+		<useuniversalselectorjsfunction>0</useuniversalselectorjsfunction>
+		<useuniversalselectorjsfunction_type/>
+		<visible_description/>
+	</row>
+</query>

@@ -1,0 +1,59 @@
+<service>
+	<servicekey>support</servicekey>
+	<basedirectory>/support/</basedirectory>
+	<defaultaction>showwelcome</defaultaction>
+	<frontend>www</frontend>
+	<headerinclude>dsp_inc_nav_top.cfm</headerinclude>
+	<leftinclude>dsp_inc_left.cfm</leftinclude>
+<actions>	
+	<item>
+		<name>showwelcome</name>
+		<description>show welcome screen</description>
+		<template>dsp_welcome.cfm</template>
+		<checkframeset>0</checkframeset>
+		<setservice>0</setservice>
+	</item>	
+	<item>
+		<name>faq</name>
+		<description></description>
+		<template>dsp_faq.cfm</template>
+		<checkframeset>0</checkframeset>
+		<setservice>0</setservice>
+	</item>	
+	<item>
+		<name>guides</name>
+		<description></description>
+		<template>dsp_guides.cfm</template>
+		<checkframeset>0</checkframeset>
+		<setservice>0</setservice>
+	</item>	
+	<item>
+		<name>feedback</name>
+		<description></description>
+		<template>dsp_feedback.cfm</template>
+		<checkframeset>0</checkframeset>
+		<setservice>0</setservice>
+	</item>	
+	<item>
+		<name>SendFeedback</name>
+		<description></description>
+		<template>dsp_send_feedback.cfm</template>
+		<checkframeset>0</checkframeset>
+		<setservice>0</setservice>
+	</item>	
+	<item>
+		<name>systempartner</name>
+		<description></description>
+		<template>dsp_system_partner.cfm</template>
+		<checkframeset>0</checkframeset>
+		<setservice>0</setservice>
+	</item>	
+	<item>
+		<name>afterfirstloginfeedback</name>
+		<description></description>
+		<template>dsp_feedback_afterfirstloginfeedback.cfm</template>
+		<checkframeset>0</checkframeset>
+		<setservice>0</setservice>
+	</item>	
+</actions>
+</service>

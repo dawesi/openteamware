@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<query>
+	<row>
+		<addvalidation>0</addvalidation>
+		<callbackfunctionname><![CDATA[]]></callbackfunctionname>
+		<callbackfunctionnamenecessaryarguments><![CDATA[]]></callbackfunctionnamenecessaryarguments>
+		<colspan>1</colspan>
+		<css>1</css>
+		<datatype><![CDATA[string]]></datatype>
+		<db_fieldname><![CDATA[]]></db_fieldname>
+		<defaultvalue><![CDATA[]]></defaultvalue>
+		<default_parameter_name><![CDATA[foldername]]></default_parameter_name>
+		<default_parameter_scope><![CDATA[url]]></default_parameter_scope>
+		<dt_created><![CDATA[2007-01-08 12:01:39.0]]></dt_created>
+		<entrykey><![CDATA[015EE12C-9875-A842-9A22F1BC026DEDFE]]></entrykey>
+		<field_name><![CDATA[%LANG_mail_wd_foldername%]]></field_name>
+		<formkey><![CDATA[015E0954-9378-26B4-70B934FC599EA701]]></formkey>
+		<id>127</id>
+		<input_name><![CDATA[frmFoldername]]></input_name>
+		<internal_description><![CDATA[folder name]]></internal_description>
+		<jsselectorfunction><![CDATA[]]></jsselectorfunction>
+		<onchange><![CDATA[]]></onchange>
+		<options><![CDATA[]]></options>
+		<orderno>1</orderno>
+		<output_only>0</output_only>
+		<parameters><![CDATA[]]></parameters>
+		<required>0</required>
+		<tr_id><![CDATA[]]></tr_id>
+		<useuniversalselectorjsfunction>0</useuniversalselectorjsfunction>
+		<useuniversalselectorjsfunction_type><![CDATA[]]></useuniversalselectorjsfunction_type>
+		<visible_description><![CDATA[]]></visible_description>
+	</row>
+	<row>
+		<addvalidation>0</addvalidation>
+		<callbackfunctionname><![CDATA[GetAllMailFolders]]></callbackfunctionname>
+		<callbackfunctionnamenecessaryarguments><![CDATA[]]></callbackfunctionnamenecessaryarguments>
+		<colspan>1</colspan>
+		<css>1</css>
+		<datatype><![CDATA[options]]></datatype>
+		<db_fieldname><![CDATA[]]></db_fieldname>
+		<defaultvalue><![CDATA[]]></defaultvalue>
+		<default_parameter_name><![CDATA[]]></default_parameter_name>
+		<default_parameter_scope><![CDATA[]]></default_parameter_scope>
+		<dt_created><![CDATA[2007-01-08 12:02:23.0]]></dt_created>
+		<entrykey><![CDATA[015F8D68-DFD7-86A7-5BE17FAE7EB02C47]]></entrykey>
+		<field_name><![CDATA[%lang_frmparentfolder%]]></field_name>
+		<formkey><![CDATA[015E0954-9378-26B4-70B934FC599EA701]]></formkey>
+		<id>128</id>
+		<input_name><![CDATA[frmparentfolder]]></input_name>
+		<internal_description><![CDATA[parent folder]]></internal_description>
+		<jsselectorfunction><![CDATA[]]></jsselectorfunction>
+		<onchange><![CDATA[]]></onchange>
+		<options><![CDATA[]]></options>
+		<orderno>2</orderno>
+		<output_only>0</output_only>
+		<parameters><![CDATA[]]></parameters>
+		<required>0</required>
+		<tr_id><![CDATA[]]></tr_id>
+		<useuniversalselectorjsfunction>0</useuniversalselectorjsfunction>
+		<useuniversalselectorjsfunction_type><![CDATA[]]></useuniversalselectorjsfunction_type>
+		<visible_description><![CDATA[]]></visible_description>
+	</row>
+	<row>
+		<addvalidation>0</addvalidation>
+		<callbackfunctionname><![CDATA[]]></callbackfunctionname>
+		<callbackfunctionnamenecessaryarguments><![CDATA[]]></callbackfunctionnamenecessaryarguments>
+		<colspan>1</colspan>
+		<css>1</css>
+		<datatype><![CDATA[submit]]></datatype>
+		<db_fieldname><![CDATA[]]></db_fieldname>
+		<defaultvalue><![CDATA[]]></defaultvalue>
+		<default_parameter_name><![CDATA[]]></default_parameter_name>
+		<default_parameter_scope><![CDATA[]]></default_parameter_scope>
+		<dt_created><![CDATA[2007-01-08 12:02:48.0]]></dt_created>
+		<entrykey><![CDATA[015FEE1F-FDD3-8AF5-0E2EAB391A101328]]></entrykey>
+		<field_name><![CDATA[%LANG_mail_ph_newFolder%]]></field_name>
+		<formkey><![CDATA[015E0954-9378-26B4-70B934FC599EA701]]></formkey>
+		<id>129</id>
+		<input_name><![CDATA[]]></input_name>
+		<internal_description><![CDATA[submit button]]></internal_description>
+		<jsselectorfunction><![CDATA[]]></jsselectorfunction>
+		<onchange><![CDATA[]]></onchange>
+		<options><![CDATA[]]></options>
+		<orderno>4</orderno>
+		<output_only>0</output_only>
+		<parameters><![CDATA[]]></parameters>
+		<required>0</required>
+		<tr_id><![CDATA[]]></tr_id>
+		<useuniversalselectorjsfunction>0</useuniversalselectorjsfunction>
+		<useuniversalselectorjsfunction_type><![CDATA[]]></useuniversalselectorjsfunction_type>
+		<visible_description><![CDATA[]]></visible_description>
+	</row>
+	<row>
+		<addvalidation>0</addvalidation>
+		<callbackfunctionname><![CDATA[]]></callbackfunctionname>
+		<callbackfunctionnamenecessaryarguments><![CDATA[]]></callbackfunctionnamenecessaryarguments>
+		<colspan>1</colspan>
+		<css>1</css>
+		<datatype><![CDATA[colorselector]]></datatype>
+		<db_fieldname><![CDATA[]]></db_fieldname>
+		<defaultvalue><![CDATA[]]></defaultvalue>
+		<default_parameter_name><![CDATA[]]></default_parameter_name>
+		<default_parameter_scope><![CDATA[]]></default_parameter_scope>
+		<dt_created><![CDATA[2007-01-08 12:49:54.0]]></dt_created>
+		<entrykey><![CDATA[018B0B75-D92B-BD59-4838986F7260F0E3]]></entrykey>
+		<field_name><![CDATA[]]></field_name>
+		<formkey><![CDATA[015E0954-9378-26B4-70B934FC599EA701]]></formkey>
+		<id>130</id>
+		<input_name><![CDATA[frmcolor]]></input_name>
+		<internal_description><![CDATA[color for folder]]></internal_description>
+		<jsselectorfunction><![CDATA[]]></jsselectorfunction>
+		<onchange><![CDATA[]]></onchange>
+		<options><![CDATA[]]></options>
+		<orderno>3</orderno>
+		<output_only>0</output_only>
+		<parameters><![CDATA[]]></parameters>
+		<required>0</required>
+		<tr_id><![CDATA[]]></tr_id>
+		<useuniversalselectorjsfunction>0</useuniversalselectorjsfunction>
+		<useuniversalselectorjsfunction_type><![CDATA[]]></useuniversalselectorjsfunction_type>
+		<visible_description><![CDATA[]]></visible_description>
+	</row>
+</query>

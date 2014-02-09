@@ -1,0 +1,1 @@
+<cfapplication name="ib_status" clientmanagement="no" sessionmanagement="no" setclientcookies="no" setdomaincookies="no"><cfsetting enablecfoutputonly="no" showdebugoutput="no">

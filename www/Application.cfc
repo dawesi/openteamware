@@ -1,12 +1,5 @@
 <!--- //
-
-	Module:		Framework
-	Description:Moving from Application.cfm to Application.cfc
-	
-	The new way for cfmx application is application.cfc instead of application.cfm
-	
-	http://livedocs.macromedia.com/coldfusion/7/htmldocs/00001102.htm
-	
+	Basic application for otw
 // --->
 <cfcomponent output="false" hint="Application ...">
 

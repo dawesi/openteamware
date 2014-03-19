@@ -76,7 +76,7 @@ Mark Mandel		04/04/2008		Created
 			value =	arguments.query.getString(arguments.property.getColumn());
 		}
 
-		if(arguments.query.wasNull())
+		 if(IsNull( arguments.query ))
 		{
 			return getNullable().getNullValue(arguments.object.getClassName(), arguments.property.getName());
 		}

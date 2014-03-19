@@ -10,7 +10,7 @@
 
 <cfparam name="CreateEditFollowupJob.action" type="string" default="create">
 <cfparam name="CreateEditFollowupJob.returnurl" type="string" default="">
-<cfparam name="CreateEditFollowupJob.query" type="query" default="#QueryNew('userkey,alert_email,comment,priority,followuptype,entrykey,dt_due,objecttitle,servicekey,objectkey,dt_due')#">
+<cfparam name="CreateEditFollowupJob.query" type="query" default="#QueryNew('userkey,alert_email,comment,priority,followuptype,entrykey,objecttitle,servicekey,objectkey,dt_due')#">
 <cfset a_str_operation = CreateEditFollowupJob.action />
 
 <!--- create a new follow up ... --->

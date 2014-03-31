@@ -204,11 +204,7 @@
 		</cfinvoke>
 		
 		<cfset q_select_projects = stReturn.q_select_projects />
-		
-		<!--- select sub projects ... --->
-		
-		<cfset a_dt_closing = DateAdd('d', -21, Now()) />
-		
+				
 		<cfquery name="q_select_sales_projects" dbtype="query" maxrows="5">
 		SELECT
 			*
@@ -218,8 +214,6 @@
 			project_type = 1
 			AND
 			closed = 0
-			AND
-			dt_closing > <cfqueryparam cfsqltype="cf_sql_timestamp" value="#Now()#">
 		ORDER BY
 			sales_probability DESC
 		;

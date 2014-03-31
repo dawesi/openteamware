@@ -20,10 +20,6 @@ ORDER BY
 	<cfinvokeargument name="userkey" value="#request.stSecurityContext.myuserkey#">
 </cfinvoke>
 
-<cfinvoke component="#variables.a_cmp_email_accounts#" method="GetSpamassassinSettings" returnvariable="q_select_spamguard_settings">
-	<cfinvokeargument name="username" value="#request.stSecurityContext.myusername#">
-</cfinvoke>
-
 <cfquery name="q_select_email_addresses" dbtype="query">
 SELECT
 	*

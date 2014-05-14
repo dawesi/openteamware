@@ -1,4 +1,4 @@
-<cfset tmp = SetHeaderTopInfoString(GetLangVal('adrb_wd_telephonelist'))>
+<cfset SetHeaderTopInfoString(GetLangVal('adrb_wd_telephonelist'))>
 
 <br>
 	<div class="b_all mischeader" style="padding:4px;" align="center">

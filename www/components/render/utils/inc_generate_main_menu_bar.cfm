@@ -63,7 +63,7 @@
 	AddNewJSPopupMenuItem(GetLangval('cal_wd_month'), '/calendar/?action=ViewMonth&date=lastdate');
 	AddNewJSPopupMenuToPage();
 	
-	StartNewJSPopupMenu('a_men_ex');
+	/*StartNewJSPopupMenu('a_men_ex');
 		AddNewJSPopupMenuItem(GetLangval('cm_wd_storage'), '/storage/');
 		AddNewJSPopupMenuItem(GetLangval('cm_wd_reports'), '/crm/?action=reports');
 		AddNewJSPopupMenuItem(GetLangval('cm_wd_projects'), '/project/');		
@@ -72,10 +72,10 @@
 	if (request.stSecurityContext.q_select_workgroup_permissions.recordcount GT 0) {
 		AddNewJSPopupMenuItem(GetLangval('cm_wd_forum'), '/forum/');
 		}
-	AddNewJSPopupMenuItem('SyncCenter', '/synccenter/');	
+	AddNewJSPopupMenuItem('SyncCenter', '/synccenter/');	*/
 	AddNewJSPopupMenuItem(GetLangval('cm_wd_tasks'), '/tasks/');	
 	AddNewJSPopupMenuItem(GetLangval('cm_wd_import'), '/import/');	
-	AddNewJSPopupMenuItem(GetLangval('extras_ph_route_planner'), '/extras/?action=routeplanner');
+	//AddNewJSPopupMenuItem(GetLangval('extras_ph_route_planner'), '/extras/?action=routeplanner');
 	// AddNewJSPopupMenuItem(GetLangVal('adrb_wd_rec_travel'), '/extras/?action=recordtravell');
 	// AddNewJSPopupMenuItem(GetLangval('cm_wd_download'), '/download/');
 
@@ -126,21 +126,23 @@
     	<a href="/addressbook/default.cfm?filterdatatype=0"><cfoutput>#GetLangVal('cm_wd_contacts')#</cfoutput></a>
     </li>
     <li>
-           <a href="/addressbook/default.cfm?filterdatatype=1"><cfoutput>#GetLangVal('crm_wd_accounts')#</cfoutput></a>
+     	<a href="/addressbook/default.cfm?filterdatatype=1"><cfoutput>#GetLangVal('crm_wd_accounts')#</cfoutput></a>
      </li>		
-     <li>
+     <!--- <li>
          <a href="/calendar/" id="id_men_cal" onmouseover="ShowHTMLActionPopup('id_men_cal', a_men_cal, false);" onclick="ShowHTMLActionPopup('id_men_cal', a_men_cal, false);"><cfoutput>#GetLangVal('cm_wd_calendar')#</cfoutput> &raquo;</a>
-     </li>
-    <li>
+     </li> --->
+	<li>
+		<a href="/project"><cfoutput>#GetLangval('cm_wd_projects')#</cfoutput></a>
+	</li>
+    <!---<li>
 		<a href="/email/" id="id_men_mail" onmouseover="ShowHTMLActionPopup('id_men_mail', a_men_email, false);" onclick="ShowHTMLActionPopup('id_men_mail', a_men_email, false);"><cfoutput>#GetLangVal('cm_wd_email')# &raquo;</cfoutput></a>
-   	</li>
-
+   	</li>--->
 	<li>
         <a href="/mailing/"><cfoutput>#GetLangVal('cm_wd_mailings')#</cfoutput></a>
     </li>
-	<li>
+	<!--- <li>
          <a href="/extras/" id="id_men_ex" onmouseover="ShowHTMLActionPopup('id_men_ex', a_men_ex, false);" onclick="ShowHTMLActionPopup('id_men_ex', a_men_ex, false);"><cfoutput>#GetLangVal('cm_wd_extras')#</cfoutput> &raquo;</a>
-     </li>	
+     </li>	 --->
 </ul>
 
 </div>

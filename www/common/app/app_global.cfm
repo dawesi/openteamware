@@ -66,8 +66,6 @@
 	request.a_str_component_tasks = '/components/tasks/cmp_task';
 	request.a_str_component_customer = '/components/management/customers/cmp_customer';
 	request.a_str_component_customize = '/components/customize/cmp_customize';
-	request.a_str_component_im = '/components/im/cmp_im';
-	request.a_str_component_reseller = '/components/management/resellers/cmp_reseller';
 	request.a_str_component_content = '/components/content/cmp_content';
 	request.a_str_component_bookmarks = '/components/bookmarks/cmp_bookmarks';
 	request.a_str_component_licence = '/components/licence/cmp_licence';

@@ -112,11 +112,6 @@
 									sTransferConfigPath & "mycrm/transfer.xml",
 									'/otw_temp' ).getTransfer() />
 									
-			<cfset application.components.cmp_dao_forum = CreateObject("component", "/transfer/TransferFactory").init(
-									sTransferConfigPath & 'myforen/datasource.xml',
-									sTransferConfigPath & "myforen/transfer.xml",
-									'/otw_temp'  ).getTransfer() />
-									
 			<cfset application.components.cmp_dao_office = CreateObject("component", "/transfer/TransferFactory").init(
 									sTransferConfigPath & 'myoffice/datasource.xml',
 									sTransferConfigPath & "myoffice/transfer.xml",

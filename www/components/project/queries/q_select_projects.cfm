@@ -7,7 +7,7 @@
 
 // --->
 
-<cfif arguments.securitycontext.q_select_workgroup_permissions.recordcount GT 0>
+<cfif arguments.securitycontext.q_select_workgroup_permissions.recordcount>
 	
 	<cfquery name="q_select_workgroup_entrykeys" datasource="#request.a_str_db_crm#">
 	SELECT

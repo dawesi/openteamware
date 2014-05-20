@@ -24,7 +24,6 @@ Setup instructions
 - Install mysql server (latest version)
 - Create a database called otwcrm and an user which can perform CRUD operations on this database
 - Import the OTW schema (located in the DB folder) to create all necessary tables
-- 
 
 - CFML Server, either Adobe ColdFusion (commercial) or Railo (Open Source)
 

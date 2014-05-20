@@ -3,7 +3,7 @@ openteamware (otw): CFML CRM
 
 CFML Open Source CRM (ColdFusion, Railo, mysql)
 
-Features
+== Features ==
 
 - Manage your contacts & accounts
 - Activity & Project management - what's going on on which account (follow ups, sales projects, tasks)
@@ -22,6 +22,7 @@ otw has been heavily tested on Linux but should run on Windows as well.
 Setup instructions
 ==================
 
+- Make sure a current version of Java is available or installt the Java 7 JDK (http://www.oracle.com/technetwork/java/javase/downloads/index.html) Note: Java 8 is not yet supported by Railo
 - Install mysql server (http://dev.mysql.com/downloads/mysql/)
 - Create a database called otwcrm and an user which can perform CRUD operations on this database
 - Import the OTW schema (located in the DB folder) to create all necessary tables

@@ -21,7 +21,7 @@ Setup Guide
 Setup instructions
 ==================
 
-- Install mysql server (latest version)
+- Install mysql server (http://dev.mysql.com/downloads/mysql/)
 - Create a database called otwcrm and an user which can perform CRUD operations on this database
 - Import the OTW schema (located in the DB folder) to create all necessary tables
 

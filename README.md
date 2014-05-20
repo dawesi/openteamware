@@ -1,5 +1,5 @@
-openteamware: CFML CRM
-======================
+openteamware (otw): CFML CRM
+============================
 
 CFML Open Source CRM (ColdFusion, Railo, mysql)
 

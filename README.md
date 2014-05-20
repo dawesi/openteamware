@@ -12,11 +12,12 @@ Features
 
 Requirements
 
-- ColdFusion 8+ or Railo 3+
-- mysql 5+
+- Windows or Linux
+- Java JDK (in case not already installed)
+- Application Server: ColdFusion 8+ or Railo 3+
+- Database: mysql 5+
 
-Setup Guide
-
+otw has been heavily tested on Linux but should run on Windows as well.
 
 Setup instructions
 ==================

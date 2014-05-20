@@ -10,7 +10,7 @@ Features
 
 
 
-Requirements
+== Requirements ==
 
 - Windows or Linux
 - Java JDK (in case not already installed)

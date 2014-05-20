@@ -29,7 +29,8 @@ Setup instructions
 
 Instructions for Railo (recommended)
 - Either add a new host to an existing setup or grab a copy of the latest stable version at http://www.getrailo.org/index.cfm/download/ (Railo is offering bundles with tomcat)
-- Install the Application server and extract the source code (Everything in the folder _www) in the desired host directory or the default wwwroot.
+- Install the Application server. During setup you can agree to all default settings as they can be changed later. In case you already know that you want to run the service on the standard http or https port select port 80 or 443 during the setup as web listener for tomcat
+- Extract the source code (Everything in the folder _www) in the desired host directory or the default wwwroot.
 - Open the railo manager (http://localhost:[ port you have selected at setup]/railo-context/admin/web.cfm and go to the tab "datasources" on the left. Create one datasource called otwocrm and connect to the database created above.
 - You're ready to go - open http://localhost:[ port you have selected at setup] and log in with the default user
 - The default user has the username/password: user / password (Change it in the settings)

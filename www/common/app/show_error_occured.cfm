@@ -28,34 +28,6 @@
 				cgi = cgi) />
 				
 
-<!--- send notify to which address? --->
-<cftry>
-	<cfset a_int_notify = request.appsettings.properties.EmailReportsEnabled />
-	<cfset a_str_notify_email_adr = request.appsettings.properties.NotifyEmail />
-	<cfcatch type="any">
-		<cfset a_int_notify = 1 />
-		<cfset a_str_notify_email_adr = request.appsettings.properties.NotifyEmail />
-	</cfcatch>
-</cftry>
-
-<cfif a_int_notify IS 1>
-<!--- <cfmail to="#a_str_notify_email_adr#" from="feedback@openTeamWare.com" subject="Fehler auf #inet#" type="html">
-	<html>
-		<head></head>
-		<body>
-			<h4>host: #inet#</h4>
-			<h4>error</h4>
-			<cfdump var="#arguments#">
-			<h4>request</h4>
-			<cfdump var="#request#">
-			<h4>cgi</h4>
-			<cfdump var="#cgi#">
-		</body>
-	</html>
-</cfmail> --->
-</cfif>
-
-
 <h2><img src="/images/si/error.png" /> Wichtige Systemmeldung</h2>
 <h4>Ein Fehler ist aufgetreten - der Webmaster wurde soeben benachrichtigt!</h4>
 <h4>An error occured - the webmaster has been notified!</h4>

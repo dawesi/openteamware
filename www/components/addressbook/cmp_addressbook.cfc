@@ -682,11 +682,11 @@
 		<cfset a_str_title = q_select_contact_raw.surname />
 			
 		<!--- call delete now ... --->
-		<cfscript>
-			a_orm = application.components.cmp_dao_addressbook.get("contact.ItemData", arguments.entrykey);
-			application.components.cmp_dao_addressbook.delete(a_orm);	
-		</cfscript>
-			
+		<cfquery>
+		DELETE FROM addressbook
+		WHERE		entrykey = <cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.entrykey#" />
+		</cfquery>
+		
 		<!--- set parentcontactkey to empty string for items where this
 			entrykey is the parent ... TODO: Testing --->
 		<cfinclude template="queries/q_update_set_parentcontactkey_empty_on_delete.cfm">

@@ -101,16 +101,11 @@
 			
 			<cfset application.components.cmp_crm_reports = CreateObject('component', '/components/crmsales/crm_reports') />		
 
-									
 			<cfset application.components.cmp_dao_crm = CreateObject("component", "/transfer/TransferFactory").init(
 									sTransferConfigPath & 'mycrm/datasource.xml',
 									sTransferConfigPath & "mycrm/transfer.xml",
 									'/otw_temp' ).getTransfer() />
 									
-			<cfset application.components.cmp_dao_office = CreateObject("component", "/transfer/TransferFactory").init(
-									sTransferConfigPath & 'myoffice/datasource.xml',
-									sTransferConfigPath & "myoffice/transfer.xml",
-									'/otw_temp' ).getTransfer() />
 		</cflock>
 		
 		<cfset tmp = StructDelete(request, 'bAppInit_running') />

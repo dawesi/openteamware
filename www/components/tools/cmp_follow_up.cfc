@@ -143,7 +143,6 @@
 		<cfset var stReturn = GenerateReturnStruct() />
 		<cfset var a_struct_do_action = StructNew() />
 		<cfset var sEntrykey = CreateUUID() />
-		<cfset var a_transfer = application.components.cmp_dao_office />
 		<cfset var a_update_item = 0 />
 		<cfset var tmp = 0 />
 		
@@ -166,18 +165,18 @@
 		<cfelse>
 		
 			<!--- update ... --->
-			<cfset a_update_item = a_transfer.get('followups.followup', arguments.database_values.entrykey) />
-			<cfset a_update_item.setcomment(arguments.database_values.comment) />
-			<cfset a_update_item.setdt_due(arguments.database_values.dt_due) />
-			<cfset a_update_item.setfollowuptype(arguments.database_values.followuptype) />
-			<cfset a_update_item.setuserkey(arguments.database_values.userkey) />
-			<cfset a_update_item.setalert_email(Val(arguments.database_values.alert_email)) />
-			<cfset a_update_item.setpriority(Val(arguments.database_values.priority)) />
-			<cfset a_update_item.setCategories(Val(arguments.database_values.categories)) />
+			<cfquery name="followup">
+			UPDATE	followup
+			SET		comment	= <cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.database_values.comment#" />,
+					dt_due	= <cfqueryparam cfsqltype="cf_sql_date" value="#arguments.database_values.dt_due#" />,
+					followuptype	= <cfqueryparam cfsqltype="cf_sql_integer" value="#arguments.database_values.followuptype#" />,
+					userkey			= <cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.database_values.userkey#">
+					alert_email= <cfqueryparam cfsqltype="cf_sql_integer" value="#Val(arguments.database_values.alert_email)#">,
+					priority	= <cfqueryparam cfsqltype="cf_sql_integer" value="#Val(arguments.database_values.priority)#">,
+					categories = <cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.database_values.categories#">
+			WHERE	entrykey = <cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.database_values.entrykey#" />
+			</cfquery>
 			
-			<!--- call now! --->		
-			<cfset a_transfer.update(a_update_item) />
-		
 		</cfif>
 		
 		<cfset tmp = application.components.cmp_crmsales.UpdateActivityCountOfContact(objectkey = arguments.database_values.objectkey,

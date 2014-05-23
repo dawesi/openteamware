@@ -18,20 +18,5 @@
 	  			<property name="company" type="string" column="company"/>
 	  		</object>
 	  	</package>
-	  	<package name="remoteedit">
-		  	<!-- Remote Edit data entered by the user -->
-	  		<object name="RemoteEditData" table="redata">
-	  			<id name="entrykey" type="UUID" />
-	  			<property name="Firstname" type="string" column="firstname"/>
-	  		</object>
-	  		<!-- remote edit jobs ... -->
-	  		<object name="RemoteEditJobs" table="remoteedit">
-	  			<id name="entrykey" type="UUID"/>
-	  			<property name="objectkey" type="string" column="objectkey"/>
-	  			<property name="userkey" type="string" column="userkey"/>
-	  			<property name="dt_created" type="date" column="dt_created"/>
-	  			<property name="languageid" type="numeric" column="languageid"/>
-	  		</object>
-	  	</package>
 	</objectDefinitions>
 </transfer>

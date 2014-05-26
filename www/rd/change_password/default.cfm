@@ -1,1 +1,0 @@
-<cflocation addtoken="no" url="/settings/default.cfm?action=password">

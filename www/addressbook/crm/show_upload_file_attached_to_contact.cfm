@@ -16,7 +16,6 @@
 			}
 	</script>
 	<title><cfoutput>#GetLangVal('cm_wd_add')#</cfoutput></title>
-	<cfinclude template="/style_sheet.cfm">
 </head>
 
 <body style="padding:10px; ">

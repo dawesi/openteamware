@@ -68,7 +68,6 @@
 
 <html>
 	<head>
-		<cfinclude template="/style_sheet.cfm">
 		<title><cfoutput>#GetLangVal('cm_wd_close_btn_caption')#</cfoutput></title>
 		<script type="text/javascript">
 			function DoCloseWindow()

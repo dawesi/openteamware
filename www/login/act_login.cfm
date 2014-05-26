@@ -21,7 +21,7 @@
 <cfset a_bol_fields_not_providedovided = ((Len(form.frmusername) IS 0) AND (Len(form.frmpassword) IS 0)) />
 
 <cfif a_bol_fields_not_providedovided>
-	<cflocation addtoken="No" url="../help/default.cfm?action=login&error=noaccount">
+	<cflocation addtoken="No" url="../help/index.cfm?action=login&error=noaccount">
 </cfif>
 
 <cfset a_str_username = form.frmUsername />
@@ -51,7 +51,7 @@
 		</cfcase>
 		<cfdefaultcase>
 			<!--- other ... --->
-			<cflocation addtoken="No" url="default.cfm?loginfailed=true&ibxerrorno=#stReturn.error#">
+			<cflocation addtoken="No" url="index.cfm?loginfailed=true&ibxerrorno=#stReturn.error#">
 		</cfdefaultcase>
 	</cfswitch>
 	
@@ -96,7 +96,6 @@
 
 <html>
 	<head>
-	<cfinclude template="../style_sheet.cfm">
 	
 	<meta http-equiv="refresh" content="1;URL=<cfoutput>#alocation#</cfoutput>" />
 

@@ -804,6 +804,10 @@
 				<cfcase value="5222ECD3-06C4-3804-E92ED804C82B68A2">
 				<cfinclude template="queries/workgroups/q_select_storage_shares.cfm">
 				</cfcase>
+				
+				<cfcase value="5137784B-C09F-24D5-396734F6193D879D">
+				<cfinclude template="queries/workgroups/q_select_project_shares.cfm" />
+				</cfcase>
 			
 			</cfswitch>
 			

@@ -20,7 +20,7 @@
 <br/>
 
 <!--- log exception ... --->
-<cfset tmp = application.components.cmp_log.LogException(error = arguments.exception,
+<cfset application.components.cmp_log.LogException(error = arguments.exception,
 				session = session,
 				message = arguments.exception.RootCause.message,
 				url = url,
@@ -40,10 +40,10 @@ Vielen Dank!
 <br /><br />
 <br />
 <a href="/" target="_top"><b>Zur Startseite</b></a> | <a href="javascript:history.go(-1);">zur&uuml;ck</a>
+
+<cfif cgi.REMOTE_ADDR IS '127.0.0.1'>
+<cfdump var="#arguments#">
+</cfif>
+
 </body>
 </html>
-
-
-
-
-			

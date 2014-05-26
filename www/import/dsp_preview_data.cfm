@@ -88,7 +88,7 @@ function CheckAllItems() {
 
 <cfset a_str_form_id = 'form' & CreateUUIDJS() />
 
-<cfset tmp = application.components.cmp_forms.StartNewForm(action = 'default.cfm?Action=DoImportData',
+<cfset tmp = application.components.cmp_forms.StartNewForm(action = 'index.cfm?Action=DoImportData',
 				action_type = 'create',
 				method = 'POST',
 				onSubmit = 'DisplayPleaseWaitMsgOnLocChange()',

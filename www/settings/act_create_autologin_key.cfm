@@ -13,4 +13,4 @@
 
 <cfinclude template="queries/q_update_autologinkey.cfm">
 
-<cflocation addtoken="no" url="default.cfm?action=autologin">
+<cflocation addtoken="no" url="index.cfm?action=autologin">

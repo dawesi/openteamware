@@ -17,7 +17,7 @@ TODO: think about implementing this feature
 
 <cfif Len(form.frmfileupload) IS 0>
 
-<form action="default.cfm?action=ImportVcard" method="post" enctype="multipart/form-data">
+<form action="index.cfm?action=ImportVcard" method="post" enctype="multipart/form-data">
 	<input type="file" name="frmfileupload" />
 	<input type="submit" value="upload" class="btn" />
 </form>

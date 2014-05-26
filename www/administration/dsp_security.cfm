@@ -79,7 +79,7 @@
 		###q_select_roles.currentrow#
 	</td>
     <td valign="top">
-		<a href="default.cfm?action=securityrole.display&entrykey=#urlencodedformat(q_select_roles.entrykey)##WriteURLTags()#">#htmleditformat(q_select_roles.rolename)#</a>
+		<a href="index.cfm?action=securityrole.display&entrykey=#urlencodedformat(q_select_roles.entrykey)##WriteURLTags()#">#htmleditformat(q_select_roles.rolename)#</a>
 	</td>
     <td valign="top">
 		#q_select_roles.description#
@@ -93,7 +93,7 @@
 	#q_select_users.recordcount# Benutzer<br>
 	
 	<cfloop query="q_select_users">
-	<a href="default.cfm?action=userproperties&entrykey=#urlencodedformat(q_select_users.entrykey)##WriteURLTags()#">#q_select_users.surname#, #q_select_users.firstname# (#q_select_users.username#)</a><br>
+	<a href="index.cfm?action=userproperties&entrykey=#urlencodedformat(q_select_users.entrykey)##WriteURLTags()#">#q_select_users.surname#, #q_select_users.firstname# (#q_select_users.username#)</a><br>
 	</cfloop>
 
 	</td>
@@ -101,7 +101,7 @@
 		#DateFormat(q_select_roles.dt_created, 'dd.mm.yy')#
 	</td>
 	<td align="center" valign="top">
-		<a href="default.cfm?action=securityrole.edit&entrykey=#urlencodedformat(q_select_roles.entrykey)##WriteURLTags()#">editieren</a>
+		<a href="index.cfm?action=securityrole.edit&entrykey=#urlencodedformat(q_select_roles.entrykey)##WriteURLTags()#">editieren</a>
 		&nbsp;|&nbsp;
 		<a href="javascript:DeleteItem('#jsstringformat(q_select_roles.entrykey)#');"><img src="/images/del.gif" align="absmiddle" border="0"></a>
 	</td>
@@ -109,7 +109,7 @@
   </cfoutput>
 </table>
 <br><br>
-<a href="default.cfm?action=securityrole.new<cfoutput>#WriteURLTags()#</cfoutput>">Neue Rolle erstellen ...</a>
+<a href="index.cfm?action=securityrole.new<cfoutput>#WriteURLTags()#</cfoutput>">Neue Rolle erstellen ...</a>
 
 <script type="text/javascript">
 	function DeleteItem(entrykey)

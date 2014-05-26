@@ -43,4 +43,4 @@
 </cfif>
 
 <!--- Send to the Parent Directory Listing --->
-<cflocation url="default.cfm?action=editfolder&entrykey=#form.frm_entrykey#&currentdir=#form.frm_currentdir#">
+<cflocation url="index.cfm?action=editfolder&entrykey=#form.frm_entrykey#&currentdir=#form.frm_currentdir#">

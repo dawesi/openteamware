@@ -27,7 +27,7 @@
 			<cfloop from="1" to="#(ListLen(a_str_foldername_without_ibx, '.')-1)#" index="ii">
 				<cfset a_str_linked_foldername = ListAppend(a_str_linked_foldername, ListGetAt(a_str_foldername_without_ibx, ii, '.'), '.')>
 				<cfoutput>
-				<a target="framecontent" href="/email/default.cfm?action=ShowMailbox&Mailbox=#urlencodedformat(a_str_linked_foldername)#">#htmleditformat(ListGetAt(a_str_foldername_without_ibx, ii, '.'))#</a> / 
+				<a target="framecontent" href="/email/index.cfm?action=ShowMailbox&Mailbox=#urlencodedformat(a_str_linked_foldername)#">#htmleditformat(ListGetAt(a_str_foldername_without_ibx, ii, '.'))#</a> / 
 				</cfoutput>
 			</cfloop>
 			
@@ -63,7 +63,7 @@
       <td class="bt" colspan="2"> 
         <cfset a_str_show_all_again = GetLangVal("mail_ph_restrict_show_all_again")> 
         <cfset a_str_show_all_again = ReplaceNoCase(a_str_show_all_again , "%recordcount%", a_int_original_recordcount)> 
-        <a href="default.cfm?<cfoutput>#ReplaceOrAddURLParameter(cgi.QUERY_STRING, "restrict", "")#</cfoutput>"><cfoutput>#a_str_show_all_again#</cfoutput></a>
+        <a href="index.cfm?<cfoutput>#ReplaceOrAddURLParameter(cgi.QUERY_STRING, "restrict", "")#</cfoutput>"><cfoutput>#a_str_show_all_again#</cfoutput></a>
 	  </td>
 	 </tr>
 	 <tr> 
@@ -259,7 +259,7 @@
 			<cfset a_str_display_address = q_select_mailbox.afrom />
 		</cfif>
 		
-		<a id="idhref#a_int_index#" onclick="LoadEmailMessage(this);return false;" href="default.cfm?action=ShowMessage&Mailbox=#urlencodedformat(q_select_mailbox.foldername)#&id=#q_select_mailbox.id#&mbox_query_md5=#a_str_md5_query_string#&rowno=#(a_int_index)#" class="nl">
+		<a id="idhref#a_int_index#" onclick="LoadEmailMessage(this);return false;" href="index.cfm?action=ShowMessage&Mailbox=#urlencodedformat(q_select_mailbox.foldername)#&id=#q_select_mailbox.id#&mbox_query_md5=#a_str_md5_query_string#&rowno=#(a_int_index)#" class="nl">
 			#htmleditformat(shortenstring(CheckZerostring(a_str_display_address), 27))#
 			<div>#htmleditformat(Shortenstring(checkzerostring(q_select_mailbox.subject), 27))#</div>
 		</a>

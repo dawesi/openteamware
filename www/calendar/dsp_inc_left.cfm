@@ -29,11 +29,11 @@
 	<cfset a_int_month_number = Month(request.a_dt_current_date) />
 
 	<div class="divleftnavpanelheader" style="white-space:nowrap">
-		<a href="default.cfm?action=ViewMonth&Date=#A_str_link_date#">#LsDateFormat(CreateDate(1900, a_int_month_number, 1), "mmmm")# #Year(request.a_dt_current_date)#
+		<a href="index.cfm?action=ViewMonth&Date=#A_str_link_date#">#LsDateFormat(CreateDate(1900, a_int_month_number, 1), "mmmm")# #Year(request.a_dt_current_date)#
 		<div style="padding:0px;margin-top:10px;">
-		<a href="default.cfm?action=ViewDay&Date=#a_str_dt_yourdate_prev#"><img src="/images/si/resultset_previous.png" class="si_img" /></a>
-		<a href="default.cfm?action=ViewDay&Date=#A_str_link_date#" style="font-size : 14px;font-weight : bold;">#trim(LSdateformat(request.a_dt_current_date, "ddd, dd.mm."))#</a>
-		<a href="default.cfm?action=ViewDay&Date=#a_astr_dt_yourdate_next#"><img src="/images/si/resultset_next.png" class="si_img" /></a>
+		<a href="index.cfm?action=ViewDay&Date=#a_str_dt_yourdate_prev#"><img src="/images/si/resultset_previous.png" class="si_img" /></a>
+		<a href="index.cfm?action=ViewDay&Date=#A_str_link_date#" style="font-size : 14px;font-weight : bold;">#trim(LSdateformat(request.a_dt_current_date, "ddd, dd.mm."))#</a>
+		<a href="index.cfm?action=ViewDay&Date=#a_astr_dt_yourdate_next#"><img src="/images/si/resultset_next.png" class="si_img" /></a>
 		</div>
 	</div>
 	
@@ -42,7 +42,7 @@
 	<ul class="divleftpanelactions">
 		<ul class="divleftpanelactions">
 			<li>
-				<a href="default.cfm?action=ViewDay"><cfoutput>#a_str_today_is#</cfoutput></a>
+				<a href="index.cfm?action=ViewDay"><cfoutput>#a_str_today_is#</cfoutput></a>
 			</li>
 		</ul>
 	</ul>
@@ -77,26 +77,26 @@
 		<table>
 			<tr>
 				<td>
-					<a href="default.cfm?action=Overview&Date=">#GetLangVal('cal_wd_today')#</a>
+					<a href="index.cfm?action=Overview&Date=">#GetLangVal('cal_wd_today')#</a>
 				</td>
 				<td>
-					<a href="default.cfm?action=ViewDay&Date=#A_str_link_date#">#GetLangVal('cal_wd_day')#</a>
-				</td>
-			</tr>
-			<tr>
-				<td>
-					<a href="default.cfm?action=ViewWeek&Date=#A_str_link_date#">#GetLangVal('cal_wd_week')#</a>
-				</td>
-				<td>
-					<a href="default.cfm?action=ViewMonth&Date=#A_str_link_date#">#GetLangVal('cal_wd_month')#</a>
+					<a href="index.cfm?action=ViewDay&Date=#A_str_link_date#">#GetLangVal('cal_wd_day')#</a>
 				</td>
 			</tr>
 			<tr>
 				<td>
-					<a href="default.cfm?action=ViewYear&Date=#A_str_link_date#">#GetLangVal('cal_wd_year')#</a>
+					<a href="index.cfm?action=ViewWeek&Date=#A_str_link_date#">#GetLangVal('cal_wd_week')#</a>
 				</td>
 				<td>
-					<a href="default.cfm?action=ListEvents&Date=#A_str_link_date#">#GetLangVal('cal_wd_list')#</a>
+					<a href="index.cfm?action=ViewMonth&Date=#A_str_link_date#">#GetLangVal('cal_wd_month')#</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<a href="index.cfm?action=ViewYear&Date=#A_str_link_date#">#GetLangVal('cal_wd_year')#</a>
+				</td>
+				<td>
+					<a href="index.cfm?action=ListEvents&Date=#A_str_link_date#">#GetLangVal('cal_wd_list')#</a>
 				</td>
 			</tr>
 		</table>
@@ -135,7 +135,7 @@
 
 	</li>	
 	<li>
-		<a href="default.cfm?action=VirtualCalendars"><cfoutput>#MakeFirstCharUCase(getLangVal('cm_wd_edit'))#</cfoutput></a>
+		<a href="index.cfm?action=VirtualCalendars"><cfoutput>#MakeFirstCharUCase(getLangVal('cm_wd_edit'))#</cfoutput></a>
 	</li>	
 	</ul>
 	
@@ -147,10 +147,10 @@
 		<a href="/assistants/import/">#GetLangVal('cal_ph_outlook_sync')#</a>
 	</li>
 	<li>
-		<a href="default.cfm?action=invitations" target="_blank">#GetLangVal('cal_wd_invitations')#</a>
+		<a href="index.cfm?action=invitations" target="_blank">#GetLangVal('cal_wd_invitations')#</a>
 	</li>
 	<li>
-		<a href="default.cfm?#ReplaceOrAddURLParameter(cgi.QUERY_STRING, 'printmode', 'true')#" target="_blank">#GetLangVal('cal_ph_top_printversion')#</a>
+		<a href="index.cfm?#ReplaceOrAddURLParameter(cgi.QUERY_STRING, 'printmode', 'true')#" target="_blank">#GetLangVal('cal_ph_top_printversion')#</a>
 	</li>
 	</ul>
 	

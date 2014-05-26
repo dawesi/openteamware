@@ -13,7 +13,7 @@
 Are you sure that you want to delete the virtual calendar '<cfoutput>#url.title#</cfoutput>'
 <br /><br />  
 
-<form method="post" action="default.cfm?action=DoDeleteVirtualCalendar">
+<form method="post" action="index.cfm?action=DoDeleteVirtualCalendar">
 <input type="hidden" name="frmentrykey" value="<cfoutput>#url.entrykey#</cfoutput>" />
 <table class="table_detail table_edit_form">
 <tr>

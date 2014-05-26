@@ -170,7 +170,7 @@ function OpenComposePopupTo(email_adr) {
 	if (email_adr) {ato = email_adr;}
 	window.open('mailto:'+ escape(email_adr));
 	return;
-	window.open('/email/default.cfm?action=composemail&to='+escape(ato), '_blank', 'resizable=1,location=0,directories=0,status=1,menubar=0,scrollbars=1,toolbar=0,width=840,height=620');
+	window.open('/email/index.cfm?action=composemail&to='+escape(ato), '_blank', 'resizable=1,location=0,directories=0,status=1,menubar=0,scrollbars=1,toolbar=0,width=840,height=620');
 	}
 	
 function OpenAssignWindow(servicekey,objectkey,title) {
@@ -1482,7 +1482,7 @@ function RemoveOldTempScripts() {
 // params ... array of arguments ... just passed to the template ...
 function OpenPage(service, action, params) {
 	var a_bg_op = new cBasicBgOperation;		
-	var a_str_current_smartload_url = '/' + service + '/default.cfm?smartload=1&action=' + action + '&' + params;			
+	var a_str_current_smartload_url = '/' + service + '/index.cfm?smartload=1&action=' + action + '&' + params;			
 		
 	DisplayStatusInformation(GetLangData(3));
 	
@@ -1815,7 +1815,7 @@ function RefreshActivityMonitor() {
 	
 	window.clearTimeout( vl_tmr_load_email_count );
 	
-	$.get("/email/default.cfm?action=DisplayBottomShortInfo", function(data){
+	$.get("/email/index.cfm?action=DisplayBottomShortInfo", function(data){
 		  $('#id_activites_new_msg_indicator').html($.trim(data)).fadeIn();
 		});
 	

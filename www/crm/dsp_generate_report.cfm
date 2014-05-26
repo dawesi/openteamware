@@ -44,7 +44,7 @@
 <cfset tmp = SetHeaderTopInfoString(GetLangVal('crm_wd_report')) />
 
 <cfoutput>
-<form name="id_form_create_report" id="id_form_create_report" action="default.cfm?action=StartGenerateReport" method="post" style="margin:0px;" onSubmit="SetReportStarted();">
+<form name="id_form_create_report" id="id_form_create_report" action="index.cfm?action=StartGenerateReport" method="post" style="margin:0px;" onSubmit="SetReportStarted();">
 <input type="hidden" name="frmreportkey" value="<cfoutput>#url.entrykey#</cfoutput>">
 
 	

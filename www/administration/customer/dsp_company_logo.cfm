@@ -13,7 +13,7 @@
 <cfinclude template="../dsp_inc_select_company.cfm">
 
 
-<form action="default.cfm?action=companylogo&subaction=upload<cfoutput>#WriteURLTags()#</cfoutput>" method="post" enctype="multipart/form-data">
+<form action="index.cfm?action=companylogo&subaction=upload<cfoutput>#WriteURLTags()#</cfoutput>" method="post" enctype="multipart/form-data">
 	<input type="file" name="frmfile">
 	<input type="submit">
 </form>
@@ -57,5 +57,5 @@
 </cfoutput>
 </div>
 
-<a href="default.cfm?action=companylogo&subaction=delete<cfoutput>#WriteURLTags()#</cfoutput>"><cfoutput>#GetLangVal('cm_wd_delete')#</cfoutput></a>
+<a href="index.cfm?action=companylogo&subaction=delete<cfoutput>#WriteURLTags()#</cfoutput>"><cfoutput>#GetLangVal('cm_wd_delete')#</cfoutput></a>
 </cfif>

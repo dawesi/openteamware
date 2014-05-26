@@ -47,13 +47,13 @@ WHERE
 <table border="0" cellspacing="0" cellpadding="4" class="b_all">
   <tr>
     <td class="br">
-		<a href="default.cfm?action=resellerproperties&resellerkey=<cfoutput>#urlencodedformat(url.resellerkey)#</cfoutput>">&Uuml;bersicht</a>
+		<a href="index.cfm?action=resellerproperties&resellerkey=<cfoutput>#urlencodedformat(url.resellerkey)#</cfoutput>">&Uuml;bersicht</a>
 	</td>
     <td class="br">
-		<a href="default.cfm?action=resellerproperties&subaction=sales&resellerkey=<cfoutput>#urlencodedformat(url.resellerkey)#</cfoutput>">Ums&auml;tze</a>
+		<a href="index.cfm?action=resellerproperties&subaction=sales&resellerkey=<cfoutput>#urlencodedformat(url.resellerkey)#</cfoutput>">Ums&auml;tze</a>
 	</td>
     <td>
-		<a href="default.cfm?action=resellerproperties&subaction=performance&resellerkey=<cfoutput>#urlencodedformat(url.resellerkey)#</cfoutput>">Performance/Statistik</a>
+		<a href="index.cfm?action=resellerproperties&subaction=performance&resellerkey=<cfoutput>#urlencodedformat(url.resellerkey)#</cfoutput>">Performance/Statistik</a>
 	</td>
   </tr>
 </table>
@@ -77,7 +77,7 @@ WHERE
   	<tr>
 		<td></td>
 		<td>
-			<a href="default.cfm?action=customerproperties&companykey=#q_select_reseller.entrykey#&resellerkey=">Companydata</a>
+			<a href="index.cfm?action=customerproperties&companykey=#q_select_reseller.entrykey#&resellerkey=">Companydata</a>
 		</td>
 	</tr>
   </cfif>
@@ -144,13 +144,13 @@ WHERE
 
 <ul style="line-height:20px; ">
 	<li>
-		<a href="default.cfm?Action=customers&resellerkey=#urlencodedformat(q_select_reseller.entrykey)#"><b>Kundenverwaltung</b></a>
+		<a href="index.cfm?Action=customers&resellerkey=#urlencodedformat(q_select_reseller.entrykey)#"><b>Kundenverwaltung</b></a>
 		<br>
 		Alle Kunden dieses Resellers anzeigen ...
 	
 	</li>
 	<li>
-		<a href="stat/default.cfm?resellerkeys=#urlencodedformat(q_select_reseller.entrykey)#"><b>Reporting anzeigen</b></a>	
+		<a href="stat/index.cfm?resellerkeys=#urlencodedformat(q_select_reseller.entrykey)#"><b>Reporting anzeigen</b></a>	
 		<br>
 		Umsatz/Kundenentwicklung/Demographie
 	</li>

@@ -26,7 +26,7 @@
 </cfif>
 
 
-<form action="default.cfm?action=DoCreatenewFile" method="post" style="margin:0px; ">
+<form action="index.cfm?action=DoCreatenewFile" method="post" style="margin:0px; ">
 <input type="hidden" name="frmdirectorykey" value="<cfoutput>#url.entrykey#</cfoutput>">
 <table class="table_details table_edit_form">
 	<tr>

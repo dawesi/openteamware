@@ -1,4 +1,4 @@
-<!--- updaten und zurückkehren --->
+<!--- updaten und zurï¿½ckkehren --->
 <cfinclude template="../common/scripts/script_utils.cfm">
 
 
@@ -8,7 +8,7 @@
 
 <!--- calculate redirect url --->
 <cfif Len(form.frmReturnURL) is 0>
-	<cfset a_str_redirect_url = "default.cfm?action=ShowTask&id="&val(form.frmID)>
+	<cfset a_str_redirect_url = "index.cfm?action=ShowTask&id="&val(form.frmID)>
 <cfelse>
 	<cfset a_str_redirect_url = urldecode(form.frmReturnURL)>
 </cfif>

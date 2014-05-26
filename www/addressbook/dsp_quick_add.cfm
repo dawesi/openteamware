@@ -85,7 +85,7 @@
 
 	<td>
 
-	<cfoutput>#GetLangVal('adrb_ph_quickadd_enable_remotedit')#</cfoutput> [ <a href="/help/default.cfm?action=faq&id=46" target="_blank">FAQt</a> ]
+	<cfoutput>#GetLangVal('adrb_ph_quickadd_enable_remotedit')#</cfoutput> [ <a href="/help/index.cfm?action=faq&id=46" target="_blank">FAQt</a> ]
 
 	</td>
 

@@ -67,7 +67,7 @@ FROM
 		<cfinvokeargument name="entrykey" value="#q_select_all_sales.companykey#">
 	</cfinvoke>
 	
-	<a href="default.cfm?action=customerproperties&companykey=#htmleditformat(q_select_all_sales.companykey)#&resellerkey=#url.resellerkey#">#htmleditformat(a_str_company_name)#</a>
+	<a href="index.cfm?action=customerproperties&companykey=#htmleditformat(q_select_all_sales.companykey)#&resellerkey=#url.resellerkey#">#htmleditformat(a_str_company_name)#</a>
 	</td>
     <td align="right">
 	#q_select_all_sales.invoicetotalsum# &euro;

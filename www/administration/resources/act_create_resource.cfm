@@ -15,4 +15,4 @@
 </cfinvoke>
 
 
-<cflocation addtoken="no" url="../default.cfm?action=resources#WriteURLTagsfromForm()#">
+<cflocation addtoken="no" url="../index.cfm?action=resources#WriteURLTagsfromForm()#">

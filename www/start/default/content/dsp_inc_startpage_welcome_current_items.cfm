@@ -21,7 +21,7 @@
 function DisplayNewFiles() {
 	var a_simple_get = new cBasicBgOperation();
 	
-	a_simple_get.url = '/storage/default.cfm?Action=DisplayLatelyAddedFilesList';
+	a_simple_get.url = '/storage/index.cfm?Action=DisplayLatelyAddedFilesList';
 	a_simple_get.id_obj_display_content = '<cfoutput>#a_str_id_files#</cfoutput>';
 	a_simple_get.doOperation();
 	}

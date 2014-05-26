@@ -19,4 +19,4 @@ WHERE
 
 <cfdump var="#form#">
 
-<cflocation addtoken="no" url="../default.cfm?action=workgroups&resellerkey=#urlencodedformat(form.frmresellerkey)#&companykey=#urlencodedformat(form.frmcompanykey)#">
+<cflocation addtoken="no" url="../index.cfm?action=workgroups&resellerkey=#urlencodedformat(form.frmresellerkey)#&companykey=#urlencodedformat(form.frmcompanykey)#">

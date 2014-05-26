@@ -11,7 +11,7 @@
 
 <!--- if no binding exists, forward to set binding page ... --->
 <cfif Len(a_struct_crmsales_bindings.databasekey) IS 0>
-	<cflocation addtoken="no" url="default.cfm?action=crm&subaction=bindDatabase#writeurltags()#&reason=empty_databasekey">
+	<cflocation addtoken="no" url="index.cfm?action=crm&subaction=bindDatabase#writeurltags()#&reason=empty_databasekey">
 </cfif>
 
 <!--- load databases of company --->
@@ -69,7 +69,7 @@ WHERE
 			<td>
 				<b><cfoutput>#q_select_crm_db_name.name#</cfoutput></b>
 				&nbsp;&nbsp;
-				<a href="default.cfm?action=crm&subaction=bindDatabase<cfoutput>#writeurltags()#</cfoutput>"><cfoutput>#si_img('pencil')# #GetLangVal('cm_wd_edit')#</cfoutput></a>
+				<a href="index.cfm?action=crm&subaction=bindDatabase<cfoutput>#writeurltags()#</cfoutput>"><cfoutput>#si_img('pencil')# #GetLangVal('cm_wd_edit')#</cfoutput></a>
 			</td>
 		  </tr>
 		  <tr>

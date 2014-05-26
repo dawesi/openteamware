@@ -30,7 +30,7 @@ ORDER BY origin,emailadr;
 	<h1>No e-mail address defined yet.</h1>
 	To enable all features, you've to integrate an existing email address.
 	<br /><br />
-	<a href="default.cfm?action=addemailaccount">Click here to continue with the setup ...</a>
+	<a href="index.cfm?action=addemailaccount">Click here to continue with the setup ...</a>
 	</div>
 </cfif>
 
@@ -79,7 +79,7 @@ ORDER BY origin,emailadr;
 
     <td>
 
-	<a style="font-weight:bold;" href="default.cfm?action=editemailaccount&id=#q_select_all_email_data.id#">#htmleditformat(q_select_all_email_data.emailadr)#</a>
+	<a style="font-weight:bold;" href="index.cfm?action=editemailaccount&id=#q_select_all_email_data.id#">#htmleditformat(q_select_all_email_data.emailadr)#</a>
 
 
 	<cfif (q_select_all_email_data.emailadr is a_str_default_address) OR
@@ -113,7 +113,7 @@ ORDER BY origin,emailadr;
 
 		<!--- <cfif (request.stSecurityContext.myusername is q_select_all_email_data.emailadr)>
 
-			<a href="default.cfm?action=emailaccessdata">#GetLangVal('email_ph_imap_pop3_smtp_access')# ...</a>
+			<a href="index.cfm?action=emailaccessdata">#GetLangVal('email_ph_imap_pop3_smtp_access')# ...</a>
 
 		<cfelse>
 
@@ -135,7 +135,7 @@ ORDER BY origin,emailadr;
 
 	<font color="red">#GetLangVal('cm_wd_no')#</font><br>
 
-	<a href="default.cfm?action=Requestconfirmationcode&id=#q_select_all_email_data.id#"><b>#GetLangVal('prf_ph_email_re_request_confirmation_code')#</b></a>	
+	<a href="index.cfm?action=Requestconfirmationcode&id=#q_select_all_email_data.id#"><b>#GetLangVal('prf_ph_email_re_request_confirmation_code')#</b></a>	
 
 	</cfif>
 
@@ -149,11 +149,11 @@ ORDER BY origin,emailadr;
 
 	&nbsp;
 
-	<!--- <a href="default.cfm?action=editemailaccount&id=#q_select_all_email_data.id#"><img src="/images/si/pencil.png" class="si_img" /> #GetLangVal('cm_wd_edit')#</a>
+	<!--- <a href="index.cfm?action=editemailaccount&id=#q_select_all_email_data.id#"><img src="/images/si/pencil.png" class="si_img" /> #GetLangVal('cm_wd_edit')#</a>
 
 	&nbsp; --->
 
-	<a href="default.cfm?action=deleteemailaccount&id=#q_select_all_email_data.id#"><img src="/images/si/delete.png" class="si_img" /> #GetLangVal('cm_wd_delete')#</a>
+	<a href="index.cfm?action=deleteemailaccount&id=#q_select_all_email_data.id#"><img src="/images/si/delete.png" class="si_img" /> #GetLangVal('cm_wd_delete')#</a>
 
 	</td>
 

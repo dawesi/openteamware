@@ -7,12 +7,12 @@
 
 <cfsavecontent variable="a_str_js">
     function ConfirmDeleteProductGroup(entrykey, productgroupname) {
-    	var url = 'default.cfm?action=productadministration<cfoutput>#WriteURLTags()#</cfoutput>&subaction=deleteproductgroup&entrykey=' + escape(entrykey) + '&productgroupname=' + escape(productgroupname);
+    	var url = 'index.cfm?action=productadministration<cfoutput>#WriteURLTags()#</cfoutput>&subaction=deleteproductgroup&entrykey=' + escape(entrykey) + '&productgroupname=' + escape(productgroupname);
     	ShowSimpleConfirmationDialog(url);
     }
     
     function ConfirmDeleteProduct(entrykey, productname) {
-    	var url = 'default.cfm?action=productadministration<cfoutput>#WriteURLTags()#</cfoutput>&subaction=deleteproduct&entrykey=' + escape(entrykey) + '&productname=' + escape(productname);
+    	var url = 'index.cfm?action=productadministration<cfoutput>#WriteURLTags()#</cfoutput>&subaction=deleteproduct&entrykey=' + escape(entrykey) + '&productname=' + escape(productname);
 		ShowSimpleConfirmationDialog(url);
     }
 </cfsavecontent>
@@ -64,7 +64,7 @@
             #htmleditformat(stReturn.q_select_product_groups.category2)#
         </td>
         <td>
-            <a href="default.cfm?action=productadministration#WriteURLTags()#&subaction=addproductgroup&entrykey=#stReturn.q_select_product_groups.entrykey#">
+            <a href="index.cfm?action=productadministration#WriteURLTags()#&subaction=addproductgroup&entrykey=#stReturn.q_select_product_groups.entrykey#">
                 <img src="/images/si/pencil.png" class="si_img" />
             </a>
 			<a href="##" onclick="ConfirmDeleteProductGroup('#jsstringformat(stReturn.q_select_product_groups.entrykey)#', '#jsstringformat(stReturn.q_select_product_groups.productgroupname)#');return false;">
@@ -77,7 +77,7 @@
 </cfsavecontent>
 
 <cfsavecontent variable="a_str_button_group">
-	<input type="button" value="<cfoutput>#GetLangVal('cm_wd_new')#</cfoutput>" onclick="GotoLocHref('default.cfm?action=productadministration<cfoutput>#WriteURLTags()#</cfoutput>&subaction=addproductgroup');" class="btn" />
+	<input type="button" value="<cfoutput>#GetLangVal('cm_wd_new')#</cfoutput>" onclick="GotoLocHref('index.cfm?action=productadministration<cfoutput>#WriteURLTags()#</cfoutput>&subaction=addproductgroup');" class="btn" />
 </cfsavecontent>
 
 <cfoutput>#WriteNewContentBox(GetLangVal('crm_ph_product_groups'), a_str_button_group, a_str_content_group)#</cfoutput>
@@ -115,7 +115,7 @@
 <cfoutput query="stReturn.q_select_products">
     <tr>
         <td>
-           <img src="/images/si/note.png" class="si_img" /> <a href="default.cfm?action=productadministration#WriteURLTags()#&subaction=ShowProduct&entrykey=#stReturn.q_select_products.entrykey#">#htmleditformat(stReturn.q_select_products.title)#</a>
+           <img src="/images/si/note.png" class="si_img" /> <a href="index.cfm?action=productadministration#WriteURLTags()#&subaction=ShowProduct&entrykey=#stReturn.q_select_products.entrykey#">#htmleditformat(stReturn.q_select_products.title)#</a>
         </td>
         <td>
             #htmleditformat(stReturn.q_select_products.description)#
@@ -136,7 +136,7 @@
 			#htmleditformat(stReturn.q_select_products.category1)# #htmleditformat(stReturn.q_select_products.category2)#
 		</td>
         <td>
-            <a href="default.cfm?action=productadministration#WriteURLTags()#&subaction=addproduct&entrykey=#stReturn.q_select_products.entrykey#">
+            <a href="index.cfm?action=productadministration#WriteURLTags()#&subaction=addproduct&entrykey=#stReturn.q_select_products.entrykey#">
                 <img src="/images/si/pencil.png" class="si_img" />
             </a>
         
@@ -150,7 +150,7 @@
 </cfsavecontent>
 
 <cfsavecontent variable="a_str_button_product">
-	<input type="button" value="<cfoutput>#GetLangVal('cm_wd_new')#</cfoutput>" onclick="GotoLocHref('default.cfm?action=productadministration<cfoutput>#WriteURLTags()#</cfoutput>&subaction=addproduct');" class="btn" />
+	<input type="button" value="<cfoutput>#GetLangVal('cm_wd_new')#</cfoutput>" onclick="GotoLocHref('index.cfm?action=productadministration<cfoutput>#WriteURLTags()#</cfoutput>&subaction=addproduct');" class="btn" />
 </cfsavecontent>
 <cfoutput>#WriteNewContentBox(GetLangVal('cm_wd_products'), a_str_button_product, a_str_content_products)#</cfoutput>
 

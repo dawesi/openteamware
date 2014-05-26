@@ -39,10 +39,10 @@
 <cfoutput query="q_select_newest_postings">
 	<tr>
 		<td colspan="2">
-			<a href="/forum/default.cfm?action=showthread&entrykey=#q_select_newest_postings.entrykey#&forumkey=#q_select_newest_postings.forumkey#"><img src="/images/si/comment.png" class="si_img" /> #htmleditformat(checkzerostring(q_select_newest_postings.subject))#</a>
+			<a href="/forum/index.cfm?action=showthread&entrykey=#q_select_newest_postings.entrykey#&forumkey=#q_select_newest_postings.forumkey#"><img src="/images/si/comment.png" class="si_img" /> #htmleditformat(checkzerostring(q_select_newest_postings.subject))#</a>
 			
 			
-			(<!--- <a href="/forum/default.cfm?action=ShowForum&entrykey=#q_select_newest_postings.forumkey#"> --->#htmleditformat(application.components.cmp_forum.GetForumNameByEntrykey(q_select_newest_postings.forumkey))#<!--- </a> --->)
+			(<!--- <a href="/forum/index.cfm?action=ShowForum&entrykey=#q_select_newest_postings.forumkey#"> --->#htmleditformat(application.components.cmp_forum.GetForumNameByEntrykey(q_select_newest_postings.forumkey))#<!--- </a> --->)
 		</td>
 	</tr>
 </cfoutput>

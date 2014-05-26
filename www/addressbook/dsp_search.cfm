@@ -54,7 +54,7 @@
 	  <cfoutput query="q_select_all_filters">
 	  <tr>
 		<td>
-			<a style="font-weight:bold;" href="default.cfm?action=Advancedsearch&entrykey=#q_select_all_filters.entrykey#"><img src="/images/si/find.png" class="si_img" /> #htmleditformat(q_select_all_filters.viewname)#</a>
+			<a style="font-weight:bold;" href="index.cfm?action=Advancedsearch&entrykey=#q_select_all_filters.entrykey#"><img src="/images/si/find.png" class="si_img" /> #htmleditformat(q_select_all_filters.viewname)#</a>
 		</td>
 		<td>
 			#htmleditformat(q_select_all_filters.description)#
@@ -63,7 +63,7 @@
 			#DateFormat(q_select_all_filters.dt_created, request.stUserSettings.default_dateformat)#
 		</td>
 		<td>
-			<a onClick="ShowSimpleConfirmationDialog('default.cfm?action=DeleteCRMFilter&entrykey=#q_select_all_filters.entrykey#');" href="##"><img src="/images/si/delete.png" class="si_img" /> #GetLangVal('cm_wd_delete')#</a>
+			<a onClick="ShowSimpleConfirmationDialog('index.cfm?action=DeleteCRMFilter&entrykey=#q_select_all_filters.entrykey#');" href="##"><img src="/images/si/delete.png" class="si_img" /> #GetLangVal('cm_wd_delete')#</a>
 		</td>
 	  </tr>
 	  </cfoutput>
@@ -86,7 +86,7 @@
 			<cfoutput>#GetLangVal('crm_ph_save_filter_criterias_description')#</cfoutput>
 		</div>
 		
-		<form action="default.cfm?action=SaveCRMFilter" method="post" style="margin:0px; ">
+		<form action="index.cfm?action=SaveCRMFilter" method="post" style="margin:0px; ">
 		<table class="table_details table_edit_form">
 		  <tr>
 			<td class="field_name">
@@ -166,8 +166,8 @@
 
 <cfsavecontent variable="a_str_btn">
 	<cfoutput>
-	<input type="button" onclick="GotoLocHref('default.cfm?action=ShowContacts&filterdatatype=#url.filterdatatype#&filterviewkey=#url.entrykey#');" class="btn" value="#GetLangVal('crm_ph_apply_filter_view_now')#" />
-	<!--- <input type="button" class="btn" onclick="GotoLocHref('default.cfm?action=AdvancedSearch');" value="#GetLangVal('crm_ph_create_new_empty_filter')#" />
+	<input type="button" onclick="GotoLocHref('index.cfm?action=ShowContacts&filterdatatype=#url.filterdatatype#&filterviewkey=#url.entrykey#');" class="btn" value="#GetLangVal('crm_ph_apply_filter_view_now')#" />
+	<!--- <input type="button" class="btn" onclick="GotoLocHref('index.cfm?action=AdvancedSearch');" value="#GetLangVal('crm_ph_create_new_empty_filter')#" />
 	 ---></cfoutput>
 </cfsavecontent>
 
@@ -187,7 +187,7 @@
 	<input type="submit" class="btn" value="<cfoutput>#GetLangVal('crm_ph_button_add_filter_criteria')#</cfoutput>" />
 </cfsavecontent>
 
-<form action="default.cfm?action=AddCRMFilterCriteria" method="post" style="margin:0px; ">
+<form action="index.cfm?action=AddCRMFilterCriteria" method="post" style="margin:0px; ">
 <input type="hidden" name="frmentrykey" value="<cfoutput>#htmleditformat(url.entrykey)#</cfoutput>" />
 <cfoutput>#WriteNewContentBox(GetLangVal('crm_ph_add_criteria'), a_str_btn, a_str_content)#</cfoutput>
 </form>

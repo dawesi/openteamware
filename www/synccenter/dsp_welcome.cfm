@@ -113,11 +113,11 @@
 				</cfif>
 			</td>
 			<td>
-				<a href="default.cfm?action=enablemobilesync&deviceid=#urlencodedformat(q_select_devices.id)#"><img src="/images/icon/notizen.gif" align="absmiddle" border="0"> #GetLangVal('sync_ph_operating_hints')#</a>
+				<a href="index.cfm?action=enablemobilesync&deviceid=#urlencodedformat(q_select_devices.id)#"><img src="/images/icon/notizen.gif" align="absmiddle" border="0"> #GetLangVal('sync_ph_operating_hints')#</a>
 				<br><br>
-				<a onClick="alert('#GetLangValJS('cm_ph_not_available_yet_message')#');" href="default.cfm?action=editmobilesyncdevice&device=#urlencodedformat(q_select_devices.id)#">#si_img('pencil')# #GetLangVal('cm_wd_edit')#</a>
+				<a onClick="alert('#GetLangValJS('cm_ph_not_available_yet_message')#');" href="index.cfm?action=editmobilesyncdevice&device=#urlencodedformat(q_select_devices.id)#">#si_img('pencil')# #GetLangVal('cm_wd_edit')#</a>
 				<br><br>
-				<a onClick="alert('#GetLangValJS('cm_ph_not_available_yet_message')#');" href="default.cfm?action=deletemobilesyncdevice&device=#urlencodedformat(q_select_devices.id)#"><img src="/images/email/img_trash_19x16.gif" align="absmiddle" border="0"> #GetLangVal('cm_wd_delete')#</a>
+				<a onClick="alert('#GetLangValJS('cm_ph_not_available_yet_message')#');" href="index.cfm?action=deletemobilesyncdevice&device=#urlencodedformat(q_select_devices.id)#"><img src="/images/email/img_trash_19x16.gif" align="absmiddle" border="0"> #GetLangVal('cm_wd_delete')#</a>
 			</td>
 		  </tr>
 		  </cfoutput>
@@ -127,14 +127,14 @@
 	<br><br>
 	<!---<a style="font-weight:bold; " href=""><cfoutput>#GetLangVal('sync_ph_add_new_device')#</cfoutput> ...</a>
 	&nbsp;&nbsp;--->
-	<a href="/settings/default.cfm?action=mobilesync"><cfoutput>#GetLangVal('sync_ph_mobilesync_further_settings')#</cfoutput> ...</a>
+	<a href="/settings/index.cfm?action=mobilesync"><cfoutput>#GetLangVal('sync_ph_mobilesync_further_settings')#</cfoutput> ...</a>
 	&nbsp;&nbsp;
-	<a href="default.cfm?action=mobilesync"><cfoutput>#GetLangVal('cm_ph_faq_long')#</cfoutput></a>
+	<a href="index.cfm?action=mobilesync"><cfoutput>#GetLangVal('cm_ph_faq_long')#</cfoutput></a>
 </cfsavecontent>	
 
 <cfsavecontent variable="a_str_buttons">
 	<cfoutput>
-		<input onClick="location.href = 'default.cfm?action=addmobilesyncdevice';" type="button" value="#GetLangVal('sync_ph_add_new_device')#" class="btn">
+		<input onClick="location.href = 'index.cfm?action=addmobilesyncdevice';" type="button" value="#GetLangVal('sync_ph_add_new_device')#" class="btn">
 	</cfoutput>
 </cfsavecontent>
 

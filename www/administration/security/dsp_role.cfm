@@ -10,7 +10,7 @@
 <cfset q_select_securityroles_ip_restrictions = stReturn.q_select_securityroles_ip_restrictions>
 
 <br>
-<a href="default.cfm?action=security<cfoutput>#WriteURLTags()#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_security_roles_goto_overview')#</cfoutput></a>
+<a href="index.cfm?action=security<cfoutput>#WriteURLTags()#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_security_roles_goto_overview')#</cfoutput></a>
 <br><br>
 <table border="0" cellspacing="0" cellpadding="4">
 <cfoutput query="q_select_role">
@@ -100,7 +100,7 @@
  	<td></td>
 	<td>
 	<cfoutput query="q_select_users">
-	#q_select_users.surname#, #q_select_users.firstname# (#q_select_users.username#) <a href="default.cfm?action=securityrole.removeuser&rolekey=#urlencodedformat(url.entrykey)#&userkey=#urlencodedformat(q_select_users.entrykey)##WriteURLTags()#">#si_img('delete')#</a><br>
+	#q_select_users.surname#, #q_select_users.firstname# (#q_select_users.username#) <a href="index.cfm?action=securityrole.removeuser&rolekey=#urlencodedformat(url.entrykey)#&userkey=#urlencodedformat(q_select_users.entrykey)##WriteURLTags()#">#si_img('delete')#</a><br>
 	</cfoutput>
 	</td>
  </tr>

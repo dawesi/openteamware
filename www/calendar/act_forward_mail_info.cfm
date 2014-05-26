@@ -29,4 +29,4 @@
 		
 <cfset a_str_subject = GetLangVal('cal_ph_mail_eventinfo_subject')&' >'&htmleditformat(q_select_event.title)&'<'>
 
-<cflocation addtoken="No" url="../email/default.cfm?action=ComposeMail&subject=#urlencodedformat(a_str_subject)#&to=&body=#urlencodedformat(a_str_body)#">
+<cflocation addtoken="No" url="../email/index.cfm?action=ComposeMail&subject=#urlencodedformat(a_str_subject)#&to=&body=#urlencodedformat(a_str_body)#">

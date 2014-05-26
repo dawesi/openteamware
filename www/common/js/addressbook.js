@@ -24,7 +24,7 @@ function SetPhotoForContact(entrykey) {
 	var a_alg = new cSimpleModalDialog();
 	a_alg.type = 'custom';
 	a_alg.customtitle = 'Photo';
-	a_alg.customcontent_load_from_url = 'default.cfm?action=SetPhotoForContact&entrykey=' + escape(entrykey);
+	a_alg.customcontent_load_from_url = 'index.cfm?action=SetPhotoForContact&entrykey=' + escape(entrykey);
 	a_alg.ShowDialog();	
 }
 
@@ -86,7 +86,7 @@ function DoHandleCurItemAction(action) {
 	var a_simple_modal_dialog = new cSimpleModalDialog();
 	switch (action){
 	case "display":
-		location.href = 'default.cfm?action=ShowItem&entrykey=' + escape(a_currently_selected_contact_entrykeys);
+		location.href = 'index.cfm?action=ShowItem&entrykey=' + escape(a_currently_selected_contact_entrykeys);
 		break;
 	case "enablere":
 		CallRemoteEditDialog(a_currently_selected_contact_entrykeys);
@@ -94,14 +94,14 @@ function DoHandleCurItemAction(action) {
 	case "delete":
 		a_simple_modal_dialog.type = 'confirmation';
 		a_simple_modal_dialog.customcontent = '';
-		a_simple_modal_dialog.executeurl = 'default.cfm?action=deletecontacts&confirmed=true&redirect_start_contacts=true&entrykeys=' + escape(a_currently_selected_contact_entrykeys);
+		a_simple_modal_dialog.executeurl = 'index.cfm?action=deletecontacts&confirmed=true&redirect_start_contacts=true&entrykeys=' + escape(a_currently_selected_contact_entrykeys);
 		a_simple_modal_dialog.ShowDialog();	
 		break;
 	case "edit":
-		location.href = 'default.cfm?action=EditItem&entrykey=' + escape(a_currently_selected_contact_entrykeys);
+		location.href = 'index.cfm?action=EditItem&entrykey=' + escape(a_currently_selected_contact_entrykeys);
 		break;
 	case "forward":
-		location.href = 'default.cfm?action=forward&entrykeys=' + escape(a_currently_selected_contact_entrykeys);
+		location.href = 'index.cfm?action=forward&entrykeys=' + escape(a_currently_selected_contact_entrykeys);
 		break;
 	case "googlemaps":
 		OpenAddressOptions(a_currently_selected_contact_entrykeys);
@@ -126,13 +126,13 @@ function call_edit_contact(entrykey, area) {
 	
 	switch (area) {
 	  case "projects":
-		location.href = '/projects/default.cfm?action=ShowProjectsAssignedToContact&contactkey=' + escape(entrykey);
+		location.href = '/projects/index.cfm?action=ShowProjectsAssignedToContact&contactkey=' + escape(entrykey);
 		break;		
 	  case "contactdata":
-		location.href = 'default.cfm?action=edititem&entrykey=' + escape(entrykey);
+		location.href = 'index.cfm?action=edititem&entrykey=' + escape(entrykey);
 		break;
 	  case "assignments":
-    	url = '/crm/dialogs/edit_assignments/default.cfm?editmode=true&rights=read,write,edit&entrykeys='+ escape(entrykey) + '&servicekey=52227624-9DAA-05E9-0892A27198268072';
+    	url = '/crm/dialogs/edit_assignments/index.cfm?editmode=true&rights=read,write,edit&entrykeys='+ escape(entrykey) + '&servicekey=52227624-9DAA-05E9-0892A27198268072';
     	mywin = window.open(url, "", "RESIZABLE=yes,SCROLLBARS=yes,WIDTH=780,HEIGHT=500");
     	mywin.window.focus();		
 		break;			
@@ -146,13 +146,13 @@ function call_edit_contact(entrykey, area) {
     	break;		
 	  case "files":
 	  	// display files in editmode ...
-    	url = '/crm/dialogs/editfilesassignedtocontact/default.cfm?entrykey='+ escape(entrykey);
+    	url = '/crm/dialogs/editfilesassignedtocontact/index.cfm?entrykey='+ escape(entrykey);
     	mywin = window.open(url, "", "RESIZABLE=yes,SCROLLBARS=yes,WIDTH=780,HEIGHT=500");
     	mywin.window.focus();
 		break;		
 	  case "contact_links":
 	  	// display files in editmode ...
-    	url = '/crm/dialogs/edit_links/default.cfm?entrykey='+ escape(entrykey) +'&servicekey=52227624-9DAA-05E9-0892A27198268072';
+    	url = '/crm/dialogs/edit_links/index.cfm?entrykey='+ escape(entrykey) +'&servicekey=52227624-9DAA-05E9-0892A27198268072';
     	mywin = window.open(url, "", "RESIZABLE=yes,SCROLLBARS=yes,WIDTH=780,HEIGHT=500");
     	mywin.window.focus();
 		break;			
@@ -208,11 +208,11 @@ function OpenSelectedSuperiorContact(entrykey) {
 	
 
 function composemail(adr) {
-	location.href = "../email/default.cfm?action=composemail&type=0&to="+adr;
+	location.href = "../email/index.cfm?action=composemail&type=0&to="+adr;
 	}
 
 function ComposeSMS2Nr(nr) {
-	location.href = "/mobile/default.cfm?action=sms&smsto="+escape(nr);
+	location.href = "/mobile/index.cfm?action=sms&smsto="+escape(nr);
 	}	
 
 function sorrynomobilrnr() {
@@ -270,12 +270,12 @@ function SetContactItemType(v)
 	
 function CallRemoteEditDialog(entrykeys) {
 	var a_simple_modal_dialog = new cSimpleModalDialog();
-	a_simple_modal_dialog.SetType('custom').SetTitle('RemoteEdit').SetCustomContentURL('default.cfm?Action=ActiveREInpage&entrykeys=' + escape(entrykeys)).ShowDialog();
+	a_simple_modal_dialog.SetType('custom').SetTitle('RemoteEdit').SetCustomContentURL('index.cfm?Action=ActiveREInpage&entrykeys=' + escape(entrykeys)).ShowDialog();
 	}
 	
 // do duplicate a contact
 function DuplicateContact(entrykey,contacttype) {
-	location.href = 'default.cfm?Action=createnewitem&datatype=' + contacttype + '&clonefromcontactkey=' + escape(entrykey);
+	location.href = 'index.cfm?Action=createnewitem&datatype=' + contacttype + '&clonefromcontactkey=' + escape(entrykey);
 	}
 	
 // update last contact
@@ -312,7 +312,7 @@ function OpenCallPopup(contactkey, telnr, type) {
 	
 	a_simple_modal_dialog.placedialogontop = true;
 	a_simple_modal_dialog = a_simple_modal_dialog.SetType('custom').SetTitle('telnr');
-	a_simple_modal_dialog.customcontent_load_from_url = 'default.cfm?Action=OpenCallDialog&contactkey=' + escape(contactkey) + '&telnr=' + escape(telnr) + '&type=' + escape(atype);
+	a_simple_modal_dialog.customcontent_load_from_url = 'index.cfm?Action=OpenCallDialog&contactkey=' + escape(contactkey) + '&telnr=' + escape(telnr) + '&type=' + escape(atype);
 	a_simple_modal_dialog.ShowDialog();	
 	}
 	
@@ -328,7 +328,7 @@ function OpenAddressOptions(contactkey,adr_type,street,zipcode,city,country) {
 	a_dlg.type = 'custom';
 	a_dlg.customtitle = 'Location';
 	a_dlg.customwidth = '780px';
-	a_dlg.customcontent_load_from_url = 'default.cfm?Action=OpenAddressOptionsDialog&adr_type=' + encodeURIComponent(adr_type) + '&contactkey=' + encodeURIComponent(contactkey) + '&street=' + encodeURIComponent(street) + '&city=' + encodeURIComponent(city) + '&zipcode=' + encodeURIComponent(zipcode) + '&country=' + encodeURIComponent(country);
+	a_dlg.customcontent_load_from_url = 'index.cfm?Action=OpenAddressOptionsDialog&adr_type=' + encodeURIComponent(adr_type) + '&contactkey=' + encodeURIComponent(contactkey) + '&street=' + encodeURIComponent(street) + '&city=' + encodeURIComponent(city) + '&zipcode=' + encodeURIComponent(zipcode) + '&country=' + encodeURIComponent(country);
 	a_dlg.ShowDialog();	
 	}
 	
@@ -337,7 +337,7 @@ function OpenEmailPopup(contactkey,emailadr) {
 	var a_simple_modal_dialog = new cSimpleModalDialog();
 	a_simple_modal_dialog.type = 'custom';
 	a_simple_modal_dialog.customtitle = 'E-Mail';
-	a_simple_modal_dialog.customcontent_load_from_url = 'default.cfm?Action=OpenEmailDialog&contactkey=' + escape(contactkey) + '&emailadr=' + escape(emailadr);
+	a_simple_modal_dialog.customcontent_load_from_url = 'index.cfm?Action=OpenEmailDialog&contactkey=' + escape(contactkey) + '&emailadr=' + escape(emailadr);
 	a_simple_modal_dialog.ShowDialog();	
 	}
 	
@@ -361,7 +361,7 @@ function ShowFilterAreaData(viewkey, area, fieldname, datatype) {
 	var a_simple_modal_dialog = new cSimpleModalDialog();
 	a_simple_modal_dialog.type = 'custom';
 	a_simple_modal_dialog.customtitle = GetLangData(8);
-	a_simple_modal_dialog.customcontent_load_from_url = 'default.cfm?Action=ShowDlgAddFilterCriteria&area=' + escape(area) + '&datatype=' + escape(datatype) + '&viewkey=' +  escape(viewkey) + '&fieldname=' + escape(fieldname);
+	a_simple_modal_dialog.customcontent_load_from_url = 'index.cfm?Action=ShowDlgAddFilterCriteria&area=' + escape(area) + '&datatype=' + escape(datatype) + '&viewkey=' +  escape(viewkey) + '&fieldname=' + escape(fieldname);
 	a_simple_modal_dialog.ShowDialog();			
 	}
 	

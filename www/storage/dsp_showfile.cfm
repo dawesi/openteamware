@@ -89,24 +89,24 @@
 			<cfset tmp = SetHeaderTopInfoString(GetLangVal('sto_ph_image_display'))>
 			<br>
 			
-			<a href="default.cfm?action=showfiles&directorykey=#q_query_file.parentdirectorykey#">#GetLangVal('sto_ph_back_to_the_directory')# ...</a><br>
+			<a href="index.cfm?action=showfiles&directorykey=#q_query_file.parentdirectorykey#">#GetLangVal('sto_ph_back_to_the_directory')# ...</a><br>
 
 		<cfif len(a_str_prev_key) gt 0 >
-			<a href="default.cfm?action=showfile&entrykey=#a_str_prev_key#">
+			<a href="index.cfm?action=showfile&entrykey=#a_str_prev_key#">
 				#getlangval('sto_wd_prev')#
 			</a>
 		</cfif>
 		<cfif len(a_str_next_key) gt 0 >
-			<a href="default.cfm?action=showfile&entrykey=#a_str_next_key#">
+			<a href="index.cfm?action=showfile&entrykey=#a_str_next_key#">
 				<img src="/images/arrows/img_green_button_16x16.gif" align="absmiddle" vspace="4" hspace="4" border="0"> #getlangval('sto_wd_next')#
 			</a>
 		</cfif>
 		<br>		
 		<!---Picturetype: #q_query_file.contenttype#<br>--->
 		<!---<cfdump var="#q_query_file#">--->
-		<a target="_blank" href="default.cfm?#ReplaceOrAddURLParameter(QUERY_STRING,"displayimage",true)#"><img align="absmiddle" class="b_all" src="default.cfm?#ReplaceOrAddURLParameter(QUERY_STRING,"displayimage",true)#"></a>
+		<a target="_blank" href="index.cfm?#ReplaceOrAddURLParameter(QUERY_STRING,"displayimage",true)#"><img align="absmiddle" class="b_all" src="index.cfm?#ReplaceOrAddURLParameter(QUERY_STRING,"displayimage",true)#"></a>
 		<br>
-		<a href="default.cfm?#ReplaceOrAddURLParameter(ReplaceOrAddURLParameter(QUERY_STRING,"displayimage",true),"download",true)#"><img src="/images/menu/img_tree_download_19x16.gif" align="absmiddle" border="0" vspace="3" hspace="3">#GetLangVal('cm_wd_download')# ...</a><br>
+		<a href="index.cfm?#ReplaceOrAddURLParameter(ReplaceOrAddURLParameter(QUERY_STRING,"displayimage",true),"download",true)#"><img src="/images/menu/img_tree_download_19x16.gif" align="absmiddle" border="0" vspace="3" hspace="3">#GetLangVal('cm_wd_download')# ...</a><br>
 	</cfoutput>
 	
 <cfelse>

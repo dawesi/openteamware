@@ -15,7 +15,7 @@
 						
 
 			<ul class="divleftpanelactions">
-				<li><a href="default.cfm?action=UploadFile">Datei importieren</a></li>			
+				<li><a href="index.cfm?action=UploadFile">Datei importieren</a></li>			
 			</ul>
 	
 	</div>

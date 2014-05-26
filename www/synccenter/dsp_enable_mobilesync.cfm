@@ -8,7 +8,7 @@
 <cfparam name="url.deviceid" type="string" default="">
 
 <cfif Len(url.deviceid) IS 0>
-	<cflocation addtoken="no" url="default.cfm">
+	<cflocation addtoken="no" url="index.cfm">
 </cfif>
 
 <cfinvoke component="#request.a_str_component_mobilesync#" method="GetDevicesOfUser" returnvariable="q_select_devices">

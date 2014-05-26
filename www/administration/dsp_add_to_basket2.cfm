@@ -183,12 +183,12 @@
 
 <b><cfoutput>#GetLangVal('adm_ph_shop_product_has_been_put_into_basket')#</cfoutput></b>
 <hr size="1" noshade>
-<form method="post" action="default.cfm?action=shop<cfoutput>#WriteURLTagsfromForm()#</cfoutput>">
+<form method="post" action="index.cfm?action=shop<cfoutput>#WriteURLTagsfromForm()#</cfoutput>">
 <cfoutput>#GetLangVal('adm_ph_shop_continue_shopping')#</cfoutput><br>
 <input type="submit" value="<cfoutput>#GetLangVal('adm_ph_shop_continue_shopping_btn')#</cfoutput>" style="font-weight:bold;">
 </form>
 <br><br>
-<form action="default.cfm?action=accounting<cfoutput>#WriteURLTagsfromForm()#</cfoutput>" method="post">
+<form action="index.cfm?action=accounting<cfoutput>#WriteURLTagsfromForm()#</cfoutput>" method="post">
 <cfoutput>#GetLangVal('adm_ph_shop_checkout')#</cfoutput><br>
 <input type="submit" name="frmsubmit" style="font-weight:bold;" value="<cfoutput>#GetLangVal('adm_ph_shop_checkout_btn')#</cfoutput>">
 </form>

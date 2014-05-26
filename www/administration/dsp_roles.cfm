@@ -22,7 +22,7 @@ SELECT * FROM q_select_workgroups ORDER BY companykey;
 <cfif len(url.workgroupkey) is 0>
 	<!--- select now ... --->
 	<table border="0" cellspacing="0" cellpadding="4">
-	<form action="default.cfm" method="get">
+	<form action="index.cfm" method="get">
 	<input type="hidden" name="action" value="roles">
 	<input type="hidden" name="companykey" value="<cfoutput>#htmleditformat(url.companykey)#</cfoutput>">
 	<input type="hidden" name="resellerkey" value="<cfoutput>#htmleditformat(url.resellerkey)#</cfoutput>">
@@ -67,7 +67,7 @@ SELECT * FROM q_select_workgroups ORDER BY companykey;
 	<cfinvokeargument name="entrykey" value="#url.workgroupkey#">
 </cfinvoke>
 
-<b>Arbeitsgruppe: <cfoutput><a href="default.cfm?action=workgroupproperties&entrykey=#urlencodedformat(url.workgroupkey)##writeurltags()#">#htmleditformat(sReturn)#</a></cfoutput></b><br><br>
+<b>Arbeitsgruppe: <cfoutput><a href="index.cfm?action=workgroupproperties&entrykey=#urlencodedformat(url.workgroupkey)##writeurltags()#">#htmleditformat(sReturn)#</a></cfoutput></b><br><br>
 
 <!--- // display roles ... // --->
 <cfset SelectWorkgroupRoles.workgroupkey = url.workgroupkey>
@@ -84,7 +84,7 @@ SELECT * FROM q_select_workgroups ORDER BY companykey;
   <cfoutput query="q_select_roles">
   <tr>
     <td>
-	<a href="default.cfm?action=roleproperties&entrykey=#urlencodedformat(q_select_roles.entrykey)##writeurltags()#"><b>#q_select_roles.rolename#</b></a>
+	<a href="index.cfm?action=roleproperties&entrykey=#urlencodedformat(q_select_roles.entrykey)##writeurltags()#"><b>#q_select_roles.rolename#</b></a>
 	</td>
     <td>
 	#htmleditformat(q_select_roles.description)#
@@ -108,4 +108,4 @@ SELECT * FROM q_select_workgroups ORDER BY companykey;
 </table>
 
 <br><br>
-<a href="default.cfm?action=newrole&workgroupkey=<cfoutput>#urlencodedformat(url.workgroupkey)#</cfoutput>"><b><cfoutput>#GetLangVal("adm_ph_create_new_role")#</cfoutput></b></a>
+<a href="index.cfm?action=newrole&workgroupkey=<cfoutput>#urlencodedformat(url.workgroupkey)#</cfoutput>"><b><cfoutput>#GetLangVal("adm_ph_create_new_role")#</cfoutput></b></a>

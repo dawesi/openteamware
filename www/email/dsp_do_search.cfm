@@ -102,7 +102,7 @@
 
 
 <br /><br />
-<a href="default.cfm?action=ShowSearch"><cfoutput>#GetLangVal('mail_ph_search_start_new_search')#</cfoutput></a>
+<a href="index.cfm?action=ShowSearch"><cfoutput>#GetLangVal('mail_ph_search_start_new_search')#</cfoutput></a>
 <br /><br />
 
 

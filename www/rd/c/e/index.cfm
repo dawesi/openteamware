@@ -6,4 +6,4 @@
 	
 	// --->
 	
-<cflocation addtoken="no" url="../../../calendar/default.cfm?action=ShowEvent&entrykey=#urlencodedformat(urldecode(cgi.QUERY_STRING))#">
+<cflocation addtoken="no" url="../../../calendar/index.cfm?action=ShowEvent&entrykey=#urlencodedformat(urldecode(cgi.QUERY_STRING))#">

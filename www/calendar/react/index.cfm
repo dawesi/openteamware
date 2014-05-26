@@ -173,7 +173,7 @@ https://#a_str_mail_base_href#/rd/c/e/?#urlencodedformat(q_select_event.entrykey
 
 <b>Moechten Sie dem Organisator noch eine Nachricht zukommen lassen?</b><br />
 Nutzen Sie bitte das folgende Formular:
-<form action="default.cfm?<cfoutput>#cgi.QUERY_STRING#</cfoutput>" method="post">
+<form action="index.cfm?<cfoutput>#cgi.QUERY_STRING#</cfoutput>" method="post">
 	<textarea name="frmbody" cols="40" rows="5"></textarea>
 	<br><br>
 	<input type="submit" name="frmsubmit" value="Absenden ..." class="btn" />

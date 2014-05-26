@@ -33,7 +33,7 @@
   <tr>
 
     <td>
-		<a style="font-weight:bold;" href="default.cfm?action=ShowForum&entrykey=#q_select_foren.entrykey#"><img src="/images/si/comments.png" class="si_img" /> #htmleditformat(q_select_foren.forumname)#</a>
+		<a style="font-weight:bold;" href="index.cfm?action=ShowForum&entrykey=#q_select_foren.entrykey#"><img src="/images/si/comments.png" class="si_img" /> #htmleditformat(q_select_foren.forumname)#</a>
 		<br />
 		<img src="/images/space_1_1.gif" class="si_img" /> #htmleditformat(q_select_foren.description)#
 	</td>
@@ -47,7 +47,7 @@
 		<cfloop query="q_select_latest_postings">
 		  <tr>
 			<td width="33%" valign="top">
-				<img src="/images/si/bullet_orange.png" class="si_img" /> <a href="default.cfm?Action=ShowThread&forumkey=#q_select_latest_postings.forumkey#&entrykey=#q_select_latest_postings.entrykey#">#htmleditformat(CheckZeroString(q_select_latest_postings.subject))#</a>
+				<img src="/images/si/bullet_orange.png" class="si_img" /> <a href="index.cfm?Action=ShowThread&forumkey=#q_select_latest_postings.forumkey#&entrykey=#q_select_latest_postings.entrykey#">#htmleditformat(CheckZeroString(q_select_latest_postings.subject))#</a>
 			</td>
 			<td width="33%" valign="top">
 				#application.components.cmp_user.GetFullNameByEntrykey(q_select_latest_postings.lastpostinguserkey)#

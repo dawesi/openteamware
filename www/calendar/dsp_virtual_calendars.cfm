@@ -46,7 +46,7 @@
 				#htmleditformat(q_select_virtual_calendars.description)#
 			</td>
 			<td>
-				<a href="default.cfm?action=AddEditVirtualCalendar&entrykey=#q_select_virtual_calendars.entrykey#"><img src="/images/si/pencil.png" class="si_img" /></a>
+				<a href="index.cfm?action=AddEditVirtualCalendar&entrykey=#q_select_virtual_calendars.entrykey#"><img src="/images/si/pencil.png" class="si_img" /></a>
 				
 				<a href="##" onclick="ConfirmDeleteVirtualCalendar('#jsstringformat(q_select_virtual_calendars.entrykey)#', '#jsstringformat(q_select_virtual_calendars.title)#');return false;"><img src="/images/si/delete.png" class="si_img" /></a>
 			</td>
@@ -56,7 +56,7 @@
 </cfsavecontent>
 
 <cfsavecontent variable="a_str_buttons">
-	<input type="button" value="<cfoutput>#GetLangVal('cm_wd_new')#</cfoutput>" onclick="GotoLocHref('default.cfm?action=AddEditVirtualCalendar');" class="btn" />
+	<input type="button" value="<cfoutput>#GetLangVal('cm_wd_new')#</cfoutput>" onclick="GotoLocHref('index.cfm?action=AddEditVirtualCalendar');" class="btn" />
 </cfsavecontent>
 
 <cfoutput>#WriteNewContentBox(GetLangVal('cal_wd_own_calendars'), a_str_buttons, a_str_content)#</cfoutput>

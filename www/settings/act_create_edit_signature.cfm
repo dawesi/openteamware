@@ -16,4 +16,4 @@
 	<cfinvokeargument name="sig_data" value="#form.frm_sig_data#">
 </cfinvoke>
 
-<cflocation addtoken="no" url="default.cfm?action=signatures">
+<cflocation addtoken="no" url="index.cfm?action=signatures">

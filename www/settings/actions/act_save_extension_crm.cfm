@@ -52,5 +52,5 @@
 	entryname = "calendar.contactdata.viewmode.print"
 	entryvalue1 = #form.frm_cal_view_print#>--->
 
-<cflocation addtoken="no" url="../default.cfm?action=extensions.crm&saved=1">
+<cflocation addtoken="no" url="../index.cfm?action=extensions.crm&saved=1">
 

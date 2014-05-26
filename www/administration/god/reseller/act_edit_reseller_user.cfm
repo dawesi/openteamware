@@ -16,4 +16,4 @@ WHERE
 ;
 </cfquery>
 
-<cflocation addtoken="no" url="default.cfm?action=resellerusers&resellerkey=#urlencodedformat(form.frmresellerkey)#">
+<cflocation addtoken="no" url="index.cfm?action=resellerusers&resellerkey=#urlencodedformat(form.frmresellerkey)#">

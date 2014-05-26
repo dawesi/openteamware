@@ -15,7 +15,7 @@
 		</cfinvoke>	
 	</cfloop>
 
-	<cflocation url="default.cfm?action=ShowFiles&directorykey=#url.parentdirectorykey#">
+	<cflocation url="index.cfm?action=ShowFiles&directorykey=#url.parentdirectorykey#">
 </cfif>
 
 <cfinclude template="dsp_delete_oldversions.cfm">

@@ -72,12 +72,12 @@
 
 	<!--- den neuen record anzeigen ... --->
 
-	<cflocation addtoken="No" url="default.cfm?action=ShowItem&entrykey=#urlencodedformat(sEntrykey)#">
+	<cflocation addtoken="No" url="index.cfm?action=ShowItem&entrykey=#urlencodedformat(sEntrykey)#">
 
 <cfelse>
 
 	<!--- mehr als ein record eingefuegt ... zur uebersicht --->
 
-	<cflocation url="default.cfm" addtoken="No">
+	<cflocation url="index.cfm" addtoken="No">
 
 </cfif>

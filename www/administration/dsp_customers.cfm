@@ -165,7 +165,7 @@ WHERE
 
 <h4><img src="/images/admin/img_companies.png" width="32" height="32" hspace="2" vspace="2" border="0" align="absmiddle"> <cfoutput>#GetLangVal('adm_ph_nav_customer_administration')#</cfoutput></h4>
 
-<a href="default.cfm?action=newcustomer"><img src="/images/new_event.gif" width="12" height="12" hspace="2" vspace="2" border="0" align="absmiddle"> <b><cfoutput>#GetLangVal('adm_ph_create_new_customer')#</cfoutput></b></a>
+<a href="index.cfm?action=newcustomer"><img src="/images/new_event.gif" width="12" height="12" hspace="2" vspace="2" border="0" align="absmiddle"> <b><cfoutput>#GetLangVal('adm_ph_create_new_customer')#</cfoutput></b></a>
 
 <!---<cfif StructKeyExists(url, 'downloadcsv')>
 	<cfset session.q_select_companies_csv_download = q_select_companies>
@@ -177,7 +177,7 @@ WHERE
 </cfif>--->
 
 <table border="0" cellspacing="0" cellpadding="4">
-<form action="default.cfm" method="get" name="formcustomers">
+<form action="index.cfm" method="get" name="formcustomers">
 <input type="hidden" name="action" value="customers">
   <tr>
     <td align="right">
@@ -283,7 +283,7 @@ WHERE
 			<cfset a_str_query_string = ReplaceOrAddURLParameter(cgi.QUERY_STRING, 'startrow', a_int_step)>
 			
 			<cfoutput>
-			<a href="default.cfm?#a_str_query_string#">#a_int_step# - #(a_int_step+99)#</a>
+			<a href="index.cfm?#a_str_query_string#">#a_int_step# - #(a_int_step+99)#</a>
 			|
 			</cfoutput>
 		</cfloop>
@@ -336,7 +336,7 @@ WHERE
 
     <td>
 	
-	<a href="default.cfm?action=customerproperties&companykey=#urlencodedformat(q_select_companies.entrykey)#&resellerkey=#urlencodedformat(q_select_companies.resellerkey)#">#htmleditformat(shortenstring(CheckZeroString(q_select_companies.companyname), 30))#</a>
+	<a href="index.cfm?action=customerproperties&companykey=#urlencodedformat(q_select_companies.entrykey)#&resellerkey=#urlencodedformat(q_select_companies.resellerkey)#">#htmleditformat(shortenstring(CheckZeroString(q_select_companies.companyname), 30))#</a>
 	
 	<cfif q_select_is_reseller.count_id IS 1>
 		[RS]
@@ -421,7 +421,7 @@ WHERE
 
 	</cfquery>
 
-	<a href="default.cfm?action=resellerproperties&entrykey=#q_select_companies.resellerkey#">#htmleditformat(Shortenstring(q_select_reseller_name.companyname, 15))#</a>
+	<a href="index.cfm?action=resellerproperties&entrykey=#q_select_companies.resellerkey#">#htmleditformat(Shortenstring(q_select_reseller_name.companyname, 15))#</a>
 
 	</td>
 
@@ -434,4 +434,4 @@ WHERE
 
 <br><br>
 
-<a href="default.cfm?action=newcustomer"><img src="/images/new_event.gif" width="12" height="12" hspace="2" vspace="2" border="0" align="absmiddle"> <b><cfoutput>#GetLangVal('adm_ph_create_new_customer')#</cfoutput></b></a>
+<a href="index.cfm?action=newcustomer"><img src="/images/new_event.gif" width="12" height="12" hspace="2" vspace="2" border="0" align="absmiddle"> <b><cfoutput>#GetLangVal('adm_ph_create_new_customer')#</cfoutput></b></a>

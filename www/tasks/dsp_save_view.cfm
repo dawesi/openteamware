@@ -48,11 +48,11 @@ Geben Sie nun bitte einen Namen und eine Beschreibung ein um die Ansicht abzuspe
   <cfoutput query="q_select_views">
   <tr>
     <td>
-	<a href="default.cfm?#q_select_views.href#">#htmleditformat(checkzerostring(q_select_views.viewname))#</a>
+	<a href="index.cfm?#q_select_views.href#">#htmleditformat(checkzerostring(q_select_views.viewname))#</a>
 	</td>
     <td>#lsDateFormat(q_select_views.dt_created, "dd.mm.yy")#</td>
     <td>
-	<a href="default.cfm?#q_select_views.href#"><b>Jetzt anzeigen ...</b></a>
+	<a href="index.cfm?#q_select_views.href#"><b>Jetzt anzeigen ...</b></a>
 	</td>
     <td align="center">
 	<a href="javascript:DeleteView('#jsstringformat(q_select_views.entrykey)#');"><img src="/images/del.gif" width="12" height="12" hspace="4" vspace="4" border="0" align="absmiddle"></a>

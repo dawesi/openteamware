@@ -42,4 +42,4 @@
 	</cfswitch>
 </cfif>
 
-<cflocation addtoken="no" url="/email/default.cfm?action=composemail&to=#urlencodedformat(q_select_contact.email_prim)#&body=#urlencodedformat(a_str_body)#&forcesig=1">
+<cflocation addtoken="no" url="/email/index.cfm?action=composemail&to=#urlencodedformat(q_select_contact.email_prim)#&body=#urlencodedformat(a_str_body)#&forcesig=1">

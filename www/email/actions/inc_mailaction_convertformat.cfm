@@ -107,4 +107,4 @@
 <!--- forward now to original message ... --->
 <cfset a_int_uid = stReturn["uid"]>
 
-<cflocation addtoken="no" url="default.cfm?action=composemail&type=0&draftid=#a_int_uid#">
+<cflocation addtoken="no" url="index.cfm?action=composemail&type=0&draftid=#a_int_uid#">

@@ -16,7 +16,7 @@ function OpenAddCalendarPopup() {
 	}
 	
 function CallNewEvent(dt) {
-	location.href = 'default.cfm?action=ShowNewEvent&startdate='+escape(dt);
+	location.href = 'index.cfm?action=ShowNewEvent&startdate='+escape(dt);
 	}
 	
 function GotoMonth(y, num) {
@@ -153,7 +153,7 @@ function ShowDialogIncludeUserCalendar(workgroup) {
 	var a_url = '';
 	
 	if (workgroup) {a_str_wg = workgroup;}
-	a_url = 'default.cfm?action=ShowDisplayOtherUsersCalendar&workgroupkey=' + escape(a_str_wg);
+	a_url = 'index.cfm?action=ShowDisplayOtherUsersCalendar&workgroupkey=' + escape(a_str_wg);
 	a_simple_modal_dialog.type = 'custom';
 	a_simple_modal_dialog.customtitle = GetLangData(8);
 	a_simple_modal_dialog.customcontent_load_from_url = a_url;
@@ -172,7 +172,7 @@ function ConfirmDeleteVirtualCalendar(entrykey, title) {
 	var a_simple_modal_dialog = new cSimpleModalDialog();
 	a_simple_modal_dialog.type = 'custom';
 	a_simple_modal_dialog.customtitle = GetLangData(5);
-	a_simple_modal_dialog.customcontent_load_from_url = 'default.cfm?action=ShowQuestDeleteVirtualCalendar&entrykey=' + escape(entrykey) + '&title=' + escape(title);
+	a_simple_modal_dialog.customcontent_load_from_url = 'index.cfm?action=ShowQuestDeleteVirtualCalendar&entrykey=' + escape(entrykey) + '&title=' + escape(title);
 	a_simple_modal_dialog.ShowDialog(); 
 }
 
@@ -180,7 +180,7 @@ function ConfirmUnsubscribeFromVirtualCalendar(entrykey) {
 	var a_simple_modal_dialog = new cSimpleModalDialog();
 	a_simple_modal_dialog.type = 'confirmation';
 	a_simple_modal_dialog.customcontent = '';
-	a_simple_modal_dialog.executeurl = 'default.cfm?action=DoUnsubscribeVirtualCalendar&entrykey='+escape(entrykey);
+	a_simple_modal_dialog.executeurl = 'index.cfm?action=DoUnsubscribeVirtualCalendar&entrykey='+escape(entrykey);
 	a_simple_modal_dialog.ShowDialog();	
 }
 
@@ -213,7 +213,7 @@ function AddAttendeeToEvent(entrykey, type, attendeeName) {
 	var a_simple_modal_dialog = new cSimpleModalDialog();
 	a_simple_modal_dialog.type = 'custom';
 	a_simple_modal_dialog.customtitle = attendeeName;
-	a_simple_modal_dialog.customcontent_load_from_url = 'default.cfm?action=AssignNewElementToAppointment&entrykey=' + escape(entrykey) + '&type=' + type;
+	a_simple_modal_dialog.customcontent_load_from_url = 'index.cfm?action=AssignNewElementToAppointment&entrykey=' + escape(entrykey) + '&type=' + type;
 	a_simple_modal_dialog.ShowDialog(); 
 }
 
@@ -225,7 +225,7 @@ function DoAssignElements() {
 	
 	a_post_cmd.method = 'post';
 	a_post_cmd.post_content = a_str_post_content;
-	a_post_cmd.url = 'default.cfm?action=DoAssignElementsToAppointment';
+	a_post_cmd.url = 'index.cfm?action=DoAssignElementsToAppointment';
 	a_post_cmd.callback_function = onElementAssignedRemoved;
 	CloseSimpleModalDialog();
 	a_post_cmd.doOperation();
@@ -233,7 +233,7 @@ function DoAssignElements() {
 
 function loadAssignedResources(entrykey) {
  	var a_cmd = new cBasicBgOperation();
-	a_cmd.url = 'default.cfm?action=DisplayAssignedElements&entrykey=' + escape(entrykey);
+	a_cmd.url = 'index.cfm?action=DisplayAssignedElements&entrykey=' + escape(entrykey);
 	a_cmd.callback_function = onElementAssignedRemoved;
 	a_cmd.doOperation();
 }
@@ -252,7 +252,7 @@ function removeAssignedElement(eventkey, type, parameter) {
 
 function DoRemoveAttendee(eventkey, type, parameter)  {
 	var a_post_cmd = new cBasicBgOperation();
-	a_post_cmd.url = 'default.cfm?action=RemoveAssignedElementFromAppointment&eventkey=' + escape(eventkey) + '&type=' + escape(type) + '&parameter=' + escape(parameter);
+	a_post_cmd.url = 'index.cfm?action=RemoveAssignedElementFromAppointment&eventkey=' + escape(eventkey) + '&type=' + escape(type) + '&parameter=' + escape(parameter);
 	a_post_cmd.method = 'post';
 	a_post_cmd.callback_function = onElementAssignedRemoved;
 	CloseSimpleModalDialog();
@@ -468,7 +468,7 @@ function BuildShortinfoFromJSArray(uniquekey)
 		}
 			
 	a_return += '<div>';
-	a_return += '<input onClick="location.href = \'default.cfm?action=ShowEvent&entrykey='+ a_event_info[2] +'\';" class="btn" type="button" value="' + GetLangData(9) + '">';
+	a_return += '<input onClick="location.href = \'index.cfm?action=ShowEvent&entrykey='+ a_event_info[2] +'\';" class="btn" type="button" value="' + GetLangData(9) + '">';
 	a_return += '&nbsp;';
 	a_return += '<input onClick="DeleteCurrentInfoPopupEvent(\'' + a_event_info[0] + '\',\'' + a_event_info[1] + '\');" class="btn" type="button" value="' + GetLangData(10) + '">';
 	a_return += '</div>';
@@ -503,7 +503,7 @@ function CheckOtherEvents(eventkey) {
 	
 	$('#id_div_related_other_events').html(a_str_loading_status_img);
 	
-	a_simple_get.url = 'default.cfm?action=ShowRelatedAppointments&userkey='+escape(userkey)+'&start='+escape(document.formneworeditevent.frm_dt_start.value)+'&starthour='+document.formneworeditevent.frm_dt_start_hour.value+'&startminute='+document.formneworeditevent.frm_dt_start_minute.value+'&eventkey=' + escape(eventkey);
+	a_simple_get.url = 'index.cfm?action=ShowRelatedAppointments&userkey='+escape(userkey)+'&start='+escape(document.formneworeditevent.frm_dt_start.value)+'&starthour='+document.formneworeditevent.frm_dt_start_hour.value+'&startminute='+document.formneworeditevent.frm_dt_start_minute.value+'&eventkey=' + escape(eventkey);
 	a_simple_get.id_obj_display_content = 'id_div_related_other_events';
 	a_simple_get.doOperation();	
 	}

@@ -105,7 +105,7 @@ ORDER BY
 ;
 </cfquery>
 
-<form action="default.cfm">
+<form action="index.cfm">
 <input type="hidden" name="action" value="invoices">
 
 		<input type="submit" name="frmshownotpaid" value="Unbezahlte Rechnungen anzeigen">
@@ -163,7 +163,7 @@ ORDER BY
 	#lsdateformat(q_select_invoices.dt_due, 'dd.mm.yy')#
 	<cfif q_select_invoices.dunninglevel IS 0> [<a href="act_edit_dt_due.cfm?entrykey=#urlencodedformat(q_select_invoices.entrykey)#&companykey=#q_select_invoices.companykey#">edit</a>]</cfif>
 	<cfif q_select_invoices.dunninglevel IS 1> [<a href="act_edit_dt_due_dunning1.cfm?entrykey=#urlencodedformat(q_select_invoices.entrykey)#&companykey=#q_select_invoices.companykey#">edit</a>]</cfif>	
-	<cfif q_select_invoices.dunninglevel IS 2> [<a href="default.cfm?action=editinvoice&companykey=#q_select_company.entrykey#&entrykey=#urlencodedformat(q_select_invoices.entrykey)#">editieren</a>]</cfif>
+	<cfif q_select_invoices.dunninglevel IS 2> [<a href="index.cfm?action=editinvoice&companykey=#q_select_company.entrykey#&entrykey=#urlencodedformat(q_select_invoices.entrykey)#">editieren</a>]</cfif>
 	</td>
 
 	<td class="bb" align="center" <cfif q_select_invoices.dunninglevel IS 1>bgcolor="##FFCC66"</cfif> <cfif q_select_invoices.dunninglevel IS 2>bgcolor="##FF6633"</cfif>>
@@ -171,7 +171,7 @@ ORDER BY
 	</td>
     <td class="bb">
 	
-	<a href="../default.cfm?action=customerproperties&companykey=#q_select_company.entrykey#&resellerkey=#q_select_company.resellerkey#" target="_blank">#CheckZeroString(q_select_company.companyname)#</a>
+	<a href="../index.cfm?action=customerproperties&companykey=#q_select_company.entrykey#&resellerkey=#q_select_company.resellerkey#" target="_blank">#CheckZeroString(q_select_company.companyname)#</a>
 	
 	</td>
     <td align="center" class="bb">
@@ -187,11 +187,11 @@ ORDER BY
 	<a href="dl_invoice.cfm?entrykey=#urlencodedformat(q_select_invoices.entrykey)#" target="_blank">anzeigen ...</a>
 	&nbsp;&nbsp;
 	<cfif q_select_invoices.paid IS 0>
-		<a href="default.cfm?action=setinvoicepaid&entrykey=#urlencodedformat(q_select_invoices.entrykey)#">bezahlt setzen</a>
+		<a href="index.cfm?action=setinvoicepaid&entrykey=#urlencodedformat(q_select_invoices.entrykey)#">bezahlt setzen</a>
 		&nbsp;
 		<a href="act_storno.cfm?entrykey=#urlencodedformat(q_select_invoices.entrykey)#&companykey=#q_select_company.entrykey#">stornieren</a>
 	<cfelse>
-		<a href="default.cfm?action=editinvoice&companykey=#q_select_company.entrykey#&entrykey=#urlencodedformat(q_select_invoices.entrykey)#">editieren</a>
+		<a href="index.cfm?action=editinvoice&companykey=#q_select_company.entrykey#&entrykey=#urlencodedformat(q_select_invoices.entrykey)#">editieren</a>
 	</cfif>
 	</td>
   </tr>

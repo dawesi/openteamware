@@ -53,7 +53,7 @@
 	</td>
 </tr>
 <tr>
-	<td colspan="2" align="center"><a href="default.cfm?Action=View&ID=-1&mobile=<cfoutput>#urlencodedformat(url.telnr)#</cfoutput>">Neuen Eintrag mit dieser Rufnummer anlegen</a></td>
+	<td colspan="2" align="center"><a href="index.cfm?Action=View&ID=-1&mobile=<cfoutput>#urlencodedformat(url.telnr)#</cfoutput>">Neuen Eintrag mit dieser Rufnummer anlegen</a></td>
 </tr>
 </table>
 </form>

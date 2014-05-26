@@ -23,7 +23,7 @@
 		<cfset session.a_struct_temp_data = StructNew() />
 		<cfset session.a_struct_temp_data.addressbook_selected_entrykeys = form.frmcbselect />
 		
-		<cflocation addtoken="false" url="default.cfm?action=ShowMassActions&datatype=#form.frmdisplaydatatype#">
+		<cflocation addtoken="false" url="index.cfm?action=ShowMassActions&datatype=#form.frmdisplaydatatype#">
 		
 	</cfcase>
 	<cfcase value="createmailing">
@@ -31,7 +31,7 @@
 		<cfset session.a_struct_temp_data = StructNew() />
 		<cfset session.a_struct_temp_data.addressbook_selected_entrykeys = form.frmcbselect />
 		
-		<cflocation addtoken="no" url="/mailing/default.cfm?action=CreateMailingFromAddressBook">
+		<cflocation addtoken="no" url="/mailing/index.cfm?action=CreateMailingFromAddressBook">
 	</cfcase>
 	
 	<cfcase value="addtonewsletter">
@@ -39,7 +39,7 @@
 		<!--- add selected contacts to a newsletter --->
 		<cfset session.a_struct_temp_data = StructNew() />
 		<cfset session.a_struct_temp_data.addressbook_selected_entrykeys = form.frmcbselect />
-		<cflocation addtoken="no" url="default.cfm?action=AddContactsToNewsletter">
+		<cflocation addtoken="no" url="index.cfm?action=AddContactsToNewsletter">
 		
 	</cfcase>
 	<cfcase value="export">
@@ -47,14 +47,14 @@
 		<!--- export contacts as CSV --->
 		<cfset session.a_struct_temp_data = StructNew() />
 		<cfset session.a_struct_temp_data.addressbook_selected_entrykeys = form.frmcbselect />
-		<cflocation addtoken="no" url="default.cfm?action=ExportContacts">
+		<cflocation addtoken="no" url="index.cfm?action=ExportContacts">
 		
 	</cfcase>
 	<cfcase value="addtomailinglist">
 		<!--- add selected contacts to a mailinglist ... --->
 		<cfset session.a_struct_temp_data = StructNew()>
 		<cfset session.a_struct_temp_data.addressbook_selected_entrykeys = form.frmcbselect>	
-		<cflocation addtoken="no" url="default.cfm?action=AddContactsToMailinglist">
+		<cflocation addtoken="no" url="index.cfm?action=AddContactsToMailinglist">
 		
 	</cfcase>
 	<cfcase value="email">
@@ -62,17 +62,17 @@
 		<cfinclude template="utils/inc_send_mail_to_selected_addresses.cfm">			
 	</cfcase>
 	<cfcase value="forward">
-		<cflocation addtoken="no" url="default.cfm?action=forward&entrykeys=#urlencodedformat(form.frmcbselect)#">
+		<cflocation addtoken="no" url="index.cfm?action=forward&entrykeys=#urlencodedformat(form.frmcbselect)#">
 	</cfcase>
 	<cfcase value="remoteedit">
 		<cfset session.a_struct_temp_data = StructNew()>
 		<cfset session.a_struct_temp_data.addressbook_selected_entrykeys = form.frmcbselect>		
-		<cflocation addtoken="no" url="default.cfm?action=remoteedit&entrykeys=session">
+		<cflocation addtoken="no" url="index.cfm?action=remoteedit&entrykeys=session">
 	</cfcase>
 	<cfcase value="delete">
 		<cfset session.a_struct_temp_data = StructNew()>
 		<cfset session.a_struct_temp_data.addressbook_url = form.frmcbselect>	
-		<cflocation addtoken="no" url="default.cfm?action=DeleteContacts">
+		<cflocation addtoken="no" url="index.cfm?action=DeleteContacts">
 	</cfcase>
 	<cfdefaultcase>
 		<cflocation addtoken="no" url=".">

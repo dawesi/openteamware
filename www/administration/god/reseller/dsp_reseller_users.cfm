@@ -65,7 +65,7 @@ WHERE
 		#q_select_reseller_users.contacttype#
 	</td>
     <td>
-		<a href="default.cfm?action=editreselleruser&resellerkey=#urlencodedformat(url.resellerkey)#&userkey=#urlencodedformat(q_select_reseller_users.userkey)#">edit</a> | <a href="act_delete_reseller_user.cfm?resellerkey=#urlencodedformat(url.resellerkey)#&userkey=#urlencodedformat(q_select_reseller_users.userkey)#" onClick="return confirm('Sind Sie sicher?');">delete</a>
+		<a href="index.cfm?action=editreselleruser&resellerkey=#urlencodedformat(url.resellerkey)#&userkey=#urlencodedformat(q_select_reseller_users.userkey)#">edit</a> | <a href="act_delete_reseller_user.cfm?resellerkey=#urlencodedformat(url.resellerkey)#&userkey=#urlencodedformat(q_select_reseller_users.userkey)#" onClick="return confirm('Sind Sie sicher?');">delete</a>
 	</td>
 	<td></td>
   </tr>
@@ -78,7 +78,7 @@ WHERE
   <cfoutput query="q_select_users">
   
 	  <cfif ListFind(valuelist(q_select_reseller_users.userkey), q_select_users.entrykey) IS 0>
-	  <form action="default.cfm" method="get">
+	  <form action="index.cfm" method="get">
 	  <input type="hidden" name="action" value="newreselleruser">
 	  <input type="hidden" name="userkey" value="#q_select_users.entrykey#">
 	  <input type="hidden" name="resellerkey" value="#url.resellerkey#">

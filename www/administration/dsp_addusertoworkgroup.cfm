@@ -37,7 +37,7 @@ WHERE
 
 <cfif q_select_company_users.recordcount IS 0>
 	<h4><cfoutput>#GetLangVal('adm_ph_activitiy_no_accounts_yet')#</cfoutput></h4>
-	<a href="default.cfm?action=useradministration<cfoutput>&#writeurltags()#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_add_user_now')#</cfoutput></a>
+	<a href="index.cfm?action=useradministration<cfoutput>&#writeurltags()#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_add_user_now')#</cfoutput></a>
 	<cfabort>
 </cfif>
 

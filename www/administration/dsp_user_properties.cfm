@@ -26,18 +26,18 @@
 
 <b><cfoutput>#GetLangVal('cm_wd_actions')#</cfoutput></b>:
 		
-		<a href="default.cfm?action=user.createdatasheet&entrykey=<cfoutput>#urlencodedformat(url.entrykey)##WriteURLTags()#</cfoutput>"><cfoutput>#si_img('page_white_acrobat')# #GetLangVal('adm_ph_create_datasheet')#</cfoutput></a>
-		<a href="default.cfm?action=user.edit&section=data&entrykey=<cfoutput>#urlencodedformat(url.entrykey)##WriteURLTags()#</cfoutput>"><cfoutput>#si_img('pencil')# #GetLangVal('adm_ph_edit_userdata')#</cfoutput></a>
-		<a href="default.cfm?action=user.setphoto&entrykey=<cfoutput>#urlencodedformat(url.entrykey)##WriteURLTags()#</cfoutput>"><cfoutput>#si_img('photo')# #GetLangVal('adm_ph_set_photo')#</cfoutput></a>
-		<a href="default.cfm?action=user.managesso&entrykey=<cfoutput>#urlencodedformat(url.entrykey)##WriteURLTags()#</cfoutput>">Manage SSO</a>
-		<a href="default.cfm?action=user.resetpassword&entrykey=<cfoutput>#urlencodedformat(url.entrykey)##WriteURLTags()#</cfoutput>"><cfoutput>#si_img('key')# #GetLangVal('adm_ph_set_new_password')#</cfoutput></a>
-		<a href="default.cfm?action=user.changeaccounttype&entrykey=<cfoutput>#urlencodedformat(url.entrykey)##WriteURLTags()#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_change_account_type')#</cfoutput></a>
+		<a href="index.cfm?action=user.createdatasheet&entrykey=<cfoutput>#urlencodedformat(url.entrykey)##WriteURLTags()#</cfoutput>"><cfoutput>#si_img('page_white_acrobat')# #GetLangVal('adm_ph_create_datasheet')#</cfoutput></a>
+		<a href="index.cfm?action=user.edit&section=data&entrykey=<cfoutput>#urlencodedformat(url.entrykey)##WriteURLTags()#</cfoutput>"><cfoutput>#si_img('pencil')# #GetLangVal('adm_ph_edit_userdata')#</cfoutput></a>
+		<a href="index.cfm?action=user.setphoto&entrykey=<cfoutput>#urlencodedformat(url.entrykey)##WriteURLTags()#</cfoutput>"><cfoutput>#si_img('photo')# #GetLangVal('adm_ph_set_photo')#</cfoutput></a>
+		<a href="index.cfm?action=user.managesso&entrykey=<cfoutput>#urlencodedformat(url.entrykey)##WriteURLTags()#</cfoutput>">Manage SSO</a>
+		<a href="index.cfm?action=user.resetpassword&entrykey=<cfoutput>#urlencodedformat(url.entrykey)##WriteURLTags()#</cfoutput>"><cfoutput>#si_img('key')# #GetLangVal('adm_ph_set_new_password')#</cfoutput></a>
+		<a href="index.cfm?action=user.changeaccounttype&entrykey=<cfoutput>#urlencodedformat(url.entrykey)##WriteURLTags()#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_change_account_type')#</cfoutput></a>
 		<cfif q_userdata.allow_login IS 1>
-		<a href="default.cfm?action=user.disable&entrykey=<cfoutput>#urlencodedformat(url.entrykey)##writeurltags()#</cfoutput>"><cfoutput>#si_img('cross')# #GetLangVal('adm_wd_deactivate')#</cfoutput></a>
+		<a href="index.cfm?action=user.disable&entrykey=<cfoutput>#urlencodedformat(url.entrykey)##writeurltags()#</cfoutput>"><cfoutput>#si_img('cross')# #GetLangVal('adm_wd_deactivate')#</cfoutput></a>
 		<cfelse>
-		<a style="color:darkgreen;" href="default.cfm?action=user.enable&entrykey=<cfoutput>#urlencodedformat(url.entrykey)##writeurltags()#</cfoutput>"><b><cfoutput>#GetLangVal('adm_wd_activate_again')#</cfoutput></b> ...</a>
+		<a style="color:darkgreen;" href="index.cfm?action=user.enable&entrykey=<cfoutput>#urlencodedformat(url.entrykey)##writeurltags()#</cfoutput>"><b><cfoutput>#GetLangVal('adm_wd_activate_again')#</cfoutput></b> ...</a>
 		</cfif>
-		<a href="default.cfm?action=user.delete&entrykey=<cfoutput>#urlencodedformat(url.entrykey)##WriteURLTags()#</cfoutput>"><cfoutput>#si_img('delete')# #GetLangVal('adm_wd_delete_user')#</cfoutput></a>
+		<a href="index.cfm?action=user.delete&entrykey=<cfoutput>#urlencodedformat(url.entrykey)##WriteURLTags()#</cfoutput>"><cfoutput>#si_img('delete')# #GetLangVal('adm_wd_delete_user')#</cfoutput></a>
 		
 <h4 style="margin-bottom:3px;"><cfoutput>#ReplaceNoCase(GetLangVal('adm_ph_properties_of_user'), '%USERNAME%', q_userdata.username)#</cfoutput></h4>
 <cfif q_userdata.bigphotoavaliable IS 1>
@@ -47,7 +47,7 @@
 			<cfelse>
 				(<cfoutput>#GetLangVal('adm_ph_no_photo_avaliable')#</cfoutput>
 				
-				<a href="default.cfm?action=user.setphoto&entrykey=<cfoutput>#urlencodedformat(url.entrykey)##WriteURLTags()#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_set_photo')#</cfoutput></a> 
+				<a href="index.cfm?action=user.setphoto&entrykey=<cfoutput>#urlencodedformat(url.entrykey)##WriteURLTags()#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_set_photo')#</cfoutput></a> 
 				)
 			</cfif>
 
@@ -131,7 +131,7 @@
 	
 	<cfsavecontent variable="a_str_btn">
 		<cfoutput >
-		<input type="button" class="btn" value="#GetLangVal('cm_wd_edit')#" onclick="location.href='default.cfm?action=user.edit&section=data&entrykey=#urlencodedformat(url.entrykey)##WriteURLTags()#';"/>
+		<input type="button" class="btn" value="#GetLangVal('cm_wd_edit')#" onclick="location.href='index.cfm?action=user.edit&section=data&entrykey=#urlencodedformat(url.entrykey)##WriteURLTags()#';"/>
 		</cfoutput>
 	</cfsavecontent>
 	
@@ -151,7 +151,7 @@
             <tr> 
               <td class="field_name">###q_select_workgroups.currentrow#</td>
               <td> 
-                <a href="default.cfm?action=workgroupproperties&entrykey=#urlencodedformat(q_select_workgroups.workgroupkey)##writeurltags()#">#htmleditformat(checkzerostring(cmp_get_workgroup_name.GetWorkgroupNameByEntryKey(q_select_workgroups.workgroupkey)))#</a>
+                <a href="index.cfm?action=workgroupproperties&entrykey=#urlencodedformat(q_select_workgroups.workgroupkey)##writeurltags()#">#htmleditformat(checkzerostring(cmp_get_workgroup_name.GetWorkgroupNameByEntryKey(q_select_workgroups.workgroupkey)))#</a>
 				
 				&nbsp;&nbsp;#GetLangVal('adm_wd_roles')#:
 				 <cfloop index="a_str_role_key" list="#q_select_workgroups.roles#" delimiters=",">
@@ -195,7 +195,7 @@
 	
 	<cfsavecontent variable="a_str_btn">
 		<cfoutput >
-		<input type="button" class="btn" value="#GetLangVal('cm_wd_edit')#" onclick="location.href='default.cfm?action=user.edit&section=workgroups&entrykey=#urlencodedformat(url.entrykey)##WriteURLTags()#';"/>
+		<input type="button" class="btn" value="#GetLangVal('cm_wd_edit')#" onclick="location.href='index.cfm?action=user.edit&section=workgroups&entrykey=#urlencodedformat(url.entrykey)##WriteURLTags()#';"/>
 		</cfoutput>
 	</cfsavecontent>
 	
@@ -222,7 +222,7 @@
 				<cfinvokeargument name="entrykey" value="#q_userdata.securityrolekey#">
 			</cfinvoke>
 			
-			<a href="default.cfm?action=securityrole.display&entrykey=#urlencodedformat(stReturn.q_select_security_role.entrykey)##WriteURLTags()#">#stReturn.q_select_security_role.rolename#</a>
+			<a href="index.cfm?action=securityrole.display&entrykey=#urlencodedformat(stReturn.q_select_security_role.entrykey)##WriteURLTags()#">#stReturn.q_select_security_role.rolename#</a>
 
 			</td>
           </tr>
@@ -255,8 +255,8 @@
 	
 	<cfsavecontent variable="a_str_btn">
 		<cfoutput >
-		<input type="button" class="btn" value="#GetLangVal('cm_wd_edit')#" onclick="location.href='default.cfm?action=user.edit&section=security&entrykey=#urlencodedformat(url.entrykey)##WriteURLTags()#';"/>
-		<input type="button" class="btn" value="#GetLangVal('cm_wd_edit')# SSO" onclick="location.href='default.cfm?action=user.managesso&entrykey=#urlencodedformat(url.entrykey)##WriteURLTags()#'"/>
+		<input type="button" class="btn" value="#GetLangVal('cm_wd_edit')#" onclick="location.href='index.cfm?action=user.edit&section=security&entrykey=#urlencodedformat(url.entrykey)##WriteURLTags()#';"/>
+		<input type="button" class="btn" value="#GetLangVal('cm_wd_edit')# SSO" onclick="location.href='index.cfm?action=user.managesso&entrykey=#urlencodedformat(url.entrykey)##WriteURLTags()#'"/>
 		</cfoutput>
 	</cfsavecontent>
 	
@@ -311,7 +311,7 @@
 	</cfsavecontent>
 		
 	<cfsavecontent variable="a_str_btn">
-		<input type="button" class="btn" value="#GetLangVal('cm_wd_edit')#" onclick="location.href='default.cfm?action=user.edit&section=emailaddresses&entrykey=#urlencodedformat(url.entrykey)##WriteURLTags()#';"/>
+		<input type="button" class="btn" value="#GetLangVal('cm_wd_edit')#" onclick="location.href='index.cfm?action=user.edit&section=emailaddresses&entrykey=#urlencodedformat(url.entrykey)##WriteURLTags()#';"/>
 	</cfsavecontent>
 	
 	<cfoutput>#WriteNewContentBox(GetLangVal('prf_ph_email_addresses'), a_str_btn, a_str_content)#</cfoutput>
@@ -363,7 +363,7 @@
 		  <tr>
 		  	<td></td>
 			<td>
-				<a href="default.cfm?action=user.edit&section=quota&entrykey=#urlencodedformat(url.entrykey)##writeurltags()#"><img src="/images/editicon.gif" align="absmiddle" border="0"> #GetLangVal('cm_wd_edit')#</a>
+				<a href="index.cfm?action=user.edit&section=quota&entrykey=#urlencodedformat(url.entrykey)##writeurltags()#"><img src="/images/editicon.gif" align="absmiddle" border="0"> #GetLangVal('cm_wd_edit')#</a>
 			</td>
 		  </tr>
 		</table>
@@ -453,11 +453,11 @@
 		  <tr>
 		  	 <td class="field_name"></td>
 			<td>
-			<a href="default.cfm?action=security.logbook&companykey=#urlencodedformat(url.companykey)#&resellerkey=#urlencodedformat(url.resellerkey)#&userkey=#urlencodedformat(url.entrykey)#">#GetLangVal('adm_ph_show_security_log')#</a>
+			<a href="index.cfm?action=security.logbook&companykey=#urlencodedformat(url.companykey)#&resellerkey=#urlencodedformat(url.resellerkey)#&userkey=#urlencodedformat(url.entrykey)#">#GetLangVal('adm_ph_show_security_log')#</a>
 			
 			<cfif request.a_bol_is_reseller>
 			<br>
-			<a href="default.cfm?action=activity&#WriteURLTags()#&userkey=#urlencodedformat(url.entrykey)#">#GetLangVal('adm_ph_show_user_usage')#</a>
+			<a href="index.cfm?action=activity&#WriteURLTags()#&userkey=#urlencodedformat(url.entrykey)#">#GetLangVal('adm_ph_show_user_usage')#</a>
 			</cfif>
 			</td>
 		  </tr>

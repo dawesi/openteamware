@@ -27,9 +27,9 @@
 	AddNewJSPopupMenuItem(GetLangval('cm_wd_email'), 'javascript:OpenComposePopupTo();');
 	AddNewJSPopupMenuItem(GetLangval('cm_wd_contact'), '/addressbook/?action=CreateNewItem&datatype=0');
 	AddNewJSPopupMenuItem(GetLangval('cm_wd_account'), '/addressbook/?action=CreateNewItem&datatype=1');
-	AddNewJSPopupMenuItem(GetLangval('cm_wd_appointment'), '/calendar/default.cfm?action=ShowNewEvent');
+	AddNewJSPopupMenuItem(GetLangval('cm_wd_appointment'), '/calendar/index.cfm?action=ShowNewEvent');
 	AddNewJSPopupMenuItem(GetLangval('cm_wd_file'), '/storage/?action=UploadNewFile');
-	AddNewJSPopupMenuItem(GetLangval('cm_wd_task'), '/tasks/default.cfm?action=newtask');
+	AddNewJSPopupMenuItem(GetLangval('cm_wd_task'), '/tasks/index.cfm?action=newtask');
 	AddNewJSPopupMenuToPage();
 </cfscript>
 
@@ -69,10 +69,10 @@
     	<a href="/crm/?action=activities"><cfoutput>#GetLangVal('adrb_wd_activities')#</cfoutput></a>
     </li>
    	<li>
-    	<a href="/addressbook/default.cfm?filterdatatype=0"><cfoutput>#GetLangVal('cm_wd_contacts')#</cfoutput></a>
+    	<a href="/addressbook/index.cfm?filterdatatype=0"><cfoutput>#GetLangVal('cm_wd_contacts')#</cfoutput></a>
     </li>
     <li>
-     	<a href="/addressbook/default.cfm?filterdatatype=1"><cfoutput>#GetLangVal('crm_wd_accounts')#</cfoutput></a>
+     	<a href="/addressbook/index.cfm?filterdatatype=1"><cfoutput>#GetLangVal('crm_wd_accounts')#</cfoutput></a>
      </li>		
      <!--- <li>
          <a href="/calendar/" id="id_men_cal" onmouseover="ShowHTMLActionPopup('id_men_cal', a_men_cal, false);" onclick="ShowHTMLActionPopup('id_men_cal', a_men_cal, false);"><cfoutput>#GetLangVal('cm_wd_calendar')#</cfoutput> &raquo;</a>

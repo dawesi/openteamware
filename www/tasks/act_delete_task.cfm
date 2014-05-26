@@ -11,7 +11,7 @@
 
 <cfif len(url.entrykey) is 0>
 	<!--- invalid paramater ... --->
-	<cflocation addtoken="no" url="default.cfm">
+	<cflocation addtoken="no" url="index.cfm">
 </cfif>
 
 <!--- load task and check permissions ... --->
@@ -41,5 +41,5 @@
 <cfif Len(url.return) GT 0>
 	<cflocation addtoken="no" url="#url.return#">
 <cfelse>
-	<cflocation addtoken="no" url="default.cfm">
+	<cflocation addtoken="no" url="index.cfm">
 </cfif>

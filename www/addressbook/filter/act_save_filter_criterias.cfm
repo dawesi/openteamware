@@ -26,5 +26,5 @@
 	<cfinvokeargument name="usersettings" value="#request.stUserSettings#">
 </cfinvoke>
 
-<cflocation addtoken="no" url="../default.cfm?action=Advancedsearch&entrykey=#stReturn.entrykey#">
+<cflocation addtoken="no" url="../index.cfm?action=Advancedsearch&entrykey=#stReturn.entrykey#">
 

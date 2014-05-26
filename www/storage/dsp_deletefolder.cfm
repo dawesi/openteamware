@@ -25,7 +25,7 @@
 
 <cfset a_query_directory = a_struct_dir.q_select_directory />
 <cfif a_query_directory.recordcount lte 0 or url.entrykey eq "">
-	<cflocation url="default.cfm?action=ShowFiles&directorykey=#url.parentdirectorykey#">
+	<cflocation url="index.cfm?action=ShowFiles&directorykey=#url.parentdirectorykey#">
 </cfif>
 		 
 
@@ -36,10 +36,10 @@
 	</b>
 	<br />
 	<br />
-	<a href="default.cfm?action=DeleteFolder&entrykey=#url.entrykey#&confirmed=1&redirectdir=0&parentdirectorykey=#url.parentdirectorykey#"><img src="/images/si/accept.png" class="si_img" /> #getlangval('sto_ph_reallydelete')#</a>
+	<a href="index.cfm?action=DeleteFolder&entrykey=#url.entrykey#&confirmed=1&redirectdir=0&parentdirectorykey=#url.parentdirectorykey#"><img src="/images/si/accept.png" class="si_img" /> #getlangval('sto_ph_reallydelete')#</a>
 	<br />
 	<br />
-	<a href="default.cfm?action=ShowFiles&directorykey=#url.parentdirectorykey#"><img src="/images/si/cancel.png" class="si_img" /> #getlangval('sto_ph_noabort')#</a>
+	<a href="index.cfm?action=ShowFiles&directorykey=#url.parentdirectorykey#"><img src="/images/si/cancel.png" class="si_img" /> #getlangval('sto_ph_noabort')#</a>
 </cfoutput>
 
 

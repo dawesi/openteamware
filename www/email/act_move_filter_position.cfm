@@ -30,7 +30,7 @@
 
 <cfif q_select_single_filter.recordcount is 0>
 	<!--- no filter found ... --->
-	<cflocation addtoken="no" url="default.cfm?action=filter">
+	<cflocation addtoken="no" url="index.cfm?action=filter">
 </cfif>
 
 <cfif url.direction is "up">
@@ -46,7 +46,7 @@
 	
 	<cfif q_select_higher.recordcount is 0>
 		<!--- no higher filter ... --->
-		<cflocation addtoken="no" url="default.cfm?action=filter">
+		<cflocation addtoken="no" url="index.cfm?action=filter">
 	</cfif>
 	
 	<!--- exchange positions ... --->
@@ -75,7 +75,7 @@
 	
 	<cfif q_select_lower.recordcount is 0>
 		<!--- no higher filter ... --->
-		<cflocation addtoken="no" url="default.cfm?action=filter">
+		<cflocation addtoken="no" url="index.cfm?action=filter">
 	</cfif>
 	
 	<!--- exchange positions ... --->
@@ -97,4 +97,4 @@
 </cfinvoke>
 
 <!--- redirect ... --->
-<cflocation addtoken="no" url="default.cfm?action=filter">
+<cflocation addtoken="no" url="index.cfm?action=filter">

@@ -43,9 +43,9 @@
 
 <!--- if not saved correctly show the mappings again --->
 <cfif NOT stReturn.result>
-	<cflocation url='default.cfm?action=FieldMappings&jobkey=#form.frm_jobkey#&ibxerrorno=#stReturn.error#'>
+	<cflocation url='index.cfm?action=FieldMappings&jobkey=#form.frm_jobkey#&ibxerrorno=#stReturn.error#'>
 </cfif>
 
 <!--- forward into preview data screen --->
-<cflocation url='default.cfm?action=PreviewData&jobkey=#form.frm_jobkey#'>
+<cflocation url='index.cfm?action=PreviewData&jobkey=#form.frm_jobkey#'>
 

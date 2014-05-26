@@ -36,13 +36,13 @@
 	  <tr>
 	  	<td>
 			<cfif q_select_links.source_entrykey NEQ arguments.contactkeys>
-				<a href="default.cfm?action=ShowItem&entrykey=#q_select_links.source_entrykey#">#htmleditformat(q_select_links.source_name)#</a>
+				<a href="index.cfm?action=ShowItem&entrykey=#q_select_links.source_entrykey#">#htmleditformat(q_select_links.source_name)#</a>
 			</cfif>
 
 			#htmleditformat(q_select_links.connection_type)#
 		</td>
 		<td>
-			<a href="default.cfm?action=ShowItem&entrykey=#q_select_links.dest_entrykey#">#htmleditformat(q_select_links.dest_name)#</a>
+			<a href="index.cfm?action=ShowItem&entrykey=#q_select_links.dest_entrykey#">#htmleditformat(q_select_links.dest_name)#</a>
 
 			<cfif Len(q_select_links.comment) GT 0>
 				(#htmleditformat(q_select_links.comment)#)

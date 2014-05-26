@@ -13,9 +13,9 @@
 
 	Die ausgew&auml;hlten Konten werden nun auf neue Nachrichten &uuml;berpr&uuml;ft ...<br />
 
-	Bitte werfen Sie in wenigen Minuten einen Blick in den <a href="default.cfm?action=ShowMailbox&Mailbox=INBOX">Posteingang</a> bzw<br />
+	Bitte werfen Sie in wenigen Minuten einen Blick in den <a href="index.cfm?action=ShowMailbox&Mailbox=INBOX">Posteingang</a> bzw<br />
 
-	in das <a href="default.cfm?action=logbookexternalaccounts">&Uuml;berpr&uuml;fungs-Logbuch</a>!
+	in das <a href="index.cfm?action=logbookexternalaccounts">&Uuml;berpr&uuml;fungs-Logbuch</a>!
 
 	<br /><br />
 
@@ -123,7 +123,7 @@ WHERE
 
 <table border="0" cellspacing="0" cellpadding="4">
 
-  <form action="default.cfm?action=Pop3Check" method="POST">
+  <form action="index.cfm?action=Pop3Check" method="POST">
 
   <tr class="mischeader">
 
@@ -229,7 +229,7 @@ WHERE
 
 <br /><br />
 
-<a href="default.cfm?action=logbookexternalaccounts" class="simplelink"><b>&Uuml;berpr&uuml;fungs-Logbuch anzeigen</b></a><br />
+<a href="index.cfm?action=logbookexternalaccounts" class="simplelink"><b>&Uuml;berpr&uuml;fungs-Logbuch anzeigen</b></a><br />
 
 Ergebnisse der letzten E-Mail Checks anzeigen (z.B. um einen Fehler herauszufinden)
 
@@ -237,7 +237,7 @@ Ergebnisse der letzten E-Mail Checks anzeigen (z.B. um einen Fehler herauszufind
 
 <br />
 
-<a href="../settings/default.cfm?action=emailaccounts" class="simplelink"><b>Einstellungen anzeigen</b></a><br />
+<a href="../settings/index.cfm?action=emailaccounts" class="simplelink"><b>Einstellungen anzeigen</b></a><br />
 
 Neue E-Mail Adressen einbinden und Daten (z.B. Zugangsdaten) editeren.
 
@@ -361,7 +361,7 @@ und die Nachrichten dieser Adresse bequem hier bearbeiten.</p>
 
 <cfif q_select.recordcount gt 0>
 
-<form action="default.cfm?action=Pop3Check" method="POST" enablecab="No">
+<form action="index.cfm?action=Pop3Check" method="POST" enablecab="No">
 
 <table border="0" cellspacing="0" cellpadding="4">
 
@@ -467,5 +467,5 @@ und die Nachrichten dieser Adresse bequem hier bearbeiten.</p>
 
 <br />
 
-<p><b><a href="../settings/default.cfm?action=emailaccounts">Einstellungen t�tigen, Accounts hinzuf�gen und l�schen</a></p></b>
+<p><b><a href="../settings/index.cfm?action=emailaccounts">Einstellungen t�tigen, Accounts hinzuf�gen und l�schen</a></p></b>
 

@@ -76,4 +76,4 @@
 </table>
 
 <br><br>
-<a href="default.cfm?action=companynews<cfoutput>#WriteURLTags()#</cfoutput>"><cfoutput>#GetLangVal('cm_wd_overview')#</cfoutput></a>
+<a href="index.cfm?action=companynews<cfoutput>#WriteURLTags()#</cfoutput>"><cfoutput>#GetLangVal('cm_wd_overview')#</cfoutput></a>

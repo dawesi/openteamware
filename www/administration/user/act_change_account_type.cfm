@@ -11,4 +11,4 @@
 </cfinvoke>
 
 
-<cflocation addtoken="no" url="../default.cfm?action=userproperties&entrykey=#form.frmuserkey##writeurltagsfromform()#">
+<cflocation addtoken="no" url="../index.cfm?action=userproperties&entrykey=#form.frmuserkey##writeurltagsfromform()#">

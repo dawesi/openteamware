@@ -78,7 +78,7 @@
 		</td>
 		<td style="width:66%;" <cfif Len(q_select_events.color) GT 0>style="background-color:#q_select_events.color#"</cfif>>
 
-			<a <cfif Day(q_select_events.date_start) IS Day(now())>style="font-weight:bold;"</cfif> href="/calendar/default.cfm?action=ShowEvent&entrykey=#urlencodedformat(q_select_events.entrykey)#">#htmleditformat(shortenstring(checkzerostring(q_select_events.title), 35))#<cfif q_select_events.privateevent IS 1> (#GetLangVal('cm_wd_private')#)</cfif></a>
+			<a <cfif Day(q_select_events.date_start) IS Day(now())>style="font-weight:bold;"</cfif> href="/calendar/index.cfm?action=ShowEvent&entrykey=#urlencodedformat(q_select_events.entrykey)#">#htmleditformat(shortenstring(checkzerostring(q_select_events.title), 35))#<cfif q_select_events.privateevent IS 1> (#GetLangVal('cm_wd_private')#)</cfif></a>
 			
 			<cfif val(q_select_events.repeat_type) GT 0><img src="/images/si/arrow_rotate_clockwise.png" class="si_img" /></cfif>
 		

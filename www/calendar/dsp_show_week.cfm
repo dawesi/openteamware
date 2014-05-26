@@ -37,7 +37,7 @@
 <cfoutput>
 <div align="center" style="padding:10px;">
 	
-	<a href="default.cfm?action=ViewWeek&Date=#urlencodedformat(DateFormat(a_int_weekno_minus, "mm/dd/yyyy"))#"><img src="/images/si/resultset_previous.png" class="si_img nl" />#GetLangVal('cal_ph_nav_prev_week')#</a>
+	<a href="index.cfm?action=ViewWeek&Date=#urlencodedformat(DateFormat(a_int_weekno_minus, "mm/dd/yyyy"))#"><img src="/images/si/resultset_previous.png" class="si_img nl" />#GetLangVal('cal_ph_nav_prev_week')#</a>
 	&nbsp;&nbsp;|&nbsp;&nbsp;
 	<span style="font-weight:bold;">#GetLangVal('cal_wd_week')# #CalculateRealStandardISOWeek(request.a_dt_current_date)#
 	(#lsDateFormat(a_dt_start, request.stUserSettings.default_dateformat)#
@@ -45,7 +45,7 @@
 	#lsDateFormat(DateAdd('d', 7, a_dt_start), request.stUserSettings.default_dateformat)#)
 	</span>
 	&nbsp;&nbsp;|&nbsp;&nbsp;
-	<a href="default.cfm?action=ViewWeek&Date=#urlencodedformat(DateFormat(a_int_weekno_plus, "mm/dd/yyyy"))#">#GetLangVal('cal_ph_nav_next_week')#<img src="/images/si/resultset_next.png" class="si_img" /></a>
+	<a href="index.cfm?action=ViewWeek&Date=#urlencodedformat(DateFormat(a_int_weekno_plus, "mm/dd/yyyy"))#">#GetLangVal('cal_ph_nav_next_week')#<img src="/images/si/resultset_next.png" class="si_img" /></a>
 </div>
 </cfoutput>
 

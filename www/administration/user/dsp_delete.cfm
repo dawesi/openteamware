@@ -51,7 +51,7 @@
 <br><br><br>
 
 <br><br><br>
-<a href="default.cfm?action=useradministration&<cfoutput>#url.entrykey##writeurltags()#</cfoutput>"><cfoutput>#GetLangVal('cm_wd_back')#</cfoutput></a>
+<a href="index.cfm?action=useradministration&<cfoutput>#url.entrykey##writeurltags()#</cfoutput>"><cfoutput>#GetLangVal('cm_wd_back')#</cfoutput></a>
 
 <cfelse>
 

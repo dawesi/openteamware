@@ -6,7 +6,7 @@
 
 // --->
 
-<cflocation addtoken="false" url="default.cfm?action=activities">
+<cflocation addtoken="false" url="index.cfm?action=activities">
 
 <cfinvoke component="#application.components.cmp_crmsales#" method="GetListOfViewFilters" returnvariable="q_select_filters">
 	<cfinvokeargument name="securitycontext" value="#request.stSecurityContext#">
@@ -202,7 +202,7 @@
 				
 					<ul>
 					<cfoutput query="q_select_latest">
-						<li><a href="/addressbook/default.cfm?#q_select_latest.query_string#">#htmleditformat(q_select_latest.title)#</a></li>
+						<li><a href="/addressbook/index.cfm?#q_select_latest.query_string#">#htmleditformat(q_select_latest.title)#</a></li>
 					</cfoutput>
 					</ul>
 			</div>
@@ -211,13 +211,13 @@
 		<br /><br />
 		
 		<!--- calendar --->
-		<cfinclude template="../calendar/dsp_outlook_default.cfm">
+		<cfinclude template="../calendar/dsp_outlook_index.cfm">
 
 		
 		<!---<fieldset class="bg_fieldset">
 			<legend><cfoutput>#GetLangVal('cm_wd_opportunities')#</cfoutput> </legend>
 			<div>
-				<a href="default.cfm?action=opportunities">Reports</a>
+				<a href="index.cfm?action=opportunities">Reports</a>
 			</div>
 		</fieldset>			
 		

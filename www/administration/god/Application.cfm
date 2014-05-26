@@ -28,7 +28,7 @@
 		<cfset session.stUserSettings = application.components.cmp_user.GetUsersettings(a_str_userkey) />
 
 	<cfelse>
-		<form action="default.cfm" method="post">
+		<form action="index.cfm" method="post">
 		Username: <input type="text" name="frmusername" value="@openTeamWare.com" />
 		<br />
 		Password: <input type="password" name="frmpassword" value="" /> 

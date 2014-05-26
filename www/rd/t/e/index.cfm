@@ -7,7 +7,7 @@
 
 <body>
 
-<cflocation addtoken="no" url="../../../tasks/default.cfm?action=ShowTask&entrykey=#urlencodedformat(urldecode(cgi.QUERY_STRING))#">
+<cflocation addtoken="no" url="../../../tasks/index.cfm?action=ShowTask&entrykey=#urlencodedformat(urldecode(cgi.QUERY_STRING))#">
 
 </body>
 </html>

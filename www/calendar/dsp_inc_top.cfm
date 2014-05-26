@@ -17,22 +17,22 @@
 		</td>
 	<cfelse>
 
-	<td><a href="default.cfm" class="TopHeaderLink"><b><cfoutput>#GetLangVal('cal_wd_today')#</cfoutput></a></b></td>
+	<td><a href="index.cfm" class="TopHeaderLink"><b><cfoutput>#GetLangVal('cal_wd_today')#</cfoutput></a></b></td>
 
 	
 	<td class="tdtopheaderdivider">|</td>
 	<td class="TopHeaderLink">
 	<cfoutput>#GetLangVal('cm_wd_view')#</cfoutput>:
-	&nbsp;<a href="default.cfm?action=ViewDay&Date=<cfoutput>#A_str_link_date#</cfoutput>" class="TopHeaderLink"><cfoutput>#GetLangVal('cal_wd_day')#</cfoutput></a>
-	&nbsp;<a href="default.cfm?action=ViewWeek&Date=<cfoutput>#A_str_link_date#</cfoutput>" class="TopHeaderLink"><cfoutput>#GetLangVal('cal_wd_week')#</cfoutput></a>
-	&nbsp;<a href="default.cfm?action=ViewMonth&Date=<cfoutput>#A_str_link_date#</cfoutput>" class="TopHeaderLink"><cfoutput>#GetLangVal('cal_wd_month')#</cfoutput></a>
-	&nbsp;<a href="default.cfm?action=ViewYear&Date=<cfoutput>#A_str_link_date#</cfoutput>" class="TopHeaderLink"><cfoutput>#GetLangVal('cal_wd_year')#</cfoutput></a>
-	&nbsp;<a href="default.cfm?action=ListEvents&Date=<cfoutput>#A_str_link_date#</cfoutput>" class="TopHeaderLink"><cfoutput>#GetLangVal('cal_wd_list')#</cfoutput></a>
+	&nbsp;<a href="index.cfm?action=ViewDay&Date=<cfoutput>#A_str_link_date#</cfoutput>" class="TopHeaderLink"><cfoutput>#GetLangVal('cal_wd_day')#</cfoutput></a>
+	&nbsp;<a href="index.cfm?action=ViewWeek&Date=<cfoutput>#A_str_link_date#</cfoutput>" class="TopHeaderLink"><cfoutput>#GetLangVal('cal_wd_week')#</cfoutput></a>
+	&nbsp;<a href="index.cfm?action=ViewMonth&Date=<cfoutput>#A_str_link_date#</cfoutput>" class="TopHeaderLink"><cfoutput>#GetLangVal('cal_wd_month')#</cfoutput></a>
+	&nbsp;<a href="index.cfm?action=ViewYear&Date=<cfoutput>#A_str_link_date#</cfoutput>" class="TopHeaderLink"><cfoutput>#GetLangVal('cal_wd_year')#</cfoutput></a>
+	&nbsp;<a href="index.cfm?action=ListEvents&Date=<cfoutput>#A_str_link_date#</cfoutput>" class="TopHeaderLink"><cfoutput>#GetLangVal('cal_wd_list')#</cfoutput></a>
 	</td>
 
 	<td class="tdtopheaderdivider">|</td>
 
-	<td><a href="default.cfm?action=newevent" class="TopHeaderLink"><cfoutput>#GetLangVal('cal_ph_top_createevent')#</cfoutput></a></td>
+	<td><a href="index.cfm?action=newevent" class="TopHeaderLink"><cfoutput>#GetLangVal('cal_ph_top_createevent')#</cfoutput></a></td>
 	
 	<td class="tdtopheaderdivider">|</td>
 	

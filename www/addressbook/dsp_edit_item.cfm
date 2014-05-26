@@ -32,7 +32,7 @@
 			<!--- A lock could not be obtained. --->
 			<cfset a_str_custom_msg = application.components.cmp_locks.GenerateLockDefaultInformationString(entrykey = stReturn.lock_information.lock.entrykey) />
 			
-			<cflocation addtoken="false" url="default.cfm?action=ShowItem&entrykey=#url.entrykey#&ibxerrorno=5300&ibxerrormsg=#urlencodedformat(a_str_custom_msg)#">			
+			<cflocation addtoken="false" url="index.cfm?action=ShowItem&entrykey=#url.entrykey#&ibxerrorno=5300&ibxerrormsg=#urlencodedformat(a_str_custom_msg)#">			
 		</cfcase>
 		<cfdefaultcase>
 			an error occured ... TODO: default handling

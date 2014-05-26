@@ -29,5 +29,5 @@
 </cfif>
 
 <!--- Send to the Parent Directory Listing --->
-<cflocation url="default.cfm?action=showfiles&directorykey=#form.frm_parentdirectorykey#">
+<cflocation url="index.cfm?action=showfiles&directorykey=#form.frm_parentdirectorykey#">
 

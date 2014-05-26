@@ -27,7 +27,7 @@
 </cfsavecontent>
 <cfsavecontent variable="a_str_buttons">
 <cfoutput >
-	<input type="button" value="#GetLangVal('adm_ph_add_new_top_level_criteria')#" onclick="GotoLocHref('default.cfm?action=criteria&subaction=AddCriteria#WriteUrlTags()#');" class="btn" />
+	<input type="button" value="#GetLangVal('adm_ph_add_new_top_level_criteria')#" onclick="GotoLocHref('index.cfm?action=criteria&subaction=AddCriteria#WriteUrlTags()#');" class="btn" />
 </cfoutput>
 </cfsavecontent>
 

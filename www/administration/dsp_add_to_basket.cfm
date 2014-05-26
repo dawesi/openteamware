@@ -215,7 +215,7 @@
 
 <table border="0" cellspacing="0" cellpadding="4">
 
-<form action="default.cfm?action=Addtobasket2" method="post" name="formaddtobasket">
+<form action="index.cfm?action=Addtobasket2" method="post" name="formaddtobasket">
 
 <input type="hidden" name="frmcompanykey" value="<cfoutput>#htmleditformat(url.frmcompanykey)#</cfoutput>">
 

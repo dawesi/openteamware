@@ -13,7 +13,7 @@
 
 
   <cfoutput query="q_select_reseller">
-  <form action="default.cfm" method="get">
+  <form action="index.cfm" method="get">
   <tr>
   	<input type="hidden" name="action" value="assigntootherreseller">
   	<input type="hidden" name="companykey" value="#url.companykey#">

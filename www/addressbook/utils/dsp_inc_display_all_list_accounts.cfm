@@ -16,7 +16,7 @@
 	</td>
 	<td>
 		<cfset a_str_href = ReplaceOrAddURLParameter(cgi.QUERY_STRING, 'orderby', 'company,surname')>
-		<a href="default.cfm?<cfoutput>#a_str_href#</cfoutput>"><cfoutput>#GetLangVal('adrb_wd_organisation')#</cfoutput></a>
+		<a href="index.cfm?<cfoutput>#a_str_href#</cfoutput>"><cfoutput>#GetLangVal('adrb_wd_organisation')#</cfoutput></a>
 		
 		<cfif sOrderBy IS 'company,surname'>
 			<img src="/images/arrows/img_arrow_sort_down.gif" align="absmiddle" width="14" height="10" alt="" border="0"/>
@@ -24,7 +24,7 @@
 	</td>
 	<td>
 		<cfset a_str_href = ReplaceOrAddURLParameter(cgi.QUERY_STRING, 'orderby', 'b_city')>
-		<a href="default.cfm?<cfoutput>#a_str_href#</cfoutput>"><cfoutput>#GetLangVal('adrb_wd_city')#</cfoutput></a>
+		<a href="index.cfm?<cfoutput>#a_str_href#</cfoutput>"><cfoutput>#GetLangVal('adrb_wd_city')#</cfoutput></a>
 		
 		<cfif sOrderBy IS 'b_city'>
 			<img src="/images/arrows/img_arrow_sort_down.gif" align="absmiddle" width="14" height="10" alt="" border="0"/>
@@ -50,7 +50,7 @@
 		<input type="checkbox" name="frmcbselect" value="#htmleditformat(q_select_contacts.entrykey)#" class="noborder" />
 	</td>
 	<td>
-		<img src="/images/si/brick.png" width="16" height="16" border="0" alt="0" align="absmiddle" /> <a href="default.cfm?action=ShowItem&entrykey=#urlencodedformat(q_select_contacts.entrykey)#" style="font-weight:bold;">#htmleditformat(shortenstring(CheckZeroString(q_select_contacts.company), 25))#</a>		
+		<img src="/images/si/brick.png" width="16" height="16" border="0" alt="0" align="absmiddle" /> <a href="index.cfm?action=ShowItem&entrykey=#urlencodedformat(q_select_contacts.entrykey)#" style="font-weight:bold;">#htmleditformat(shortenstring(CheckZeroString(q_select_contacts.company), 25))#</a>		
 	</td>
 	<td>
 		#htmleditformat(q_select_contacts.b_city)#
@@ -61,7 +61,7 @@
 		<cfloop from="1" to="#ArrayLen(stReturn.a_struct_accounts[q_select_contacts.entrykey])#" index="a_int_sub_contact">
 			<cfset a_struct_sub_contact = stReturn.a_struct_accounts[q_select_contacts.entrykey][a_int_sub_contact]>
 			
-			<a href="default.cfm?action=ShowItem&entrykey=#a_struct_sub_contact.entrykey#">#htmleditformat(CheckZeroString(a_struct_sub_contact.surname))#<cfif Len(a_struct_sub_contact.firstname) GT 0>, #htmleditformat(a_struct_sub_contact.firstname)#</cfif></a>
+			<a href="index.cfm?action=ShowItem&entrykey=#a_struct_sub_contact.entrykey#">#htmleditformat(CheckZeroString(a_struct_sub_contact.surname))#<cfif Len(a_struct_sub_contact.firstname) GT 0>, #htmleditformat(a_struct_sub_contact.firstname)#</cfif></a>
 			
 			<cfif Len(a_struct_sub_contact.department & a_struct_sub_contact.aposition) GT 0>
 				&nbsp;/&nbsp;#htmleditformat(a_struct_sub_contact.department)# #htmleditformat(a_struct_sub_contact.aposition)#

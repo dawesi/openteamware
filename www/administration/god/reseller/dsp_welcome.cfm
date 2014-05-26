@@ -13,9 +13,9 @@ WHERE
 	contractingparty = 1
 ;
 </cfquery>
-	<a href="default.cfm">Alle VP anzeigen</a>
+	<a href="index.cfm">Alle VP anzeigen</a>
 <cfelse>
-	<a href="default.cfm?contractingpartyonly=true">nur VP anzeigen</a><br>
+	<a href="index.cfm?contractingpartyonly=true">nur VP anzeigen</a><br>
 </cfif>
 
 <cfset request.q_select_reseller = q_select_reseller>

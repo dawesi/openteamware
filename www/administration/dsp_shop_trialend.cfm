@@ -8,7 +8,7 @@
 
 <cfif q_select_company_data.status IS 0>
 	<!--- already a customer ... --->
-	<cflocation addtoken="no" url="default.cfm?action=shop#WriteURLTags()#">
+	<cflocation addtoken="no" url="index.cfm?action=shop#WriteURLTags()#">
 </cfif>
 
 
@@ -38,7 +38,7 @@
 		(Die Zuordnung ist spaeter natuerlich abaenderbar)</li>
 	<li>Wenn Sie testweise eingerichtete Konten nicht bezahlen moechten,<br>waehlen Sie als Option "Loeschen" aus.</li>
 	<li>Pruefen Sie bitte - falls zutreffend - ob Sie als EU-Unternehmen Ihre<br>
-		UID-Nummer angegeben haben [ <a href="default.cfm?action=masterdata<cfoutput>#WriteURLTags()#</cfoutput>">Stammdaten anzeigen/editieren...</a> ]</li>
+		UID-Nummer angegeben haben [ <a href="index.cfm?action=masterdata<cfoutput>#WriteURLTags()#</cfoutput>">Stammdaten anzeigen/editieren...</a> ]</li>
 </ul>
 	<div id="iddivshowbasket" style="padding-left:40px;">
 	<input type="button" onClick="ShowBasket();" value="Weiter ..." style="font-weight:bold;">
@@ -58,7 +58,7 @@
 </script>
 
 <table border="0" cellspacing="0" cellpadding="8" id="idtableorder" style="display:none;">
-<form action="default.cfm?action=shop.trialphaseend.addtobasket" method="post">
+<form action="index.cfm?action=shop.trialphaseend.addtobasket" method="post">
 <input type="hidden" name="frmcompanykey" value="<cfoutput>#url.companykey#</cfoutput>">
 <input type="hidden" name="frmresellerkey" value="<cfoutput>#url.resellerkey#</cfoutput>">
   <tr>

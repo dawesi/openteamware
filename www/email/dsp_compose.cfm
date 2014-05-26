@@ -94,7 +94,7 @@
 <!--- get the email address only ... --->
 <cfset a_str_tmp_to = ExtractEmailAdr(url.to) />
 
-<form action="default.cfm?action=ActCheckSendMailOperation&CFID=<cfoutput>#client.CFID#&CFTOKEN=#client.CFToken#</cfoutput>" onSubmit="return ValidateForm(<cfoutput>#a_int_confirmsend#</cfoutput>);SetUnsavedMailToFalse();" method="POST" name="sendform" <cfif ComposemailRequest.popup>style="margin:0px;"</cfif>>
+<form action="index.cfm?action=ActCheckSendMailOperation&CFID=<cfoutput>#client.CFID#&CFTOKEN=#client.CFToken#</cfoutput>" onSubmit="return ValidateForm(<cfoutput>#a_int_confirmsend#</cfoutput>);SetUnsavedMailToFalse();" method="POST" name="sendform" <cfif ComposemailRequest.popup>style="margin:0px;"</cfif>>
 
 <cfif StructKeyExists(cookie, 'ib_session_key')>
 	<input type="hidden" name="frmibsessionkey" value="<cfoutput>#cookie.ib_session_key#</cfoutput>" />
@@ -493,7 +493,7 @@
 		  <tr>
 			<td>
 				#application.components.cmp_tools.GetImagePathForContentType(q_select_read_attachments.contenttype)#
-				<a target="_blank" href="default.cfm?action=loadattachment&filename=#urlencodedformat(q_select_read_attachments.afilename)#&contenttype=#urlencodedformat(q_select_read_attachments.contenttype)#&mailbox=#urlencodedformat("INBOX.Drafts")#&id=#a_int_draft_id#&partid=#q_select_read_attachments.contentid#">#htmleditformat(q_select_read_attachments.afilename)#</a>
+				<a target="_blank" href="index.cfm?action=loadattachment&filename=#urlencodedformat(q_select_read_attachments.afilename)#&contenttype=#urlencodedformat(q_select_read_attachments.contenttype)#&mailbox=#urlencodedformat("INBOX.Drafts")#&id=#a_int_draft_id#&partid=#q_select_read_attachments.contentid#">#htmleditformat(q_select_read_attachments.afilename)#</a>
 			</td>
 			<td>
 				#htmleditformat(q_select_read_attachments.contenttype)#

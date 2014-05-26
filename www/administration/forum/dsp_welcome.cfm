@@ -38,7 +38,7 @@
 
 <cfsavecontent variable="a_str_buttons">
 <cfoutput>
-<input class="btn" type="button" value="#GetLangVal('adm_ph_create_new_forum')#" onclick="GotoLocHref('default.cfm?action=forum#WriteURLTags()#&subaction=createnewforum');return false;" />
+<input class="btn" type="button" value="#GetLangVal('adm_ph_create_new_forum')#" onclick="GotoLocHref('index.cfm?action=forum#WriteURLTags()#&subaction=createnewforum');return false;" />
 </cfoutput>
 </cfsavecontent>
 

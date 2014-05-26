@@ -24,7 +24,7 @@
 <cfif q_select_company_data.status IS 0 AND q_select_licence_status.availableseats IS 0>
 	<b><cfoutput>#GetLangVal('adm_ph_error_no_more_licences_1')#</cfoutput></b>
 	<br><br><br>
-	<b><cfoutput>#GetLangVal('adm_ph_error_no_more_licences_2')#</cfoutput> <a href="default.cfm?action=shop<cfoutput>#writeurltags()#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_error_no_more_licences_goto_shop')#</cfoutput></a></b>
+	<b><cfoutput>#GetLangVal('adm_ph_error_no_more_licences_2')#</cfoutput> <a href="index.cfm?action=shop<cfoutput>#writeurltags()#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_error_no_more_licences_goto_shop')#</cfoutput></a></b>
 	<br><br>
 	<cfoutput>#GetLangVal('adm_ph_error_no_more_licences_3')#</cfoutput>
 	<cfexit method="exittemplate">
@@ -171,4 +171,4 @@
 </cftry>
 
 	
-<cflocation addtoken="no" url="default.cfm?action=useradministration&companykey=#urlencodedformat(form.frmcompanykey)#&resellerkey=#urlencodedformat(form.frmresellerkey)#">
+<cflocation addtoken="no" url="index.cfm?action=useradministration&companykey=#urlencodedformat(form.frmcompanykey)#&resellerkey=#urlencodedformat(form.frmresellerkey)#">

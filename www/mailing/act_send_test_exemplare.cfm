@@ -39,4 +39,4 @@
 <cfhttp url="#a_str_url#" resolveurl="no"></cfhttp>
 </cflock>
 
-<cflocation addtoken="no" url="default.cfm?action=ShowWelcome&test_sending_running=true">
+<cflocation addtoken="no" url="index.cfm?action=ShowWelcome&test_sending_running=true">

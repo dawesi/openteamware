@@ -165,5 +165,5 @@
 </cfif>
 
 
-<cflocation addtoken="no" url="default.cfm?action=ShowEvent&entrykey=#form.frmentrykey#">
+<cflocation addtoken="no" url="index.cfm?action=ShowEvent&entrykey=#form.frmentrykey#">
 

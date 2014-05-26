@@ -56,18 +56,18 @@
 		<cfif q_select_activate_code.recordcount IS 0>
 			<div style="border:orange solid 2px;padding:4px;" class="mischeader">
 			<img src="/images/menu/img_icon_followups_32x32.gif" border="0" align="left" vspace="4" hspace="4">
-			<a  href="default.cfm?<cfoutput>#writeurltags()#</cfoutput>&action=createactivatecode"><b><cfoutput>#GetLangVal('adm_ph_create_and_send_activation_code')#</cfoutput></b></a>
+			<a  href="index.cfm?<cfoutput>#writeurltags()#</cfoutput>&action=createactivatecode"><b><cfoutput>#GetLangVal('adm_ph_create_and_send_activation_code')#</cfoutput></b></a>
 			<br>
 			<cfoutput>#GetLangVal('adm_ph_create_and_send_activation_code_alternative')#</cfoutput>
 			<br>
-			<a href="default.cfm?action=newuser&<cfoutput>#writeurltags()#</cfoutput>&productkey=AE79D26D-D86D-E073-B9648D735D84F319"><cfoutput>#GetLangVal('cm_ph_please_click_here_to_proceed')#</cfoutput></a>
+			<a href="index.cfm?action=newuser&<cfoutput>#writeurltags()#</cfoutput>&productkey=AE79D26D-D86D-E073-B9648D735D84F319"><cfoutput>#GetLangVal('cm_ph_please_click_here_to_proceed')#</cfoutput></a>
 			</div>
 			<br>
 		</cfif>
 		
 		<cfif q_select_activate_code.recordcount IS 1 AND q_select_activate_code.activated IS 0>
 			<div style="border:orange solid 2px;padding:4px; ">
-			<a  href="default.cfm?<cfoutput>#writeurltags()#</cfoutput>&action=createactivatecode"><img src="/images/menu/img_icon_followups_32x32.gif" align="absmiddle" border="0"> <b><cfoutput>#GetLangVal('adm_ph_send_activation_code_again')#</cfoutput></b></a>
+			<a  href="index.cfm?<cfoutput>#writeurltags()#</cfoutput>&action=createactivatecode"><img src="/images/menu/img_icon_followups_32x32.gif" align="absmiddle" border="0"> <b><cfoutput>#GetLangVal('adm_ph_send_activation_code_again')#</cfoutput></b></a>
 			</div>							
 			<br>
 		</cfif>
@@ -123,7 +123,7 @@ WHERE
 				<tr>
 					<td align="right">#GetLangVal('adm_wd_partner')#:</td>
 					<td>
-					<a href="default.cfm?action=resellerproperties&resellerkey=#urlencodedformat(q_select_company_data.resellerkey)#">#q_select_reseller_name.companyname#</a>
+					<a href="index.cfm?action=resellerproperties&resellerkey=#urlencodedformat(q_select_company_data.resellerkey)#">#q_select_reseller_name.companyname#</a>
 					</td>
 				</tr>
 				<cfif Len(q_select_company_data.signupsource) GT 0>
@@ -201,7 +201,7 @@ WHERE
 					
 					<cfif request.a_bol_is_reseller AND q_select_company_data.generaltermsandconditions_accepted IS 1>
 					<br>
-					<a href="default.cfm?action=customer.extendtrialphase#writeurltags()#">#GetLangVal('adm_ph_extend_trialphase')#</a> | <a href="javascript:alert('#GetLangValJS('adm_ph_extend_trialphase_contact_office')#');">#GetLangVal('cm_wd_delete')#</a>
+					<a href="index.cfm?action=customer.extendtrialphase#writeurltags()#">#GetLangVal('adm_ph_extend_trialphase')#</a> | <a href="javascript:alert('#GetLangValJS('adm_ph_extend_trialphase_contact_office')#');">#GetLangVal('cm_wd_delete')#</a>
 					</cfif>
 					</cfif>
 					</td>
@@ -249,7 +249,7 @@ WHERE
 				  <td>
 				  #GetLangVal('cm_wd_comments')#: #q_select_comments.recordcount#
 				  <br><br>
-				  <a href="default.cfm?action=activity&#WriteURLTags()#">#GetLangVal('cm_ph_show_usage')#</a>
+				  <a href="index.cfm?action=activity&#WriteURLTags()#">#GetLangVal('cm_ph_show_usage')#</a>
 				  </td>
 				</tr>
 				</cfif>
@@ -363,9 +363,9 @@ WHERE
 				
 				<tr> 
 				  <td colspan="7">
-				  <a href="default.cfm?action=shop<cfoutput>#WriteURLTags()#</cfoutput>"><b><cfoutput>#GetLangVal('adm_ph_add_products_shop')#</cfoutput></b>
+				  <a href="index.cfm?action=shop<cfoutput>#WriteURLTags()#</cfoutput>"><b><cfoutput>#GetLangVal('adm_ph_add_products_shop')#</cfoutput></b>
 				  <br><br>
-				  <a href="default.cfm?action=licence.status<cfoutput>#WriteURLTags()#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_show_licence_status')#</cfoutput></a>
+				  <a href="index.cfm?action=licence.status<cfoutput>#WriteURLTags()#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_show_licence_status')#</cfoutput></a>
 				  </td>
 				</tr>
 			  </table> 
@@ -384,12 +384,12 @@ WHERE
 </cfsavecontent>
 <cfsavecontent variable="a_str_buttons">
 <cfoutput>
-	<input type="button" value="#GetLangVal('adm_ph_nav_account_data')#" class="btn2" onclick="GotoLocHref('default.cfm?action=editcustomer&#WriteURLTags()#');" />
-	<input type="button" value="#GetLangVal('adm_wd_administrators')#" class="btn2" onclick="GotoLocHref('default.cfm?action=customercontacts&#WriteURLTags()#');" />
-	<input type="button" value="#GetLangVal('adm_ph_create_datasheet')#" class="btn2" onclick="GotoLocHref('default.cfm?action=customer.createfulldatasheet&#WriteURLTags()#');" />
+	<input type="button" value="#GetLangVal('adm_ph_nav_account_data')#" class="btn2" onclick="GotoLocHref('index.cfm?action=editcustomer&#WriteURLTags()#');" />
+	<input type="button" value="#GetLangVal('adm_wd_administrators')#" class="btn2" onclick="GotoLocHref('index.cfm?action=customercontacts&#WriteURLTags()#');" />
+	<input type="button" value="#GetLangVal('adm_ph_create_datasheet')#" class="btn2" onclick="GotoLocHref('index.cfm?action=customer.createfulldatasheet&#WriteURLTags()#');" />
 	
 	<cfif request.a_bol_is_reseller>
-		<input type="button" value="#GetLangVal('adm_ph_assign_to_other_partner')#" class="btn2" onclick="GotoLocHref('default.cfm?action=assigntootherreseller&#WriteURLTags()#');" />
+		<input type="button" value="#GetLangVal('adm_ph_assign_to_other_partner')#" class="btn2" onclick="GotoLocHref('index.cfm?action=assigntootherreseller&#WriteURLTags()#');" />
 	</cfif>
 	
 </cfoutput>
@@ -432,7 +432,7 @@ WHERE
 </cfsavecontent>
 <cfsavecontent variable="a_str_buttons">
 	<cfoutput>
-		<input type="button" value="#GetLangVal('cm_wd_edit')#" onclick="GotoLocHref('default.cfm?action=useradministration&#WriteURLTags()#');" class="btn2" />
+		<input type="button" value="#GetLangVal('cm_wd_edit')#" onclick="GotoLocHref('index.cfm?action=useradministration&#WriteURLTags()#');" class="btn2" />
 	</cfoutput>
 </cfsavecontent>
 
@@ -446,14 +446,14 @@ WHERE
 
 	<ul class="ul_nopoints">
 	<cfoutput query="q_select_workgroups">
-		<li><a href="default.cfm?action=workgroupproperties&entrykey=#q_select_workgroups.entrykey#&#writeurltags()#"><img src="/images/si/group.png" class="si_img" />  #htmleditformat(q_select_workgroups.groupname)#</a></li>
+		<li><a href="index.cfm?action=workgroupproperties&entrykey=#q_select_workgroups.entrykey#&#writeurltags()#"><img src="/images/si/group.png" class="si_img" />  #htmleditformat(q_select_workgroups.groupname)#</a></li>
 	</cfoutput>
 	</ul>
 			
 </cfsavecontent>
 <cfsavecontent variable="a_str_buttons">
 	<cfoutput >
-		<input type="button" class="btn2" onclick="GotoLocHref('default.cfm?action=workgroups&#writeurltags()#');" value="#GetLangVal('cm_wd_edit')#" />
+		<input type="button" class="btn2" onclick="GotoLocHref('index.cfm?action=workgroups&#writeurltags()#');" value="#GetLangVal('cm_wd_edit')#" />
 	</cfoutput>
 </cfsavecontent>
 

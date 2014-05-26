@@ -105,7 +105,7 @@
 			
 			
 				<cfoutput>
-				<a href="default.cfm?action=DoAddUserCalendarDisplay&userkeys=#urlencodedformat(q_select_users.userkey)#"><img src="/images/si/user.png" alt="" class="si_img" /> #htmleditformat(q_select_users.fullname)#</a><br />
+				<a href="index.cfm?action=DoAddUserCalendarDisplay&userkeys=#urlencodedformat(q_select_users.userkey)#"><img src="/images/si/user.png" alt="" class="si_img" /> #htmleditformat(q_select_users.fullname)#</a><br />
 				</cfoutput>
 				
 			</cfif>
@@ -128,7 +128,7 @@
 
 <div class="div_module_tabs_content_box" id="<cfoutput>#a_str_id_resources#</cfoutput>">
 <cfoutput query="q_select_resources">
-	<a style="font-weight:bold; " href="default.cfm?action=DoAddUserCalendarDisplay&userkeys=&resourcekey=#q_select_resources.entrykey#">#htmleditformat(q_select_resources.title)#</a>
+	<a style="font-weight:bold; " href="index.cfm?action=DoAddUserCalendarDisplay&userkeys=&resourcekey=#q_select_resources.entrykey#">#htmleditformat(q_select_resources.title)#</a>
 	<br /> 
 	#q_select_resources.description#
 	<br /><br />  

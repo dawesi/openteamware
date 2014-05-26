@@ -16,7 +16,7 @@
 	<cfcase value="RequestConfirmCode">
 	<!--- code schicken --->
 	<cfmodule template="mod_send_email_confirm.cfm" id=#val(url.id)# userid=#request.stSecurityContext.myuserid# username=#request.stSecurityContext.myuserid#>
-	<cflocation addtoken="No" url="default.cfm?action=ExternalEmail">
+	<cflocation addtoken="No" url="index.cfm?action=ExternalEmail">
 	</cfcase>
 	
 	<cfcase value="DeleteAccount">

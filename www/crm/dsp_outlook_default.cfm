@@ -43,7 +43,7 @@
   <tr>
     <td width="50%" valign="top">
 	
-		<form id="idformtopsearch" name="idformtopsearch" method="POST" onSubmit="ShowLoadingStatus();" action="/addressbook/default.cfm?action=DoAddFilterSearchCriteria" style="margin:0px;">
+		<form id="idformtopsearch" name="idformtopsearch" method="POST" onSubmit="ShowLoadingStatus();" action="/addressbook/index.cfm?action=DoAddFilterSearchCriteria" style="margin:0px;">
 		<input type="hidden" name="frmfilterviewkey" value="" />
 		<input type="hidden" name="frmdisplaydatatype" value="0" />
 		<input type="hidden" name="frmarea" value="contact" />

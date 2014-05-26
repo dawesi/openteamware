@@ -54,7 +54,7 @@
 <span style="white-space:nowrap; ">
 #TimeFormat(q_select_events.date_start, 'HH:mm')#
 
-<a target="framecontent" href="/calendar/default.cfm?action=ShowEvent&entrykey=#urlencodedformat(q_select_events.entrykey)#">#htmleditformat(shortenstring(checkzerostring(q_select_events.title), 35))#</a>
+<a target="framecontent" href="/calendar/index.cfm?action=ShowEvent&entrykey=#urlencodedformat(q_select_events.entrykey)#">#htmleditformat(shortenstring(checkzerostring(q_select_events.title), 35))#</a>
 
 <cfif q_select_events.currentrow neq q_select_events.recordcount>
 &nbsp;/&nbsp;

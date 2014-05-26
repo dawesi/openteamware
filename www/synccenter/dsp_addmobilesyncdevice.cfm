@@ -101,7 +101,7 @@ ORDER BY
 			<br><br>
 			BlackBerry Users: Please enter <i>scpimblackberry</i> as IMEI!
 			<br><br>
-			<a style="color:#3300FF " href="default.cfm?action=mobilesync" target="_blank"><cfoutput>#GetLangVal('sync_ph_add_device_imei_description_why_faq_link')#</cfoutput></a>
+			<a style="color:#3300FF " href="index.cfm?action=mobilesync" target="_blank"><cfoutput>#GetLangVal('sync_ph_add_device_imei_description_why_faq_link')#</cfoutput></a>
 		</td>
 	  </tr>
 	  <tr>

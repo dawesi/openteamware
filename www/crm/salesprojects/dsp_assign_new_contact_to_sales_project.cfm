@@ -20,7 +20,7 @@
 
 <cfif url.type IS -1>
 
-	<form action="default.cfm" method="get">
+	<form action="index.cfm" method="get">
 	<input type="hidden" name="action" value="AssignNewContactToSalesProject">
 	<input type="hidden" name="salesprojectkey" value="<cfoutput>#htmleditformat(url.salesprojectkey)#</cfoutput>">
 	<table border="0" cellspacing="0" cellpadding="4">

@@ -19,4 +19,4 @@
 	<cfinvokeargument name="admin_post_only" value="#form.frm_admin_post_only#">
 </cfinvoke>
 
-<cflocation addtoken="false" url="../default.cfm?action=forum">
+<cflocation addtoken="false" url="../index.cfm?action=forum">

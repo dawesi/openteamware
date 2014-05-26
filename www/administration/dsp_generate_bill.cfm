@@ -95,7 +95,7 @@
 	<cfoutput>#GetLangVal('adm_ph_shop_thank_your_for_your_order_2')#</cfoutput>
 	<br><br>
 	<br><br><br>
-	<a href="default.cfm?action=invoices&<cfoutput>#WriteURLTags()#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_shop_goto_invoices')#</cfoutput></a>
+	<a href="index.cfm?action=invoices&<cfoutput>#WriteURLTags()#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_shop_goto_invoices')#</cfoutput></a>
 	
 	<cfset request.a_cmp_lang = application.components.cmp_lang>
 	

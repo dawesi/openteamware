@@ -24,7 +24,7 @@
 	</cfinvoke>
 
 	<cfif NOT stReturn.result>
-		<cflocation url="default.cfm?action=productadministration&ibxerrorno=#stReturn.error#"/>
+		<cflocation url="index.cfm?action=productadministration&ibxerrorno=#stReturn.error#"/>
 	</cfif>
 
 	<cfset q_select_product = stReturn.q_select_products/>

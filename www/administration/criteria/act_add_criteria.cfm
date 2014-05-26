@@ -43,4 +43,4 @@ VALUES
 ;
 </cfquery>
 
-<cflocation addtoken="no" url="../default.cfm?action=criteria#WriteURLTagsfromForm()#">
+<cflocation addtoken="no" url="../index.cfm?action=criteria#WriteURLTagsfromForm()#">

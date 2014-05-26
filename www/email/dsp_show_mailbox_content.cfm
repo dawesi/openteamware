@@ -122,8 +122,8 @@
 		<b><img src="/images/si/information.png" class="si_img" /><cfoutput>#GetLangVal('mail_ph_junkmail_folder_info1')#</cfoutput></b>
 		<br />
 		<cfoutput>#GetLangVal('mail_ph_junkmail_folder_info2')#</cfoutput><br>
-		<a href="javascript:GotoLocHref('default.cfm?action=EmptyFolder&foldername=INBOX.Junkmail&maxage=0');" target="_self"><img src="/images/si/delete.png" class="si_img" /><cfoutput>#GetLangVal('mail_ph_junkmail_folder_empty')#</cfoutput></a>
-		<a href="javascript:GotoLocHref('/settings/default.cfm?action=spamguard');"><img src="/images/si/wrench.png" class="si_img" /><cfoutput>#GetLangVal('cm_wd_preferences')#</cfoutput></a>
+		<a href="javascript:GotoLocHref('index.cfm?action=EmptyFolder&foldername=INBOX.Junkmail&maxage=0');" target="_self"><img src="/images/si/delete.png" class="si_img" /><cfoutput>#GetLangVal('mail_ph_junkmail_folder_empty')#</cfoutput></a>
+		<a href="javascript:GotoLocHref('/settings/index.cfm?action=spamguard');"><img src="/images/si/wrench.png" class="si_img" /><cfoutput>#GetLangVal('cm_wd_preferences')#</cfoutput></a>
 		</div>
 	</div>
 

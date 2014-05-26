@@ -17,8 +17,8 @@
 </cfinvoke>
 
 <cfif NOT stReturn.result>
-	<cflocation url="default.cfm?action=VirtualCalendars&ibxerrorno=#stReturn.error#">
+	<cflocation url="index.cfm?action=VirtualCalendars&ibxerrorno=#stReturn.error#">
 </cfif>
 
-<cflocation url="default.cfm?action=VirtualCalendars">
+<cflocation url="index.cfm?action=VirtualCalendars">
 

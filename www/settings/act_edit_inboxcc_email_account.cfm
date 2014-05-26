@@ -146,4 +146,4 @@ WHERE
 
 <!--- redirect --->
 
-<cflocation addtoken="No" url="default.cfm?action=ExternalEmail">
+<cflocation addtoken="No" url="index.cfm?action=ExternalEmail">

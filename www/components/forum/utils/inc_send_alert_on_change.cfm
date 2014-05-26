@@ -20,7 +20,7 @@
 
 <cfmail from="#a_str_sender_address#" to="#a_cmp_user.getusernamebyentrykey(q_select_article_watchers.userkey)#" subject="Neuer Beitrag im Forum">
 A new posting has been added - please click here:
-https://#a_str_base_url#/forum/default.cfm?action=ShowThread&entrykey=#arguments.threadkey#
+https://#a_str_base_url#/forum/index.cfm?action=ShowThread&entrykey=#arguments.threadkey#
 </cfmail>
 
 <!---No more alerts for this thread.--->

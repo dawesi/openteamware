@@ -22,7 +22,7 @@ Ihr Punktekonto einen zu niedrigen Stand aufweist.
 
 Bitte klicken Sie hier um im openTeamWare Shop Punkte nachzukaufen:
 
-https://www.openTeamWare.com/administration/default.cfm?action=shop
+https://www.openTeamWare.com/administration/index.cfm?action=shop
 
 Einen schoenen Tag wuenscht
 

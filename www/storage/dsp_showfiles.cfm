@@ -112,7 +112,7 @@
 				
 					<cfset a_str_subdir_info = ListPrepend(a_str_subdir_info, a_struct_parentdirectories[a_str_currentkey].name, '/')>
 					
-			  		<a href="default.cfm?action=showfiles&directorykey=#a_str_currentkey#">
+			  		<a href="index.cfm?action=showfiles&directorykey=#a_str_currentkey#">
 					[ #htmleditformat(a_struct_parentdirectories[a_str_currentkey].name)# ] </a><cfif a_int_counter gte 1>&nbsp;</cfif> <img src="/images/si/arrow_right.png" class="si_img" />
 					<cfset a_str_currentkey=a_struct_parentdirectories[a_str_currentkey].subdirectorykey>
 				<cfelse>

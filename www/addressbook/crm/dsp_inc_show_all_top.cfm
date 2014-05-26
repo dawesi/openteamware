@@ -44,18 +44,18 @@
 					<table cellpadding="4" cellspacing="0" border="0">
 						<tr>
 							<td>
-								<a <cfif sOrderBy IS ''></cfif> href="default.cfm?&orderby=company%2Csurname&filterdatatype=<cfoutput>#url.filterdatatype#</cfoutput>"><cfoutput>#GetLangVal('cm_wd_all')#</cfoutput></a>
+								<a <cfif sOrderBy IS ''></cfif> href="index.cfm?&orderby=company%2Csurname&filterdatatype=<cfoutput>#url.filterdatatype#</cfoutput>"><cfoutput>#GetLangVal('cm_wd_all')#</cfoutput></a>
 							</td>
 							<td>
-								<a <cfif sOrderBy IS 'lastdisplayed'>style="font-weight:bold;"</cfif> href="default.cfm?&orderby=lastdisplayed&filterdatatype=<cfoutput>#url.filterdatatype#</cfoutput>"><cfoutput>#GetLangVal('cm_ph_last_displayed')#</cfoutput></a>
+								<a <cfif sOrderBy IS 'lastdisplayed'>style="font-weight:bold;"</cfif> href="index.cfm?&orderby=lastdisplayed&filterdatatype=<cfoutput>#url.filterdatatype#</cfoutput>"><cfoutput>#GetLangVal('cm_ph_last_displayed')#</cfoutput></a>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a <cfif sOrderBy IS 'latelyadded'>style="font-weight:bold;"</cfif> href="default.cfm?&orderby=latelyadded&filterdatatype=<cfoutput>#url.filterdatatype#</cfoutput>"><cfoutput>#GetLangVal('cm_ph_last_added')#</cfoutput></a>
+								<a <cfif sOrderBy IS 'latelyadded'>style="font-weight:bold;"</cfif> href="index.cfm?&orderby=latelyadded&filterdatatype=<cfoutput>#url.filterdatatype#</cfoutput>"><cfoutput>#GetLangVal('cm_ph_last_added')#</cfoutput></a>
 							</td>
 							<td>
-								<a <cfif sOrderBy IS 'ownitems'>style="font-weight:bold;"</cfif> href="default.cfm?&orderby=ownitems&filterdatatype=<cfoutput>#url.filterdatatype#</cfoutput>"><cfoutput>#GetLangVal('cm_ph_my_items')#</cfoutput></a>
+								<a <cfif sOrderBy IS 'ownitems'>style="font-weight:bold;"</cfif> href="index.cfm?&orderby=ownitems&filterdatatype=<cfoutput>#url.filterdatatype#</cfoutput>"><cfoutput>#GetLangVal('cm_ph_my_items')#</cfoutput></a>
 							</td>
 						</tr>
 					</table>
@@ -65,7 +65,7 @@
 				
 				 	<b><img src="/images/si/find.png" class="si_img" /><cfoutput>#GetLangVal('cm_wd_search')#</cfoutput></b>
 				 	
-				 	<form id="idformtopsearch" name="idformtopsearch" method="POST" onSubmit="ShowLoadingStatus();" action="default.cfm?action=DoAddFilterSearchCriteria" style="margin:0px;">
+				 	<form id="idformtopsearch" name="idformtopsearch" method="POST" onSubmit="ShowLoadingStatus();" action="index.cfm?action=DoAddFilterSearchCriteria" style="margin:0px;">
 					<input type="hidden" name="frmfilterviewkey" value="<cfoutput>#url.filterviewkey#</cfoutput>" />
 					<input type="hidden" name="frmdisplaydatatype" value="<cfoutput>#a_str_display_data_type#</cfoutput>" />
 					<input type="hidden" name="frmarea" value="contact" />
@@ -262,7 +262,7 @@
 								</cfif>								
 								<br />
 								
-							<a href="default.cfm?action=AdvancedSearch&entrykey=#url.filterviewkey#">#GetLangVal('crm_ph_edit_filter_criteria')#</a>
+							<a href="index.cfm?action=AdvancedSearch&entrykey=#url.filterviewkey#">#GetLangVal('crm_ph_edit_filter_criteria')#</a>
 							
 							
 							</div>
@@ -288,7 +288,7 @@
 					  	<td nowrap valign="top" class="br">
 						 
 						  	
-						<!--- 	<form name="formtopcrmsearch" id="formtopcrmsearch" action="default.cfm" method="get" style="margin:0px; ">
+						<!--- 	<form name="formtopcrmsearch" id="formtopcrmsearch" action="index.cfm" method="get" style="margin:0px; ">
 							<b><cfoutput>#GetLangVal('cm_wd_search')#</cfoutput></b>
 							<br /><br />
 							<input type="text" name="search" style="width:100px; " size="10">&nbsp;

@@ -14,7 +14,7 @@ function PlayAudioFile(entrykey) {
 
 function DisplayRecentFiles(type) {
 	var a_simple_get = new cBasicBgOperation();
-	a_simple_get.url = 'default.cfm?action=DisplayLatelyAddedFilesList&type=' + escape(type);
+	a_simple_get.url = 'index.cfm?action=DisplayLatelyAddedFilesList&type=' + escape(type);
 	a_simple_get.id_obj_display_content = 'id_div_recent_files';
 	a_simple_get.doOperation();
 	}	
@@ -29,7 +29,7 @@ function DoCreateExclusiveLock() {
 }
 
 function ConfirmDeleteFile(entrykey) {
-	ShowSimpleConfirmationDialog('default.cfm?frm_entrykey=' + entrykey + '&frm_parentdirectorykey=&action=deletefile&confirmed=1');
+	ShowSimpleConfirmationDialog('index.cfm?frm_entrykey=' + entrykey + '&frm_parentdirectorykey=&action=deletefile&confirmed=1');
 	}
 
 function DeleteExclusiveLock(entrykey) {
@@ -108,7 +108,7 @@ function ShowCreateExlusiveLock(filekey) {
 	var a_simple_modal_dialog = new cSimpleModalDialog();
 	a_simple_modal_dialog.type = 'custom';
 	a_simple_modal_dialog.customtitle = 'Lock';
-	a_simple_modal_dialog.customcontent_load_from_url = 'default.cfm?action=CreateExclusiveLock&filekey=' + escape(filekey);
+	a_simple_modal_dialog.customcontent_load_from_url = 'index.cfm?action=CreateExclusiveLock&filekey=' + escape(filekey);
 	a_simple_modal_dialog.ShowDialog();	
 	}
 	
@@ -117,7 +117,7 @@ function ShowLockShortInformation(filekey) {
 	var a_simple_modal_dialog = new cSimpleModalDialog();
 	a_simple_modal_dialog.type = 'custom';
 	a_simple_modal_dialog.customtitle = 'Lock';
-	a_simple_modal_dialog.customcontent_load_from_url = 'default.cfm?action=DisplayShortLockInformation&filekey=' + escape(filekey);
+	a_simple_modal_dialog.customcontent_load_from_url = 'index.cfm?action=DisplayShortLockInformation&filekey=' + escape(filekey);
 	a_simple_modal_dialog.ShowDialog();	
 	}
 	

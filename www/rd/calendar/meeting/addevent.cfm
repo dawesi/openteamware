@@ -26,7 +26,7 @@ SELECT utcdiff FROM users WHERE userid = #q_select.userid#;
 <cfset AStartDate = DateAdd("h", -q_select_utcdiff.utcdiff, q_select.date_start)>
 <cfset AEndDate = DateAdd("h", -q_select_utcdiff.utcdiff, q_select.date_end)>
 
-<cflocation addtoken="No" url="../../../calendar/default.cfm?action=NewEvent&title=#urlencodedformat(q_select.title)#&description=#urlencodedformat(q_select.description)#&Date=#urlencodedformat(dateformat(AStartDate, "mm/dd/yyyy"))#&StartHour=#hour(AStartDate)#&StartMinutes=#minute(AStartDate)#&FullDateTimeend=#urlencodedformat(dateformat(AEndDate, "mm/dd/yyyy")&" "&timeformat(AEndDate, "HH:mm"))#">
+<cflocation addtoken="No" url="../../../calendar/index.cfm?action=NewEvent&title=#urlencodedformat(q_select.title)#&description=#urlencodedformat(q_select.description)#&Date=#urlencodedformat(dateformat(AStartDate, "mm/dd/yyyy"))#&StartHour=#hour(AStartDate)#&StartMinutes=#minute(AStartDate)#&FullDateTimeend=#urlencodedformat(dateformat(AEndDate, "mm/dd/yyyy")&" "&timeformat(AEndDate, "HH:mm"))#">
 
 </body>
 </html>

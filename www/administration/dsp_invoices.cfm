@@ -14,7 +14,7 @@
 	
 	<cfif Len(a_str_shop_url) IS 0>
 		<!--- forward to feedback form ... --->
-		<cflocation addtoken="no" url="default.cfm?action=partnerfeedbackform&reason=shop">		
+		<cflocation addtoken="no" url="index.cfm?action=partnerfeedbackform&reason=shop">		
 	<cfelse>
 		<h4><a target="_blank" href="<cfoutput>#a_str_shop_url#</cfoutput>">Bitte klicken Sie hier um den Shop zu oeffnen ...</a></h4>
 	</cfif>
@@ -114,7 +114,7 @@ WHERE
 		anzeigen</a>
 	</td>
 	<td colspan="4" class="bb">
-		bezahlen via <a href="default.cfm?action=paybill&method=wp#WriteURLTags()#&invoicekey=#q_select_open_invoices.entrykey#">Kreditkarte/ELV</a> | <a href="default.cfm?action=paybill&method=moneytransfer#WriteURLTags()#&invoicekey=#q_select_open_invoices.entrykey#">Ueberweisung</a> <!--- | <a href="default.cfm?action=paybill&method=eps#WriteURLTags()#&invoicekey=#q_select_open_invoices.entrykey#">EPS (Telebanking)</a> --->
+		bezahlen via <a href="index.cfm?action=paybill&method=wp#WriteURLTags()#&invoicekey=#q_select_open_invoices.entrykey#">Kreditkarte/ELV</a> | <a href="index.cfm?action=paybill&method=moneytransfer#WriteURLTags()#&invoicekey=#q_select_open_invoices.entrykey#">Ueberweisung</a> <!--- | <a href="index.cfm?action=paybill&method=eps#WriteURLTags()#&invoicekey=#q_select_open_invoices.entrykey#">EPS (Telebanking)</a> --->
 	</td>
   </tr>
   </cfoutput>

@@ -21,15 +21,15 @@
 <a href="logout.cfm"><cfoutput>#si_img('cross')#</cfoutput>Logout</a>
 <br /><br />  
 &nbsp;
-<a href="default.cfm">Home</a>
+<a href="index.cfm">Home</a>
 &nbsp;|&nbsp;
-<a href="default.cfm?action=assigntoreseller">Assign to Reseller</a>
+<a href="index.cfm?action=assigntoreseller">Assign to Reseller</a>
 &nbsp;|&nbsp;
-<a href="default.cfm?action=prices">Preise</a>
+<a href="index.cfm?action=prices">Preise</a>
 &nbsp;|&nbsp;
 <a href="reseller/">Reseller-Verwaltung</a>
 &nbsp;|&nbsp;
-<a href="default.cfm?action=changaccountcompany">Kontozuordnung</a>
+<a href="index.cfm?action=changaccountcompany">Kontozuordnung</a>
 &nbsp;|&nbsp;
 <a href="?action=invoices">Rechnungen</a>
 &nbsp;|&nbsp;
@@ -47,13 +47,13 @@
 &nbsp;|&nbsp;
 <a href="promocodes/">Promocodes</a>
 &nbsp;|&nbsp;
-<a href="default.cfm?action=createinvoice">Manuelle Rechnung</a>
+<a href="index.cfm?action=createinvoice">Manuelle Rechnung</a>
 &nbsp;|&nbsp;
-<a href="default.cfm?action=renameuser">Rename user</a>
+<a href="index.cfm?action=renameuser">Rename user</a>
 &nbsp;|&nbsp;
-<a href="default.cfm?action=editlicencestatus">Edit licence status</a>
+<a href="index.cfm?action=editlicencestatus">Edit licence status</a>
 &nbsp;|&nbsp;
-<a href="default.cfm?action=copynlsubscribers">Copy newsletter subscribers</a>
+<a href="index.cfm?action=copynlsubscribers">Copy newsletter subscribers</a>
 
 <hr>
 

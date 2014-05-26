@@ -23,7 +23,7 @@
 	<cfset url.frmtype = 'file' />
 </cfif>
 
-<form action="default.cfm" method="get" style="margin:0px; ">
+<form action="index.cfm" method="get" style="margin:0px; ">
 <input type="hidden" name="action" value="search">
 
 <table class="table_details table_edit_form">

@@ -23,7 +23,7 @@ WHERE
 	<b><cfoutput>#GetLangVal('prf_ph_integrate_external_address_invalid_code_title')#</cfoutput></b>
 	<br>
 	<br>
-	<cfoutput>#GetLangVal('prf_ph_integrate_external_address_invalid_code_re_request')#</cfoutput>: <a href="default.cfm?action=emailaccounts"><cfoutput>#GetLangVal('cm_wd_overview')#</cfoutput></a>
+	<cfoutput>#GetLangVal('prf_ph_integrate_external_address_invalid_code_re_request')#</cfoutput>: <a href="index.cfm?action=emailaccounts"><cfoutput>#GetLangVal('cm_wd_overview')#</cfoutput></a>
 	<cfexit method="EXITTEMPLATE">
 
 </cfif>
@@ -54,4 +54,4 @@ WHERE
 <br>
 <br>
 
-<a href="default.cfm?action=emailaccounts"><cfoutput>#GetLangVal('cm_wd_overview')#</cfoutput></a>
+<a href="index.cfm?action=emailaccounts"><cfoutput>#GetLangVal('cm_wd_overview')#</cfoutput></a>

@@ -26,13 +26,13 @@
 
 <cfsavecontent variable="a_str_buttons">
 	<cfoutput>
-	<input onClick="location.href = 'default.cfm?Action=ShowNewEvent&startdate=#urlencodedformat(a_str_dt_formatted)#';" type="button" value=" #htmleditformat(GetLangVal('cm_wd_new'))# " class="btn">
-	<input onClick="location.href = 'default.cfm?Action=ViewDay&startdate=#urlencodedformat(a_str_dt_formatted)#';" type="button" class="btn" value="#GetLangVal('cal_wd_day')#">
-	<input onClick="location.href = 'default.cfm?Action=ViewWeek&startdate=#urlencodedformat(a_str_dt_formatted)#';" type="button" class="btn" value="#GetLangVal('cal_wd_week')#">
-	<input onClick="location.href = 'default.cfm?Action=ViewMonth&startdate=#urlencodedformat(a_str_dt_formatted)#';" type="button" class="btn" value="#GetLangVal('cal_wd_month')#">	
+	<input onClick="location.href = 'index.cfm?Action=ShowNewEvent&startdate=#urlencodedformat(a_str_dt_formatted)#';" type="button" value=" #htmleditformat(GetLangVal('cm_wd_new'))# " class="btn">
+	<input onClick="location.href = 'index.cfm?Action=ViewDay&startdate=#urlencodedformat(a_str_dt_formatted)#';" type="button" class="btn" value="#GetLangVal('cal_wd_day')#">
+	<input onClick="location.href = 'index.cfm?Action=ViewWeek&startdate=#urlencodedformat(a_str_dt_formatted)#';" type="button" class="btn" value="#GetLangVal('cal_wd_week')#">
+	<input onClick="location.href = 'index.cfm?Action=ViewMonth&startdate=#urlencodedformat(a_str_dt_formatted)#';" type="button" class="btn" value="#GetLangVal('cal_wd_month')#">	
 	
 	&nbsp;
-	<a href="../settings/default.cfm?action=DisplayPreferences"><cfoutput>#GetLangVal('cal_ph_set_standard_view')#</cfoutput></a>
+	<a href="../settings/index.cfm?action=DisplayPreferences"><cfoutput>#GetLangVal('cal_ph_set_standard_view')#</cfoutput></a>
 			
 	</cfoutput>
 </cfsavecontent>		

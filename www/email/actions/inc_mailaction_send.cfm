@@ -280,6 +280,6 @@
 </cfif>
 
 <!--- forward to confirmation page ... --->
-<cflocation addtoken="no" url="default.cfm?action=ShowSendConfirmation&entrykey=#urlencodedformat(sReturn_entrykey)#">
+<cflocation addtoken="no" url="index.cfm?action=ShowSendConfirmation&entrykey=#urlencodedformat(sReturn_entrykey)#">
 
 

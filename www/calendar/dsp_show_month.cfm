@@ -139,7 +139,7 @@
 			<cfset a_tmp_week_nav_first = a_dt_first_day_of_month />
 		</cfif>
 							
-				<a class="addinfotext" href="default.cfm?action=ViewWeek&Date=<cfoutput>#DateFormat(a_dt_first_day_of_month, 'm/dd/yyyy/')#</cfoutput>"><cfoutput>#(DateDiff('ww', CreateDate(Year(a_dt_first_day_of_month), 1, 1), a_tmp_week_nav_first) + 1)#</cfoutput></a>
+				<a class="addinfotext" href="index.cfm?action=ViewWeek&Date=<cfoutput>#DateFormat(a_dt_first_day_of_month, 'm/dd/yyyy/')#</cfoutput>"><cfoutput>#(DateDiff('ww', CreateDate(Year(a_dt_first_day_of_month), 1, 1), a_tmp_week_nav_first) + 1)#</cfoutput></a>
 				
 			</td>
 			
@@ -166,7 +166,7 @@
 					
 					<cfsavecontent variable="a_str_cal_day">
 					<div>
-					<CFOUTPUT><a href="default.cfm?Action=ViewDay&Date=#dateformat(a_dt_date_day_of_month, "m/dd/yyyy")#" class="a_day">#a_int_day_number#</a></cfoutput>
+					<CFOUTPUT><a href="index.cfm?Action=ViewDay&Date=#dateformat(a_dt_date_day_of_month, "m/dd/yyyy")#" class="a_day">#a_int_day_number#</a></cfoutput>
 					</div>
 					
 					%BIRTHDAYS%
@@ -198,7 +198,7 @@
 									</cfif>
 									<br />  
 								  
-								  <a <cfif Len(a_struct_events[a_int_jj].color) GT 0>style="background-color:#a_struct_events[a_int_jj].color#"</cfif> href="default.cfm?action=ShowEvent&entrykey=#urlencodedformat(a_struct_events[a_int_jj].entrykey)#" title="#htmleditformat(a_struct_events[a_int_jj].title)#">#htmleditformat(checkzerostring(shortenstring(a_struct_events[a_int_jj].title, 25)))#</a> <cfif Compare(a_struct_events[a_int_jj].privateevent, 1) IS 0><span class="mischeader b_all addinfotext" style="font-size:10px;">&nbsp;P&nbsp;</span></cfif>
+								  <a <cfif Len(a_struct_events[a_int_jj].color) GT 0>style="background-color:#a_struct_events[a_int_jj].color#"</cfif> href="index.cfm?action=ShowEvent&entrykey=#urlencodedformat(a_struct_events[a_int_jj].entrykey)#" title="#htmleditformat(a_struct_events[a_int_jj].title)#">#htmleditformat(checkzerostring(shortenstring(a_struct_events[a_int_jj].title, 25)))#</a> <cfif Compare(a_struct_events[a_int_jj].privateevent, 1) IS 0><span class="mischeader b_all addinfotext" style="font-size:10px;">&nbsp;P&nbsp;</span></cfif>
 								  
 								  </cfoutput>
 								  
@@ -285,7 +285,7 @@
 					<tr>
 						<td align="center" width="30" valign="middle" class="mischeader" style="vertical-align:middle;padding-right:10px;padding-left:10px;">
 							
-							<a class="addinfotext" href="default.cfm?action=ViewWeek&Date=<cfoutput>#DateFormat(DateAdd('d', 3, a_dt_date_day_of_month), 'm/dd/yyyy')#</cfoutput>"><cfoutput>#(DateDiff('ww', CreateDate(Year(a_dt_date_day_of_month), 1, 1), a_dt_date_day_of_month) + 1)#</cfoutput></a>
+							<a class="addinfotext" href="index.cfm?action=ViewWeek&Date=<cfoutput>#DateFormat(DateAdd('d', 3, a_dt_date_day_of_month), 'm/dd/yyyy')#</cfoutput>"><cfoutput>#(DateDiff('ww', CreateDate(Year(a_dt_date_day_of_month), 1, 1), a_dt_date_day_of_month) + 1)#</cfoutput></a>
 						</td>
 				</cfif>
 				
@@ -381,7 +381,7 @@
 	  <tr <cfif Len(q_select_events.color) GT 0>style="background-color:#q_select_events.color#"</cfif>>
 		<td>
 			<cfif q_select_events.privateevent NEQ 1>
-			<a href="default.cfm?action=ShowEvent&entrykey=#urlencodedformat(q_select_events.entrykey)#">#htmleditformat(q_select_events.title)#</a>
+			<a href="index.cfm?action=ShowEvent&entrykey=#urlencodedformat(q_select_events.entrykey)#">#htmleditformat(q_select_events.title)#</a>
 			<cfelse>
 			[Privat]
 			</cfif>

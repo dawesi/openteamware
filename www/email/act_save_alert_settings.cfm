@@ -54,4 +54,4 @@
 </cfif>
 
 
-<cflocation addtoken="No" url="default.cfm?action=Alerts&accountid=#form.frmaccountid#">
+<cflocation addtoken="No" url="index.cfm?action=Alerts&accountid=#form.frmaccountid#">

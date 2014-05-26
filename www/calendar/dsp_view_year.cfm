@@ -33,7 +33,7 @@
 
 		
 
-	<a style="font-weight:bold; " href="default.cfm?action=ViewMonth&Date=<cfoutput>#DateFormat(CreateDate(year(ACurrentDate), a_int_month_number, 1), "mm/dd/yyyy")#</cfoutput>"><img src="/images/si/calendar.png" class="si_img" /> <cfoutput>#LsDateFormat(CreateDate(1900, a_int_month_number, 1), "mmmm")#</cfoutput> (<cfoutput>#a_int_month_number#</cfoutput>)</a>
+	<a style="font-weight:bold; " href="index.cfm?action=ViewMonth&Date=<cfoutput>#DateFormat(CreateDate(year(ACurrentDate), a_int_month_number, 1), "mm/dd/yyyy")#</cfoutput>"><img src="/images/si/calendar.png" class="si_img" /> <cfoutput>#LsDateFormat(CreateDate(1900, a_int_month_number, 1), "mmmm")#</cfoutput> (<cfoutput>#a_int_month_number#</cfoutput>)</a>
 
 	
 
@@ -83,7 +83,7 @@
 
 		<CFOUTPUT>
 
-		<a class="calnav" href="default.cfm?action=ViewDay&Date=#urlencodedformat(dateformat(createdate(Year(ACurrentDate), a_int_month_number, a_int_datecount), "mm/dd/yyyy"))#">#a_int_datecount#</a>
+		<a class="calnav" href="index.cfm?action=ViewDay&Date=#urlencodedformat(dateformat(createdate(Year(ACurrentDate), a_int_month_number, a_int_datecount), "mm/dd/yyyy"))#">#a_int_datecount#</a>
 
 		</CFOUTPUT>
 
@@ -109,7 +109,7 @@
 
 		<CFOUTPUT>
 
-		<a class="calnav" href="default.cfm?action=ViewDay&Date=#urlencodedformat(dateformat(createdate(Year(ACurrentDate), a_int_month_number, a_int_datecount), "mm/dd/yyyy"))#">#a_int_datecount#</a>
+		<a class="calnav" href="index.cfm?action=ViewDay&Date=#urlencodedformat(dateformat(createdate(Year(ACurrentDate), a_int_month_number, a_int_datecount), "mm/dd/yyyy"))#">#a_int_datecount#</a>
 
 		</CFOUTPUT>
 

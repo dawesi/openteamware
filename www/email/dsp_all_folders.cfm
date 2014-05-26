@@ -70,7 +70,7 @@ ORDER BY
 	
 		<cfif request.q_select_folders.unreadmessagescount GT 0><img src="/images/si/folder_star.png" class="si_img" /><cfelse><img src="/images/si/folder.png" class="si_img" /></cfif>
 	
-		<a <cfif request.q_select_folders.unreadmessagescount GT 0>style="font-weight:bold;"</cfif> href="default.cfm?action=ShowMailbox&amp;Mailbox=#urlencodedformat(request.q_select_folders.fullfoldername)##AddUserkeytourl()#">#htmleditformat(request.q_select_folders.foldername)#</a>
+		<a <cfif request.q_select_folders.unreadmessagescount GT 0>style="font-weight:bold;"</cfif> href="index.cfm?action=ShowMailbox&amp;Mailbox=#urlencodedformat(request.q_select_folders.fullfoldername)##AddUserkeytourl()#">#htmleditformat(request.q_select_folders.foldername)#</a>
 	</td>
     <td align="right">
 		#val(request.q_select_folders.messagescount)#
@@ -147,10 +147,10 @@ ORDER BY
 </cfsavecontent>
 
 <cfsavecontent variable="a_str_buttons">
-<input type="button" class="btn" onclick="GotoLocHref('default.cfm?action=NewFolder');" type="button" value="<cfoutput>#GetLangval("mail_ph_newFolder")#</cfoutput>" />
+<input type="button" class="btn" onclick="GotoLocHref('index.cfm?action=NewFolder');" type="button" value="<cfoutput>#GetLangval("mail_ph_newFolder")#</cfoutput>" />
 
-<input type="button" class="btn2" onclick="GotoLocHref('default.cfm?action=EmptyFolder&foldername=INBOX.Trash&maxage=0');" value="Papierkorb <cfoutput>#GetLangVal('mail_wd_empty')#</cfoutput>" />
-<input type="button" class="btn2" onclick="GotoLocHref('default.cfm?action=EmptyFolder&foldername=INBOX.Junkmail&maxage=0');" value="Junkmail <cfoutput>#GetLangVal('mail_wd_empty')#</cfoutput>" />
+<input type="button" class="btn2" onclick="GotoLocHref('index.cfm?action=EmptyFolder&foldername=INBOX.Trash&maxage=0');" value="Papierkorb <cfoutput>#GetLangVal('mail_wd_empty')#</cfoutput>" />
+<input type="button" class="btn2" onclick="GotoLocHref('index.cfm?action=EmptyFolder&foldername=INBOX.Junkmail&maxage=0');" value="Junkmail <cfoutput>#GetLangVal('mail_wd_empty')#</cfoutput>" />
 
 <cfif request.appsettings.properties.mailspeedenabled IS 1>
 <input class="btn2" onclick="GotoLocHref('act_reload_folder_structure.cfm');" href="##" value="<cfoutput>#GetLangVal('mail_ph_reload_folder_structure')#</cfoutput>" />

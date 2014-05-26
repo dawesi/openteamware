@@ -26,7 +26,7 @@
 	</div>
 	</td>
 </tr>
-<form action="default.cfm" method="GET" enablecab="No">
+<form action="index.cfm" method="GET" enablecab="No">
 <input type="hidden" name="action" value="step2">
 <tr>
 	<td  colspan="2" height="35" bgcolor="silver" align="right" style="border-top:gray solid 1px;">

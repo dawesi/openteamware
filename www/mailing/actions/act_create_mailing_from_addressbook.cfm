@@ -44,6 +44,6 @@
 	<cfset a_struct_subscribe = a_cmp_nl.SubscribeUser(securitycontext = request.stSecurityContext, usersettings = request.stUserSettings, listkey = a_str_listkey, contactkey = a_str_contactkey)>
 </cfloop>
 	
-<cflocation addtoken="no" url="default.cfm?action=newissue&listkey=#a_str_listkey#">
+<cflocation addtoken="no" url="index.cfm?action=newissue&listkey=#a_str_listkey#">
 
 

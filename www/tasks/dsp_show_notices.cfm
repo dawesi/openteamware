@@ -12,24 +12,24 @@
 <cf_disp_navigation mytextleft="Notizen">
 <br>
 <cfif url.showfulltext is 1>
-[ <a href="default.cfm?<cfoutput>#ReplaceOrAddURLParameter(cgi.QUERY_STRING, "showfulltext", 0)#</cfoutput>">Notiztext ausblenden</a> ]
+[ <a href="index.cfm?<cfoutput>#ReplaceOrAddURLParameter(cgi.QUERY_STRING, "showfulltext", 0)#</cfoutput>">Notiztext ausblenden</a> ]
 <cfelse>
-[ <a href="default.cfm?<cfoutput>#ReplaceOrAddURLParameter(cgi.QUERY_STRING, "showfulltext", 1)#</cfoutput>">Notiztext einblenden</a> ]
+[ <a href="index.cfm?<cfoutput>#ReplaceOrAddURLParameter(cgi.QUERY_STRING, "showfulltext", 1)#</cfoutput>">Notiztext einblenden</a> ]
 </cfif>
-&nbsp;&nbsp;[ <a href="default.cfm?action=NewNotice">Neue Notiz eintragen</a> ]
+&nbsp;&nbsp;[ <a href="index.cfm?action=NewNotice">Neue Notiz eintragen</a> ]
 <!--- save now preferences on this --->
 
 <br><br>
 <table width="100%" border="0" cellspacing="0" cellpadding="4">
   <tr class="mischeader">
     <td class="bb" colspan="2">Titel</td>
-    <td class="bb">Geändert</td>
+    <td class="bb">Geï¿½ndert</td>
     <td class="bb">Projekt/Kategorie</td>
     <td class="bb">Aktion</td>
   </tr>
   <cfoutput query="q_select_tasks">
   <tr>
-    <td class="bb" colspan="2" nowrap><img src="/images/icon/notizen.gif" vspace="0" height="12" width="12" hspace="0" border="0">&nbsp;<a href="default.cfm?action=ShowNotice&id=#q_select_tasks.id#" class="simplelink"><b>#q_select_tasks.title#</b></a></td>
+    <td class="bb" colspan="2" nowrap><img src="/images/icon/notizen.gif" vspace="0" height="12" width="12" hspace="0" border="0">&nbsp;<a href="index.cfm?action=ShowNotice&id=#q_select_tasks.id#" class="simplelink"><b>#q_select_tasks.title#</b></a></td>
     <td class="bb">#LsDateFormat(q_select_tasks.lastmodified, "ddd, dd.mm.yyyy")# #TimeFormat(q_select_tasks.lastmodified, "HH:mm")#</td>
     <td class="bb">&nbsp;</td>
 	<td class="bb">

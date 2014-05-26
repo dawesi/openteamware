@@ -33,12 +33,12 @@ function DisplayCurrentData() {
 	var abgget_email = new cBasicBgOperation();
 	var abgget_cal = new cBasicBgOperation();
 	
-	abgget_email.url = '/email/default.cfm?action=DisplayBottomShortInfo';
+	abgget_email.url = '/email/index.cfm?action=DisplayBottomShortInfo';
 	abgget_email.id_obj_display_content = 'id_div_bottom_email';
 	abgget_email.callback_function = AdjustHeight;
 	abgget_email.doOperation();
 	
-	abgget_cal.url = '/calendar/default.cfm?action=DisplayBottomShortInfo';
+	abgget_cal.url = '/calendar/index.cfm?action=DisplayBottomShortInfo';
 	abgget_cal.id_obj_display_content = 'id_div_bottom_calendar';
 	abgget_email.callback_function = AdjustHeight;
 	abgget_cal.doOperation();

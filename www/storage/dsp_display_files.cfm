@@ -42,7 +42,7 @@
 	<cfoutput>
     #getlangval('odb_ph_nodatafound')#.
 	<br /><br />  
-	<input class="btn" type="button" value="#getlangval('sto_ph_addfiles')#" onClick="window.open('/storage/default.cfm?action=AddFile&parentdirectorykey=#url.directorykey#','_blank','toolbar=no,location=no,directories=no,status=no,copyhistory=no,scrollbars=yes,resizable=yes,height=400,width=600');return false;" />
+	<input class="btn" type="button" value="#getlangval('sto_ph_addfiles')#" onClick="window.open('/storage/index.cfm?action=AddFile&parentdirectorykey=#url.directorykey#','_blank','toolbar=no,location=no,directories=no,status=no,copyhistory=no,scrollbars=yes,resizable=yes,height=400,width=600');return false;" />
 	
 	</cfoutput>
 	</form>
@@ -135,9 +135,9 @@
 		<cfset a_str_dirurl= a_query_displayfiles.name&'/' />
 		<cfset a_str_infourl= a_query_displayfiles.name&'?info=1' />
 	<cfelse>
-		<cfset a_str_fileurl = "default.cfm?action=ShowFile&entrykey=#a_query_displayfiles.entrykey#" />
-		<cfset a_str_dirurl = "default.cfm?action=ShowFiles&directorykey=#a_query_displayfiles.entrykey#" />
-		<cfset a_str_infourl = "default.cfm?action=FileInfo&entrykey=#a_query_displayfiles.entrykey#" />
+		<cfset a_str_fileurl = "index.cfm?action=ShowFile&entrykey=#a_query_displayfiles.entrykey#" />
+		<cfset a_str_dirurl = "index.cfm?action=ShowFiles&directorykey=#a_query_displayfiles.entrykey#" />
+		<cfset a_str_infourl = "index.cfm?action=FileInfo&entrykey=#a_query_displayfiles.entrykey#" />
 	</cfif>
 	
 	<cfswitch expression="#a_query_displayfiles.filetype#">
@@ -204,9 +204,9 @@
 			<td class="addinfotext" align="right">
 				<cfif a_query_displayfiles.specialtype lte 0 >
 					<cfif not a_bool_publicview >
-						<a class="nl" href="default.cfm?action=EditFolder&entrykey=#a_query_displayfiles.entrykey#&currentdir=#url.directorykey#"><img src="/images/si/pencil.png" class="si_img" /></a>
+						<a class="nl" href="index.cfm?action=EditFolder&entrykey=#a_query_displayfiles.entrykey#&currentdir=#url.directorykey#"><img src="/images/si/pencil.png" class="si_img" /></a>
 						
-						<a class="nl" href="default.cfm?action=DeleteFolder&entrykey=#a_query_displayfiles.entrykey#&parentdirectorykey=#url.directorykey#&currentdir=#url.directorykey#"><img src="/images/si/delete.png" class="si_img" /></a>
+						<a class="nl" href="index.cfm?action=DeleteFolder&entrykey=#a_query_displayfiles.entrykey#&parentdirectorykey=#url.directorykey#&currentdir=#url.directorykey#"><img src="/images/si/delete.png" class="si_img" /></a>
 					</cfif>
 				</cfif>
 			</td>
@@ -258,8 +258,8 @@
 							<a target="_blank" onclick="window.open('/storage/show_play_audio.cfm?directorykey=#url.directorykey#&entrykey=#a_query_displayfiles.entrykey#','_blank','toolbar=no,location=no,directories=no,status=no,copyhistory=no,scrollbars=yes,resizable=yes,height=300,width=400');return false;" href="##"><img src="/images/si/control_play_blue.png" class="si_img" /></a>
 						</cfif>
 						<a class="nl" href="##" onclick="ShowLockShortInformation('#a_query_displayfiles.entrykey#');return false;"><img src="/images/si/lock.png" class="si_img" /></a>
-						<a class="nl" href="default.cfm?action=FileInfo&entrykey=#a_query_displayfiles.entrykey#"><img src="/images/si/information.png" class="si_img" /></a>
-						<a class="nl" href="default.cfm?action=EditFile&entrykey=#a_query_displayfiles.entrykey#"><img src="/images/si/pencil.png" class="si_img" /></a>
+						<a class="nl" href="index.cfm?action=FileInfo&entrykey=#a_query_displayfiles.entrykey#"><img src="/images/si/information.png" class="si_img" /></a>
+						<a class="nl" href="index.cfm?action=EditFile&entrykey=#a_query_displayfiles.entrykey#"><img src="/images/si/pencil.png" class="si_img" /></a>
 						<a class="nl" href="##" onclick="ConfirmDeleteFile('#a_query_displayfiles.entrykey#');return false;"><img src="/images/si/delete.png" class="si_img" /></a>
 	
 					</cfif>

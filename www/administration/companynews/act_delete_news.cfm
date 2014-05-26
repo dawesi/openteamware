@@ -10,4 +10,4 @@ WHERE
 ;
 </cfquery>
 
-<cflocation addtoken="no" url="../default.cfm?action=companynews#writeurltags()#">
+<cflocation addtoken="no" url="../index.cfm?action=companynews#writeurltags()#">

@@ -88,7 +88,7 @@ ORDER BY
         </td> --->
 		<cfif arguments.editmode>
 	        <td>
-	            <a href="/crm/default.cfm?action=addProductToContact&contactkey=#arguments.contactkey#&entrykey=#stReturn.q_select_products_of_contact.entrykey#">
+	            <a href="/crm/index.cfm?action=addProductToContact&contactkey=#arguments.contactkey#&entrykey=#stReturn.q_select_products_of_contact.entrykey#">
 	                <img src="/images/si/pencil.png" class="si_img" />
 	            </a>
 	        </td>

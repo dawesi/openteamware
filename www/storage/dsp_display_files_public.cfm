@@ -41,10 +41,10 @@
 					</td>
 					<td>
 						<cfif a_query_displayfiles.specialtype lte 0 >
-						<a href="default.cfm?action=EditFolder&entrykey=#a_query_displayfiles.entrykey#&currentdir=#url.directorykey#">#si_img('pencil')#
+						<a href="index.cfm?action=EditFolder&entrykey=#a_query_displayfiles.entrykey#&currentdir=#url.directorykey#">#si_img('pencil')#
 						</a>
 						|
-						<a href="default.cfm?action=DeleteFolder&entrykey=#a_query_displayfiles.entrykey#&parentdirectorykey=#url.directorykey#&currentdir=#url.directorykey#"><img width="12" height="12" alt="del" src="/images/del.gif" border="0"></a>
+						<a href="index.cfm?action=DeleteFolder&entrykey=#a_query_displayfiles.entrykey#&parentdirectorykey=#url.directorykey#&currentdir=#url.directorykey#"><img width="12" height="12" alt="del" src="/images/del.gif" border="0"></a>
 						</cfif>
 					</td>
 				</tr>
@@ -91,16 +91,16 @@
         </cfoutput> </b>
 		<br>
         <cfif url.startrow gt 1 >
-	        <a href="default.cfm?#ReplaceOrAddURLParameter(QUERY_STRING,"startrow",1)#">#getlangval('odb_wd_first')#</a>
-	        <a href="default.cfm?#ReplaceOrAddURLParameter(QUERY_STRING,"startrow",startrow-request.a_int_pagesize)#">&lt;&lt;
+	        <a href="index.cfm?#ReplaceOrAddURLParameter(QUERY_STRING,"startrow",1)#">#getlangval('odb_wd_first')#</a>
+	        <a href="index.cfm?#ReplaceOrAddURLParameter(QUERY_STRING,"startrow",startrow-request.a_int_pagesize)#">&lt;&lt;
 			</a>
         <cfelse>
 	        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
         </cfif>
         <cfif (url.startrow+ request.a_int_pagesize) lte a_query_displayfiles.recordcount >
-	        <a href="default.cfm?#ReplaceOrAddURLParameter(QUERY_STRING,"startrow",startrow+request.a_int_pagesize)#">&gt;&gt;
+	        <a href="index.cfm?#ReplaceOrAddURLParameter(QUERY_STRING,"startrow",startrow+request.a_int_pagesize)#">&gt;&gt;
 			</a>
-	        <a href="default.cfm?#ReplaceOrAddURLParameter(QUERY_STRING,"startrow",a_query_displayfiles.recordcount)#">#getlangval('odb_wd_last')#</a>
+	        <a href="index.cfm?#ReplaceOrAddURLParameter(QUERY_STRING,"startrow",a_query_displayfiles.recordcount)#">#getlangval('odb_wd_last')#</a>
         </cfif>
 	</cfif>
 </cfoutput>

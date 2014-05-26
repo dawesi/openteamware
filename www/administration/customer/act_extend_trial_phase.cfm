@@ -21,4 +21,4 @@ WHERE
 </cfquery>
 
 
-<cflocation addtoken="no" url="../default.cfm?action=customerproperties#writeurltagsfromform()#">
+<cflocation addtoken="no" url="../index.cfm?action=customerproperties#writeurltagsfromform()#">

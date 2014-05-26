@@ -20,4 +20,4 @@
 <!--- update status --->
 <cfinclude template="queries/q_update_wireless_status.cfm">
 
-<cflocation addtoken="no" url="default.cfm?action=wireless">
+<cflocation addtoken="no" url="index.cfm?action=wireless">

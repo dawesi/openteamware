@@ -43,7 +43,7 @@ FROM
 			<JS_IF field="status" array="js_arr_tasks" compare="0" method="is">
 				class="statusdone"
 			</JS_IF>
-			href="default.cfm?action=ShowTask&entrykey=
+			href="index.cfm?action=ShowTask&entrykey=
 			<JS_OUTPUT field="entrykey" type="query">
 			">
 			<JS_OUTPUT field="title" type="query">

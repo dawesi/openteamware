@@ -6,4 +6,4 @@
 	<cfinvokeargument name="rolekey" value="#form.frmrolekey#">
 </cfinvoke>
 
-<cflocation addtoken="no" url="../default.cfm?action=securityrole.display&entrykey=#urlencodedformat(form.frmrolekey)##WriteURLTagsFromForm()#">
+<cflocation addtoken="no" url="../index.cfm?action=securityrole.display&entrykey=#urlencodedformat(form.frmrolekey)##WriteURLTagsFromForm()#">

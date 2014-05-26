@@ -31,7 +31,7 @@
 <cfif Len(url.productkey) IS 0>
 
 	<b><cfoutput>#GetLangVal('adm_ph_new_account_choose_type')#</cfoutput></b>
-	<form action="default.cfm" method="get">
+	<form action="index.cfm" method="get">
 		<input type="hidden" name="action" value="newuser">
 		<input type="hidden" name="companykey" value="<cfoutput>#url.companykey#</cfoutput>">
 		<input type="hidden" name="resellerkey" value="<cfoutput>#url.resellerkey#</cfoutput>">
@@ -114,7 +114,7 @@
 <cfif q_select_company_data.status IS 0 AND val(q_select_licence_status.availableseats) IS 0>
 	<b><cfoutput>#GetLangVal('adm_ph_new_account_licences_needed')#</cfoutput></b>
 	<br><br><br>
-	<b><a href="default.cfm?action=shop<cfoutput>#writeurltags()#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_licence_status_add_goto_shop')#</cfoutput></a></b>
+	<b><a href="index.cfm?action=shop<cfoutput>#writeurltags()#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_licence_status_add_goto_shop')#</cfoutput></a></b>
 	<br><br>
 	<cfoutput>#GetLangVal('hpg_ph_shop_need_consulting')#</cfoutput>
 	<cfexit method="exittemplate">

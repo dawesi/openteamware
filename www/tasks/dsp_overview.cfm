@@ -1,10 +1,10 @@
 <!--- show overview ... --->
 <cf_disp_navigation mytextleft="Notizen und Aufgaben"><br>
 
-<a href="default.cfm?action=ShowWelcome"><b>Jetzt alle Aufgaben und Notizen anzeigen</b></a><br><br>
+<a href="index.cfm?action=ShowWelcome"><b>Jetzt alle Aufgaben und Notizen anzeigen</b></a><br><br>
 
 <table  border="0" cellspacing="0" cellpadding="2">
-<form action="default.cfm?action=QuickAdd" method="POST" enablecab="No">
+<form action="index.cfm?action=QuickAdd" method="POST" enablecab="No">
 <cfinclude template="../login/inc_login_key.cfm">
 <tr>
 	<td colspan="7" class="b_all">
@@ -14,7 +14,7 @@
 		<td align="right">Kurze Notiz anlegen:</td>
 		<td><cfinput type="Text" name="frmTitle" required="Yes" size="40" maxlength="100"></td>
 		<td><input type="Submit" name="frmSubmit" value="Speichern"></td>
-		<td><a href="default.cfm?action=NewNotice">Erweiterte Eingabe ...</a></td>
+		<td><a href="index.cfm?action=NewNotice">Erweiterte Eingabe ...</a></td>
 	</tr>
 	</table>
 	
@@ -82,7 +82,7 @@
 	<cfif q_select_all.dt_due lte now()>
 	  <tr>
 		<td valign="top"><font style="color:##CC0000;font-weight:bold;">&##187;</font></td>
-		<td valign="top"><img height=9 width=9 align="absmiddle" src="/images/tasks/task_status_#q_select_all.status#.png">&nbsp;&nbsp;<a href="default.cfm?action=showNotice&id=#q_select_all.id#" class="ntd">#q_select_all.title#</a></td>
+		<td valign="top"><img height=9 width=9 align="absmiddle" src="/images/tasks/task_status_#q_select_all.status#.png">&nbsp;&nbsp;<a href="index.cfm?action=showNotice&id=#q_select_all.id#" class="ntd">#q_select_all.title#</a></td>
 		<td valign="top">#dateformat(q_select_all.dt_due, "dd.mm.yyy")#</td>
 		<cfset ADistance = DateDiff("d", q_select_all.dt_due, now())>
 		<td align="right" valign="top">#ADistance#</td>
@@ -114,7 +114,7 @@
 	<cfoutput query="q_select_all">	
 	  <tr>
 		<td valign="top"><font style="color:##CC0000;font-weight:bold;">&##187;</font></td>
-		<td valign="top"><img height=9 width=9 align="absmiddle" src="/images/tasks/task_status_#q_select_all.status#.png">&nbsp;&nbsp;<a href="default.cfm?action=showNotice&id=#q_select_all.id#" class="ntd">#q_select_all.title#</a></td>
+		<td valign="top"><img height=9 width=9 align="absmiddle" src="/images/tasks/task_status_#q_select_all.status#.png">&nbsp;&nbsp;<a href="index.cfm?action=showNotice&id=#q_select_all.id#" class="ntd">#q_select_all.title#</a></td>
 		<td valign="top" align="right">#dateformat(q_select_all.dt_due, "dd.mm.yyy")#</td>		
 		<cfset ADistance = DateDiff("d",now(),  q_select_all.dt_due)>
 		<td align="right" valign="top">#ADistance#</td>
@@ -145,7 +145,7 @@
 	<cfoutput query="q_select_all">
 	  <tr>
 		<td valign="top"><font style="color:##CC0000;font-weight:bold;">&##187;</font></td>
-		<td valign="top"><img height=9 width=9 align="absmiddle" src="/images/tasks/task_status_#q_select_all.status#.png">&nbsp;&nbsp;<a href="default.cfm?action=showNotice&id=#q_select_all.id#" class="ntd">#q_select_all.title#</a></td>
+		<td valign="top"><img height=9 width=9 align="absmiddle" src="/images/tasks/task_status_#q_select_all.status#.png">&nbsp;&nbsp;<a href="index.cfm?action=showNotice&id=#q_select_all.id#" class="ntd">#q_select_all.title#</a></td>
 		<td valign="top" align="right">#dateformat(q_select_all.dt_due, "dd.mm.yyy")#</td>		
 	  </tr>
 	  </cfoutput>
@@ -174,7 +174,7 @@
 	<cfoutput query="q_select_all">
 	  <tr>
 		<td valign="top"><font style="color:gray;font-weight:bold;">&##187;</font></td>
-		<td valign="top"><a href="default.cfm?action=showNotice&id=#q_select_all.id#" class="ntd">#q_select_all.title#</a></td>
+		<td valign="top"><a href="index.cfm?action=showNotice&id=#q_select_all.id#" class="ntd">#q_select_all.title#</a></td>
 	  </tr>
 	  </cfoutput>
 	</table>

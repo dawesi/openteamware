@@ -78,7 +78,7 @@ WHERE
 	
 	
 		
-		<form action="default.cfm?action=editmailbox&mailbox=<cfoutput>#urlencodedformat(url.mailbox)#</cfoutput>" method="post" style="margin:0px;">
+		<form action="index.cfm?action=editmailbox&mailbox=<cfoutput>#urlencodedformat(url.mailbox)#</cfoutput>" method="post" style="margin:0px;">
 		<table class="table_details table_edit_form">
 		  <tr class="mischeader">
 			<td colspan="2">
@@ -112,7 +112,7 @@ WHERE
 			<td>
 				<input type="submit" name="frmsubmit" value="Umbenennen" class="btn" />
 		
-				<input onClick="location.href='default.cfm';" type="button" class="btn3" value="<cfoutput>#GetLangVal('cm_wd_cancel')#</cfoutput>" />
+				<input onClick="location.href='index.cfm';" type="button" class="btn3" value="<cfoutput>#GetLangVal('cm_wd_cancel')#</cfoutput>" />
 			</td>
 		  </tr>
 		</table>
@@ -124,12 +124,12 @@ WHERE
 	
 	<cfif len(trim(form.frmnewname)) is 0>
 		<!--- zero? --->
-		<cflocation addtoken="no" url="default.cfm?action=editmailbox&mailbox=#urlencodedformat(url.mailbox)#&error=noinput">	
+		<cflocation addtoken="no" url="index.cfm?action=editmailbox&mailbox=#urlencodedformat(url.mailbox)#&error=noinput">	
 	</cfif>
 
 	<cfif FindNoCase(".", form.frmnewname) gt 0>
 		<!--- point? --->
-		<cflocation addtoken="no" url="default.cfm?action=editmailbox&mailbox=#urlencodedformat(url.mailbox)#&error=pointinname">	
+		<cflocation addtoken="no" url="index.cfm?action=editmailbox&mailbox=#urlencodedformat(url.mailbox)#&error=pointinname">	
 	</cfif>
 
 	<!--- a) check if such a folder already exists --->
@@ -140,7 +140,7 @@ WHERE
 
 	<cfif q_select_folder_exists.recordcount gt 0>
 		<!--- exists ... --->
-		<cflocation addtoken="no" url="default.cfm?action=editmailbox&mailbox=#urlencodedformat(url.mailbox)#&error=folderalreadyexists">
+		<cflocation addtoken="no" url="index.cfm?action=editmailbox&mailbox=#urlencodedformat(url.mailbox)#&error=folderalreadyexists">
 	</cfif>
 	
 	<cfinvoke component="/components/email/cmp_tools" method="renamefolder" returnvariable="a_bol_return">
@@ -157,7 +157,7 @@ WHERE
 	
 	<b>Aktion erfolgreich ausgef&uuml;hrt!</b>
 	<br /><br />
-	<a href="default.cfm?action=overview" class="simplelink">Zur Ordner&uuml;bersicht ...</a>
+	<a href="index.cfm?action=overview" class="simplelink">Zur Ordner&uuml;bersicht ...</a>
 	
 </cfif>
 

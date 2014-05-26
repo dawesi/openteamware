@@ -3,7 +3,7 @@
 <cfinclude template="/common/scripts/script_utils.cfm">
 
 <cfif cgi.REQUEST_METHOD NEQ 'POST'>
-	<cflocation addtoken="no" url="default.cfm">
+	<cflocation addtoken="no" url="index.cfm">
 </cfif>
 
 <!--- the fieldnames: form.FRMFIELDNAMES --->
@@ -65,4 +65,4 @@
 	
 </cfloop>
 
-<cflocation addtoken="no" url="default.cfm">
+<cflocation addtoken="no" url="index.cfm">

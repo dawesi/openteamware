@@ -60,7 +60,7 @@
         </td>
 		
 		<td align="right">
-	            <a href="/crm/default.cfm?action=setAvailableQuantity&productkey=#stReturn.q_select_productquantity.entrykey#&productquantitykey=#stReturn.q_select_productquantity.productquantitykey#&quantity=#stReturn.q_select_productquantity.quantity#&title=#stReturn.q_select_productquantity.title#">
+	            <a href="/crm/index.cfm?action=setAvailableQuantity&productkey=#stReturn.q_select_productquantity.entrykey#&productquantitykey=#stReturn.q_select_productquantity.productquantitykey#&quantity=#stReturn.q_select_productquantity.quantity#&title=#stReturn.q_select_productquantity.title#">
 	                <img src="/images/si/pencil.png" class="si_img" />
 	            </a>
 	        </td>

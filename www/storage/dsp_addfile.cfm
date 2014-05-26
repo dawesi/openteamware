@@ -14,7 +14,7 @@
 	<cfexit method="exittemplate">
 </cfif>
 		
-<form action="default.cfm?action=UploadFile" method="POST" enctype="multipart/form-data" onSubmit="DisplayPleaseWaitMsgOnLocChange()" style="margin:0px;">
+<form action="index.cfm?action=UploadFile" method="POST" enctype="multipart/form-data" onSubmit="DisplayPleaseWaitMsgOnLocChange()" style="margin:0px;">
 <input type="hidden" name="frm_parentdirectorykey" value="<cfoutput>#url.parentdirectorykey#</cfoutput>" />
 			
 

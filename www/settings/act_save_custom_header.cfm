@@ -10,4 +10,4 @@ SET customheader = <cfqueryparam cfsqltype="cf_sql_varchar" value="#form.frmdata
 WHERE userid = <cfqueryparam cfsqltype="cf_sql_integer" value="#request.stSecurityContext.myuserid#">;
 </cfquery>
 
-<cflocation addtoken="no" url="default.cfm?action=editcustomheader">
+<cflocation addtoken="no" url="index.cfm?action=editcustomheader">

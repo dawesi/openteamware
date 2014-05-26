@@ -1,14 +1,14 @@
 // javascripts with crm extensions ... mainly important for the contact administration
 
 function OpenMsgInNewWindow(mailbox,uid,userkey) {
-	window.open('/email/default.cfm?action=showmessage&fullheader=1&id='+escape(uid)+'&mailbox='+escape(mailbox)+'&popup=1&userkey='+escape(userkey), '_blank', 'resizable=1,location=0,directories=0,status=1,menubar=0,scrollbars=1,toolbar=0,width=820,height=700');
+	window.open('/email/index.cfm?action=showmessage&fullheader=1&id='+escape(uid)+'&mailbox='+escape(mailbox)+'&popup=1&userkey='+escape(userkey), '_blank', 'resizable=1,location=0,directories=0,status=1,menubar=0,scrollbars=1,toolbar=0,width=820,height=700');
 	}
 	
 // load rest of history item and display
 function LoadFullHistoryItem(servicekey, objectkey, entrykey, id_obj) {
 	var a_simple_get = new cBasicBgOperation();
 	$('#' + id_obj).html(a_str_loading_status_img);
-	a_simple_get.url = '/crm/default.cfm?Action=LoadFullHistoryItem&servicekey=' + escape(servicekey) + '&entrykey=' + escape(entrykey) + '&objectkey=' +  escape(objectkey);
+	a_simple_get.url = '/crm/index.cfm?Action=LoadFullHistoryItem&servicekey=' + escape(servicekey) + '&entrykey=' + escape(entrykey) + '&objectkey=' +  escape(objectkey);
 	a_simple_get.id_obj_display_content = id_obj;
 	a_simple_get.doOperation();
 	}
@@ -24,16 +24,16 @@ function ShowTopCRMPanel(area, filterdatatype) {
 		
 	if (area == 'savedfilters') {
 		myobj.css('height', 'auto').html(a_str_loading_status_img);
-		a_simple_get.url = 'default.cfm?Action=ShowTopPanelSavedFilterList&filterdatatype=' + filterdatatype;
+		a_simple_get.url = 'index.cfm?Action=ShowTopPanelSavedFilterList&filterdatatype=' + filterdatatype;
 		a_simple_get.id_obj_display_content = 'id_div_search_panel_content';
 		a_simple_get.doOperation();
 		}
 	
 		
 	if (area == 'advanced') {
-		GotoLocHref('default.cfm?action=AdvancedSearch&filterdatatype=' + filterdatatype);
+		GotoLocHref('index.cfm?action=AdvancedSearch&filterdatatype=' + filterdatatype);
 	//	a_simple_get.url = 'crm/show_include_search_panel.cfm?resetallunsavedcriterias=false&filterviewkey=';
-	//	a_simple_get.url = 'default.cfm?action=ShowAdvancedSearchFilterPanel';
+	//	a_simple_get.url = 'index.cfm?action=ShowAdvancedSearchFilterPanel';
 	//	a_simple_get.id_obj_display_content = 'id_div_search_panel_content';		
 	//	a_simple_get.doOperation();
 		}
@@ -149,17 +149,17 @@ function call_new_item_for_contact(entrykey, item_type, param1, param2) {
 	switch (item_type) {
 	  case "history":
 	  	// "new history" ... call form
-		a_url = '/crm/default.cfm?action=CreateEditHistoryItem&forcepagetype=inpage&objectkey=' + escape(entrykey) + '&projectkey=' + escape(param1) + '&servicekey=52227624-9DAA-05E9-0892A27198268072' + '&type=' + escape(param2);
+		a_url = '/crm/index.cfm?action=CreateEditHistoryItem&forcepagetype=inpage&objectkey=' + escape(entrykey) + '&projectkey=' + escape(param1) + '&servicekey=52227624-9DAA-05E9-0892A27198268072' + '&type=' + escape(param2);
 		a_modal_dlg.type = 'custom';
 		a_modal_dlg.customtitle = GetLangData(8);
 		a_modal_dlg.customcontent_load_from_url = a_url;
 		a_modal_dlg.ShowDialog();			
 	  	break;
 	  case "project":
-		GotoLocHref('/project/default.cfm?action=newproject&type=1&contactkey=' + escape(entrykey));
+		GotoLocHref('/project/index.cfm?action=newproject&type=1&contactkey=' + escape(entrykey));
 		break;	
 	  case "product":
-		GotoLocHref('/crm/default.cfm?action=addProductToContact&contactkey=' + escape(entrykey));
+		GotoLocHref('/crm/index.cfm?action=addProductToContact&contactkey=' + escape(entrykey));
 		break;					
 	  case "task":
 	  	a_url = '/crm/show_create_task.cfm?addressbookkeys=' + escape(entrykey);
@@ -174,7 +174,7 @@ function call_new_item_for_contact(entrykey, item_type, param1, param2) {
 		// OpenNewWindowWithParams(a_url);						  
 		break;
 	  case "contact_link":
-    	a_url = '/crm/dialogs/edit_links/default.cfm?entrykey='+ escape(entrykey) +'&servicekey=52227624-9DAA-05E9-0892A27198268072';
+    	a_url = '/crm/dialogs/edit_links/index.cfm?entrykey='+ escape(entrykey) +'&servicekey=52227624-9DAA-05E9-0892A27198268072';
     	mywin = window.open(a_url, "", "RESIZABLE=yes,SCROLLBARS=yes,WIDTH=780,HEIGHT=500");
     	mywin.window.focus();
 		break;
@@ -185,7 +185,7 @@ function call_new_item_for_contact(entrykey, item_type, param1, param2) {
 	  	OpenEmailPopup(entrykey, '');
 		break;
 	  case "contact":
-	  	GotoLocHref('/addressbook/default.cfm?Action=createnewitem');
+	  	GotoLocHref('/addressbook/index.cfm?Action=createnewitem');
 		break		
 		}
 

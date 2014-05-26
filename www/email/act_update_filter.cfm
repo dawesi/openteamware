@@ -80,4 +80,4 @@
 
 
 
-<cflocation addtoken="no" url="default.cfm?action=filter">
+<cflocation addtoken="no" url="index.cfm?action=filter">

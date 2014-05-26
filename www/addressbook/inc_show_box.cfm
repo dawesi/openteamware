@@ -3,7 +3,7 @@
 <table height="70" width="98%" border="0" cellspacing="0" cellpadding="4"  style="margin:5px;" class="b_all">
 <tr>
 	<td class="mischeader" height="17">
-	<a href="default.cfm?action=View&ID=<cfoutput>#q_select_contacts.id#</cfoutput>" style="font-weight:bold;"><cfoutput>#checkzerostring(q_select_contacts.Surname)#</a>, #q_select_contacts.Firstname#</cfoutput>
+	<a href="index.cfm?action=View&ID=<cfoutput>#q_select_contacts.id#</cfoutput>" style="font-weight:bold;"><cfoutput>#checkzerostring(q_select_contacts.Surname)#</a>, #q_select_contacts.Firstname#</cfoutput>
 	</td>
 </tr>
 <tr>
@@ -19,7 +19,7 @@
 	</cfif>
 	
 	<cfif len(q_select_contacts.Email_prim) gt 0>
-	<br><cfoutput><a href="../email/default.cfm?action=composemail&to=#urlencodedformat(q_select_contacts.Email_prim)#&type=0" class="simplelink">#htmleditformat(shortenstring(q_select_contacts.Email_prim, 30))#</a></cfoutput>	
+	<br><cfoutput><a href="../email/index.cfm?action=composemail&to=#urlencodedformat(q_select_contacts.Email_prim)#&type=0" class="simplelink">#htmleditformat(shortenstring(q_select_contacts.Email_prim, 30))#</a></cfoutput>	
 	</cfif>
 	</td>
 </tr>

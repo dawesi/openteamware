@@ -26,7 +26,7 @@
 	</cfinvoke>
 
 	<cfif NOT stReturn.result>
-		<cflocation url="/crm/default.cfm?action=showProductsOfContact&contactkey=#url.contactkey#&ibxerrorno=#stReturn.error#"/>
+		<cflocation url="/crm/index.cfm?action=showProductsOfContact&contactkey=#url.contactkey#&ibxerrorno=#stReturn.error#"/>
 	</cfif>
 
 	<cfset q_select_products_of_contact = stReturn.q_select_products_of_contact/>
@@ -67,7 +67,7 @@
 
 <cfoutput>
 <div class="b_all">
-<a href="##" onclick="GotoLocHref('/crm/default.cfm?action=addMultipleProductsToContact&contactkey=#url.contactkey#');"><img src="/images/si/package_add.png" class="si_img" /> #GetLangVal('cm_wd_new_multiple')#</a>
+<a href="##" onclick="GotoLocHref('/crm/index.cfm?action=addMultipleProductsToContact&contactkey=#url.contactkey#');"><img src="/images/si/package_add.png" class="si_img" /> #GetLangVal('cm_wd_new_multiple')#</a>
 </div>
 </br>
 </cfoutput>

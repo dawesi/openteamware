@@ -95,7 +95,7 @@
 			<cfoutput>
 			
 			<div style="padding-left:#a_int_padding_left#px;padding-top:3px; ">
-				<input type="radio" value="#sDirectorykey#" class="noborder" style="width:auto;" name="frmdirectorykey" /> <a target="_blank" href="/storage/default.cfm?action=ShowFiles&directorykey=#sDirectorykey#"><img src="/images/si/folder.png" class="si_img" /> #htmleditformat(a_struct_dirs.directories[sDirectorykey].name)#</a>
+				<input type="radio" value="#sDirectorykey#" class="noborder" style="width:auto;" name="frmdirectorykey" /> <a target="_blank" href="/storage/index.cfm?action=ShowFiles&directorykey=#sDirectorykey#"><img src="/images/si/folder.png" class="si_img" /> #htmleditformat(a_struct_dirs.directories[sDirectorykey].name)#</a>
 				<div style="padding-left:10px; ">
 					<!--- files --->
 				<cfset a_struct_filter = StructNew()>

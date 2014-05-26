@@ -86,4 +86,4 @@ SELECT DISTINCT(servicekey) FROM q_select_avaliable_actions;
 </cfoutput>
 
 
-<cflocation addtoken="no" url="default.cfm?action=roleproperties&entrykey=#urlencodedformat(form.frmentrykey)#">
+<cflocation addtoken="no" url="index.cfm?action=roleproperties&entrykey=#urlencodedformat(form.frmentrykey)#">

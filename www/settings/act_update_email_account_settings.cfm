@@ -64,4 +64,4 @@
   <cfinclude template="queries/q_update_email_autocheck.cfm">
 </cfif>
 
-<cflocation addtoken="no" url="default.cfm?action=emailaccounts">
+<cflocation addtoken="no" url="index.cfm?action=emailaccounts">

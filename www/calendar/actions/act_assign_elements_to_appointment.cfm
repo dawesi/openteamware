@@ -22,5 +22,5 @@
 	</cfinvoke>
 </cfloop>
 
-<cflocation url="default.cfm?action=DisplayAssignedElements&entrykey=#form.frmentrykey#">
+<cflocation url="index.cfm?action=DisplayAssignedElements&entrykey=#form.frmentrykey#">
 

@@ -85,9 +85,9 @@
 	<cfelse>
 		<br><br>
 		<b><cfoutput>#GetLangVal('adm_ph_change_account_type_licences_needed')#</cfoutput><br><br><br>
-		<a href="default.cfm?action=licence.status<cfoutput>#writeurltags()#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_nav_shop_display_licence_status')#</cfoutput></a>
+		<a href="index.cfm?action=licence.status<cfoutput>#writeurltags()#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_nav_shop_display_licence_status')#</cfoutput></a>
 		<br><br>
-		<a href="default.cfm?action=shop<cfoutput>#writeurltags()#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_goto_shop')#</cfoutput></a>
+		<a href="index.cfm?action=shop<cfoutput>#writeurltags()#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_goto_shop')#</cfoutput></a>
 		</b>
 	</cfif>
 	</td>

@@ -392,7 +392,7 @@ function SmartLoadContactDataFromAddressbook()
 // check if address book search has been loaded
 function CheckLoadAddressBookSearch() {
 	var obj1 = findObj('idiframeadddressbook');
-	var a_url = 'default.cfm?Action=ShowAddressBookSearchInpage';
+	var a_url = 'index.cfm?Action=ShowAddressBookSearchInpage';
 	
 	if (obj1.src) {
 		// firefox

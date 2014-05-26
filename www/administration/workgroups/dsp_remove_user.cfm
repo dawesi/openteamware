@@ -21,7 +21,7 @@
 <br><br><br>
 Benutzer wurde entfernt.
 <br><br><br>
-<a href="default.cfm?action=workgroupproperties&entrykey=<cfoutput>#url.workgroupkey##WriteURLTags()#</cfoutput>">zurueck</a>
+<a href="index.cfm?action=workgroupproperties&entrykey=<cfoutput>#url.workgroupkey##WriteURLTags()#</cfoutput>">zurueck</a>
 
 <cfmail from="#request.stSecurityContext.myusername#" to="#stReturn.query.username#" subject="Arbeitsgruppenmitgliedschaft beendet">
 Hinweis:

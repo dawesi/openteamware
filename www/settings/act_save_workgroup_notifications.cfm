@@ -10,4 +10,4 @@ WHERE userid = #request.stSecurityContext.myuserid#
 AND group_id = #val(form.frmWorkgroup_id)#
 </cfquery>
 
-<cflocation addtoken="no" url="default.cfm?action=WorkgroupProperties&id=#form.frmWorkgroup_id#">
+<cflocation addtoken="no" url="index.cfm?action=WorkgroupProperties&id=#form.frmWorkgroup_id#">

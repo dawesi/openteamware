@@ -27,7 +27,7 @@ Keep in mind that all unsaved data is lost when logging on with a new user!
 <div style="padding:12px;" class="bt">
 	<a href="javascript:CloseSimpleModalDialog();"><cfoutput>#si_img('cross')#</cfoutput> Cancel and close this window</a>
 	|
-	<a href="/settings/default.cfm?Action=ManageSSO"><cfoutput>#si_img('pencil')#</cfoutput> Manage SSO preferences</a>
+	<a href="/settings/index.cfm?Action=ManageSSO"><cfoutput>#si_img('pencil')#</cfoutput> Manage SSO preferences</a>
 </div>
 
 

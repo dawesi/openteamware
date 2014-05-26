@@ -36,16 +36,16 @@
     <td>
 		<ul class="ul_nopoints">
 	<cfloop list="#q_select_resources.workgroupkeys#" delimiters="," index="a_str_workgroup_key">
-		<li><a href="default.cfm?action=workgroupproperties&entrykey=#a_str_workgroup_key##writeurltags()#"><img src="/images/si/group.png" class="si_img" />#htmleditformat(a_cmp_workgroups.GetWorkgroupNameByEntryKey(a_str_workgroup_key))#</a></li>
+		<li><a href="index.cfm?action=workgroupproperties&entrykey=#a_str_workgroup_key##writeurltags()#"><img src="/images/si/group.png" class="si_img" />#htmleditformat(a_cmp_workgroups.GetWorkgroupNameByEntryKey(a_str_workgroup_key))#</a></li>
 	</cfloop>
 		</ul>
 	</td>
     <td>
 	
 	<!--- TODO: allow to edit resources ... --->
-<!--- 	<a href="default.cfm?action=resource.edit&entrykey=#urlencodedformat(q_select_resources.entrykey)##WriteURLTags()#"><img src="/images/si/pencil.png" class="si_img" /> #GetLangVal('cm_wd_edit')#</a>
+<!--- 	<a href="index.cfm?action=resource.edit&entrykey=#urlencodedformat(q_select_resources.entrykey)##WriteURLTags()#"><img src="/images/si/pencil.png" class="si_img" /> #GetLangVal('cm_wd_edit')#</a>
 	&nbsp;&nbsp;
- --->	<a onClick="return confirm('#GetLangValJS('cm_ph_are_you_sure')#');" href="default.cfm?action=action.resource.delete&entrykey=#urlencodedformat(q_select_resources.entrykey)##WriteURLTags()#"><img src="/images/si/delete.png" class="si_img" /> #GetLangVal('cm_wd_delete')#</a>
+ --->	<a onClick="return confirm('#GetLangValJS('cm_ph_are_you_sure')#');" href="index.cfm?action=action.resource.delete&entrykey=#urlencodedformat(q_select_resources.entrykey)##WriteURLTags()#"><img src="/images/si/delete.png" class="si_img" /> #GetLangVal('cm_wd_delete')#</a>
 	
 	</td>
   </tr>
@@ -56,7 +56,7 @@
 </cfsavecontent>
 <cfsavecontent variable="a_str_buttons">
 	<cfoutput >
-		<input type="button" class="btn" value="#GetLangVal('adm_ph_ressources_new')#" onclick="location.href = 'default.cfm?action=resources.new#writeurltags()#'" />
+		<input type="button" class="btn" value="#GetLangVal('adm_ph_ressources_new')#" onclick="location.href = 'index.cfm?action=resources.new#writeurltags()#'" />
 	</cfoutput>
 </cfsavecontent>
 

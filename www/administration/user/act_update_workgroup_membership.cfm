@@ -8,4 +8,4 @@
 </cfinvoke>
 
 
-<cflocation addtoken="no" url="../default.cfm?action=workgroupproperties&entrykey=#form.frmworkgroupkey##writeurltagsfromform()#">
+<cflocation addtoken="no" url="../index.cfm?action=workgroupproperties&entrykey=#form.frmworkgroupkey##writeurltagsfromform()#">

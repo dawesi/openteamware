@@ -21,7 +21,7 @@
 <!--- load numer of users ... --->
 <cfif len(url.companykey) is 0>
 	<!--- display select box ... --->
-	<form action="default.cfm" method="get">
+	<form action="index.cfm" method="get">
 	<input type="hidden" name="action" value="useradministration">
 	
 	<select name="companykey">
@@ -42,7 +42,7 @@
 <cfoutput>#q_select_company_users.recordcount#</cfoutput> Konten gefunden<br>
 <cfif q_select_company_users.recordcount gt 20>
   <!--- // search form ... // --->
-  <table border="0" cellspacing="0" cellpadding="4"><form action="default.cfm" method="get">
+  <table border="0" cellspacing="0" cellpadding="4"><form action="index.cfm" method="get">
     <input type="hidden" name="action" value="useradministration">
     <tr> 
       <td align="right">Benutzername:</td>
@@ -74,7 +74,7 @@
     </tr>
     <cfoutput query="q_select_company_users"> 
       <tr> 
-        <td valign="top"><a href="default.cfm?action=userproperties&entrykey=#urlencodedformat(q_select_company_users.entrykey)#"><img src="/images/addressbook/menu_neuer-kontakt.gif" width="19" height="19" hspace="2" vspace="2" border="0" align="absmiddle">#htmleditformat(q_select_company_users.username)#</a></td>
+        <td valign="top"><a href="index.cfm?action=userproperties&entrykey=#urlencodedformat(q_select_company_users.entrykey)#"><img src="/images/addressbook/menu_neuer-kontakt.gif" width="19" height="19" hspace="2" vspace="2" border="0" align="absmiddle">#htmleditformat(q_select_company_users.username)#</a></td>
         <td valign="top">#htmleditformat(q_select_company_users.surname)#, #htmleditformat(q_select_company_users.firstname)#</td>
         <td valign="top"> 
           <!--- load group memberships ... --->
@@ -82,7 +82,7 @@
           <cfloop query="q_select_workgroups">
             #cmp_get_workgroup_name.GetWorkgroupNameByEntryKey(q_select_workgroups.workgroupkey)#*<br>
           </cfloop> </td>
-        <td nowrap valign="top"> <a href="default.cfm?action=userproperties&entrykey=#urlencodedformat(q_select_company_users.entrykey)#"><img src="/images/editicon.gif" width="12" height="12" hspace="2" vspace="2" border="0" align="absmiddle"></a> 
+        <td nowrap valign="top"> <a href="index.cfm?action=userproperties&entrykey=#urlencodedformat(q_select_company_users.entrykey)#"><img src="/images/editicon.gif" width="12" height="12" hspace="2" vspace="2" border="0" align="absmiddle"></a> 
           &nbsp;|&nbsp; <img src="/images/del.gif" width="12" height="12" hspace="2" vspace="2" border="0" align="absmiddle"> 
         </td>
       </tr>
@@ -92,7 +92,7 @@
 <br>
 <br>
 <table border="0" cellspacing="0" cellpadding="4">
-  <form action="default.cfm" method="get">
+  <form action="index.cfm" method="get">
     <input type="hidden" name="action" value="newuser">
     <tr> 
       <td align="right">Unternehmen:</td>
@@ -114,6 +114,6 @@
 * Mitgliedschaft bei anderen Gruppen kann auch vererbt werden 
 <!---
 
-<a href="default.cfm?action=newuser&companykey=<cfoutput>#urlencodedformat(url.companykey)#</cfoutput>"><img src="/images/new_event.gif" width="12" height="12" vspace="2" hspace="2" border="0" align="absmiddle"><b>Neuen Benutzer hinzuf&uuml;gen ...</b></a>
+<a href="index.cfm?action=newuser&companykey=<cfoutput>#urlencodedformat(url.companykey)#</cfoutput>"><img src="/images/new_event.gif" width="12" height="12" vspace="2" hspace="2" border="0" align="absmiddle"><b>Neuen Benutzer hinzuf&uuml;gen ...</b></a>
 
 --->

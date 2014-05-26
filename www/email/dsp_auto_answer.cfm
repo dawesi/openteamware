@@ -28,7 +28,7 @@
 	id = <cfqueryparam cfsqltype="cf_sql_integer" value="#val(url.id)#">
   ;
   </cfquery>
-  <form action="default.cfm" method="get">
+  <form action="index.cfm" method="get">
     <input type="Hidden" name="action" value="AutoAnswer">
     <input type="Hidden" name="subaction" value="setautoanswer">
     <input type="Hidden" name="id" value="<cfoutput>#val(url.id)#</cfoutput>">
@@ -128,15 +128,15 @@ WHERE
         </cfif>
 		
 		<cfif ASendAwayMsg is 0>
-          #GetLangVal('cm_wd_no')# [<a href="default.cfm?action=AutoAnswer&subaction=setstatus&id=#q_select.id#&value=1">#GetLangVal('mail_wd_autoresponder_activate')#</a>] 
+          #GetLangVal('cm_wd_no')# [<a href="index.cfm?action=AutoAnswer&subaction=setstatus&id=#q_select.id#&value=1">#GetLangVal('mail_wd_autoresponder_activate')#</a>] 
           <cfelse>
-          #GetLangVal('cm_wd_yes')# [<a href="default.cfm?action=AutoAnswer&subaction=setstatus&id=#q_select.id#&value=0">#GetLangVal('mail_wd_autoresponder_deactivate')#</a>] 
+          #GetLangVal('cm_wd_yes')# [<a href="index.cfm?action=AutoAnswer&subaction=setstatus&id=#q_select.id#&value=0">#GetLangVal('mail_wd_autoresponder_deactivate')#</a>] 
         </cfif> </td>
       <td valign="middle" class="bt">
 	  
-	  	[ <a href="default.cfm?action=AutoAnswer&subaction=reset&id=#q_select.id#">#GetLangVal('cm_wd_reset')#</a> ]
+	  	[ <a href="index.cfm?action=AutoAnswer&subaction=reset&id=#q_select.id#">#GetLangVal('cm_wd_reset')#</a> ]
 		
-		[<a href="default.cfm?action=AutoAnswer&subaction=edit&id=#q_select.id#"><img src="/images/si/pencil.png" class="si_img" />#GetLangVal('cm_wd_edit')#</a> ]
+		[<a href="index.cfm?action=AutoAnswer&subaction=edit&id=#q_select.id#"><img src="/images/si/pencil.png" class="si_img" />#GetLangVal('cm_wd_edit')#</a> ]
 		</td>
     </tr>
     <tr> 

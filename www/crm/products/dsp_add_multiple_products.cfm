@@ -128,7 +128,7 @@ b) No products assigned? Display most used products (assigned to other customers
 </cfsavecontent>
 
 <cfoutput>
-    <form action="default.cfm?action=doAddMultipleProductsToContact" method="post">
+    <form action="index.cfm?action=doAddMultipleProductsToContact" method="post">
         <input type="hidden" name="frmcontactkey" value="#url.contactkey#" />
         <input type="hidden" name="frmproductkeys" value="#a_str_productkeys#" />
         #WriteNewContentBox(GetLangVal('crm_ph_add_products'), '', a_str_table)#

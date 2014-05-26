@@ -20,7 +20,7 @@
 			<cfinvokeargument name="entrykey" value="#url.entrykey#">
 		</cfinvoke>
 		<cfif NOT stReturn.result>
-			<cflocation url="default.cfm?action=productadministration#WriteURLTags()#&ibxerrorno=#stReturn.error#"/>
+			<cflocation url="index.cfm?action=productadministration#WriteURLTags()#&ibxerrorno=#stReturn.error#"/>
 		</cfif>
 		<cfinclude template="dsp_overview.cfm"/>
     </cfcase>
@@ -31,7 +31,7 @@
 			<cfinvokeargument name="entrykey" value="#url.entrykey#">
 		</cfinvoke>
 		<cfif NOT stReturn.result>
-			<cflocation url="default.cfm?action=productadministration#WriteURLTags()#&ibxerrorno=#stReturn.error#"/>
+			<cflocation url="index.cfm?action=productadministration#WriteURLTags()#&ibxerrorno=#stReturn.error#"/>
 		</cfif>
 		<cfinclude template="dsp_overview.cfm"/>
     </cfcase>

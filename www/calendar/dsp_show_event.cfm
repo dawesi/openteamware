@@ -48,7 +48,7 @@
 <cfsavecontent variable="a_str_buttons">
 
 <cfif a_struct_rights.edit>
-	<input type="button" onClick="location.href='default.cfm?action=ShowEditEvent&entrykey=<cfoutput>#urlencodedformat(url.entrykey)#</cfoutput>';" value="<cfoutput>#GetLangVal('cal_wd_edit')#</cfoutput>" class="btn">
+	<input type="button" onClick="location.href='index.cfm?action=ShowEditEvent&entrykey=<cfoutput>#urlencodedformat(url.entrykey)#</cfoutput>';" value="<cfoutput>#GetLangVal('cal_wd_edit')#</cfoutput>" class="btn">
 </cfif>
 <cfif a_struct_rights.delete>
 	<input type="button" onClick="DeleteThisEvent('<cfoutput>#JsStringFormat(url.entrykey)#</cfoutput>');" class="btn" value="<cfoutput>#GetLangVal('cal_wd_action_delete')#</cfoutput>">
@@ -109,7 +109,7 @@
 			#GetLangVal('cal_wd_start')#
 		</td>
 		<td>
-			<a href="default.cfm?action=ViewDay&date=#urlencodedformat(dateformat(q_select_event.date_start, 'mm/dd/yyyy'))#">#LSDateFormat(q_select_event.date_start, request.a_str_default_long_dt_format)# #TimeFormat(q_select_event.date_start, 'HH:mm')#</a>
+			<a href="index.cfm?action=ViewDay&date=#urlencodedformat(dateformat(q_select_event.date_start, 'mm/dd/yyyy'))#">#LSDateFormat(q_select_event.date_start, request.a_str_default_long_dt_format)# #TimeFormat(q_select_event.date_start, 'HH:mm')#</a>
 		</td>
 	</tr>
 	<tr>
@@ -117,7 +117,7 @@
 			#GetLangVal('cal_wd_end')#
 		</td>
 		<td>
-			<a href="default.cfm?action=ViewDay&date=#urlencodedformat(dateformat(q_select_event.date_end, 'mm/dd/yyyy'))#">#LSDateFormat(q_select_event.date_end, request.a_str_default_long_dt_format)# #TimeFormat(q_select_event.date_end, 'HH:mm')#</a>
+			<a href="index.cfm?action=ViewDay&date=#urlencodedformat(dateformat(q_select_event.date_end, 'mm/dd/yyyy'))#">#LSDateFormat(q_select_event.date_end, request.a_str_default_long_dt_format)# #TimeFormat(q_select_event.date_end, 'HH:mm')#</a>
 		</td>
 	</tr>
 	<tr>
@@ -238,7 +238,7 @@
 							<img src="/images/si/user.png" class="si_img" />
 						</cfif>
 							
-						<a href="../workgroups/default.cfm?action=ShowUser&entrykey=#urlencodedformat(q_select_meeting_members.parameter)#">#htmleditformat(q_select_user_data.surname)#, #htmleditformat(q_select_user_data.firstname)# (#htmleditformat(q_select_user_data.username)#)</a>
+						<a href="../workgroups/index.cfm?action=ShowUser&entrykey=#urlencodedformat(q_select_meeting_members.parameter)#">#htmleditformat(q_select_user_data.surname)#, #htmleditformat(q_select_user_data.firstname)# (#htmleditformat(q_select_user_data.username)#)</a>
 
 					</cfcase>
 					<cfcase value="1">
@@ -419,7 +419,7 @@
 						<cfinvokeargument name="entrykey" value="#q_select_shares.workgroupkey#">
 					</cfinvoke>
 			
-					<a href="../workgroups/default.cfm?action=ShowWorkgroup&entrykey=#urlencodedformat(q_select_shares.workgroupkey)#">#htmleditformat(a_str_workgroup_name)#</a><br>
+					<a href="../workgroups/index.cfm?action=ShowWorkgroup&entrykey=#urlencodedformat(q_select_shares.workgroupkey)#">#htmleditformat(a_str_workgroup_name)#</a><br>
 		
 				</cfloop>
 			</td>

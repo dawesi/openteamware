@@ -122,7 +122,7 @@ WHERE
 ;
 </cfquery>
 
-<form action="default.cfm" method="get" name="formorder">
+<form action="index.cfm" method="get" name="formorder">
 <input type="hidden" name="action" value="generatebill">
 <input type="hidden" name="resellerkey" value="<cfoutput>#htmleditformat(form.frmresellerkey)#</cfoutput>">
 <input type="hidden" name="companykey" value="<cfoutput>#htmleditformat(form.frmcompanykey)#</cfoutput>">

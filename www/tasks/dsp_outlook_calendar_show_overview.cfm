@@ -29,7 +29,7 @@ WHERE
 <font class="contrasttext" style="font-weight:bold;"><img src="/images/high.png" align="absmiddle" vspace="2" hspace="2" border="0">&nbsp;<cfoutput>#GetLangVal("cal_ph_tasks_due")#</cfoutput> (<cfoutput>#q_select_tasks.recordcount#</cfoutput>)</font></div>
 
 <cfoutput query="q_select_tasks" startrow="1" maxrows="5">
-&gt;&nbsp;<a title="#htmleditformat(q_select_tasks.notice)#" href="../tasks/default.cfm?action=ShowTask&entrykey=#urlencodedformat(q_select_tasks.entrykey)#">#htmleditformat(shortenstring(q_select_tasks.title, 30))#</a><br>
+&gt;&nbsp;<a title="#htmleditformat(q_select_tasks.notice)#" href="../tasks/index.cfm?action=ShowTask&entrykey=#urlencodedformat(q_select_tasks.entrykey)#">#htmleditformat(shortenstring(q_select_tasks.title, 30))#</a><br>
 
 <cfif isDate(q_select_tasks.dt_due)>
 	&nbsp;&nbsp;<font class="addinfotext">(#GetLangVal("cal_wd_due")# #trim(lsdateformat(q_select_tasks.dt_due, "ddd, dd.mm. "))#)</font><br>

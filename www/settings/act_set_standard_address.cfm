@@ -22,4 +22,4 @@
 
 
 
-<cflocation addtoken="no" url="default.cfm?action=emailaccounts">
+<cflocation addtoken="no" url="index.cfm?action=emailaccounts">

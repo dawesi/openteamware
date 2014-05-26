@@ -100,7 +100,7 @@
 			<cfoutput>
 			
 			<div style="padding-left:#a_int_padding_left#px;padding-top:3px; ">
-				<a target="_blank" href="/storage/default.cfm?action=ShowFiles&directorykey=#sDirectorykey#">#si_img( 'folder' )# #htmleditformat(a_struct_dirs.directories[sDirectorykey].name)#</a>
+				<a target="_blank" href="/storage/index.cfm?action=ShowFiles&directorykey=#sDirectorykey#">#si_img( 'folder' )# #htmleditformat(a_struct_dirs.directories[sDirectorykey].name)#</a>
 				<div style="padding-left:10px; ">
 					<!--- files --->
 				<cfinvoke   
@@ -124,7 +124,7 @@
 				
 				
 				<cfloop query="q_select_files">
-					<input type="checkbox" name="frmattachmentkeys" value="#q_select_files.entrykey#" class="noborder" style="width:auto" /> <a target="_blank" href="../storage/default.cfm?action=ShowFile&entrykey=#q_select_files.entrykey#">#htmleditformat(q_select_files.name)#</a> (#ByteConvert(q_select_files.filesize)#)<br />
+					<input type="checkbox" name="frmattachmentkeys" value="#q_select_files.entrykey#" class="noborder" style="width:auto" /> <a target="_blank" href="../storage/index.cfm?action=ShowFile&entrykey=#q_select_files.entrykey#">#htmleditformat(q_select_files.name)#</a> (#ByteConvert(q_select_files.filesize)#)<br />
 				</cfloop>
 				
 				</div>

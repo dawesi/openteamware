@@ -21,7 +21,7 @@
 	</cfinvoke>
 
 	<cfif NOT stReturn.result>
-		<cflocation url="default.cfm?action=VirtualCalendars&ibxerrorno=#stReturn.error#">
+		<cflocation url="index.cfm?action=VirtualCalendars&ibxerrorno=#stReturn.error#">
 	</cfif>
 
 	<cfset q_select_virtual_calendar = stReturn.q_select_virtual_calendar>

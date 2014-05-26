@@ -71,7 +71,7 @@ Der Code wurde an Ihr Mobiltelefon geschickt und sollte in den n&auml;chsten Min
 <br>
 <br>
 Geben Sie den erhaltenen Code dann bitte hier ein:
-<form action="default.cfm?action=requestsmscode" method="POST" enablecab="No">
+<form action="index.cfm?action=requestsmscode" method="POST" enablecab="No">
 Code: <input type="Text" name="frmsmscode" required="No" size="8" maxlength="8">&nbsp;<input type="Submit" name="frmSubmit" value="Jetzt freischalten">
 
 </form>

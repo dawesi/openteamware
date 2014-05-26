@@ -188,12 +188,12 @@
 
 <cfsavecontent variable="a_str_buttons">
 <cfoutput>
-	<input type="button" value="#MakeFirstCharUCase(GetLangVal('cm_wd_edit'))#" onclick="GotoLocHref('default.cfm?action=EditProject&entrykey=#url.entrykey#');" class="btn" />
+	<input type="button" value="#MakeFirstCharUCase(GetLangVal('cm_wd_edit'))#" onclick="GotoLocHref('index.cfm?action=EditProject&entrykey=#url.entrykey#');" class="btn" />
 	
 	<cfif q_select_project.closed IS 0>
 		<input type="button" value="#GetLangVal('prj_ph_close_project')#" onclick="DoCloseProject('#jsstringformat(q_select_project.title)#', '#url.entrykey#');" class="btn2" />
 	</cfif>
-	<input type="button" value="#MakeFirstCharUCase(GetLangVal('cm_wd_delete'))#" onclick="GotoLocHref('default.cfm?action=DeleteProject&entrykey=#url.entrykey#');" class="btn2" />
+	<input type="button" value="#MakeFirstCharUCase(GetLangVal('cm_wd_delete'))#" onclick="GotoLocHref('index.cfm?action=DeleteProject&entrykey=#url.entrykey#');" class="btn2" />
 </cfoutput>
 </cfsavecontent>
 
@@ -204,7 +204,7 @@ function DoCloseProject(title, entrykey) {
 	var a_simple_modal_dialog = new cSimpleModalDialog();
 	a_simple_modal_dialog.type = 'custom';
 	a_simple_modal_dialog.customtitle = '<cfoutput>#GetLangValJS('prj_ph_close_project')#</cfoutput>';
-	a_simple_modal_dialog.customcontent_load_from_url = 'default.cfm?Action=CloseProject&entrykey=' + escape(entrykey) + '&title=' + escape(title);
+	a_simple_modal_dialog.customcontent_load_from_url = 'index.cfm?Action=CloseProject&entrykey=' + escape(entrykey) + '&title=' + escape(title);
 	a_simple_modal_dialog.ShowDialog();	
 	return false;
 	}
@@ -370,7 +370,7 @@ WHERE
 
 		  <tr id="idtrtasks#q_select_tasks.currentrow#"  onMouseOver="hilite(this.id);"  onMouseOut="restore(this.id);">
 
-			<td><a href="../tasks/default.cfm?action=ShowTask&entrykey=#q_select_tasks.entrykey#&returnurl=#sReturnurl#"><img src="/images/icon/notizen.gif" align="absmiddle" vspace="0" hspace="0" border="0" height="12" width="12">&nbsp;#q_select_tasks.title#</a></td>
+			<td><a href="../tasks/index.cfm?action=ShowTask&entrykey=#q_select_tasks.entrykey#&returnurl=#sReturnurl#"><img src="/images/icon/notizen.gif" align="absmiddle" vspace="0" hspace="0" border="0" height="12" width="12">&nbsp;#q_select_tasks.title#</a></td>
 
 			<td>#q_select_tasks.status#</td>
 
@@ -378,7 +378,7 @@ WHERE
 
 			<cfif isDate(q_select_tasks.dt_due)>
 
-			<a href="../calendar/default.cfm?action=ViewDay&Date=#urlencodedformat(dateformat(q_select_tasks.dt_due, "mm/dd/yyyy"))#">#lsdateformat(q_select_tasks.dt_due, "ddd, dd.mm.yy")#</a>
+			<a href="../calendar/index.cfm?action=ViewDay&Date=#urlencodedformat(dateformat(q_select_tasks.dt_due, "mm/dd/yyyy"))#">#lsdateformat(q_select_tasks.dt_due, "ddd, dd.mm.yy")#</a>
 
 			</cfif>
 
@@ -394,7 +394,7 @@ WHERE
 
 		 <tr>
 
-		 	<td colspan="4">&gt; <a href="../tasks/default.cfm?action=ShowTasks&filterprojectkey=<cfoutput>#url.entrykey#</cfoutput>">Alle verbundenen Aufgaben anzeigen</a></td>
+		 	<td colspan="4">&gt; <a href="../tasks/index.cfm?action=ShowTasks&filterprojectkey=<cfoutput>#url.entrykey#</cfoutput>">Alle verbundenen Aufgaben anzeigen</a></td>
 
 		 </tr>
 
@@ -402,7 +402,7 @@ WHERE
 
 		 <tr>
 
-		 	<td colspan="4">&gt; <a href="../tasks/default.cfm?action=NewEntry&projectkey=<cfoutput>#url.entrykey#</cfoutput>&returnurl=<cfoutput>#sReturnurl#</cfoutput>">Neue Aufgabe hinzuf&uuml;gen</a></td>
+		 	<td colspan="4">&gt; <a href="../tasks/index.cfm?action=NewEntry&projectkey=<cfoutput>#url.entrykey#</cfoutput>&returnurl=<cfoutput>#sReturnurl#</cfoutput>">Neue Aufgabe hinzuf&uuml;gen</a></td>
 
 		 </tr>
 
@@ -430,7 +430,7 @@ WHERE
 
 			<tr>
 
-				<td><a href="../addressbook/default.cfm?action=View&entrykey=#q_select_contacts.entrykey#"><img src="/images/icon/kalender_klein.gif" align="absmiddle" vspace="0" hspace="0" border="0">&nbsp;#q_select_contacts.surname#, #q_select_contacts.firstname#</a>
+				<td><a href="../addressbook/index.cfm?action=View&entrykey=#q_select_contacts.entrykey#"><img src="/images/icon/kalender_klein.gif" align="absmiddle" vspace="0" hspace="0" border="0">&nbsp;#q_select_contacts.surname#, #q_select_contacts.firstname#</a>
 
 				<cfif Len(q_select_contacts.company) gt 0>(#q_select_contacts.company#)</cfif></td>
 
@@ -548,7 +548,7 @@ WHERE
 
 			<tr>
 
-				<td><a href="../calendar/default.cfm?action=DisplayEvent&entrykey=#q_select_connected_events.entrykey#"><img src="/images/icon/kalender_klein.gif" align="absmiddle" vspace="0" hspace="0" border="0">&nbsp;#q_select_events.title#</a> (#DateFormat(q_select_events.date_start, "dd.mm.yy")# #TimeFormat(q_select_events.date_start, "HH:mm")#)</td>
+				<td><a href="../calendar/index.cfm?action=DisplayEvent&entrykey=#q_select_connected_events.entrykey#"><img src="/images/icon/kalender_klein.gif" align="absmiddle" vspace="0" hspace="0" border="0">&nbsp;#q_select_events.title#</a> (#DateFormat(q_select_events.date_start, "dd.mm.yy")# #TimeFormat(q_select_events.date_start, "HH:mm")#)</td>
 
 			</tr>
 

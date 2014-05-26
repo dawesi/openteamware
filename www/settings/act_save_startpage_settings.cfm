@@ -5,7 +5,7 @@
 <cfparam name="form.frmright" type="string" default="">
 
 <cfif Len(form.frmleft) IS 0 OR Len(form.frmright) IS 0>
-	<cflocation addtoken="no" url="default.cfm?action=startpage">
+	<cflocation addtoken="no" url="index.cfm?action=startpage">
 </cfif>
 
 <cfmodule template="../common/person/saveuserpref.cfm"
@@ -19,4 +19,4 @@
 	entryname = "display.rightcolumn"
 	entryvalue1 = #form.frmright#>
 
-<cflocation addtoken="no" url="default.cfm?action=startpage">
+<cflocation addtoken="no" url="index.cfm?action=startpage">

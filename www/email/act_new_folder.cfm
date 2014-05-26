@@ -18,17 +18,17 @@
 
 <cfif len(trim(form.frmFoldername)) is 0>
 	<!--- zero? --->
-	<cflocation addtoken="no" url="default.cfm?action=newfolder&error=noinput">	
+	<cflocation addtoken="no" url="index.cfm?action=newfolder&error=noinput">	
 </cfif>
 
 <cfif FindNoCase(".", form.frmfoldername) gt 0>
 	<!--- zero? --->
-	<cflocation addtoken="no" url="default.cfm?action=newfolder&error=pointinname">	
+	<cflocation addtoken="no" url="index.cfm?action=newfolder&error=pointinname">	
 </cfif>
 
 <cfif CompareNoCase('INBOX', form.frmfoldername) IS 0>
 	<!--- zero? --->
-	<cflocation addtoken="no" url="default.cfm?action=newfolder&error=NameNotAllowed(INBOX)">	
+	<cflocation addtoken="no" url="index.cfm?action=newfolder&error=NameNotAllowed(INBOX)">	
 </cfif>
 
 <!--- a) check if such a folder already exists --->
@@ -44,7 +44,7 @@ WHERE
 
 <cfif q_select_folder_exists.recordcount gt 0>
 	<!--- exists ... --->
-	<cflocation addtoken="no" url="default.cfm?action=newfolder&error=folderalreadyexists">
+	<cflocation addtoken="no" url="index.cfm?action=newfolder&error=folderalreadyexists">
 </cfif>
 
 <!--- create folder --->
@@ -63,4 +63,4 @@ WHERE
 	<cfset session.a_int_loadfolders_hitcount = 5>
 </cflock>
 		
-<cflocation addtoken="no" url="default.cfm?action=overview">
+<cflocation addtoken="no" url="index.cfm?action=overview">

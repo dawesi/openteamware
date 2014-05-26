@@ -93,7 +93,7 @@
 <tr>
 	<td  style="font-size:10px;" align="right" valign="top"></td>
 	<td style="font-size:10px;">
-	<a href="default.cfm?action=wireless"><cfoutput>#GetLangVal('prf_ph_link_change_mobile_nr')#</cfoutput></a></td>
+	<a href="index.cfm?action=wireless"><cfoutput>#GetLangVal('prf_ph_link_change_mobile_nr')#</cfoutput></a></td>
 </tr> --->
 <tr>
 	<td class="field_name">

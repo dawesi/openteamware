@@ -12,7 +12,7 @@
 </cfif>
 	
 <cfif len(form.frmname) lte 3>
-	<cflocation addtoken="no" url="default.cfm?action=newworkgroup&error=tooshortname#WriteURLTagsfromForm()#">
+	<cflocation addtoken="no" url="index.cfm?action=newworkgroup&error=tooshortname#WriteURLTagsfromForm()#">
 </cfif>
 
 <!--- check the workgroup name ... only a-z; 0-9 --->
@@ -31,4 +31,4 @@
 </cfinvoke>
 
 
-<cflocation addtoken="no" url="default.cfm?action=workgroups#WriteUrlTagsFromForm()#">
+<cflocation addtoken="no" url="index.cfm?action=workgroups#WriteUrlTagsFromForm()#">

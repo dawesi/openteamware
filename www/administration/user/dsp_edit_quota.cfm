@@ -90,7 +90,7 @@
 <cfelse>
 	<b><cfoutput>#GetLangVal('adm_ph_edit_quota_buy')#</cfoutput></b>
 	<br><br><br>
-	<a href="default.cfm?action=shop<cfoutput>#WriteURLTags()#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_goto_shop')#</cfoutput></a>
+	<a href="index.cfm?action=shop<cfoutput>#WriteURLTags()#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_goto_shop')#</cfoutput></a>
 </cfif>
 
 <!---<br><br><br>

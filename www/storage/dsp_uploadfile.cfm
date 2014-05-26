@@ -26,8 +26,8 @@
 	<cfoutput>
 		#getlangval('sto_ph_overwritefiles')#
 		<br />
-		<a href="default.cfm?action=UploadFile&force=true&frm_AutoClose=#form.frm_AutoClose#&frm_AudioHint=#form.frm_AudioHint#"><img src="/images/si/accept.png" class="si_img" /> #getlangval('sto_wd_yes')#</a> /
-		<a href="default.cfm?action=showfiles&directorykey=#form.frm_parentdirectorykey#"><img src="/images/si/cancel.png" class="si_img" /> #getlangval('sto_wd_no')#</a>
+		<a href="index.cfm?action=UploadFile&force=true&frm_AutoClose=#form.frm_AutoClose#&frm_AudioHint=#form.frm_AudioHint#"><img src="/images/si/accept.png" class="si_img" /> #getlangval('sto_wd_yes')#</a> /
+		<a href="index.cfm?action=showfiles&directorykey=#form.frm_parentdirectorykey#"><img src="/images/si/cancel.png" class="si_img" /> #getlangval('sto_wd_no')#</a>
 	</cfoutput>
 	<cfabort>
 </cfif>

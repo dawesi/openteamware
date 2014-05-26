@@ -187,7 +187,7 @@ origin = 1
 <br /><br />  
 <hr size="1" noshade />
 <cfoutput>
-<a href="default.cfm?action=userproperties&entrykey=#urlencodedformat(url.entrykey)#&companykey=#urlencodedformat(url.companykey)#&resellerkey=#urlencodedformat(url.resellerkey)#"><cfoutput>#GetLangVal('adm_ph_back_to_user_properties')#</cfoutput></a>
+<a href="index.cfm?action=userproperties&entrykey=#urlencodedformat(url.entrykey)#&companykey=#urlencodedformat(url.companykey)#&resellerkey=#urlencodedformat(url.resellerkey)#"><cfoutput>#GetLangVal('adm_ph_back_to_user_properties')#</cfoutput></a>
 </cfoutput>
 
 <SCRIPT type="text/javascript">

@@ -41,7 +41,7 @@ function DisplayMBoxContentASync(foldername, startrow) {
 	var a_startrow = 1;
 	if (startrow) {a_startrow = startrow;}
 	$('#iddivmboxcontent').html(a_str_loading_status_img);
-	a_simple_get.url = 'default.cfm?action=ShowMailboxContent&mailbox=' + encodeURIComponent(foldername) + '&smartload=1&startrow=' + escape(a_startrow);
+	a_simple_get.url = 'index.cfm?action=ShowMailboxContent&mailbox=' + encodeURIComponent(foldername) + '&smartload=1&startrow=' + escape(a_startrow);
 	a_simple_get.id_obj_display_content = 'iddivmboxcontent';
 	a_simple_get.doOperation();
 	}
@@ -49,7 +49,7 @@ function DisplayMBoxContentASync(foldername, startrow) {
 // open msg in cols view
 function OpenMsgInColView(mailbox,id,userkey,rownumber) {
 	ShowLoadingStatus();
-	window.frameemailmessage.location.href = 'default.cfm?action=showmessage&mailbox=' + encodeURIComponent(mailbox) + '&rowno=' + encodeURIComponent(rownumber) + '&id=' + escape(id) + '&userkey=' + escape(userkey);
+	window.frameemailmessage.location.href = 'index.cfm?action=showmessage&mailbox=' + encodeURIComponent(mailbox) + '&rowno=' + encodeURIComponent(rownumber) + '&id=' + escape(id) + '&userkey=' + escape(userkey);
 	}
 	
 // set secure mail action name
@@ -76,28 +76,28 @@ function CreatePDF() {
 	}
 	
 function OpenDraftMsg(id) {
-	window.open('/email/default.cfm?action=composemail&draftid=' + escape(id), '_blank', 'resizable=1,location=0,directories=0,status=1,menubar=0,scrollbars=1,toolbar=0,width=790,height=680');
+	window.open('/email/index.cfm?action=composemail&draftid=' + escape(id), '_blank', 'resizable=1,location=0,directories=0,status=1,menubar=0,scrollbars=1,toolbar=0,width=790,height=680');
 	}
 	
 function OpenComposePopup() {
-	window.open('/email/default.cfm?action=composemail', '_blank', 'resizable=1,location=0,directories=0,status=1,menubar=0,scrollbars=1,toolbar=0,width=840,height=620');
+	window.open('/email/index.cfm?action=composemail', '_blank', 'resizable=1,location=0,directories=0,status=1,menubar=0,scrollbars=1,toolbar=0,width=840,height=620');
 	}
 	
 function OpenComposePopupText() {
-	window.open('/email/default.cfm?action=composemail&format=text', '_blank', 'resizable=1,location=0,directories=0,status=1,menubar=0,scrollbars=1,toolbar=0,width=840,height=620');
+	window.open('/email/index.cfm?action=composemail&format=text', '_blank', 'resizable=1,location=0,directories=0,status=1,menubar=0,scrollbars=1,toolbar=0,width=840,height=620');
 	}
 function OpenComposePopupHTML() {
-	window.open('/email/default.cfm?action=composemail&format=html', '_blank', 'resizable=1,location=0,directories=0,status=1,menubar=0,scrollbars=1,toolbar=0,width=840,height=620');
+	window.open('/email/index.cfm?action=composemail&format=html', '_blank', 'resizable=1,location=0,directories=0,status=1,menubar=0,scrollbars=1,toolbar=0,width=840,height=620');
 	}
 	
 function OpenComposeWindow(messagetype,uid,mbox,to,replytoall) {
 	if (!replytoall) replytoall = 0;
-	window.open('/email/default.cfm?action=composemail&type='+messagetype+'&id='+uid+'&mailbox='+encodeURIComponent(mbox)+'&all='+replytoall, '_blank', 'resizable=1,location=0,directories=0,status=1,menubar=0,scrollbars=1,toolbar=0,width=840,height=620');
+	window.open('/email/index.cfm?action=composemail&type='+messagetype+'&id='+uid+'&mailbox='+encodeURIComponent(mbox)+'&all='+replytoall, '_blank', 'resizable=1,location=0,directories=0,status=1,menubar=0,scrollbars=1,toolbar=0,width=840,height=620');
 	return false;
 	}
 	
 function OpenMsgInNewWindow(mailbox,uid,userkey) {
-	window.open('/email/default.cfm?action=showmessage&fullheader=1&id='+encodeURIComponent(uid)+'&mailbox='+encodeURIComponent(mailbox)+'&popup=1&userkey='+escape(userkey), '_blank', 'resizable=1,location=0,directories=0,status=1,menubar=0,scrollbars=1,toolbar=0,width=860,height=700');
+	window.open('/email/index.cfm?action=showmessage&fullheader=1&id='+encodeURIComponent(uid)+'&mailbox='+encodeURIComponent(mailbox)+'&popup=1&userkey='+escape(userkey), '_blank', 'resizable=1,location=0,directories=0,status=1,menubar=0,scrollbars=1,toolbar=0,width=860,height=700');
 	}
 
 function DisplayOtherMsgUsingSearchWindow(entrykey, email_adr, fromto) {
@@ -177,7 +177,7 @@ function ExecuteSimpleAddAddressbookDialog() {
 	
 // notify someone ...
 function OpenSMSInfoPopup(contactkey,address,subject,senderaddress) {
-	var a_str_url = '/mobile/default.cfm?Action=SendSMSNotificationOfMail&email=' + encodeURIComponent(address) + '&contactkey=' + encodeURIComponent(contactkey) + '&subject=' + encodeURIComponent(subject) + '&senderaddress=' + encodeURIComponent(senderaddress);
+	var a_str_url = '/mobile/index.cfm?Action=SendSMSNotificationOfMail&email=' + encodeURIComponent(address) + '&contactkey=' + encodeURIComponent(contactkey) + '&subject=' + encodeURIComponent(subject) + '&senderaddress=' + encodeURIComponent(senderaddress);
 	var a_simple_modal_dialog = new cSimpleModalDialog();
 	a_simple_modal_dialog.SetType('custom').SetTitle('SMS');
 	a_simple_modal_dialog.customcontent_load_from_url = a_str_url;
@@ -213,7 +213,7 @@ function MakeLineInvisible(rowno) {
 	}
 	
 function OpenMsgInNewWindow(mailbox,uid,userkey) {
-	window.open('default.cfm?action=showmessage&fullheader=1&id='+uid+'&mailbox='+escape(mailbox)+'&popup=1', '_blank', 'resizable=1,location=0,directories=0,status=1,menubar=0,scrollbars=1,toolbar=0,width=680,height=600');
+	window.open('index.cfm?action=showmessage&fullheader=1&id='+uid+'&mailbox='+escape(mailbox)+'&popup=1', '_blank', 'resizable=1,location=0,directories=0,status=1,menubar=0,scrollbars=1,toolbar=0,width=680,height=600');
 	}
 	
 function tglSelectMsgs() {
@@ -325,7 +325,7 @@ function DoParseCheckA1SigStatus(responseText) {
 // open text blocks window
 function opentextblocks(format) {
 	var a_simple_modal_dialog = new cSimpleModalDialog();
-	var aurl = 'default.cfm?action=ShowInsertTextBlockSignatur&format=' + escape(format);
+	var aurl = 'index.cfm?action=ShowInsertTextBlockSignatur&format=' + escape(format);
 	a_simple_modal_dialog.type = 'custom';
 	a_simple_modal_dialog.customtitle = 'test';
 	a_simple_modal_dialog.customcontent_load_from_url = aurl;
@@ -334,10 +334,10 @@ function opentextblocks(format) {
 	
 // delete a mailbox
 function AskDeleteMailbox(foldername) {
-	GotoLocHref('default.cfm?action=DeleteMailbox&mailbox=' + encodeURIComponent(foldername));
+	GotoLocHref('index.cfm?action=DeleteMailbox&mailbox=' + encodeURIComponent(foldername));
 	
 	/*var a_simple_modal_dialog = new cSimpleModalDialog();
-	var aurl = 'default.cfm?action=askdeletemailbox&mailbox=' + escape(foldername);
+	var aurl = 'index.cfm?action=askdeletemailbox&mailbox=' + escape(foldername);
 	a_simple_modal_dialog.type = 'confirmation';
 	a_simple_modal_dialog.executeurl = ' ';
 	a_simple_modal_dialog.ShowDialog();*/
@@ -345,7 +345,7 @@ function AskDeleteMailbox(foldername) {
 	
 // call edit page for a folder
 function EditMailbox(mbox) {
-	location.href = 'default.cfm?action=editmailbox&mailbox=' + encodeURIComponent(mbox);
+	location.href = 'index.cfm?action=editmailbox&mailbox=' + encodeURIComponent(mbox);
 	}
 	
 // restrict display to a certain type
@@ -438,7 +438,7 @@ function setCaretTo(obj, pos) {
 // add an email to the CRM history of a contact ...
 function AddMailToCRMHistory(foldername,uid,messageid,contactkey) {
 	var a_simple_modal_dialog = new cSimpleModalDialog();
-	var aurl = 'default.cfm?action=AddMailToCRMHistory&mailbox=' + escape(foldername) + '&uid=' + escape(uid) + '&messageid=' + escape(messageid) + '&contactkey=' + escape(contactkey);
+	var aurl = 'index.cfm?action=AddMailToCRMHistory&mailbox=' + escape(foldername) + '&uid=' + escape(uid) + '&messageid=' + escape(messageid) + '&contactkey=' + escape(contactkey);
 	a_simple_modal_dialog.type = 'custom';
 	a_simple_modal_dialog.customtitle = 'abc';
 	a_simple_modal_dialog.customcontent_load_from_url = aurl;

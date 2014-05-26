@@ -4,7 +4,7 @@
 <cfif q_select_due_today.recordcount gt 0><cfset ATasksAvalialbe = true></cfif>
 
 
-<!--- heute fällige aufgaben anzeigen --->
+<!--- heute fï¿½llige aufgaben anzeigen --->
 <cfif ATasksAvalialbe is true>
 <table  width="100%" border="0" cellspacing="0" cellpadding="2" class="bl">
 <tr>
@@ -15,7 +15,7 @@
 <cfoutput query="q_select_due_today">
 <tr>
 	<td>-</td>
-	<td><a class="simplelink" href="/tasks/default.cfm?action=ShowTask&id=#q_select_due_today.id#">#shortenstring(q_select_due_today.title, 30)#</a></td>
+	<td><a class="simplelink" href="/tasks/index.cfm?action=ShowTask&id=#q_select_due_today.id#">#shortenstring(q_select_due_today.title, 30)#</a></td>
 </tr>
 </cfoutput>
 </table>
@@ -52,7 +52,7 @@
 </tr>
 <cfoutput query="q_select_all">
 <tr>
-	<td><a class="simplelink" href="/tasks/default.cfm?action=ShowTask&id=#q_select_all.id#">#Shortenstring(q_select_all.title, 25)#</a></td>
+	<td><a class="simplelink" href="/tasks/index.cfm?action=ShowTask&id=#q_select_all.id#">#Shortenstring(q_select_all.title, 25)#</a></td>
 </tr>
 </cfoutput>
 </table><br>

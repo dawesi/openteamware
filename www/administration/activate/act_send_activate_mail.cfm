@@ -7,7 +7,7 @@
 </cfinvoke>
 
 
-<cflocation addtoken="no" url="../default.cfm?action=customerproperties#writeurltags()#">
+<cflocation addtoken="no" url="../index.cfm?action=customerproperties#writeurltags()#">
 
 
 <!---

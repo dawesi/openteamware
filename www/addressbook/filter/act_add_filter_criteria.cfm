@@ -13,7 +13,7 @@
 <cfparam name="form.frmentrykey" type="string" default="">
 
 <cfif cgi.REQUEST_METHOD NEQ 'POST'>
-	<cflocation addtoken="no" url="default.cfm">
+	<cflocation addtoken="no" url="index.cfm">
 </cfif>
 
 <cfif Len(form.frmentrykey) IS 0 AND form.frm_reset_all_criterias IS 1>

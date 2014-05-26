@@ -498,7 +498,7 @@
 	</td>
   	<td colspan="2" align="right" style="spacing:0px;">
 	<!--- generate default url ... --->
-	<a href="default.cfm?filterstatus=open&filtercategory=&filterworkgroup=&filtertimeframe=&filterpriority=&filterprojectkey="><cfoutput>#GetLangVal('tsk_ph_reset_all_filter')#</cfoutput></a>
+	<a href="index.cfm?filterstatus=open&filtercategory=&filterworkgroup=&filtertimeframe=&filterpriority=&filterprojectkey="><cfoutput>#GetLangVal('tsk_ph_reset_all_filter')#</cfoutput></a>
 	</td>
   </tr>
   </cfif> --->
@@ -517,7 +517,7 @@
 	
 	<img src="/images/si/exclamation.png" class="si_img" />&nbsp;<b><cfoutput>#GetLangVal('tsk_ph_search_no_hits')#</cfoutput></b>
 	<br><br>
-	<a href="default.cfm"><cfoutput>#GetLangVal('cm_wd_back')#</cfoutput></a>
+	<a href="index.cfm"><cfoutput>#GetLangVal('cm_wd_back')#</cfoutput></a>
 	</td>
 </tr>
 </table>
@@ -532,7 +532,7 @@
 	<br><br>
 	<cfoutput>#GetLangVal('tsk_ph_filter_no_hits_2')#</cfoutput>
 	<br><br>
-	<a href="default.cfm?filterstatus=open&filtercategory=&filterworkgroup=&filtertimeframe=&filterpriority=&filterprojectkey="><cfoutput>#GetLangVal('tsk_ph_reset_all_filter')#</cfoutput></a>	
+	<a href="index.cfm?filterstatus=open&filtercategory=&filterworkgroup=&filtertimeframe=&filterpriority=&filterprojectkey="><cfoutput>#GetLangVal('tsk_ph_reset_all_filter')#</cfoutput></a>	
 	</td>
 </tr>
 </table>
@@ -561,10 +561,10 @@
   
     <td>&nbsp;</td>
     <td>
-		<a <cfif CompareNoCase(sOrderBy, "title") is 0>style="font-weight:bold;"</cfif> href="default.cfm?<cfoutput>#ReplaceOrAddURLParameter(cgi.QUERY_STRING, "order", "title")##a_str_url_sort#</cfoutput>"><cfoutput>#GetLangVal("tsk_wd_subject")#</cfoutput></a>
+		<a <cfif CompareNoCase(sOrderBy, "title") is 0>style="font-weight:bold;"</cfif> href="index.cfm?<cfoutput>#ReplaceOrAddURLParameter(cgi.QUERY_STRING, "order", "title")##a_str_url_sort#</cfoutput>"><cfoutput>#GetLangVal("tsk_wd_subject")#</cfoutput></a>
 	</td>
     <td>
-		<a <cfif CompareNoCase(sOrderBy, "dt_due") is 0>style="font-weight:bold;"</cfif> href="default.cfm?<cfoutput>#ReplaceOrAddURLParameter(cgi.QUERY_STRING, "order", "dt_due")##a_str_url_sort#</cfoutput>"><cfoutput>#GetLangVal("tsk_ph_due_to")#</cfoutput></a>
+		<a <cfif CompareNoCase(sOrderBy, "dt_due") is 0>style="font-weight:bold;"</cfif> href="index.cfm?<cfoutput>#ReplaceOrAddURLParameter(cgi.QUERY_STRING, "order", "dt_due")##a_str_url_sort#</cfoutput>"><cfoutput>#GetLangVal("tsk_ph_due_to")#</cfoutput></a>
 	</td>
 	<td>
 		<cfoutput>#GetLangVal("cm_wd_categories")#</cfoutput>
@@ -573,7 +573,7 @@
 		<cfoutput>#GetLangVal("cm_wd_concerned")#</cfoutput>
 	</td>	
 	<td>
-		<a <cfif CompareNoCase(sOrderBy, "dt_lastmodified") is 0>style="font-weight:bold;"</cfif> href="default.cfm?<cfoutput>#ReplaceOrAddURLParameter(cgi.QUERY_STRING, "order", "dt_lastmodified")##a_str_url_sort#</cfoutput>"><cfoutput>#GetLangVal("tsk_wd_modified")#</cfoutput></a>
+		<a <cfif CompareNoCase(sOrderBy, "dt_lastmodified") is 0>style="font-weight:bold;"</cfif> href="index.cfm?<cfoutput>#ReplaceOrAddURLParameter(cgi.QUERY_STRING, "order", "dt_lastmodified")##a_str_url_sort#</cfoutput>"><cfoutput>#GetLangVal("tsk_wd_modified")#</cfoutput></a>
 	</td>
 	<td>
 		<cfoutput>#GetLangVal("cm_wd_action")#</cfoutput>
@@ -587,7 +587,7 @@
 		<input class="noborder" type="Checkbox" name="frmcbtasks" value="#htmleditformat(q_select_tasks.entrykey)#" />
 	</td>
     <td>
-	<a <cfif Compare(q_select_tasks.status, 0) is 0>class="statusdone"</cfif> <cfif isdate(q_select_tasks.dt_due) and (now() gt q_select_tasks.dt_due and q_select_tasks.status neq 0)>class="statusurg"</cfif> href="default.cfm?action=ShowTask&entrykey=#urlencodedformat(q_select_tasks.entrykey)#" class="simplelink">#shortenstring(CheckZeroString(q_select_tasks.title), 50)#</a>
+	<a <cfif Compare(q_select_tasks.status, 0) is 0>class="statusdone"</cfif> <cfif isdate(q_select_tasks.dt_due) and (now() gt q_select_tasks.dt_due and q_select_tasks.status neq 0)>class="statusurg"</cfif> href="index.cfm?action=ShowTask&entrykey=#urlencodedformat(q_select_tasks.entrykey)#" class="simplelink">#shortenstring(CheckZeroString(q_select_tasks.title), 50)#</a>
 
 	<cfif isDate(q_select_tasks.dt_lastmodified) AND DateDiff("d", q_select_tasks.dt_lastmodified, now()) LTE 2>
 		<img src="/images/si/new.png" class="si_img" />
@@ -601,7 +601,7 @@
 	</cfif>
 
 	<cfif len(q_select_tasks.dt_due) gt 0>
-		<a href="/calendar/default.cfm?action=ViewDay&Date=#urlencodedformat(dateformat(q_select_tasks.dt_due, "mm/dd/yyyy"))#">#lsdateformat(q_select_tasks.dt_due, "ddd, dd.mm.")#</a>
+		<a href="/calendar/index.cfm?action=ViewDay&Date=#urlencodedformat(dateformat(q_select_tasks.dt_due, "mm/dd/yyyy"))#">#lsdateformat(q_select_tasks.dt_due, "ddd, dd.mm.")#</a>
 	<cfelse>
 		n/a
 	</cfif>
@@ -621,7 +621,7 @@
 			<cfif StructKeyExists(request.stSecurityContext.a_struct_workgroups, a_str_workgroupkey)>
 			
 				<cfset a_int_groups_count = a_int_groups_count + 1>
-				<a href="default.cfm?action=ShowTasks&filterworkgroup=#urlencodedformat(a_str_workgroupkey)#">#htmleditformat(request.stSecurityContext.a_struct_workgroups[a_str_workgroupkey])#</a>&nbsp;
+				<a href="index.cfm?action=ShowTasks&filterworkgroup=#urlencodedformat(a_str_workgroupkey)#">#htmleditformat(request.stSecurityContext.a_struct_workgroups[a_str_workgroupkey])#</a>&nbsp;
 			</cfif>
 			
 			<cfif a_int_groups_count gte 3>
@@ -653,7 +653,7 @@
     <td nowrap>
 	<a href="act_set_new_status.cfm?entrykey=#urlencodedformat(q_select_tasks.entrykey)#&status=0"><img src="/images/si/accept.png" alt="Done" width="16" height="16" hspace="0" vspace="0" border="0" align="absmiddle" /></a>
 	&nbsp;
-	<a href="default.cfm?action=EditTask&entrykey=#urlencodedformat(q_select_tasks.entrykey)#"><img src="/images/si/pencil.png" alt="Edit" width="16" height="16" hspace="0" vspace="0" border="0" align="absmiddle" /></a>
+	<a href="index.cfm?action=EditTask&entrykey=#urlencodedformat(q_select_tasks.entrykey)#"><img src="/images/si/pencil.png" alt="Edit" width="16" height="16" hspace="0" vspace="0" border="0" align="absmiddle" /></a>
 	&nbsp;
 	<a target="_self" href="javascript:DeleteTask('#jsstringformat(q_select_tasks.entrykey)#');"><img src="/images/si/delete.png" alt="Delete" width="16" height="16" hspace="0" vspace="0" border="0" align="absmiddle" /></a>
 	</td>

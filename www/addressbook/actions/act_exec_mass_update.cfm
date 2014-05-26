@@ -184,4 +184,4 @@
 </cfif>
 
 
-<cflocation url="default.cfm?filterdatatype=#form.frmdatatype#&otwinfono=1200" addtoken="false">
+<cflocation url="index.cfm?filterdatatype=#form.frmdatatype#&otwinfono=1200" addtoken="false">

@@ -201,7 +201,7 @@ FROM
 				</td>
 				<td align="center">
 				<cfoutput>
-				<a href="../workgroups/default.cfm?action=ShowUser&entrykey=#urlencodedformat(a_str_userkey)#">#a_struct_load_userdata.query.surname#, #a_struct_load_userdata.query.firstname#</a>
+				<a href="../workgroups/index.cfm?action=ShowUser&entrykey=#urlencodedformat(a_str_userkey)#">#a_struct_load_userdata.query.surname#, #a_struct_load_userdata.query.firstname#</a>
 				</cfoutput>
 				<br>
 				<div style="padding:2px;margin-top:3px;">
@@ -239,7 +239,7 @@ FROM
 							<cfoutput query="q_select_whole_day_events_external_user_birthdays">
 								<cfset a_str_name = ReplaceNoCase(q_select_whole_day_events_external_user_birthdays.title, GetLangVal('cal_ph_birthday_of'), '')>
 								
-								<a href="default.cfm?action=showevent&entrykey=#q_select_whole_day_events_external_user_birthdays.entrykey#">#htmleditformat(trim(a_str_name))#</a><cfif q_select_whole_day_events_external_user_birthdays.currentrow NEQ q_select_whole_day_events_external_user_birthdays.recordcount>, </cfif>
+								<a href="index.cfm?action=showevent&entrykey=#q_select_whole_day_events_external_user_birthdays.entrykey#">#htmleditformat(trim(a_str_name))#</a><cfif q_select_whole_day_events_external_user_birthdays.currentrow NEQ q_select_whole_day_events_external_user_birthdays.recordcount>, </cfif>
 							</cfoutput>
 						</div>
 					</cfif>
@@ -320,7 +320,7 @@ FROM
 		<!--- new event ... --->
 		<cfset a_dt_start = DateFormat(request.a_dt_current_date, "mm/dd/yyyy")&' '&a_int_hour&':00'>
 		
-		<a class="nl" href="default.cfm?action=ShowNewEvent&startdate=<cfoutput>#urlencodedformat(a_dt_start)#</cfoutput>"><img src="/images/si/add.png" class="si_img" alt="" /></a>
+		<a class="nl" href="index.cfm?action=ShowNewEvent&startdate=<cfoutput>#urlencodedformat(a_dt_start)#</cfoutput>"><img src="/images/si/add.png" class="si_img" alt="" /></a>
 		</td>
 		<td width="4" style="padding:0px;" class="cal_bb_light" valign="middle" align="center">&nbsp;
 		
@@ -406,7 +406,7 @@ FROM
 					<cfelse>
 						<cfset ShowEventRequest.a_struct_event = queryRowToStruct(q_select_tmp_events2, q_select_tmp_events2.currentrow)>
 						<cfinclude template="dsp_inc_show_event.cfm">
-						<!---&gt; <a href="default.cfm?action=ShowEvent&entrykey=<cfoutput>#urlencodedformat(q_select_tmp_events2.entrykey)#</cfoutput>"><cfoutput>#htmleditformat(shortenstring(q_select_tmp_events2.title, 20))#</cfoutput></a>--->
+						<!---&gt; <a href="index.cfm?action=ShowEvent&entrykey=<cfoutput>#urlencodedformat(q_select_tmp_events2.entrykey)#</cfoutput>"><cfoutput>#htmleditformat(shortenstring(q_select_tmp_events2.title, 20))#</cfoutput></a>--->
 					</cfif>
 					<br>
 					
@@ -503,7 +503,7 @@ FROM
 			  <tr>
 				<td>
 				<font style="font-size:10px;">#timeformat(q_select_hidden_events.date_start, "HH:mm")# (#q_select_hidden_events.dt_duration#)</font><br>
-				<a href="default.cfm?action=ShowEvent&entrykey=#urlencodedformat(q_select_hidden_events.entrykey)#">#htmleditformat(q_select_hidden_events.title)#</a>
+				<a href="index.cfm?action=ShowEvent&entrykey=#urlencodedformat(q_select_hidden_events.entrykey)#">#htmleditformat(q_select_hidden_events.title)#</a>
 				</td>
 			  </tr>
 			</cfoutput>

@@ -58,4 +58,4 @@ select @@identity as max_id;
 
 <!--- weiterleiten --->
 
-<cflocation addtoken="No" url="default.cfm?action=ExternalEmail">
+<cflocation addtoken="No" url="index.cfm?action=ExternalEmail">

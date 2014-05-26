@@ -77,10 +77,10 @@
 			<cfset a_str_onClick_action = ''>
 		</cfif>
 	<cfelse>
-		<cfset a_str_fileurl="default.cfm?action=ShowFile&entrykey=#a_struct_files.files.entrykey#">
-		<cfset a_str_dirurl="default.cfm?action=ShowFiles&directorykey=#a_struct_files.files.entrykey#">
+		<cfset a_str_fileurl="index.cfm?action=ShowFile&entrykey=#a_struct_files.files.entrykey#">
+		<cfset a_str_dirurl="index.cfm?action=ShowFiles&directorykey=#a_struct_files.files.entrykey#">
 		<cfset a_str_thumbnailurl="dsp_show_file_thumbnail.cfm?entrykey=#a_struct_files.files.entrykey#">
-		<cfset a_str_infourl="default.cfm?action=FileInfo&entrykey=#a_struct_files.files.entrykey#">
+		<cfset a_str_infourl="index.cfm?action=FileInfo&entrykey=#a_struct_files.files.entrykey#">
 		<cfset a_str_onClick_action = ''>
 	</cfif>
 	<cfswitch expression="#a_struct_files.files.filetype#">
@@ -89,22 +89,22 @@
 		<cfcase value="directory">
 			<cfif specialtype lte 0 >
 				<cfif not a_bool_publicview>
-					<a href="default.cfm?action=EditFolder&entrykey=#a_struct_files.files.entrykey#&currentdir=#url.directorykey#"><img src="/images/si/pencil.png" class="si_img" />
+					<a href="index.cfm?action=EditFolder&entrykey=#a_struct_files.files.entrykey#&currentdir=#url.directorykey#"><img src="/images/si/pencil.png" class="si_img" />
 					</a>
-					<a href="default.cfm?action=DeleteFolder&entrykey=#a_struct_files.files.entrykey#&parentdirectorykey=#url.directorykey#&currentdir=#url.directorykey#"><img src="/images/si/delete.png" class="si_img" /></a>
+					<a href="index.cfm?action=DeleteFolder&entrykey=#a_struct_files.files.entrykey#&parentdirectorykey=#url.directorykey#&currentdir=#url.directorykey#"><img src="/images/si/delete.png" class="si_img" /></a>
 				</cfif>
 			</cfif>
 		</cfcase>
 		<cfcase value="file">
 			<nobr>
 				<cfif not a_bool_publicview>
-					<a class="nl" href="default.cfm?action=EditFile&entrykey=#a_struct_files.files.entrykey#&currentdir=#url.directorykey#"><img src="/images/si/pencil.png" class="si_img" /></a>
+					<a class="nl" href="index.cfm?action=EditFile&entrykey=#a_struct_files.files.entrykey#&currentdir=#url.directorykey#"><img src="/images/si/pencil.png" class="si_img" /></a>
 				</cfif>
 				<a class="nl" href="#a_str_infourl#"><img src="/images/si/information.png" class="si_img" /></a>
 				<cfif not a_bool_publicview>
-					<!---<a href="default.cfm?action=MailFile&entrykey=#a_struct_files.files.entrykey#&currentdir=#url.directorykey#"><img width="15" height="11" alt="folder" src="/images/btn_folder_inbx2.gif" border="0" align="absmiddle"></a>
+					<!---<a href="index.cfm?action=MailFile&entrykey=#a_struct_files.files.entrykey#&currentdir=#url.directorykey#"><img width="15" height="11" alt="folder" src="/images/btn_folder_inbx2.gif" border="0" align="absmiddle"></a>
 					|--->
-					<a class="nl" href="default.cfm?action=DeleteFile&frm_entrykey=#a_struct_files.files.entrykey#&frm_parentdirectorykey=#url.directorykey#&currentdir=#url.directorykey#"><img src="/images/si/delete.png" class="si_img" /></a>
+					<a class="nl" href="index.cfm?action=DeleteFile&frm_entrykey=#a_struct_files.files.entrykey#&frm_parentdirectorykey=#url.directorykey#&currentdir=#url.directorykey#"><img src="/images/si/delete.png" class="si_img" /></a>
 				</cfif>
 			</nobr>
 		</cfcase>

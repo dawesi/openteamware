@@ -13,7 +13,7 @@
 	
 	<cfoutput>#a_str_text#</cfoutput>
 	<br><br>
-	<cfoutput>#GetLangVal('adm_ph_please_order_in_the_shop')#</cfoutput>: <a href="default.cfm?action=shop"><cfoutput>#GetLangVal('adm_ph_goto_shop')#</cfoutput></a>
+	<cfoutput>#GetLangVal('adm_ph_please_order_in_the_shop')#</cfoutput>: <a href="index.cfm?action=shop"><cfoutput>#GetLangVal('adm_ph_goto_shop')#</cfoutput></a>
 	<cfexit method="exittemplate">
 </cfif>
 

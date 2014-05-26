@@ -14,12 +14,12 @@
 	
 	<cfcase value="52228B55-B4D7-DFDF-4AC7CFB5BDA95AC5">
 		<!--- email --->
-		<cfinclude template="email/inc_default.cfm">
+		<cfinclude template="email/inc_index.cfm">
 	</cfcase>
 	
 	<cfcase value="5222B55D-B96B-1960-70BF55BD1435D273">
 		<!--- calendar --->
-		<cfinclude template="calendar/inc_default.cfm">
+		<cfinclude template="calendar/inc_index.cfm">
 	</cfcase>
 	
 	<cfdefaultcase>

@@ -42,6 +42,6 @@
 	<cfinvokeargument name="username" value="#request.stSecurityContext.myusername#">
 </cfinvoke>
 
-<cflocation addtoken="no" url="default.cfm?action=filter">
+<cflocation addtoken="no" url="index.cfm?action=filter">
 
 

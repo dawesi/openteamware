@@ -45,5 +45,5 @@
 	<cfinvokeargument name="description" value="#form.frmdescription#">
 </cfinvoke>
 
-<cflocation addtoken="no" url="default.cfm">
+<cflocation addtoken="no" url="index.cfm">
 

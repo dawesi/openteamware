@@ -64,6 +64,6 @@
 </cfinvoke>
 
 <!--- forward to output page to handle "page has to be reloaded" problem --->
-<cflocation addtoken="no" url="default.cfm?action=ShowReportOutput&entrykey=#a_struct_report.entrykey#">
+<cflocation addtoken="no" url="index.cfm?action=ShowReportOutput&entrykey=#a_struct_report.entrykey#">
 
 

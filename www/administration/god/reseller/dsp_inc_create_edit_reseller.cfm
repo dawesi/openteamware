@@ -116,7 +116,7 @@ WHERE
 	<script type="text/javascript">
 		function Uebernehmen()
 			{
-			location.href = 'default.cfm?action=newreseller&customerid='+document.all.frmcustomerid.value;
+			location.href = 'index.cfm?action=newreseller&customerid='+document.all.frmcustomerid.value;
 			}
 	</script>
   </cfif>

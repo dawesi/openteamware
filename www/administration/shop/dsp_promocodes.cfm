@@ -13,7 +13,7 @@
 	
 	<cfif Len(a_str_shop_url) IS 0>
 		<!--- forward to feedback form ... --->
-		<cflocation addtoken="no" url="default.cfm?action=partnerfeedbackform&reason=shop">		
+		<cflocation addtoken="no" url="index.cfm?action=partnerfeedbackform&reason=shop">		
 	<cfelse>
 		<h4><a target="_blank" href="<cfoutput>#a_str_shop_url#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_shop_open_click')#</cfoutput></a></h4>
 	</cfif>

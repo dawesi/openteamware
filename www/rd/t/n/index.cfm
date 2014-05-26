@@ -7,7 +7,7 @@
 
 <body>
 
-<cflocation addtoken="no" url="/tasks/default.cfm?action=NewTask">
+<cflocation addtoken="no" url="/tasks/index.cfm?action=NewTask">
 
 </body>
 </html>

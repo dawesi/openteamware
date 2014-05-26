@@ -26,7 +26,7 @@ Aktive Filter: <cfoutput>#a_struct_report.q_select_report.crmfilterkey#</cfoutpu
 
 
 <cfif Len(stReturn.tablekey_of_report_output) GT 0>
-	<cflocation addtoken="no" url="../database/default.cfm?action=ViewTable&table_entrykey=#stReturn.tablekey_of_report_output#">
+	<cflocation addtoken="no" url="../database/index.cfm?action=ViewTable&table_entrykey=#stReturn.tablekey_of_report_output#">
 </cfif>
 
 

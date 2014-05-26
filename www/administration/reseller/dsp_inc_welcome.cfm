@@ -32,7 +32,7 @@ ORDER BY
 		###q_select_companies.currentrow#
 	</td>
     <td>
-		<a href="default.cfm?action=customerproperties&companykey=#urlencodedformat(q_select_companies.entrykey)#&resellerkey=#url.resellerkey#">#htmleditformat(q_select_companies.companyname)#</a>
+		<a href="index.cfm?action=customerproperties&companykey=#urlencodedformat(q_select_companies.entrykey)#&resellerkey=#url.resellerkey#">#htmleditformat(q_select_companies.companyname)#</a>
 	</td>
     <td>
 		#q_select_companies.customerid#
@@ -45,7 +45,7 @@ ORDER BY
   <cfif q_select_companies.recordcount GT 20>
   	<tr class="mischeader">
 		<td colspan="4">
-			<a href="default.cfm?action=customers&resellerkey=<cfoutput>#url.resellerkey#</cfoutput>&frmstatus=1"><b>jetzt alle Interessenten anzeigen ...</b></a>
+			<a href="index.cfm?action=customers&resellerkey=<cfoutput>#url.resellerkey#</cfoutput>&frmstatus=1"><b>jetzt alle Interessenten anzeigen ...</b></a>
 		</td>
 	</tr>
   </cfif>

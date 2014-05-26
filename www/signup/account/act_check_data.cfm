@@ -1,6 +1,6 @@
 <!--- post page for registration --->
 <cfif cgi.REQUEST_METHOD NEQ 'POST'>
-	<cflocation addtoken="no" url="default.cfm">
+	<cflocation addtoken="no" url="index.cfm">
 </cfif>
 
 <!--- include scripts ... --->
@@ -59,27 +59,27 @@
 
 <!--- fullfill now various checks ... --->
 <cfif Len(form.frmfirstname) LTE 2>
-	<cflocation addtoken="no" url="default.cfm?error=tooshortfirstname">
+	<cflocation addtoken="no" url="index.cfm?error=tooshortfirstname">
 </cfif>
 
 <cfif Len(form.frmsurname) LTE 2>
-	<cflocation addtoken="no" url="default.cfm?error=tooshortsurname">
+	<cflocation addtoken="no" url="index.cfm?error=tooshortsurname">
 </cfif>
 
 <cfif Len(form.frmusername) LT 3>
-	<cflocation addtoken="no" url="default.cfm?error=tooshortusername">
+	<cflocation addtoken="no" url="index.cfm?error=tooshortusername">
 </cfif>
 
 <cfif FindNoCase("@", form.frmUsername, 1) GT 0>
-	<cflocation addtoken="no" url="default.cfm?error=atcharinusername">
+	<cflocation addtoken="no" url="index.cfm?error=atcharinusername">
 </cfif>
 
 <cfif ReFindNoCase("[^0-9,a-z,.,--,_]", form.frmUsername, 1) GT 0>
-	<cflocation addtoken="no" url="default.cfm?error=invalidcharinusername">
+	<cflocation addtoken="no" url="index.cfm?error=invalidcharinusername">
 </cfif>
 
 <cfif form.frmcbacceptagb IS 0>
-	<cflocation addtoken="no" url="default.cfm?error=agbacceptmissing">
+	<cflocation addtoken="no" url="index.cfm?error=agbacceptmissing">
 </cfif>
 
 <!--- check the full username ... --->
@@ -92,35 +92,35 @@
 
 <cfif a_bol_return>
 	<!--- user already exists ... --->
-	<cflocation addtoken="no" url="default.cfm?error=useralreadyexists">
+	<cflocation addtoken="no" url="index.cfm?error=useralreadyexists">
 </cfif>
 
 <cfif ExtractEmailAdr(form.frm_external_email) IS ''>
 	<!--- empty external address --->
-	<cflocation addtoken="no" url="default.cfm?error=invalidexternaladdress">
+	<cflocation addtoken="no" url="index.cfm?error=invalidexternaladdress">
 </cfif>
 
 <!--- anti-spammer! --->
 <cfset a_str_hostname_of_ip = application.components.cmp_tools.GetHostName(cgi.REMOTE_ADDR) />
 
 <cfif Len(form.frmpassword1) LT 4>
-	<cflocation addtoken="no" url="default.cfm?error=passworderror">
+	<cflocation addtoken="no" url="index.cfm?error=passworderror">
 </cfif>
 
 <cfif CompareNoCase(form.frmpassword1, form.frmpassword2) NEQ 0>
-	<cflocation addtoken="no" url="default.cfm?error=passworderror">
+	<cflocation addtoken="no" url="index.cfm?error=passworderror">
 </cfif>
 
 <cfif Len(form.frmstreet) LTE 5>
-	<cflocation addtoken="no" url="default.cfm?error=emptystreet">
+	<cflocation addtoken="no" url="index.cfm?error=emptystreet">
 </cfif>
 
 <cfif Len(form.frmzipcode) LT 4>
-	<cflocation addtoken="no" url="default.cfm?error=errorzipcode">
+	<cflocation addtoken="no" url="index.cfm?error=errorzipcode">
 </cfif>
 
 <cfif Len(form.frmcity) LT 3>
-	<cflocation addtoken="no" url="default.cfm?error=errorcity">
+	<cflocation addtoken="no" url="index.cfm?error=errorcity">
 </cfif>
 
 <!--- ok, all checks done ... now create company/users ... --->

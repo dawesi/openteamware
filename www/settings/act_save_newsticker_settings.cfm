@@ -52,4 +52,4 @@
 	entryname = "sourceids"
 	entryvalue1 = #form.frmsourceids#>
 	
-<cflocation addtoken="no" url="default.cfm?action=newsticker">
+<cflocation addtoken="no" url="index.cfm?action=newsticker">

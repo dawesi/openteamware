@@ -15,7 +15,7 @@
 	</td>
 	<td>
 		<cfset a_str_href = ReplaceOrAddURLParameter(cgi.QUERY_STRING, 'orderby', 'surname')>
-		<a href="default.cfm?<cfoutput>#a_str_href#</cfoutput>"><cfoutput>#GetLangVal('cm_wd_name')#</cfoutput></a>
+		<a href="index.cfm?<cfoutput>#a_str_href#</cfoutput>"><cfoutput>#GetLangVal('cm_wd_name')#</cfoutput></a>
 			
 		<cfif CompareNoCase(sOrderBy, 'surname') IS 0>
 			<img src="/images/arrows/img_arrow_sort_down.gif" align="absmiddle" width="14" height="10" alt="" border="0"/>
@@ -26,7 +26,7 @@
 	</td>
 	<td>
 		<cfset a_str_href = ReplaceOrAddURLParameter(cgi.QUERY_STRING, 'orderby', 'company,surname')>
-		<a href="default.cfm?<cfoutput>#a_str_href#</cfoutput>"><cfoutput>#GetLangVal('adrb_wd_organisation')#</cfoutput></a>
+		<a href="index.cfm?<cfoutput>#a_str_href#</cfoutput>"><cfoutput>#GetLangVal('adrb_wd_organisation')#</cfoutput></a>
 			
 		<cfif ListFindNoCase(sOrderBy, 'company') GT 0>
 			<img src="/images/arrows/img_arrow_sort_down.gif" align="absmiddle" width="14" height="10" alt="" border="0"/>
@@ -52,14 +52,14 @@
 		<input type="checkbox" name="frmcbselect" value="#htmleditformat(q_select_contacts.entrykey)#" class="noborder">
 	</td>
 	<td>
-		<img src="/images/si/vcard.png" alt="" border="0" width="16" height="16" align="absmiddle" /> <a href="default.cfm?action=ShowItem&entrykey=#urlencodedformat(q_select_contacts.entrykey)#"><cfif Len(q_select_contacts.surname) GT 0><b>#htmleditformat(checkzerostring(q_select_contacts.surname))#</b><cfif Len(q_select_contacts.firstname) GT 0>, </cfif></cfif>#htmleditformat(q_select_contacts.firstname)#</a>
+		<img src="/images/si/vcard.png" alt="" border="0" width="16" height="16" align="absmiddle" /> <a href="index.cfm?action=ShowItem&entrykey=#urlencodedformat(q_select_contacts.entrykey)#"><cfif Len(q_select_contacts.surname) GT 0><b>#htmleditformat(checkzerostring(q_select_contacts.surname))#</b><cfif Len(q_select_contacts.firstname) GT 0>, </cfif></cfif>#htmleditformat(q_select_contacts.firstname)#</a>
 	</td>
     <td>
 		#htmleditformat(q_select_contacts.aposition)#
 	</td>
 	<td>
 		<cfif Len(q_select_contacts.parentcontactkey) GT 0>
-			<a href="default.cfm?action=ShowItem&entrykey=#urlencodedformat(q_select_contacts.entrykey)#">#htmleditformat(shortenstring(q_select_contacts.company, 25))#</a>
+			<a href="index.cfm?action=ShowItem&entrykey=#urlencodedformat(q_select_contacts.entrykey)#">#htmleditformat(shortenstring(q_select_contacts.company, 25))#</a>
 		<cfelse>
 			#htmleditformat(shortenstring(q_select_contacts.company, 25))#
 		</cfif>				

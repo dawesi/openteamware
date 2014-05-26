@@ -34,11 +34,11 @@
 <cfsavecontent variable="a_Str_js_edit_actions">
 	function EditThisTaskNow() {
 		DisplayStatusInformation('<cfoutput>#GetLangValJS('cm_ph_status_please_wait')#</cfoutput>');
-		location.href = 'default.cfm?action=edittask&entrykey=<cfoutput>#url.entrykey#</cfoutput>';
+		location.href = 'index.cfm?action=edittask&entrykey=<cfoutput>#url.entrykey#</cfoutput>';
 		}
 	function DeleteThisTaskNow() {
 		DisplayStatusInformation('<cfoutput>#GetLangValJS('cm_ph_status_please_wait')#</cfoutput>');
-		location.href = 'default.cfm?action=deletetask&entrykey=<cfoutput>#url.entrykey#</cfoutput>';
+		location.href = 'index.cfm?action=deletetask&entrykey=<cfoutput>#url.entrykey#</cfoutput>';
 		}
 	function UpdateStatusOfThisTaskNow(status) {
 		DisplayStatusInformation('<cfoutput>#GetLangValJS('cm_ph_status_please_wait')#</cfoutput>');
@@ -268,7 +268,7 @@ function processReqCustomConfirmActionChange()
 				<td valign="top">
 				<!--- offer a link to related tasks --->
 				<cfloop list="#q_select_task.categories#" delimiters="," index="a_str_category">
-				<a href="default.cfm?action=ShowTasks&filtercategory=#urlencodedformat(a_str_category)#">#a_str_category#</a>&nbsp;
+				<a href="index.cfm?action=ShowTasks&filtercategory=#urlencodedformat(a_str_category)#">#a_str_category#</a>&nbsp;
 				</cfloop>
 				</td>
 			  </tr>
@@ -284,7 +284,7 @@ function processReqCustomConfirmActionChange()
 					<cfinvoke component="#application.components.cmp_user#" method="GetUsernamebyentrykey" returnvariable="a_str_username">
 						<cfinvokeargument name="entrykey" value="#a_str_userkey#">
 					</cfinvoke>
-					<a href="../workgroups/default.cfm?action=ShowUser&entrykey=#urlencodedformat(a_str_userkey)#">#htmleditformat(a_str_username)#</a><br />
+					<a href="../workgroups/index.cfm?action=ShowUser&entrykey=#urlencodedformat(a_str_userkey)#">#htmleditformat(a_str_username)#</a><br />
 					
 				</cfloop>
 				</td>
@@ -321,7 +321,7 @@ function processReqCustomConfirmActionChange()
 				<td align="right" valign="top" class="field_name">#GetLangVal('tsk_wd_due')#</td>
 				<td valign="top">
 				<cfif isDate(q_select_task.dt_due)>
-				<a href="../calendar/default.cfm?action=ViewDay&date=#dateformat(q_select_task.dt_due, "mm/dd/yyyy")#">#lsdateformat(q_select_task.dt_due, "ddd, dd.mm.yy")#</a>
+				<a href="../calendar/index.cfm?action=ViewDay&date=#dateformat(q_select_task.dt_due, "mm/dd/yyyy")#">#lsdateformat(q_select_task.dt_due, "ddd, dd.mm.yy")#</a>
 				
 					<!--- overdue? --->
 					<cfif (Now() GT q_select_task.dt_due) AND (ListLen(q_select_task.assignedtouserkeys) GT 0)>
@@ -436,7 +436,7 @@ function processReqCustomConfirmActionChange()
 						</cfinvoke>					
 						</td>
 						<td valign="top">
-							<a href="/workgroups/default.cfm?Action=showuser&entrykey=#urlencodedformat(q_select_comments.userkey)#">#htmleditformat(a_str_username)#</a>						
+							<a href="/workgroups/index.cfm?Action=showuser&entrykey=#urlencodedformat(q_select_comments.userkey)#">#htmleditformat(a_str_username)#</a>						
 						</td>
 						<td valign="top">
 							#lsdateformat(q_select_comments.dt_created, "dd.mm.yy")#

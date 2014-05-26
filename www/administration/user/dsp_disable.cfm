@@ -25,7 +25,7 @@
 
 <b><cfoutput>#GetLangVal('adm_wd_tipp')#</cfoutput>:</b> <cfoutput>#GetLangVal('adm_ph_user_deactivated_hint_redirect')#</cfoutput>
 <br><br><br>
-<a href="default.cfm?action=userproperties&entrykey=<cfoutput>#url.entrykey##writeurltags()#</cfoutput>"><cfoutput>#GetLangVal('cm_wd_back')#</cfoutput></a>
+<a href="index.cfm?action=userproperties&entrykey=<cfoutput>#url.entrykey##writeurltags()#</cfoutput>"><cfoutput>#GetLangVal('cm_wd_back')#</cfoutput></a>
 
 <cfelse>
 

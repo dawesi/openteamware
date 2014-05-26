@@ -37,7 +37,7 @@
 				
 				#application.components.cmp_tools.GetImagePathForContentType(q_select_real_attachments.contenttype)#
 				
-				<a style="font-weight:bold;" href="default.cfm?action=loadattachment&filename=#urlencodedformat(q_select_real_attachments.afilename)#&contenttype=#urlencodedformat(q_select_real_attachments.contenttype)#&mailbox=#urlencodedformat(url.mailbox)#&id=#url.id#&partid=#q_select_real_attachments.contentid#&userkey=#urlencodedformat(url.userkey)#" target="_blank">#CheckZeroString(q_select_real_attachments.afilename)#</a>
+				<a style="font-weight:bold;" href="index.cfm?action=loadattachment&filename=#urlencodedformat(q_select_real_attachments.afilename)#&contenttype=#urlencodedformat(q_select_real_attachments.contenttype)#&mailbox=#urlencodedformat(url.mailbox)#&id=#url.id#&partid=#q_select_real_attachments.contentid#&userkey=#urlencodedformat(url.userkey)#" target="_blank">#CheckZeroString(q_select_real_attachments.afilename)#</a>
 				
 		 	 	(#byteconvert(q_select_real_attachments.asize)# )
 		 	 	
@@ -45,7 +45,7 @@
 		  			AND (Len(q_select_real_attachments.tempfilename) gt 0)>
 					<cfset sFilename = GetFileFromPath(q_select_real_attachments.tempfilename)>
 						<br /> 
-						<a target="_blank" href="default.cfm?action=loadattachment&filename=#urlencodedformat(q_select_real_attachments.afilename)#&contenttype=#urlencodedformat(q_select_real_attachments.contenttype)#&mailbox=#urlencodedformat(url.mailbox)#&id=#url.id#&partid=#q_select_real_attachments.contentid#&userkey=#urlencodedformat(url.userkey)#"><img class="b_all" width="140" vspace="6" hspace="6" src="show_load_saved_att_img.cfm?thumbnail=0&amp;src=#urlencodedformat(sFilename)#&contenttype=#urlencodedformat(q_select_real_attachments.contenttype)#&userkey=#urlencodedformat(url.userkey)#" /></a>
+						<a target="_blank" href="index.cfm?action=loadattachment&filename=#urlencodedformat(q_select_real_attachments.afilename)#&contenttype=#urlencodedformat(q_select_real_attachments.contenttype)#&mailbox=#urlencodedformat(url.mailbox)#&id=#url.id#&partid=#q_select_real_attachments.contentid#&userkey=#urlencodedformat(url.userkey)#"><img class="b_all" width="140" vspace="6" hspace="6" src="show_load_saved_att_img.cfm?thumbnail=0&amp;src=#urlencodedformat(sFilename)#&contenttype=#urlencodedformat(q_select_real_attachments.contenttype)#&userkey=#urlencodedformat(url.userkey)#" /></a>
 			
 		 	 	</cfif>
 		 	 	
@@ -104,7 +104,7 @@
 		 	 	
 			</td>
 			<td style="line-height:20px;">
-				<!--- <a href="default.cfm?action=loadattachment&filename=#urlencodedformat(q_select_real_attachments.afilename)#&contenttype=#urlencodedformat(q_select_real_attachments.contenttype)#&mailbox=#urlencodedformat(url.mailbox)#&id=#url.id#&partid=#q_select_real_attachments.contentid#&userkey=#urlencodedformat(url.userkey)#" target="_blank">#GetLangVal('cm_wd_download')#</a>
+				<!--- <a href="index.cfm?action=loadattachment&filename=#urlencodedformat(q_select_real_attachments.afilename)#&contenttype=#urlencodedformat(q_select_real_attachments.contenttype)#&mailbox=#urlencodedformat(url.mailbox)#&id=#url.id#&partid=#q_select_real_attachments.contentid#&userkey=#urlencodedformat(url.userkey)#" target="_blank">#GetLangVal('cm_wd_download')#</a>
 				<br /> --->
 				<cfswitch expression="#q_select_real_attachments.contenttype#">
 					<cfcase  value="text/calendar">
@@ -112,7 +112,7 @@
 					</cfcase>
 				</cfswitch>
 				
-				<a href="default.cfm?action=loadattachment&filename=#urlencodedformat(q_select_real_attachments.afilename)#&contenttype=#urlencodedformat(q_select_real_attachments.contenttype)#&mailbox=#urlencodedformat(url.mailbox)#&id=#url.id#&partid=#q_select_real_attachments.contentid#&userkey=#urlencodedformat(url.userkey)#" target="_blank"><img src="/images/si/disk.png" border="0" align="absmiddle" vspace="4" hspace="4" alt="" />#GetLangVal('cm_wd_download')#</a> 
+				<a href="index.cfm?action=loadattachment&filename=#urlencodedformat(q_select_real_attachments.afilename)#&contenttype=#urlencodedformat(q_select_real_attachments.contenttype)#&mailbox=#urlencodedformat(url.mailbox)#&id=#url.id#&partid=#q_select_real_attachments.contentid#&userkey=#urlencodedformat(url.userkey)#" target="_blank"><img src="/images/si/disk.png" border="0" align="absmiddle" vspace="4" hspace="4" alt="" />#GetLangVal('cm_wd_download')#</a> 
 				&nbsp; 
 				<a href="javascript:OpenNewWindowWithParams('/storage/show_popup_save_attachment.cfm?filename=#urlencodedformat(q_select_real_attachments.afilename)#&contenttype=#urlencodedformat(q_select_real_attachments.contenttype)#&mailbox=#urlencodedformat(url.mailbox)#&id=#url.id#&partid=#q_select_real_attachments.contentid#&userkey=#urlencodedformat(url.userkey)#');"><img align="absmiddle" vspace="4" hspace="4" src="/images/si/folder_add.png" alt="" border="0" />#GetLangVal('mail_ph_save_attachment_to_storage')#</a>
 				

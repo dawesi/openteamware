@@ -63,7 +63,7 @@
 	<cfoutput>#GetLangVal('sto_ph_error_save_directory')#</cfoutput>
 <cfelse>
 	<!--- Send to the Parent Directory Listing --->
-	<cflocation url="default.cfm?action=showfiles&directorykey=#form.frm_currentdir#">
+	<cflocation url="index.cfm?action=showfiles&directorykey=#form.frm_currentdir#">
 </cfif>
 
 

@@ -38,7 +38,7 @@
 
 	</cfif>
 
-	&gt; <a <cfif request.q_select_reseller.contractingparty IS 0>style="color:silver"</cfif> href="default.cfm?action=resellerproperties&resellerkey=#urlencodedformat(request.q_select_reseller.entrykey)#"><b>#request.q_select_reseller.companyname#</b></a>
+	&gt; <a <cfif request.q_select_reseller.contractingparty IS 0>style="color:silver"</cfif> href="index.cfm?action=resellerproperties&resellerkey=#urlencodedformat(request.q_select_reseller.entrykey)#"><b>#request.q_select_reseller.companyname#</b></a>
 
 	</td>
 	
@@ -61,11 +61,11 @@
 	</cfif>		
 	
 
-	<!---<a href="default.cfm?action=resellerproperties&subaction=sales&resellerkey=#urlencodedformat(q_select_reseller.entrykey)#">Ums&auml;tze/Performance anzeigen</a>
+	<!---<a href="index.cfm?action=resellerproperties&subaction=sales&resellerkey=#urlencodedformat(q_select_reseller.entrykey)#">Ums&auml;tze/Performance anzeigen</a>
 
 	<cfif q_select_reseller.delegaterights is 1>
 
-	&nbsp;|&nbsp;&nbsp;<a href="default.cfm?action=customers&resellerkey=#urlencodedformat(q_select_reseller.entrykey)#">Kundenverwaltung</a>
+	&nbsp;|&nbsp;&nbsp;<a href="index.cfm?action=customers&resellerkey=#urlencodedformat(q_select_reseller.entrykey)#">Kundenverwaltung</a>
 
 	</cfif>--->
 
@@ -81,4 +81,4 @@
 
 <br>
 
-<a href="default.cfm?action=reseller.new"><b>Neuen Reseller anlegen ...</b></a>
+<a href="index.cfm?action=reseller.new"><b>Neuen Reseller anlegen ...</b></a>

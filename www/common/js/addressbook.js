@@ -15,7 +15,7 @@ var isMacFirefox = ((navigator.userAgent.indexOf('Firefox') != -1) && (navigator
 function NoSkypeFoundPopup() {
 	var a_alg = new cSimpleModalDialog();
 	a_alg.type = 'information';
-	a_alg.customcontent_load_from_url = '/tools/skype/show_hint_not_installed.cfm';
+	a_alg.customcontent_load_from_url = '/tools/skype/show_hint_not_installed.cfm?';
 	a_alg.ShowDialog();	
 	return false;
 }

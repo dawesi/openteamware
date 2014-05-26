@@ -10,4 +10,4 @@
 	
 <cfinclude template="queries/q_update_customer.cfm">
 
-<cflocation addtoken="no" url="default.cfm?action=customerproperties&companykey=#urlencodedformat(form.frmentrykey)#&resellerkey=#urlencodedformat(form.frmresellerkey)#">
+<cflocation addtoken="no" url="index.cfm?action=customerproperties&companykey=#urlencodedformat(form.frmentrykey)#&resellerkey=#urlencodedformat(form.frmresellerkey)#">

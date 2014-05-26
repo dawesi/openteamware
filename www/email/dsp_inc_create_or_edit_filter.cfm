@@ -248,7 +248,7 @@ WHERE NOT fullfoldername = 'INBOX';
 
 	<td class="bt">
 
-	<a href="default.cfm?action=filter"><cfoutput>#GetLangVal('cm_ph_go_back_without_modifications')#</cfoutput></a>
+	<a href="index.cfm?action=filter"><cfoutput>#GetLangVal('cm_ph_go_back_without_modifications')#</cfoutput></a>
 
 	</td>
 

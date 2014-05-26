@@ -59,7 +59,7 @@
 	  
 	<cfset a_str_text = ReplaceNoCase(a_str_text, '%FOLDERNAME%', a_str_destination_foldername) />
 	
-	<img src="/images/space_1_1.gif" class="si_img" /><a target="_blank" href="default.cfm?action=ShowMailbox&Mailbox=<cfoutput>#urlencodedformat(q_select_tmp_sent_info.destinationfolder)#</cfoutput>"><cfoutput>#a_str_text#</cfoutput></a>.
+	<img src="/images/space_1_1.gif" class="si_img" /><a target="_blank" href="index.cfm?action=ShowMailbox&Mailbox=<cfoutput>#urlencodedformat(q_select_tmp_sent_info.destinationfolder)#</cfoutput>"><cfoutput>#a_str_text#</cfoutput></a>.
 	 --->		
 </div>
 
@@ -106,7 +106,7 @@
 
 <cfset q_select_contacts = stReturn.q_select_contacts />
 	
-	<form action="../addressbook/default.cfm?action=QuickAddFromWebmail" method="POST" target="_blank" style="margin:0px;">
+	<form action="../addressbook/index.cfm?action=QuickAddFromWebmail" method="POST" target="_blank" style="margin:0px;">
 	
 	<table class="table_overview">
 		<!--- <tr>

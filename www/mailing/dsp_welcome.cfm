@@ -73,17 +73,17 @@ ORDER BY
 				<!--- number of recipients --->
 				<cftry>
 				<cfset q_select_subscribers = application.components.cmp_newsletter.GetSubscribers(securitycontext = request.stSecurityContext, usersettings = request.stUserSettings, listkey = q_select_un_approved_issues.listkey, options = '')>					
-				<a href="default.cfm?action=editsubscribers&listkey=#q_select_un_approved_issues.listkey#">#si_img('group')# #GetLangVal('nl_wd_recipients')#: #q_select_subscribers.recordcount#</a>
+				<a href="index.cfm?action=editsubscribers&listkey=#q_select_un_approved_issues.listkey#">#si_img('group')# #GetLangVal('nl_wd_recipients')#: #q_select_subscribers.recordcount#</a>
 				<cfcatch type="any"> </cfcatch></cftry>
 			</td>
 			<td style="white-space:nowrap; ">
-				<a style="background-color:##009900;font-weight:bold;padding:2px;color:white;text-transform:uppercase;font-size:10px;border:silver solid 1px; " onClick="return confirm('#GetLangValJS('cm_ph_are_you_sure')#');" href="default.cfm?action=approveissue&entrykey=#q_select_un_approved_issues.entrykey#">#GetLangVal('nl_ph_release_for_sending')# ...</a>
+				<a style="background-color:##009900;font-weight:bold;padding:2px;color:white;text-transform:uppercase;font-size:10px;border:silver solid 1px; " onClick="return confirm('#GetLangValJS('cm_ph_are_you_sure')#');" href="index.cfm?action=approveissue&entrykey=#q_select_un_approved_issues.entrykey#">#GetLangVal('nl_ph_release_for_sending')# ...</a>
 			</td>
 			<td>
 				<a href="javascript:SendTestMails('#q_select_un_approved_issues.listkey#', '#q_select_un_approved_issues.entrykey#');">#GetLangVal('nl_ph_send_test_issues')# ...</a>
 			</td>
 			 <td align="right">
-			 	<a href="default.cfm?action=editissue&entrykey=#q_select_un_approved_issues.entrykey#&listkey=#q_select_un_approved_issues.listkey#"><img src="/images/si/pencil.png" class="si_img" alt="#GetLangVal('cm_wd_edit')#" /></a>
+			 	<a href="index.cfm?action=editissue&entrykey=#q_select_un_approved_issues.entrykey#&listkey=#q_select_un_approved_issues.listkey#"><img src="/images/si/pencil.png" class="si_img" alt="#GetLangVal('cm_wd_edit')#" /></a>
 				
 			 	<a onClick="return confirm('#GetLangValJS('cm_ph_are_you_sure')#');" href="act_delete_waiting_issue.cfm?entrykey=#q_select_un_approved_issues.entrykey#"><img src="/images/si/delete.png" class="si_img" alt="#GetLangVal('cm_wd_delete')#" /></a>
 			 </td>				
@@ -107,7 +107,7 @@ ORDER BY
 	
 	
 		<cfif q_select_profiles.recordcount IS 0>
-			<a style="font-weight:bold; " href="default.cfm?action=newprofile"><cfoutput>#GetLangVal('nl_ph_no_profiles_created_please_do_that')#</cfoutput></a>
+			<a style="font-weight:bold; " href="index.cfm?action=newprofile"><cfoutput>#GetLangVal('nl_ph_no_profiles_created_please_do_that')#</cfoutput></a>
 			<br /><br />  
 		<cfelse>
 		
@@ -171,7 +171,7 @@ ORDER BY
 					</cfswitch>					
 				</td>
 				<td>	
-					<a style="font-weight:bold;" href="default.cfm?action=newissue&listkey=#q_select_profiles.entrykey#">#GetLangVal('nl_ph_new_issue')# ...</a>
+					<a style="font-weight:bold;" href="index.cfm?action=newissue&listkey=#q_select_profiles.entrykey#">#GetLangVal('nl_ph_new_issue')# ...</a>
 				</td>
 				<td>
 				
@@ -195,7 +195,7 @@ ORDER BY
 						<ul class="img_points">
 						<cfloop query="q_select_sent_issues">
 							<li>
-								<a href="default.cfm?action=stat&listkey=#q_select_sent_issues.listkey#&issuekey=#q_select_sent_issues.entrykey#">#htmleditformat(q_select_sent_issues.issue_name)#</a>
+								<a href="index.cfm?action=stat&listkey=#q_select_sent_issues.listkey#&issuekey=#q_select_sent_issues.entrykey#">#htmleditformat(q_select_sent_issues.issue_name)#</a>
 								<br />
 								#FormatDateTimeAccordingToUserSettings(q_select_sent_issues.dt_send)#
 							</li>
@@ -208,7 +208,7 @@ ORDER BY
 					<!--- load number of subscribers --->
 					<a href="##" onclick="CalcNumberOfSubscribers('#JsStringFormat(q_select_profiles.entrykey)#', '#jsStringFormat('id_td_calc_subscribers_' & q_select_profiles.currentrow)#');return false;">#si_img('calculator')# #GetLangVal('cm_wd_show')#</a>
 					<br /> 
-					<a href="default.cfm?action=editsubscribers&listkey=#q_select_profiles.entrykey#">#si_img('pencil')# #GetLangVal('cm_wd_show')#</a>
+					<a href="index.cfm?action=editsubscribers&listkey=#q_select_profiles.entrykey#">#si_img('pencil')# #GetLangVal('cm_wd_show')#</a>
 					
 					<cfsavecontent variable="a_str_js">
 						
@@ -217,14 +217,14 @@ ORDER BY
 					<cfset tmp = AddJSToExecuteAfterPageLoad(a_str_js, '') />
 				</td>
 				<td style="white-space:nowrap; " align="right">
-					<a href="default.cfm?action=editprofile&entrykey=#q_select_profiles.entrykey#"><img src="/images/si/pencil.png" class="si_img" alt="#GetLangVal('cm_wd_edit')#" /></a>
+					<a href="index.cfm?action=editprofile&entrykey=#q_select_profiles.entrykey#"><img src="/images/si/pencil.png" class="si_img" alt="#GetLangVal('cm_wd_edit')#" /></a>
 					
 					<a onClick="return confirm('#GetLangValJS('cm_ph_are_you_sure')#');" href="act_make_profile_invisible.cfm?entrykey=#q_select_profiles.entrykey#"><img src="/images/si/delete.png" class="si_img" alt="#GetLangVal('cm_wd_delete')#" /></a>
 					
 					<cfif q_select_profiles.listtype IS 1>
 						<!---
 						<br>
-						<a href="default.cfm?action=generatesubscribeform">Anmeldeformular erstellen</a>
+						<a href="index.cfm?action=generatesubscribeform">Anmeldeformular erstellen</a>
 						--->
 					</cfif>
 				</td>
@@ -238,7 +238,7 @@ ORDER BY
 
 <cfsavecontent variable="a_str_buttons">
 	<cfoutput>
-		<input onClick="location.href = 'default.cfm?action=newprofile';" type="button" value="#GetLangVal('cm_ph_create_new_profile')#" class="btn">
+		<input onClick="location.href = 'index.cfm?action=newprofile';" type="button" value="#GetLangVal('cm_ph_create_new_profile')#" class="btn">
 	</cfoutput>
 </cfsavecontent>
 
@@ -290,7 +290,7 @@ ORDER BY
 			<cfoutput query="q_select_approved">
 			<tr>
 				<td>
-					<a title="" href="default.cfm?action=stat&listkey=#q_select_approved.listkey#&issuekey=#q_select_approved.entrykey#">#si_img('page_green')# #htmleditformat(q_select_approved.issue_name)#</a>
+					<a title="" href="index.cfm?action=stat&listkey=#q_select_approved.listkey#&issuekey=#q_select_approved.entrykey#">#si_img('page_green')# #htmleditformat(q_select_approved.issue_name)#</a>
 					<br />
 					&nbsp;&nbsp;<font class="addinfotext">#htmleditformat(q_select_approved.description)#</font>
 				</td>
@@ -319,7 +319,7 @@ ORDER BY
 						
 						#val(q_select_recipients_count.count_id)#
 						/
-						<a href="default.cfm?action=stat&listkey=#q_select_approved.listkey#&issuekey=#q_select_approved.entrykey#">#GetLangVal('adm_wd_statistics')# ...</a>
+						<a href="index.cfm?action=stat&listkey=#q_select_approved.listkey#&issuekey=#q_select_approved.entrykey#">#GetLangVal('adm_wd_statistics')# ...</a>
 					<cfelse>
 						<img src="/images/img_bar_status_loading.gif" width="107" height="13" border="0">
 						<br />
@@ -327,7 +327,7 @@ ORDER BY
 					</cfif>
 				</td>
 				<td>
-					<a href="default.cfm?action=newissue&listkey=#q_select_approved.listkey#&templatekey=#q_select_approved.entrykey#">Als Vorlage verwenden ...</a>
+					<a href="index.cfm?action=newissue&listkey=#q_select_approved.listkey#&templatekey=#q_select_approved.entrykey#">Als Vorlage verwenden ...</a>
 				</td>
 				<td align="center">
 					<a onClick="return confirm('#GetLangValJS('cm_ph_are_you_sure')#');" href="act_remove_issue.cfm?listkey=#q_select_approved.listkey#&issuekey=#q_select_approved.entrykey#">#si_img('delete')#</a>

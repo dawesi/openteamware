@@ -53,11 +53,11 @@
 		</cfcase>
 		<cfcase value="3">
 			<!--- inactive ... --->
-			<cfinclude template="utils/dsp_inc_display_all_list_default.cfm">
+			<cfinclude template="utils/dsp_inc_display_all_list_index.cfm">
 		</cfcase>
 		<cfdefaultcase>
 			<!--- default ... --->
-			<cfinclude template="utils/dsp_inc_display_all_list_default.cfm">
+			<cfinclude template="utils/dsp_inc_display_all_list_index.cfm">
 		</cfdefaultcase>
 	
 	</cfswitch>

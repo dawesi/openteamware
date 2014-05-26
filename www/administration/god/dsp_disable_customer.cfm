@@ -53,7 +53,7 @@ ORDER BY
 		#q_select_companies.customerid#
 	</td>
     <td>
-		<a target="_blank" href="../default.cfm?action=customerproperties&companykey=#urlencodedformat(q_select_companies.entrykey)#&resellerkey=#urlencodedformat(q_select_companies.resellerkey)#">#q_select_companies.companyname#</a>
+		<a target="_blank" href="../index.cfm?action=customerproperties&companykey=#urlencodedformat(q_select_companies.entrykey)#&resellerkey=#urlencodedformat(q_select_companies.resellerkey)#">#q_select_companies.companyname#</a>
 	</td>
     <td>
 		#q_select_companies.dt_disabled#

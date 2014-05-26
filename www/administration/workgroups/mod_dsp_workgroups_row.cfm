@@ -26,7 +26,7 @@ ORDER BY
 <tr>
 <td>
 	<cfloop from="1" to="#attributes.level#" index="ii">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</cfloop>
-	<a href="default.cfm?action=workgroupproperties&entrykey=#urlencodedformat(q_select_current_workgroups.entrykey)##WriteURLTags()#"><img src="/images/si/group.png" class="si_img" /> <b>#q_select_current_workgroups.groupname#</b></a>
+	<a href="index.cfm?action=workgroupproperties&entrykey=#urlencodedformat(q_select_current_workgroups.entrykey)##WriteURLTags()#"><img src="/images/si/group.png" class="si_img" /> <b>#q_select_current_workgroups.groupname#</b></a>
 </td>
 <td>
 	#htmleditformat(q_select_current_workgroups.description)#
@@ -42,9 +42,9 @@ ORDER BY
 	#dateformat(q_select_current_workgroups.dt_created, "dd.mm.yy")#
 </td>
 <td>
-	<a href="default.cfm?action=workgroup.edit&entrykey=#urlencodedformat(q_select_current_workgroups.entrykey)##WriteURLTags()#"><img src="/images/si/pencil.png" class="si_img" /> #GetLangVal('cm_wd_edit')#</a>
+	<a href="index.cfm?action=workgroup.edit&entrykey=#urlencodedformat(q_select_current_workgroups.entrykey)##WriteURLTags()#"><img src="/images/si/pencil.png" class="si_img" /> #GetLangVal('cm_wd_edit')#</a>
 	&nbsp;|&nbsp;
-	<a href="default.cfm?action=workgroup.delete&entrykey=#urlencodedformat(q_select_current_workgroups.entrykey)##WriteURLTags()#"><img src="/images/si/delete.png" class="si_img" /> #GetLangVal('cm_wd_delete')#</a>
+	<a href="index.cfm?action=workgroup.delete&entrykey=#urlencodedformat(q_select_current_workgroups.entrykey)##WriteURLTags()#"><img src="/images/si/delete.png" class="si_img" /> #GetLangVal('cm_wd_delete')#</a>
 </td>
 </tr>
 

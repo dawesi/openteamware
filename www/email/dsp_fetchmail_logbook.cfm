@@ -66,7 +66,7 @@
 
 	<br />
 
-	<a href="../settings/default.cfm?action=default.cfm?action=emailaccounts" class="simpelink">Klicken Sie hier, um nun externe E-Mail Adresse einzubinden (POP3-Sammeldienst)</a>
+	<a href="../settings/index.cfm?action=index.cfm?action=emailaccounts" class="simpelink">Klicken Sie hier, um nun externe E-Mail Adresse einzubinden (POP3-Sammeldienst)</a>
 
 	<cfexit method="exittemplate">
 
@@ -190,11 +190,11 @@ ORDER BY dt_check DESC;
 
 	  	<td colspan="3" class="bt">
 
-		<a href="default.cfm?action=logbookexternalaccounts&detailemailaddress=#urlencodedformat(q_select_external_accounts.emailadr)#">#si_img('add')# mehr Log-Eintr&auml;ge anzeigen</a>
+		<a href="index.cfm?action=logbookexternalaccounts&detailemailaddress=#urlencodedformat(q_select_external_accounts.emailadr)#">#si_img('add')# mehr Log-Eintr&auml;ge anzeigen</a>
 
 		&nbsp;|&nbsp;
 
-		<a href="../settings/default.cfm?action=emailaccounts">#si_img('pencil')# Einstellungen anzeigen</a>
+		<a href="../settings/index.cfm?action=emailaccounts">#si_img('pencil')# Einstellungen anzeigen</a>
 
 		</td>
 

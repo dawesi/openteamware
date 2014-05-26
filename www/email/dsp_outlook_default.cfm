@@ -74,7 +74,7 @@
 			<cfoutput>#GetLangVal('email_ph_start_no_new_messages')#</cfoutput><img src="/images/space_1_1.gif" class="si_img" />
 			<br /> 
 			</cfif>
-			<a href="##" onclick="GotoLocHref('/email/default.cfm?action=ShowMailbox&Mailbox=INBOX');return false;"><cfoutput>#si_img('folder')# #GetLangVal('email_ph_goto_inbox')#</cfoutput></a>
+			<a href="##" onclick="GotoLocHref('/email/index.cfm?action=ShowMailbox&Mailbox=INBOX');return false;"><cfoutput>#si_img('folder')# #GetLangVal('email_ph_goto_inbox')#</cfoutput></a>
 		</td>
 	</tr>
 </cfif>

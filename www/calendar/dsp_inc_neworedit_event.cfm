@@ -96,10 +96,10 @@
 </cfif>
 
 <cfif Variables.NewOrEditEvent.action is 'create'>
-	<cfset a_str_form_action = 'default.cfm?action=createEvent'>
+	<cfset a_str_form_action = 'index.cfm?action=createEvent'>
 	<!--- <cfset tmp = QuerySetCell(Variables.NewOrEditEvent.query, 'entrykey', CreateUUID(), 1) /> --->
 <cfelse>
-	<cfset a_str_form_action = 'default.cfm?action=updateEvent' />
+	<cfset a_str_form_action = 'index.cfm?action=updateEvent' />
 </cfif>
 
 

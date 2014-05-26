@@ -23,7 +23,7 @@ WHERE
 <cfset a_struct_filter.resellerkeys = ''>
 
 <!--- overall ... --->
-<form action="default.cfm" method="get">
+<form action="index.cfm" method="get">
 	<input type="hidden" name="action" value="test">
 	Reseller:
 	<select name="resellerkey">

@@ -50,7 +50,7 @@
 				#LSDateFormat(q_select_follow_ups.dt_due, request.stUserSettings.default_dateformat)#
 			</td>
 			<td class="addinfotext">
-				<a href="default.cfm?action=editjob&entrykey=#q_select_follow_ups.entrykey#"><img src="/images/editicon.gif" align="absmiddle" vspace="3" hspace="4" border="0"> #GetLangVal('cm_wd_edit')#</a> | 
+				<a href="index.cfm?action=editjob&entrykey=#q_select_follow_ups.entrykey#"><img src="/images/editicon.gif" align="absmiddle" vspace="3" hspace="4" border="0"> #GetLangVal('cm_wd_edit')#</a> | 
 				<a onClick="return confirm('#GetLangValJS('cm_ph_are_you_sure')#');" href="act_delete_follow_up.cfm?entrykey=#q_select_follow_ups.entrykey#"><img src="/images/email/img_trash_19x16.gif" align="absmiddle" border="0">#GetLangVal('cm_wd_delete')#</a>
 			</td>
 		  </tr>

@@ -63,9 +63,9 @@ ORDER BY
 			
 			<cfif ListFindNoCase(attributes.options, 'allow_add_admin_tool') GT 0>
 				&nbsp;&nbsp;
-				<a href="default.cfm?action=criteria&subaction=AddCriteria#attributes.url_tags_to_add#&parentid=#q_select_current_level.id#"><img src="/images/si/add.png" class="si_img" /></a>
+				<a href="index.cfm?action=criteria&subaction=AddCriteria#attributes.url_tags_to_add#&parentid=#q_select_current_level.id#"><img src="/images/si/add.png" class="si_img" /></a>
 				&nbsp;
-				<a onClick="return confirm('#GetLangValJS('cm_ph_are_you_sure')#');" href="default.cfm?action=criteria&subaction=DeleteCriteria#attributes.url_tags_to_add#&id=#q_select_current_level.id#"><img src="/images/si/delete.png" class="si_img" /></a>
+				<a onClick="return confirm('#GetLangValJS('cm_ph_are_you_sure')#');" href="index.cfm?action=criteria&subaction=DeleteCriteria#attributes.url_tags_to_add#&id=#q_select_current_level.id#"><img src="/images/si/delete.png" class="si_img" /></a>
 			</cfif>
 		
 		<cfif q_select_sub_level_items.recordcount IS 0>

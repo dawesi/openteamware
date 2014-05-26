@@ -36,12 +36,12 @@
 				
 					<!--- next or previous --->
 					<cfif a_int_list_index GT 1>
-						<li><a href="default.cfm?action=ShowItem&entrykey=<cfoutput>#ListGetat(session.adrb_display_list_entrykeys, (a_int_list_index - 1))#</cfoutput>"><cfoutput>#MakeFirstCharUCase(GetLangVal('adrb_ph_previous_contact'))#</cfoutput></a></li>
+						<li><a href="index.cfm?action=ShowItem&entrykey=<cfoutput>#ListGetat(session.adrb_display_list_entrykeys, (a_int_list_index - 1))#</cfoutput>"><cfoutput>#MakeFirstCharUCase(GetLangVal('adrb_ph_previous_contact'))#</cfoutput></a></li>
 					</cfif>
 					
 					<cfif ListLen(session.adrb_display_list_entrykeys) GT a_int_list_index>
 						<li>
-						<a href="default.cfm?action=ShowItem&entrykey=<cfoutput>#ListGetat(session.adrb_display_list_entrykeys, (a_int_list_index + 1))#</cfoutput>"><cfoutput>#MakeFirstCharUCase(GetLangVal('adrb_ph_next_contact'))#</cfoutput></a>
+						<a href="index.cfm?action=ShowItem&entrykey=<cfoutput>#ListGetat(session.adrb_display_list_entrykeys, (a_int_list_index + 1))#</cfoutput>"><cfoutput>#MakeFirstCharUCase(GetLangVal('adrb_ph_next_contact'))#</cfoutput></a>
 						</li>
 					</cfif>
 			</ul>
@@ -57,15 +57,15 @@
 		
 			<ul class="divleftpanelactions">
 			<li>
-				<a href="default.cfm"><cfoutput>#htmleditformat(GetLangval('cm_wd_overview'))#</cfoutput></a>
+				<a href="index.cfm"><cfoutput>#htmleditformat(GetLangval('cm_wd_overview'))#</cfoutput></a>
 			</li>
 			<li>
-				<a href="default.cfm?Action=createnewitem&datatype=<cfoutput>#url.filterdatatype#</cfoutput>"><cfoutput>#GetLangVal('cm_ph_new_item')#</cfoutput></a>
+				<a href="index.cfm?Action=createnewitem&datatype=<cfoutput>#url.filterdatatype#</cfoutput>"><cfoutput>#GetLangVal('cm_ph_new_item')#</cfoutput></a>
 			</li>
 			
 			<!--- <cfif url.filterdatatype IS 0>
 			<li>
-				<a href="default.cfm?action=OwnContactCard"><cfoutput>#GetLangVal('adrb_ph_own_contactcard')#</cfoutput></a>
+				<a href="index.cfm?action=OwnContactCard"><cfoutput>#GetLangVal('adrb_ph_own_contactcard')#</cfoutput></a>
 			</li>		
 			</cfif> --->
 			
@@ -78,7 +78,7 @@
 			
 
 				<li>
-					<a href="default.cfm?action=advancedsearch&filterdatatype=<cfoutput>#url.filterdatatype#</cfoutput>"><cfoutput>#GetLangVal('adrb_ph_advanced_search')#</cfoutput></a>
+					<a href="index.cfm?action=advancedsearch&filterdatatype=<cfoutput>#url.filterdatatype#</cfoutput>"><cfoutput>#GetLangVal('adrb_ph_advanced_search')#</cfoutput></a>
 				</li>
 				
 				<!--- list stored search views ... --->
@@ -95,28 +95,28 @@
 					
 						<cfoutput query="q_select_filters">
 							
-							<a <cfif CompareNoCase(q_select_filters.entrykey, url.filterviewkey) IS 0>style="font-weight:bold;"</cfif> title="#htmleditformat(q_select_filters.viewname)#" href="default.cfm?action=ShowContacts&filterviewkey=#q_select_filters.entrykey#">&gt; #htmleditformat(ShortenString(q_select_filters.viewname, 12))#</a>
+							<a <cfif CompareNoCase(q_select_filters.entrykey, url.filterviewkey) IS 0>style="font-weight:bold;"</cfif> title="#htmleditformat(q_select_filters.viewname)#" href="index.cfm?action=ShowContacts&filterviewkey=#q_select_filters.entrykey#">&gt; #htmleditformat(ShortenString(q_select_filters.viewname, 12))#</a>
 							
 						</cfoutput>
 				</li>
 				</cfif>	 --->
 				<!--- <li>
-					<a href="default.cfm?action=advancedsearch"><cfoutput>#GetLangVal('crm_ph_new_filter')#</cfoutput></a>
+					<a href="index.cfm?action=advancedsearch"><cfoutput>#GetLangVal('crm_ph_new_filter')#</cfoutput></a>
 				</li> --->
 
 			<li>
 				<a href="#" onclick="$('#id_li_names_az').fadeIn();"><cfoutput>#GetLangVal('adrb_ph_name_starts_with')#</cfoutput>
 			</li>
 			<li class="li_a_small" id="id_li_names_az" style="display:none;">
-				<cfoutput><cfloop from="65" to="90" index="ii"><a href="default.cfm?Action=ViewAll&startchar=#chr(ii)#&filterviewkey=#url.filterviewkey#">#chr(ii)#</a> </cfloop></cfoutput>
+				<cfoutput><cfloop from="65" to="90" index="ii"><a href="index.cfm?Action=ViewAll&startchar=#chr(ii)#&filterviewkey=#url.filterviewkey#">#chr(ii)#</a> </cfloop></cfoutput>
 			</li>
 			<li>
 				<div>
 					<cfoutput>#GetLangVal('cm_wd_view')#</cfoutput>
 				</div>
-				<a href="default.cfm?viewmode=list">- <cfoutput>#GetLangVal('adrb_wd_viewmode_list')#</cfoutput></a>
+				<a href="index.cfm?viewmode=list">- <cfoutput>#GetLangVal('adrb_wd_viewmode_list')#</cfoutput></a>
 				<br />
-				<a href="default.cfm?viewmode=box">- <cfoutput>#GetLangVal('adrb_wd_viewmode_boxes')#</cfoutput></a>
+				<a href="index.cfm?viewmode=box">- <cfoutput>#GetLangVal('adrb_wd_viewmode_boxes')#</cfoutput></a>
 				</li>
 			<!--- <li>
 				<a href="/synccenter/"><cfoutput>#GetLangVal('adrb_ph_outlook_sync')#</cfoutput></a>
@@ -124,14 +124,14 @@
 			<cfif url.filterdatatype IS 0>
 <!--- 
 			<li>
-				<a href="default.cfm?action=remoteedit"><cfoutput>#GetLangVal('adrb_wd_remote_edit')#</cfoutput></a>
+				<a href="index.cfm?action=remoteedit"><cfoutput>#GetLangVal('adrb_wd_remote_edit')#</cfoutput></a>
 			</li>
  --->
 			<li>
-				<a href="default.cfm?action=telephonelist"><cfoutput>#GetLangVal('adb_wd_telephonelist')#</cfoutput></a>
+				<a href="index.cfm?action=telephonelist"><cfoutput>#GetLangVal('adb_wd_telephonelist')#</cfoutput></a>
 			</li>			
 			<li>
-				<a href="default.cfm?action=birthdaylist"><cfoutput>#GetLangVal('adrb_wd_birthdaylist')#</cfoutput></a>
+				<a href="index.cfm?action=birthdaylist"><cfoutput>#GetLangVal('adrb_wd_birthdaylist')#</cfoutput></a>
 			</li>
 			</cfif>
 			</ul>

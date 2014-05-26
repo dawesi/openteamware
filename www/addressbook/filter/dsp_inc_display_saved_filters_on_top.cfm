@@ -32,20 +32,20 @@
 	<cfoutput query="q_select_all_filters">
 	<tr>
 		<td>
-			<a href="default.cfm?action=ShowContacts&filterviewkey=#q_select_all_filters.entrykey#" style="font-weight:bold;"><img src="/images/si/database_add.png" class="si_img" /> #htmleditformat(q_select_all_filters.viewname)#</a>
+			<a href="index.cfm?action=ShowContacts&filterviewkey=#q_select_all_filters.entrykey#" style="font-weight:bold;"><img src="/images/si/database_add.png" class="si_img" /> #htmleditformat(q_select_all_filters.viewname)#</a>
 		</td>
 		<td>
 			#htmleditformat(q_select_all_filters.description)#
 		</td>
 		<td>
-			<input onClick="GotoLocHref('default.cfm?action=ShowContacts&filterviewkey=#q_select_all_filters.entrykey#')" class="btn2" type="button" value="#GetLangVal('cm_ph_btn_action_apply')# ..." />
+			<input onClick="GotoLocHref('index.cfm?action=ShowContacts&filterviewkey=#q_select_all_filters.entrykey#')" class="btn2" type="button" value="#GetLangVal('cm_ph_btn_action_apply')# ..." />
 		</td>
 	</tr>
 	</cfoutput>
 	<tr>
 		<td colspan="3">
 			<cfoutput>
-				<a href="default.cfm?action=AdvancedSearch&filterdatatype=#url.filterdatatype#"><img src="/images/si/pencil.png" class="si_img" /> #GetLangVal('crm_ph_edit_filter_criteria')#</a>
+				<a href="index.cfm?action=AdvancedSearch&filterdatatype=#url.filterdatatype#"><img src="/images/si/pencil.png" class="si_img" /> #GetLangVal('crm_ph_edit_filter_criteria')#</a>
 			</cfoutput>
 		</td>
 	</tr>

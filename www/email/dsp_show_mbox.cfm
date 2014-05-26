@@ -27,7 +27,7 @@
 <cfif a_str_mbox_display_style IS 'rows' AND a_int_display_mbox_msg_preview IS 0>
 	<!--- we do NOT need an iframe ... --->
 	<!--- but add standard left/top headers ... --->
-	<cflocation addtoken="no" url="default.cfm?userkey=#url.userkey#&action=ShowMailboxContent&mailbox=#urlencodedformat(url.mailbox)#&style=rows&displaymessagepreview=0&includeheader=1">
+	<cflocation addtoken="no" url="index.cfm?userkey=#url.userkey#&action=ShowMailboxContent&mailbox=#urlencodedformat(url.mailbox)#&style=rows&displaymessagepreview=0&includeheader=1">
 </cfif>
 
 <table width="100%" border="0" cellpadding="0" cellspacing="0">

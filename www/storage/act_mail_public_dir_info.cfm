@@ -34,7 +34,7 @@
 <script type="text/javascript">
 	function compose()
 		{
-		window.open('/email/default.cfm?format=html&action=composemail&subject=Zugangsdaten&body=<cfoutput>#jsstringformat(a_str_body)#</cfoutput>', '_blank', 'resizable=1,location=0,directories=0,status=1,menubar=0,scrollbars=1,toolbar=0,width=840,height=600');
+		window.open('/email/index.cfm?format=html&action=composemail&subject=Zugangsdaten&body=<cfoutput>#jsstringformat(a_str_body)#</cfoutput>', '_blank', 'resizable=1,location=0,directories=0,status=1,menubar=0,scrollbars=1,toolbar=0,width=840,height=600');
 		location.href = '<cfoutput>#ReturnRedirectURL()#</cfoutput>';
 		}
 </script>

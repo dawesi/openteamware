@@ -86,11 +86,11 @@
 	<cfset a_str_mailbox = form.frmmailbox>
 	
 	<!--- forward ... --->
-	<cflocation addtoken="no" url="../default.cfm?action=ComposeMail&type=0&draftid=#a_int_uid#&mailbox=#urlencodedformat(a_str_mailbox)#">
+	<cflocation addtoken="no" url="../index.cfm?action=ComposeMail&type=0&draftid=#a_int_uid#&mailbox=#urlencodedformat(a_str_mailbox)#">
 <cfelse>
 
 	<!--- no attachments have been added ... return to original message ... --->
-	<cflocation addtoken="no" url="../default.cfm?action=ComposeMail&type=0&draftid=#form.frmid#&mailbox=#urlencodedformat(form.frmmailbox)#">
+	<cflocation addtoken="no" url="../index.cfm?action=ComposeMail&type=0&draftid=#form.frmid#&mailbox=#urlencodedformat(form.frmmailbox)#">
 </cfif>
 
 

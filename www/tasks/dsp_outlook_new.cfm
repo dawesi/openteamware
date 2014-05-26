@@ -83,7 +83,7 @@ WHERE
 				<img src="/images/tasks/task_status_#q_select_tasks.status#.png" width="9" height="9" vspace="0" hspace="0" border="0" align="absmiddle">
 			</td>
 			<td <cfif q_select_tasks.currentrow neq 1>class="bdashedtop"</cfif>>
-				<a title="#htmleditformat(q_select_tasks.title)#" href="/tasks/default.cfm?action=ShowTask&entrykey=#urlencodedformat(q_select_tasks.entrykey)#">#htmleditformat(shortenstring(checkzerostring(q_select_tasks.title), 30))#</a>
+				<a title="#htmleditformat(q_select_tasks.title)#" href="/tasks/index.cfm?action=ShowTask&entrykey=#urlencodedformat(q_select_tasks.entrykey)#">#htmleditformat(shortenstring(checkzerostring(q_select_tasks.title), 30))#</a>
 			</td>
 		  </tr>
 		</cfoutput>
@@ -96,7 +96,7 @@ WHERE
 			<tr>
 				<td <cfif q_select_tasks.recordcount GT 0>class="bdashedtop"</cfif>><img src="/images/high.png" width="8" height="17" border="0" vspace="0" hspace="0"></td>
 				<td <cfif q_select_tasks.recordcount GT 0>class="bdashedtop"</cfif>>
-				<a href="/tasks/default.cfm?&filterstatus=open&filtertimeframe=overdue&filtercategory=&filterpriority=&filterworkgroup="><cfoutput>#q_select_overdue_tasks.recordcount#</cfoutput> &uuml;berf&auml;llige Aufgaben</a>
+				<a href="/tasks/index.cfm?&filterstatus=open&filtertimeframe=overdue&filtercategory=&filterpriority=&filterworkgroup="><cfoutput>#q_select_overdue_tasks.recordcount#</cfoutput> &uuml;berf&auml;llige Aufgaben</a>
 				</td>
 			</tr>
 			<cfelse>
@@ -104,7 +104,7 @@ WHERE
 				<tr>
 					<td <cfif q_select_tasks.recordcount GT 0>class="bdashedtop"</cfif>><img src="/images/high.png" width="8" height="17" border="0" vspace="0" hspace="0"></td>
 					<td <cfif q_select_tasks.recordcount GT 0>class="bdashedtop"</cfif>>
-					<b><a href="/tasks/default.cfm?&filterstatus=open&filtertimeframe=overdue&filtercategory=&filterpriority=&filterworkgroup="><cfoutput>#q_select_overdue_tasks.recordcount#</cfoutput> &uuml;berf&auml;llige Aufgaben</a></b>
+					<b><a href="/tasks/index.cfm?&filterstatus=open&filtertimeframe=overdue&filtercategory=&filterpriority=&filterworkgroup="><cfoutput>#q_select_overdue_tasks.recordcount#</cfoutput> &uuml;berf&auml;llige Aufgaben</a></b>
 					</td>
 				</tr>
 				  <cfoutput query="q_select_overdue_tasks" startrow="1" maxrows="10">
@@ -113,7 +113,7 @@ WHERE
 						<img src="/images/tasks/task_status_#q_select_overdue_tasks.status#.png" width="9" height="9" vspace="0" hspace="0" border="0" align="absmiddle">
 					</td>
 					<td class="bdashedtop">
-						<a title="#htmleditformat(q_select_overdue_tasks.title)#" href="/tasks/default.cfm?action=ShowTask&entrykey=#urlencodedformat(q_select_overdue_tasks.entrykey)#">#htmleditformat(shortenstring(checkzerostring(q_select_overdue_tasks.title), 30))#</a>
+						<a title="#htmleditformat(q_select_overdue_tasks.title)#" href="/tasks/index.cfm?action=ShowTask&entrykey=#urlencodedformat(q_select_overdue_tasks.entrykey)#">#htmleditformat(shortenstring(checkzerostring(q_select_overdue_tasks.title), 30))#</a>
 					</td>
 				  </tr>
 				  </cfoutput>

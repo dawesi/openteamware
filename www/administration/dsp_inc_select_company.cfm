@@ -47,7 +47,7 @@
 	</cfquery>
 	
 	<cfif q_select_dunningletter0.recordcount GT 0>
-		<div style="background-color:#EEEEEE;padding:6px;border:orange solid 1px;"><a href="default.cfm?action=invoices">Es liegen offene Rechnungen vor - jetzt anzeigen ...</a></div>
+		<div style="background-color:#EEEEEE;padding:6px;border:orange solid 1px;"><a href="index.cfm?action=invoices">Es liegen offene Rechnungen vor - jetzt anzeigen ...</a></div>
 	</cfif>
 		
 	<cfquery name="q_select_dunningletter1" dbtype="query">
@@ -61,7 +61,7 @@
 	</cfquery>	
 	
 	<cfif q_select_dunningletter1.recordcount GT 0>
-		<div style="background-color:#EEEEEE;padding:6px;border:orange solid 1px;"><a style="font-weight:bold;" href="default.cfm?action=invoices">Es liegen offene und bereits gemahnte Rechnungen vor - jetzt anzeigen ...</a></div>
+		<div style="background-color:#EEEEEE;padding:6px;border:orange solid 1px;"><a style="font-weight:bold;" href="index.cfm?action=invoices">Es liegen offene und bereits gemahnte Rechnungen vor - jetzt anzeigen ...</a></div>
 	</cfif>
 	
 	<cfquery name="q_select_dunningletter2" dbtype="query">
@@ -77,7 +77,7 @@
 	<cfif q_select_dunningletter2.recordcount GT 0>
 		<cfparam name="url.action" type="string" default="">
 		
-		<div style="background-color:#EEEEEE;padding:6px;border:orange solid 1px;"><img src="/images/img_attention.png" align="left" vspace="6" hspace="6"><a style="font-weight:bold;" href="default.cfm?action=invoices"><cfoutput>#GetLangVal('adm_ph_access_blocked_open_invoice1')#</cfoutput></a>
+		<div style="background-color:#EEEEEE;padding:6px;border:orange solid 1px;"><img src="/images/img_attention.png" align="left" vspace="6" hspace="6"><a style="font-weight:bold;" href="index.cfm?action=invoices"><cfoutput>#GetLangVal('adm_ph_access_blocked_open_invoice1')#</cfoutput></a>
 		<br /><br />  
 		<cfoutput>#GetLangVal('adm_ph_access_blocked_open_invoice2')#</cfoutput>
 		
@@ -87,7 +87,7 @@
 		
 		<cfif FindNoCase('dl_invoice.cfm', cgi.SCRIPT_NAME) IS 0 AND ListFindNoCase('invoices,paybill', url.action) IS 0>
 			
-			<cfhtmlhead text="<meta http-equiv=""refresh"" content=""3;URL=default.cfm?action=invoices"">">
+			<cfhtmlhead text="<meta http-equiv=""refresh"" content=""3;URL=index.cfm?action=invoices"">">
 			<cfabort>		
 		</cfif>
 	</cfif> --->
@@ -221,5 +221,5 @@ WHERE
 <div class="b_all mischeader" style="padding:6px;margin-bottom:10px;">
 <img src="/images/si/wrench.png" class="si_img" /> <b><cfoutput>#GetLangVal('adm_ph_you_are_now_in_the_admintool')#</cfoutput></b>
 <br /> 
-<img src="/images/space_1_1.gif" class="si_img" alt="" /> <cfoutput>#GetLangVal('adm_ph_selected_customer')#</cfoutput>: <a href="default.cfm?action=customerproperties&<cfoutput>#WriteURLTags()#</cfoutput>"><b><cfoutput>#htmleditformat(q_select_company_name_2_display.companyname)#</cfoutput></b></a> <cfif q_select_company_name_2_display.status IS 1> [ <font color="red"><cfoutput>#GetLangVal('cm_wd_trialphase')#</cfoutput></font> ]</cfif>
+<img src="/images/space_1_1.gif" class="si_img" alt="" /> <cfoutput>#GetLangVal('adm_ph_selected_customer')#</cfoutput>: <a href="index.cfm?action=customerproperties&<cfoutput>#WriteURLTags()#</cfoutput>"><b><cfoutput>#htmleditformat(q_select_company_name_2_display.companyname)#</cfoutput></b></a> <cfif q_select_company_name_2_display.status IS 1> [ <font color="red"><cfoutput>#GetLangVal('cm_wd_trialphase')#</cfoutput></font> ]</cfif>
 </div>

@@ -8,7 +8,7 @@
 			
 
 			<ul class="divleftpanelactions">
-			<li><a href="default.cfm"><cfoutput>#GetLangVal('cm_wd_overview')#</cfoutput></a></li>
+			<li><a href="index.cfm"><cfoutput>#GetLangVal('cm_wd_overview')#</cfoutput></a></li>
 			</ul>
 		
 	

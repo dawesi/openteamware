@@ -48,7 +48,7 @@
 
 <b><cfoutput>#GetLangVal('adm_ph_password_has_been_changed')#</cfoutput></b><br><br>
 <br>
-<a href="default.cfm?action=userproperties&entrykey=<cfoutput>#url.entrykey##writeurltags()#</cfoutput>"><cfoutput>#GetLangVal('cm_wd_back')#</cfoutput></a>
+<a href="index.cfm?action=userproperties&entrykey=<cfoutput>#url.entrykey##writeurltags()#</cfoutput>"><cfoutput>#GetLangVal('cm_wd_back')#</cfoutput></a>
 
 <cfelse>
 

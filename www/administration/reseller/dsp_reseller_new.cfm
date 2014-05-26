@@ -2,4 +2,4 @@
 
 Bitte nehmen Sie direkt mit Ihrem Partner Kontakt auf um einen Unter-Reseller einzurichten:
 <br><br>
-<a target="_blank" href="/content/homepage/de/default.cfm/action/company/">Kontaktinformationen anzeigen</a>
+<a target="_blank" href="/content/homepage/de/index.cfm/action/company/">Kontaktinformationen anzeigen</a>

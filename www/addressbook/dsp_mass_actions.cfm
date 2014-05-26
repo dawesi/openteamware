@@ -54,7 +54,7 @@
 <!--- ... set mass criteria ... --->
 <cfset a_str_form_id = 'form' & CreateUUIDJS() />
 
-<cfset tmp = application.components.cmp_forms.StartNewForm(action = 'default.cfm?action=DoExecuteMassActions&type=any',
+<cfset tmp = application.components.cmp_forms.StartNewForm(action = 'index.cfm?action=DoExecuteMassActions&type=any',
 				action_type = 'create',
 				method = 'POST',
 				onSubmit = 'DisplayPleaseWaitMsgOnLocChange()',

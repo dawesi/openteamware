@@ -15,7 +15,7 @@
 
 <cfif q_select_accounts.recordcount IS 0>
 	<h2><cfoutput>#GetLangVal('adm_ph_activitiy_no_accounts_yet')#</cfoutput></h2>
-	<a href="default.cfm?action=useradministration&<cfoutput>#WriteURLTAgs()#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_activitiy_no_accounts_yet_Create_here')#</cfoutput></a>
+	<a href="index.cfm?action=useradministration&<cfoutput>#WriteURLTAgs()#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_activitiy_no_accounts_yet_Create_here')#</cfoutput></a>
 	<cfexit method="exittemplate">
 </cfif>
 	
@@ -38,7 +38,7 @@
 </cfif>
 
 <table border="0" cellspacing="0" cellpadding="8">
-<form action="default.cfm" method="get">
+<form action="index.cfm" method="get">
 <input type="hidden" name="action" value="activity">
 <input type="hidden" name="companykey" value="<cfoutput>#url.companykey#</cfoutput>">
 <input type="hidden" name="resellerkey" value="<cfoutput>#url.resellerkey#</cfoutput>">

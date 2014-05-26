@@ -33,7 +33,7 @@
 
 <cfset a_str_file = Mid(a_str_file, 1, (ii - 1)) />
 
-<cfset a_str_file = ReplaceNoCase(a_str_file, "href=""mailto:", "target=""_blank"" href=""default.cfm?action=composemail&type=0&to=", "ALL") />
+<cfset a_str_file = ReplaceNoCase(a_str_file, "href=""mailto:", "target=""_blank"" href=""index.cfm?action=composemail&type=0&to=", "ALL") />
 <cfset a_str_file = ReplaceNoCase(a_str_file, "?subject=", "&subject=", "ALL") />
 <cfset a_str_file = ReplaceNoCase(a_str_file, '<a ', '<a target="_blank"', 'ALL') />
 <cfset a_str_file = ReplaceNoCase(a_str_file, '<a' & chr(13), '<a target="_blank"', 'ALL') />

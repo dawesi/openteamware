@@ -48,7 +48,7 @@ WHERE
 		<img src="/images/si/folder_user.png" class="si_img" />
 	</td>
     <td>
-		<a href="default.cfm?action=showfiles&directorykey=#q_select_public_shares.directorykey#">#htmleditformat(q_select_public_shares.directoryname)#</a>
+		<a href="index.cfm?action=showfiles&directorykey=#q_select_public_shares.directorykey#">#htmleditformat(q_select_public_shares.directoryname)#</a>
 	</td>
     <td>
 		<cfif Len(q_select_public_shares.password) GT 0>
@@ -58,7 +58,7 @@ WHERE
 		</cfif>
 	</td>
     <td>
-		<a href="default.cfm?action=editfolder&entrykey=#q_select_public_shares.directorykey#&currentdir="><img src="/images/si/pencil.png" class="si_img" /> #GetLangVal('cm_wd_edit')#</a>
+		<a href="index.cfm?action=editfolder&entrykey=#q_select_public_shares.directorykey#&currentdir="><img src="/images/si/pencil.png" class="si_img" /> #GetLangVal('cm_wd_edit')#</a>
 	</td>
   </tr>
   </cfoutput>
@@ -104,7 +104,7 @@ WHERE
 	<img src="/images/si/folder_user.png" class="si_img" />
 	</td>
     <td>
-		<a href="default.cfm?action=showfiles&directorykey=#q_select_workgroup_shares.directorykey#">#htmleditformat(q_select_workgroup_shares.directoryname)#</a>
+		<a href="index.cfm?action=showfiles&directorykey=#q_select_workgroup_shares.directorykey#">#htmleditformat(q_select_workgroup_shares.directoryname)#</a>
 	</td>
     <td>
 		<cfif StructKeyExists(request.stSecurityContext.A_STRUCT_WORKGROUPS, q_select_workgroup_shares.workgroupkey)>
@@ -112,7 +112,7 @@ WHERE
 		</cfif>
 	</td>
     <td>
-		<a href="default.cfm?action=editfolder&entrykey=#q_select_workgroup_shares.directorykey#&currentdir="><img src="/images/si/pencil.png" class="si_img" /> #GetLangVal('cm_wd_edit')#</a>
+		<a href="index.cfm?action=editfolder&entrykey=#q_select_workgroup_shares.directorykey#&currentdir="><img src="/images/si/pencil.png" class="si_img" /> #GetLangVal('cm_wd_edit')#</a>
 	</td>
   </tr>
   </cfoutput>

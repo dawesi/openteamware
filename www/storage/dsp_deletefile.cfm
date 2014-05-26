@@ -10,7 +10,7 @@
 <cfparam name="url.frm_parentdirectorykey" type="string" default="">
 
 <cfif len(url.frm_entrykey ) lte 0 >
-	<cflocation addtoken="no" url="default.cfm?action=showfiles&directorykey=#url.frm_parentdirectorykey#">
+	<cflocation addtoken="no" url="index.cfm?action=showfiles&directorykey=#url.frm_parentdirectorykey#">
 	<cfabort>
 </cfif>
 
@@ -41,7 +41,7 @@
 	#replace(getlangval('sto_ph_deletefiles'),"%filenames%",sFilenames)#</b>
 	<br />
 	<br />
-	<a href="default.cfm?action=DeleteFile&frm_entrykey=#urlencodedformat(url.frm_entrykey)#&confirmed=1&redirectdir=0&frm_parentdirectorykey=#url.frm_parentdirectorykey#"><img src="/images/si/accept.png" class="si_img" /> #getlangval('sto_ph_reallydelete')#</a>
+	<a href="index.cfm?action=DeleteFile&frm_entrykey=#urlencodedformat(url.frm_entrykey)#&confirmed=1&redirectdir=0&frm_parentdirectorykey=#url.frm_parentdirectorykey#"><img src="/images/si/accept.png" class="si_img" /> #getlangval('sto_ph_reallydelete')#</a>
 	<br />
 	<br />
 	<a href="javascript:history.go(-1);"><img src="/images/si/cross.png" class="si_img" /> #getlangval('sto_ph_noabort')#</a>

@@ -12,7 +12,7 @@
 <cfparam name="form.frmentrykeys" type="string" default="">
 
 <cfif len(form.frmentrykeys ) IS 0>
-	<cflocation addtoken="no" url="default.cfm?action=showfiles&directorykey=#form.frm_directorykey#">
+	<cflocation addtoken="no" url="index.cfm?action=showfiles&directorykey=#form.frm_directorykey#">
 </cfif>
 
 <cfloop index="sEntrykey" list="#form.frmentrykeys#" >
@@ -26,5 +26,5 @@
 			 
 </cfloop>
 		
-<cflocation url="default.cfm?action=showfiles&directorykey=#form.frm_directorykey#">
+<cflocation url="index.cfm?action=showfiles&directorykey=#form.frm_directorykey#">
 

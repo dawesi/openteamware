@@ -29,14 +29,14 @@
 <tr>
 	<td align="center" colspan="8" class="NavLeftTableHeader">
 	<cfoutput>
-	<a href="default.cfm?Action=ViewDay&Date=#urlencodedformat(DateFormat(yourdate_prev, "m/dd/yyyy"))#">
+	<a href="index.cfm?Action=ViewDay&Date=#urlencodedformat(DateFormat(yourdate_prev, "m/dd/yyyy"))#">
 	</cfoutput>
 	<img src="/images/links.gif" width="9" height="16" alt="" border="0"></a>
 	&nbsp;<font style="font-size : 24px;font-weight : bold;letter-spacing : 0px;">
 
 	<cfoutput>#trim(dateformat(request.a_dt_current_date, "dd.mm. "))#</cfoutput></font>
 	&nbsp;
-	<a href="default.cfm?Action=ViewDay&Date=<cfoutput>#urlencodedformat(DateFormat(yourdate_next, "m/dd/yyyy"))#"><img src="/images/rechts.gif" width="9" height="16" alt="" border="0"></a></cfoutput>
+	<a href="index.cfm?Action=ViewDay&Date=<cfoutput>#urlencodedformat(DateFormat(yourdate_next, "m/dd/yyyy"))#"><img src="/images/rechts.gif" width="9" height="16" alt="" border="0"></a></cfoutput>
 
 <br>
 <font style="letter-spacing : 5px;font-weight:bold;"><cfoutput>#ucase(LSDateFormat(ACurrentDate, "dddd"))#</cfoutput></font>
@@ -45,7 +45,7 @@
 
 <script type="text/javascript">
 	function GotoMonth(y, num)
-		{location.href = "default.cfm?action=ViewMonth&date="+num+"/1/"+y;}
+		{location.href = "index.cfm?action=ViewMonth&date="+num+"/1/"+y;}
 </script>
 <TR>
 	<td colspan="8" align="center">
@@ -55,7 +55,7 @@
 	<cfset ANextmonth =  Dateadd("m", 1, ACurrentDate)>
 	<cfset ANextmonth = CreateDate(year(ANextmonth), month(ANextmonth), 1)>
 	
-	<cfoutput><a href="default.cfm?Action=ViewMonth&Date=#urlencodedformat(dateformat(Aprevmonth, "m/dd/yyyy"))#" style="text-decoration: none;"></cfoutput><img src="/images/previous.gif" alt="vorheriger Monat" width="10" height="9" border="0"></a>
+	<cfoutput><a href="index.cfm?Action=ViewMonth&Date=#urlencodedformat(dateformat(Aprevmonth, "m/dd/yyyy"))#" style="text-decoration: none;"></cfoutput><img src="/images/previous.gif" alt="vorheriger Monat" width="10" height="9" border="0"></a>
 	
 	<select onchange="javascript:GotoMonth('<cfoutput>#year(acurrentdate)#</cfoutput>', this.value);" name="months" style="width:100px;font-weight:bold;">
 	<cfset aMonthNavDate = CreateDate("1900", 1, 1)>
@@ -65,7 +65,7 @@
 	</cfloop>
 	</select>
 	
-	<cfoutput><a href="default.cfm?Action=ViewMonth&Date=#urlencodedformat(dateformat(ANextmonth, "m/dd/yyyy"))#"></cfoutput><img src="/images/next.gif" alt="n&auml;chster Monat" width="10" height="9" border="0"></a><br>
+	<cfoutput><a href="index.cfm?Action=ViewMonth&Date=#urlencodedformat(dateformat(ANextmonth, "m/dd/yyyy"))#"></cfoutput><img src="/images/next.gif" alt="n&auml;chster Monat" width="10" height="9" border="0"></a><br>
 	</td>
 </tr>
 	<TR>
@@ -83,7 +83,7 @@
 	<TR>
 	<cfset anavDate = CreateDate(year(AcurrentDate), month(ACurrentDate), 1)>
 	<cfset aNavDateStr = urlencodedformat(dateformat(anavDate, "m/dd/yyyy"))>
-		<td align="right" class="bdashedright"><cfoutput><a class="calnav" href="default.cfm?action=ViewWeek&Date=#aNavDateStr#">#week(anavDate)#</a></td></cfoutput>
+		<td align="right" class="bdashedright"><cfoutput><a class="calnav" href="index.cfm?action=ViewWeek&Date=#aNavDateStr#">#week(anavDate)#</a></td></cfoutput>
 		<CFLOOP INDEX="ii" FROM="1" TO="#CalDays#">
 			<CFIF ii GTE Offset and ii LTE LastSlot>
 				<TD class="calnav" <cfif Day IS Day(Now()) AND Month(MonthStart) IS Month(Now())>style="border:red solid 1px;"</cfif>>
@@ -93,7 +93,7 @@
 					<cfif AFound is 0 AND AQueryArray[aiiDay] is Day><cfset AFound = 1><b></cfif>
 				</cfloop>--->
 								
-				<CFOUTPUT><a class="calnav" href="default.cfm?Action=ViewDay&Date=#urlencodedformat(month(ACurrentdate)&"/"&Day&"/"&year(ACurrentDate))#">#Day#</a></cfoutput>
+				<CFOUTPUT><a class="calnav" href="index.cfm?Action=ViewDay&Date=#urlencodedformat(month(ACurrentdate)&"/"&Day&"/"&year(ACurrentDate))#">#Day#</a></cfoutput>
 				</TD>
 				<CFSET Day = Day + 1>
 			<CFELSE>
@@ -108,7 +108,7 @@
 			
 				<CFIF Month(ATmpWeekNavDate) is Month(AcurrentDate)>
 				<cfset a_str_dt_link = dateformat(ATmpWeekNavDate, "m/dd/yyyy")>
-				<td class="bdashedright" align="right"><a class="calnav" href="default.cfm?action=ViewWeek&Date=<cfoutput>#urlencodedformat(a_str_dt_link)#</cfoutput>"><cfoutput>#week(ATmpWeekNavDate)#</cfoutput></a></td>
+				<td class="bdashedright" align="right"><a class="calnav" href="index.cfm?action=ViewWeek&Date=<cfoutput>#urlencodedformat(a_str_dt_link)#</cfoutput>"><cfoutput>#week(ATmpWeekNavDate)#</cfoutput></a></td>
 				</CFIF>
 			</CFIF>
 		</CFLOOP>

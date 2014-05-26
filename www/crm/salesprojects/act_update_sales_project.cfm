@@ -23,4 +23,4 @@
 	<cfinvokeargument name="newvalues" value="#stUpdate#">
 </cfinvoke>
 
-<cflocation addtoken="no" url="/crm/default.cfm?Action=ShowSalesProject&entrykey=#urlencodedformat(form.frmentrykey)#">
+<cflocation addtoken="no" url="/crm/index.cfm?Action=ShowSalesProject&entrykey=#urlencodedformat(form.frmentrykey)#">

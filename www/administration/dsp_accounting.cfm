@@ -43,7 +43,7 @@ WHERE
 <b><font color="#CC0000"><cfoutput>#GetLangVal('adm_ph_open_items_in_basket')#</cfoutput></font></b>
 <br>
 <table border="0" cellspacing="0" cellpadding="4">
-  <form action="default.cfm" method="get">
+  <form action="index.cfm" method="get">
 
   <input type="hidden" name="action" value="generatebill">
   <input type="hidden" name="resellerkey" value="<cfoutput>#htmleditformat(url.resellerkey)#</cfoutput>">

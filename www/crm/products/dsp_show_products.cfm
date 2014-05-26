@@ -9,7 +9,7 @@
 
 <cfsavecontent variable="a_str_js">
     function ConfirmRemoveProductsOfContact(entrykey, productname) {
-    	var url = '/crm/default.cfm?action=removeProductFromContact&contactkey=<cfoutput>#url.contactkey#</cfoutput>&entrykey=' + escape(entrykey) + '&productname=' + escape(productname);
+    	var url = '/crm/index.cfm?action=removeProductFromContact&contactkey=<cfoutput>#url.contactkey#</cfoutput>&entrykey=' + escape(entrykey) + '&productname=' + escape(productname);
 		ShowSimpleConfirmationDialog(url);
     }
 </cfsavecontent>
@@ -28,8 +28,8 @@
 </cfif>
 
 <cfsavecontent variable="a_str_buttons">
-	<input onclick="GotoLocHref('/crm/default.cfm?action=addProductToContact&contactkey=<cfoutput>#url.contactkey#</cfoutput>');" type="button" value="<cfoutput>#GetLangVal('cm_wd_new')#</cfoutput>" class="btn" />
-	<input onclick="GotoLocHref('/crm/default.cfm?action=addMultipleProductsToContact&contactkey=<cfoutput>#url.contactkey#</cfoutput>');" type="button" value="<cfoutput>#GetLangVal('cm_wd_new_multiple')#</cfoutput>" class="btn" />
+	<input onclick="GotoLocHref('/crm/index.cfm?action=addProductToContact&contactkey=<cfoutput>#url.contactkey#</cfoutput>');" type="button" value="<cfoutput>#GetLangVal('cm_wd_new')#</cfoutput>" class="btn" />
+	<input onclick="GotoLocHref('/crm/index.cfm?action=addMultipleProductsToContact&contactkey=<cfoutput>#url.contactkey#</cfoutput>');" type="button" value="<cfoutput>#GetLangVal('cm_wd_new_multiple')#</cfoutput>" class="btn" />
 </cfsavecontent>
 
 <cfoutput>#WriteNewContentBox(GetLangVal('crm_ph_products'), a_str_buttons, a_str_products_of_contact)#</cfoutput>

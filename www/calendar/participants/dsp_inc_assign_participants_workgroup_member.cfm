@@ -11,7 +11,7 @@
 <input type="hidden" name="eventkey" value="#url.eventkey#">
 
 ...
-use /workgroups/dialogs/calendar/takepart/default.cfm as example
+use /workgroups/dialogs/calendar/takepart/index.cfm as example
 
 </form>
 

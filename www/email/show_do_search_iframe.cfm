@@ -24,8 +24,8 @@
 </cfif>
 
 <frameset  framespacing="4" frameborder="1" border="1" bordercolor="gray" <cfoutput>#a_str_fs#</cfoutput>>
-	<frame frameborder="0" src="default.cfm?action=ShowMailboxContentSearch&age=<cfoutput>#url.frmage#</cfoutput>&isflagged=<cfoutput>#url.isflagged#</cfoutput>&attachments=<cfoutput>#url.attachments#</cfoutput>&search=<cfoutput>#urlencodedformat(url.search)#</cfoutput>&mailbox=<cfoutput>#url.mailbox#</cfoutput>&style=cols" name="frameemailmailbox" scrolling="auto" marginwidth="0" marginheight="0">
-	<frame frameborder="0" src="default.cfm?action=showmessage" name="frameemailmessage" scrolling="auto" marginwidth="0" marginheight="0" borderColor="silver">
+	<frame frameborder="0" src="index.cfm?action=ShowMailboxContentSearch&age=<cfoutput>#url.frmage#</cfoutput>&isflagged=<cfoutput>#url.isflagged#</cfoutput>&attachments=<cfoutput>#url.attachments#</cfoutput>&search=<cfoutput>#urlencodedformat(url.search)#</cfoutput>&mailbox=<cfoutput>#url.mailbox#</cfoutput>&style=cols" name="frameemailmailbox" scrolling="auto" marginwidth="0" marginheight="0">
+	<frame frameborder="0" src="index.cfm?action=showmessage" name="frameemailmessage" scrolling="auto" marginwidth="0" marginheight="0" borderColor="silver">
 </frameset><noframes></noframes>
 
 </html>

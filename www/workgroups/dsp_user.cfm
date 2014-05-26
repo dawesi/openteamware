@@ -129,7 +129,7 @@
 	  <tr>
 		<td align="right">E-Mail schreiben:</td>
 		<td>
-			<a href="../email/default.cfm?action=composemail&type=0&to=#urlencodedformat(q_select_user.username)#">hier klicken ...</a>
+			<a href="../email/index.cfm?action=composemail&type=0&to=#urlencodedformat(q_select_user.username)#">hier klicken ...</a>
 		</td>
 	  </tr>
 	  <tr>

@@ -79,7 +79,7 @@
 				<td valign="top">
 				<!--- offer a link to related tasks --->
 				<cfloop list="#q_select_task.categories#" delimiters="," index="a_str_category">
-				<a href="default.cfm?action=ShowTasks&filtercategory=#urlencodedformat(a_str_category)#">#a_str_category#</a>&nbsp;
+				<a href="index.cfm?action=ShowTasks&filtercategory=#urlencodedformat(a_str_category)#">#a_str_category#</a>&nbsp;
 				</cfloop>
 				</td>
 			  </tr>
@@ -95,7 +95,7 @@
 					<cfinvoke component="#application.components.cmp_user#" method="GetUsernamebyentrykey" returnvariable="a_str_username">
 						<cfinvokeargument name="entrykey" value="#a_str_userkey#">
 					</cfinvoke>
-					<a href="../workgroups/default.cfm?action=ShowUser&entrykey=#urlencodedformat(a_str_userkey)#">#htmleditformat(a_str_username)#</a><br>					
+					<a href="../workgroups/index.cfm?action=ShowUser&entrykey=#urlencodedformat(a_str_userkey)#">#htmleditformat(a_str_username)#</a><br>					
 					
 				</cfloop>
 				</td>
@@ -108,7 +108,7 @@
 				<td align="right">Faellig:</td>
 				<td>
 				<cfif isDate(q_select_task.dt_due)>
-				<a href="../calendar/default.cfm?action=ViewDay&date=#dateformat(q_select_task.dt_due, "mm/dd/yyyy")#">#lsdateformat(q_select_task.dt_due, "ddd, dd.mm.yy")#</a>
+				<a href="../calendar/index.cfm?action=ViewDay&date=#dateformat(q_select_task.dt_due, "mm/dd/yyyy")#">#lsdateformat(q_select_task.dt_due, "ddd, dd.mm.yy")#</a>
 				<cfelse>
 				n/a
 				</cfif>

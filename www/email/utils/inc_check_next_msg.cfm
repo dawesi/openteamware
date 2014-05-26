@@ -2,7 +2,7 @@
 <cfparam name="attributes.mailbox" type="string" default="">
 <cfparam name="attributes.id" type="numeric" default="0">
 
-<cfset attributes.defaulttarget = 'default.cfm?action=showmessage'>
+<cfset attributes.defaulttarget = 'index.cfm?action=showmessage'>
 <cfset attributes.item = attributes.id&'_'&attributes.mailbox>
 
 <!--- <cfif Len(attributes.md5_querystring) GT 0 AND StructKeyExists(session, 'email_mbox_display_'&attributes.md5_querystring)>
@@ -48,7 +48,7 @@
 		<cfset a_str_mbox = Mid(a_str_new_item, Find('_', a_str_new_item)+1, Len(a_str_new_item))>
 		<cfset a_str_rowno = Hash(a_str_new_item)>
 		
-		<cflocation addtoken="no" url="default.cfm?action=showmessage&mailbox=#urlencodedformat(a_str_mbox)#&id=#a_int_id#&rowno=#a_str_rowno#&mbox_query_md5=#attributes.md5_querystring#&openfullcontent=#url.openfullcontent#">
+		<cflocation addtoken="no" url="index.cfm?action=showmessage&mailbox=#urlencodedformat(a_str_mbox)#&id=#a_int_id#&rowno=#a_str_rowno#&mbox_query_md5=#attributes.md5_querystring#&openfullcontent=#url.openfullcontent#">
 
 	<cfelse>
 		<!--- no hit ... --->

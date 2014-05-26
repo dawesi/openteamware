@@ -13,4 +13,4 @@
 <cfinclude template="queries/q_delete_from_basket.cfm">
 
 
-<cflocation addtoken="no" url="default.cfm?action=shop#WriteURLTags()#">
+<cflocation addtoken="no" url="index.cfm?action=shop#WriteURLTags()#">

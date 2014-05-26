@@ -6,7 +6,7 @@
 
 
 <cfif cgi.REQUEST_METHOD NEQ 'POST'>
-	<cflocation addtoken="no" url="default.cfm?action=ShowNewEvent">
+	<cflocation addtoken="no" url="index.cfm?action=ShowNewEvent">
 </cfif>
 
 <cfparam name="form.frmtitle" type="string" default="">
@@ -241,11 +241,11 @@ https://www.openTeamWare.com/rd/c/e/?#urlencodedformat(form.frmentrykey)#
 		<cfset a_str_redirect = form.frmredirect>	
 	<cfelse>
 		<!--- goto cal start page ... --->
-		<cflocation addtoken="no" url="default.cfm">
+		<cflocation addtoken="no" url="index.cfm">
 	</cfif>
 
 <cfelse>
-	<cfset a_str_redirect = 'default.cfm'>
+	<cfset a_str_redirect = 'index.cfm'>
 </cfif>
 
 

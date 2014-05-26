@@ -19,7 +19,7 @@
 
 Gruppe wurde geloescht.
 <br><br><br>
-<a href="default.cfm?action=workgroups<cfoutput>#writeurltags()#</cfoutput>">zurueck</a>
+<a href="index.cfm?action=workgroups<cfoutput>#writeurltags()#</cfoutput>">zurueck</a>
 
 <cfelse>
 

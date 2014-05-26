@@ -20,8 +20,8 @@
 </cfinvoke>
 
 <cfif NOT stReturn.result>
-	<cflocation url="default.cfm?action=DisplayAssignedElements&entrykey=#url.eventkey#&ibxerrorno=#stReturn.error#">
+	<cflocation url="index.cfm?action=DisplayAssignedElements&entrykey=#url.eventkey#&ibxerrorno=#stReturn.error#">
 </cfif>
 
-<cflocation url="default.cfm?action=DisplayAssignedElements&entrykey=#url.eventkey#">
+<cflocation url="index.cfm?action=DisplayAssignedElements&entrykey=#url.eventkey#">
 

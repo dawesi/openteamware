@@ -30,5 +30,5 @@
 	<cfinvokeargument name="forceoverwrite" value="true">
 </cfinvoke>
 			
-<cflocation addtoken="no" url="default.cfm?action=ShowFiles&directorykey=#form.frmdirectorykey#">
+<cflocation addtoken="no" url="index.cfm?action=ShowFiles&directorykey=#form.frmdirectorykey#">
 

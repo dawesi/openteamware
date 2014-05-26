@@ -27,9 +27,9 @@
 
 	<h4>Please select your email provider</h4>
 	
-	<a href="default.cfm?action=addemailaccount&amp;provider=gmail">Google Mail</a>
+	<a href="index.cfm?action=addemailaccount&amp;provider=gmail">Google Mail</a>
 	&nbsp;|&nbsp;
-	<a href="default.cfm?action=addemailaccount&amp;provider=custom">Other provider (IMAP)</a>
+	<a href="index.cfm?action=addemailaccount&amp;provider=custom">Other provider (IMAP)</a>
 
 	<cfexit method="exittemplate">
 </cfif>

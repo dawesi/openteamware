@@ -66,7 +66,7 @@
 <input type="hidden" name="frmdomain" value="<cfoutput>#request.appsettings.properties.defaultdomain#</cfoutput>">
 
 <!--- set forwarding target ... --->
-<cfif (len(url.url) gt 0) AND (CompareNoCase(url.url, "/default.cfm") neq 0) AND (CompareNoCase(url.url, '/start/') NEQ 0)>
+<cfif (len(url.url) gt 0) AND (CompareNoCase(url.url, "/index.cfm") neq 0) AND (CompareNoCase(url.url, '/start/') NEQ 0)>
 	<input type="Hidden" name="url" value="<cfoutput>#urlencodedformat(url.url)#</cfoutput>" />
 </cfif>
 
@@ -121,7 +121,7 @@
 		                		<input type="hidden" name="frmUsername" value="<cfoutput>#htmleditformat(client.LastLoginUsername)#</cfoutput>" />
 		               			<b><cfoutput>#htmleditformat(client.LastLoginUsername)#</cfoutput></b>
 								<br /> 
-		                		<a href="default.cfm?url=<cfoutput>#urlencodedformat(url.url)#</cfoutput>&resetloginusername=1"><cfoutput>#GetLangVal("lg_changeuser")#</cfoutput> ...</a>
+		                		<a href="index.cfm?url=<cfoutput>#urlencodedformat(url.url)#</cfoutput>&resetloginusername=1"><cfoutput>#GetLangVal("lg_changeuser")#</cfoutput> ...</a>
 		                	<cfelse>
 								<input style="font-weight:bold;width:250px;" type="text" name="frmusername" size="35" maxlength="100" />
 							</cfif>

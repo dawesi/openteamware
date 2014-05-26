@@ -18,7 +18,7 @@
 <cfinclude template="../../login/check_logged_in.cfm">
 
 <cfif cgi.REQUEST_METHOD NEQ 'POST'>
-	<cflocation addtoken="no" url="default.cfm?action=ComposeMail">
+	<cflocation addtoken="no" url="index.cfm?action=ComposeMail">
 </cfif>
 
 <cfinclude template="../utils/inc_load_imap_access_data.cfm">
@@ -92,7 +92,7 @@
 	
 	<cfif q_select_uploaded_attachments.recordcount IS 0>
 		<!--- no attachments have been added ... return to original message ... --->
-		<cflocation addtoken="no" url="../default.cfm?action=ComposeMail&type=0&draftid=#urlencodedformat(url.uid)#&mailbox=#urlencodedformat(url.foldername)#">
+		<cflocation addtoken="no" url="../index.cfm?action=ComposeMail&type=0&draftid=#urlencodedformat(url.uid)#&mailbox=#urlencodedformat(url.foldername)#">
 	</cfif>
 	
 	<cfdump var="#q_select_uploaded_attachments#">
@@ -144,7 +144,7 @@
 	</cfquery>
 	
 	<!--- forward ... --->
-	<cflocation addtoken="no" url="../default.cfm?action=ComposeMail&type=0&draftid=#a_int_new_uid#&mailbox=#urlencodedformat(url.foldername)#">
+	<cflocation addtoken="no" url="../index.cfm?action=ComposeMail&type=0&draftid=#a_int_new_uid#&mailbox=#urlencodedformat(url.foldername)#">
 
 
 </cfif>
@@ -293,11 +293,11 @@
 	</cfinvoke>
 
 	<!--- forward ... --->
-	<cflocation addtoken="no" url="../default.cfm?action=ComposeMail&type=0&draftid=#a_int_uid#&mailbox=#urlencodedformat(a_str_mailbox)#">
+	<cflocation addtoken="no" url="../index.cfm?action=ComposeMail&type=0&draftid=#a_int_uid#&mailbox=#urlencodedformat(a_str_mailbox)#">
 <cfelse>
 
 	<!--- no attachments have been added ... return to original message ... --->
-	<cflocation addtoken="no" url="../default.cfm?action=ComposeMail&type=0&draftid=#form.frmid#&mailbox=#urlencodedformat(form.frmmailbox)#">
+	<cflocation addtoken="no" url="../index.cfm?action=ComposeMail&type=0&draftid=#form.frmid#&mailbox=#urlencodedformat(form.frmmailbox)#">
 
 </cfif>
 

@@ -8,4 +8,4 @@
 	<cfinvokeargument name="securitycontext" value="#request.stSecurityContext#">
 </cfinvoke>
 
-<cflocation addtoken="no" url="default.cfm?action=ShowWelcome">
+<cflocation addtoken="no" url="index.cfm?action=ShowWelcome">

@@ -9,7 +9,7 @@
 
 <!--- is the user logged in?? --->
 <cfif NOT StructKeyExists(request, 'stSecurityContext')>
-	<cflocation addtoken="no" url="default.cfm">
+	<cflocation addtoken="no" url="index.cfm">
 </cfif>
 
 <cfset a_str_location = application.components.cmp_customize.GetCustomStyleData(usersettings = request.stUserSettings, entryname = 'locations').onLogout />

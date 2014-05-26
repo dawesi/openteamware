@@ -62,7 +62,7 @@ WHERE
 
 <table border="0" cellspacing="10" cellpadding="6">
   <tr>
-  	<form action="default.cfm" method="get">
+  	<form action="index.cfm" method="get">
 	<input type="hidden" name="action" value="customers">
   	<td width="50%" class="b_all" valign="top">
 	
@@ -85,9 +85,9 @@ WHERE
 		  <tr>
 			<td>
 			<ul style="line-height:18px; ">
-				<li><a href="default.cfm?action=reseller"><b><cfoutput>#GetLangVal('adm_ph_assigned_partners_showall')#</cfoutput></b></a></li>
+				<li><a href="index.cfm?action=reseller"><b><cfoutput>#GetLangVal('adm_ph_assigned_partners_showall')#</cfoutput></b></a></li>
 				<cfoutput query="request.q_select_reseller" startrow="1" maxrows="5">
-					<li><a href="default.cfm?action=resellerproperties&resellerkey=#request.q_select_reseller.entrykey#">#request.q_select_reseller.companyname#</a></li>
+					<li><a href="index.cfm?action=resellerproperties&resellerkey=#request.q_select_reseller.entrykey#">#request.q_select_reseller.companyname#</a></li>
 				</cfoutput>
 			</ul>
 			</td>
@@ -100,11 +100,11 @@ WHERE
   
   <tr>
 	<td class="b_all">
-		<a style="font-weight:bold; " href="default.cfm?action=newcustomer"><img src="/images/arrows/img_green_button_16x16.gif" align="absmiddle" border="0"> <cfoutput>#GetLangVal('adm_ph_create_new_customer')#</cfoutput></a>
+		<a style="font-weight:bold; " href="index.cfm?action=newcustomer"><img src="/images/arrows/img_green_button_16x16.gif" align="absmiddle" border="0"> <cfoutput>#GetLangVal('adm_ph_create_new_customer')#</cfoutput></a>
 	</td>  
     <td class="b_all">
 	
-		<a href="default.cfm?action=Stat"><b><img src="/images/icon/img_stat_32x32.gif" align="absmiddle" border="0"> <cfoutput>#GetLangVal('adm_ph_statistics_and_reporting')#</cfoutput></b></a>
+		<a href="index.cfm?action=Stat"><b><img src="/images/icon/img_stat_32x32.gif" align="absmiddle" border="0"> <cfoutput>#GetLangVal('adm_ph_statistics_and_reporting')#</cfoutput></b></a>
 	</td>	
   </tr>    
   <tr>
@@ -117,7 +117,7 @@ WHERE
 		<cfoutput query="q_select_customers">
 		  <tr>
 			<td valign="top">
-				<a href="default.cfm?action=customerproperties&companykey=#urlencodedformat(q_select_customers.entrykey)#&resellerkey=#urlencodedformat(q_select_customers.resellerkey)#"><b>&raquo; #htmleditformat(shortenstring(checkzerostring(q_select_customers.companyname), 15))#</b></a>
+				<a href="index.cfm?action=customerproperties&companykey=#urlencodedformat(q_select_customers.entrykey)#&resellerkey=#urlencodedformat(q_select_customers.resellerkey)#"><b>&raquo; #htmleditformat(shortenstring(checkzerostring(q_select_customers.companyname), 15))#</b></a>
 				<br>
 				&nbsp;&nbsp;#q_select_customers.customerid#
 			</td>
@@ -152,7 +152,7 @@ WHERE
 		<cfoutput query="q_select_customers_trial_end">
 		  <tr>
 			<td valign="top">
-				<a href="default.cfm?action=customerproperties&companykey=#urlencodedformat(q_select_customers_trial_end.entrykey)#&resellerkey=#urlencodedformat(q_select_customers_trial_end.resellerkey)#"><b>&raquo; #htmleditformat(shortenstring(checkzerostring(q_select_customers_trial_end.companyname), 15))#</b></a>
+				<a href="index.cfm?action=customerproperties&companykey=#urlencodedformat(q_select_customers_trial_end.entrykey)#&resellerkey=#urlencodedformat(q_select_customers_trial_end.resellerkey)#"><b>&raquo; #htmleditformat(shortenstring(checkzerostring(q_select_customers_trial_end.companyname), 15))#</b></a>
 				<br>
 				&nbsp;&nbsp;#q_select_customers_trial_end.customerid#
 			</td>

@@ -47,5 +47,5 @@
 
 <!--- keine aktion - alle kontakte anzeigen --->
 <cfif a_bol_Handled is false>
-	<cflocation addtoken="No" url="default.cfm">
+	<cflocation addtoken="No" url="index.cfm">
 </cfif>

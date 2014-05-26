@@ -27,7 +27,7 @@
 </cfinvoke>
 
 <cfif stReturn.error IS 0>
-	<cflocation addtoken="no" url="default.cfm?action=enablemobilesync&deviceid=#urlencodedformat(stReturn.deviceid)#">
+	<cflocation addtoken="no" url="index.cfm?action=enablemobilesync&deviceid=#urlencodedformat(stReturn.deviceid)#">
 <cfelse>
 	<h4>Error: <cfoutput>#stReturn.errormessage#</cfoutput>
 	</h4>

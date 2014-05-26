@@ -82,7 +82,7 @@
 		<tr>
 			<td></td>
 			<td>
-			<b><a href="default.cfm?action=editrole&entrykey=<cfoutput>#urlencodedformat(url.entrykey)##writeurltags()#</cfoutput>"><img src="/images/editicon.gif" align="absmiddle" vspace="3" hspace="3" border="0">&nbsp; editieren</a></b>
+			<b><a href="index.cfm?action=editrole&entrykey=<cfoutput>#urlencodedformat(url.entrykey)##writeurltags()#</cfoutput>"><img src="/images/editicon.gif" align="absmiddle" vspace="3" hspace="3" border="0">&nbsp; editieren</a></b>
 			</td>
 		</tr>
 		</cfif>

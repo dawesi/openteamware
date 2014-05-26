@@ -55,7 +55,7 @@
 		<cfset a_str_mbox = Mid(a_str_new_item, Find('_', a_str_new_item)+1, Len(a_str_new_item)) />
 		<cfset a_str_rowno = Hash(a_str_new_item) />
 		
-		<cfset a_str_target = "default.cfm?action=showmessage&mailbox=#urlencodedformat(a_str_mbox)#&id=#a_int_id#&rowno=#a_int_new_item_row_index#&mbox_query_md5=#arguments.md5_querystring#&openfullcontent=#arguments.openfullcontent#" />
+		<cfset a_str_target = "index.cfm?action=showmessage&mailbox=#urlencodedformat(a_str_mbox)#&id=#a_int_id#&rowno=#a_int_new_item_row_index#&mbox_query_md5=#arguments.md5_querystring#&openfullcontent=#arguments.openfullcontent#" />
 
 	
 	</cfif>

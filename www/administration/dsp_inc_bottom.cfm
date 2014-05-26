@@ -35,7 +35,7 @@
 		<td>
 			<b><cfoutput>#GetLangVal('adm_ph_your_partner_for_questions')#</cfoutput>:</b>
 			<br>
-			<a href="default.cfm?action=partnerfeedbackform"><cfoutput query="q_select_reseller">
+			<a href="index.cfm?action=partnerfeedbackform"><cfoutput query="q_select_reseller">
 			 #ReplaceNoCase(q_select_reseller.customercontact, chr(13), '<br>', 'ALL')#</a>
 			<br>
 			<a href="mailto:#q_select_reseller.emailadr#">#q_select_reseller.emailadr#</a>

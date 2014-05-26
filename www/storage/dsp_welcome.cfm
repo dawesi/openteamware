@@ -21,7 +21,7 @@
 <!--- tabs --->
 
 <cfset tmp = StartNewTabNavigation() />
-<cfset tmp = AddTabNavigationItem(GetLangVal('cm_wd_overview'), 'default.cfm', '') />
+<cfset tmp = AddTabNavigationItem(GetLangVal('cm_wd_overview'), 'index.cfm', '') />
 
 <cfoutput>#BuildTabNavigation('', false)#</cfoutput>
 
@@ -36,18 +36,18 @@
 					<table cellpadding="4" cellspacing="0" border="0">
 						<tr>
 							<td>
-								<a  href="default.cfm?&ordertype=DESC&orderby=name"><cfoutput>#GetLangVal('cm_wd_all')#</cfoutput></a>
+								<a  href="index.cfm?&ordertype=DESC&orderby=name"><cfoutput>#GetLangVal('cm_wd_all')#</cfoutput></a>
 							</td>
 							<td>
-								<a <cfif url.view IS 'created'>style="font-weight:bold;"</cfif> href="default.cfm?Action=ShowWelcome&view=created"><cfoutput>#GetLangVal('cm_ph_last_added')#</cfoutput></a>
+								<a <cfif url.view IS 'created'>style="font-weight:bold;"</cfif> href="index.cfm?Action=ShowWelcome&view=created"><cfoutput>#GetLangVal('cm_ph_last_added')#</cfoutput></a>
 							</td>
 						</tr>
 						<tr>
 							<td>
-								<a <cfif url.view IS 'lastmodified'>style="font-weight:bold;"</cfif> href="default.cfm?Action=ShowWelcome&view=lastmodified"><cfoutput>#GetLangVal('cm_ph_last_edited')#</cfoutput></a>
+								<a <cfif url.view IS 'lastmodified'>style="font-weight:bold;"</cfif> href="index.cfm?Action=ShowWelcome&view=lastmodified"><cfoutput>#GetLangVal('cm_ph_last_edited')#</cfoutput></a>
 							</td>
 							<td>
-								<a <cfif url.view IS 'locked'>style="font-weight:bold;"</cfif>  href="default.cfm?&view=locked"><cfoutput>#GetLangVal('cm_wd_locked_objects')#</cfoutput></a>
+								<a <cfif url.view IS 'locked'>style="font-weight:bold;"</cfif>  href="index.cfm?&view=locked"><cfoutput>#GetLangVal('cm_wd_locked_objects')#</cfoutput></a>
 							</td>
 						</tr>
 
@@ -58,7 +58,7 @@
 				
 				 	<b><img src="/images/si/find.png" class="si_img" />Suchen</b>
 				 	
-				 	<form id="idformtopsearch" name="idformtopsearch" method="get" onSubmit="ShowLoadingStatus();" action="default.cfm" style="margin:0px;">
+				 	<form id="idformtopsearch" name="idformtopsearch" method="get" onSubmit="ShowLoadingStatus();" action="index.cfm" style="margin:0px;">
 					<input type="hidden" name="action" value="search" />
 
 					

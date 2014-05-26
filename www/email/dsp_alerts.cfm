@@ -15,7 +15,7 @@
   <!--- der user soll einmal den account ausw&auml;hlen, dessen einstellungen
 
 		  er &auml;ndern will --->
-  <form action="default.cfm" method="get">
+  <form action="index.cfm" method="get">
     <input type="hidden" name="action" value="Alerts">
     <b><cfoutput>#GetLangVal('mail_ph_alerts_select_address')#</cfoutput></b><br />
     <br />
@@ -59,7 +59,7 @@ WHERE
 	  
 	  	<cfoutput>#GetLangVal('adrb_wd_email_address')#</cfoutput>: <b><cfoutput><font color="##004080">#htmleditformat(q_select_account.emailadr)#</font></cfoutput></b>
 		
-		[<a href="default.cfm?action=Alerts"><cfoutput>#GetLangVal('mail_ph_enable_sms_alerts_select_other')#</cfoutput></a>]
+		[<a href="index.cfm?action=Alerts"><cfoutput>#GetLangVal('mail_ph_enable_sms_alerts_select_other')#</cfoutput></a>]
 		
 		<br /><br />
 		

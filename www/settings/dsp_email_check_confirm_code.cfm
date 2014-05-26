@@ -34,7 +34,7 @@ WHERE
 
 	<br>
 
-	Fordern Sie ihn bitte nochmals an - klicken Sie dazu bitte hier: <a href="default.cfm?action=ExternalEmail">&Uuml;bersicht</a>
+	Fordern Sie ihn bitte nochmals an - klicken Sie dazu bitte hier: <a href="index.cfm?action=ExternalEmail">&Uuml;bersicht</a>
 
 	<cfexit method="EXITTEMPLATE">
 
@@ -70,4 +70,4 @@ Die E-Mail Adresse <cfoutput>#url.email#</cfoutput> wurde erfolgreich freigescha
 
 <br>
 
-<a href="default.cfm?action=ExternalEmail">&Uuml;bersicht</a>
+<a href="index.cfm?action=ExternalEmail">&Uuml;bersicht</a>

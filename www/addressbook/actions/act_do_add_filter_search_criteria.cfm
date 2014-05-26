@@ -79,4 +79,4 @@
 
 </cfloop>
 
-<cflocation addtoken="false" url="default.cfm?action=ShowContacts&filterviewkey=#form.frmfilterviewkey#&filterdatatype=#form.frmdisplaydatatype#">
+<cflocation addtoken="false" url="index.cfm?action=ShowContacts&filterviewkey=#form.frmfilterviewkey#&filterdatatype=#form.frmdisplaydatatype#">

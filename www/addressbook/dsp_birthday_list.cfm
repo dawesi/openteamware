@@ -70,10 +70,10 @@ ORDER BY
 <cfoutput>#GetLangVal('adrb_ph_birthdaylist_description')#</cfoutput>
 <br /><br />  
 <cfoutput>#GetLangVal('cal_wd_period')#</cfoutput>:
-&nbsp;<a href="default.cfm?action=birthdaylist&timeframe=3">3 <cfoutput>#GetLangVal('cm_wd_days')#</cfoutput></a>&nbsp;|
-&nbsp;<a href="default.cfm?action=birthdaylist&timeframe=7">1 <cfoutput>#GetLangVal('cal_wd_week')#</cfoutput> (7 <cfoutput>#GetLangVal('cm_wd_days')#</cfoutput>)</a>&nbsp;|
-&nbsp;<a href="default.cfm?action=birthdaylist&timeframe=30"><cfoutput>#GetLangVal('cal_wd_month')#</cfoutput> (30 <cfoutput>#GetLangVal('cm_wd_days')#</cfoutput>)</a>&nbsp;|
-&nbsp;<a href="default.cfm?action=birthdaylist&timeframe=0"><cfoutput>#GetLangVal('cm_wd_all')#</cfoutput></a>
+&nbsp;<a href="index.cfm?action=birthdaylist&timeframe=3">3 <cfoutput>#GetLangVal('cm_wd_days')#</cfoutput></a>&nbsp;|
+&nbsp;<a href="index.cfm?action=birthdaylist&timeframe=7">1 <cfoutput>#GetLangVal('cal_wd_week')#</cfoutput> (7 <cfoutput>#GetLangVal('cm_wd_days')#</cfoutput>)</a>&nbsp;|
+&nbsp;<a href="index.cfm?action=birthdaylist&timeframe=30"><cfoutput>#GetLangVal('cal_wd_month')#</cfoutput> (30 <cfoutput>#GetLangVal('cm_wd_days')#</cfoutput>)</a>&nbsp;|
+&nbsp;<a href="index.cfm?action=birthdaylist&timeframe=0"><cfoutput>#GetLangVal('cm_wd_all')#</cfoutput></a>
 <br /><br />  
 <table class="table_overview">
   <tr class="tbl_overview_header">
@@ -100,7 +100,7 @@ ORDER BY
 		<img src="/images/si/bullet_orange.png" class="si_img" />
 	</td>
     <td>
-		<a href="default.cfm?action=ShowItem&entrykey=#urlencodedformat(q_select_contacts.entrykey)#"><b>#q_select_contacts.surname#</b>, #q_select_contacts.firstname#</a>
+		<a href="index.cfm?action=ShowItem&entrykey=#urlencodedformat(q_select_contacts.entrykey)#"><b>#q_select_contacts.surname#</b>, #q_select_contacts.firstname#</a>
 	</td>
     <td>
 		<a href="../calendar/?action=ViewDay&date=#urlencodedformat(a_str_dt_link)#">#DateFormat(q_select_contacts.birthday, 'dd.mm.yyyy')#</a>

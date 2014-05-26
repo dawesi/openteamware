@@ -8,4 +8,4 @@
 	<cfinvokeargument name="usersettings" value="#request.stUserSettings#">
 </cfinvoke>
 
-<cflocation addtoken="no" url="default.cfm?action=showtask&entrykey=#url.entrykey#">
+<cflocation addtoken="no" url="index.cfm?action=showtask&entrykey=#url.entrykey#">

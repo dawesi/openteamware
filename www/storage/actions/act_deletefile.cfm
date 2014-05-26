@@ -12,7 +12,7 @@
 <cfparam name="url.frm_parentdirectorykey" type="string" default="">
 
 <cfif Len(url.frm_entrykey) IS 0>
-	<cflocation addtoken="no" url="default.cfm?action=showfiles&directorykey=#url.frm_parentdirectorykey#">
+	<cflocation addtoken="no" url="index.cfm?action=showfiles&directorykey=#url.frm_parentdirectorykey#">
 </cfif>
 
 <cfif url.confirmed IS 1>
@@ -30,7 +30,7 @@
 	</cfloop>
 
 	<cfif Len(url.frm_parentdirectorykey) GT 0>
-		<cflocation url="default.cfm?action=ShowFiles&directorykey=#url.frm_parentdirectorykey#">
+		<cflocation url="index.cfm?action=ShowFiles&directorykey=#url.frm_parentdirectorykey#">
 	<cfelse>
 		<script type="text/javascript">
 			history.go(-1);

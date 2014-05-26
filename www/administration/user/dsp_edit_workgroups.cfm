@@ -30,7 +30,7 @@
     <td>
 	<!---<img src="/images/editicon.gif" align="absmiddle">
 	&nbsp;&nbsp;&nbsp;--->
-	<a href="default.cfm?action=workgroups.removeuser&workgroupkey=#urlencodedformat(q_select_workgroups.workgroupkey)#&entrykey=#urlencodedformat(url.entrykey)##WriteURLTags()#">#si_img('delete')#</a>
+	<a href="index.cfm?action=workgroups.removeuser&workgroupkey=#urlencodedformat(q_select_workgroups.workgroupkey)#&entrykey=#urlencodedformat(url.entrykey)##WriteURLTags()#">#si_img('delete')#</a>
 	
 	</td>
   </tr>

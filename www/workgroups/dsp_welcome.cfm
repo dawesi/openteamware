@@ -35,7 +35,7 @@
 		<img src="/images/space_1_1.gif">
 	</td>
     <td style="padding-left:#(q_select_workgroups.workgrouplevel*20)#px;">
-		<img src="/images/si/group.png" class="si_img" /> <a href="default.cfm?action=ShowWorkgroup&entrykey=#urlencodedformat(q_select_workgroups.workgroup_key)#" style="font-weight:bold;">#q_select_workgroups.workgroup_name#</a>
+		<img src="/images/si/group.png" class="si_img" /> <a href="index.cfm?action=ShowWorkgroup&entrykey=#urlencodedformat(q_select_workgroups.workgroup_key)#" style="font-weight:bold;">#q_select_workgroups.workgroup_name#</a>
 		
 		<cfif Len(q_select_workgroups.description) GT 0>
 			<br>
@@ -50,7 +50,7 @@
 	</ul>
 	</td>
     <td>
-		<a href="default.cfm?action=showworkgroup&entrykey=#q_select_workgroups.workgroup_key#"><img src="/images/menu/img_members_19x15.gif" align="absmiddle" border="0"> #GetLangVal('wrkgr_ph_show_members')#</a>
+		<a href="index.cfm?action=showworkgroup&entrykey=#q_select_workgroups.workgroup_key#"><img src="/images/menu/img_members_19x15.gif" align="absmiddle" border="0"> #GetLangVal('wrkgr_ph_show_members')#</a>
 		
 		<cfif ListFind(q_select_workgroups.permissions, 'write') GT 0>
 			<br>

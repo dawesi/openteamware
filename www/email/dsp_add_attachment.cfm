@@ -50,8 +50,8 @@
 <div style="padding:5px; " class="bb"><cfoutput>#GetLangVal('mail_ph_add_attachments_select_source')#</cfoutput></div>
 	
 <cfset tmp = StartNewTabNavigation() />
-<cfset tmp = AddTabNavigationItem(GetLangVal('mail_ph_add_attachments_localfile'), 'javascript:GotoLocHref(''default.cfm?#ReplaceOrAddURLParameter(cgi.QUERY_STRING, "source", "local")#'');', '')> 
-<cfset tmp = AddTabNavigationItem(GetLangVal('mail_ph_add_attachments_from_storage'), 'javascript:GotoLocHref(''default.cfm?#ReplaceOrAddURLParameter(cgi.QUERY_STRING, "source", "storage")#'');', '')> 
+<cfset tmp = AddTabNavigationItem(GetLangVal('mail_ph_add_attachments_localfile'), 'javascript:GotoLocHref(''index.cfm?#ReplaceOrAddURLParameter(cgi.QUERY_STRING, "source", "local")#'');', '')> 
+<cfset tmp = AddTabNavigationItem(GetLangVal('mail_ph_add_attachments_from_storage'), 'javascript:GotoLocHref(''index.cfm?#ReplaceOrAddURLParameter(cgi.QUERY_STRING, "source", "storage")#'');', '')> 
 
 <cfoutput>#BuildTabNavigation('', false)#</cfoutput>
 
@@ -241,7 +241,7 @@ function MultiPowUpload_onCompleteAbsolute(type, uploadedBytes) {
 </tr>
 <tr>
 	<td colspan="2" class="bt">
-		<a href="default.cfm?action=composemail&draftid=<cfoutput>#url.id#</cfoutput>">&lt; <cfoutput>#GetLangVal('mail_ph_return_to_msg_without_adding_attachment')#</cfoutput></a>
+		<a href="index.cfm?action=composemail&draftid=<cfoutput>#url.id#</cfoutput>">&lt; <cfoutput>#GetLangVal('mail_ph_return_to_msg_without_adding_attachment')#</cfoutput></a>
 	</td>
 </tr>
 </table>

@@ -17,12 +17,12 @@
 <cfparam name="form.form.frm_servicekey" type="string" default="">
 
 <cfif Len(form.frm_filename) EQ 0>
-	<cflocation url="default.cfm?action=UploadFile&ibxerrorno=12504" />
+	<cflocation url="index.cfm?action=UploadFile&ibxerrorno=12504" />
 </cfif>
 
 <!--- valid servicekey provided? --->
 <cfif Len(form.frm_servicekey) EQ 0>
-	<cflocation url="default.cfm?action=UploadFile&ibxerrorno=12504" />
+	<cflocation url="index.cfm?action=UploadFile&ibxerrorno=12504" />
 </cfif>
 
 <!--- save the uploaded file --->
@@ -40,8 +40,8 @@
 </cfinvoke>
 
 <cfif NOT stReturn.result>
-	<cflocation url="default.cfm?action=UploadFile#WriteIBXErrorURL(stReturn)#" />
+	<cflocation url="index.cfm?action=UploadFile#WriteIBXErrorURL(stReturn)#" />
 </cfif>
 
-<cflocation url="default.cfm?action=FieldMappings&jobkey=#form.frm_jobkey#&advancedcriteriaselection=#form.frmadvanced_criteria_selection#" addtoken="false" />
+<cflocation url="index.cfm?action=FieldMappings&jobkey=#form.frm_jobkey#&advancedcriteriaselection=#form.frmadvanced_criteria_selection#" addtoken="false" />
 

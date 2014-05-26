@@ -30,7 +30,7 @@ WHERE
 	<script>
 		function OpenAssistent()
 		{
-		window.open('/assistants/mobile/includemobile/default.cfm','newgroup','toolbar=no,location=no,directories=no,status=no,copyhistory=no,scrollbars=yes,resizable=yes,height=360,width=500');
+		window.open('/assistants/mobile/includemobile/index.cfm','newgroup','toolbar=no,location=no,directories=no,status=no,copyhistory=no,scrollbars=yes,resizable=yes,height=360,width=500');
 		}
 	</script> 
 	

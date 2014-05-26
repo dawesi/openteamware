@@ -18,7 +18,7 @@
 		<cfinvokeargument name="entrykey" value="#form.frmentrykey#">
 	</cfinvoke>
 	
-	<cflocation addtoken="false" url="default.cfm?action=ShowItem&entrykey=#form.frmentrykey#">
+	<cflocation addtoken="false" url="index.cfm?action=ShowItem&entrykey=#form.frmentrykey#">
 </cfif>
 
 <cfif Len(form.frmfile) IS 0>
@@ -48,5 +48,5 @@
 	<cfinvokeargument name="filename" value="#sFilename#">
 </cfinvoke>
 
-<cflocation addtoken="false" url="default.cfm?action=ShowItem&entrykey=#form.frmentrykey#">
+<cflocation addtoken="false" url="index.cfm?action=ShowItem&entrykey=#form.frmentrykey#">
 

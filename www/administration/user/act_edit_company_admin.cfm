@@ -8,4 +8,4 @@
 	<cfinvokeargument name="level" value="#form.frmlevel#">
 </cfinvoke>
 
-<cflocation addtoken="no" url="../default.cfm?action=customercontacts&#WriteURLTagsFromForm()#">
+<cflocation addtoken="no" url="../index.cfm?action=customercontacts&#WriteURLTagsFromForm()#">

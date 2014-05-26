@@ -1,7 +1,7 @@
 <cfinclude template="../login/check_logged_in.cfm">
 
 <cfif cgi.REQUEST_METHOD NEQ 'POST'>
-	<cflocation addtoken="no" url="default.cfm">
+	<cflocation addtoken="no" url="index.cfm">
 </cfif>
 
 
@@ -35,4 +35,4 @@
 	<cfinvokeargument name="test_addresses" value="#form.frm_test_addresses#">
 </cfinvoke>
 
-<cflocation addtoken="no" url="default.cfm">
+<cflocation addtoken="no" url="index.cfm">

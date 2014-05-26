@@ -28,7 +28,7 @@ WHERE
 <cfoutput query="q_select_companies" startrow="1" maxrows="20">
   <tr>
     <td>
-		<a target="_blank" href="../default.cfm?action=customerproperties&companykey=#urlencodedformat(q_select_companies.entrykey)#&resellerkey=#urlencodedformat(q_select_companies.resellerkey)#">#q_select_companies.companyname#</a>
+		<a target="_blank" href="../index.cfm?action=customerproperties&companykey=#urlencodedformat(q_select_companies.entrykey)#&resellerkey=#urlencodedformat(q_select_companies.resellerkey)#">#q_select_companies.companyname#</a>
 	</td>
     <td>
 		#q_select_companies.description#

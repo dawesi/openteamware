@@ -15,9 +15,9 @@
 
 <h4><img src="/images/admin/img_people.png" width="32" height="32" hspace="2" vspace="2" border="0" align="absmiddle"> Benutzerverwaltung</h4>
 
-<a href="default.cfm?action=newaccount&company=<cfoutput>#urlencodedformat(url.company)#</cfoutput>">Einen <b>neuen Benutzer</b> hinzf&uuml;gen ...</a>
+<a href="index.cfm?action=newaccount&company=<cfoutput>#urlencodedformat(url.company)#</cfoutput>">Einen <b>neuen Benutzer</b> hinzf&uuml;gen ...</a>
 <br>
-<form action="default.cfm" method="get">
+<form action="index.cfm" method="get">
 <input type="hidden" name="action" value="searchuser">
 <input type="hidden" name="company" value="<cfoutput>#htmleditformat(url.company)#</cfoutput>">
 <table border="0" cellpadding="4" cellspacing="0">
@@ -51,7 +51,7 @@
   <cfoutput query="q_select_users" startrow="1" maxrows="100">
   <tr>
   	<td align="right" style="color:silver;">#q_select_users.currentrow#</td>
-    <td><a href="default.cfm?action=showuser&entrykey=#urlencodedformat(q_select_users.entrykey)#">#q_select_users.username#</a></td>
+    <td><a href="index.cfm?action=showuser&entrykey=#urlencodedformat(q_select_users.entrykey)#">#q_select_users.username#</a></td>
     <td>#q_select_users.surname#, #q_select_users.firstname#</td>
     <td></td>
     <td align="center">

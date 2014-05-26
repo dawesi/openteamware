@@ -10,5 +10,5 @@
 	<cfset tmp = StructDelete(session, 'stUserSettings') />
 </cflock>
 
-<cflocation addtoken="false" url="default.cfm">
+<cflocation addtoken="false" url="index.cfm">
 

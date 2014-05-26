@@ -30,7 +30,7 @@
   </cfif>
   <tr>
     <td>
-		<a href="default.cfm?action=userproperties&entrykey=#urlencodedformat(q_select_customer_contacts.userkey)##WriteURLTags()#">#a_str_username#</a>
+		<a href="index.cfm?action=userproperties&entrykey=#urlencodedformat(q_select_customer_contacts.userkey)##WriteURLTags()#">#a_str_username#</a>
 		
 		<cfloop list="#q_select_customer_contacts.permissions#" delimiters="," index="a_str_index">
 		<li>#a_str_index#</li>
@@ -39,7 +39,7 @@
     
     <td>#q_select_customer_contacts.user_level#</td>
     <td>
-	<a href="default.cfm?action=editcompanyadmin&userkey=#urlencodedformat(q_select_customer_contacts.userkey)##writeurltags()#"><img src="/images/si/pencil.png" class="si_img" /></a>
+	<a href="index.cfm?action=editcompanyadmin&userkey=#urlencodedformat(q_select_customer_contacts.userkey)##writeurltags()#"><img src="/images/si/pencil.png" class="si_img" /></a>
 	&nbsp;&nbsp;
 	<a onClick="return confirm('Sind sie sicher?');" href="user/act_remove_company_admin.cfm?userkey=#urlencodedformat(q_select_customer_contacts.userkey)##writeurltags()#"><img src="/images/si/delete.png" class="si_img" /></a>
 	

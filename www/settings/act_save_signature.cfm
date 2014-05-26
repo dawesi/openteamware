@@ -8,4 +8,4 @@ AND id = #val(form.frmaccountid)#;
 </cfquery>
 
 <!--- forward --->
-<cflocation addtoken="No" url="default.cfm?action=Signatures&accountid=#val(form.frmAccountid)#">
+<cflocation addtoken="No" url="index.cfm?action=Signatures&accountid=#val(form.frmAccountid)#">

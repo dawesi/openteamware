@@ -5,6 +5,6 @@
 </head>
 <body>
 <cfparam name="url.id" default="0">
-<cflocation addtoken="No" url="../../calendar/default.cfm?action=DisplayEvent&id=#val(url.id)#">
+<cflocation addtoken="No" url="../../calendar/index.cfm?action=DisplayEvent&id=#val(url.id)#">
 </body>
 </html>

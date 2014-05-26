@@ -5,7 +5,7 @@
 <cfparam name="form.frmsetstatus" type="string" default="done">
 
 <cfif Len(form.frmcbtasks) IS 0>
-	<cflocation addtoken="no" url="default.cfm">
+	<cflocation addtoken="no" url="index.cfm">
 </cfif>
 
 <cfif IsDefined("form.frmsubmitdelete")>
@@ -26,7 +26,7 @@
 
 <cfif IsDefined('form.frmprintversion')>
 	
-	<cflocation addtoken="no" url="default.cfm?action=printversion&entrykeys=#urlencodedformat(form.frmcbtasks)#">
+	<cflocation addtoken="no" url="index.cfm?action=printversion&entrykeys=#urlencodedformat(form.frmcbtasks)#">
 </cfif>
 
 <cfif IsDefined("form.frmsubmitsetstatus")>

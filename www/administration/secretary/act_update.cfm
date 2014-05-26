@@ -3,4 +3,4 @@
 	<cfinvokeargument name="permission" value="#form.frmcb_permission#">
 </cfinvoke>
 
-<cflocation addtoken="no" url="../default.cfm?action=workgroups#writeurltagsfromform()#">
+<cflocation addtoken="no" url="../index.cfm?action=workgroups#writeurltagsfromform()#">

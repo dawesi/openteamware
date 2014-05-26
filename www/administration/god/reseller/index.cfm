@@ -17,9 +17,9 @@
 <table border="0" cellspacing="0" cellpadding="4">
   <tr>
     <td width="200" bgcolor="#EEEEEE" valign="top" style="line-height:20px;">
-		<a href="default.cfm?action=showwelcome">Uebersicht</a>
+		<a href="index.cfm?action=showwelcome">Uebersicht</a>
 		<br>
-		<a href="default.cfm?action=newreseller">Neu ...</a>
+		<a href="index.cfm?action=newreseller">Neu ...</a>
 	</td>
     <td valign="top">
 		<cfswitch expression="#url.action#">

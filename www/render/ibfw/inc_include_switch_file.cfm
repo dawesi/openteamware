@@ -11,7 +11,7 @@
 <cfswitch expression="#GetCurrentStyleUsed()#">
 
 	<cfdefaultcase>
-		<cfinclude template="inc_include_switch_file_default.cfm">
+		<cfinclude template="inc_include_switch_file_index.cfm">
 	</cfdefaultcase>
 
 </cfswitch>

@@ -125,7 +125,7 @@ ORDER BY
 		<cfset a_str_day_link = DateFormat(a_dt_day_week, 'mm/dd/yyyy')>
 		
 		<cfoutput>
-		<a href="default.cfm?action=ViewDay&Date=#urlencodedformat(a_str_day_link)#" class="addinfotext">#LSDateFormat(a_dt_day_week, 'dddd')#
+		<a href="index.cfm?action=ViewDay&Date=#urlencodedformat(a_str_day_link)#" class="addinfotext">#LSDateFormat(a_dt_day_week, 'dddd')#
 		<br>
 		#DateFormat(a_dt_day_week, 'dd.mm')#</a></cfoutput>
 		</td> 
@@ -172,7 +172,7 @@ ORDER BY
 			</span>
 			<br>
 	
-			<a href="default.cfm?action=ShowEvent&entrykey=#urlencodedformat(q_select_events.entrykey)#">#htmleditformat(q_select_events.title)#</a>
+			<a href="index.cfm?action=ShowEvent&entrykey=#urlencodedformat(q_select_events.entrykey)#">#htmleditformat(q_select_events.title)#</a>
 			
 			<cfif LEN(q_select_events.workgroupkeys) GT 0>
 				<img src="/images/calendar/16kalender_gruppen.gif" width="12" height="12" align="absmiddle" border="0">

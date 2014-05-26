@@ -49,7 +49,7 @@ ORDER BY
         <td align="right">#GetLangVal('cm_Wd_password')#:</td>
         <td>
 		<a href="javascript:window.alert('#jsstringformat(q_select_accessdata.pop3password)#');">#GetLangVal('cm_wd_show')#</a>
-		 [ <a href="default.cfm?action=editemailaccount&id=#q_select_accessdata.id#">#GetLangVal('cm_Wd_edit')#</a> ]</td>
+		 [ <a href="index.cfm?action=editemailaccount&id=#q_select_accessdata.id#">#GetLangVal('cm_Wd_edit')#</a> ]</td>
       </tr>
 	  <tr>
 	  	<td></td>
@@ -70,4 +70,4 @@ ORDER BY
 
 <br>
 <br>
-<a href="default.cfm?action=emailaccounts"><cfoutput>#GetLangVal('cm_Wd_back')#</cfoutput></a>
+<a href="index.cfm?action=emailaccounts"><cfoutput>#GetLangVal('cm_Wd_back')#</cfoutput></a>

@@ -64,7 +64,7 @@
 
 <br><br>
 
-<form action="default.cfm?action=shop.trialphaseend.addtobasket2" method="post">
+<form action="index.cfm?action=shop.trialphaseend.addtobasket2" method="post">
 <input type="hidden" name="frmcompanykey" value="<cfoutput>#form.frmcompanykey#</cfoutput>">
 <input type="hidden" name="frmresellerkey" value="<cfoutput>#form.frmresellerkey#</cfoutput>">
 <table border="0" cellspacing="0" cellpadding="4">

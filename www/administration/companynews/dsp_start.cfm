@@ -42,7 +42,7 @@
 		#q_select_news.href#
 	</td>
     <td>
-		<a href="default.cfm?action=companynews.edit#writeurltags()#&entrykey=#q_select_news.entrykey#">#si_img('pencil')#</a> | <a href="javascript:deletenews('#jsstringformat(q_select_news.entrykey)#');">#si_img('delete')# #GetLangVal('cm_wd_delete')#</a>
+		<a href="index.cfm?action=companynews.edit#writeurltags()#&entrykey=#q_select_news.entrykey#">#si_img('pencil')#</a> | <a href="javascript:deletenews('#jsstringformat(q_select_news.entrykey)#');">#si_img('delete')# #GetLangVal('cm_wd_delete')#</a>
 	</td>
   </tr>
   </cfoutput>
@@ -52,7 +52,7 @@
 </cfsavecontent>
 <cfsavecontent variable="a_str_buttons">
 <cfoutput >
-<input value="#GetLangVal('adm_ph_company_news_new_item')#" type="button" onclick="GotoLocHref('default.cfm?action=companynews.new#WriteURLTags()#');" class="btn" />
+<input value="#GetLangVal('adm_ph_company_news_new_item')#" type="button" onclick="GotoLocHref('index.cfm?action=companynews.new#WriteURLTags()#');" class="btn" />
 </cfoutput>
 </cfsavecontent>
 

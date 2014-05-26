@@ -82,7 +82,7 @@
 	<div class="b_all" style="margin:12px;width:auto;<cfif a_bol_own_account>border-left:red solid 2px;<cfelse>border-left:##004080 solid 2px;</cfif>">
 	<div class="mischeader bb" style="padding:4px;">
 	
-	&nbsp;<a title="Nachricht jetzt anzeigen ..." target="_self" href="default.cfm?action=ShowMessage&mailbox=#urlencodedformat(q_select_reference_messages.foldername)#&id=#q_select_reference_messages.uid#">#trim(a_str_from_to)#</a></div>
+	&nbsp;<a title="Nachricht jetzt anzeigen ..." target="_self" href="index.cfm?action=ShowMessage&mailbox=#urlencodedformat(q_select_reference_messages.foldername)#&id=#q_select_reference_messages.uid#">#trim(a_str_from_to)#</a></div>
 	
 	
 	<div style="padding:6px; ">

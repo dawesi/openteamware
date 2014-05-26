@@ -31,8 +31,8 @@
 
 <cfsavecontent variable="a_str_buttons">
 	<cfoutput>
-		<input type="button" class="btn2" onclick="GotoLocHref('default.cfm?action=signatures&subaction=createnewedit&format=1');return false;" value="#GetLangVal('prf_ph_create_new_sig_html')#" />
-		<input type="button" class="btn2" onclick="GotoLocHref('default.cfm?action=signatures&subaction=createnewedit&format=0');return false;" value="#GetLangVal('prf_ph_create_new_sig_text')#" />
+		<input type="button" class="btn2" onclick="GotoLocHref('index.cfm?action=signatures&subaction=createnewedit&format=1');return false;" value="#GetLangVal('prf_ph_create_new_sig_html')#" />
+		<input type="button" class="btn2" onclick="GotoLocHref('index.cfm?action=signatures&subaction=createnewedit&format=0');return false;" value="#GetLangVal('prf_ph_create_new_sig_text')#" />
 	</cfoutput>
 </cfsavecontent>
 
@@ -58,7 +58,7 @@
 			</cfif>
 			
 			<p>
-				<a href="default.cfm?action=signatures&email_adr=#urlencodedformat(url.email_adr)#&subaction=createnewedit&entrykey=#q_select_signatures.entrykey#">#si_img('pencil')# #GetLangval('cm_wd_edit')#</a>
+				<a href="index.cfm?action=signatures&email_adr=#urlencodedformat(url.email_adr)#&subaction=createnewedit&entrykey=#q_select_signatures.entrykey#">#si_img('pencil')# #GetLangval('cm_wd_edit')#</a>
 				&nbsp;|&nbsp;
 				<a href="act_delete_signatur.cfm?entrykey=#q_select_signatures.entrykey#" onClick="return confirm('#GetLangValJS('cm_ph_are_you_sure')#');">#si_img('delete')# #GetLangVal('cm_wd_delete')#</a>
 			</p>

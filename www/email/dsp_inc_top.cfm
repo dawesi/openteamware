@@ -18,7 +18,7 @@
 			<cfinvokeargument name="entrykey" value="#url.userkey#">
 		</cfinvoke>
 		<td>
-			<a href="default.cfm?action=displayusermailbox&userkey=<cfoutput>#url.userkey#</cfoutput>" class="TopHeaderLink" style="font-weight:bold; "><img src="/images/img_person_small.gif" align="absmiddle" border="0"> <cfoutput>#a_str_username#</cfoutput></a>
+			<a href="index.cfm?action=displayusermailbox&userkey=<cfoutput>#url.userkey#</cfoutput>" class="TopHeaderLink" style="font-weight:bold; "><img src="/images/img_person_small.gif" align="absmiddle" border="0"> <cfoutput>#a_str_username#</cfoutput></a>
 		</td>
 		<td class="tdtopheaderdivider">|</td>
 	</cfif>
@@ -34,7 +34,7 @@
 		</cfif>
 		
 		
-		<a target="_self" class="TopHeaderLink" href="default.cfm?action=showsearch<cfoutput>#a_str_mbox_link#</cfoutput>"><cfoutput>#GetLangVal('mail_ph_top_search')#</cfoutput></a>
+		<a target="_self" class="TopHeaderLink" href="index.cfm?action=showsearch<cfoutput>#a_str_mbox_link#</cfoutput>"><cfoutput>#GetLangVal('mail_ph_top_search')#</cfoutput></a>
 	</td>	
 	<td class="tdtopheaderdivider">|</td>	
     <td>
@@ -42,13 +42,13 @@
 	</td>	
 	<td class="tdtopheaderdivider">|</td>
     <td>
-		<a target="_self" class="TopHeaderLink" href="default.cfm?action=extras"><cfoutput>#GetLangVal('mail_wd_extras')#</cfoutput></a>
+		<a target="_self" class="TopHeaderLink" href="index.cfm?action=extras"><cfoutput>#GetLangVal('mail_wd_extras')#</cfoutput></a>
 	</td>
 
 	<!---<cfif ListFindNocase('ShowMailbox,ShowMailboxContent', url.action) GT 0>
 	<td class="tdtopheaderdivider">|</td>	
 		<td class="TopHeaderLink">
-			<cfoutput>#GetLangVal('cm_wd_view')#</cfoutput>: <a target="_self" class="TopHeaderLink" href="default.cfm?action=showmailbox&mailbox=<cfoutput>#url.mailbox#</cfoutput>&style=cols<cfoutput>#AddUserkeyToURL()#</cfoutput>"><cfoutput>#GetLangVal('mail_wd_top_link_columns')#</cfoutput></a> / <a target="_self" class="TopHeaderLink" href="default.cfm?action=showmailbox&mailbox=<cfoutput>#url.mailbox#</cfoutput>&style=rows<cfoutput>#AddUserkeyToURL()#</cfoutput>"><cfoutput>#GetLangVal('mail_wd_top_link_rows')#</cfoutput></a>
+			<cfoutput>#GetLangVal('cm_wd_view')#</cfoutput>: <a target="_self" class="TopHeaderLink" href="index.cfm?action=showmailbox&mailbox=<cfoutput>#url.mailbox#</cfoutput>&style=cols<cfoutput>#AddUserkeyToURL()#</cfoutput>"><cfoutput>#GetLangVal('mail_wd_top_link_columns')#</cfoutput></a> / <a target="_self" class="TopHeaderLink" href="index.cfm?action=showmailbox&mailbox=<cfoutput>#url.mailbox#</cfoutput>&style=rows<cfoutput>#AddUserkeyToURL()#</cfoutput>"><cfoutput>#GetLangVal('mail_wd_top_link_rows')#</cfoutput></a>
 		</td>
 	</cfif>--->
 	

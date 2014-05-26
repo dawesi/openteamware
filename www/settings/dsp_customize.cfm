@@ -14,7 +14,7 @@
 
 <cfset a_str_current_custom_style = q_select_userdata.style>
 
-<form action="default.cfm?action=DoSaveCustomize" method="POST">
+<form action="index.cfm?action=DoSaveCustomize" method="POST">
 
 <table class="table_details">
 	

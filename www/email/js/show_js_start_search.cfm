@@ -23,5 +23,5 @@
 
 <cfoutput query="q_select_mailbox">
 document.write('#jsstringformat(q_select_mailbox.subject)# #jsstringformat(dateformat(q_select_mailbox.date_local, "ddd, dd.mm.yy")#<br>');
-<!---document.write('test<a href="email/default.cfm?action=ShowMessage&id=#q_select_mailbox.id#&mailbox=#urlencodedformat(q_select_mailbox.mailbox)" class="simplelink">#jsstringformat(q_select_mailbox.subject)# #jsstringformat(dateformat(q_select_mailbox.date_local, "ddd, dd.mm.yy")#</a><br>');--->
+<!---document.write('test<a href="email/index.cfm?action=ShowMessage&id=#q_select_mailbox.id#&mailbox=#urlencodedformat(q_select_mailbox.mailbox)" class="simplelink">#jsstringformat(q_select_mailbox.subject)# #jsstringformat(dateformat(q_select_mailbox.date_local, "ddd, dd.mm.yy")#</a><br>');--->
 </cfoutput>

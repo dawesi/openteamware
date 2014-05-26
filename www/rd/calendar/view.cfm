@@ -14,7 +14,7 @@
 <cfset SetLocale(tmp)>
 
 <cfoutput>
-<meta http-equiv="Refresh" content="0;URL=/calendar/default.cfm?action=ViewDay&date=#urlencodedformat(Adate)#">
+<meta http-equiv="Refresh" content="0;URL=/calendar/index.cfm?action=ViewDay&date=#urlencodedformat(Adate)#">
 </cfoutput>
 	<title>Unbenannt</title>
 </head>

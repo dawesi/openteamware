@@ -249,7 +249,7 @@ ORDER BY
 
 
 
-<form action="default.cfm" method="GET"  name="adrbsearch">
+<form action="index.cfm" method="GET"  name="adrbsearch">
 <input type="hidden" name="action" value="ShowAddressBookSearchInpage" />
 
 <table width="100%" border="0" cellspacing="0" cellpadding="4">

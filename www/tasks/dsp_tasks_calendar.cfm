@@ -200,7 +200,7 @@ ORDER BY
   </cfif>
   <!---<tr>
     <td class="bb bt" colspan="2">
-	&nbsp;<a href="../tasks/default.cfm?action=NewTask&returnurl=<cfoutput>#urlencodedformat(cgi.SCRIPT_NAME&"?"&cgi.QUERY_STRING)#</cfoutput>"><img src="/images/icon/notizen.gif" width="12" height="12" vspace="2" hspace="2" align="absmiddle" border="0"> <cfoutput>#GetLangVal('scr_ph_top_new')#</cfoutput> ...</a>
+	&nbsp;<a href="../tasks/index.cfm?action=NewTask&returnurl=<cfoutput>#urlencodedformat(cgi.SCRIPT_NAME&"?"&cgi.QUERY_STRING)#</cfoutput>"><img src="/images/icon/notizen.gif" width="12" height="12" vspace="2" hspace="2" align="absmiddle" border="0"> <cfoutput>#GetLangVal('scr_ph_top_new')#</cfoutput> ...</a>
 	</td>
   </tr>--->
 </table>

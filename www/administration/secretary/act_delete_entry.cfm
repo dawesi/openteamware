@@ -4,4 +4,4 @@
 	<cfinvokeargument name="companykey" value="#url.companykey#">
 </cfinvoke>
 
-<cflocation addtoken="no" url="../default.cfm?action=workgroups#writeurltags()#">
+<cflocation addtoken="no" url="../index.cfm?action=workgroups#writeurltags()#">

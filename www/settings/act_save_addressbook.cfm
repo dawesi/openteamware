@@ -25,4 +25,4 @@
 	entryname = "addressbook.addvcardtomail.entrykey"
 	entryvalue1 = #form.frmentrykey#>		
 
-<cflocation addtoken="no" url="default.cfm?action=Addressbook&saved=1">
+<cflocation addtoken="no" url="index.cfm?action=Addressbook&saved=1">

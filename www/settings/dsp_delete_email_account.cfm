@@ -57,11 +57,11 @@ aus Ihrem openTeamWare Onlineb&uuml;ro entfernen wollen?
 
 
 
-<a href="default.cfm?confirmed=true&action=deleteemailaccount&id=<cfoutput>#url.id#</cfoutput>">Ja, Adresse wirklich l&ouml;schen</a>
+<a href="index.cfm?confirmed=true&action=deleteemailaccount&id=<cfoutput>#url.id#</cfoutput>">Ja, Adresse wirklich l&ouml;schen</a>
 
 &nbsp;&nbsp;|&nbsp;&nbsp;
 
-<a href="default.cfm?action=emailaccounts">Nein, zur&uuml;ck zur &Uuml;bersicht</a>
+<a href="index.cfm?action=emailaccounts">Nein, zur&uuml;ck zur &Uuml;bersicht</a>
 
 <cfelse>
 
@@ -118,7 +118,7 @@ aus Ihrem openTeamWare Onlineb&uuml;ro entfernen wollen?
 
 <br>
 
-<a href="default.cfm?action=emailaccounts">zur&uuml;ck zur &Uuml;bersicht</a>
+<a href="index.cfm?action=emailaccounts">zur&uuml;ck zur &Uuml;bersicht</a>
 
 
 

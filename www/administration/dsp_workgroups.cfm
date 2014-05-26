@@ -17,7 +17,7 @@
 	<fieldset>
 		<legend><cfoutput>#GetLangVal('cm_wd_hint')#</cfoutput></legend>
 		<div style="padding:6px; ">
-			<a style="font-weight:bold; " href="default.cfm?action=newuser&<cfoutput>#writeurltags()#</cfoutput>&productkey=AE79D26D-D86D-E073-B9648D735D84F319"><img src="/images/img_attention.png" border="0" align="absmiddle"> <cfoutput>#GetLangVal('adm_ph_group_admin_no_more_users')#</cfoutput></a>
+			<a style="font-weight:bold; " href="index.cfm?action=newuser&<cfoutput>#writeurltags()#</cfoutput>&productkey=AE79D26D-D86D-E073-B9648D735D84F319"><img src="/images/img_attention.png" border="0" align="absmiddle"> <cfoutput>#GetLangVal('adm_ph_group_admin_no_more_users')#</cfoutput></a>
 		</div>
 	</fieldset>
 	<br>
@@ -56,7 +56,7 @@
 </cfsavecontent>
 
 <cfsavecontent variable="a_str_buttons">
-	<form action="default.cfm" method="get" style="margin:0px; ">
+	<form action="index.cfm" method="get" style="margin:0px; ">
 	<input type="hidden" name="action" value="newworkgroup">
 	<input type="hidden" name="resellerkey" value="<cfoutput>#url.resellerkey#</cfoutput>">
 	<input type="hidden" name="companykey" value="<cfoutput>#url.companykey#</cfoutput>">
@@ -157,7 +157,7 @@ ORDER BY
 		#a_cmp_user.GetUsernamebyentrykey(q_select_records.createdbyuserkey)#
 	</td>
 	<td valign="top">
-		<a href="default.cfm?action=secretary.edit&entrykey=#q_select_records.entrykey##WriteURLTags()#"><img src="/images/editicon.gif" align="absmiddle" border="0" vspace="4" hspace="4"> #GetLangVal('cm_wd_edit')#</a>
+		<a href="index.cfm?action=secretary.edit&entrykey=#q_select_records.entrykey##WriteURLTags()#"><img src="/images/editicon.gif" align="absmiddle" border="0" vspace="4" hspace="4"> #GetLangVal('cm_wd_edit')#</a>
 		<a href="javascript:deletesecretary('#jsstringformat(q_select_records.entrykey)#');"><img src="/images/del.gif" align="absmiddle" border="0" width="12" height="12"> #GetLangVal('cm_wd_delete')#</a>
 	</td>
   </tr>
@@ -171,7 +171,7 @@ ORDER BY
 
 </cfsavecontent>
 <cfsavecontent variable="a_str_buttons">
-<input onclick="GotoLocHref('default.cfm?action=secretary.new<cfoutput>#writeurltags()#</cfoutput>');" type="button" value="<cfoutput>#GetLangVal('cm_ph_create_new_entry')#</cfoutput>" class="btn" />
+<input onclick="GotoLocHref('index.cfm?action=secretary.new<cfoutput>#writeurltags()#</cfoutput>');" type="button" value="<cfoutput>#GetLangVal('cm_ph_create_new_entry')#</cfoutput>" class="btn" />
 </cfsavecontent>
 
 <cfoutput>#WriteNewContentBox(GetLangVal('adm_ph_nav_group_administration_secretary'), a_str_buttons, a_str_content)#</cfoutput>

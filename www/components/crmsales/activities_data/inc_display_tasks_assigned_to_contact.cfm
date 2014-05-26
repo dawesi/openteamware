@@ -93,7 +93,7 @@ ORDER BY
 			<cfset tmp = QuerySetCell(q_select_tasks, 'assignedtouserkeys', arguments.securitycontext.myuserkey)>
 		</cfif>
 		<cfloop list="#q_select_tasks.assignedtouserkeys#" index="a_str_userkey">
-			<a href="/workgroups/default.cfm?action=showuser&userkey=#a_str_userkey#">#htmleditformat(a_cmp_users.GetFullNameByentrykey(a_str_userkey))#</a>&nbsp;
+			<a href="/workgroups/index.cfm?action=showuser&userkey=#a_str_userkey#">#htmleditformat(a_cmp_users.GetFullNameByentrykey(a_str_userkey))#</a>&nbsp;
 		</cfloop>			
 		
 	#a_str_td_break#

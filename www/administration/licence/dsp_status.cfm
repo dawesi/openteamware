@@ -15,7 +15,7 @@
 	
 	<cfif Len(a_str_shop_url) IS 0>
 		<!--- forward to feedback form ... --->
-		<cflocation addtoken="no" url="default.cfm?action=partnerfeedbackform&reason=shop">		
+		<cflocation addtoken="no" url="index.cfm?action=partnerfeedbackform&reason=shop">		
 	<cfelse>
 		<h4><a target="_blank" href="<cfoutput>#a_str_shop_url#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_shop_open_click')#</cfoutput></a></h4>
 	</cfif>
@@ -44,7 +44,7 @@
 
 
 <h4><cfoutput>#GetLangVal('adm_ph_licence_status')#</cfoutput></h4>
-<a href="default.cfm?action=shop<cfoutput>#writeurltags()#</cfoutput>"><b><cfoutput>#GetLangVal('adm_ph_licence_status_add_goto_shop')#</cfoutput></b></a>
+<a href="index.cfm?action=shop<cfoutput>#writeurltags()#</cfoutput>"><b><cfoutput>#GetLangVal('adm_ph_licence_status_add_goto_shop')#</cfoutput></b></a>
 <br><br>
 <cfoutput>
 <b>#GetLangVal('adm_wd_licences')#</b>

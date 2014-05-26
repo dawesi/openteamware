@@ -20,7 +20,7 @@
 
 	<br>
 
-	<form action="default.cfm" method="get">
+	<form action="index.cfm" method="get">
 
 	<input type="hidden" name="action" value="prices">
 
@@ -76,7 +76,7 @@ Gruppe: <cfoutput>#htmleditformat(q_Select_groupname.groupname)#</cfoutput><br><
 
 	
 
-	<form action="default.cfm" method="get">
+	<form action="index.cfm" method="get">
 
 	<input type="hidden" name="action" value="prices">
 

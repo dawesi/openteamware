@@ -89,11 +89,11 @@
 	</cfloop>	
 	
 	<cfif url.redirect_start_contacts>
-		<cflocation addtoken="no" url="default.cfm">
+		<cflocation addtoken="no" url="index.cfm">
 	<cfelse>
 		<b><cfoutput><img src="/images/si/accept.png" class="si_img" /> #GetLangVal('adrb_ph_delete_contacts_success')#</cfoutput></b>
 		<br /><br />  
-		<a href="default.cfm"><cfoutput>#GetLangVal('adrb_ph_delete_contacts_goto_overview')#</cfoutput></a>
+		<a href="index.cfm"><cfoutput>#GetLangVal('adrb_ph_delete_contacts_goto_overview')#</cfoutput></a>
 	</cfif>
 </cfif>
 	

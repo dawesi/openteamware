@@ -12,7 +12,7 @@
 <cfparam name="url.frm_parentdirectorykey" type="string">
 
 <cfif Len(url.frm_entrykey ) IS 0>
-	<cflocation addtoken="no" url="default.cfm?action=showfiles&directorykey=#url.frm_parentdirectorykey#">
+	<cflocation addtoken="no" url="index.cfm?action=showfiles&directorykey=#url.frm_parentdirectorykey#">
 </cfif>
 
 <cfset sFilenames = "" />
@@ -48,7 +48,7 @@
 <cfset q_select_directories = a_struct_dirs.q_select_directories />
 
 
-<form action="default.cfm?action=DoMoveFiles" method="post">
+<form action="index.cfm?action=DoMoveFiles" method="post">
 	<cfoutput>
 	<input type="hidden" name="frmentrykeys" value="#url.frm_entrykey#" />
 	</cfoutput>

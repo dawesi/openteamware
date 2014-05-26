@@ -107,7 +107,7 @@ WHERE
 			
 			<cfif arguments.managemode>
 				<br />
-				<a href="/project/default.cfm?action=EditProject&entrykey=#q_select_sales_projects.entrykey#"><img src="/images/si/pencil.png" class="si_img" /> #MakeFirstCharUCase(GetLangVal('cm_wd_edit'))#</a>
+				<a href="/project/index.cfm?action=EditProject&entrykey=#q_select_sales_projects.entrykey#"><img src="/images/si/pencil.png" class="si_img" /> #MakeFirstCharUCase(GetLangVal('cm_wd_edit'))#</a>
 			</cfif>
 		</td>
 	</tr>
@@ -152,7 +152,7 @@ WHERE
 				
 				<cfif arguments.managemode>
 				<br />
-				<a href="/project/default.cfm?action=EditProject&entrykey=#q_select_common_projects.entrykey#"><img src="/images/si/pencil.png" class="si_img" /> #MakeFirstCharUCase(GetLangVal('cm_wd_edit'))#</a>
+				<a href="/project/index.cfm?action=EditProject&entrykey=#q_select_common_projects.entrykey#"><img src="/images/si/pencil.png" class="si_img" /> #MakeFirstCharUCase(GetLangVal('cm_wd_edit'))#</a>
 			</cfif>
 			</td>
 		</tr>

@@ -11,7 +11,7 @@
 
 <cfif Len(url.frmcustomerid) IS 0>
 
-<form action="default.cfm" method="get">
+<form action="index.cfm" method="get">
 	<input type="hidden" name="action" value="editlicencestatus">
 	
 	Customer-ID: <input type="text" name="frmcustomerid">

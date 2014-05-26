@@ -49,4 +49,4 @@
 </cfinvoke>
 
 <!--- link back ... --->
-<cflocation addtoken="no" url="default.cfm?action=ShowTask&entrykey=#urlencodedformat(form.frmentrykey)#">
+<cflocation addtoken="no" url="index.cfm?action=ShowTask&entrykey=#urlencodedformat(form.frmentrykey)#">

@@ -30,7 +30,7 @@
 
 <!--- see also below ... --->
 <cfif ListFindNoCase('week', ShowEventRequest.ViewMode) IS 0>
-<a title="#htmleditformat(ShowEventRequest.a_struct_event.title)#" href="default.cfm?action=ShowEvent&entrykey=#urlencodedformat(ShowEventRequest.a_struct_event.entrykey)#" style="font-weight:bold;">#htmleditformat(shortenstring(ShowEventRequest.a_struct_event.title, a_int_title_shortenstring))#</a>
+<a title="#htmleditformat(ShowEventRequest.a_struct_event.title)#" href="index.cfm?action=ShowEvent&entrykey=#urlencodedformat(ShowEventRequest.a_struct_event.entrykey)#" style="font-weight:bold;">#htmleditformat(shortenstring(ShowEventRequest.a_struct_event.title, a_int_title_shortenstring))#</a>
 </cfif>
 
 <cfif ShowEventRequest.ShowNoDate IS FALSE>
@@ -60,7 +60,7 @@
 
 <!--- see also above --->
 <cfif ListFindNoCase('week', ShowEventRequest.ViewMode) GT 0>
-<br /><a title="#htmleditformat(ShowEventRequest.a_struct_event.title)#" href="default.cfm?action=ShowEvent&entrykey=#urlencodedformat(ShowEventRequest.a_struct_event.entrykey)#" style="font-weight:bold;">#htmleditformat(shortenstring(ShowEventRequest.a_struct_event.title, a_int_title_shortenstring))#</a>
+<br /><a title="#htmleditformat(ShowEventRequest.a_struct_event.title)#" href="index.cfm?action=ShowEvent&entrykey=#urlencodedformat(ShowEventRequest.a_struct_event.entrykey)#" style="font-weight:bold;">#htmleditformat(shortenstring(ShowEventRequest.a_struct_event.title, a_int_title_shortenstring))#</a>
 </cfif>
 
 <cfif ShowEventRequest.a_struct_event.privateevent IS 1>
@@ -76,7 +76,7 @@
 
 	<script type="text/javascript">
 	#a_str_tmp_id# = new cActionPopupMenuItems();
-	#a_str_tmp_id#.AddItem('#GetLangValJS('cal_wd_action_edit')#','default.cfm?action=ShowEditEvent&entrykey=#urlencodedformat(ShowEventRequest.a_struct_event.entrykey)#','','','');
+	#a_str_tmp_id#.AddItem('#GetLangValJS('cal_wd_action_edit')#','index.cfm?action=ShowEditEvent&entrykey=#urlencodedformat(ShowEventRequest.a_struct_event.entrykey)#','','','');
 	#a_str_tmp_id#.AddItem('#GetLangVal('cal_wd_action_delete')#', 'javascript:ConfirmDeleteEntry(\'#ShowEventRequest.a_struct_event.entrykey#\');');
 	</script>
 	
@@ -151,7 +151,7 @@
 	<cfloop list="#ShowEventRequest.a_struct_event.workgroupkeys#" delimiters="," index="a_str_workgroupkey">
 		<cfset a_int_current_group_count = a_int_current_group_count + 1>
 		<cfif StructKeyExists(request.stSecurityContext.a_struct_workgroups, a_str_workgroupkey) IS TRUE>
-			<img src="/images/calendar/16kalender_gruppen.gif" width="12" height="11" align="absmiddle" vspace="2" hspace="5" border="0">  <a href="../workgroups/default.cfm?action=ShowWorkgroup&entrykey=<cfoutput>#urlencodedformat(a_str_workgroupkey)#</cfoutput>"><cfoutput>#request.stSecurityContext.a_struct_workgroups[a_str_workgroupkey]#</cfoutput></a>
+			<img src="/images/calendar/16kalender_gruppen.gif" width="12" height="11" align="absmiddle" vspace="2" hspace="5" border="0">  <a href="../workgroups/index.cfm?action=ShowWorkgroup&entrykey=<cfoutput>#urlencodedformat(a_str_workgroupkey)#</cfoutput>"><cfoutput>#request.stSecurityContext.a_struct_workgroups[a_str_workgroupkey]#</cfoutput></a>
 			 
 			 <cfif a_int_current_group_count LT a_int_group_count>/</cfif>
 		</cfif>

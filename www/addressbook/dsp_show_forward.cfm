@@ -29,7 +29,7 @@
 
 <cfset q_select_contacts = stReturn.q_select_contacts />
 
-<form action="default.cfm?action=DoForwardContacts" method="POST" name="frmForward">
+<form action="index.cfm?action=DoForwardContacts" method="POST" name="frmForward">
 <input type="Hidden" name="frmcheckedentrykey" value="<cfoutput>#htmleditformat(url.entrykeys)#</cfoutput>">
 
 <b>Die folgenden Eintr&auml;ge weiterleiten:<br></b>
@@ -176,7 +176,7 @@
 	<tr>
 		<td>&nbsp;</td>
 		<td>
-		<li>Den Tarif pro Kontaktweiterleitung abh&auml;ngig vom Zielnetz finden Sie <a href="/account/default.cfm?action=tarife">hier</a></li>
+		<li>Den Tarif pro Kontaktweiterleitung abh&auml;ngig vom Zielnetz finden Sie <a href="/account/index.cfm?action=tarife">hier</a></li>
 
 		<li>Pro Kontakt f&auml;llt eine SMS Nachricht an</li></td>
 

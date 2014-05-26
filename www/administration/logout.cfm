@@ -13,7 +13,7 @@
 
 <cfset tmp = StructClear(session)>
 
-<cflocation addtoken="no" url="default.cfm">
+<cflocation addtoken="no" url="index.cfm">
 
 </body>
 </html>

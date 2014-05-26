@@ -16,7 +16,7 @@
 
 <cfif NOT StructKeyExists(url, 'confirmed')>
 
-	<form method="post" action="default.cfm?action=remoteedit&confirmed=true&force=<cfoutput>#url.force#</cfoutput>&entrykeys=session" style="margin:0px; ">
+	<form method="post" action="index.cfm?action=remoteedit&confirmed=true&force=<cfoutput>#url.force#</cfoutput>&entrykeys=session" style="margin:0px; ">
 
 	<cfif Len(url.entrykeys) GT 0>
 		
@@ -84,9 +84,9 @@
 
 	<cfelse>
 	<ul>
-		<li><a href="default.cfm"><b><cfoutput>#GetLangVal('adrb_ph_re_select_contacts_now')#</cfoutput></b></a></li>
+		<li><a href="index.cfm"><b><cfoutput>#GetLangVal('adrb_ph_re_select_contacts_now')#</cfoutput></b></a></li>
 
-		<li><a href="default.cfm?action=remoteeditstatus"><cfoutput>#GetLangVal('adrb_ph_show_re_invitations_status')#</cfoutput></a>
+		<li><a href="index.cfm?action=remoteeditstatus"><cfoutput>#GetLangVal('adrb_ph_show_re_invitations_status')#</cfoutput></a>
 	</ul>
 	</cfif>
 
@@ -127,5 +127,5 @@
 
 <br /><br />  
 
-<a href="default.cfm"><cfoutput>#GetLangVal('cm_wd_back')#</cfoutput></a>
+<a href="index.cfm"><cfoutput>#GetLangVal('cm_wd_back')#</cfoutput></a>
 </cfif>

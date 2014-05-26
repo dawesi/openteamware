@@ -17,10 +17,10 @@
 
 <cfif isdefined("form.frmSubmitAddAnother")>
 
-	<cflocation addtoken="No" url="default.cfm?action=NewTask">
+	<cflocation addtoken="No" url="index.cfm?action=NewTask">
 
 <cfelse>
 
-	<cflocation addtoken="No" url="default.cfm">
+	<cflocation addtoken="No" url="index.cfm">
 
 </cfif>

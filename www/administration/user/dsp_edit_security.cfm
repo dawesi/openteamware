@@ -14,7 +14,7 @@
 <br><br><br>
 <cfif a_struct_role.a_str_rolekey IS ''>
 	Keine Einstellung getroffen.<br><br><br>
-	<a href="default.cfm?action=security<cfoutput>#writeurltags()#</cfoutput>"><cfoutput>#GetLangVal('cm_wd_edit')#</cfoutput></a>
+	<a href="index.cfm?action=security<cfoutput>#writeurltags()#</cfoutput>"><cfoutput>#GetLangVal('cm_wd_edit')#</cfoutput></a>
 	<cfexit method="exittemplate">
 </cfif>
 
@@ -33,6 +33,6 @@
 <br><br><br>
 <!---<cfdump var="#a_struct_securityrole#">--->
 
-<a href="default.cfm?action=securityrole.display&entrykey=<cfoutput>#a_struct_role.a_str_rolekey##WriteURLTags()#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_role_show_rights')#</cfoutput></a>
+<a href="index.cfm?action=securityrole.display&entrykey=<cfoutput>#a_struct_role.a_str_rolekey##WriteURLTags()#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_role_show_rights')#</cfoutput></a>
 <br><br><br>
-<a href="default.cfm?action=security<cfoutput>#writeurltags()#</cfoutput>"><cfoutput>#GetLangVal('cm_wd_edit')#</cfoutput></a>
+<a href="index.cfm?action=security<cfoutput>#writeurltags()#</cfoutput>"><cfoutput>#GetLangVal('cm_wd_edit')#</cfoutput></a>

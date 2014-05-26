@@ -9,7 +9,7 @@
 
 <cfset tmp = SetHeaderTopInfoString(GetLangVal('cm_wd_overview')) />
 
-<form action="default.cfm" method="get" name="formsearch" style="margin:0px; ">
+<form action="index.cfm" method="get" name="formsearch" style="margin:0px; ">
 <input type="hidden" name="action" value="dosearch">
 
 <table class="table_overview">
@@ -41,7 +41,7 @@
 
 	<cfoutput>#GetLangVal('mail_ph_search_for')#</cfoutput>&nbsp;<input type="text" name="search" size="15" maxlength="150"> [ <a href="javascript:document.formsearch.submit();"><cfoutput>#GetLangVal('mail_wd_start')#</cfoutput></a> ]<br />
 
-	<a href="default.cfm?action=ShowSearch"><cfoutput>#GetLangVal('mail_ph_enhanced_search')#</cfoutput></a>
+	<a href="index.cfm?action=ShowSearch"><cfoutput>#GetLangVal('mail_ph_enhanced_search')#</cfoutput></a>
 
 	
 

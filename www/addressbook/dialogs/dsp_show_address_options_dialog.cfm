@@ -102,7 +102,7 @@
 
 <cfif a_str_responsecode IS 200>
 <div id="#a_str_id_googlemaps#" class="bt">
-<iframe frameborder="0" border="0" name="id_iframe_show_googlemaps" id="id_iframe_show_googlemaps" src="default.cfm?action=DoShowGoogleMaps&markertext=#jsstringformat(a_str_markertext)#&lat=#a_str_lat#&lon=#a_str_lon#" height="420" width="750"></iframe>
+<iframe frameborder="0" border="0" name="id_iframe_show_googlemaps" id="id_iframe_show_googlemaps" src="index.cfm?action=DoShowGoogleMaps&markertext=#jsstringformat(a_str_markertext)#&lat=#a_str_lat#&lon=#a_str_lon#" height="420" width="750"></iframe>
 </div>
 </cfif>
 

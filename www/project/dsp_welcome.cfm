@@ -79,7 +79,7 @@ FROM
 <cfoutput query="q_select_sales_projects">
   <tr>
     <td>
-		<a href="default.cfm?action=ShowProject&entrykey=#q_select_sales_projects.entrykey#"><img src="/images/si/coins.png" class="si_img" />#htmleditformat(CheckZeroString(q_select_sales_projects.title))#</a>
+		<a href="index.cfm?action=ShowProject&entrykey=#q_select_sales_projects.entrykey#"><img src="/images/si/coins.png" class="si_img" />#htmleditformat(CheckZeroString(q_select_sales_projects.title))#</a>
 	</td>
 	<td>
 		#GetLangVal('crm_wd_sales_stage_' & q_select_sales_projects.stage)#
@@ -99,8 +99,8 @@ FROM
 		</cfif>
 	</td>
 	<td align="right">
-		<a class="nl" href="default.cfm?action=editproject&entrykey=#q_select_sales_projects.entrykey#"><img src="/images/si/pencil.png" class="si_img" /></a>
-		<a class="nl" href="##" onclick="ShowSimpleConfirmationDialog('default.cfm?action=DoDeleteproject&entrykey=#q_select_sales_projects.entrykey#');"><img src="/images/si/delete.png" class="si_img" /></a>
+		<a class="nl" href="index.cfm?action=editproject&entrykey=#q_select_sales_projects.entrykey#"><img src="/images/si/pencil.png" class="si_img" /></a>
+		<a class="nl" href="##" onclick="ShowSimpleConfirmationDialog('index.cfm?action=DoDeleteproject&entrykey=#q_select_sales_projects.entrykey#');"><img src="/images/si/delete.png" class="si_img" /></a>
 	</td>
   </tr>
 </cfoutput>
@@ -136,7 +136,7 @@ FROM
 
 </cfsavecontent>
 <cfsavecontent variable="a_str_buttons">
-	<input type="button" class="btn" value="<cfoutput>#GetLangval('cm_wd_new')#</cfoutput>" onclick="GotoLocHref('default.cfm?action=NewProject&type=1');" />
+	<input type="button" class="btn" value="<cfoutput>#GetLangval('cm_wd_new')#</cfoutput>" onclick="GotoLocHref('index.cfm?action=NewProject&type=1');" />
 </cfsavecontent>
 <cfoutput>#WriteNewContentBox(GetLangVal('crm_ph_project_type_1') & ' (' & q_select_sales_projects.recordcount & ')', a_str_buttons, a_str_content)#</cfoutput>
 <br /> 
@@ -159,7 +159,7 @@ FROM
 <cfoutput query="q_select_common_projects">
   <tr>
     <td>
-		<a href="default.cfm?action=ShowProject&entrykey=#q_select_common_projects.entrykey#"><img src="/images/si/chart_organisation.png" class="si_img" />#htmleditformat(CheckZeroString(q_select_common_projects.title))#</a>
+		<a href="index.cfm?action=ShowProject&entrykey=#q_select_common_projects.entrykey#"><img src="/images/si/chart_organisation.png" class="si_img" />#htmleditformat(CheckZeroString(q_select_common_projects.title))#</a>
 	</td>
 	<td>
 		<cfif IsDate(q_select_common_projects.dt_begin)>
@@ -178,8 +178,8 @@ FROM
 		#application.components.cmp_user.GetUsernameByEntrykey(q_select_sales_projects.projectleaderuserkey)#
 	</td>
 	<td align="right">
-		<a class="nl" href="default.cfm?action=editproject&entrykey=#q_select_common_projects.entrykey#"><img src="/images/si/pencil.png" class="si_img" /></a>
-		<a class="nl" href="##" onclick="ShowSimpleConfirmationDialog('default.cfm?action=DoDeleteproject&entrykey=#q_select_sales_projects.entrykey#');"><img src="/images/si/delete.png" class="si_img" /></a>
+		<a class="nl" href="index.cfm?action=editproject&entrykey=#q_select_common_projects.entrykey#"><img src="/images/si/pencil.png" class="si_img" /></a>
+		<a class="nl" href="##" onclick="ShowSimpleConfirmationDialog('index.cfm?action=DoDeleteproject&entrykey=#q_select_sales_projects.entrykey#');"><img src="/images/si/delete.png" class="si_img" /></a>
 	</td>
   </tr>	<!--- 
   <tr>	
@@ -191,7 +191,7 @@ FROM
 </table>
 </cfsavecontent>
 <cfsavecontent variable="a_str_buttons">
-	<input type="button" class="btn" value="<cfoutput>#GetLangval('cm_wd_new')#</cfoutput>" onclick="GotoLocHref('default.cfm?action=NewProject&type=0');" />
+	<input type="button" class="btn" value="<cfoutput>#GetLangval('cm_wd_new')#</cfoutput>" onclick="GotoLocHref('index.cfm?action=NewProject&type=0');" />
 </cfsavecontent>
 <cfoutput>#WriteNewContentBox(GetLangVal('crm_ph_project_type_0') & ' (' & q_select_common_projects.recordcount & ')', a_str_buttons, a_str_content)#</cfoutput>
 <br /> 
@@ -223,7 +223,7 @@ WHERE
 <cfoutput query="q_select_closed_projects">
   <tr>
     <td>
-		<a href="default.cfm?action=ShowProject&entrykey=#q_select_closed_projects.entrykey#"><img src="/images/si/chart_organisation.png" class="si_img" />#htmleditformat(CheckZeroString(q_select_closed_projects.title))#</a>
+		<a href="index.cfm?action=ShowProject&entrykey=#q_select_closed_projects.entrykey#"><img src="/images/si/chart_organisation.png" class="si_img" />#htmleditformat(CheckZeroString(q_select_closed_projects.title))#</a>
 	</td>
 	<td>
 		#FormatDateTimeAccordingToUserSettings(q_select_closed_projects.dt_begin)#
@@ -238,8 +238,8 @@ WHERE
 		#application.components.cmp_user.GetUsernameByEntrykey(q_select_closed_projects.projectleaderuserkey)#
 	</td>
 	<td align="right">
-		<!--- <a class="nl" href="default.cfm?action=editproject&entrykey=#q_select_closed_projects.entrykey#"><img src="/images/si/pencil.png" class="si_img" /></a> --->
-		<a class="nl" href="##" onclick="ShowSimpleConfirmationDialog('default.cfm?action=DoDeleteproject&entrykey=#q_select_sales_projects.entrykey#');"><img src="/images/si/delete.png" class="si_img" /></a>
+		<!--- <a class="nl" href="index.cfm?action=editproject&entrykey=#q_select_closed_projects.entrykey#"><img src="/images/si/pencil.png" class="si_img" /></a> --->
+		<a class="nl" href="##" onclick="ShowSimpleConfirmationDialog('index.cfm?action=DoDeleteproject&entrykey=#q_select_sales_projects.entrykey#');"><img src="/images/si/delete.png" class="si_img" /></a>
 	</td>
   </tr>	<!--- 
   <tr>	

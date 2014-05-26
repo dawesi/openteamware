@@ -41,7 +41,7 @@ ORDER BY
   <cfoutput query="q_select_subscriptions">
   <tr>
   	<td>
-		<a href="/mailing/default.cfm?action=stat&listkey=#q_select_subscriptions.listkey#&issuekey=#q_select_subscriptions.issuekey#">#htmleditformat(q_select_subscriptions.issue_name)# (#htmleditformat(q_select_subscriptions.profile_name)#)</a>
+		<a href="/mailing/index.cfm?action=stat&listkey=#q_select_subscriptions.listkey#&issuekey=#q_select_subscriptions.issuekey#">#htmleditformat(q_select_subscriptions.issue_name)# (#htmleditformat(q_select_subscriptions.profile_name)#)</a>
 	</td>
 	<td>
 		#LsDateFormat(q_select_subscriptions.dt_created, arguments.usersettings.default_Dateformat)#

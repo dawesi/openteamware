@@ -31,7 +31,7 @@
 
 
 <table border="0" cellspacing="0" cellpadding="4">
-  <form action="default.cfm" method="get">
+  <form action="index.cfm" method="get">
     <input type="hidden" name="action" value="newuser">
 	<input type="hidden" name="resellerkey" value="<cfoutput>#htmleditformat(url.resellerkey)#</cfoutput>">
 	<input type="hidden" name="companykey" value="<cfoutput>#htmleditformat(url.companykey)#</cfoutput>">
@@ -45,7 +45,7 @@
 <cfif (q_select_company_users.recordcount gt 50)>
   <!--- // search form ... // --->
   <table border="0" cellspacing="0" cellpadding="4">
-    <form action="default.cfm" method="get">
+    <form action="index.cfm" method="get">
     <input type="hidden" name="action" value="useradministration">
 	<input type="hidden" name="search" value="1">
 	<input type="hidden" name="resellerkey" value="<cfoutput>#htmleditformat(url.resellerkey)#</cfoutput>">	
@@ -126,12 +126,12 @@ WHERE
 		</cfif>			
 		</td>
 		<td valign="middle" class="bb">
-			<a href="default.cfm?action=userproperties&entrykey=#urlencodedformat(q_select_company_users.entrykey)##WriteURLTags()#"><b>#htmleditformat(q_select_company_users.surname)#</b>, #htmleditformat(q_select_company_users.firstname)#</a>
+			<a href="index.cfm?action=userproperties&entrykey=#urlencodedformat(q_select_company_users.entrykey)##WriteURLTags()#"><b>#htmleditformat(q_select_company_users.surname)#</b>, #htmleditformat(q_select_company_users.firstname)#</a>
 			<br /> 
 			#htmleditformat(q_select_company_users.aposition)#
 		</td>
  		<td valign="middle" class="bb">
-		<a href="default.cfm?action=userproperties&entrykey=#urlencodedformat(q_select_company_users.entrykey)##WriteURLTags()#">#htmleditformat(q_select_company_users.username)#</a>
+		<a href="index.cfm?action=userproperties&entrykey=#urlencodedformat(q_select_company_users.entrykey)##WriteURLTags()#">#htmleditformat(q_select_company_users.username)#</a>
 		
 		<cfif q_select_company_users.allow_login IS -1>
 			<font color="red">DEAKTIVIERT</font>
@@ -142,15 +142,15 @@ WHERE
           <cfset q_select_workgroups = cmp_get_workgroup_memberships.GetWorkgroupMemberships(q_select_company_users.entrykey)>
 
           <cfloop query="q_select_workgroups">
-            <a href="default.cfm?action=workgroupproperties&entrykey=#urlencodedformat(q_select_workgroups.workgroupkey)##WriteURLTags()#">#htmleditformat(cmp_get_workgroup_name.GetWorkgroupNameByEntryKey(q_select_workgroups.workgroupkey))#</a>*<br>
+            <a href="index.cfm?action=workgroupproperties&entrykey=#urlencodedformat(q_select_workgroups.workgroupkey)##WriteURLTags()#">#htmleditformat(cmp_get_workgroup_name.GetWorkgroupNameByEntryKey(q_select_workgroups.workgroupkey))#</a>*<br>
           </cfloop>
 		  
 		  <cfif q_select_workgroups.recordcount IS 0>&nbsp;</cfif>
 		</td>
-        <td nowrap valign="middle" class="bb"> <a href="default.cfm?action=userproperties&entrykey=#urlencodedformat(q_select_company_users.entrykey)##WriteURLTags()#"><img src="/images/si/pencil.png" class="si_img" /></a> 
+        <td nowrap valign="middle" class="bb"> <a href="index.cfm?action=userproperties&entrykey=#urlencodedformat(q_select_company_users.entrykey)##WriteURLTags()#"><img src="/images/si/pencil.png" class="si_img" /></a> 
           &nbsp;|&nbsp;
 		  
-		  <a href="default.cfm?action=user.delete&entrykey=#q_select_company_users.entrykey##WriteURLTags()#"><img src="/images/si/delete.png" class="si_img" /></a>
+		  <a href="index.cfm?action=user.delete&entrykey=#q_select_company_users.entrykey##WriteURLTags()#"><img src="/images/si/delete.png" class="si_img" /></a>
         </td>
       </tr>
     </cfoutput> 
@@ -158,7 +158,7 @@ WHERE
 <br>
 
 <table border="0" cellspacing="0" cellpadding="4">
-  <form action="default.cfm" method="get">
+  <form action="index.cfm" method="get">
     <input type="hidden" name="action" value="newuser">
 	<input type="hidden" name="resellerkey" value="<cfoutput>#htmleditformat(url.resellerkey)#</cfoutput>">
 	<input type="hidden" name="companykey" value="<cfoutput>#htmleditformat(url.companykey)#</cfoutput>">

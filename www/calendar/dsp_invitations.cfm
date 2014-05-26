@@ -44,11 +44,11 @@
 	</cfswitch>
   <tr>
     <td>
-		<a href="default.cfm?action=ShowEvent&entrykey=#q_select_invitations.entrykey#">#htmleditformat(shortenstring(q_select_invitations.title, 25))#</a>
+		<a href="index.cfm?action=ShowEvent&entrykey=#q_select_invitations.entrykey#">#htmleditformat(shortenstring(q_select_invitations.title, 25))#</a>
 	</td>
     <td>
 		<cfset a_str_dt_nav = DateFormat(q_select_invitations.date_start, 'mm/dd/yyyy')>
-		<a href="default.cfm?Action=ViewDay&Date=#urlencodedformat(a_str_dt_nav)#">#LsDateFormat(q_select_invitations.date_start, 'dd.mm.yy')# #TimeFormat(q_select_invitations.date_start, 'HH:mm')#</a>
+		<a href="index.cfm?Action=ViewDay&Date=#urlencodedformat(a_str_dt_nav)#">#LsDateFormat(q_select_invitations.date_start, 'dd.mm.yy')# #TimeFormat(q_select_invitations.date_start, 'HH:mm')#</a>
 	</td>
     <td>
 		#a_str_param#

@@ -54,7 +54,7 @@
 
 <!--- redirect --->
 <cfif Len(form.frmreplytopostingkey) GT 0>
-	<cflocation addtoken="no" url="default.cfm?action=ShowThread&forumkey=#form.frmforumkey#&entrykey=#urlencodedformat(form.frmreplytopostingkey)#">
+	<cflocation addtoken="no" url="index.cfm?action=ShowThread&forumkey=#form.frmforumkey#&entrykey=#urlencodedformat(form.frmreplytopostingkey)#">
 <cfelse>
-	<cflocation addtoken="no" url="default.cfm?action=ShowForum&forumkey=#form.frmforumkey#&entrykey=#urlencodedformat(form.frmforumkey)#">
+	<cflocation addtoken="no" url="index.cfm?action=ShowForum&forumkey=#form.frmforumkey#&entrykey=#urlencodedformat(form.frmforumkey)#">
 </cfif>

@@ -22,4 +22,4 @@
 	<cfinvokeargument name="createdbyuserkey" value="#request.stSecurityContext.myuserkey#">
 </cfinvoke>
 
-<cflocation addtoken="no" url="../default.cfm?resellerkey=#urlencodedformat(form.frmresellerkey)#&action=security&companykey=#urlencodedformat(form.frmcompanykey)#">
+<cflocation addtoken="no" url="../index.cfm?resellerkey=#urlencodedformat(form.frmresellerkey)#&action=security&companykey=#urlencodedformat(form.frmcompanykey)#">

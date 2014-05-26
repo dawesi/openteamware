@@ -105,7 +105,7 @@ WHERE
   <script type="text/javascript">
   	function Proceed()
 		{
-		location.href='default.cfm?action=newcustomer&resellerkey='+escape(document.frmneworeditcustomer.frmresellerkey.value);
+		location.href='index.cfm?action=newcustomer&resellerkey='+escape(document.frmneworeditcustomer.frmresellerkey.value);
 		}
   </script>
   

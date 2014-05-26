@@ -43,8 +43,8 @@ LIMIT
 <cfset a_str_body_html = q_select.body_html>
 
 <cfif q_select.open_tracking IS 1>
-	<!---<cfset a_str_tracking_code = '<div style="height:1px;width:100px;background-URL:(''http://www.openTeamWare.com/nl/t/default.cfm/#q_select.entrykey#/spacer.gif'');"></div></body>'>--->
-	<cfset a_str_tracking_code = '<table background="http://www.openTeamWare.com/nl/t/default.cfm/#q_select.entrykey#/spacer.gif" width=100 height=1 border=0/><tr><td>&nbsp;</td></tr></table></body>' />
+	<!---<cfset a_str_tracking_code = '<div style="height:1px;width:100px;background-URL:(''http://www.openTeamWare.com/nl/t/index.cfm/#q_select.entrykey#/spacer.gif'');"></div></body>'>--->
+	<cfset a_str_tracking_code = '<table background="http://www.openTeamWare.com/nl/t/index.cfm/#q_select.entrykey#/spacer.gif" width=100 height=1 border=0/><tr><td>&nbsp;</td></tr></table></body>' />
 	<cfset a_str_body_html = ReplaceNoCase(a_str_body_html, '</body>', a_str_tracking_code, 'ONE') />
 </cfif>
 

@@ -133,7 +133,7 @@
 	userid = #request.stSecurityContext.myuserid#>
 
 <cfif mypointsenough is false>
-	<cflocation url="../../account/default.cfm?action=NotEnoughPoints&returnurl=/addressbook/" addtoken="no">
+	<cflocation url="../../account/index.cfm?action=NotEnoughPoints&returnurl=/addressbook/" addtoken="no">
 </cfif>		
 
 <cfmodule template="../../account/points/mod_account_debit.cfm"

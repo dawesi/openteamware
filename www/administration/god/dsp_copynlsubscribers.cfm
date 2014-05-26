@@ -68,6 +68,6 @@ ORDER BY
 
 <cfelse>
 <h4>Are you sure?</h4>
-<a href="default.cfm?action=copynlsubscribers&confirmed=1">Yes, copy nl subscribers</a>
+<a href="index.cfm?action=copynlsubscribers&confirmed=1">Yes, copy nl subscribers</a>
 
 </cfif>

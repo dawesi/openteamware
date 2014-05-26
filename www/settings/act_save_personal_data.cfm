@@ -57,4 +57,4 @@ WHERE
 
 <cfset Client.Langno = request.a_struct_personal_properties.mydefaultlanguage>
 
-<cflocation addtoken="no" url="default.cfm?action=PersonalData&message=#urlencodedformat("Daten wurden upgedatet")#">
+<cflocation addtoken="no" url="index.cfm?action=PersonalData&message=#urlencodedformat("Daten wurden upgedatet")#">

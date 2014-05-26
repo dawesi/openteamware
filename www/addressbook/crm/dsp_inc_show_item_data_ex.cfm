@@ -33,9 +33,9 @@
 <cfif Len(a_str_products_of_contact) GT 0>
 
 <cfsavecontent variable="a_str_buttons">
-	<input onclick="GotoLocHref('/crm/default.cfm?action=addProductToContact&contactkey=<cfoutput>#url.entrykey#</cfoutput>');" type="button" value="<cfoutput>#GetLangVal('cm_wd_new')#</cfoutput>" class="btn" />
-	<input onclick="GotoLocHref('/crm/default.cfm?action=addMultipleProductsToContact&contactkey=<cfoutput>#url.entrykey#</cfoutput>');" type="button" value="<cfoutput>#GetLangVal('cm_wd_new_multiple')#</cfoutput>" class="btn" />
-	<input onclick="GotoLocHref('/crm/default.cfm?action=showProductsOfContact&contactkey=<cfoutput>#url.entrykey#</cfoutput>&editmode=true');" type="button" value="<cfoutput>#GetLangVal('crm_ph_products_history')#</cfoutput>" class="btn2" />	
+	<input onclick="GotoLocHref('/crm/index.cfm?action=addProductToContact&contactkey=<cfoutput>#url.entrykey#</cfoutput>');" type="button" value="<cfoutput>#GetLangVal('cm_wd_new')#</cfoutput>" class="btn" />
+	<input onclick="GotoLocHref('/crm/index.cfm?action=addMultipleProductsToContact&contactkey=<cfoutput>#url.entrykey#</cfoutput>');" type="button" value="<cfoutput>#GetLangVal('cm_wd_new_multiple')#</cfoutput>" class="btn" />
+	<input onclick="GotoLocHref('/crm/index.cfm?action=showProductsOfContact&contactkey=<cfoutput>#url.entrykey#</cfoutput>&editmode=true');" type="button" value="<cfoutput>#GetLangVal('crm_ph_products_history')#</cfoutput>" class="btn2" />	
 </cfsavecontent>
 
 <cfoutput>#WriteNewContentBox(GetLangVal('crm_ph_products'), a_str_buttons, a_str_products_of_contact, 'id_div_fieldset_contacts_products')#</cfoutput>

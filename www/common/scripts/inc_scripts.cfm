@@ -78,7 +78,7 @@ function ReturnRedirectURL() {
 	
 	// 2nd possibility: get last page from default file
 	if (StructKeyExists(request, 'a_struct_current_service_actions')) {
-		return 'default.cfm?action=' & request.a_struct_current_service_actions.defaultaction;
+		return 'index.cfm?action=' & request.a_struct_current_service_actions.defaultaction;
 		}
 	
 	// 3rd possibility: use cgi.http_referer
@@ -585,7 +585,7 @@ function ActivateURL(string) {
 	} while (nextMatch GT 0);
 		
 	// Now turn e-mail addresses into mailto: links.
-	outString = REReplace(outString, "([[:alnum:]_\.\-]+@([[:alnum:]_\.\-]+\.)+[[:alpha:]]{2,4})", "<A HREF=""/email/default.cfm?action=ComposeMail&to=\1"">\1</A>", "ALL");
+	outString = REReplace(outString, "([[:alnum:]_\.\-]+@([[:alnum:]_\.\-]+\.)+[[:alpha:]]{2,4})", "<A HREF=""/email/index.cfm?action=ComposeMail&to=\1"">\1</A>", "ALL");
 		
 	if (paragraph) {
 		outString = ParagraphFormat(outString);

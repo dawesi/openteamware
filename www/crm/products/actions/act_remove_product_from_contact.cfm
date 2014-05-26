@@ -14,8 +14,8 @@
 </cfinvoke>
 
 <cfif NOT stReturn.result>
-	<cflocation url="/crm/default.cfm?action=showProductsOfContact&contactkey=#url.contactkey#&editmode=true&ibxerrorno=#stReturn.error#"/>
+	<cflocation url="/crm/index.cfm?action=showProductsOfContact&contactkey=#url.contactkey#&editmode=true&ibxerrorno=#stReturn.error#"/>
 </cfif>
-<cflocation url="/crm/default.cfm?action=showProductsOfContact&contactkey=#url.contactkey#&editmode=true"/>
+<cflocation url="/crm/index.cfm?action=showProductsOfContact&contactkey=#url.contactkey#&editmode=true"/>
 
 

@@ -42,7 +42,7 @@
       <td class="bt"> 
         <cfset a_str_show_all_again = GetLangVal("mail_ph_restrict_show_all_again")> 
         <cfset a_str_show_all_again = ReplaceNoCase(a_str_show_all_again , "%recordcount%", a_int_original_recordcount)> 
-        <a href="default.cfm?<cfoutput>#ReplaceOrAddURLParameter(cgi.QUERY_STRING, "restrict", "")#</cfoutput>" class="simplelink"><cfoutput>#a_str_show_all_again#</cfoutput></a>
+        <a href="index.cfm?<cfoutput>#ReplaceOrAddURLParameter(cgi.QUERY_STRING, "restrict", "")#</cfoutput>" class="simplelink"><cfoutput>#a_str_show_all_again#</cfoutput></a>
 	  </td>
       <td class="bt"> 
 	  
@@ -118,19 +118,19 @@
 		</td>
 	<td>
 		<cfset a_str_qs = ReplaceOrAddURLParameter(a_str_qs, 'order', 'from') />
-		<a href="default.cfm?<cfoutput>#a_str_qs#</cfoutput>"><cfoutput>#GetLangVal('mail_wd_address')#</cfoutput></a>
+		<a href="index.cfm?<cfoutput>#a_str_qs#</cfoutput>"><cfoutput>#GetLangVal('mail_wd_address')#</cfoutput></a>
 	</td>
 	<td>
 		<cfset a_str_qs = ReplaceOrAddURLParameter(a_str_qs, 'order', 'subject') />
-		<a href="default.cfm?<cfoutput>#a_str_qs#</cfoutput>"><cfoutput>#GetLangVal('mail_wd_subject')#</cfoutput></a>
+		<a href="index.cfm?<cfoutput>#a_str_qs#</cfoutput>"><cfoutput>#GetLangVal('mail_wd_subject')#</cfoutput></a>
 	</td>
 	<td>
 		<cfset a_str_qs = ReplaceOrAddURLParameter(a_str_qs, 'order', 'date_local') />
-		<a href="default.cfm?<cfoutput>#a_str_qs#</cfoutput>"><cfoutput>#GetLangVal('mail_wd_date')#</cfoutput></a>
+		<a href="index.cfm?<cfoutput>#a_str_qs#</cfoutput>"><cfoutput>#GetLangVal('mail_wd_date')#</cfoutput></a>
 	</td>
 	<td align="right">
 		<cfset a_str_qs = ReplaceOrAddURLParameter(a_str_qs, 'order', 'asize') />
-		<a href="default.cfm?<cfoutput>#a_str_qs#</cfoutput>">kb</a>
+		<a href="index.cfm?<cfoutput>#a_str_qs#</cfoutput>">kb</a>
 	</td>
 	<td>
    </tr>
@@ -162,11 +162,11 @@
 		<cfelse>
 			<cfset a_str_display_adr = q_select_mailbox.afrom>
 		</cfif>
-		<a #WriteCurrentTargetForLink()# onDblClick="OpenMsgInNewWindow('#jsstringformat(q_select_mailbox.foldername)#', '#q_select_mailbox.id#', '#request.stSecurityContext.myuserkey#');" href="default.cfm?action=showmessage&mailbox=#urlencodedformat(url.mailbox)#&id=#q_select_mailbox.id#&rowno=#a_str_hash_id#&mbox_query_md5=#Hash(cgi.QUERY_STRING)##a_str_add_msg_open_link##AddUserkeyToURL()#">#htmleditformat(shortenstring(a_str_display_adr, 40))#</a>
+		<a #WriteCurrentTargetForLink()# onDblClick="OpenMsgInNewWindow('#jsstringformat(q_select_mailbox.foldername)#', '#q_select_mailbox.id#', '#request.stSecurityContext.myuserkey#');" href="index.cfm?action=showmessage&mailbox=#urlencodedformat(url.mailbox)#&id=#q_select_mailbox.id#&rowno=#a_str_hash_id#&mbox_query_md5=#Hash(cgi.QUERY_STRING)##a_str_add_msg_open_link##AddUserkeyToURL()#">#htmleditformat(shortenstring(a_str_display_adr, 40))#</a>
 	</td>	
 	<td>
 		<!--- display link - use _self as target is neccessary --->
-		<a #WriteCurrentTargetForLink()# id="idhref#q_select_mailbox.currentrow#" onClick="MarkLine('#a_str_hash_id#');" onDblClick="OpenMsgInNewWindow('#jsstringformat(q_select_mailbox.foldername)#', '#q_select_mailbox.id#', '#request.stSecurityContext.myuserkey#');" href="default.cfm?action=showmessage&mailbox=#urlencodedformat(url.mailbox)#&id=#q_select_mailbox.id#&rowno=#a_str_hash_id#&mbox_query_md5=#Hash(cgi.QUERY_STRING)##a_str_add_msg_open_link##AddUserkeyToURL()#"><cfif q_select_mailbox.unread IS 1><b></cfif>#htmleditformat(Shortenstring(checkzerostring(q_select_mailbox.subject), 30))#</a>
+		<a #WriteCurrentTargetForLink()# id="idhref#q_select_mailbox.currentrow#" onClick="MarkLine('#a_str_hash_id#');" onDblClick="OpenMsgInNewWindow('#jsstringformat(q_select_mailbox.foldername)#', '#q_select_mailbox.id#', '#request.stSecurityContext.myuserkey#');" href="index.cfm?action=showmessage&mailbox=#urlencodedformat(url.mailbox)#&id=#q_select_mailbox.id#&rowno=#a_str_hash_id#&mbox_query_md5=#Hash(cgi.QUERY_STRING)##a_str_add_msg_open_link##AddUserkeyToURL()#"><cfif q_select_mailbox.unread IS 1><b></cfif>#htmleditformat(Shortenstring(checkzerostring(q_select_mailbox.subject), 30))#</a>
 	</td>
 	<td>
 	<cfif isDate(q_select_mailbox.date_local)>

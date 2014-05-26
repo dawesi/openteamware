@@ -100,7 +100,7 @@ ORDER BY
 		<input type="checkbox" name="frmentrykeys" value="#q_select_open_re_requests.entrykey#" class="noborder">
 	</td>
     <td>
-		<a href="default.cfm?action=ShowItem&entrykey=#q_select_open_re_requests.entrykey#">#CheckZeroString(htmleditformat(q_select_open_re_requests.surname))#, #htmleditformat(q_select_open_re_requests.firstname)#</a>
+		<a href="index.cfm?action=ShowItem&entrykey=#q_select_open_re_requests.entrykey#">#CheckZeroString(htmleditformat(q_select_open_re_requests.surname))#, #htmleditformat(q_select_open_re_requests.firstname)#</a>
 		
 		<cfif Len(q_select_open_re_requests.company) GT 0>
 			<br />#htmleditformat(q_select_open_re_requests.company)#
@@ -113,7 +113,7 @@ ORDER BY
 		#DateFormat(q_select_open_re_requests.dt_created, request.stUserSettings.default_dateformat)#
 	</td>
 	<td>
-		<a href="default.cfm?action=remoteedit&entrykeys=#q_select_open_re_requests.entrykey#&force=true">#GetLangVal('cm_wd_proceed')#</a>
+		<a href="index.cfm?action=remoteedit&entrykeys=#q_select_open_re_requests.entrykey#&force=true">#GetLangVal('cm_wd_proceed')#</a>
 	</td>
     <td align="center">
 		<a onClick="return confirm('#GetLangValJS('cm_ph_are_you_sure')#');" href="act_cancel_remote_edit_job.cfm?entrykeys=#q_select_open_re_requests.entrykey#"><img src="/images/si/delete.png" class="si_img" /></a>

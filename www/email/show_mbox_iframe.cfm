@@ -40,14 +40,14 @@
 <cfif a_int_display_mbox_msg_preview IS 1>
 
 <frameset framespacing="4" frameborder="1" border="4" bordercolor="silver" <cfoutput>#a_str_fs#</cfoutput>>
-	<frame frameborder="2" src="default.cfm?action=ShowMailboxContent&userkey=<cfoutput>#url.userkey#</cfoutput>&mailbox=<cfoutput>#urlencodedformat(url.mailbox)#</cfoutput>&style=<cfoutput>#a_str_mbox_display_style#</cfoutput>&displaymessagepreview=<cfoutput>#a_int_display_mbox_msg_preview#</cfoutput>" name="frameemailmailbox" id="frameemailmailbox" scrolling="auto" marginwidth="0" marginheight="0">
-	<frame frameborder="0" src="default.cfm?action=showmessage" name="frameemailmessage" id="frameemailmessage" scrolling="auto" marginwidth="0" marginheight="0" borderColor="silver">
+	<frame frameborder="2" src="index.cfm?action=ShowMailboxContent&userkey=<cfoutput>#url.userkey#</cfoutput>&mailbox=<cfoutput>#urlencodedformat(url.mailbox)#</cfoutput>&style=<cfoutput>#a_str_mbox_display_style#</cfoutput>&displaymessagepreview=<cfoutput>#a_int_display_mbox_msg_preview#</cfoutput>" name="frameemailmailbox" id="frameemailmailbox" scrolling="auto" marginwidth="0" marginheight="0">
+	<frame frameborder="0" src="index.cfm?action=showmessage" name="frameemailmessage" id="frameemailmessage" scrolling="auto" marginwidth="0" marginheight="0" borderColor="silver">
 </frameset><noframes></noframes>
 
 <cfelse>
 	
 	<!--- display old version ... --->
-	<cflocation addtoken="no" url="default.cfm?action=ShowMailboxContent&mailbox=#urlencodedformat(url.mailbox)#&style=rows&displaymessagepreview=0&userkey=#url.userkey#">
+	<cflocation addtoken="no" url="index.cfm?action=ShowMailboxContent&mailbox=#urlencodedformat(url.mailbox)#&style=rows&displaymessagepreview=0&userkey=#url.userkey#">
 
 </cfif>
 

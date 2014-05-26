@@ -5,7 +5,7 @@
 	// --->
 	
 <cfif cgi.REQUEST_METHOD NEQ 'POST'>
-	<cflocation addtoken="no" url="default.cfm?action=newtask">
+	<cflocation addtoken="no" url="index.cfm?action=newtask">
 </cfif>
 
 <cfparam name="form.frmprivate" type="numeric" default="0">
@@ -105,8 +105,8 @@
 </cfif>
 	
 <cfif StructKeyExists(form, 'frmSubmitAddAnother')>
-	<cflocation addtoken="no" url="default.cfm?action=newtask">
+	<cflocation addtoken="no" url="index.cfm?action=newtask">
 <cfelse>
 	<!--- forward to the new item ... ---->
-	<cflocation addtoken="no" url="default.cfm?action=ShowTask&entrykey=#urlencodedformat(form.frmentrykey)#">
+	<cflocation addtoken="no" url="index.cfm?action=ShowTask&entrykey=#urlencodedformat(form.frmentrykey)#">
 </cfif>

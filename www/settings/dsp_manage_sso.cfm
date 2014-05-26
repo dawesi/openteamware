@@ -58,7 +58,7 @@ Currently, the followings bindings are defined:
 <b>Create a new binding</b>
 <br />
 <cfoutput>
-<form action="default.cfm?action=CreateSSOBinding" method="post">
+<form action="index.cfm?action=CreateSSOBinding" method="post">
 	<table class="table_details">
 		<tr>
 			<td class="field_name">#GetLangVal('cm_wd_username')#</td>
@@ -96,7 +96,7 @@ Currently, the followings bindings are defined:
 		var a_simple_modal_dialog = new cSimpleModalDialog();
 		a_simple_modal_dialog.type = 'confirmation';
 		a_simple_modal_dialog.customcontent = '';
-		a_simple_modal_dialog.executeurl = 'default.cfm?action=DeleteSSOBinding&entrykey=' + escape(entrykey) + '&userkey=' + escape(userkey) + '&otheruserkey=' + escape(otheruserkey);
+		a_simple_modal_dialog.executeurl = 'index.cfm?action=DeleteSSOBinding&entrykey=' + escape(entrykey) + '&userkey=' + escape(userkey) + '&otheruserkey=' + escape(otheruserkey);
 		// show dialog
 		a_simple_modal_dialog.ShowDialog();	
 		}

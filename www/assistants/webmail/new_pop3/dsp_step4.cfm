@@ -9,7 +9,7 @@
 	<br><br>
 	<cfoutput>#GetLangVal('ass_ph_pop3_invalid_pop3server')#</cfoutput>
 	<br><br>
-	<a href="default.cfm"><cfoutput>#GetLangVal('cm_wd_proceed')#</cfoutput></a>
+	<a href="index.cfm"><cfoutput>#GetLangVal('cm_wd_proceed')#</cfoutput></a>
 	<cfexit method="exittemplate">
 </cfif>
 
@@ -17,7 +17,7 @@
 	<br><br>
 	<cfoutput>#GetLangVal('ass_ph_pop3_invalid_pop3username')#</cfoutput>
 	<br><br>
-	<a href="default.cfm"><cfoutput>#GetLangVal('cm_wd_proceed')#</cfoutput></a>
+	<a href="index.cfm"><cfoutput>#GetLangVal('cm_wd_proceed')#</cfoutput></a>
 	<cfexit method="exittemplate">
 </cfif>
 
@@ -25,7 +25,7 @@
 	<br><br>
 	<cfoutput>#GetLangVal('ass_ph_pop3_invalid_pop3password')#</cfoutput>
 	<br><br>
-	<a href="default.cfm"><cfoutput>#GetLangVal('cm_wd_proceed')#</cfoutput></a>
+	<a href="index.cfm"><cfoutput>#GetLangVal('cm_wd_proceed')#</cfoutput></a>
 	<cfexit method="exittemplate">
 </cfif>
 
@@ -53,7 +53,7 @@
 	<br><br>
 	<cfoutput>#GetLangVal('ass_ph_pop3_invalid_access_data')#</cfoutput>
 	<br><br>
-	<a href="default.cfm"><cfoutput>#GetLangVal('cm_wd_proceed')#</cfoutput></a>
+	<a href="index.cfm"><cfoutput>#GetLangVal('cm_wd_proceed')#</cfoutput></a>
 	<cfexit method="exittemplate">
 </cfif>
 

@@ -28,7 +28,7 @@
 
 
 <cfif FindNoCase('ShowEvent', cgi.HTTP_REFERER) GT 0>
-	<cflocation addtoken="no" url="default.cfm">
+	<cflocation addtoken="no" url="index.cfm">
 <cfelse>
 	
 	<cfif Len(url.return) IS 0>

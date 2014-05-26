@@ -94,7 +94,7 @@ WHERE
   <cfoutput query="q_select_events">
   <tr>
     <td>
-		<a title="#GetLangVal('cal_ph_related_open_in_new_window')#" href="default.cfm?action=ShowEvent&entrykey=#urlencodedformat(q_select_events.entrykey)#" target="_blank">#htmleditformat(shortenstring(checkzerostring(q_select_events.title), 25))#</a>
+		<a title="#GetLangVal('cal_ph_related_open_in_new_window')#" href="index.cfm?action=ShowEvent&entrykey=#urlencodedformat(q_select_events.entrykey)#" target="_blank">#htmleditformat(shortenstring(checkzerostring(q_select_events.title), 25))#</a>
 	</td>
 	<td>
 		#htmleditformat(q_select_events.location)#

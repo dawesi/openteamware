@@ -10,7 +10,7 @@
 
 <cfif (request.q_company_admin.recordcount gt 1) AND (StructKeyExists(url, "companykey") is false)>
 	<!--- display list ... --->
-	<form action="default.cfm" method="get">
+	<form action="index.cfm" method="get">
 	<input type="hidden" name="action" value="billing">
 	
 	<select name="companykey">
@@ -56,7 +56,7 @@ WHERE companykey = <cfqueryparam cfsqltype="cf_sql_varchar" value="#url.companyk
 	<td>#q_select_open_invoices.invoicetotalsum# &euro;</td>
 	<td>
 	
-	<a href="default.cfm?action=accounting">Details ...</a>
+	<a href="index.cfm?action=accounting">Details ...</a>
 	</td>
   </tr>
   </cfoutput>
@@ -69,14 +69,14 @@ WHERE companykey = <cfqueryparam cfsqltype="cf_sql_varchar" value="#url.companyk
   <tr>
     <td>&nbsp;</td>
     <td>
-	<b><a href="default.cfm?action=paybill&method=transfer&invoicekey=<cfoutput>#urlencodedformat(q_select_open_invoices.entrykey)#</cfoutput>">&Uuml;berweisung</a></b>
+	<b><a href="index.cfm?action=paybill&method=transfer&invoicekey=<cfoutput>#urlencodedformat(q_select_open_invoices.entrykey)#</cfoutput>">&Uuml;berweisung</a></b>
 	</td>
   </tr>
   <cfif q_select_company.countryisocode is "at">
   <tr>
     <td>&nbsp;</td>
     <td>
-	<b><a href="default.cfm?action=paybill&method=eps&invoicekey=<cfoutput>#urlencodedformat(q_select_open_invoices.entrykey)#</cfoutput>">Telebanking (EPS)</a></b>
+	<b><a href="index.cfm?action=paybill&method=eps&invoicekey=<cfoutput>#urlencodedformat(q_select_open_invoices.entrykey)#</cfoutput>">Telebanking (EPS)</a></b>
 	</td>
   </tr>
   <cfelse>

@@ -28,7 +28,7 @@
 
 <!--- no posting? --->
 <cfif q_select_postings.recordcount IS 0>
-	<cflocation addtoken="no" url="default.cfm?action=showforum&entrykey=#url.forumkey#">
+	<cflocation addtoken="no" url="index.cfm?action=showforum&entrykey=#url.forumkey#">
 </cfif>
 
 <!--- select the top posting ... --->
@@ -78,7 +78,7 @@ WHERE
 
 			<cfif (q_select_postings.userkey IS request.stSecurityContext.myuserkey)>						
 				<div style="padding:4px;">
-					<a href="default.cfm?action=NewPosting&forumkey=#url.forumkey#&replytopostingkey=#url.entrykey#&postingkey=#q_select_postings.entrykey#"><img src="/images/si/pencil.png" class="si_img" /> #GetLangVal('forum_ph_edit_article')#</a>
+					<a href="index.cfm?action=NewPosting&forumkey=#url.forumkey#&replytopostingkey=#url.entrykey#&postingkey=#q_select_postings.entrykey#"><img src="/images/si/pencil.png" class="si_img" /> #GetLangVal('forum_ph_edit_article')#</a>
 				</div>
 			</cfif>
 			
@@ -110,7 +110,7 @@ WHERE
 
 </cfsavecontent>
 <cfsavecontent variable="a_str_buttons">
-	<input onClick="GotoLocHref('default.cfm?action=NewPosting&forumkey=<cfoutput>#urlencodedformat(q_select_top_posting.forumkey)#</cfoutput>&replytopostingkey=<cfoutput>#urlencodedformat(url.entrykey)#</cfoutput>');return false;" class="btn" type="button" value="<cfoutput>#GetLangVal('forum_ph_compose_new_answer')#</cfoutput>" />
+	<input onClick="GotoLocHref('index.cfm?action=NewPosting&forumkey=<cfoutput>#urlencodedformat(q_select_top_posting.forumkey)#</cfoutput>&replytopostingkey=<cfoutput>#urlencodedformat(url.entrykey)#</cfoutput>');return false;" class="btn" type="button" value="<cfoutput>#GetLangVal('forum_ph_compose_new_answer')#</cfoutput>" />
 	<input type="button" onclick="SubscribeAlertOnChange();return false;" class="btn2" value="<cfoutput>#GetLangVal('forum_ph_alert_on_new_postings_to_this_thread')#</cfoutput>" />
 	
 </cfsavecontent>

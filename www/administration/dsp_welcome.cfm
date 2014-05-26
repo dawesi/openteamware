@@ -45,7 +45,7 @@
 
 		  <tr class="lightbg">
 
-			<td colspan="2"><a href="default.cfm?action=customers"><b><cfoutput>#GetLangVal('adm_ph_nav_customer_administration')#</cfoutput></b></a></td>
+			<td colspan="2"><a href="index.cfm?action=customers"><b><cfoutput>#GetLangVal('adm_ph_nav_customer_administration')#</cfoutput></b></a></td>
 
 		  </tr>
 
@@ -59,9 +59,9 @@
 
 			<td style="line-height:20px;">
 
-			<a href="default.cfm?action=newcustomer"><cfoutput>#GetLangVal('adm_ph_create_new_customer')#</cfoutput></a><br>
-			<a href="default.cfm?action=customers"><cfoutput>#GetLangVal('adm_ph_search_customer')#</cfoutput></a><br>
-			<a href="default.cfm?action=showinterestedparties"><cfoutput>#GetLangVal('adm_ph_show_interested_parties')#</cfoutput></a>
+			<a href="index.cfm?action=newcustomer"><cfoutput>#GetLangVal('adm_ph_create_new_customer')#</cfoutput></a><br>
+			<a href="index.cfm?action=customers"><cfoutput>#GetLangVal('adm_ph_search_customer')#</cfoutput></a><br>
+			<a href="index.cfm?action=showinterestedparties"><cfoutput>#GetLangVal('adm_ph_show_interested_parties')#</cfoutput></a>
 
 			</td>
 
@@ -97,11 +97,11 @@
 
 			<td style="line-height:20px;">
 
-			<a href="default.cfm?action=reseller"><cfoutput>#GetLangVal('adm_wd_partners')#</cfoutput></a><br>			
+			<a href="index.cfm?action=reseller"><cfoutput>#GetLangVal('adm_wd_partners')#</cfoutput></a><br>			
 
-			<a href="default.cfm?action=invoices"><cfoutput>#GetLangVal('adm_ph_nav_billing')#</cfoutput></a><br>
+			<a href="index.cfm?action=invoices"><cfoutput>#GetLangVal('adm_ph_nav_billing')#</cfoutput></a><br>
 
-			<!---<a href="default.cfm?action=commission">Provision/Abrechnungen</a>--->
+			<!---<a href="index.cfm?action=commission">Provision/Abrechnungen</a>--->
 
 			</td>
 
@@ -149,7 +149,7 @@
 				#DateFormat(q_select_markedcontact.dt_nextcontact, 'dd.mm.yy')#
 			</td>
 			<td>
-				<a href="default.cfm?action=customerproperties&companykey=#urlencodedformat(q_select_markedcontact.entrykey)#&resellerkey=#urlencodedformat(q_select_markedcontact.resellerkey)#">#q_select_markedcontact.companyname#</a>
+				<a href="index.cfm?action=customerproperties&companykey=#urlencodedformat(q_select_markedcontact.entrykey)#&resellerkey=#urlencodedformat(q_select_markedcontact.resellerkey)#">#q_select_markedcontact.companyname#</a>
 			</td>
 			<td>
 				<cfif q_select_markedcontact.status IS 0>
@@ -186,7 +186,7 @@
 
 		  <tr class="lightbg">
 
-			<td colspan="2"><a href="default.cfm?action=shop<cfoutput>#WriteURLTags()#</cfoutput>"><b><cfoutput>#GetLangVal('adm_ph_edit_administrator_rights_shop')#</cfoutput></b></a></td>
+			<td colspan="2"><a href="index.cfm?action=shop<cfoutput>#WriteURLTags()#</cfoutput>"><b><cfoutput>#GetLangVal('adm_ph_edit_administrator_rights_shop')#</cfoutput></b></a></td>
 
 		  </tr>
 
@@ -200,11 +200,11 @@
 
 			<td style="line-height:20px;">
 
-			<a href="default.cfm?action=shop<cfoutput>#WriteURLTags()#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_licence_users')#</cfoutput></a><br>			
+			<a href="index.cfm?action=shop<cfoutput>#WriteURLTags()#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_licence_users')#</cfoutput></a><br>			
 
-			<a href="default.cfm?action=shop<cfoutput>#WriteURLTags()#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_licence_space')#</cfoutput></a><br>
+			<a href="index.cfm?action=shop<cfoutput>#WriteURLTags()#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_licence_space')#</cfoutput></a><br>
 
-			<a href="default.cfm?action=shop<cfoutput>#WriteURLTags()#</cfoutput>"><cfoutput>#GetLangVal('acc_ph_buy_points')#</cfoutput></a>
+			<a href="index.cfm?action=shop<cfoutput>#WriteURLTags()#</cfoutput>"><cfoutput>#GetLangVal('acc_ph_buy_points')#</cfoutput></a>
 
 			</td>
 
@@ -253,13 +253,13 @@
 				
 				<cfif Len(a_str_shop_url) IS 0>
 					<!--- forward to feedback form ... --->
-					<cflocation addtoken="no" url="default.cfm?action=partnerfeedbackform&reason=shop">		
+					<cflocation addtoken="no" url="index.cfm?action=partnerfeedbackform&reason=shop">		
 				<cfelse>
 					<a style="font-weight:bold; " target="_blank" href="<cfoutput>#a_str_shop_url#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_shop_open_click')#</cfoutput></a>
 				</cfif>
 				
 			<cfelse>
-				<a href="default.cfm?action=shop.trialphaseend<cfoutput>#writeurltags()#</cfoutput>"><b><cfoutput>#GetLangVal('adm_ph_ordner_inboxcc_now')#</cfoutput></b></a>				
+				<a href="index.cfm?action=shop.trialphaseend<cfoutput>#writeurltags()#</cfoutput>"><b><cfoutput>#GetLangVal('adm_ph_ordner_inboxcc_now')#</cfoutput></b></a>				
 			</cfif>
 			
 			
@@ -301,13 +301,13 @@
 
 			<td style="line-height:20px;">
 
-			<a href="default.cfm?action=workgroups"><cfoutput>#GetLangVal('cm_wd_groups')#</cfoutput></a><br>
+			<a href="index.cfm?action=workgroups"><cfoutput>#GetLangVal('cm_wd_groups')#</cfoutput></a><br>
 
-			<a href="default.cfm?action=workgroups"><cfoutput>#GetLangVal('adm_ph_members_administration')#</cfoutput></a><br>
+			<a href="index.cfm?action=workgroups"><cfoutput>#GetLangVal('adm_ph_members_administration')#</cfoutput></a><br>
 
-			<a href="default.cfm?action=roles"><cfoutput>#GetLangVal('adm_ph_roles_and_permissions')#</cfoutput></a><br>			
+			<a href="index.cfm?action=roles"><cfoutput>#GetLangVal('adm_ph_roles_and_permissions')#</cfoutput></a><br>			
 
-			<a href="default.cfm?action=stat"><cfoutput>#GetLangVal('adm_wd_statistics')#</cfoutput></a>
+			<a href="index.cfm?action=stat"><cfoutput>#GetLangVal('adm_wd_statistics')#</cfoutput></a>
 
 			</td>
 
@@ -343,14 +343,14 @@
 
 			<td style="line-height:20px;">
 
-			<a href="default.cfm?action=useradministration<cfoutput>#writeURLTags()#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_nav_user_administration_list')#</cfoutput></a><br />			
+			<a href="index.cfm?action=useradministration<cfoutput>#writeURLTags()#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_nav_user_administration_list')#</cfoutput></a><br />			
 
-			<a href="default.cfm?action=newuser<cfoutput>#writeURLTags()#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_nav_user_administration_new_user')#</cfoutput></a><br />
+			<a href="index.cfm?action=newuser<cfoutput>#writeURLTags()#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_nav_user_administration_new_user')#</cfoutput></a><br />
 
-			<a href="default.cfm?action=licence.status<cfoutput>#WriteURLTags()#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_show_licence_status')#</cfoutput></a>
+			<a href="index.cfm?action=licence.status<cfoutput>#WriteURLTags()#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_show_licence_status')#</cfoutput></a>
 			<br />
 			
-			<a href="default.cfm?action=security<cfoutput>#WriteURLTags()#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_edit_administrator_security')#</cfoutput></a>
+			<a href="index.cfm?action=security<cfoutput>#WriteURLTags()#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_edit_administrator_security')#</cfoutput></a>
 
 			</td>
 

@@ -13,7 +13,7 @@
 		 >  
 	</cfinvoke>
 	<cfif a_bool_success>
-		<cflocation url="default.cfm?action=ShowFiles&directorykey=#url.parentdirectorykey#">
+		<cflocation url="index.cfm?action=ShowFiles&directorykey=#url.parentdirectorykey#">
 	<cfelse>
 		<cfoutput>
 			#getlangval("sto_ph_error_folder_delete")#

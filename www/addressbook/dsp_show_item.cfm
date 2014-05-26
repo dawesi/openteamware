@@ -138,7 +138,7 @@ function NewElementClickEv(item_type) {
 		
 	<input type="button" class="btn2" onclick="location.reload();return false;" value="<cfoutput>#GetLangVal('adrb_wd_reload')#</cfoutput>" />
 
-	<input type="button" class="btn2" onclick="ShowSimpleConfirmationDialog('default.cfm?action=deletecontacts&entrykeys=#url.entrykey#&confirmed=true&redirect_start_contacts=true');return false;" value="#MakeFirstCharUCase(GetLangVal('cm_wd_delete'))#" />
+	<input type="button" class="btn2" onclick="ShowSimpleConfirmationDialog('index.cfm?action=deletecontacts&entrykeys=#url.entrykey#&confirmed=true&redirect_start_contacts=true');return false;" value="#MakeFirstCharUCase(GetLangVal('cm_wd_delete'))#" />
 </div>
 </cfoutput>
 
@@ -196,7 +196,7 @@ function NewElementClickEv(item_type) {
 		<!--- account ... --->
 		<cfscript>
 		StartNewJSPopupMenu('a_pop_further_actions');
-		AddNewJSPopupMenuItem(MakeFirstCharUCase(GetLangValJS('adrb_ph_actions_forward')), 'default.cfm?action=forward&entrykeys=#urlencodedformat(url.entrykey)#');
+		AddNewJSPopupMenuItem(MakeFirstCharUCase(GetLangValJS('adrb_ph_actions_forward')), 'index.cfm?action=forward&entrykeys=#urlencodedformat(url.entrykey)#');
 		AddNewJSPopupMenuToPage();
 		</cfscript>
 	</cfcase>
@@ -213,7 +213,7 @@ function NewElementClickEv(item_type) {
 			
 			AddNewJSPopupMenuItem(GetLangValJS('crm_ph_duplicate_contact'), 'javascript:DuplicateContact(\''#url.entrykey#\'', #q_select_contact_data.contacttype#);');	
 		
-		AddNewJSPopupMenuItem(MakeFirstCharUCase(GetLangValJS('adrb_ph_actions_forward')), 'default.cfm?action=forward&entrykeys=#urlencodedformat(url.entrykey)#');
+		AddNewJSPopupMenuItem(MakeFirstCharUCase(GetLangValJS('adrb_ph_actions_forward')), 'index.cfm?action=forward&entrykeys=#urlencodedformat(url.entrykey)#');
 		AddNewJSPopupMenuItem('-', '');
 		AddNewJSPopupMenuItem(GetLangValJS('crm_ph_update_last_contact'), 'javascript:DoUpdateLastContactOfContact(\''#url.entrykey#\'');');
 	
@@ -280,7 +280,7 @@ function NewElementClickEv(item_type) {
 		  <tr>
 			 <cfif q_select_contact_data.photoavailable IS 1>
 				<td rowspan="99" align="center" class="br" style="width:160px;">
-					<img src="default.cfm?action=ShowContactPhoto&entrykey=#url.entrykey#" style="padding:6px;width:140px;" class="" />
+					<img src="index.cfm?action=ShowContactPhoto&entrykey=#url.entrykey#" style="padding:6px;width:140px;" class="" />
 				</td>
 			</cfif>
 			<td class="td_title field_name">
@@ -311,7 +311,7 @@ function NewElementClickEv(item_type) {
 				</td>
 				<td>
 					<cfif Len(q_select_contact_data.parentcontactkey) GT 0>
-						<a href="default.cfm?action=ShowItem&entrykey=#q_select_contact_data.parentcontactkey#">#htmleditformat(CheckZeroString(q_select_contact_data.company))#</a><!---  <img src="/images/si/brick.png" class="si_img" /> --->
+						<a href="index.cfm?action=ShowItem&entrykey=#q_select_contact_data.parentcontactkey#">#htmleditformat(CheckZeroString(q_select_contact_data.company))#</a><!---  <img src="/images/si/brick.png" class="si_img" /> --->
 					<cfelse>
 						#htmleditformat(q_select_contact_data.company)#
 					</cfif>
@@ -346,7 +346,7 @@ function NewElementClickEv(item_type) {
 						#GetLangVal('adrb_wd_superior')#
 					</td>
 					<td>
-						<a href="default.cfm?action=ShowItem&entrykey=#q_select_contact_data.superiorcontactkey#">#htmleditformat(q_select_contact_data.superiorcontactkey_displayvalue)#</a>
+						<a href="index.cfm?action=ShowItem&entrykey=#q_select_contact_data.superiorcontactkey#">#htmleditformat(q_select_contact_data.superiorcontactkey_displayvalue)#</a>
 					</td>
 				<cfelse>
 					<td class="field_name">
@@ -468,7 +468,7 @@ function NewElementClickEv(item_type) {
 					#GetLangVal('adrb_wd_fax')#
 				</td>
 				<td>				
-					<a href="/fax/default.cfm?action=composefax&faxto=#urlencodedformat(q_select_contact_data.b_fax)#">#htmleditformat(q_select_contact_data.b_fax)#</a>
+					<a href="/fax/index.cfm?action=composefax&faxto=#urlencodedformat(q_select_contact_data.b_fax)#">#htmleditformat(q_select_contact_data.b_fax)#</a>
 				</td>
 				<td class="field_name">
 					#GetLangVal('cm_wd_mobile')#
@@ -628,7 +628,7 @@ function NewElementClickEv(item_type) {
 					#GetLangVal('adrb_wd_fax')#
 				</td>
 				<td>
-					<a href="/fax/default.cfm?action=composefax&faxto=#urlencodedformat(q_select_contact_data.p_fax)#">#htmleditformat(q_select_contact_data.p_fax)#</a>
+					<a href="/fax/index.cfm?action=composefax&faxto=#urlencodedformat(q_select_contact_data.p_fax)#">#htmleditformat(q_select_contact_data.p_fax)#</a>
 				</td>
 				<td class="field_name">#GetLangVal('cm_wd_mobile')#</td>
 				<td>
@@ -707,7 +707,7 @@ function NewElementClickEv(item_type) {
 			<cfoutput query="q_select_sub_items">
 			<tr>
 				<td>
-					<a href="default.cfm?action=ShowItem&entrykey=#q_select_sub_items.entrykey#"><img src="/images/si/vcard.png" class="si_img" /> #htmleditformat(CheckZeroString(q_select_sub_items.displayname))#</a>
+					<a href="index.cfm?action=ShowItem&entrykey=#q_select_sub_items.entrykey#"><img src="/images/si/vcard.png" class="si_img" /> #htmleditformat(CheckZeroString(q_select_sub_items.displayname))#</a>
 				</td>
 				<td>
 					#htmleditformat(q_select_sub_items.department)#<cfif Len(q_select_sub_items.department) GT 0 AND Len(q_select_sub_items.aposition) GT 0>,</cfif> #htmleditformat(q_select_sub_items.aposition)#
@@ -741,9 +741,9 @@ function NewElementClickEv(item_type) {
 	
 	<cfsavecontent variable="a_str_buttons">
 		<cfoutput>
-		<input type="button" onclick="GotoLocHref('default.cfm?Action=createnewitem&datatype=0&parentcontactkey=#url.entrykey#');" value="#GetLangVal('cm_wd_new')#" class="btn">
+		<input type="button" onclick="GotoLocHref('index.cfm?Action=createnewitem&datatype=0&parentcontactkey=#url.entrykey#');" value="#GetLangVal('cm_wd_new')#" class="btn">
 		&nbsp;
-		<input type="button" class="btn2" onclick="GotoLocHref('default.cfm?action=ShowOrganigramm&accountkey=#url.entrykey#');" value="#GetLangVal('crm_wd_organigram')#" /> 
+		<input type="button" class="btn2" onclick="GotoLocHref('index.cfm?action=ShowOrganigramm&accountkey=#url.entrykey#');" value="#GetLangVal('crm_wd_organigram')#" /> 
 		</cfoutput>
 	</cfsavecontent>
 

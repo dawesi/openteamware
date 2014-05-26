@@ -12,7 +12,7 @@
 		<table width="100%"  border="0" cellspacing="0" cellpadding="0">
 		  <tr>
 			<td width="200" class="br" style="text-align:center;background-color:white; ">
-				<a href="default.cfm"><img vspace="4" src="<cfoutput>#a_struct_medium_logo.path#</cfoutput>" height="<cfoutput>#a_struct_medium_logo.height#</cfoutput>" width="<cfoutput>#a_struct_medium_logo.width#</cfoutput>" hspace="3" align="absmiddle" border="0"></a>
+				<a href="index.cfm"><img vspace="4" src="<cfoutput>#a_struct_medium_logo.path#</cfoutput>" height="<cfoutput>#a_struct_medium_logo.height#</cfoutput>" width="<cfoutput>#a_struct_medium_logo.width#</cfoutput>" hspace="3" align="absmiddle" border="0"></a>
 			</td>
 			<td style="font-weight:bold;font-size:15px;padding-left:10px;">
 				<cfoutput>#GetLangVal('adm_ph_title_main')#</cfoutput>	
@@ -48,26 +48,26 @@
 <div id="iddivtopheaderservice" class="bb div_main_content_top_menu">
 <table class="tablemaincontenttop">
 <tr>
-	<td><a href="default.cfm" class="TopHeaderLink">
+	<td><a href="index.cfm" class="TopHeaderLink">
 		<cfoutput>#GetLangVal('adm_ph_nav_top_overview')#</cfoutput></a>&nbsp;
 	</td>
 	<td class="tdtopheaderdivider">|</td>
 	<td class="TopHeaderLink">
-		<a class="TopHeaderLink" href="/administration/default.cfm?action=shop"><cfoutput>#GetLangVal('cm_wd_shop')#</cfoutput></a>
+		<a class="TopHeaderLink" href="/administration/index.cfm?action=shop"><cfoutput>#GetLangVal('cm_wd_shop')#</cfoutput></a>
 	</td>
 	
 	<cfif request.a_bol_is_reseller>
 		<td class="tdtopheaderdivider">|</td>
 		<td class="TopHeaderLink">
-			<a class="TopHeaderLink" style="font-weight:bold; " href="/administration/default.cfm?action=customers"><cfoutput>#GetLangVal('adm_ph_nav_customer_administration')#</cfoutput></a>
+			<a class="TopHeaderLink" style="font-weight:bold; " href="/administration/index.cfm?action=customers"><cfoutput>#GetLangVal('adm_ph_nav_customer_administration')#</cfoutput></a>
 		</td>	
 		<td class="tdtopheaderdivider">|</td>
 		<td class="TopHeaderLink">
-			<a class="TopHeaderLink" style="font-weight:bold; " href="/administration/default.cfm?action=reseller"><cfoutput>#GetLangVal('adm_wd_partner')#</cfoutput></a>
+			<a class="TopHeaderLink" style="font-weight:bold; " href="/administration/index.cfm?action=reseller"><cfoutput>#GetLangVal('adm_wd_partner')#</cfoutput></a>
 		</td>
 		<td class="tdtopheaderdivider">|</td>
 		<td class="TopHeaderLink">
-			<a class="TopHeaderLink" href="/administration/default.cfm?action=stat"><cfoutput>#GetLangVal('adm_wd_reporting')#</cfoutput></a>
+			<a class="TopHeaderLink" href="/administration/index.cfm?action=stat"><cfoutput>#GetLangVal('adm_wd_reporting')#</cfoutput></a>
 		</td>		
 	</cfif>
 	
@@ -77,7 +77,7 @@
 	</td>		
 	<!---<td class="tdtopheaderdivider">|</td>
 	<td class="TopHeaderLink">
-		<a href="default.cfm?action=routeplanner" class="TopHeaderLink">Routenplaner</a>
+		<a href="index.cfm?action=routeplanner" class="TopHeaderLink">Routenplaner</a>
 	</td>	
 	<td class="tdtopheaderdivider">|</td>
 --->	

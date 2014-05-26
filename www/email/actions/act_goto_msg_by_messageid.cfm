@@ -31,7 +31,7 @@
 	</cfquery>
 	
 	<cfif q_select_email_data.recordcount GT 0>
-		<cflocation addtoken="no" url="/email/default.cfm?action=showmessage&id=#q_select_email_data.uid#&mailbox=#htmleditformat(q_select_email_data.foldername)#&popup=1">
+		<cflocation addtoken="no" url="/email/index.cfm?action=showmessage&id=#q_select_email_data.uid#&mailbox=#htmleditformat(q_select_email_data.foldername)#&popup=1">
 	<cfelse>
 		This messages does not exist on the server any more.
 		<br />

@@ -70,4 +70,4 @@
 
 <!---<cfinclude template="queries/q_insert_customer.cfm">--->
 
-<cflocation addtoken="no" url="default.cfm?action=customerproperties&companykey=#urlencodedformat(a_str_customer_key)#&resellerkey=#urlencodedformat(form.frmresellerkey)#">
+<cflocation addtoken="no" url="index.cfm?action=customerproperties&companykey=#urlencodedformat(a_str_customer_key)#&resellerkey=#urlencodedformat(form.frmresellerkey)#">

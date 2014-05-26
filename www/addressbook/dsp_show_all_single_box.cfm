@@ -8,7 +8,7 @@
 
 	<td class="mischeader" height="17">
 
-	<a href="default.cfm?action=ShowItem&entrykey=<cfoutput>#q_select_contacts.entrykey#</cfoutput>" style="font-weight:bold;"><cfoutput>#checkzerostring(q_select_contacts.Surname)#</a>, #htmleditformat(q_select_contacts.Firstname)#</cfoutput>
+	<a href="index.cfm?action=ShowItem&entrykey=<cfoutput>#q_select_contacts.entrykey#</cfoutput>" style="font-weight:bold;"><cfoutput>#checkzerostring(q_select_contacts.Surname)#</a>, #htmleditformat(q_select_contacts.Firstname)#</cfoutput>
 
 	</td>
 

@@ -38,7 +38,7 @@
       </cfoutput> 
       <tr> 
         <td> <img src="/images/space_1_1.gif" width="12" height="12" hspace="0" vspace="0" border="0" align="absmiddle"> 
-          <a href="/extras/default.cfm?action=clickstream">mehr ...</a> </td>
+          <a href="/extras/index.cfm?action=clickstream">mehr ...</a> </td>
       </tr>
     </table>
 	</td>

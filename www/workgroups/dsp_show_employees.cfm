@@ -43,7 +43,7 @@
 	</cfif>
 	</td>
     <td class="bb">
-	<a href="../workgroups/default.cfm?action=ShowUser&entrykey=#urlencodedformat(q_select_company_users.entrykey)#"><b>#ucase(q_select_company_users.surname)#, #q_select_company_users.firstname#</b></a>
+	<a href="../workgroups/index.cfm?action=ShowUser&entrykey=#urlencodedformat(q_select_company_users.entrykey)#"><b>#ucase(q_select_company_users.surname)#, #q_select_company_users.firstname#</b></a>
 	
 	<br>
 	
@@ -55,7 +55,7 @@
 	&nbsp;	
 	</td>
     <td class="bb">
-	E-Mail: <a href="../email/default.cfm?action=composemail&to=#urlencodedformat(q_select_company_users.username)#">#q_select_company_users.username#</a>
+	E-Mail: <a href="../email/index.cfm?action=composemail&to=#urlencodedformat(q_select_company_users.username)#">#q_select_company_users.username#</a>
 	<br>
 	<cfif Len(q_select_company_users.telephone) GT 0>Fon: #q_select_company_users.telephone#&nbsp;</cfif>
 	

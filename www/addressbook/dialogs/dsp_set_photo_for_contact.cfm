@@ -9,7 +9,7 @@
 
 <cfparam name="url.entrykey" type="string">
 
-<form action="default.cfm?action=UploadPhotoForContact" method="post" enctype="multipart/form-data">
+<form action="index.cfm?action=UploadPhotoForContact" method="post" enctype="multipart/form-data">
 <input type="hidden" name="frmentrykey" value="<cfoutput>#url.entrykey#</cfoutput>" />
 <table class="table_details table_edit_form">
 <tr>

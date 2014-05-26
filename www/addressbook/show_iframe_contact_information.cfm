@@ -34,7 +34,7 @@
   </tr>
   <tr>
   	<td colspan="2">
-		<a href="default.cfm?action=ShowItem&entrykey=#urlencodedformat(url.entrykey)#" target="_parent">Kontaktdetails anzeigen ...</a>
+		<a href="index.cfm?action=ShowItem&entrykey=#urlencodedformat(url.entrykey)#" target="_parent">Kontaktdetails anzeigen ...</a>
 	</td>
   </tr>
   <tr>

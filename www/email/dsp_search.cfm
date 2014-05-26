@@ -22,7 +22,7 @@
 
 <cfset tmp = SetHeaderTopInfoString(GetLangVal('mail_wd_search')) />
 
-<form action="default.cfm" method="get" name="formsearch">
+<form action="index.cfm" method="get" name="formsearch">
 <input type="Hidden" name="Action" value="DoSearch">
 <table class="table_details table_edit_form" >
 <tr>

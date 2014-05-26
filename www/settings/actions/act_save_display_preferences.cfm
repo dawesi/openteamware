@@ -12,7 +12,7 @@
 // --->
 
 <cfif cgi.REQUEST_METHOD NEQ 'POST'>
-	<cflocation addtoken="no" url="default.cfm">
+	<cflocation addtoken="no" url="index.cfm">
 </cfif>
 
 <cfparam name="form.frmcbasksemailendconfirmation" type="numeric" default="0">
@@ -168,5 +168,5 @@
 
 <cfset session.stUserSettings = a_struct_settings>
 
-<cflocation addtoken="No" url="../default.cfm?action=DisplayPreferences">
+<cflocation addtoken="No" url="../index.cfm?action=DisplayPreferences">
 

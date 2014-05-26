@@ -36,7 +36,7 @@ ORDER BY
 </cfquery>
 
 <!--- display mapping editor ... --->
-<form action="default.cfm?action=DoCreateMapping" method="post" onsubmit="DisplayPleaseWaitMsgOnLocChange();">
+<form action="index.cfm?action=DoCreateMapping" method="post" onsubmit="DisplayPleaseWaitMsgOnLocChange();">
 <input type="hidden" name="frm_jobkey" value="<cfoutput>#url.jobkey#</cfoutput>" />
 <input type="hidden" name="frmadvancedcriteriaselection" value="<cfoutput>#url.advancedcriteriaselection#</cfoutput>" />
 <table class="table_details table_edit_form">

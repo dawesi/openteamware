@@ -1,7 +1,7 @@
 <cfoutput>#WriteMainContentTopHeaderLine(GetLAngVal('adrb_ph_actions_export'))#</cfoutput>
 
 <cfif NOT IsDefined('session.a_struct_temp_data.addressbook_selected_entrykeys')>
-	<cflocation addtoken="no" url="default.cfm">
+	<cflocation addtoken="no" url="index.cfm">
 </cfif>
 
 

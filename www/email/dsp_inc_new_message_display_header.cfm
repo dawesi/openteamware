@@ -92,9 +92,9 @@
 	if (a_bol_alternative_version_avaliable) {
 		
 		if (CompareNoCase(url.alternativeversion, "html") is 0) {
-			AddNewJSPopupMenuItem(GetLangValJS('mail_ph_msg_show:') & ' ' & GetLangValJS('mail_ph_msg_show_text_version'), 'default.cfm?#ReplaceOrAddURLParameter(cgi.QUERY_STRING, "alternativeversion", "text")#');
+			AddNewJSPopupMenuItem(GetLangValJS('mail_ph_msg_show:') & ' ' & GetLangValJS('mail_ph_msg_show_text_version'), 'index.cfm?#ReplaceOrAddURLParameter(cgi.QUERY_STRING, "alternativeversion", "text")#');
 			} else {
-				AddNewJSPopupMenuItem(GetLangValJS('mail_ph_msg_show:') & ' ' & GetLangValJS('mail_ph_msg_show_html_version'), 'default.cfm?#ReplaceOrAddURLParameter(cgi.QUERY_STRING, "alternativeversion", "html")#');
+				AddNewJSPopupMenuItem(GetLangValJS('mail_ph_msg_show:') & ' ' & GetLangValJS('mail_ph_msg_show_html_version'), 'index.cfm?#ReplaceOrAddURLParameter(cgi.QUERY_STRING, "alternativeversion", "html")#');
 				}
 		}
 	
@@ -140,7 +140,7 @@ WHERE
 		AddNewJSPopupMenuItem(GetLangValJS('mail_ph_msg_addressbook_new'), 'javascript:CallSimpleAddAddressbookDialog(\''#jsstringformat(a_str_sender_emailadr)#\'', \''#GetLangValJS('mail_ph_msg_addressbook_new')#\'');');
 		//a_from_adr_popup_menu.AddItem(GetLangValJS('mail_ph_msg_addressbook_new'),'javascript:CallSimpleAddAddressbookDialog(\''#jsstringformat(q_select_message.afrom)#\'',\''#GetLangValJS('mail_ph_msg_addressbook_new')#\'');';
 		} else {
-			AddNewJSPopupMenuItem(GetLangValJS('mail_ph_show_in_addressbook'), 'javascript:GotoLocHrefMain(\''/addressbook/default.cfm?action=ShowItem&entrykey=#q_select_sender_adrb_item.entrykey#\'');');
+			AddNewJSPopupMenuItem(GetLangValJS('mail_ph_show_in_addressbook'), 'javascript:GotoLocHrefMain(\''/addressbook/index.cfm?action=ShowItem&entrykey=#q_select_sender_adrb_item.entrykey#\'');');
 			}
 	AddNewJSPopupMenuItem(GetLangValJS('mail_wd_block'), 'javascript:BlockAddress(\''#jsstringformat(a_str_sender_emailadr)#\'', \''#GetLangValJS('mail_wd_block')#\'');');
 	AddNewJSPopupMenuToPage();
@@ -208,7 +208,7 @@ WHERE
 				<cfset a_str_info = trim(a_str_info) />
 				
 				<div style="padding-top:4px;">
-				<a href="##" onclick="javascript:GotoLocHrefMain('/addressbook/default.cfm?action=ShowItem&entrykey=#q_select_sender_adrb_item.entrykey#')">#a_str_info#</a>
+				<a href="##" onclick="javascript:GotoLocHrefMain('/addressbook/index.cfm?action=ShowItem&entrykey=#q_select_sender_adrb_item.entrykey#')">#a_str_info#</a>
 				</div>
 			<cfelse>
 				<img src="/images/space_1_1.gif" class="si_img" />
@@ -217,7 +217,7 @@ WHERE
 		</td>
 		<cfif val(q_select_sender_adrb_item.photoavailable) IS 1>
 			<td rowspan="6"  class="bl mischeader" style="width100px;text-align:center;vertical-align:middle;">
-				<img style="height:80px;padding:2px;" src="/addressbook/default.cfm?action=ShowContactPhoto&entrykey=#q_select_sender_adrb_item.entrykey#" />
+				<img style="height:80px;padding:2px;" src="/addressbook/index.cfm?action=ShowContactPhoto&entrykey=#q_select_sender_adrb_item.entrykey#" />
 			</td>
 		</cfif>
 	  </tr>
@@ -279,7 +279,7 @@ WHERE
 					if (q_select_adrb_item.recordcount is 0) {
 						AddNewJSPopupMenuItem(GetLangValJS('mail_ph_msg_addressbook_new'), 'javascript:CallSimpleAddAddressbookDialog(\''#jsstringformat(a_str_extracted_email_adr)#\'', \''#GetLangValJS('mail_ph_msg_addressbook_new')#\'');');
 						} else {
-							AddNewJSPopupMenuItem(GetLangValJS('mail_ph_show_in_addressbook'), 'javascript:GotoLocHrefMain(\''/addressbook/default.cfm?action=ShowItem&entrykey=#q_select_adrb_item.entrykey#\'');');
+							AddNewJSPopupMenuItem(GetLangValJS('mail_ph_show_in_addressbook'), 'javascript:GotoLocHrefMain(\''/addressbook/index.cfm?action=ShowItem&entrykey=#q_select_adrb_item.entrykey#\'');');
 							}
 					AddNewJSPopupMenuItem(GetLangValJS('mail_wd_block'), 'javascript:BlockAddress(\''#jsstringformat(a_str_extracted_email_adr)#\'', \''#GetLangValJS('mail_wd_block')#\'');');
 					AddNewJSPopupMenuToPage();
@@ -336,9 +336,9 @@ WHERE
 			
 							
 							<cfif q_select_adrb_item.recordcount is 0>
-								<a title="#htmleditformat(a_str_cc_item)#" target="_blank" href="../addressbook/default.cfm?Action=createnewitem&email=#urlencodedformat(a_str_extracted_email_adr)#">#htmleditformat(DisplayNiceEmailAddress(a_str_cc_item))# (#GetLangVal('mail_ph_msg_addressbook_new')#)</a>
+								<a title="#htmleditformat(a_str_cc_item)#" target="_blank" href="../addressbook/index.cfm?Action=createnewitem&email=#urlencodedformat(a_str_extracted_email_adr)#">#htmleditformat(DisplayNiceEmailAddress(a_str_cc_item))# (#GetLangVal('mail_ph_msg_addressbook_new')#)</a>
 							<cfelse>
-								<a title="#htmleditformat(a_str_cc_item)#" target="_blank" href="../addressbook/default.cfm?action=ShowItem&entrykey=#urlencodedformat(q_select_adrb_item.entrykey)#">#htmleditformat(DisplayNiceEmailAddress(a_str_cc_item))#</a>
+								<a title="#htmleditformat(a_str_cc_item)#" target="_blank" href="../addressbook/index.cfm?action=ShowItem&entrykey=#urlencodedformat(q_select_adrb_item.entrykey)#">#htmleditformat(DisplayNiceEmailAddress(a_str_cc_item))#</a>
 							</cfif>
 							
 			
@@ -510,7 +510,7 @@ WHERE
 <cfif url.popup IS 1>
 	<cfset a_str_redirect = 'show_close_window.cfm'>
 <cfelse>
-	<cfset a_str_redirect = 'default.cfm?action=showmessage'>
+	<cfset a_str_redirect = 'index.cfm?action=showmessage'>
 </cfif>
 
 <!--- TODO: move code to email.js ... --->
@@ -557,7 +557,7 @@ WHERE
 		LoadNextAvailableMessage( rowno );
 		
 		// goto move page ...		
-		// location.href = 'default.cfm?Action=DoMoveMessage&targetmailbox='+escape(targetmailbox)+'&id='+id+'&mailbox='+escape(mbox)+'&mbox_md5=<cfoutput>#url.mbox_query_md5#</cfoutput>&redirect=nextmsg&openfullcontent=<cfoutput>#url.openfullcontent#</cfoutput>&afrom='+escape(afrom)+'&ato='+escape(ato);
+		// location.href = 'index.cfm?Action=DoMoveMessage&targetmailbox='+escape(targetmailbox)+'&id='+id+'&mailbox='+escape(mbox)+'&mbox_md5=<cfoutput>#url.mbox_query_md5#</cfoutput>&redirect=nextmsg&openfullcontent=<cfoutput>#url.openfullcontent#</cfoutput>&afrom='+escape(afrom)+'&ato='+escape(ato);
 		}
 </cfsavecontent>
 

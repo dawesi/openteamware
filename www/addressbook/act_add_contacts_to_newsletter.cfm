@@ -6,11 +6,11 @@
 <cfset a_cmp_nl = CreateObject('component', request.a_str_component_newsletter)>
 
 <cfif Len(form.frmlistkey) IS 0>
-	<cflocation addtoken="no" url="default.cfm">
+	<cflocation addtoken="no" url="index.cfm">
 </cfif>
 
 <cfif Len(form.frmcontactkeys) IS 0>
-	<cflocation addtoken="no" url="default.cfm">
+	<cflocation addtoken="no" url="index.cfm">
 </cfif>
 
 <cfdump var="#form#">
@@ -22,4 +22,4 @@
 
 </cfloop>
 
-<cflocation addtoken="no" url="default.cfm">
+<cflocation addtoken="no" url="index.cfm">

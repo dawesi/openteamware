@@ -184,4 +184,4 @@ Bei Fragen kontaktieren Sie bitte:
 #a_str_body#
 </cfmail>
 
-<cflocation addtoken="no" url="default.cfm?action=workgroupproperties&entrykey=#urlencodedformat(form.frmworkgroupkey)##writeurltagsfromform()#">
+<cflocation addtoken="no" url="index.cfm?action=workgroupproperties&entrykey=#urlencodedformat(form.frmworkgroupkey)##writeurltagsfromform()#">

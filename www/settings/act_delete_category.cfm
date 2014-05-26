@@ -26,4 +26,4 @@
 	entryname = "personalcategories"
 	entryvalue1 = #a_str_categories#>
 
-<cflocation addtoken="no" url="default.cfm?action=categories">
+<cflocation addtoken="no" url="index.cfm?action=categories">

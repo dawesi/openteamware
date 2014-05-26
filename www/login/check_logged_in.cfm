@@ -35,7 +35,7 @@
 		<cfset a_str_url = a_str_url & '?' & cgi.query_string & a_str_add_url />
 	</cfif>
 
-	<cflocation addtoken="No" url="/login/default.cfm?url=#urlencodedformat(a_str_url)#">
+	<cflocation addtoken="No" url="/login/index.cfm?url=#urlencodedformat(a_str_url)#">
 
 </cfif>
 

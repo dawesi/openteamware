@@ -18,7 +18,7 @@ ORDER BY
 </cfquery>
 	
 <table border="0" cellspacing="0" cellpadding="2">
-<form action="default.cfm" method="get">
+<form action="index.cfm" method="get">
 <input type="hidden" name="action" value="paymethod">
   <tr>
     <td>

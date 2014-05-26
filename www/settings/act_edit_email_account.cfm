@@ -27,4 +27,4 @@ WHERE (userid =
 <cfqueryparam cfsqltype="cf_sql_integer" value="#val(form.frmid)#">
 ); 
 </cfquery>
-<cflocation addtoken="No" url="default.cfm?action=ExternalEmail">
+<cflocation addtoken="No" url="index.cfm?action=ExternalEmail">

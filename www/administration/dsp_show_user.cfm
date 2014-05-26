@@ -38,7 +38,7 @@
     <td>
 	<cfset SelectCompanyNameByKey.Entrykey = q_select_user_data.companykey> 
 	<cfinclude template="queries/q_select_company_by_key.cfm">
-	<a href="default.cfm?action=customerproperties&entrykey=#urlencodedformat(q_select_user_data.companykey)#">#q_select_company_by_key.companyname#</a>
+	<a href="index.cfm?action=customerproperties&entrykey=#urlencodedformat(q_select_user_data.companykey)#">#q_select_company_by_key.companyname#</a>
 	&nbsp;&nbsp;
 	
 	</td>

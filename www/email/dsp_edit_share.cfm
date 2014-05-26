@@ -58,7 +58,7 @@
 	
    <tr>
     <td>
-		<a href="default.cfm?action=ShowMailbox&Mailbox=#urlencodedformat(q_select_shared_folders.foldername)#&userkey=#urlencodedformat(q_select_shared_folders.account)#">#q_select_shared_folders.foldername#</a>
+		<a href="index.cfm?action=ShowMailbox&Mailbox=#urlencodedformat(q_select_shared_folders.foldername)#&userkey=#urlencodedformat(q_select_shared_folders.account)#">#q_select_shared_folders.foldername#</a>
 	</td>
     <td>
 		#a_str_username#

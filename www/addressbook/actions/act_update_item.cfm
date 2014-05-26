@@ -82,4 +82,4 @@
 	<cfinvokeargument name="entrykey" value="#form.frmentrykey#">
 </cfinvoke>
 
-<cflocation addtoken="false" url="default.cfm?action=ShowItem&entrykey=#form.frmentrykey#">
+<cflocation addtoken="false" url="index.cfm?action=ShowItem&entrykey=#form.frmentrykey#">

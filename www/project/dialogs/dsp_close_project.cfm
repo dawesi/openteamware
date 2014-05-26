@@ -30,7 +30,7 @@
 	
 	<br /> 
 	<cfoutput>
-	<input class="btn" type="button" value="#GetLangVal('cm_wd_close_btn_caption')#" onclick="GotoLocHref('default.cfm');" />
+	<input class="btn" type="button" value="#GetLangVal('cm_wd_close_btn_caption')#" onclick="GotoLocHref('index.cfm');" />
 	</cfoutput>
 	
 	<cfexit method="exittemplate">

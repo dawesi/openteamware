@@ -86,7 +86,7 @@
 			</td>
 			<td align="right" nowrap="true">
 				<a href="/crm/?action=EditFollowup&amp;entrykey=#q_select_follow_ups.entrykey#" class="nl"><img src="/images/si/pencil.png" class="si_img" alt="#GetLangVal('cm_wd_edit')#" /></a>
-				<a class="nl" href="##" onclick="ShowSimpleConfirmationDialog('default.cfm?action=DeleteFollowups&amp;entrykeys=#q_select_follow_ups.entrykey#');"><img src="/images/si/delete.png" class="si_img" alt="Delete" /></a>
+				<a class="nl" href="##" onclick="ShowSimpleConfirmationDialog('index.cfm?action=DeleteFollowups&amp;entrykeys=#q_select_follow_ups.entrykey#');"><img src="/images/si/delete.png" class="si_img" alt="Delete" /></a>
 			</td>
 		</tr>
 	</cfoutput>
@@ -219,8 +219,8 @@
 				#application.components.cmp_user.GetShortestPossibleUserIDByEntrykey(q_select_follow_ups.userkey)#
 			</td>
 			<td align="right" nowrap="true" class="hideprint">
-				<a href="default.cfm?action=EditFollowup&amp;entrykey=#q_select_follow_ups.entrykey#" class="nl">#si_img('pencil')#</a>
-				<a class="nl" href="##" onclick="ShowSimpleConfirmationDialog('default.cfm?action=DeleteFollowups&amp;entrykeys=#q_select_follow_ups.entrykey#');"><img src="/images/si/delete.png" class="si_img" alt="Delete" /></a>
+				<a href="index.cfm?action=EditFollowup&amp;entrykey=#q_select_follow_ups.entrykey#" class="nl">#si_img('pencil')#</a>
+				<a class="nl" href="##" onclick="ShowSimpleConfirmationDialog('index.cfm?action=DeleteFollowups&amp;entrykeys=#q_select_follow_ups.entrykey#');"><img src="/images/si/delete.png" class="si_img" alt="Delete" /></a>
 			</td>
 		</tr>
 	</cfoutput>
@@ -282,7 +282,7 @@ ORDER BY
 <cfoutput query="q_select_sales_projects">
   <tr>
     <td>
-		<a href="/project/default.cfm?action=ShowProject&amp;entrykey=#q_select_sales_projects.entrykey#"><img src="/images/si/coins.png" class="si_img" />#htmleditformat(CheckZeroString(q_select_sales_projects.title))#</a>
+		<a href="/project/index.cfm?action=ShowProject&amp;entrykey=#q_select_sales_projects.entrykey#"><img src="/images/si/coins.png" class="si_img" />#htmleditformat(CheckZeroString(q_select_sales_projects.title))#</a>
 	</td>
 	<td>
 		#GetLangVal('crm_wd_sales_stage_' & q_select_sales_projects.stage)#
@@ -302,8 +302,8 @@ ORDER BY
 		</cfif>
 	</td>
 	<td align="right">
-		<a class="nl" href="default.cfm?action=editproject&amp;entrykey=#q_select_sales_projects.entrykey#"><img src="/images/si/pencil.png" class="si_img" /></a>
-		<a class="nl" href="##" onclick="ShowSimpleConfirmationDialog('default.cfm?action=DoDeleteproject&amp;entrykey=#q_select_sales_projects.entrykey#');"><img src="/images/si/delete.png" class="si_img" /></a>
+		<a class="nl" href="index.cfm?action=editproject&amp;entrykey=#q_select_sales_projects.entrykey#"><img src="/images/si/pencil.png" class="si_img" /></a>
+		<a class="nl" href="##" onclick="ShowSimpleConfirmationDialog('index.cfm?action=DoDeleteproject&amp;entrykey=#q_select_sales_projects.entrykey#');"><img src="/images/si/delete.png" class="si_img" /></a>
 	</td>
   </tr>
 </cfoutput>

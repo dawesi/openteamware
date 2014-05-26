@@ -76,7 +76,7 @@ WHERE parameter = <cfqueryparam cfsqltype="cf_sql_varchar" value="#a_str_foldern
 <img src="/images/si/help.png" class="si_img" /> <cfoutput>#a_str_msg_confirm#</cfoutput>
 <br />
 <br />
-<a href="default.cfm?action=deletemailbox&mailbox=<cfoutput>#urlencodedformat(url.mailbox)#</cfoutput>&confirmed=1"><cfoutput>#GetLangVal('cm_ph_confirm_delete_sure_yes')#</cfoutput></a>&nbsp;&nbsp;&nbsp;<a href="default.cfm"><cfoutput>#GetLangVal('cm_ph_confirm_delete_sure_no')#</cfoutput></a>
+<a href="index.cfm?action=deletemailbox&mailbox=<cfoutput>#urlencodedformat(url.mailbox)#</cfoutput>&confirmed=1"><cfoutput>#GetLangVal('cm_ph_confirm_delete_sure_yes')#</cfoutput></a>&nbsp;&nbsp;&nbsp;<a href="index.cfm"><cfoutput>#GetLangVal('cm_ph_confirm_delete_sure_no')#</cfoutput></a>
 <cfelse>
 <!--- delete now ... --->
 
@@ -95,7 +95,7 @@ WHERE parameter = <cfqueryparam cfsqltype="cf_sql_varchar" value="#a_str_foldern
 <br />
 <br />
 <br />
-<a href="default.cfm"><cfoutput>#GetLangVal('cm_ph_link_goto_overview')#</cfoutput></a>
+<a href="index.cfm"><cfoutput>#GetLangVal('cm_ph_link_goto_overview')#</cfoutput></a>
 </cfif>
 
 

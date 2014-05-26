@@ -8,5 +8,5 @@
 	--->
 
 
-<input type="button" onclick="GotoLocHref('default.cfm?action=UploadFile');" class="btn" value="Jetzt eine Excel-Datei importieren ..." />
+<input type="button" onclick="GotoLocHref('index.cfm?action=UploadFile');" class="btn" value="Jetzt eine Excel-Datei importieren ..." />
 

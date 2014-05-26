@@ -74,7 +74,7 @@
 <cfsavecontent variable="a_str_content">
 
 	
-	<form action="default.cfm?action=savefolder" method="post" name="form_editcreate_folder" style="margin:0px; ">
+	<form action="index.cfm?action=savefolder" method="post" name="form_editcreate_folder" style="margin:0px; ">
 	<cfif len(url.entrykey) eq 0>
 		<input type="hidden" name="CreateNew" value="true">
 	</cfif>	
@@ -180,7 +180,7 @@
 <cfsavecontent variable="a_str_content">	
 
 <cfif len(a_query_directory.publicshare_directorykey ) gt 0>
-<form action="default.cfm?action=PublicShare" method="post" style="margin:0px;">
+<form action="index.cfm?action=PublicShare" method="post" style="margin:0px;">
 			<input type="hidden" name="action" value="PublicShare">
 			<input type="hidden" name="frm_currentdir" value="<cfoutput>#url.currentdir#</cfoutput>">
 			<input type="hidden" name="frm_entrykey" value="<cfoutput>#a_query_directory.entrykey#</cfoutput>">
@@ -239,7 +239,7 @@
 	<cfelse>
 	
 		
-		<form action="default.cfm?action=PublicShare" method="post" style="margin:0px; ">
+		<form action="index.cfm?action=PublicShare" method="post" style="margin:0px; ">
 			<input type="hidden" name="action" value="PublicShare">
 			<input type="hidden" name="frm_entrykey" value="<cfoutput>#a_query_directory.entrykey#</cfoutput>">
 			<input type="hidden" name="frm_parentdirectorykey" value="<cfoutput>#a_query_directory.parentdirectorykey#</cfoutput>">

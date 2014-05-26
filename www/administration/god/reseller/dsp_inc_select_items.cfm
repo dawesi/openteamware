@@ -32,11 +32,11 @@ WHERE
 	</cfif>		
 	)
 	
-	 <a href="default.cfm?action=editreseller&entrykey=#urlencodedformat(q_select_items.entrykey)#">Eigenschaften</a>
+	 <a href="index.cfm?action=editreseller&entrykey=#urlencodedformat(q_select_items.entrykey)#">Eigenschaften</a>
 	 &nbsp;
-	 <a href="default.cfm?action=resellerusers&resellerkey=#urlencodedformat(q_select_items.entrykey)#">User</a>
+	 <a href="index.cfm?action=resellerusers&resellerkey=#urlencodedformat(q_select_items.entrykey)#">User</a>
 	 &nbsp;
-	 <a href="default.cfm?action=deletereseller&entrykey=#urlencodedformat(q_select_items.entrykey)#">delete</a>
+	 <a href="index.cfm?action=deletereseller&entrykey=#urlencodedformat(q_select_items.entrykey)#">delete</a>
 	 </h4>
 
 	#q_select_items.zipcode# #q_select_items.city#<br>

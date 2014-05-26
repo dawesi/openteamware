@@ -19,5 +19,5 @@
 	<cfinvokeargument name="otheruserkey" value="#url.otheruserkey#">
 </cfinvoke>
 
-<cflocation addtoken="false" url="default.cfm?action=managesso&ibxerrorno=#stReturn.error#">
+<cflocation addtoken="false" url="index.cfm?action=managesso&ibxerrorno=#stReturn.error#">
 

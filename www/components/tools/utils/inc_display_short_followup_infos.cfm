@@ -62,7 +62,7 @@ WHERE
 		</td>
 		<td>
 			<a href="/crm/?action=EditFollowup&entrykey=#q_select_follow_ups.entrykey#" class="nl"><img src="/images/si/pencil.png" class="si_img" alt="#GetLangVal('cm_wd_edit')#" /></a>
-			<a class="nl" href="##" onclick="ShowSimpleConfirmationDialog('default.cfm?action=DeleteFollowups&entrykeys=#q_select_follow_ups.entrykey#');"><img src="/images/si/delete.png" class="si_img" alt="Delete" /></a>
+			<a class="nl" href="##" onclick="ShowSimpleConfirmationDialog('index.cfm?action=DeleteFollowups&entrykeys=#q_select_follow_ups.entrykey#');"><img src="/images/si/delete.png" class="si_img" alt="Delete" /></a>
 		</td>
 	</tr>
 	</cfoutput>

@@ -32,7 +32,7 @@
 
 <table height="100%" width="100%" border="0" cellspacing="0" cellpadding="4">
 
-<form action="default.cfm?action=step3" method="POST">
+<form action="index.cfm?action=step3" method="POST">
 
 <tr>
 

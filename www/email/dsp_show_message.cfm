@@ -412,7 +412,7 @@ WHERE
 	<cfif stReturn_email_html.images_surpressed>
 		<!--- images have been surpressed --->
 		<div style="padding:6px;" class="bb">
-			<a href="default.cfm?Action=AddDomainToRemoteImageDisplayException&sender=<cfoutput>#urlencodedformat(a_str_from)#</cfoutput>"><img src="/images/si/picture_delete.png" class="si_img" /><cfoutput>#GetLangVal('mail_ph_images_have_been_surpressed_info_download_now')#</cfoutput></a>
+			<a href="index.cfm?Action=AddDomainToRemoteImageDisplayException&sender=<cfoutput>#urlencodedformat(a_str_from)#</cfoutput>"><img src="/images/si/picture_delete.png" class="si_img" /><cfoutput>#GetLangVal('mail_ph_images_have_been_surpressed_info_download_now')#</cfoutput></a>
 		</div>
 		
 	</cfif>

@@ -18,7 +18,7 @@
 </cfif>
 
  <!--- render form --->
-<form action="default.cfm?action=doSetAvailableQuantity" method="post">
+<form action="index.cfm?action=doSetAvailableQuantity" method="post">
 <cfsavecontent variable="a_str_table">
  <table class="table_details table_edit_form">
 	<cfoutput>

@@ -30,7 +30,7 @@ ORDER BY
 	</cfif>
 	
 	<li>
-		<img src="/images/si/folder.png" class="si_img" style="padding:0px;margin:1px;" /> <a onclick="DisplayMBoxContentASync('#JSStringFormat(q_select_folder_list.fullfoldername)#');return false;" href="default.cfm?action=ShowMailbox&Mailbox=#urlencodedformat(q_select_folder_list.fullfoldername)#" <cfif q_select_folder_list.unreadmessagescount GT 0>style="font-weight:bold;"</cfif>>#htmleditformat(q_select_folder_list.foldername)#</a>
+		<img src="/images/si/folder.png" class="si_img" style="padding:0px;margin:1px;" /> <a onclick="DisplayMBoxContentASync('#JSStringFormat(q_select_folder_list.fullfoldername)#');return false;" href="index.cfm?action=ShowMailbox&Mailbox=#urlencodedformat(q_select_folder_list.fullfoldername)#" <cfif q_select_folder_list.unreadmessagescount GT 0>style="font-weight:bold;"</cfif>>#htmleditformat(q_select_folder_list.foldername)#</a>
 		
 		<cfif a_int_next_len GT a_int_old_len>
 			<ul>

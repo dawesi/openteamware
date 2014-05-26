@@ -30,7 +30,7 @@ Dazu gehoergen:
 
 <br>
 <br>
-<form action="default.cfm?action=outlooksync&confirmed=1" method="post">
+<form action="index.cfm?action=outlooksync&confirmed=1" method="post">
 <b>Wollen Sie diese Aktion wirklich durchfuehren?</b><br><br>
 Geben Sie nun Ihr Passwort ein:&nbsp;<input type="password" name="frmpassword" size="20">&nbsp;<input type="submit" name="frmsubmit" value="Weiter, Bereiche jetzt leeren ...">
 </form>

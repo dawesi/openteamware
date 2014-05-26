@@ -6,6 +6,6 @@
 
 // --->
 
-<a href="default.cfm?action=UploadFile">Upload a file</a>
+<a href="index.cfm?action=UploadFile">Upload a file</a>
 
 

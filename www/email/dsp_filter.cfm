@@ -59,9 +59,9 @@ WHERE
 
 <br />
 Mit Filtern k&ouml;nnen Sie Ihre E-Mails effizient vorsortieren lassen und auch unerw&uuml;nschte Nachrichten blockieren.<br />
-<a href="../settings/default.cfm?action=spamguard">Gegen Spam-Nachrichten steht Ihnen auch unser SpamGuard zur Seite!</a>
+<a href="../settings/index.cfm?action=spamguard">Gegen Spam-Nachrichten steht Ihnen auch unser SpamGuard zur Seite!</a>
 <br />
-<form action="default.cfm">
+<form action="index.cfm">
 <input type="hidden" name="action" value="createfilter">
 <input class="btn" type="submit" value="<cfoutput>#GetLangVal('mail_ph_create_new_filter')#</cfoutput>">
 </form>
@@ -70,15 +70,15 @@ Mit Filtern k&ouml;nnen Sie Ihre E-Mails effizient vorsortieren lassen und auch 
 		<td class="br"><b>Anzeige einschr&auml;nken:</b></td>
 		
 		<td class="br<cfif comparenocase(url.restrict, "") is 0> mischeader</cfif>" align="center">
-		<a href="default.cfm?action=filter">Alle (<cfoutput>#q_select_filter.recordcount#</cfoutput>)</a>
+		<a href="index.cfm?action=filter">Alle (<cfoutput>#q_select_filter.recordcount#</cfoutput>)</a>
 		</td>
 		
 		<td class="br<cfif comparenocase(url.restrict, "antispam") is 0> mischeader</cfif>" align="center">
-		<a href="default.cfm?action=filter&restrict=antispam">nur Anti-Spam-Filter (<cfoutput>#val(q_select_antispam_filter.count_id)#</cfoutput>)</a>
+		<a href="index.cfm?action=filter&restrict=antispam">nur Anti-Spam-Filter (<cfoutput>#val(q_select_antispam_filter.count_id)#</cfoutput>)</a>
 		</td>
 		
 		<td align="center" <cfif comparenocase(url.restrict, "standard") is 0>class="mischeader"</cfif>>
-		<a href="default.cfm?action=filter&restrict=standard">Standard-Filter (<cfoutput>#val(q_select_normal_filters.count_id)#</cfoutput>)</a>
+		<a href="index.cfm?action=filter&restrict=standard">Standard-Filter (<cfoutput>#val(q_select_normal_filters.count_id)#</cfoutput>)</a>
 		</td>
 	</tr>
 </table>
@@ -97,7 +97,7 @@ Mit Filtern k&ouml;nnen Sie Ihre E-Mails effizient vorsortieren lassen und auch 
 		#q_select_filter.currentrow#
 	</td>
     <td>
-		<a href="default.cfm?action=editfilter&id=#q_select_filter.id#">#htmleditformat(checkzerostring(q_select_filter.filtername))#</a>
+		<a href="index.cfm?action=editfilter&id=#q_select_filter.id#">#htmleditformat(checkzerostring(q_select_filter.filtername))#</a>
 		<br />
 	<!--- where to look for? --->
 	<cfswitch expression="#q_select_filter.comparisonfield#">
@@ -150,14 +150,14 @@ Mit Filtern k&ouml;nnen Sie Ihre E-Mails effizient vorsortieren lassen und auch 
 		</cfif>
 	
 		&nbsp;|&nbsp;
-		<a href="default.cfm?action=editfilter&id=#q_select_filter.id#">#si_img('pencil')#</a>
+		<a href="index.cfm?action=editfilter&id=#q_select_filter.id#">#si_img('pencil')#</a>
 		&nbsp;|&nbsp;
 		<a href="javascript:deletefilter('#q_select_filter.id#');">#si_img('delete')#</a></td>
   </tr>
   </cfoutput>
 </table>
 
-<form action="default.cfm">
+<form action="index.cfm">
 <input type="hidden" name="action" value="createfilter">
 <input class="btn" type="submit" value="<cfoutput>#GetLangVal('mail_ph_create_new_filter')#</cfoutput>">
 </form>

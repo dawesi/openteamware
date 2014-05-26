@@ -9,4 +9,4 @@
 	<cfinvokeargument name="entrykey" value="#url.entrykey#">
 </cfinvoke>
 
-<cflocation addtoken="no" url="../default.cfm?action=security#writeurltags()#">
+<cflocation addtoken="no" url="../index.cfm?action=security#writeurltags()#">

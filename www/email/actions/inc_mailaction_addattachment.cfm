@@ -111,6 +111,6 @@ WHERE
 <cffile action="write" addnewline="no" charset="utf-8" file="#a_str_headerinfo_wddx_filename#" output="#a_str_wddx_addheader#">
 
 <!--- forward ... --->
-<cflocation addtoken="no" url="default.cfm?action=AddAttachment&mailbox=INBOX.Drafts&id=#stReturn.uid#">
+<cflocation addtoken="no" url="index.cfm?action=AddAttachment&mailbox=INBOX.Drafts&id=#stReturn.uid#">
 
 

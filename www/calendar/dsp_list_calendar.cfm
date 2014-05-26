@@ -64,7 +64,7 @@ ORDER BY
 
 <cfsavecontent variable="a_str_content">
 
-	<form action="default.cfm" method="get" name="form_display_events_list">
+	<form action="index.cfm" method="get" name="form_display_events_list">
 	<input type="hidden" name="action" value="listevents">	
 	<table class="table_details table_edit_form">
 	  <tr>
@@ -158,7 +158,7 @@ function AllMessages()
     <td>
 	
 		<cfif Compare(Month(q_select_events.date_start), a_int_month) NEQ 0>
-			<a href="default.cfm?action=ViewMonth&date=#a_str_date#">#LSDateFormat(q_select_events.date_start, 'mmm yy')#</a>
+			<a href="index.cfm?action=ViewMonth&date=#a_str_date#">#LSDateFormat(q_select_events.date_start, 'mmm yy')#</a>
 			<cfset a_int_month = Month(q_select_events.date_start)>
 		<cfelse>
 			&nbsp;			
@@ -167,7 +167,7 @@ function AllMessages()
 	</td>
 	<td align="center">
 		<cfif Compare(GetISOWeek(q_select_events.date_start), a_int_week) NEQ 0>
-			<a href="default.cfm?action=ViewWeek&date=#a_str_date#">#GetISOWeek(q_select_events.date_start)#</a>
+			<a href="index.cfm?action=ViewWeek&date=#a_str_date#">#GetISOWeek(q_select_events.date_start)#</a>
 			<cfset a_int_week = GetISOWeek(q_select_events.date_start)>
 		<cfelse>
 			&nbsp;			
@@ -177,7 +177,7 @@ function AllMessages()
 		#LSDateFormat(q_select_events.date_start, 'ddd')#
 	</td>
     <td>
-		<a href="default.cfm?action=ViewDay&date=#a_str_date#">#LSDateFormat(q_select_events.date_start, 'ddd, dd.mm.yy')#</a>
+		<a href="index.cfm?action=ViewDay&date=#a_str_date#">#LSDateFormat(q_select_events.date_start, 'ddd, dd.mm.yy')#</a>
 	</td>
 	<td>
 		#TimeFormat(q_select_events.date_start, 'HH:mm')#
@@ -195,7 +195,7 @@ function AllMessages()
 		</cfif>
 	</td>
     <td>
-		<input type="checkbox" name="frmcb_item" value="#q_select_events.entrykey#" class="noborder"> <a href="default.cfm?action=ShowEvent&entrykey=#urlencodedformat(q_select_events.entrykey)#">#htmleditformat(shortenstring(checkzerostring(q_select_events.title), 35))#</a>
+		<input type="checkbox" name="frmcb_item" value="#q_select_events.entrykey#" class="noborder"> <a href="index.cfm?action=ShowEvent&entrykey=#urlencodedformat(q_select_events.entrykey)#">#htmleditformat(shortenstring(checkzerostring(q_select_events.title), 35))#</a>
 	</td>	
     <td>
 		#shortenstring(q_select_events.categories, 15)#

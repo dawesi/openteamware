@@ -76,7 +76,7 @@ WHERE
   <tr>
     <td class="field_name"><cfoutput>#GetLangVal('adm_ph_workgroups_subgroup_of')#</cfoutput>:</td>
     <td>
-	<a href="default.cfm?action=workgroupproperties&entrykey=#urlencodedformat(q_select_workgroup.parentkey)##writeurltags()#">#sReturn#</a>
+	<a href="index.cfm?action=workgroupproperties&entrykey=#urlencodedformat(q_select_workgroup.parentkey)##writeurltags()#">#sReturn#</a>
 	</td>
   </tr>
   </cfif>
@@ -86,7 +86,7 @@ WHERE
     <td class="field_name"><cfoutput>#GetLangVal('adm_ph_workgroups_subgroups')#</cfoutput>: <cfoutput>#q_select_sub_workgroups.recordcount#</cfoutput></td>
     <td valign="top">
 	<cfloop query="q_select_sub_workgroups">
-	<li><a href="default.cfm?action=workgroupproperties&entrykey=#urlencodedformat(q_select_sub_workgroups.entrykey)##writeurltags()#">#q_select_sub_workgroups.groupname#</a></li>
+	<li><a href="index.cfm?action=workgroupproperties&entrykey=#urlencodedformat(q_select_sub_workgroups.entrykey)##writeurltags()#">#q_select_sub_workgroups.groupname#</a></li>
 	</cfloop>
 	</td>
   </tr>
@@ -103,7 +103,7 @@ WHERE
 </cfsavecontent>
 <cfsavecontent variable="a_str_buttons">
 	
-	<cfset a_str_edit_location = 'default.cfm?action=workgroup.edit&entrykey=#urlencodedformat(url.entrykey)##WriteURLTags()#' />
+	<cfset a_str_edit_location = 'index.cfm?action=workgroup.edit&entrykey=#urlencodedformat(url.entrykey)##WriteURLTags()#' />
 	<cfoutput>
 	<input type="button" class="btn2" value="#GetLangVal('cm_wd_edit')#" onclick="GotoLocHref('#a_str_edit_location#');" />
 	</cfoutput>
@@ -139,7 +139,7 @@ WHERE
 	<img src="/images/si/user.png" class="si_img" /> #stReturn.query.surname#, #stReturn.query.firstname#
 	</td>
 	<td>
-	<a href="default.cfm?action=userproperties&entrykey=#urlencodedformat(q_select_workgroup_members.userkey)##writeurltags()#">&nbsp;#htmleditformat(a_str_username)#</a>
+	<a href="index.cfm?action=userproperties&entrykey=#urlencodedformat(q_select_workgroup_members.userkey)##writeurltags()#">&nbsp;#htmleditformat(a_str_username)#</a>
 	</td>
     <td>
 	<cfloop index="a_str_role" list="#q_select_workgroup_members.roles#" delimiters=",">
@@ -154,10 +154,10 @@ WHERE
 	</td>
     <td>#lsdateformat(q_select_workgroup_members.dt_created, "dd.mm.yy")#</td>
     <td>
-	<a href="default.cfm?action=user.edit.workgroupmembership&workgroupkey=#urlencodedformat(url.entrykey)#&userkey=#urlencodedformat(q_select_workgroup_members.userkey)##writeurltags()#"><img src="/images/si/pencil.png" class="si_img" /> #GetLangVal('cm_Wd_edit')#</a>
+	<a href="index.cfm?action=user.edit.workgroupmembership&workgroupkey=#urlencodedformat(url.entrykey)#&userkey=#urlencodedformat(q_select_workgroup_members.userkey)##writeurltags()#"><img src="/images/si/pencil.png" class="si_img" /> #GetLangVal('cm_Wd_edit')#</a>
 	
 	&nbsp;&nbsp;
-	<a href="default.cfm?action=workgroups.removeuser&workgroupkey=#urlencodedformat(url.entrykey)#&entrykey=#urlencodedformat(q_select_workgroup_members.userkey)##writeurltags()#"><img src="/images/si/delete.png" class="si_img" /> #GetLangVal('cm_wd_delete')#</a>
+	<a href="index.cfm?action=workgroups.removeuser&workgroupkey=#urlencodedformat(url.entrykey)#&entrykey=#urlencodedformat(q_select_workgroup_members.userkey)##writeurltags()#"><img src="/images/si/delete.png" class="si_img" /> #GetLangVal('cm_wd_delete')#</a>
 	</td>
   </tr>
   </cfif>
@@ -167,7 +167,7 @@ WHERE
 </cfsavecontent>
 <cfsavecontent variable="a_str_buttons">
 <cfoutput>
-	<cfset a_Str_loc = 'default.cfm?action=Addusertoworkgroup&workgroupkey=#urlencodedformat(url.entrykey)##writeurltags()#' />
+	<cfset a_Str_loc = 'index.cfm?action=Addusertoworkgroup&workgroupkey=#urlencodedformat(url.entrykey)##writeurltags()#' />
 	
 	<input type="button" onclick="GotoLocHref('#a_Str_loc#');" value="#GetLangVal('adm_ph_workgroups_add_new_member')#" class="btn" />
 </cfoutput>
@@ -182,7 +182,7 @@ WHERE
 	<li>#q_select_roles.rolename#</li>
 	</cfoutput>
 </ul>
-	<!--- <br><br><a href="default.cfm?action=roles&workgroupkey=<cfoutput>#htmleditformat(url.entrykey)##writeurltags()#</cfoutput>"><img src="/images/editicon.gif" align="absmiddle" border="0"> <cfoutput>#GetLangVal('adm_ph_edit_roles')#</cfoutput></a>
+	<!--- <br><br><a href="index.cfm?action=roles&workgroupkey=<cfoutput>#htmleditformat(url.entrykey)##writeurltags()#</cfoutput>"><img src="/images/editicon.gif" align="absmiddle" border="0"> <cfoutput>#GetLangVal('adm_ph_edit_roles')#</cfoutput></a>
 	 --->
 </cfsavecontent>
 <cfsavecontent variable="a_str_buttons">

@@ -48,6 +48,6 @@
 
 
 <cfif NOT stReturn_db.result>
-	<cflocation url="/addressbook/default.cfm?action=setAvailableQuantity&productquantitykey=#stReturn.q_select_productquantity.productquantitykey#&productkey=#a_struct_available_quantity_of_product.productkey#&quantity=#a_struct_available_quantity_of_product.quantity#&title=#form.frmproducttitle#&ibxerrorno=#stReturn_db.error#"/>
+	<cflocation url="/addressbook/index.cfm?action=setAvailableQuantity&productquantitykey=#stReturn.q_select_productquantity.productquantitykey#&productkey=#a_struct_available_quantity_of_product.productkey#&quantity=#a_struct_available_quantity_of_product.quantity#&title=#form.frmproducttitle#&ibxerrorno=#stReturn_db.error#"/>
 </cfif>
-<cflocation url="/crm/default.cfm?action=productadmin"/>
+<cflocation url="/crm/index.cfm?action=productadmin"/>

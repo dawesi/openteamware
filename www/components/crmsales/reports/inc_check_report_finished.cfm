@@ -22,7 +22,7 @@ WHERE
 <cfmail from="#arguments.securitycontext.myusername#" to="#arguments.securitycontext.myusername#" subject="Report #q_select_report_settings.reportname# is available">
 Your requested report #q_select_report_settings.reportname# is available - please click here to display the output:
 
-https://www.openTeamWare.com/crm/default.cfm?action=reports
+https://www.openTeamWare.com/crm/index.cfm?action=reports
 </cfmail>
 </cfif>
 

@@ -79,7 +79,7 @@
 			</td>
 			<td>
 				<cfset q_select_dir = application.components.cmp_storage.GetDirectoryInformation(directorykey = q_query_file.parentdirectorykey, securitycontext = request.stSecurityContext, usersettings = request.stUserSettings).q_select_directory />
-				<a href="default.cfm?action=ShowFiles&directorykey=#q_query_file.parentdirectorykey#">#htmleditformat(q_select_dir.directoryname)#</a>
+				<a href="index.cfm?action=ShowFiles&directorykey=#q_query_file.parentdirectorykey#">#htmleditformat(q_select_dir.directoryname)#</a>
 			</td>
 		</tr>
 		<tr>
@@ -139,7 +139,7 @@
 				#GetLangVal('cm_wd_action')#
 			</td>
 			<td valign="top">
-				<a href="default.cfm?action=MailFile&entrykey=#q_query_file.entrykey#&currentdir=#q_query_file.parentdirectorykey#"><img src="/images/si/email.png" class="si_img" /> #GetLangVal('sto_ph_forward_by_email')# ...</a>
+				<a href="index.cfm?action=MailFile&entrykey=#q_query_file.entrykey#&currentdir=#q_query_file.parentdirectorykey#"><img src="/images/si/email.png" class="si_img" /> #GetLangVal('sto_ph_forward_by_email')# ...</a>
 				<br />
 				
 			</td>
@@ -151,9 +151,9 @@
 </cfsavecontent>
 <cfsavecontent variable="a_str_buttons">
 <cfoutput>
-	<input type="button" onclick="window.open('default.cfm?action=ShowFile&entrykey=#url.entrykey#');" class="btn2" value="#GetLangVal('sto_ph_start_download_of_file')#" />
-	<input type="button" onclick="GotoLocHref('default.cfm?action=EditFile&entrykey=#q_query_file.entrykey#&currentdir=#q_query_file.parentdirectorykey#');" class="btn2" value="#GetLangVal('cm_wd_edit')#" />
-	<input type="button" onclick="GotoLocHref('default.cfm?action=DeleteFile&frm_entrykey=#q_query_file.entrykey#&frm_parentdirectorykey=#q_query_file.parentdirectorykey#&currentdir=#url.directorykey#');" class="btn2" value="#GetLangVal('cm_wd_delete')#" />
+	<input type="button" onclick="window.open('index.cfm?action=ShowFile&entrykey=#url.entrykey#');" class="btn2" value="#GetLangVal('sto_ph_start_download_of_file')#" />
+	<input type="button" onclick="GotoLocHref('index.cfm?action=EditFile&entrykey=#q_query_file.entrykey#&currentdir=#q_query_file.parentdirectorykey#');" class="btn2" value="#GetLangVal('cm_wd_edit')#" />
+	<input type="button" onclick="GotoLocHref('index.cfm?action=DeleteFile&frm_entrykey=#q_query_file.entrykey#&frm_parentdirectorykey=#q_query_file.parentdirectorykey#&currentdir=#url.directorykey#');" class="btn2" value="#GetLangVal('cm_wd_delete')#" />
 </cfoutput>
 </cfsavecontent>
 
@@ -179,30 +179,30 @@
 		<table border="1" bordercolor="##EEEEEE" style="border-collapse:collapse; " cellpadding="6" cellspacing="0">
 			<tr class="mischeader">
 				<td>
-					<a href="default.cfm?action=ShowFile&entrykey=#url.entrykey#">#getlangval('sto_wd_current')#</a></td>
+					<a href="index.cfm?action=ShowFile&entrykey=#url.entrykey#">#getlangval('sto_wd_current')#</a></td>
 				<td>
 				</td>
 				<td>
-					<a href="default.cfm?action=EditFile&entrykey=#url.entrykey#">#si_img('pencil')#</a>
+					<a href="index.cfm?action=EditFile&entrykey=#url.entrykey#">#si_img('pencil')#</a>
 					&nbsp;
-					<a href="default.cfm?action=FileInfo&entrykey=#url.entrykey#"><img align="absmiddle"  widtd="12" height="12" alt="info" src="/images/info.jpg" border="0"></a>
+					<a href="index.cfm?action=FileInfo&entrykey=#url.entrykey#"><img align="absmiddle"  widtd="12" height="12" alt="info" src="/images/info.jpg" border="0"></a>
 					&nbsp;
-					<a href="default.cfm?action=MailFile&entrykey=#url.entrykey#"><img align="absmiddle"  widtd="15" height="11" alt="mail" src="/images/btn_folder_inbx2.gif" border="0"></a>
+					<a href="index.cfm?action=MailFile&entrykey=#url.entrykey#"><img align="absmiddle"  widtd="15" height="11" alt="mail" src="/images/btn_folder_inbx2.gif" border="0"></a>
 				</td>
 			</tr>
 	</cfoutput>
 	<cfoutput query="q_query_versions">
 			<tr>
 				<td align="center">
-					<a href="default.cfm?action=ShowFile&entrykey=#q_query_versions.entrykey#&version=#q_query_versions.version#">#version#</a></td>
+					<a href="index.cfm?action=ShowFile&entrykey=#q_query_versions.entrykey#&version=#q_query_versions.version#">#version#</a></td>
 				<td>
 					vom #LsDateFormat(GetUTCTime(q_query_versions.dt_created), 'ddd, dd.mm.yy')# #TimeFormat(GetUTCTime(q_query_versions.dt_created), 'HH:mm')#</td>
 				<td>
-					<a href="default.cfm?action=EditFile&entrykey=#q_query_versions.entrykey#&version=#q_query_versions.version#">#si_img('pencil')#</a>
+					<a href="index.cfm?action=EditFile&entrykey=#q_query_versions.entrykey#&version=#q_query_versions.version#">#si_img('pencil')#</a>
 					&nbsp;
-					<a href="default.cfm?action=FileInfo&entrykey=#q_query_versions.entrykey#&version=#q_query_versions.version#"><img align="absmiddle"  src="/images/info.jpg" widtd="12" height="12" alt="info" border="0"></a>
+					<a href="index.cfm?action=FileInfo&entrykey=#q_query_versions.entrykey#&version=#q_query_versions.version#"><img align="absmiddle"  src="/images/info.jpg" widtd="12" height="12" alt="info" border="0"></a>
 					&nbsp;
-					<a href="default.cfm?action=MailFile&entrykey=#q_query_versions.entrykey#&version=#q_query_versions.version#"><img align="absmiddle"  src="/images/btn_folder_inbx2.gif" widtd="15" height="11" alt="mail" border="0"></a>
+					<a href="index.cfm?action=MailFile&entrykey=#q_query_versions.entrykey#&version=#q_query_versions.version#"><img align="absmiddle"  src="/images/btn_folder_inbx2.gif" widtd="15" height="11" alt="mail" border="0"></a>
 				</td>
 			</tr>
 		

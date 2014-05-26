@@ -22,7 +22,7 @@
 						
 			
 			<ul class="divleftpanelactions">
-				<li><a href="default.cfm"><cfoutput>#GetLangVal('cm_wd_overview')#</cfoutput></a></li>
+				<li><a href="index.cfm"><cfoutput>#GetLangVal('cm_wd_overview')#</cfoutput></a></li>
 			</ul>
 			
 	</div>	
@@ -34,7 +34,7 @@
 		<ul class="divleftpanelactions">
 			<cfoutput query="q_select_foren">
 				<li>
-					<a href="default.cfm?action=ShowForum&entrykey=#q_select_foren.entrykey#">#htmleditformat(q_select_foren.forumname)#</a>
+					<a href="index.cfm?action=ShowForum&entrykey=#q_select_foren.entrykey#">#htmleditformat(q_select_foren.forumname)#</a>
 					
 					<cfif Len(q_select_foren.description) GT 0>
 						<div>

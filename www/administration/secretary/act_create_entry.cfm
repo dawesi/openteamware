@@ -17,4 +17,4 @@
 <!--- write emails to the users ... --->
 
 
-<cflocation addtoken="no" url="../default.cfm?action=workgroups#writeurltagsfromform()#">
+<cflocation addtoken="no" url="../index.cfm?action=workgroups#writeurltagsfromform()#">

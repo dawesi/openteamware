@@ -17,5 +17,5 @@
 	<cfinvokeargument name="comment" value="#form.frmcomment#">
 </cfinvoke>
 
-<cflocation addtoken="false" url="default.cfm?action=managesso&ibxerrorno=#stReturn.error#">
+<cflocation addtoken="false" url="index.cfm?action=managesso&ibxerrorno=#stReturn.error#">
 

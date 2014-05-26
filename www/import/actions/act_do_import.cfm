@@ -21,9 +21,9 @@
 </cfinvoke>
 
 <cfif NOT stReturn.result>
-	<cflocation url="default.cfm?action=PreviewData&jobkey=#form.frm_jobkey#&ibxerrorno=#stReturn.error#">
+	<cflocation url="index.cfm?action=PreviewData&jobkey=#form.frm_jobkey#&ibxerrorno=#stReturn.error#">
 </cfif>
 
 <!--- success! --->
-<cflocation url="default.cfm?action=ShowResult&jobkey=#form.frm_jobkey#">
+<cflocation url="index.cfm?action=ShowResult&jobkey=#form.frm_jobkey#">
 

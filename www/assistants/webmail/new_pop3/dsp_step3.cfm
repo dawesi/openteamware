@@ -16,7 +16,7 @@ WHERE
 	<br>
 	<p><cfoutput>#GetLangVal('ass_ph_pop3_already_included')#</cfoutput></p>
 	
-	<a href="default.cfm"><cfoutput>#GetLangVal('cm_wd_proceed')#</cfoutput></a>
+	<a href="index.cfm"><cfoutput>#GetLangVal('cm_wd_proceed')#</cfoutput></a>
 	<cfabort>
 </cfif>
 
@@ -30,7 +30,7 @@ WHERE
 
 
 <table height="100%" width="100%" border="0" cellspacing="0" cellpadding="4">
-<form action="default.cfm?action=step4" method="POST" enablecab="No">
+<form action="index.cfm?action=step4" method="POST" enablecab="No">
 <cfoutput>
 <input type="Hidden" name="frmDisplayName" value="#htmleditformat(form.frmDisplayName)#">
 <input type="Hidden" name="frmEmail" value="#htmleditformat(form.frmEmailAdr)#">

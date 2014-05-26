@@ -89,5 +89,5 @@
 	<cfinvokeargument name="deleteoriginalmessage" value="true">
 </cfinvoke>
 
-<cflocation addtoken="no" url="default.cfm?action=composemail&type=0&draftid=#stReturn.uid#&mailbox=INBOX.Drafts">
+<cflocation addtoken="no" url="index.cfm?action=composemail&type=0&draftid=#stReturn.uid#&mailbox=INBOX.Drafts">
 

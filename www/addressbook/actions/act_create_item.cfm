@@ -124,4 +124,4 @@
 
 </cfloop>
 
-<cflocation addtoken="no" url="default.cfm?action=ShowItem&entrykey=#urlencodedformat(a_str_contactkey)#">
+<cflocation addtoken="no" url="index.cfm?action=ShowItem&entrykey=#urlencodedformat(a_str_contactkey)#">

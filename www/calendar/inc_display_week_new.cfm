@@ -36,7 +36,7 @@
 
 			<td align="center" <cfif a_bol_is_today>class="mischeader"</cfif> style="line-height:18px;">
 				<cfoutput>
-				<a href="default.cfm?action=ViewDay&Date=#DateFormat(a_tmp_array_dates_week[a_int_day], 'mm/dd/yyyy')#">
+				<a href="index.cfm?action=ViewDay&Date=#DateFormat(a_tmp_array_dates_week[a_int_day], 'mm/dd/yyyy')#">
 					#LsDateFormat(a_tmp_array_dates_week[a_int_day], 'dddd')#
 					<cfif a_bol_is_today>
 						(#GetLangVal('cal_wd_today')#)

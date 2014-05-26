@@ -8,10 +8,10 @@
 
 			<ul class="divleftpanelactions">
 			<li>
-				<a href="default.cfm"><cfoutput>#GetLangVal('cm_wd_overview')#</cfoutput></a>
+				<a href="index.cfm"><cfoutput>#GetLangVal('cm_wd_overview')#</cfoutput></a>
 			</li>			
 			<li>
-				<a href="default.cfm?action=mobilesync&faq">MobileSync FAQ [EarlyAccess]</a>	
+				<a href="index.cfm?action=mobilesync&faq">MobileSync FAQ [EarlyAccess]</a>	
 			</li>			
 			</ul>
 		

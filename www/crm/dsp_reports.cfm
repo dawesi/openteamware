@@ -42,7 +42,7 @@
 	  <tr>
 		<td class="bb">
 			<cfset a_str_report_title = GetLangVal('crm_ph_default_report_name_' & sEntrykey_lang_db)>
-			<a style="font-weight:bold;" href="default.cfm?action=GenerateReport&entrykey=#q_select_default_reports.entrykey#">#si_img('report')# #htmleditformat(CheckZeroString(a_str_report_title))#</a>
+			<a style="font-weight:bold;" href="index.cfm?action=GenerateReport&entrykey=#q_select_default_reports.entrykey#">#si_img('report')# #htmleditformat(CheckZeroString(a_str_report_title))#</a>
 		</td>
 		<td class="bb">
 			#htmleditformat(GetLangVal('crm_ph_default_report_description_' & sEntrykey_lang_db))#
@@ -74,7 +74,7 @@
 				<br>
 				#htmleditformat(q_select_last_report.description)#
 				<br>
-				<a href="../database/default.cfm?action=ViewTable&table_entrykey=#q_select_last_report.entrykey#">#GetLangVal('crm_ph_report_display_now')#</a>
+				<a href="../database/index.cfm?action=ViewTable&table_entrykey=#q_select_last_report.entrykey#">#GetLangVal('crm_ph_report_display_now')#</a>
 			<cfelse>
 				&nbsp;
 			</cfif> --->
@@ -136,7 +136,7 @@
 		<cfoutput query="q_select_tables">
 		<tr>
 			<td>
-				<a href="../database/default.cfm?action=ViewTable&table_entrykey=#q_select_tables.entrykey#">#q_select_tables.tablename#</a>
+				<a href="../database/index.cfm?action=ViewTable&table_entrykey=#q_select_tables.entrykey#">#q_select_tables.tablename#</a>
 			</td>
 			<td>
 				 #LsDateFormat(q_Select_tables.dt_Created, request.stUserSettings.default_dateformat)# #TimeFormat(q_Select_tables.dt_Created, request.stUserSettings.default_timeformat)#

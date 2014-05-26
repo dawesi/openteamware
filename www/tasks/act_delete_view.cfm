@@ -6,4 +6,4 @@
 
 <cfinclude template="queries/q_delete_view.cfm">
 
-<cflocation addtoken="no" url="default.cfm?action=saveview">
+<cflocation addtoken="no" url="index.cfm?action=saveview">

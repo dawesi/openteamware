@@ -35,7 +35,7 @@
 <!--- sales projects ... --->
 <cfsavecontent variable="a_str_buttons">
 
-	<input onClick="location.href= 'default.cfm?action=EditOrNewSalesProject&entrykey=<cfoutput>#urlencodedformat(url.entrykey)#</cfoutput>';" type="button" value=" <cfoutput>#htmleditformat(GetLangVal('cm_wd_edit'))#</cfoutput> " class="btn">
+	<input onClick="location.href= 'index.cfm?action=EditOrNewSalesProject&entrykey=<cfoutput>#urlencodedformat(url.entrykey)#</cfoutput>';" type="button" value=" <cfoutput>#htmleditformat(GetLangVal('cm_wd_edit'))#</cfoutput> " class="btn">
 	<input onClick="call_edit_contact('<cfoutput>#jsstringformat(url.entrykey)#</cfoutput>', 'sales_projects');" type="button" value=" <cfoutput>#htmleditformat(GetLangVal('cm_wd_new'))#</cfoutput> " class="btn">
 	<input type="button" value="<cfoutput>#GetLangVal('crm_ph_close_deal')#</cfoutput>" class="btn" onClick="alert('2do');">
 	
@@ -249,7 +249,7 @@
 
 <!--- assigned contacts... --->
 <cfsavecontent variable="a_str_buttons">
-	<input onClick="location.href= 'default.cfm?action=AssignNewContactToSalesProject&salesprojectkey=<cfoutput>#urlencodedformat(url.entrykey)#</cfoutput>';" type="button" value=" <cfoutput>#htmleditformat(GetLangVal('cm_wd_new'))#</cfoutput> " class="btn">
+	<input onClick="location.href= 'index.cfm?action=AssignNewContactToSalesProject&salesprojectkey=<cfoutput>#urlencodedformat(url.entrykey)#</cfoutput>';" type="button" value=" <cfoutput>#htmleditformat(GetLangVal('cm_wd_new'))#</cfoutput> " class="btn">
 </cfsavecontent>
 
 <cfsavecontent variable="a_str_content">

@@ -62,7 +62,7 @@ WHERE
   <cfoutput query="q_select_contacts">
   <tr id="idtr#q_select_contacts.currentrow#" onMouseOver="hilite(this.id);"  onMouseOut="restore(this.id);">
     <td class="bb">
-	<a href="default.cfm?action=ShowItem&entrykey=#urlencodedformat(q_select_contacts.entrykey)#"><b>#htmleditformat(checkZeroString(q_select_contacts.surname))#</b>, #q_select_contacts.firstname#</a>
+	<a href="index.cfm?action=ShowItem&entrykey=#urlencodedformat(q_select_contacts.entrykey)#"><b>#htmleditformat(checkZeroString(q_select_contacts.surname))#</b>, #q_select_contacts.firstname#</a>
 	<br>
 	#htmleditformat(q_select_contacts.company)#
 	</td>

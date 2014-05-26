@@ -49,7 +49,7 @@ WHERE
 	</cfif>
 	</td>
     <td>
-		<a href="default.cfm?action=ShowThread&entrykey=#urlencodedformat(q_select_postings.entrykey)#&forumkey=#urlencodedformat(url.entrykey)#"><b>#htmleditformat(shortenstring(checkzerostring(q_select_postings.subject), 40))#</b></a>
+		<a href="index.cfm?action=ShowThread&entrykey=#urlencodedformat(q_select_postings.entrykey)#&forumkey=#urlencodedformat(url.entrykey)#"><b>#htmleditformat(shortenstring(checkzerostring(q_select_postings.subject), 40))#</b></a>
 		<br />
 		<font class="addinfotext">#trim(shortenstring(striphtml(ReplaceNoCase(q_select_postings.postingbody, '&nbsp;', ' ', 'ALL')), 100))# ...</font>
 	</td>
@@ -57,7 +57,7 @@ WHERE
 		#val(q_select_postings.subpostingscount)#
 	</td>
 	<td class="addinfotext" align="center">
-		<a href="/workgroups/default.cfm?action=ShowUser&entrykey=#urlencodedformat(q_select_postings.lastpostinguserkey)#">#application.components.cmp_user.GetShortestPossibleUserIDByEntrykey(q_select_postings.userkey)#</a>
+		<a href="/workgroups/index.cfm?action=ShowUser&entrykey=#urlencodedformat(q_select_postings.lastpostinguserkey)#">#application.components.cmp_user.GetShortestPossibleUserIDByEntrykey(q_select_postings.userkey)#</a>
 	</td>
 	<td class="addinfotext">
 		#FormatDateTimeAccordingToUserSettings(q_select_postings.dt_threadlastmodified)#
@@ -68,7 +68,7 @@ WHERE
 </cfsavecontent>
 
 <cfsavecontent variable="a_str_buttons">
-	<input class="btn" onClick="location.href = 'default.cfm?action=NewPosting&forumkey=<cfoutput>#urlencodedformat(url.entrykey)#</cfoutput>';" type="button" value="<cfoutput>#GetLangVal('forum_ph_compose_new_article')#</cfoutput>">
+	<input class="btn" onClick="location.href = 'index.cfm?action=NewPosting&forumkey=<cfoutput>#urlencodedformat(url.entrykey)#</cfoutput>';" type="button" value="<cfoutput>#GetLangVal('forum_ph_compose_new_article')#</cfoutput>">
 </cfsavecontent>
 
 <cfoutput>#WriteNewContentBox(application.components.cmp_forum.GetForumNameByEntrykey(url.entrykey), a_str_buttons, a_str_content)#</cfoutput>

@@ -100,7 +100,7 @@
 
 <cfif a_str_viewmode is 'list'>
 	<!--- start edit form ... --->
-	<form onSubmit="ShowLoadingStatus();" action="default.cfm?action=DoMultiSelectAction" method="post" name="formcontacts" style="margin:0px; ">
+	<form onSubmit="ShowLoadingStatus();" action="index.cfm?action=DoMultiSelectAction" method="post" name="formcontacts" style="margin:0px; ">
 	<input type="hidden" name="frmdisplaydatatype" value="<cfoutput>#a_str_display_data_type#</cfoutput>" />
 </cfif>
 
@@ -110,7 +110,7 @@
 		<div class="mischeader b_all" style="padding:4px;">
 		<b><cfoutput>#GetLangVal('adrb_ph_no_contacts_created_search_without_results')#</cfoutput></b>
 		<br><br>
-		<a href="default.cfm?action=createnewitem"><cfoutput>#GetLangVal('adrb_ph_click_here_to_create_new_contact')#</cfoutput></a>
+		<a href="index.cfm?action=createnewitem"><cfoutput>#GetLangVal('adrb_ph_click_here_to_create_new_contact')#</cfoutput></a>
 		<br><br>
 		<cfoutput>#GetLangVal('adrb_ph_already_used_outlooksync')#</cfoutput>
 		<br>
@@ -126,49 +126,10 @@
   <!--- hinweis zum suchergebnis ... --->
   <br>
  	<div class="bt mischeader" style="padding:4px;">
-  		<b><img src="../images/addressbook/menu_suchen.gif" width="19" height="19" hspace="2" vspace="2" border="0" align="absmiddle"><cfoutput>#ReplaceNoCase(GetLangVal('adrb_ph_searchresult_for'), '%TERM%', url.search)#</cfoutput></b>: <cfoutput>#a_int_contacts_recordcount#</cfoutput> <cfoutput>#GetLangVal('adrb_wd_hits')#</cfoutput> &nbsp;&nbsp; <a href="default.cfm"><cfoutput>#GetLangVal('adrb_ph_search_show_all_items_again')#</cfoutput></a>
+  		<b><img src="../images/addressbook/menu_suchen.gif" width="19" height="19" hspace="2" vspace="2" border="0" align="absmiddle"><cfoutput>#ReplaceNoCase(GetLangVal('adrb_ph_searchresult_for'), '%TERM%', url.search)#</cfoutput></b>: <cfoutput>#a_int_contacts_recordcount#</cfoutput> <cfoutput>#GetLangVal('adrb_wd_hits')#</cfoutput> &nbsp;&nbsp; <a href="index.cfm"><cfoutput>#GetLangVal('adrb_ph_search_show_all_items_again')#</cfoutput></a>
 	</div>
 
 </cfif> --->
-
-<!--- remote edit data avaliable? --->
-<cfinvoke component="#application.components.cmp_addressbook#" method="RemoteEditDateAvailableForUser" returnvariable="a_str_re_data_available_entrykeys">
-	<cfinvokeargument name="userkey" value="#request.stSecurityContext.myuserkey#">
-</cfinvoke>
-
-<cfif Len(a_str_re_data_available_entrykeys) GT 0>
-	
-	<cfquery name="q_select_re_contacts" datasource="#request.a_str_db_tools#">
-	SELECT
-		firstname,surname,entrykey
-	FROM
-		addressbook
-	WHERE
-		entrykey IN (<cfqueryparam cfsqltype="cf_sql_varchar" value="#a_str_re_data_available_entrykeys#" list="yes">)
-	;
-	</cfquery>
-
-	<div class="b_all mischeader" style="margin-top:10px;padding:6px;">
-
-	<table border="0" cellspacing="0" cellpadding="4">
-	  <tr>
-		<td style="padding-right:10px;">
-			<img src="/images/si/star.png" class="si_img" />
-		</td>
-		<td>
-			<b><cfoutput>#GetLangVal('adrb_ph_remoteedit_alert_on_showall')#</cfoutput></b><br />
-			<ul class="ul_nopoints">
-			<cfoutput query="q_select_re_contacts">
-				<li><a href="default.cfm?action=edititem&entrykey=#urlencodedformat(q_select_re_contacts.entrykey)#">#si_img('user')# #CheckZeroString(trim(q_select_re_contacts.surname))#, #q_select_re_contacts.firstname#</a></li>
-			</cfoutput>
-			</ul>
-		</td>
-	  </tr>
-	</table>
-	
-
-	</div>
-</cfif> 
 
 <cfinvoke component="#application.components.cmp_tools#" method="GeneratePageScroller" returnvariable="a_str_page_scroller">
 	<cfinvokeargument name="servicekey" value="#request.sCurrentServiceKey#">
@@ -203,7 +164,7 @@
 		<input class="btn2" onClick="ShowCommonContactsActionOptions();" type="button" value="<cfoutput>#GetLangVal('cm_ph_show_common_action_options')#</cfoutput>" />
 		
 		<cfif a_int_contacts_recordcount GT a_int_max_rows_per_page>
-			<input type="button" class="btn2" onclick="GotoLocHref('default.cfm?<cfoutput>#ReplaceOrAddURLParameter(cgi.query_string, 'maxrows', 9999)#</cfoutput>');" value="<cfoutput>#GetLangVal('crm_ph_show_all_applying_data_at_once')#</cfoutput>" />
+			<input type="button" class="btn2" onclick="GotoLocHref('index.cfm?<cfoutput>#ReplaceOrAddURLParameter(cgi.query_string, 'maxrows', 9999)#</cfoutput>');" value="<cfoutput>#GetLangVal('crm_ph_show_all_applying_data_at_once')#</cfoutput>" />
 		</cfif>		
 	</div>
 	</form>

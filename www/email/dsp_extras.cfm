@@ -51,7 +51,7 @@
 <table class="table_details">
 	<tr>
 		<td class="field_name">
-			<a style="font-weight:bold; "  href="../settings/default.cfm?action=spamguard"><cfoutput>#GetLangVal("mail_wd_extras_spamguard")#</cfoutput></a>
+			<a style="font-weight:bold; "  href="../settings/index.cfm?action=spamguard"><cfoutput>#GetLangVal("mail_wd_extras_spamguard")#</cfoutput></a>
 		</td>
 		<td>
 			<cfoutput>#GetLangVal("mail_wd_extras_spamguard_description")#</cfoutput>
@@ -59,7 +59,7 @@
 	</tr>
 	<tr>
 		<td class="field_name">
-			<a  href="default.cfm?action=filter"><b><cfoutput>#GetLangVal("mail_wd_filter")#</cfoutput></b></a>
+			<a  href="index.cfm?action=filter"><b><cfoutput>#GetLangVal("mail_wd_filter")#</cfoutput></b></a>
 		</td>
 		<td>
 			<cfoutput>#GetLangVal("mail_wd_extras_filter_description")#</cfoutput>
@@ -84,7 +84,7 @@
 	</tr>
 	<tr>
 		<td class="field_name">
-			<a href="default.cfm?action=alerts"><b><cfoutput>#GetLangVal("mail_wd_extras_reminder")#</cfoutput></b></a>
+			<a href="index.cfm?action=alerts"><b><cfoutput>#GetLangVal("mail_wd_extras_reminder")#</cfoutput></b></a>
 		</td>
 		<td>
 			<cfoutput>#GetLangVal("mail_wd_extras_reminder_description")#</cfoutput>
@@ -92,7 +92,7 @@
 	</tr>
 	<tr>
 		<td class="field_name">
-			<a href="default.cfm?action=autoanswer" ><b><cfoutput>#GetLangVal('email_ph_autoreply')#</cfoutput></b></a>
+			<a href="index.cfm?action=autoanswer" ><b><cfoutput>#GetLangVal('email_ph_autoreply')#</cfoutput></b></a>
 		</td>
 		<td>
 			<cfoutput>#GetLangVal("mail_ph_autoreply_description")#</cfoutput>
@@ -100,7 +100,7 @@
 	</tr>
 	<tr>
 		<td class="field_name">
-			<a href="../settings/default.cfm?action=emailaccessdata" ><b><cfoutput>#GetLangVal('email_ph_imap_pop3_smtp_access')#</cfoutput></b></a>
+			<a href="../settings/index.cfm?action=emailaccessdata" ><b><cfoutput>#GetLangVal('email_ph_imap_pop3_smtp_access')#</cfoutput></b></a>
 		</td>
 		<td>
 			<cfoutput>#GetLangVal("mail_ph_imap_access_description")#</cfoutput>
@@ -108,21 +108,21 @@
 	</tr>	
 	<tr>
 		<td class="field_name">
-			<a href="../settings/default.cfm?action=emailaccounts" ><b><cfoutput>#GetLangVal('email_ph_pop3_collector')#</cfoutput></b></a>
+			<a href="../settings/index.cfm?action=emailaccounts" ><b><cfoutput>#GetLangVal('email_ph_pop3_collector')#</cfoutput></b></a>
 		</td>
 		<td>
 			<cfoutput>#GetLangVal("mail_ph_pop3_coll_description")#</cfoutput>
 			<ul>
-				<li><a href="default.cfm?action=pop3check"><cfoutput>#GetLangVal('mail_ph_pop3_coll_manual_check')#</cfoutput></a></li>
+				<li><a href="index.cfm?action=pop3check"><cfoutput>#GetLangVal('mail_ph_pop3_coll_manual_check')#</cfoutput></a></li>
 
-				<li><a href="default.cfm?action=logbookexternalaccounts"><cfoutput>#GetLangVal('mail_ph_pop3_coll_logbook')#</cfoutput></a></li>
+				<li><a href="index.cfm?action=logbookexternalaccounts"><cfoutput>#GetLangVal('mail_ph_pop3_coll_logbook')#</cfoutput></a></li>
 
 			</ul>
 		</td>
 	</tr>	
 	<tr>
 		<td class="field_name">
-			<a href="../settings/default.cfm?action=mailaccessdata" ><b><cfoutput>#GetLangVal('mail_ph_further_ibx_addresses')#</cfoutput></b></a>
+			<a href="../settings/index.cfm?action=mailaccessdata" ><b><cfoutput>#GetLangVal('mail_ph_further_ibx_addresses')#</cfoutput></b></a>
 		</td>
 		<td>
 			<cfoutput>#GetLangVal("mail_ph_further_ibx_addresses_description")#</cfoutput>
@@ -130,7 +130,7 @@
 	</tr>
 	<tr>
 		<td class="field_name">
-			<a href="../settings/default.cfm?action=signatures" ><b><cfoutput>#GetLangVal('mail_ph_email_signatures')#</cfoutput></b></a>
+			<a href="../settings/index.cfm?action=signatures" ><b><cfoutput>#GetLangVal('mail_ph_email_signatures')#</cfoutput></b></a>
 		</td>
 		<td>
 			<cfoutput>#GetLangVal("mail_ph_email_signatures_description")#</cfoutput>
@@ -138,7 +138,7 @@
 	</tr>		
 	<tr>
 		<td class="field_name">
-			<a href="../settings/default.cfm?action=emailaccounts"><b><cfoutput>#GetLangVal('mail_ph_standard_address')#</cfoutput></b></a>
+			<a href="../settings/index.cfm?action=emailaccounts"><b><cfoutput>#GetLangVal('mail_ph_standard_address')#</cfoutput></b></a>
 		</td>
 		<td>
 			<cfoutput>#GetLangVal("mail_ph_standard_address_description")#</cfoutput>

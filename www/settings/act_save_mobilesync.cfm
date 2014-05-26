@@ -3,7 +3,7 @@
 <!--- save the various mobile sync preference ... --->
 
 <cfif cgi.REQUEST_METHOD NEQ 'POST'>
-	<cflocation addtoken="no" url="default.cfm?action=mobilesync">	
+	<cflocation addtoken="no" url="index.cfm?action=mobilesync">	
 </cfif>
 
 <cfparam name="form.frm_cb_delete_online" type="numeric" default="0">
@@ -34,4 +34,4 @@
 	entryvalue1 = #form.frm_restrictions_tasks#>
 	
 
-<cflocation addtoken="no" url="default.cfm?action=mobilesync&saved=true">
+<cflocation addtoken="no" url="index.cfm?action=mobilesync&saved=true">

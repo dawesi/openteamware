@@ -63,4 +63,4 @@ function ListSwap(list, PositionA, PositionB)
 	entryname = "display.#url.side#column"
 	entryvalue1 = #ListSwap(a_str_display_services, url.index, a_int_next_id)#>
 	
-<cflocation addtoken="no" url="default.cfm?action=startpage">
+<cflocation addtoken="no" url="index.cfm?action=startpage">

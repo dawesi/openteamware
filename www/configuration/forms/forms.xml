@@ -160,7 +160,7 @@
 		<db_table></db_table>
 		<db_primary></db_primary>
 		<columns>2</columns>
-		<create_url>default.cfm?action=DoCreateNewItem</create_url>
+		<create_url>index.cfm?action=DoCreateNewItem</create_url>
 		<css_style></css_style>
 		<description></description>
 		<dt_created>2006-09-13 23:36:57.0</dt_created>
@@ -173,7 +173,7 @@
 		<onsubmit></onsubmit>
 		<query_name>q_select_contact</query_name>
 		<servicekey>52227624-9DAA-05E9-0892A27198268072</servicekey>
-		<update_url>default.cfm?action=DoUpdateItem</update_url>
+		<update_url>index.cfm?action=DoUpdateItem</update_url>
 	</row>
 	<row>
 		<autopickup>0</autopickup>
@@ -327,7 +327,7 @@
 	<autopickup>0</autopickup>
 	<autopickup_functionname/>
 	<columns>1</columns>
-	<create_url>default.cfm?action=setRecordKilometers</create_url>
+	<create_url>index.cfm?action=setRecordKilometers</create_url>
 	<css_style/>
 	<description/>
 	<dt_created>{ts '2007-08-06 16:12:57'}</dt_created>

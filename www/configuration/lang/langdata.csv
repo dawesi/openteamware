@@ -947,12 +947,12 @@ Der Platz in der Mailbox %USERNAME% neigt sich dem Ende zu - derzeit sind bereit
 
 Bitte klicken Sie hier um in unserem Shop Speicherplatz nachzubestellen:
 
-https://%BASEURL%/administration/default.cfm?action=shop
+https://%BASEURL%/administration/index.cfm?action=shop
 
 Einen schönen Tag wünscht
 
-das InBox.cc Team","Hello! The space in the mail box %USERNAME % is slowly coming to an end - there is already %USAGE %used%. Please, click here to reorder storage space in our shop : https://%BASEURL%/administration/default.cfm?action=shop Have a nice day .Your InBox.cc team
-","Dobrý den. Dochází Vám volné místo v poštovní schránce %USERNAME% - v tuto chvíli je zaplněna na %USAGE%%. Klikněte zde pro objednávku volné kapacity v obchodu/Shop: https://www.InBox.cc/administration/default.cfm?action=shop Příjemný den Vám přeje team InBox.cc",,"Dzień dobry! W skrzynce pocztowej %USERNAME% kończy się miejsce – aktualnie zajęte jest %USAGE%%. Kliknij tutaj, aby zamówić w naszym Sklepie dodatkowe zasoby pamięci: https://www.InBox.cc/administration/default.cfm?action=shop Miłego dnia życzy Zespół InBox.cc","Bună ziua! Spaţiul Mailbox-ului %USERNAME% se apropie de sfârşit - acum sunt deja %USAGE%% ocupate. Clic aici pentru a comanda în Shop-ul nostru o depozitare adiţională: https://www.InBox.cc/administration/default.cfm?action=shop . Echipa InBox.cc vă doreşte o zi frumoasă!",
+das InBox.cc Team","Hello! The space in the mail box %USERNAME % is slowly coming to an end - there is already %USAGE %used%. Please, click here to reorder storage space in our shop : https://%BASEURL%/administration/index.cfm?action=shop Have a nice day .Your InBox.cc team
+","Dobrý den. Dochází Vám volné místo v poštovní schránce %USERNAME% - v tuto chvíli je zaplněna na %USAGE%%. Klikněte zde pro objednávku volné kapacity v obchodu/Shop: https://www.InBox.cc/administration/index.cfm?action=shop Příjemný den Vám přeje team InBox.cc",,"Dzień dobry! W skrzynce pocztowej %USERNAME% kończy się miejsce – aktualnie zajęte jest %USAGE%%. Kliknij tutaj, aby zamówić w naszym Sklepie dodatkowe zasoby pamięci: https://www.InBox.cc/administration/index.cfm?action=shop Miłego dnia życzy Zespół InBox.cc","Bună ziua! Spaţiul Mailbox-ului %USERNAME% se apropie de sfârşit - acum sunt deja %USAGE%% ocupate. Clic aici pentru a comanda în Shop-ul nostru o depozitare adiţională: https://www.InBox.cc/administration/index.cfm?action=shop . Echipa InBox.cc vă doreşte o zi frumoasă!",
 "automail_ph_quota_expires_subject","E-Mail - Speicherplatz neigt sich dem Ende zu","Email storage ","Velikost volného prostoru e-mailu se blíží ke konci",,"Kończą się zasoby pamięci, przeznaczone na pocztę elektroniczną","Spaţiul de memorare al E-Mail-ului se apropie de sfârşit",
 "automail_ph_subject_notseen21","Ihr mobiles Office verwaist",,,,,"Office -ul mobil este îndreptat spre ...",
 "book_ph_back_to_main_level","zurück zur Hauptebene","Back to main level",,,"z powrotem do głównego okna","înapoi la nivelul principal",

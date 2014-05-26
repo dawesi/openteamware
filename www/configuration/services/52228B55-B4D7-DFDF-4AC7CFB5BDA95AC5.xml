@@ -153,7 +153,7 @@
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
-		<redirect>default.cfm</redirect>
+		<redirect>index.cfm</redirect>
 	</item>	
 	<item>
 		<name>ShowSearch</name>

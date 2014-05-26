@@ -801,16 +801,8 @@
 				<cfinclude template="queries/workgroups/q_select_addressbook_shares.cfm">
 				</cfcase>	
 				
-				<cfcase value="52228B55-B4D7-DFDF-4AC7CFB5BDA95AC5">
-				<cfinclude template="queries/workgroups/q_select_email_shares.cfm">
-				</cfcase>
-				
 				<cfcase value="5222ECD3-06C4-3804-E92ED804C82B68A2">
 				<cfinclude template="queries/workgroups/q_select_storage_shares.cfm">
-				</cfcase>
-				
-				<cfcase value="5084CF0A-0DAE-09E6-3C5171B204B4B26E">
-				<cfinclude template="queries/workgroups/q_select_database_shares.cfm">
 				</cfcase>
 			
 			</cfswitch>

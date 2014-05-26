@@ -65,6 +65,6 @@
 	</cfinvoke>
 	
 	<script type="text/javascript">
-	GotoLocHref('default.cfm?action=ShowItem&entrykey=<cfoutput>#urlencodedformat(sEntrykey_account)#</cfoutput>');
+	GotoLocHref('index.cfm?action=ShowItem&entrykey=<cfoutput>#urlencodedformat(sEntrykey_account)#</cfoutput>');
 	</script>
 </cfif>

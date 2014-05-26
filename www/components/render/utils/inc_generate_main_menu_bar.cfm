@@ -83,9 +83,9 @@
     <!---<li>
 		<a href="/email/" id="id_men_mail" onmouseover="ShowHTMLActionPopup('id_men_mail', a_men_email, false);" onclick="ShowHTMLActionPopup('id_men_mail', a_men_email, false);"><cfoutput>#GetLangVal('cm_wd_email')# &raquo;</cfoutput></a>
    	</li>--->
-	<li>
+	<!--- <li>
         <a href="/mailing/"><cfoutput>#GetLangVal('cm_wd_mailings')#</cfoutput></a>
-    </li>
+    </li> --->
 	<!--- <li>
          <a href="/extras/" id="id_men_ex" onmouseover="ShowHTMLActionPopup('id_men_ex', a_men_ex, false);" onclick="ShowHTMLActionPopup('id_men_ex', a_men_ex, false);"><cfoutput>#GetLangVal('cm_wd_extras')#</cfoutput> &raquo;</a>
      </li>	 --->

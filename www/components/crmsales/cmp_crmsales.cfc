@@ -120,14 +120,20 @@
 		<cfargument name="entrykey" type="string" required="true">
 		
 		<cfset var stReturn = GenerateReturnStruct() />
-		<cfset var a_history_item = application.components.cmp_dao_crm.get('History.historyitems', arguments.entrykey) />
 		<cfset var stReturn_rights = 0 />
+		
+		<cfquery name="local.item">
+		SELECT	servicekey,
+				objectkey
+		FROM	history
+		WHERE	entrykey = <cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.entrykey#" />
+		</cfquery>
 		
 		<!--- check security --->
 		<cfinvoke component="#application.components.cmp_security#" method="CheckIfActionIsAllowed" returnvariable="stReturn_rights">
 			<cfinvokeargument name="securitycontext" value="#arguments.securitycontext#">
-			<cfinvokeargument name="servicekey" value="#a_history_item.getservicekey()#">
-			<cfinvokeargument name="object_entrykey" value="#a_history_item.getobjectkey()#">
+			<cfinvokeargument name="servicekey" value="#local.item.servicekey#">
+			<cfinvokeargument name="object_entrykey" value="#local.item.objectkey#">
 			<cfinvokeargument name="neededaction" value="delete">
 		</cfinvoke>
 		
@@ -135,7 +141,10 @@
 			<cfreturn SetReturnStructErrorCode(stReturn, 10100) />
 		</cfif>
 		
-		<cfset application.components.cmp_dao_crm.delete(a_history_item) />
+		<cfquery>
+		DELETE FROM history
+		WHERE	entrykey = <cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.entrykey#" />
+		</cfquery>
 		
 		<cfreturn SetReturnStructSuccessCode(stReturn) />
 		
@@ -148,19 +157,24 @@
 		<cfargument name="entrykey" type="string" required="true">
 		
 		<cfset var stReturn = GenerateReturnStruct() />
-		<cfset var q_select_history_item = application.components.cmp_dao_crm.listByProperty('History.historyitems', 'entrykey', arguments.entrykey) />
 		<cfset var stReturn_rights = 0 />
 		
+		<cfquery name="local.item">
+		SELECT	*
+		FROM	history
+		WHERE	entrykey = <cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.entrykey#" />
+		</cfquery>
+		
 		<!--- not found --->
-		<cfif q_select_history_item.recordcount IS 0>
+		<cfif !local.item.recordcount>
 			<cfreturn SetReturnStructErrorCode(stReturn, 10100) />
 		</cfif>
 		
 		<!--- check security --->
 		<cfinvoke component="#application.components.cmp_security#" method="CheckIfActionIsAllowed" returnvariable="stReturn_rights">
 			<cfinvokeargument name="securitycontext" value="#arguments.securitycontext#">
-			<cfinvokeargument name="servicekey" value="#q_select_history_item.servicekey#">
-			<cfinvokeargument name="object_entrykey" value="#q_select_history_item.objectkey#">
+			<cfinvokeargument name="servicekey" value="#local.item.servicekey#">
+			<cfinvokeargument name="object_entrykey" value="#local.item.objectkey#">
 			<cfinvokeargument name="neededaction" value="edit">
 		</cfinvoke>
 		
@@ -169,7 +183,7 @@
 		</cfif>
 		
 		<cfset stReturn.stReturn_rights = stReturn_rights />
-		<cfset stReturn.q_select_history_item = q_select_history_item />
+		<cfset stReturn.q_select_history_item = local.item />
 
 		<cfreturn SetReturnStructSuccessCode(stReturn) />
 		
@@ -886,15 +900,13 @@
 		<cfelse>
 		
 			<!--- update the item --->
-			<cfset a_history_item = application.components.cmp_dao_crm.get('History.historyitems', arguments.database_values.entrykey) />
-			
-			<cfset a_history_item.setsubject(arguments.database_values.subject) />
-			<cfset a_history_item.setcomment(arguments.database_values.comment) />
-			<cfset a_history_item.setitem_type(arguments.database_values.item_type) />
-			<cfset a_history_item.setdt_created(arguments.database_values.dt_created) />
-			
-			<cfset application.components.cmp_dao_crm.Save(a_history_item) />
-		
+			<cfquery>
+			UPDATE	history
+			SET		subject		= <cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.database_values.subject#" />,
+					comment		= <cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.database_values.comment#" />,
+					item_type	= <cfqueryparam cfsqltype="cf_sql_integer" value="#arguments.database_values.item_type#" />
+			WHERE	entrykey 	= <cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.database_values.entrykey#" />
+			</cfquery>
 		</cfif>
 
 		<cfreturn SetReturnStructSuccessCode(stReturn) />

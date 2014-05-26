@@ -30,14 +30,6 @@
 			</cfif>
 		</ul>
 	
-	
-			<ul class="divleftpanelactions">
-			<li><a href="/email/?action=showmailbox&mailbox=INBOX"><cfoutput>#GetLangVal('cm_wd_inbox')#</cfoutput></a></li>
-			<li><a href="javascript:OpenComposePopup();"><cfoutput>#GetLangVal('mail_ph_compose_new_mail')#</cfoutput></a></li>
-			<li><a href="/addressbook/"><cfoutput>#GetLangVal('cm_wd_crm')#</cfoutput>/<cfoutput>#GetLangVal('cm_wd_contacts')#</cfoutput></a></li>
-			<li><a href="/workgroups/"><cfoutput>#GetLangVal('cm_wd_workgroups')#</cfoutput></a></li>
-
-			</ul> --->
 	</div>	
 	
 		

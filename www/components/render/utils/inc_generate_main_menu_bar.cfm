@@ -30,60 +30,6 @@
 	AddNewJSPopupMenuItem(GetLangval('cm_wd_appointment'), '/calendar/default.cfm?action=ShowNewEvent');
 	AddNewJSPopupMenuItem(GetLangval('cm_wd_file'), '/storage/?action=UploadNewFile');
 	AddNewJSPopupMenuItem(GetLangval('cm_wd_task'), '/tasks/default.cfm?action=newtask');
-	AddNewJSPopupMenuItem(GetLangVal('forum_ph_new_posting'), '/forum/?action=NewItem&datatype=0');
-	
-	if (request.stSecurityContext.iscompanyadmin IS 1) {
-		AddNewJSPopupMenuItem('-', '');
-		AddNewJSPopupMenuItem(GetLangVal('cm_wd_user'), '/administration/');
-		}
-	AddNewJSPopupMenuToPage();
-</cfscript>
-
-<cfscript>
-	/*StartNewJSPopupMenu('a_menu_more');
-	AddNewJSPopupMenuItem(GetLangval('cm_wd_mailings'), '/mailing/');	
-	AddNewJSPopupMenuItem('-', '');
-	AddNewJSPopupMenuItem(GetLangval('cm_wd_reports'), '/crm/?action=reports');
-	AddNewJSPopupMenuItem(GetLangval('cm_wd_service_5084CF0A-0DAE-09E6-3C5171B204B4B26E'), '/database/');
-	AddNewJSPopupMenuItem(GetLangval('cm_wd_import'), '/import/');
-	AddNewJSPopupMenuToPage();
-	*/
-	StartNewJSPopupMenu('a_men_email');
-	AddNewJSPopupMenuItem(GetLangval('mail_wd_inbox'), '/email/default.cfm?action=ShowMailbox&Mailbox=INBOX');	
-	AddNewJSPopupMenuItem(GetLangval('mail_wd_folders'), '/email/?action=ShowFolders');	
-	AddNewJSPopupMenuItem(GetLangval('cm_wd_search'), '/email/?action=ShowSearch');
-	AddNewJSPopupMenuItem('-', '');
-	AddNewJSPopupMenuItem(GetLangval('cm_wd_extras'), '/email/?action=extras');
-	AddNewJSPopupMenuToPage();
-	
-	StartNewJSPopupMenu('a_men_cal');
-	AddNewJSPopupMenuItem(GetLangval('cal_wd_today'), '/calendar/?action=showtoday');	
-	AddNewJSPopupMenuItem(GetLangval('cal_wd_day'), '/calendar/?action=ViewDay&date=lastdate');	
-	AddNewJSPopupMenuItem(GetLangval('cal_wd_week'), '/calendar/?action=ViewWeek&date=lastdate');
-	AddNewJSPopupMenuItem(GetLangval('cal_wd_month'), '/calendar/?action=ViewMonth&date=lastdate');
-	AddNewJSPopupMenuToPage();
-	
-	/*StartNewJSPopupMenu('a_men_ex');
-		AddNewJSPopupMenuItem(GetLangval('cm_wd_storage'), '/storage/');
-		AddNewJSPopupMenuItem(GetLangval('cm_wd_reports'), '/crm/?action=reports');
-		AddNewJSPopupMenuItem(GetLangval('cm_wd_projects'), '/project/');		
-		AddNewJSPopupMenuItem('-', '');
-		
-	if (request.stSecurityContext.q_select_workgroup_permissions.recordcount GT 0) {
-		AddNewJSPopupMenuItem(GetLangval('cm_wd_forum'), '/forum/');
-		}
-	AddNewJSPopupMenuItem('SyncCenter', '/synccenter/');	*/
-	AddNewJSPopupMenuItem(GetLangval('cm_wd_tasks'), '/tasks/');	
-	AddNewJSPopupMenuItem(GetLangval('cm_wd_import'), '/import/');	
-	//AddNewJSPopupMenuItem(GetLangval('extras_ph_route_planner'), '/extras/?action=routeplanner');
-	// AddNewJSPopupMenuItem(GetLangVal('adrb_wd_rec_travel'), '/extras/?action=recordtravell');
-	// AddNewJSPopupMenuItem(GetLangval('cm_wd_download'), '/download/');
-
-	// AddNewJSPopupMenuItem('Goodies', '/extras/?action=Goodies');
-	if (request.stSecurityContext.q_select_workgroup_permissions.recordcount GT 0) {
-		AddNewJSPopupMenuItem('-', '');
-		AddNewJSPopupMenuItem(GetLangVal('cm_wd_workgroups'), '/workgroups/');
-		}
 	AddNewJSPopupMenuToPage();
 </cfscript>
 

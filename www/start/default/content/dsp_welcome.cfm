@@ -98,13 +98,13 @@
 		<cfif request.stSecurityContext.A_STRUCT_IMAP_ACCESS_DATA.enabled>
 			<cfinclude template="../../../email/dsp_outlook_default.cfm">
 		<cfelse>
-			<cfoutput>
+			<!--- <cfoutput>
 			<div class="status">
 			<b>Finish the setup</b>
 			<br />
 			<a href="/settings/?action=AddemailAccount">Click here to add your email account</a>
 			</div>
-			</cfoutput>
+			</cfoutput> --->
 		</cfif>
 
 	</td>

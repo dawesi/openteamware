@@ -9,18 +9,28 @@
 
 <cfif arguments.securitycontext.q_select_workgroup_permissions.recordcount>
 	
-	<cfquery name="q_select_workgroup_entrykeys" datasource="#request.a_str_db_crm#">
-	SELECT
-		projects_shareddata.projectkey,
-		projects_shareddata.workgroupkey
-	FROM
-		projects_shareddata
-	WHERE
-		(projects_shareddata.workgroupkey IN (<cfqueryparam cfsqltype="cf_sql_varchar" list="yes" value="#ValueList(arguments.securitycontext.q_select_workgroup_permissions.workgroup_key)#">))
-	;
+	<!--- select all contact keys, use this one as filter --->
+	<cfquery name="local.qProjectContacts">
+	SELECT	contactkey
+	FROM	projects;
 	</cfquery>
 	
-	<cfset sEntrykeys = ListPrepend(sEntrykeys, Valuelist(q_select_workgroup_entrykeys.projectkey))>
+	<!--- load all contacts shared with this user --->
+	<cfinvoke component="#application.components.cmp_addressbook#" method="GetAllContacts" returnvariable="stAddressbook">
+		<cfinvokeargument name="securitycontext" value="#request.stSecurityContext#">
+		<cfinvokeargument name="usersettings" value="#request.stUserSettings#">	
+		<cfinvokeargument name="filter" value="#{ entrykeys : ValueList( qProjectContacts.contactkey )}#">
+		<cfinvokeargument name="loadoptions" value="#{}#">
+	</cfinvoke>
+		
+	<cfquery name="local.qProjects">
+	SELECT	entrykey
+	FROM	projects
+	WHERE	contactkey IN (<cfqueryparam cfsqltype="cf_sql_varchar" value="#ValueList( stAddressbook.q_select_contacts.entrykey )#" list="true" />)
+	</cfquery>
+	
+	<cfset sEntrykeys = ListPrepend(sEntrykeys, Valuelist(local.qProjects.entrykey))>
+
 </cfif>
 
 <cfquery name="q_select_own_projects" datasource="#request.a_str_db_crm#">
@@ -86,7 +96,7 @@ WHERE
 
 <!--- create workgroup information ... --->
 <cfset stWGInfo = StructNew()>
-
+<!--- 
 <cfif arguments.securitycontext.q_select_workgroup_permissions.recordcount GT 0>
 <cfloop query="q_select_projects">
 	
@@ -97,7 +107,7 @@ WHERE
 	</cfif>
 
 </cfloop>
-</cfif>
+</cfif> --->
 
 <!---<cfset tmp = QueryAddColumn(q_select_contacts, "workgroupkeys", ArrayNew(1))>--->
 

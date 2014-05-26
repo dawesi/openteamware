@@ -13,7 +13,7 @@
 	
 	<cfset sServiceKey = '5137784B-C09F-24D5-396734F6193D879D' />
 	
-	<cffunction access="public" name="GetAllProjects" returntype="struct" output="false"
+	<cffunction access="public" name="GetAllProjects" returntype="struct" output="true"
 			hint="return all projects a user can see">
 		<cfargument name="securitycontext" type="struct" required="true">
 		<cfargument name="usersettings" type="struct" required="true">

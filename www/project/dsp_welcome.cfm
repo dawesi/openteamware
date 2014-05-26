@@ -98,9 +98,11 @@ FROM
 			#LSDateFormat(q_select_sales_projects.dt_closing, request.stUserSettings.default_dateformat)#
 		</cfif>
 	</td>
-	<td align="right">
+	<td align="right" nowrap="true">
 		<a class="nl" href="index.cfm?action=editproject&entrykey=#q_select_sales_projects.entrykey#"><img src="/images/si/pencil.png" class="si_img" /></a>
+		<cfif q_select_sales_projects.projectleaderuserkey IS request.stSecurityContext.myuserkey>
 		<a class="nl" href="##" onclick="ShowSimpleConfirmationDialog('index.cfm?action=DoDeleteproject&entrykey=#q_select_sales_projects.entrykey#');"><img src="/images/si/delete.png" class="si_img" /></a>
+		</cfif>
 	</td>
   </tr>
 </cfoutput>

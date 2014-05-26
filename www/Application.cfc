@@ -14,6 +14,7 @@
   this.sessiontimeout = createTimeSpan(0,0,60,0);
   this.setClientCookies = "yes";
   this.setDomainCookies = "no";
+  this.datasource		= 'mycrm';
 </cfscript>
 
 <!--- application is starting ... --->

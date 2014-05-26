@@ -1719,6 +1719,7 @@ function DoHandleAjaxForm(form_id) {
 	var a_http = new cBasicBgOperation();
 	var a_form = document.forms[form_id];
 	var a_action_url = a_form.action;
+	
 	var q_string = SerializeForm(a_form);
 	var a_method = a_form.method;
 	
@@ -1728,7 +1729,9 @@ function DoHandleAjaxForm(form_id) {
 		a_http.url = a_action_url;
 		} else {
 			// get request, add all URL parameters ...
-			a_http.url = a_action_url + '/?' + q_string;
+			
+			a_http.url = a_action_url + '?' + q_string;
+			
 		}
 	
 	$('#id_div_modal_dialog_load_http_content').html(a_str_loading_status_img);
@@ -1810,16 +1813,6 @@ function InitBasicDoc(servicekey, checkframeset) {
 	
 // reload activity monitoring
 function RefreshActivityMonitor() {
-	return;
-	if ($('#id_activites_new_msg_indicator').size() == 0) {return false;}
-	
-	window.clearTimeout( vl_tmr_load_email_count );
-	
-	$.get("/email/index.cfm?action=DisplayBottomShortInfo", function(data){
-		  $('#id_activites_new_msg_indicator').html($.trim(data)).fadeIn();
-		});
-	
-	vl_tmr_load_email_count = window.setTimeout('RefreshActivityMonitor()', 60000);
 	}
 	
 // someone has clicked on a rating star in a form

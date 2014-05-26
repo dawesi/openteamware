@@ -24,12 +24,13 @@
 <!--- TODO: translate and fix links ... --->
 <cfscript>
 	StartNewJSPopupMenu('a_menu_new_items');
-	AddNewJSPopupMenuItem(GetLangval('cm_wd_email'), 'javascript:OpenComposePopupTo();');
 	AddNewJSPopupMenuItem(GetLangval('cm_wd_contact'), '/addressbook/?action=CreateNewItem&datatype=0');
 	AddNewJSPopupMenuItem(GetLangval('cm_wd_account'), '/addressbook/?action=CreateNewItem&datatype=1');
+	AddNewJSPopupMenuItem(GetLangval('crm_ph_project_type_1'), '/project/?action=NewProject&type=1');	
 	AddNewJSPopupMenuItem(GetLangval('cm_wd_appointment'), '/calendar/index.cfm?action=ShowNewEvent');
-	AddNewJSPopupMenuItem(GetLangval('cm_wd_file'), '/storage/?action=UploadNewFile');
 	AddNewJSPopupMenuItem(GetLangval('cm_wd_task'), '/tasks/index.cfm?action=newtask');
+	// AddNewJSPopupMenuItem(GetLangval('cm_wd_file'), '/storage/?action=UploadNewFile');
+
 	AddNewJSPopupMenuToPage();
 </cfscript>
 

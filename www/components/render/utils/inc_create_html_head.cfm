@@ -5,11 +5,7 @@
 	Description:Create Html Header
 	
 
-// --->
-
-
-<cfoutput>
-<!DOCTYPE HTML>
+// ---><cfoutput><!DOCTYPE HTML>
 
 <html>
 	<head>
@@ -19,7 +15,8 @@
 		#CallJavaScriptsInclude(currentaction = arguments.currentaction)#
 		
 		<!--- call CSS include ... --->
-		#CallStyleSheetInclude()#
+		<link rel="stylesheet" media="all" type="text/css" href="/assets/css/default.css">
+		<link rel="stylesheet" media="print" type="text/css" href="/assets/css/print.css">		
 				
 		<!--- custom html header --->
 		#GenerateCustomHTMLHeader()#

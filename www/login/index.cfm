@@ -25,8 +25,9 @@
 <html>
 <head>
 
-<cfinclude template="../style_sheet.cfm">
-
+	<link rel="stylesheet" media="all" type="text/css" href="/assets/css/default.css">
+	<link rel="stylesheet" media="print" type="text/css" href="/assets/css/print.css">		
+	
 	<title><cfoutput>#htmleditformat(request.appsettings.description)# #GetLangVal('lg_ph_title')#</cfoutput></title>
 
 	<cfinclude template="/common/js/inc_js.cfm">

@@ -230,54 +230,6 @@
 		<cfreturn sReturn />
 	</cffunction>
 	
-	<cffunction access="public" name="CallStyleSheetInclude" output="false" returntype="string"
-			hint="include the needed stylesheets ...">
-				
-		<cfset var sReturn = '' />
-		<cfset var a_arr_stylesheets = GetListOfStyleSheetstoInclude() />
-		
-		<cfsavecontent variable="sReturn">
-			<cfinclude  template="utils/inc_css.cfm">
-		</cfsavecontent>
-	
-		<cfreturn sReturn />
-	</cffunction>
-	
-	<cffunction access="public" name="GetListOfStyleSheetstoInclude" output="false" returntype="array"
-			hint="return an array with the elements to include ...">
-		
-		<cfset var a_arr_stylesheets = ArrayNew(1) />
-		<cfset var a_str_whole_css_file = '' />
-		<cfset var a_str_whole_css_md5 = '' />
-		<cfset var a_str_ss_name_win = '' />
-		<cfset var a_str_ss_name = '' />
-		<cfset var a_str_ss_name_mac = '' />
-		<cfset var a_str_ss_name_linux = '' />
-		<cfset var a_str_ss_name_firefox = '' />
-		<cfset var a_str_ss_name_ie = '' />
-		<cfset var a_str_ss_name_debugging_testingserver = '' />
-		<cfset var ii_ss = 0 />
-		
-		<cfinclude template="utils/inc_collect_css_files_to_include.cfm">
-		
-		<cfreturn a_arr_stylesheets />
-	</cffunction>
-	
-	<cffunction access="private" name="AddCSSFileToLoad" output="false" returntype="array"
-			hint="add a certain stylesheet file to the array holding all stylesheets to load">
-		<cfargument name="arr_holding_css" type="array" hint="array holding css files" required="true">
-		<cfargument name="filename" type="string" required="true" hint="full filename (including path)">
-		<cfargument name="media" type="string" required="false" default="all" hint="css media">
-		
-		<cfset var a_arr_return = arguments.arr_holding_css />
-		<cfset var ii = ArrayLen(a_arr_return) + 1 />
-		<cfset a_arr_return[ii] = StructNew() />
-		<cfset a_arr_return[ii].filename = arguments.filename />
-		<cfset a_arr_return[ii].media = arguments.media />
-	
-		<cfreturn a_arr_return />
-	</cffunction>
-	
 	<cffunction access="public" name="GenerateCustomHTMLHeader" output="false" returntype="string"
 			hint="add custom html header content ...">
 		<cfset var sReturn = '' />

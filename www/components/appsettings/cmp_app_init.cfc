@@ -9,9 +9,6 @@
 	
 	<cffunction access="public" name="InitApplicationComponents" output="false" returntype="boolean">
 		
-		<cfset var sTransferConfigPath = '/configuration/transfer/' />
-		<cfset var tmp = false />
-		
 		<cfset request.bAppInit_running = true>
 		
 		<cflock scope="Application" timeout="90" type="exclusive">
@@ -103,7 +100,7 @@
 									
 		</cflock>
 		
-		<cfset tmp = StructDelete(request, 'bAppInit_running') />
+		<cfset StructDelete(request, 'bAppInit_running') />
 		
 		<cfreturn true />		
 	</cffunction>

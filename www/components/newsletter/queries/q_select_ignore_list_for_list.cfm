@@ -1,4 +1,4 @@
-<cfquery name="q_select_ignore_list_for_list" datasource="#request.a_str_db_crm#">
+<cfquery name="q_select_ignore_list_for_list">
 SELECT
 	*
 FROM

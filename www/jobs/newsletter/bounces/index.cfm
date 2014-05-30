@@ -69,7 +69,7 @@ ORDER BY
 	<cfif a_bol_bounce>
 	
 		<!--- get address --->
-		<cfquery name="q_select_nl_recipient" datasource="#request.a_str_db_crm#">
+		<cfquery name="q_select_nl_recipient">
 		SELECT
 			recipient,issuekey,listkey
 		FROM
@@ -83,7 +83,7 @@ ORDER BY
 		<cfif q_select_nl_recipient.recordcount IS 1>
 		
 			<!--- Update: bounced --->
-			<cfquery name="q_update_set_bounces" datasource="#request.a_str_db_crm#">
+			<cfquery name="q_update_set_bounces">
 			UPDATE
 				newsletter_recipients
 			SET
@@ -93,7 +93,7 @@ ORDER BY
 			;
 			</cfquery>
 			
-			<cfquery name="q_insert_bounce_history" datasource="#request.a_str_db_crm#">
+			<cfquery name="q_insert_bounce_history">
 			INSERT INTO
 				bounce_history
 				(

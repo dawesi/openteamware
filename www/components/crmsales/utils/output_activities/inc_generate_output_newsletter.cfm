@@ -1,6 +1,6 @@
 
 		
-<cfquery name="q_select_subscriptions" datasource="#request.a_str_db_crm#">
+<cfquery name="q_select_subscriptions">
 SELECT
 	newsletter_recipients.contactkey,
 	newsletter_recipients.dt_created,

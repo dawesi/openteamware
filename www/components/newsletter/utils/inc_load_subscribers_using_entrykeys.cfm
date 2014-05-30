@@ -4,7 +4,7 @@
 	
 	// --->
 	
-<cfquery name="q_select_subscribers_entrykeys" datasource="#request.a_str_db_crm#">
+<cfquery name="q_select_subscribers_entrykeys">
 SELECT
 	contactkey,dt_created
 FROM

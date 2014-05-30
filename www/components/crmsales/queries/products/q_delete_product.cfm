@@ -2,7 +2,7 @@
 	Module:            administration (product)
 	Description:       deletes the specified product (by entrykey)
 // --->
-<cfquery name="q_delete_product" datasource="#request.a_str_db_crm#">
+<cfquery name="q_delete_product">
 DELETE FROM 
     products
 WHERE

@@ -3,7 +3,7 @@
 	Description:       Select all (or filtered) products quantity
 // --->
 
-<cfquery name="q_select_productquantity" datasource="#request.a_str_db_crm#">
+<cfquery name="q_select_productquantity">
 SELECT
 	p.entrykey,
     p.dt_created,

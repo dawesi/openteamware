@@ -1,4 +1,4 @@
-<cfquery name="q_update_profile_set_inivisible" datasource="#request.a_str_db_crm#">
+<cfquery name="q_update_profile_set_inivisible">
 UPDATE
 	newsletter_profiles
 SET

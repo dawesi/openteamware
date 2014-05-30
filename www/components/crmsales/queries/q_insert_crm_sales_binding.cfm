@@ -6,7 +6,7 @@
 	
 
 // --->
-<cfquery name="q_insert_crm_sales_binding" datasource="#request.a_str_db_crm#">
+<cfquery name="q_insert_crm_sales_binding">
 INSERT INTO
 	crmsalesmappings
 	(

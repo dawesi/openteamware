@@ -7,7 +7,7 @@
 
 // --->
 
-<cfquery name="q_select_objectkeys_by_criteria_ids" datasource="#request.a_str_db_crm#">
+<cfquery name="q_select_objectkeys_by_criteria_ids">
 SELECT
 	objectkey
 FROM

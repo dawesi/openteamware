@@ -9,7 +9,7 @@
 <cfsetting requesttimeout="20000">
 	
 <!--- load all already generated mails ... --->
-<cfquery name="q_select_already_generated_mails" datasource="#request.a_str_db_crm#">
+<cfquery name="q_select_already_generated_mails">
 SELECT
 	contactkey
 FROM

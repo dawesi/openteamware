@@ -7,7 +7,7 @@
 
 <cfset a_dt_check = DateAdd('d', -30, Now())>
 
-<cfquery name="q_update_newsletter_recipients" datasource="#request.a_str_db_crm#">
+<cfquery name="q_update_newsletter_recipients">
 UPDATE
 	newsletter_recipients
 SET

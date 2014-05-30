@@ -2,7 +2,7 @@
 
 <cffile action="readbinary" file="#arguments.filename_on_disk#" variable="a_str_bin_file">
 
-<cfquery name="q_insert_newsletter_attachment" datasource="#request.a_str_db_crm#">
+<cfquery name="q_insert_newsletter_attachment">
 INSERT INTO
 	newsletter_attachments
 	(

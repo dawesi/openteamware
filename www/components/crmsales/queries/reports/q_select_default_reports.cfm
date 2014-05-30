@@ -7,7 +7,7 @@
 
 // --->
 
-<cfquery name="q_select_default_reports" datasource="#request.a_str_db_crm#">
+<cfquery name="q_select_default_reports">
 SELECT
 	entrykey,reportname,description,groupname,basedonaddressbook,allow_select_fields
 FROM

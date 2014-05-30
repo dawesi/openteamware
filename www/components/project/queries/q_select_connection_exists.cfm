@@ -1,4 +1,4 @@
-<cfquery name="q_select_connection_exists" datasource="#request.a_str_db_crm#">
+<cfquery name="q_select_connection_exists">
 SELECT
 	COUNT(id) AS count_id
 FROM

@@ -307,7 +307,7 @@ ORDER BY
 				<td align="center">
 				
 					<cfif q_select_approved.prepare_done IS 1>
-						<cfquery name="q_select_recipients_count" datasource="#request.a_str_db_crm#">
+						<cfquery name="q_select_recipients_count">
 						SELECT
 							COUNT(id) AS count_id
 						FROM

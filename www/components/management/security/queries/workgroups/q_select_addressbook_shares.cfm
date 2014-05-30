@@ -6,7 +6,7 @@
 	
 // --->
 
-<cfquery name="q_select_shares" datasource="#request.a_str_db_crm#">
+<cfquery name="q_select_shares">
 SELECT
 	shareddata.workgroupkey,
 	'' AS workgroupname

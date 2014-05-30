@@ -35,7 +35,7 @@
 <cfparam name="url.isTestSendingCall" type="boolean" default="false">
 <cfparam name="url.TestSendingIssueEntrykey" type="string" default="">
 
-<cfquery name="q_select_nl_approved" datasource="#request.a_str_db_crm#" maxrows="1">
+<cfquery name="q_select_nl_approved" maxrows="1">
 SELECT
 	*
 FROM
@@ -142,7 +142,7 @@ a_int_max_number_2_return: <cfoutput>#a_int_max_number_2_return#</cfoutput>
 	
 	<!--- if no test run, set prepared = true --->
 	<cfif NOT url.isTestSendingCall>
-		<cfquery name="q_update_prepare_done" datasource="#request.a_str_db_crm#">
+		<cfquery name="q_update_prepare_done">
 		UPDATE
 			newsletter_issues
 		SET

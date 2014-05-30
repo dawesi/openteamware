@@ -33,7 +33,7 @@
 
 </cfif>
 
-<cfquery name="q_select_own_projects" datasource="#request.a_str_db_crm#">
+<cfquery name="q_select_own_projects">
 SELECT
 	projects.entrykey
 FROM
@@ -58,7 +58,7 @@ WHERE
 	<cfset sEntrykeys = 'thisitemdoesnotexist' />
 </cfif>
 
-<cfquery name="q_select_projects" datasource="#request.a_str_db_crm#">
+<cfquery name="q_select_projects">
 SELECT
 	sales,
 	stage,

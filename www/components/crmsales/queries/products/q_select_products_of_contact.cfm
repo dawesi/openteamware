@@ -3,7 +3,7 @@
 	Description:       select all or filtered products of specified contact
 // --->
 
-<cfquery name="q_select_products_of_contact" datasource="#request.a_str_db_crm#">
+<cfquery name="q_select_products_of_contact">
 SELECT
 	pa.entrykey,
     pa.dt_created,

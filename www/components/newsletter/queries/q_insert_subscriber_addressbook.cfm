@@ -1,6 +1,6 @@
 <cftry>
 
-<cfquery name="q_insert_subscriber_addressbook" datasource="#request.a_str_db_crm#">
+<cfquery name="q_insert_subscriber_addressbook">
 INSERT INTO
 	newsletter_subscribers
 	(

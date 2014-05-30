@@ -3,7 +3,7 @@
 	Description:       add product to contact (new record in productsassignedtocontact) and creates a history record
 // --->
 
-<cfquery name="q_add_product_to_contact" datasource="#request.a_str_db_crm#">
+<cfquery name="q_add_product_to_contact">
 INSERT INTO
 	productsassignedtocontact
 	(
@@ -61,7 +61,7 @@ VALUES
 </cfinvoke>
 
 <!--- update available quantity in productquantity table --->
-<cfquery name="q_add_product_to_contact" datasource="#request.a_str_db_crm#">
+<cfquery name="q_add_product_to_contact">
 UPDATE
 	productquantity
 SET	

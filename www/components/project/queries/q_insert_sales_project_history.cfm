@@ -7,7 +7,7 @@
 
 // --->
 
-<cfquery name="q_insert_sales_project_history" datasource="#request.a_str_db_crm#">
+<cfquery name="q_insert_sales_project_history">
 INSERT INTO
 	salesprojects_trend_history
 	(

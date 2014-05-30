@@ -1,4 +1,4 @@
-<cfquery name="q_select_criteria_count" datasource="#request.a_str_db_crm#">
+<cfquery name="q_select_criteria_count">
 SELECT
 	COUNT(id) AS count_id
 FROM

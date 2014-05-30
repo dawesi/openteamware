@@ -6,7 +6,7 @@
 <cfset variables.productsassignedtocontactentrykey = arguments.entrykey />
 <cfinclude template="q_select_productsassignedtocontact.cfm" />
 
-<cfquery name="q_delete_product" datasource="#request.a_str_db_crm#">
+<cfquery name="q_delete_product">
 DELETE FROM 
     productsassignedtocontact
 WHERE

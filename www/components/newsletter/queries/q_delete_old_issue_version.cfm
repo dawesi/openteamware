@@ -1,4 +1,4 @@
-<cfquery name="q_select_old_issue_version" datasource="#request.a_str_db_crm#">
+<cfquery name="q_select_old_issue_version">
 SELECT
 	*
 FROM
@@ -14,7 +14,7 @@ WHERE
 	<cfmail from="#request.appsettings.properties.NotifyEmail#" to="#request.appsettings.properties.NotifyEmail#" subject="newsletter edit version" type="html"><cfdump var="#q_select_old_issue_version#"><cfdump var="#arguments#"></cfmail>
 </cfif>
 
-<cfquery name="q_delete_old_issue_version" datasource="#request.a_str_db_crm#">
+<cfquery name="q_delete_old_issue_version">
 DELETE FROM
 	newsletter_issues
 WHERE

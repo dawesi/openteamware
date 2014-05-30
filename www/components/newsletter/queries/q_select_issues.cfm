@@ -7,7 +7,7 @@
 
 // --->
 
-<cfquery name="q_select_issues" datasource="#request.a_str_db_crm#">
+<cfquery name="q_select_issues">
 SELECT
 	newsletter_issues.entrykey,
 	newsletter_issues.listkey,

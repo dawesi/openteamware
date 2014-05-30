@@ -1,4 +1,4 @@
-<cfquery name="q_update_set_approved" datasource="#request.a_str_db_crm#">
+<cfquery name="q_update_set_approved">
 UPDATE
 	newsletter_issues
 SET

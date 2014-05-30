@@ -29,7 +29,7 @@
 <cfset a_struct_history_data.comment = a_str_comment />
 
 
-<cfquery name="q_update_product_of_contact" datasource="#request.a_str_db_crm#">
+<cfquery name="q_update_product_of_contact">
 UPDATE
 	productsassignedtocontact
 SET	
@@ -54,7 +54,7 @@ WHERE
 	<cfinvokeargument name="action" value="INSERT">
 </cfinvoke>
 
-<cfquery name="q_update_product_of_contact_available" datasource="#request.a_str_db_crm#">
+<cfquery name="q_update_product_of_contact_available">
 UPDATE
 	productquantity
 SET	

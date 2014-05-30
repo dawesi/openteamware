@@ -6,7 +6,7 @@ xjf8<br><br>
 
 <cfset a_cmp_nl = CreateObject('component', request.a_str_component_newsletter)>
 
-<cfquery name="q_select" datasource="#request.a_str_db_crm#">
+<cfquery name="q_select">
 SELECT
 	status,
 	dt_created,
@@ -86,7 +86,7 @@ LIMIT
 
 <cfif q_select.test_sending IS 0>
 	<!--- update --->
-	<cfquery name="q_update_status" datasource="#request.a_str_db_crm#">
+	<cfquery name="q_update_status">
 	UPDATE
 		newsletter_recipients
 	SET
@@ -98,7 +98,7 @@ LIMIT
 	</cfquery>
 <cfelse>
 	<!--- this was just a test sending ... so delete the item now ... --->
-	<cfquery name="q_delete_test_sending" datasource="#request.a_str_db_crm#">
+	<cfquery name="q_delete_test_sending">
 	DELETE FROM
 		newsletter_recipients
 	WHERE

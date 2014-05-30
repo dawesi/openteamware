@@ -1,4 +1,4 @@
-<cfquery name="q_select_old_crm_sales_binding" datasource="#request.a_str_db_crm#">
+<cfquery name="q_select_old_crm_sales_binding">
 SELECT
 	*
 FROM
@@ -16,7 +16,7 @@ WHERE
 	</cfmail>
 </cfif>
 
-<cfquery name="q_delete_crm_sales_binding" datasource="#request.a_str_db_crm#">
+<cfquery name="q_delete_crm_sales_binding">
 DELETE FROM
 	crmsalesmappings
 WHERE

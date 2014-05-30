@@ -7,7 +7,7 @@
 
 // --->
 
-<cfquery name="q_select_sales_project_stage_trends" datasource="#request.a_str_db_crm#">
+<cfquery name="q_select_sales_project_stage_trends">
 SELECT
 	sales,
 	dt_project_start,

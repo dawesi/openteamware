@@ -7,7 +7,7 @@
 
 // --->
 
-<cfquery name="q_select_assigned_items_meta_information" datasource="#request.a_str_db_crm#">
+<cfquery name="q_select_assigned_items_meta_information">
 SELECT
 	projectkey,
 	servicekey,

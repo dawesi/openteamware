@@ -5,7 +5,7 @@
 	
 // --->
 
-<cfquery name="q_delete_project" datasource="#request.a_str_db_crm#">
+<cfquery name="q_delete_project">
 DELETE FROM
 	projects
 WHERE

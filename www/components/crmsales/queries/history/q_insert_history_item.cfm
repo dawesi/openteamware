@@ -7,7 +7,7 @@
 
 // --->
 
-<cfquery name="q_insert_history_item" datasource="#request.a_str_db_crm#">
+<cfquery name="q_insert_history_item">
 INSERT INTO
 	history
 	(

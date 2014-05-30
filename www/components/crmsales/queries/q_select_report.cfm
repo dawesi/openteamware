@@ -1,4 +1,4 @@
-<cfquery name="q_select_report" datasource="#request.a_str_db_crm#">
+<cfquery name="q_select_report">
 SELECT
 	*
 FROM

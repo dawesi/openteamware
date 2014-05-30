@@ -7,7 +7,7 @@
 
 // --->
 
-<cfquery name="q_select_already_exists" datasource="#request.a_str_db_crm#">
+<cfquery name="q_select_already_exists">
 SELECT
 	COUNT(id) AS count_id
 FROM
@@ -23,7 +23,7 @@ WHERE
 
 <cfif q_select_already_exists.count_id IS 0>
 
-	<cfquery name="q_insert_recipient" datasource="#request.a_str_db_crm#">
+	<cfquery name="q_insert_recipient">
 	INSERT INTO
 		newsletter_recipients
 		(

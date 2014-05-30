@@ -6,7 +6,7 @@
 <cfset q_select_issue = a_cmp_nl.GetIssue(securitycontext = request.stSecurityContext, usersettings = request.stUserSettings, entrykey = url.issuekey)>
 
 
-<cfquery name="q_select_recipients" datasource="#request.a_str_db_crm#">
+<cfquery name="q_select_recipients">
 SELECT
 	recipient,status,opened,dt_opened,bounced,contactkey
 FROM

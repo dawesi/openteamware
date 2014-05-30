@@ -1,4 +1,4 @@
-<cfquery name="q_select_has_criteria_to_delete_sub_criterias" datasource="#request.a_str_db_crm#">
+<cfquery name="q_select_has_criteria_to_delete_sub_criterias">
 SELECT 
 	COUNT(id) AS count_id
 FROM

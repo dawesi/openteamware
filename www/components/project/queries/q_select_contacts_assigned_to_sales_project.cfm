@@ -1,4 +1,4 @@
-<cfquery name="q_select_contacts_assigned_to_sales_project" datasource="#request.a_str_db_crm#">
+<cfquery name="q_select_contacts_assigned_to_sales_project">
 SELECT
 	contactkey,
 	dt_created,

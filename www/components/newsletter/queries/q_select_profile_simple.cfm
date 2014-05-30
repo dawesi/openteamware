@@ -1,4 +1,4 @@
-<cfquery name="q_select_profile_simple" datasource="#request.a_str_db_crm#">
+<cfquery name="q_select_profile_simple">
 SELECT
 	entrykey,
 	userkey,

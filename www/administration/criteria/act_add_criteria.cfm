@@ -3,7 +3,7 @@
 	<cfabort>
 </cfif>
 
-<cfquery name="q_select_dup" datasource="#request.a_str_db_crm#">
+<cfquery name="q_select_dup">
 SELECT
 	COUNT(id) AS count_id
 FROM
@@ -22,7 +22,7 @@ WHERE
 	<cfabort>
 </cfif>
 
-<cfquery name="q_insert_criteria" datasource="#request.a_str_db_crm#">
+<cfquery name="q_insert_criteria">
 INSERT INTO
 	crmcriteria
 	(

@@ -3,7 +3,7 @@
 <cfparam name="url.listkey" type="string" default="">
 <cfparam name="url.issuekey" type="string" default="">
 
-<cfquery name="q_update_set_hidden_issue" datasource="#request.a_str_db_crm#">
+<cfquery name="q_update_set_hidden_issue">
 UPDATE
 	newsletter_issues
 SET

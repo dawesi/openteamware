@@ -1,4 +1,4 @@
-<cfquery name="q_select_file_att_entrykey" datasource="#request.a_str_db_crm#">
+<cfquery name="q_select_file_att_entrykey">
 SELECT
 	entrykey
 FROM

@@ -1,4 +1,4 @@
-<cfquery name="q_select_newsletter_attachment" datasource="#request.a_str_db_crm#">
+<cfquery name="q_select_newsletter_attachment">
 SELECT
 	filename,contenttype,filecontent
 FROM

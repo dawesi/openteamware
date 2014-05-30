@@ -6,7 +6,7 @@
 	
 // --->
 
-<cfquery name="q_insert_product_qroup" datasource="#request.a_str_db_crm#">
+<cfquery name="q_insert_product_qroup">
 INSERT INTO
 	productgroups
 	(

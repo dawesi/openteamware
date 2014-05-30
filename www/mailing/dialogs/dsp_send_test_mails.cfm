@@ -27,7 +27,7 @@
 	
 <cfif Len(q_select_profile.test_email_addresses) IS 0>
 	<!--- set test email addresses --->
-	<cfquery name="q_update_test_email_addresses" datasource="#request.a_str_db_crm#">
+	<cfquery name="q_update_test_email_addresses">
 	UPDATE
 		newsletter_profiles
 	SET

@@ -2,7 +2,7 @@
 	Module:            administration (product)
 	Description:       deletes the specified product group (by entrykey)
 // --->
-<cfquery name="q_delete_product_group" datasource="#request.a_str_db_crm#">
+<cfquery name="q_delete_product_group">
 DELETE FROM 
     productgroups
 WHERE

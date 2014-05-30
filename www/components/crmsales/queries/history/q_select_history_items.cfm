@@ -8,7 +8,7 @@
 
 // --->
 
-<cfquery name="q_select_history_items" datasource="#request.a_str_db_crm#">
+<cfquery name="q_select_history_items">
 SELECT
 	entrykey,
 	createdbyuserkey,

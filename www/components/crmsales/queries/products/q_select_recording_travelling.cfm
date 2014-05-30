@@ -6,7 +6,7 @@
 	
 // --->
 
-<cfquery name="q_select_recording_travelling" datasource="#request.a_str_db_crm#">
+<cfquery name="q_select_recording_travelling">
 SELECT 
     
 	entrykey,

@@ -1,4 +1,4 @@
-<cfquery name="q_insert_assigned_contact_to_salesproject" datasource="#request.a_str_db_crm#">
+<cfquery name="q_insert_assigned_contact_to_salesproject">
 INSERT INTO
 	salesprojects_assigned_contacts
 	(

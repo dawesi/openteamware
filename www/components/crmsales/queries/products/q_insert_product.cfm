@@ -6,7 +6,7 @@
 	
 // --->
 
-<cfquery name="q_insert_product" datasource="#request.a_str_db_crm#">
+<cfquery name="q_insert_product">
 INSERT INTO
 	products
 	(

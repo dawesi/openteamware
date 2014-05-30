@@ -73,14 +73,7 @@
 			<cfif NOT IsInPopupMenuMode()>
 				<cfset a_str_main_menu_bar = GenerateMainMenuBar(servicekey = arguments.servicekey) />
 			</cfif>
-			
-		<cfelse>
-			
-			<!--- in case of action, do not include anything ... --->
-			<cfif request.a_struct_current_service_action.type NEQ 'action'>
-				<cfset a_str_html_header = GenerateSimpleActionInPageJSCall() />
-			</cfif>
-			
+						
 		</cfif>
 
 		<!--- core: generate output --->
@@ -173,18 +166,7 @@
 		<cfreturn (CompareNoCase(request.a_struct_current_service_action.type,  'popup') IS 0) />
 
 	</cffunction>
-	
-	<cffunction access="public" name="GenerateSimpleActionInPageJSCall" returntype="string" output="false"
-			hint="return simple javascript include">
-		<cfset var sReturn = '' />
 		
-		<cfsavecontent variable="sReturn">
-			<cfinclude template="utils/inc_simple_js_include.cfm">
-		</cfsavecontent>
-		
-		<cfreturn sReturn />
-	</cffunction>
-	
 	<cffunction access="private" name="GenerateHTMLHeaderContent" output="false" returntype="string">
 		<cfargument name="pagetitle" type="string" default="" required="false" hint="name of page">
 		<cfargument name="servicekey" type="string" required="true" hint="entrykey of current service">

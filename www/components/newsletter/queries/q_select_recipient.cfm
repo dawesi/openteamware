@@ -1,4 +1,4 @@
-<cfquery name="q_select_recipient" datasource="#request.a_str_db_crm#">
+<cfquery name="q_select_recipient">
 SELECT
 	contactkey,recipient_source,listkey,entrykey,recipient
 FROM

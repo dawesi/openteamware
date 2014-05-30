@@ -1,4 +1,4 @@
-<cfquery name="q_insert_newsletter_profile" datasource="#request.a_str_db_crm#">
+<cfquery name="q_insert_newsletter_profile">
 INSERT INTO
 	newsletter_profiles
 	(

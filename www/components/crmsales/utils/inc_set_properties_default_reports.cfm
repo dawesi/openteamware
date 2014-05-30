@@ -5,7 +5,7 @@
 	// --->
 	
 <!--- select fields --->
-<cfquery name="q_select_fields" datasource="#request.a_str_db_crm#">
+<cfquery name="q_select_fields">
 SELECT
 	*
 FROM
@@ -16,7 +16,7 @@ WHERE
 </cfquery>
 
 <!--- select default report --->
-<cfquery name="q_select_default_report" datasource="#request.a_str_db_crm#">
+<cfquery name="q_select_default_report">
 SELECT
 	entrykey,reportname,description,groupname,basedonaddressbook,allow_select_fields
 FROM

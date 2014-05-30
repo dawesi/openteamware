@@ -1,4 +1,4 @@
-<cfquery name="q_select_all_criteria" datasource="#request.a_str_db_crm#">
+<cfquery name="q_select_all_criteria">
 SELECT
 	*
 FROM

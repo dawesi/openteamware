@@ -29,7 +29,7 @@
 		 --->
 		<cfset a_int_number_followups = val(q_select_open_followups.count_id) />
 		
-		<cfquery name="q_update_followup_index" datasource="#request.a_str_db_crm#">
+		<cfquery name="q_update_followup_index">
 		UPDATE
 			addressbook
 		SET

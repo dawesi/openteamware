@@ -1,7 +1,7 @@
 <cfparam name="url.entrykey" type="string">
 
 <!--- select output file ... --->
-<cfquery name="q_select_output" datasource="#request.a_str_db_crm#">
+<cfquery name="q_select_output">
 SELECT
 	wddx,reportkey,includefields,dt_created
 FROM

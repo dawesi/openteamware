@@ -12,7 +12,7 @@
 <cfset a_str_path_info = ReplaceNoCase(a_str_path_info, '/', '', 'ALL') />
 
 <!--- now we've got the entrykey --->
-<cfquery name="q_update_opened" datasource="#request.a_str_db_crm#">
+<cfquery name="q_update_opened">
 UPDATE
 	newsletter_recipients
 SET

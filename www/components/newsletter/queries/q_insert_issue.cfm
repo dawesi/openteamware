@@ -7,7 +7,7 @@
 
 // --->
 
-<cfquery name="q_insert_issue" datasource="#request.a_str_db_crm#">
+<cfquery name="q_insert_issue">
 INSERT INTO
 	newsletter_issues 
 	(

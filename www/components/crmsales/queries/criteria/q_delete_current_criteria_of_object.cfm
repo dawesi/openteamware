@@ -7,7 +7,7 @@
 
 // --->
 
-<cfquery name="q_delete_current_criteria_of_object" datasource="#request.a_str_db_crm#">
+<cfquery name="q_delete_current_criteria_of_object">
 DELETE FROM
 	assigned_criteria
 WHERE

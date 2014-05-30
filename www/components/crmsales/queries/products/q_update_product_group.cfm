@@ -6,7 +6,7 @@
 	
 // --->
 
-<cfquery name="q_update_product_group" datasource="#request.a_str_db_crm#">
+<cfquery name="q_update_product_group">
 UPDATE
 	productgroups
 SET	

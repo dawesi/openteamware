@@ -1,4 +1,4 @@
-<cfquery name="q_insert_project" datasource="#request.a_str_db_crm#">
+<cfquery name="q_insert_project">
 INSERT INTO
 	projects	
 	(

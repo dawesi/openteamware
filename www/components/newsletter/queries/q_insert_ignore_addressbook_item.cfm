@@ -1,6 +1,6 @@
 <cftry>
 
-<cfquery name="q_insert_ignore_addressbook_item" datasource="#request.a_str_db_crm#">
+<cfquery name="q_insert_ignore_addressbook_item">
 INSERT INTO
 	newsletter_ignored_items
 	(

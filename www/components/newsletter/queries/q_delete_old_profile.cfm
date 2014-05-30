@@ -1,4 +1,4 @@
-<cfquery name="q_delete_old_profile" datasource="#request.a_str_db_crm#">
+<cfquery name="q_delete_old_profile">
 DELETE FROM
 	newsletter_profiles
 WHERE

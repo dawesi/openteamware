@@ -1,4 +1,4 @@
-<cfquery name="q_delete_ignore_item" datasource="#request.a_str_db_crm#">
+<cfquery name="q_delete_ignore_item">
 DELETE FROM
 	newsletter_ignored_items
 WHERE

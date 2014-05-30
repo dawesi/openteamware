@@ -7,7 +7,7 @@
 
 // --->
 
-<cfquery name="q_select_crm_sales_binding" datasource="#request.a_str_db_crm#">
+<cfquery name="q_select_crm_sales_binding">
 SELECT
 	additionaldata_tablekey,
 	databasekey,

@@ -6,7 +6,7 @@
 
 // --->
 
-<cfquery name="q_select_criteria_assignment_exists" datasource="#request.a_str_db_crm#">
+<cfquery name="q_select_criteria_assignment_exists">
 SELECT
 	COUNT(id) AS count_id
 FROM
@@ -21,7 +21,7 @@ WHERE
 </cfquery>
 
 <cfif q_select_criteria_assignment_exists.count_id IS 0>
-	<cfquery name="q_insert_criteria_assignment" datasource="#request.a_str_db_crm#">
+	<cfquery name="q_insert_criteria_assignment">
 	INSERT INTO
 		assigned_criteria
 		(

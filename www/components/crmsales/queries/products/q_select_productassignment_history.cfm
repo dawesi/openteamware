@@ -2,7 +2,7 @@
 	Module:            CRM / Products
 	Description:       select all or filtered history records (with product title and group name) of specified contact ordered by date
 // --->
-<cfquery name="q_select_productassignment_history" datasource="#request.a_str_db_crm#">
+<cfquery name="q_select_productassignment_history">
 SELECT
 	h.entrykey,
     h.dt_created,

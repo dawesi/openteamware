@@ -1,4 +1,4 @@
-<cfquery name="q_delete_waiting_issue" datasource="#request.a_str_db_crm#">
+<cfquery name="q_delete_waiting_issue">
 DELETE FROM
 	newsletter_issues
 WHERE

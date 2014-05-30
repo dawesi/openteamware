@@ -8,7 +8,7 @@
 
 // --->
 
-<cfquery name="q_select_history_linked_item_exists" datasource="#request.a_str_db_crm#">
+<cfquery name="q_select_history_linked_item_exists">
 SELECT
 	COUNT(id) AS count_id
 FROM

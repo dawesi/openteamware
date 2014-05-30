@@ -6,7 +6,7 @@
 	
 // --->
 
-<cfquery name="q_select_recording_travel_total" datasource="#request.a_str_db_crm#">
+<cfquery name="q_select_recording_travel_total">
 SELECT
 	SUM(kilometers) AS total
 FROM 

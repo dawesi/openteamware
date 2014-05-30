@@ -1,4 +1,4 @@
-<cfquery name="q_insert_connection" datasource="#request.a_str_db_crm#">
+<cfquery name="q_insert_connection">
 INSERT INTO
 	connecteditems
 	(

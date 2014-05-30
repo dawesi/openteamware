@@ -29,7 +29,7 @@ WHERE
 </cfquery>
 <cfsavecontent variable="a_str_content">
 
-<table class="table_overview">
+<table class="table table-hover">
   <tr class="tbl_overview_header">
     <td>&nbsp;</td>
     <td>
@@ -87,7 +87,7 @@ WHERE
 
  <cfsavecontent variable="a_str_content">
 	
-  <table class="table_overview">
+  <table class="table table-hover">
   <tr class="tbl_overview_header">
 	<td></td>
     <td><cfoutput>#GetLangVal('cm_wd_name')#</cfoutput></td>

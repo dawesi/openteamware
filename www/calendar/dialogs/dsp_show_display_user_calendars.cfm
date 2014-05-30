@@ -27,7 +27,7 @@
 <cfif ListLen(a_str_included_user_calendars) GT 0>
 	<b><cfoutput>#a_str_text#</cfoutput></b>
 	
-	<table class="table_overview">
+	<table class="table table-hover">
 			
 	<cfloop list="#a_str_included_user_calendars#" delimiters="," index="a_str_userkey">
 		<cfoutput>
@@ -38,7 +38,7 @@
 			</cfif>
 			</td>
 			<td>
-				<input type="button" class="btn2" value="#GetLangVal('cm_wd_close_btn_caption')#" onclick="GotoLocHref('act_remove_usercalendar.cfm?userkey=#urlencodedformat(a_str_userkey)#');" />
+				<input type="button" class="btn" value="#GetLangVal('cm_wd_close_btn_caption')#" onclick="GotoLocHref('act_remove_usercalendar.cfm?userkey=#urlencodedformat(a_str_userkey)#');" />
 			</td>
 		</tr>
 		</cfoutput>

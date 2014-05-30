@@ -18,7 +18,7 @@
 <cfset a_cmp_workgroups = CreateObject('component', request.a_str_component_workgroups)>
 
 <cfsavecontent variable="a_str_content">
-<table class="table_overview">
+<table class="table table-hover">
   <tr class="tbl_overview_header">
     <td><cfoutput>#GetLangVal('cm_wd_name')#</cfoutput></td>
     <td><cfoutput>#GetLangVal('cm_wd_description')#</cfoutput></td>
@@ -56,7 +56,7 @@
 </cfsavecontent>
 <cfsavecontent variable="a_str_buttons">
 	<cfoutput >
-		<input type="button" class="btn" value="#GetLangVal('adm_ph_ressources_new')#" onclick="location.href = 'index.cfm?action=resources.new#writeurltags()#'" />
+		<input type="button" class="btn btn-primary" value="#GetLangVal('adm_ph_ressources_new')#" onclick="location.href = 'index.cfm?action=resources.new#writeurltags()#'" />
 	</cfoutput>
 </cfsavecontent>
 

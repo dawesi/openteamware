@@ -69,7 +69,7 @@
   <tr>
     <td>&nbsp;</td>
     <td>
-	<input type="submit" class="btn" name="frmsubmit" value="<cfoutput>#GetLangVal('cm_wd_save')#</cfoutput>" />
+	<input type="submit" class="btn btn-primary" name="frmsubmit" value="<cfoutput>#GetLangVal('cm_wd_save')#</cfoutput>" />
 	</td>
   </tr>
 </form>

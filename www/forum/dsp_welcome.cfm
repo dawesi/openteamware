@@ -20,7 +20,7 @@
 	<cfoutput>#GetLangVal('forum_ph_foren_welcome_intro')#</cfoutput>
 </div>
 
-<table class="table_overview">
+<table class="table table-hover">
   <tr class="tbl_overview_header">
     <td>
 		<cfoutput>#GetLangVal('cm_wd_name')#</cfoutput>
@@ -43,7 +43,7 @@
 											securitycontext = request.stSecurityContext,
 											usersettings = request.stUserSettings) />
 											
-		<table class="table_overview">
+		<table class="table table-hover">
 		<cfloop query="q_select_latest_postings">
 		  <tr>
 			<td width="33%" valign="top">

@@ -37,7 +37,7 @@
 <cfset a_bol_is_pda = (arguments.usersettings.device.type IS 'pda') />
 
 <cfsavecontent variable="a_str_output">
-<table class="table_overview">
+<table class="table table-hover">
 	<tr class="tbl_overview_header">
 	<cfoutput>
 		<td>#GetLangVal('cm_ph_timestamp')#</td>

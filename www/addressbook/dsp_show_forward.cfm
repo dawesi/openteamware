@@ -35,7 +35,7 @@
 <b>Die folgenden Eintr&auml;ge weiterleiten:<br></b>
 <br>
 
-<table class="table_overview">
+<table class="table table-hover">
 <tr class="tbl_overview_header">
 	<td></td>
 	<td>
@@ -93,7 +93,7 @@
 	</tr>
 	<tr>
 		<td align="right"><font style="color:#CC0000;font-weight:bold;">&#187;</font></td>
-		<td colspan="2"><input type="Submit" name="frmSubmitEmail" class="btn" value="E-Mail jetzt verschicken"></td>
+		<td colspan="2"><input type="Submit" name="frmSubmitEmail" class="btn btn-primary" value="E-Mail jetzt verschicken"></td>
 	</tr>
 	</table>
 
@@ -171,7 +171,7 @@
 	</tr>
 	<tr>
 		<td align="right"><font style="color:#CC0000;font-weight:bold;">&#187;</font></td>
-		<td><input type="Submit" name="frmSubmitMobile" class="btn2" value="Kontakte per SMS weiterleiten"></td>
+		<td><input type="Submit" name="frmSubmitMobile" class="btn" value="Kontakte per SMS weiterleiten"></td>
 	</tr>
 	<tr>
 		<td>&nbsp;</td>

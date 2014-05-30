@@ -76,7 +76,7 @@
 </cfinvoke>
 
 <form action="act_multi_edit.cfm" name="mboxform" method="post" target="_self">
-<table class="table_overview">
+<table class="table table-hover">
 	<tr>
 		<td colspan="3" style="padding:6px; ">
 			<select name="frmnewstatus1">
@@ -86,7 +86,7 @@
 				<option value="flag"><cfoutput>#GetLangVal('mail_ph_change_status_flag')#</cfoutput></option>
 			</select>
 			&nbsp;
-			<input type="submit" name="frmSubmitChangeReadStatus1" value="<cfoutput>#GetLangVal('cm_wd_ok')#</cfoutput>" class="btn2" />
+			<input type="submit" name="frmSubmitChangeReadStatus1" value="<cfoutput>#GetLangVal('cm_wd_ok')#</cfoutput>" class="btn" />
 			&nbsp;|&nbsp;
 			<select name="frmdestinationfolder1">
 				<option value=""><cfoutput>#GetLangVal('mail_wd_move_to_folder')#</cfoutput></option>
@@ -95,9 +95,9 @@
 				</cfoutput>
 			</select>
 			&nbsp;
-			<input type="submit" name="frmSubmitMove1" value="<cfoutput>#GetLangVal('mail_wd_move_to_folder')#</cfoutput>" class="btn2" />
+			<input type="submit" name="frmSubmitMove1" value="<cfoutput>#GetLangVal('mail_wd_move_to_folder')#</cfoutput>" class="btn" />
 			&nbsp;|&nbsp;
-			<input type="submit" value="<cfoutput>#GetLangVal('email_wd_btn_delete')#</cfoutput>" name="frmSubmitDelete" class="btn2" /> 
+			<input type="submit" value="<cfoutput>#GetLangVal('email_wd_btn_delete')#</cfoutput>" name="frmSubmitDelete" class="btn" /> 
 		
 		</td>
 		<td colspan="3">

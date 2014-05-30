@@ -102,7 +102,7 @@ WHERE
 	userkey = <cfqueryparam cfsqltype="cf_sql_varchar" value="#request.stSecurityContext.myuserkey#">
 ;
 </cfquery>
-<table class="table_overview">
+<table class="table table-hover">
   <tr class="tbl_overview_header"> 
     <td>
 		<cfoutput>#GetLangVal('mail_ph_email_address')#</cfoutput>

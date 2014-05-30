@@ -24,7 +24,7 @@
   </tr>
   <tr>
     <td>
-		<input type="submit" value="<cfoutput>#GetLangVal('cm_wd_save')#</cfoutput>" class="btn" />
+		<input type="submit" value="<cfoutput>#GetLangVal('cm_wd_save')#</cfoutput>" class="btn btn-primary" />
 	</td>
   </tr>
 </table>

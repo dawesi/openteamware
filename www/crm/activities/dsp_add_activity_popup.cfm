@@ -134,7 +134,7 @@
 	<!---<input type="hidden" name="frmentrykey" value="<cfoutput>#url.entrykey#</cfoutput>">--->
 	<cfinclude template="../../database/inc_data_display_edit.cfm">
 	<div style="text-align:center;padding:8px;" class="mischeader bt bb">
-	<input type="submit" style="font-weight:bold;" class="btn" value="<cfoutput>#GetLangVal('cm_wd_save')#</cfoutput>" id="id_btn_submit" name="id_btn_submit" >
+	<input type="submit" style="font-weight:bold;" class="btn btn-primary" value="<cfoutput>#GetLangVal('cm_wd_save')#</cfoutput>" id="id_btn_submit" name="id_btn_submit" >
 	</div>
 	</form>
 

@@ -63,7 +63,7 @@ Mit Filtern k&ouml;nnen Sie Ihre E-Mails effizient vorsortieren lassen und auch 
 <br />
 <form action="index.cfm">
 <input type="hidden" name="action" value="createfilter">
-<input class="btn" type="submit" value="<cfoutput>#GetLangVal('mail_ph_create_new_filter')#</cfoutput>">
+<input class="btn btn-primary" type="submit" value="<cfoutput>#GetLangVal('mail_ph_create_new_filter')#</cfoutput>">
 </form>
 <table width="500" border="0" cellpadding="4" cellspacing="0" class="b_all">
 	<tr>
@@ -84,7 +84,7 @@ Mit Filtern k&ouml;nnen Sie Ihre E-Mails effizient vorsortieren lassen und auch 
 </table>
 <br />
 
-<table class="table_overview">
+<table class="table table-hover">
   <tr class="tbl_overview_header">
     <td>&nbsp;</td>
     <td><cfoutput>#GetLangVal('cm_wd_name')#</cfoutput></td>
@@ -159,7 +159,7 @@ Mit Filtern k&ouml;nnen Sie Ihre E-Mails effizient vorsortieren lassen und auch 
 
 <form action="index.cfm">
 <input type="hidden" name="action" value="createfilter">
-<input class="btn" type="submit" value="<cfoutput>#GetLangVal('mail_ph_create_new_filter')#</cfoutput>">
+<input class="btn btn-primary" type="submit" value="<cfoutput>#GetLangVal('mail_ph_create_new_filter')#</cfoutput>">
 </form>
 
 

@@ -41,7 +41,7 @@
 		  <tr>
 	        <td class="field_name"></td>
 	        <td>
-	            <input type="submit" value="<cfoutput>#GetLangVal('cm_wd_add')#</cfoutput>" class="btn" />
+	            <input type="submit" value="<cfoutput>#GetLangVal('cm_wd_add')#</cfoutput>" class="btn btn-primary" />
 	        </td>
 		  </tr></table> </cfoutput> 
 </cfsavecontent>	

@@ -31,8 +31,8 @@
 
 <cfsavecontent variable="a_str_buttons">
 	<cfoutput>
-		<input type="button" class="btn2" onclick="GotoLocHref('index.cfm?action=signatures&subaction=createnewedit&format=1');return false;" value="#GetLangVal('prf_ph_create_new_sig_html')#" />
-		<input type="button" class="btn2" onclick="GotoLocHref('index.cfm?action=signatures&subaction=createnewedit&format=0');return false;" value="#GetLangVal('prf_ph_create_new_sig_text')#" />
+		<input type="button" class="btn" onclick="GotoLocHref('index.cfm?action=signatures&subaction=createnewedit&format=1');return false;" value="#GetLangVal('prf_ph_create_new_sig_html')#" />
+		<input type="button" class="btn" onclick="GotoLocHref('index.cfm?action=signatures&subaction=createnewedit&format=0');return false;" value="#GetLangVal('prf_ph_create_new_sig_text')#" />
 	</cfoutput>
 </cfsavecontent>
 
@@ -170,7 +170,7 @@
 	  <tr>
 		<td class="field_name"></td>
 		<td>
-			<input type="submit" value="<cfoutput>#GetLangVal('cm_wd_save_button_caption')#</cfoutput>" class="btn" />
+			<input type="submit" value="<cfoutput>#GetLangVal('cm_wd_save_button_caption')#</cfoutput>" class="btn btn-primary" />
 			&nbsp;&nbsp;
 			<a href="javascript:history.go(-1);"><cfoutput>#GetLangVal('cm_wd_cancel')#</cfoutput></a>
 		</td>

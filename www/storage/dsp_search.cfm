@@ -49,7 +49,7 @@
 	</tr>
 	<tr>
 		<td class="field_name"></td>
-		<td><input type="submit" value="<cfoutput>#getlangval('sto_ph_startsearch')#</cfoutput>" class="btn" /></td>
+		<td><input type="submit" value="<cfoutput>#getlangval('sto_ph_startsearch')#</cfoutput>" class="btn btn-primary" /></td>
 	</tr>
 	<!--- <tr>
 		<td class="field_name">

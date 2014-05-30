@@ -84,7 +84,7 @@ WHERE
 	<div class="addinfotext"><cfoutput>#GetLangVal('cal_ph_related_no_events_found')#</cfoutput></div>
 <cfelse>
 
-<table class="table_overview">
+<table class="table table-hover">
   <tr>
     <td class="addinfotext"><cfoutput>#GetLangVal('cal_wd_title')#</cfoutput></td>
 	<td class="addinfotext"><cfoutput>#GetLangVal('cal_wd_start')#</cfoutput></td>

@@ -42,7 +42,7 @@
 			  <tr>
 				<td class="field_name">&nbsp;</td>
 				<td>
-					<input type="submit" class="btn" value="<cfoutput>#GetLangVal('adm_ph_btn_search_filter')#</cfoutput>" />
+					<input type="submit" class="btn btn-primary" value="<cfoutput>#GetLangVal('adm_ph_btn_search_filter')#</cfoutput>" />
 				</td>
 			  </tr>
 			</table>

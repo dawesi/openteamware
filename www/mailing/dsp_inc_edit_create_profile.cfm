@@ -253,7 +253,7 @@
   <tr>
     <td class="field_name">&nbsp;</td>
     <td>
-		<input type="submit" value="#GetLangVal('cm_wd_save_button_caption')#" name="frmsubmit" class="btn" />
+		<input type="submit" value="#GetLangVal('cm_wd_save_button_caption')#" name="frmsubmit" class="btn btn-primary" />
 	</td>
   </tr>
 </table>

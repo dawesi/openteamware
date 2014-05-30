@@ -35,7 +35,7 @@
     <input type="hidden" name="action" value="newuser">
 	<input type="hidden" name="resellerkey" value="<cfoutput>#htmleditformat(url.resellerkey)#</cfoutput>">
 	<input type="hidden" name="companykey" value="<cfoutput>#htmleditformat(url.companykey)#</cfoutput>">
-      <td><input class="btn" type="submit" value="<cfoutput>#GetLangVal('adm_ph_add_user_now')#</cfoutput>"></td>
+      <td><input class="btn btn-primary" type="submit" value="<cfoutput>#GetLangVal('adm_ph_add_user_now')#</cfoutput>"></td>
     </tr>
   </form>
 </table>
@@ -108,7 +108,7 @@ WHERE
 	
   	</cfloop>
   </cfif>
-  <table class="table_overview" cellspacing="0">
+  <table class="table table-hover" cellspacing="0">
     <tr class="tbl_overview_header"> 
       <td colspan="2"><cfoutput>#GetLangVal('adrb_wd_surname')#, #GetLangVal('adrb_wd_firstname')#</cfoutput></td>
       <td><cfoutput>#GetLangVal('cm_wd_username')#</cfoutput></td>
@@ -162,7 +162,7 @@ WHERE
     <input type="hidden" name="action" value="newuser">
 	<input type="hidden" name="resellerkey" value="<cfoutput>#htmleditformat(url.resellerkey)#</cfoutput>">
 	<input type="hidden" name="companykey" value="<cfoutput>#htmleditformat(url.companykey)#</cfoutput>">
-      <td><input class="btn" type="submit" value="<cfoutput>#GetLangVal('adm_ph_add_user_now')#</cfoutput>"></td>
+      <td><input class="btn btn-primary" type="submit" value="<cfoutput>#GetLangVal('adm_ph_add_user_now')#</cfoutput>"></td>
     </tr>
   </form>
 </table>

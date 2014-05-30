@@ -118,7 +118,7 @@ ORDER BY
 	  <tr>
 		<td>&nbsp;</td>
 		<td>
-			<input type="submit" value="<cfoutput>#GetLangVal('sync_ph_add_device_submit_btn')#</cfoutput>" class="btn">
+			<input type="submit" value="<cfoutput>#GetLangVal('sync_ph_add_device_submit_btn')#</cfoutput>" class="btn btn-primary">
 		</td>
 	  </tr>
 	</table>

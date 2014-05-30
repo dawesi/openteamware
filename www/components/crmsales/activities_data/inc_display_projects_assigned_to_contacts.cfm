@@ -66,7 +66,7 @@ WHERE
 <cfsavecontent variable="sReturn">
 <!--- // start with sales projects // --->
 <cfif q_select_sales_projects.recordcount GT 0>
-<table class="table_overview">
+<table class="table table-hover">
 	<tr class="tbl_overview_header">
 		<td width="25%"><cfoutput>#GetLangVal('prj_ph_project_type_1')# (#q_select_projects.recordcount#)</cfoutput></td>
 		<td width="25%"><cfoutput>#GetLangVal('crm_ph_expected_sales')#</cfoutput></td>
@@ -118,7 +118,7 @@ WHERE
 <!--- // common projects ... // --->
 <cfif q_select_common_projects.recordcount GT 0>
 	
-	<table class="table_overview">
+	<table class="table table-hover">
 		<tr class="tbl_overview_header">
 			<td width="25%"><cfoutput>#GetLangVal('prj_ph_project_type_0')# (#q_select_projects.recordcount#)</cfoutput></td>
 			<td width="25%"><cfoutput>#GetLangVal('cm_wd_description')#</cfoutput>

@@ -468,9 +468,9 @@ function BuildShortinfoFromJSArray(uniquekey)
 		}
 			
 	a_return += '<div>';
-	a_return += '<input onClick="location.href = \'index.cfm?action=ShowEvent&entrykey='+ a_event_info[2] +'\';" class="btn" type="button" value="' + GetLangData(9) + '">';
+	a_return += '<input onClick="location.href = \'index.cfm?action=ShowEvent&entrykey='+ a_event_info[2] +'\';" class="btn btn-primary" type="button" value="' + GetLangData(9) + '">';
 	a_return += '&nbsp;';
-	a_return += '<input onClick="DeleteCurrentInfoPopupEvent(\'' + a_event_info[0] + '\',\'' + a_event_info[1] + '\');" class="btn" type="button" value="' + GetLangData(10) + '">';
+	a_return += '<input onClick="DeleteCurrentInfoPopupEvent(\'' + a_event_info[0] + '\',\'' + a_event_info[1] + '\');" class="btn btn-primary" type="button" value="' + GetLangData(10) + '">';
 	a_return += '</div>';
 	a_return += '</div>';
 	

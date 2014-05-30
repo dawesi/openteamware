@@ -151,9 +151,9 @@
 </cfsavecontent>
 <cfsavecontent variable="a_str_buttons">
 <cfoutput>
-	<input type="button" onclick="window.open('index.cfm?action=ShowFile&entrykey=#url.entrykey#');" class="btn2" value="#GetLangVal('sto_ph_start_download_of_file')#" />
-	<input type="button" onclick="GotoLocHref('index.cfm?action=EditFile&entrykey=#q_query_file.entrykey#&currentdir=#q_query_file.parentdirectorykey#');" class="btn2" value="#GetLangVal('cm_wd_edit')#" />
-	<input type="button" onclick="GotoLocHref('index.cfm?action=DeleteFile&frm_entrykey=#q_query_file.entrykey#&frm_parentdirectorykey=#q_query_file.parentdirectorykey#&currentdir=#url.directorykey#');" class="btn2" value="#GetLangVal('cm_wd_delete')#" />
+	<input type="button" onclick="window.open('index.cfm?action=ShowFile&entrykey=#url.entrykey#');" class="btn" value="#GetLangVal('sto_ph_start_download_of_file')#" />
+	<input type="button" onclick="GotoLocHref('index.cfm?action=EditFile&entrykey=#q_query_file.entrykey#&currentdir=#q_query_file.parentdirectorykey#');" class="btn" value="#GetLangVal('cm_wd_edit')#" />
+	<input type="button" onclick="GotoLocHref('index.cfm?action=DeleteFile&frm_entrykey=#q_query_file.entrykey#&frm_parentdirectorykey=#q_query_file.parentdirectorykey#&currentdir=#url.directorykey#');" class="btn" value="#GetLangVal('cm_wd_delete')#" />
 </cfoutput>
 </cfsavecontent>
 

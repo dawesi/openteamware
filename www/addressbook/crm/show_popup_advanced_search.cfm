@@ -72,7 +72,7 @@
 		<tr>
 			<td colspan="2"></td>
 			<td colspan="3">
-				<input type="submit" class="btn" value="<cfoutput>#GetLangVal('cm_wd_search')#</cfoutput>">
+				<input type="submit" class="btn btn-primary" value="<cfoutput>#GetLangVal('cm_wd_search')#</cfoutput>">
 			</td>
 		</tr>
 </table>

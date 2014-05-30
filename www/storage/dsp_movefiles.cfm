@@ -77,7 +77,7 @@
 	<tr>
 		<td class="field_name"></td>
 		<td>
-			<input type="submit" value="<cfoutput>#getlangval('sto_ph_move')#</cfoutput>" class="btn" />
+			<input type="submit" value="<cfoutput>#getlangval('sto_ph_move')#</cfoutput>" class="btn btn-primary" />
 		</td>
 	</tr>
 </table>

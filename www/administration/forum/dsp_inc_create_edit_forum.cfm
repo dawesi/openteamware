@@ -64,7 +64,7 @@
   <tr>
     <td class="field_name">&nbsp;</td>
     <td>
-		<input type="submit" class="btn" value="#GetLangVal('cm_wd_save_button_caption')#" />
+		<input type="submit" class="btn btn-primary" value="#GetLangVal('cm_wd_save_button_caption')#" />
 	</td>
   </tr>
 </table>

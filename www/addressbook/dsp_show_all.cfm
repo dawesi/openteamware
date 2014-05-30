@@ -161,10 +161,10 @@
 	
 	<div class="bt" style="padding:6px; ">
 		<input type="hidden" name="frmselectaction" value="" />
-		<input class="btn2" onClick="ShowCommonContactsActionOptions();" type="button" value="<cfoutput>#GetLangVal('cm_ph_show_common_action_options')#</cfoutput>" />
+		<input class="btn" onClick="ShowCommonContactsActionOptions();" type="button" value="<cfoutput>#GetLangVal('cm_ph_show_common_action_options')#</cfoutput>" />
 		
 		<cfif a_int_contacts_recordcount GT a_int_max_rows_per_page>
-			<input type="button" class="btn2" onclick="GotoLocHref('index.cfm?<cfoutput>#ReplaceOrAddURLParameter(cgi.query_string, 'maxrows', 9999)#</cfoutput>');" value="<cfoutput>#GetLangVal('crm_ph_show_all_applying_data_at_once')#</cfoutput>" />
+			<input type="button" class="btn" onclick="GotoLocHref('index.cfm?<cfoutput>#ReplaceOrAddURLParameter(cgi.query_string, 'maxrows', 9999)#</cfoutput>');" value="<cfoutput>#GetLangVal('crm_ph_show_all_applying_data_at_once')#</cfoutput>" />
 		</cfif>		
 	</div>
 	</form>

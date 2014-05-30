@@ -28,5 +28,5 @@
 </div>
 
 <div style="padding:10px;text-align:center; ">
-	<input type="button" class="btn" onClick="CloseSimpleModalDialog();" value="<cfoutput>#GetLangVal('cm_wd_close_btn_caption')#</cfoutput>">
+	<input type="button" class="btn btn-primary" onClick="CloseSimpleModalDialog();" value="<cfoutput>#GetLangVal('cm_wd_close_btn_caption')#</cfoutput>">
 </div>

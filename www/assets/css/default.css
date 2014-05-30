@@ -4,7 +4,7 @@ body,p,td,div,a,textarea,select {
 	}
 
 .navbar-default {
-	background-color:#0072C6;
+	background-color:#3276b1;
 	color: white !important;
 	}
 	
@@ -17,7 +17,7 @@ body,p,td,div,a,textarea,select {
 	}	
 	
 .navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
-	background-color:#0072C6;
+	background-color:#3276b1;
 	color:white;
 	}
 	
@@ -470,54 +470,6 @@ ul.divleftpanelactions li div:hover {
 	padding:3px;
 	}	
 
-.btn {
-   	background-color:rgb(235, 76, 7);
-   	color:white;
-    padding:3px;
-    cursor:pointer;
-	width:auto;
-	border: orange solid 1px;
-	-moz-border-radius: 4px;
-	}
-	
-.btn:hover {
-	border-color:rgb(235, 76, 7);
-
-	}
-
-/* 2nd level button */
-.btn2 {
-	background-color: #EEEEEE;
-    padding:3px;
-    cursor:pointer;
-	width:auto;
-	border:#DDDDDD solid 1px;
-	-moz-border-radius: 4px;
-	}
-	
-/* 3rd level button */
-.btn3 {
-	background-image:URL(/include/0BE35216-925A-52BE-17F514120CF7FC05/images/img_bg_btn3.gif);
-	border:silver solid 1px;
-	color:rgb(051,051,051);
-    background-repeat: repeat-x;
-    background-position: left top;
-    font-size: 98%;
-    padding:1px 3px 1px 3px;
-    cursor:pointer;
-	width:auto;
-	padding-right:5px;
-	padding-left:5px;
-	}
-	
-.btn2:hover {
-	background-color: rgb(235, 76, 7);
-	color:white;
-	}
-	
-.btn3:hover {
-	background-image:URL(/include/0BE35216-925A-52BE-17F514120CF7FC05/images/img_bg_btn2.gif);
-	}
 
 /* tab navigation start */
 .div_module_tabs {
@@ -616,7 +568,6 @@ ul.divleftpanelactions li div:hover {
 	/* no more ordenary padding, because tables in div do not work properly */
 	}
 	
-.div_box .div_box_content .table_overview .tbl_overview_header td a {color: #444444;}
 
 /* fieldsets */
 fieldset.bg_fieldset {
@@ -636,22 +587,6 @@ fieldset.bg_fieldset legend {
 	}
 	
 
-/* table with a lot of data (overview) */
-.table_overview {
-	width:100%;
-	border-spacing:0px;
-	border-collapse: collapse;
-	border-width: 0px; 		
-	}
-	
-.table_overview td {
-	padding:4px;margin:0px;
-	border-spacing:0px;
-	border:0px;
-	vertical-align:top;
-	border-bottom:#EEEEEE solid 1px;
-	}
-	
 .tbl_overview_header td
 	{
 	border-bottom:silver solid 1px;

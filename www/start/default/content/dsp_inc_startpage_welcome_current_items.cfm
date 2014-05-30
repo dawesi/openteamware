@@ -65,7 +65,7 @@ ORDER BY
 </cfquery>
 
 <div class="b_all" id="<cfoutput>#a_str_id_news#</cfoutput>" style="display:none;width:99%;">
-	<table class="table_overview">
+	<table class="table table-hover">
 		<cfoutput query="q_select_rss_feed">
 		<tr>
 			<td>

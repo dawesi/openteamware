@@ -24,7 +24,7 @@
 </cfloop>
 </ul>
 <form action="act_create_personal_category.cfm" method="post">
-<cfoutput>#GetLangVal('prf_ph_own_categories_new_category')#</cfoutput>: <input type="text" name="frmcategoryname" size="20">&nbsp;<input type="submit" name="frmsubmit" value="<cfoutput>#GetLangVal('cm_wd_save')#</cfoutput>" class="btn2" />
+<cfoutput>#GetLangVal('prf_ph_own_categories_new_category')#</cfoutput>: <input type="text" name="frmcategoryname" size="20">&nbsp;<input type="submit" name="frmsubmit" value="<cfoutput>#GetLangVal('cm_wd_save')#</cfoutput>" class="btn" />
 </form>
 
 

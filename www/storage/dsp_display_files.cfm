@@ -42,7 +42,7 @@
 	<cfoutput>
     #getlangval('odb_ph_nodatafound')#.
 	<br /><br />  
-	<input class="btn" type="button" value="#getlangval('sto_ph_addfiles')#" onClick="window.open('/storage/index.cfm?action=AddFile&parentdirectorykey=#url.directorykey#','_blank','toolbar=no,location=no,directories=no,status=no,copyhistory=no,scrollbars=yes,resizable=yes,height=400,width=600');return false;" />
+	<input class="btn btn-primary" type="button" value="#getlangval('sto_ph_addfiles')#" onClick="window.open('/storage/index.cfm?action=AddFile&parentdirectorykey=#url.directorykey#','_blank','toolbar=no,location=no,directories=no,status=no,copyhistory=no,scrollbars=yes,resizable=yes,height=400,width=600');return false;" />
 	
 	</cfoutput>
 	</form>
@@ -68,7 +68,7 @@
 
 <cfoutput>
 <form action="#CGI.SCRIPT_NAME##CGI.PATH_INFO#" method="get" name="fileform" id="fileform" style="margin:0px;">
-<table class="table_overview">
+<table class="table table-hover">
 	<tr class="tbl_overview_header">
 		<td>
 			<input onClick="AllFiles();" type="checkbox" name="frmcbselectall" class="noborder" />
@@ -284,9 +284,9 @@
 		<div class="b_all" style="padding:6px;">
 		#getlangval('sto_ph_choosenfiles')#:
 				
-		<input type="button" class="btn2" value="#getlangval('sto_wd_move')#" onClick="SetStorageMultiAction('movefiles');" />
-		<input type="button" class="btn2" value="#getlangval('sto_wd_delete')#" onClick="SetStorageMultiAction('DeleteFile');" />
-		<!--- <input type="button" class="btn2" value="#getlangval('sto_ph_sendviamail')#" onClick="SetStorageMultiAction('sendviamail');" /> --->
+		<input type="button" class="btn" value="#getlangval('sto_wd_move')#" onClick="SetStorageMultiAction('movefiles');" />
+		<input type="button" class="btn" value="#getlangval('sto_wd_delete')#" onClick="SetStorageMultiAction('DeleteFile');" />
+		<!--- <input type="button" class="btn" value="#getlangval('sto_ph_sendviamail')#" onClick="SetStorageMultiAction('sendviamail');" /> --->
 					
 		</div>
 	

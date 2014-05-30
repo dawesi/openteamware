@@ -46,7 +46,7 @@
 <form action="save_assignedto.cfm" method="post" name="formsaveassignedto" style="margin:0px;">
 <input type="hidden" name="entrykey" value="<cfoutput>#htmleditformat(url.entrykey)#</cfoutput>">
 
-<table class="table_overview">
+<table class="table table-hover">
   <tr class="mischeader">
     <td colspan="3">
 	<b><cfoutput>#si_img('group')# #GetLangVal('tsk_ph_select_assigned_people')#</cfoutput></b>

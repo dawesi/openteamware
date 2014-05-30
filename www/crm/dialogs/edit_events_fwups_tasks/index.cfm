@@ -42,7 +42,7 @@
 </cfsavecontent>
 
 <cfsavecontent variable="a_str_buttons">
-	<input id="id_btn_call_tsk_evnt_actions" onClick="ShowHTMLActionPopup('id_btn_call_tsk_evnt_actions', a_pop_further_actions_evnt_tsk);return false;" type="button" value=" <cfoutput>#htmleditformat(GetLangVal('cm_wd_new'))#</cfoutput> " class="btn">
+	<input id="id_btn_call_tsk_evnt_actions" onClick="ShowHTMLActionPopup('id_btn_call_tsk_evnt_actions', a_pop_further_actions_evnt_tsk);return false;" type="button" value=" <cfoutput>#htmleditformat(GetLangVal('cm_wd_new'))#</cfoutput> " class="btn btn-primary">
 </cfsavecontent>
 
 <cfoutput>#WriteNewContentBox(GetLangVal('crm_wd_follow_ups') & ', ' & GetLangVal('cm_wd_tasks') & ' & ' & GetLangVal('cm_wd_events'), a_str_buttons, a_str_content, 'id_fieldset_tasks_appointments_followups')#</cfoutput>

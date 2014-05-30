@@ -35,7 +35,7 @@ ORDER BY origin,emailadr;
 </cfif>
 
 
-<table class="table_overview">
+<table class="table table-hover">
 
   <tr class="tbl_overview_header">
 
@@ -168,8 +168,8 @@ ORDER BY origin,emailadr;
 
 </cfsavecontent>
 <cfsavecontent variable="a_str_buttons">
-<!--- 	<input class="btn" onClick="OpenNewInBoxccAdrAssistent();" type="button" value="<cfoutput>#GetLangVal('adm_ph_new_alias_address')#</cfoutput>">
-<input class="btn" onClick="OpenNewAssistent();" type="button" value="<cfoutput>#GetLangVal('email_ph_pop3_collector')# (#GetLangVal('cm_wd_new')#)</cfoutput>">
+<!--- 	<input class="btn btn-primary" onClick="OpenNewInBoxccAdrAssistent();" type="button" value="<cfoutput>#GetLangVal('adm_ph_new_alias_address')#</cfoutput>">
+<input class="btn btn-primary" onClick="OpenNewAssistent();" type="button" value="<cfoutput>#GetLangVal('email_ph_pop3_collector')# (#GetLangVal('cm_wd_new')#)</cfoutput>">
  --->
 
 </cfsavecontent>

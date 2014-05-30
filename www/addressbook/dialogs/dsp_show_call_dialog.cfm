@@ -71,7 +71,7 @@
 		<tr>
 			<td class="field_name"></td>
 			<td>
-				<input type="submit" value="<cfoutput>#GetLangVal('cm_wd_submit_btn_send')#</cfoutput>" class="btn" />
+				<input type="submit" value="<cfoutput>#GetLangVal('cm_wd_submit_btn_send')#</cfoutput>" class="btn btn-primary" />
 			</td>
 		</tr>
 	</table>
@@ -86,9 +86,9 @@
 <cfoutput>
 <div style="padding:8px;">
 <form>
-	<input type="button" class="btn" onclick="call_new_item_for_contact('<cfoutput>#url.contactkey#</cfoutput>', 'history', '', '1');" value="#GetLangVal('crm_ph_record_event')#" />
+	<input type="button" class="btn btn-primary" onclick="call_new_item_for_contact('<cfoutput>#url.contactkey#</cfoutput>', 'history', '', '1');" value="#GetLangVal('crm_ph_record_event')#" />
 
-	<input type="button" class="btn2" onclick="CreateHistoryItemNotReached('<cfoutput>#url.contactkey#</cfoutput>');CloseSimpleModalDialog();" value="#GetLangVal('crm_ph_tel_not_reached')#" />
+	<input type="button" class="btn" onclick="CreateHistoryItemNotReached('<cfoutput>#url.contactkey#</cfoutput>');CloseSimpleModalDialog();" value="#GetLangVal('crm_ph_tel_not_reached')#" />
 </form>
 </div>
 </cfoutput>
@@ -98,7 +98,7 @@
 	<cfoutput>#WriteSimpleHeaderDiv(GetLangVal('cm_wd_sms'))#</cfoutput>
 	<!--- <a href="#" onclick="$('#id_div_sendsms').fadeIn();return false;">Send SMS</a> --->
 	<div style="padding:8px;">
-		<input type="button" onclick="GotoLocHref('/mobile/?action=sms&telnr=<cfoutput>#urlencodedformat(url.telnr)#</cfoutput>');" value="SMS" class="btn2" />
+		<input type="button" onclick="GotoLocHref('/mobile/?action=sms&telnr=<cfoutput>#urlencodedformat(url.telnr)#</cfoutput>');" value="SMS" class="btn" />
 	</div>
 </cfif>
 

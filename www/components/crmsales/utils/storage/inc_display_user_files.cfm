@@ -81,7 +81,7 @@
 
 <cfsavecontent variable="as">
 	
-	<table class="table_overview">
+	<table class="table table-hover">
 	
 		<!--- <cfif arguments.managemode>
 		<tr>

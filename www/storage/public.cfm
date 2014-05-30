@@ -256,7 +256,7 @@ VALUES
 								<form action="?" method="post">
 									#GetLangVal('cm_wd_password')#:
 									<input type="password" name="frm_password" value="">
-									<input class="btn" type="submit" value="#htmleditformat(getlangval('sto_wd_submit'))#">
+									<input class="btn btn-primary" type="submit" value="#htmleditformat(getlangval('sto_wd_submit'))#">
 									
 								</form>
 								<cfabort>
@@ -429,8 +429,8 @@ VALUES
 							</div>
 							<div style="padding:4px;text-align:center; ">
 							<form style="margin:0px; ">
-								<input type="button" class="btn" value="#GetLangVal('cm_wd_close_btn_caption')#" onClick="CloseSimpleModalDialog();"/>
-								<input type="button" class="btn" value="#GetLangVal('cm_wd_download')# (#byteconvert(a_query_file.filesize)#)" onClick="window.open('#a_str_img_file#', '_blank');"/>
+								<input type="button" class="btn btn-primary" value="#GetLangVal('cm_wd_close_btn_caption')#" onClick="CloseSimpleModalDialog();"/>
+								<input type="button" class="btn btn-primary" value="#GetLangVal('cm_wd_download')# (#byteconvert(a_query_file.filesize)#)" onClick="window.open('#a_str_img_file#', '_blank');"/>
 							</form>
 							</div>
 							</cfoutput>

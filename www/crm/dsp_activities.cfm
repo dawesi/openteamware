@@ -43,7 +43,7 @@
 </cfif> --->
 
 <cfsavecontent variable="a_str_content">
-<table class="table_overview">
+<table class="table table-hover">
 	<tr class="tbl_overview_header">
 		<td width="25%">
 			<cfoutput>#GetLangVal('cm_wd_contact')#</cfoutput>
@@ -131,7 +131,7 @@
 <cfif q_select_follow_ups.recordcount GT 0>
 <cfsavecontent variable="a_str_content">
 	
-<table class="table_overview">
+<table class="table table-hover">
 	<tr class="tbl_overview_header">
 		<td width="20%">
 			<cfoutput>#GetLangVal('cm_wd_title')#</cfoutput>
@@ -230,7 +230,7 @@
 
 
 <cfsavecontent variable="a_str_btn">
-	<input onClick="window.open('<cfoutput>#cgi.SCRIPT_NAME#?#cgi.QUERY_STRING#</cfoutput>&amp;format=pdf&amp;extractcontentid=followuplist');return false" type="button" value=" Export as PDF " class="btn" />
+	<input onClick="window.open('<cfoutput>#cgi.SCRIPT_NAME#?#cgi.QUERY_STRING#</cfoutput>&amp;format=pdf&amp;extractcontentid=followuplist');return false" type="button" value=" Export as PDF " class="btn btn-primary" />
 </cfsavecontent>
 
 <!--- <cfset a_str_btn = '' /> --->
@@ -266,7 +266,7 @@ ORDER BY
 
 <cfsavecontent variable="a_str_content">
 
-<table class="table_overview">
+<table class="table table-hover">
   <tr class="tbl_overview_header">
 	<cfoutput>
     <td>#GetLangVal('cm_wd_title')#</td>

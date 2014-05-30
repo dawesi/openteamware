@@ -23,7 +23,7 @@
 <!--- TODO: translate german strings --->
 <cfif ArrayLen(a_struct_crm_filter.criterias) GT 0>
 
-<table class="table_overview">
+<table class="table table-hover">
 <cfloop from="1" to="#ArrayLen(a_struct_crm_filter.criterias)#" index="ii">
 <cfoutput>
 

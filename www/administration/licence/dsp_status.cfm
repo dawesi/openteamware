@@ -48,7 +48,7 @@
 <br><br>
 <cfoutput>
 <b>#GetLangVal('adm_wd_licences')#</b>
-<table class="table_overview">
+<table class="table table-hover">
   <tr class="tbl_overview_header">
   	<td>#GetLangVal('cm_wd_product')#</td>
 	<td>#GetLangVal('adm_ph_licence_total')#</td>
@@ -94,7 +94,7 @@
 
 <br><br><br>
 <b><cfoutput>#GetLangVal('adm_ph_licence_available_contingents')#</cfoutput> *</b><br>
-<table class="table_overview">
+<table class="table table-hover">
   <tr class="tbl_overview_header">
   	<td><cfoutput>#GetLangVal('cm_wd_product')#</cfoutput></td>
 	<td><cfoutput>#GetLangVal('adm_ph_licence_available')#</cfoutput></td>

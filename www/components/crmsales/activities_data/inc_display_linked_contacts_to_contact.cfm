@@ -20,7 +20,7 @@
 </cfif>
 
 <cfsavecontent variable="sReturn">
-<table class="table_overview" cellspacing="0">
+<table class="table table-hover" cellspacing="0">
 	<cfoutput>
 	  <tr class="tbl_overview_header">
 		<td width="50%">

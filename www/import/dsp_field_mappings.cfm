@@ -138,7 +138,7 @@ ORDER BY
 	<tr>
 		<td></td>
 		<td>
-			<input type="submit" value="<cfoutput>#GetLangVal('cm_ph_please_click_here_to_proceed')#</cfoutput>" class="btn" />
+			<input type="submit" value="<cfoutput>#GetLangVal('cm_ph_please_click_here_to_proceed')#</cfoutput>" class="btn btn-primary" />
 		</td>
 	</tr>
 </table>

@@ -35,9 +35,9 @@
 <!--- sales projects ... --->
 <cfsavecontent variable="a_str_buttons">
 
-	<input onClick="location.href= 'index.cfm?action=EditOrNewSalesProject&entrykey=<cfoutput>#urlencodedformat(url.entrykey)#</cfoutput>';" type="button" value=" <cfoutput>#htmleditformat(GetLangVal('cm_wd_edit'))#</cfoutput> " class="btn">
-	<input onClick="call_edit_contact('<cfoutput>#jsstringformat(url.entrykey)#</cfoutput>', 'sales_projects');" type="button" value=" <cfoutput>#htmleditformat(GetLangVal('cm_wd_new'))#</cfoutput> " class="btn">
-	<input type="button" value="<cfoutput>#GetLangVal('crm_ph_close_deal')#</cfoutput>" class="btn" onClick="alert('2do');">
+	<input onClick="location.href= 'index.cfm?action=EditOrNewSalesProject&entrykey=<cfoutput>#urlencodedformat(url.entrykey)#</cfoutput>';" type="button" value=" <cfoutput>#htmleditformat(GetLangVal('cm_wd_edit'))#</cfoutput> " class="btn btn-primary">
+	<input onClick="call_edit_contact('<cfoutput>#jsstringformat(url.entrykey)#</cfoutput>', 'sales_projects');" type="button" value=" <cfoutput>#htmleditformat(GetLangVal('cm_wd_new'))#</cfoutput> " class="btn btn-primary">
+	<input type="button" value="<cfoutput>#GetLangVal('crm_ph_close_deal')#</cfoutput>" class="btn btn-primary" onClick="alert('2do');">
 	
 </cfsavecontent>
 
@@ -218,8 +218,8 @@
 </cfscript>
 
 <cfsavecontent variable="a_str_buttons">
-	<input onClick="call_edit_contact('<cfoutput>#jsstringformat(q_select_sales_project.contactkey)#</cfoutput>', 'tasksappointmentsfollowups', '<cfoutput>#jsstringformat(url.entrykey)#</cfoutput>');" type="button" value=" <cfoutput>#htmleditformat(GetLangVal('cm_wd_edit'))#</cfoutput> " class="btn">
-	<input id="id_btn_call_tsk_evnt_actions" onClick="ShowHTMLActionPopup('id_btn_call_tsk_evnt_actions', a_pop_further_actions_evnt_tsk);return false;" type="button" value=" <cfoutput>#htmleditformat(GetLangVal('cm_wd_new'))#</cfoutput> " class="btn">
+	<input onClick="call_edit_contact('<cfoutput>#jsstringformat(q_select_sales_project.contactkey)#</cfoutput>', 'tasksappointmentsfollowups', '<cfoutput>#jsstringformat(url.entrykey)#</cfoutput>');" type="button" value=" <cfoutput>#htmleditformat(GetLangVal('cm_wd_edit'))#</cfoutput> " class="btn btn-primary">
+	<input id="id_btn_call_tsk_evnt_actions" onClick="ShowHTMLActionPopup('id_btn_call_tsk_evnt_actions', a_pop_further_actions_evnt_tsk);return false;" type="button" value=" <cfoutput>#htmleditformat(GetLangVal('cm_wd_new'))#</cfoutput> " class="btn btn-primary">
 </cfsavecontent>
 
 <!--- write --->
@@ -229,7 +229,7 @@
 
 <!--- history --->
 <cfsavecontent variable="a_str_buttons">
-	<input onClick="call_new_item_for_contact('<cfoutput>#jsstringformat(q_select_sales_project.contactkey)#</cfoutput>', 'history', '<cfoutput>#jsstringformat(url.entrykey)#</cfoutput>');" type="button" value=" <cfoutput>#htmleditformat(GetLangVal('cm_wd_new'))#</cfoutput> " class="btn">
+	<input onClick="call_new_item_for_contact('<cfoutput>#jsstringformat(q_select_sales_project.contactkey)#</cfoutput>', 'history', '<cfoutput>#jsstringformat(url.entrykey)#</cfoutput>');" type="button" value=" <cfoutput>#htmleditformat(GetLangVal('cm_wd_new'))#</cfoutput> " class="btn btn-primary">
 </cfsavecontent>
 
 <cfset a_struct_filter = StructNew()>
@@ -249,12 +249,12 @@
 
 <!--- assigned contacts... --->
 <cfsavecontent variable="a_str_buttons">
-	<input onClick="location.href= 'index.cfm?action=AssignNewContactToSalesProject&salesprojectkey=<cfoutput>#urlencodedformat(url.entrykey)#</cfoutput>';" type="button" value=" <cfoutput>#htmleditformat(GetLangVal('cm_wd_new'))#</cfoutput> " class="btn">
+	<input onClick="location.href= 'index.cfm?action=AssignNewContactToSalesProject&salesprojectkey=<cfoutput>#urlencodedformat(url.entrykey)#</cfoutput>';" type="button" value=" <cfoutput>#htmleditformat(GetLangVal('cm_wd_new'))#</cfoutput> " class="btn btn-primary">
 </cfsavecontent>
 
 <cfsavecontent variable="a_str_content">
 
-	<table class="table_overview" cellspacing="0">
+	<table class="table table-hover" cellspacing="0">
 		<cfoutput>
 		<tr class="tbl_overview_header">
 			<td width="25%">
@@ -306,7 +306,7 @@
 
 <cfsavecontent variable="a_str_content">
 
-	<table class="table_overview" cellspacing="0">
+	<table class="table table-hover" cellspacing="0">
 		<cfoutput>
 		<tr class="tbl_overview_header">
 			<td width="25%">

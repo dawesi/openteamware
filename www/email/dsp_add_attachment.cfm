@@ -173,7 +173,7 @@ function MultiPowUpload_onCompleteAbsolute(type, uploadedBytes) {
 		 </cfloop>
 		  <tr>
 		  <td class="field_name"> </td>
-			<td><input class="btn" type="submit" name="frmSubmit" value="<cfoutput>#GetLangVal('mail_ph_add_attachments_submit')#</cfoutput>" /></td>
+			<td><input class="btn btn-primary" type="submit" name="frmSubmit" value="<cfoutput>#GetLangVal('mail_ph_add_attachments_submit')#</cfoutput>" /></td>
 		  </tr>
 		</table>
 
@@ -228,9 +228,9 @@ function MultiPowUpload_onCompleteAbsolute(type, uploadedBytes) {
 				<input type="Hidden" name="frmStorageUpload" value="1" />
 				
 				<!--- include loop from files ... --->
-				<input type="submit" value="<cfoutput>#GetLangVal('mail_ph_add_attachments_submit')#</cfoutput>" class="btn" />
+				<input type="submit" value="<cfoutput>#GetLangVal('mail_ph_add_attachments_submit')#</cfoutput>" class="btn btn-primary" />
 				<cfinclude template="../storage/dsp_mod_add_email_attachment.cfm">
-				<input type="submit" value="<cfoutput>#GetLangVal('mail_ph_add_attachments_submit')#</cfoutput>" class="btn" />
+				<input type="submit" value="<cfoutput>#GetLangVal('mail_ph_add_attachments_submit')#</cfoutput>" class="btn btn-primary" />
 			
 			</form>	
 

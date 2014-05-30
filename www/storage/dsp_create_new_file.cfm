@@ -80,7 +80,7 @@
   <tr>
   	<td class="field_name"></td>
     <td>
-		<input type="submit" value="<cfoutput>#getlangval('sto_wd_save')#</cfoutput>" class="btn" />
+		<input type="submit" value="<cfoutput>#getlangval('sto_wd_save')#</cfoutput>" class="btn btn-primary" />
 	</td>
   </tr>
 </table>

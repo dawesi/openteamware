@@ -409,7 +409,7 @@
   </tr>  
   <tr>
     <td>&nbsp;</td>
-    <td><input type="submit" class="btn" name="frmSubmit" value="#GetLangVal('cm_wd_save')#"></td>
+    <td><input type="submit" class="btn btn-primary" name="frmSubmit" value="#GetLangVal('cm_wd_save')#"></td>
   </tr>  
 </table>
 </form>

@@ -33,7 +33,7 @@
 	
 	<cfset q_select_accounts = stReturn.q_select_contacts />
 	
-	<table class="table_overview">
+	<table class="table table-hover">
 		<tr class="tbl_overview_header">
 			<td>
 				<cfoutput>#GetLangVal('cm_wd_name')#</cfoutput>
@@ -54,7 +54,7 @@
 				#htmleditformat(q_select_accounts.b_city)#
 			</td>
 			<td>
-				<input onclick="UniversalSelectorSetReturnValues('#q_select_accounts.entrykey#', '#jsstringformat(q_select_accounts.company)#');" type="button" value="#GetLangval('cm_ph_btn_action_apply')#" class="btn2" />
+				<input onclick="UniversalSelectorSetReturnValues('#q_select_accounts.entrykey#', '#jsstringformat(q_select_accounts.company)#');" type="button" value="#GetLangval('cm_ph_btn_action_apply')#" class="btn" />
 			</td>
 		</tr>
 		</cfoutput>
@@ -78,12 +78,12 @@
 	<tr>
 		<td class="field_name"></td>
 		<td>
-			<input type="submit" class="btn" value="#GetLangVal('cm_wd_search')#" />
+			<input type="submit" class="btn btn-primary" value="#GetLangVal('cm_wd_search')#" />
 		</td>
 	</tr>
 </table>
 </form>
 </cfoutput>
 
-<!--- <input type="button" class="btn" value="CreateNewAccount" /> --->
+<!--- <input type="button" class="btn btn-primary" value="CreateNewAccount" /> --->
 

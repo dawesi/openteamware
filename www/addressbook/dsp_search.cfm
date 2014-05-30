@@ -36,7 +36,7 @@
 	<cfoutput>#GetLangVal('crm_ph_filter_click_to_load')#</cfoutput>
 	</div>
 
-	<table class="table_overview">
+	<table class="table table-hover">
 	  <tr class="tbl_overview_header">
 		<td>
 			<cfoutput>#GetLangVal('cm_wd_name')#</cfoutput>
@@ -107,7 +107,7 @@
 		<tr>
 			<td class="field_name"></td>
 			<td>
-				<input type="submit" class="btn" value="<cfoutput>#GetLangVal('cm_wd_save_button_caption')#</cfoutput>">
+				<input type="submit" class="btn btn-primary" value="<cfoutput>#GetLangVal('cm_wd_save_button_caption')#</cfoutput>">
 			</td>
 		  </tr>
 		</table>
@@ -166,8 +166,8 @@
 
 <cfsavecontent variable="a_str_btn">
 	<cfoutput>
-	<input type="button" onclick="GotoLocHref('index.cfm?action=ShowContacts&filterdatatype=#url.filterdatatype#&filterviewkey=#url.entrykey#');" class="btn" value="#GetLangVal('crm_ph_apply_filter_view_now')#" />
-	<!--- <input type="button" class="btn" onclick="GotoLocHref('index.cfm?action=AdvancedSearch');" value="#GetLangVal('crm_ph_create_new_empty_filter')#" />
+	<input type="button" onclick="GotoLocHref('index.cfm?action=ShowContacts&filterdatatype=#url.filterdatatype#&filterviewkey=#url.entrykey#');" class="btn btn-primary" value="#GetLangVal('crm_ph_apply_filter_view_now')#" />
+	<!--- <input type="button" class="btn btn-primary" onclick="GotoLocHref('index.cfm?action=AdvancedSearch');" value="#GetLangVal('crm_ph_create_new_empty_filter')#" />
 	 ---></cfoutput>
 </cfsavecontent>
 
@@ -184,7 +184,7 @@
 </cfsavecontent>
 
 <cfsavecontent variable="a_str_btn">
-	<input type="submit" class="btn" value="<cfoutput>#GetLangVal('crm_ph_button_add_filter_criteria')#</cfoutput>" />
+	<input type="submit" class="btn btn-primary" value="<cfoutput>#GetLangVal('crm_ph_button_add_filter_criteria')#</cfoutput>" />
 </cfsavecontent>
 
 <form action="index.cfm?action=AddCRMFilterCriteria" method="post" style="margin:0px; ">

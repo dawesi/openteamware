@@ -32,7 +32,7 @@
 <cfsavecontent variable="a_str_content">
 
 <cfif q_select_profile.listtype IS 1>
-	<table class="table_overview">
+	<table class="table table-hover">
 	  <tr class="tbl_overview_header">
 		<td>&nbsp;</td>
 		<td>&nbsp;</td>
@@ -49,7 +49,7 @@
 </cfif>
 
 <cfif ListFindNoCase('0,2', q_select_profile.listtype) GT 0>
-	<table class="table_overview">
+	<table class="table table-hover">
 	  <tr class="tbl_overview_header">
 		<td><cfoutput>#GetLangVal('cm_wd_name')#</cfoutput></td>
 		<td><cfoutput>#GetLangVal('cm_wd_email')#</cfoutput></td>

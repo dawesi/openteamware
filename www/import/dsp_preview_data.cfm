@@ -122,8 +122,8 @@ function CheckAllItems() {
 <cfoutput>#application.components.cmp_forms.WriteFormStart()#</cfoutput>
 
 <cfsavecontent variable="a_str_btn">
-<input type="submit" value="<cfoutput>#GetLangVal('cm_ph_please_click_here_to_proceed')#</cfoutput>" class="btn" />
-<input class="btn2" type="button" value="<cfoutput>#GetLangVal('crm_ph_edit_assignment')#</cfoutput>" onclick="history.go(-1);" />
+<input type="submit" value="<cfoutput>#GetLangVal('cm_ph_please_click_here_to_proceed')#</cfoutput>" class="btn btn-primary" />
+<input class="btn" type="button" value="<cfoutput>#GetLangVal('crm_ph_edit_assignment')#</cfoutput>" onclick="history.go(-1);" />
 </cfsavecontent>
 
 <div style="padding-bottom:6px;">
@@ -160,7 +160,7 @@ function CheckAllItems() {
 
 <!--- display data now ... --->
 <cfsavecontent variable="a_str_content">
-<table class="table_overview">
+<table class="table table-hover">
 	<tr class="tbl_overview_header">
 		<td align="center" class="addinfotext">#</td>
 		<td align="center">

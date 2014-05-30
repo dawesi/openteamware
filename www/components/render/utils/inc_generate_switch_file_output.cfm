@@ -161,6 +161,4 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 </div>
 
 
-<div class="bottom_info_box" id="id_bottom_info">
-	Powered by <a href="http://www.openteamware.com/?source=prod_footer" target="_blank">openTeamWare</a>
-</div>
+<div class="bottom_info_box" id="id_bottom_info"></div>

@@ -26,7 +26,7 @@
 
 <form class="frm_inpage" id="form_save_wg_shares_inpage" name="form_save_wg_shares_inpage">
 <div class="div_form_btn_area">
-<input onClick="UniversalSelectorSetReturnValues(CollectCheckedSelectBoxesValues('form_save_wg_shares_inpage'), UniversalSelectorGetDisplayValuesOfCheckedElements('form_save_wg_shares_inpage', 'frm_wg_name_'));" class="btn" type="button" name="frmsubmit" value="<cfoutput>#GetLangVal('cm_ph_btn_action_apply')#</cfoutput>">
+<input onClick="UniversalSelectorSetReturnValues(CollectCheckedSelectBoxesValues('form_save_wg_shares_inpage'), UniversalSelectorGetDisplayValuesOfCheckedElements('form_save_wg_shares_inpage', 'frm_wg_name_'));" class="btn btn-primary" type="button" name="frmsubmit" value="<cfoutput>#GetLangVal('cm_ph_btn_action_apply')#</cfoutput>">
 
 </div>
 

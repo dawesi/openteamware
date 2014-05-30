@@ -134,7 +134,7 @@
   <tr>
     <td>&nbsp;</td>
     <td>
-		<input type="submit" class="btn" value="add">
+		<input type="submit" class="btn btn-primary" value="add">
 	</td>
   </tr>
 </table>

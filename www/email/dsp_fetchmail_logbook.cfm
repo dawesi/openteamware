@@ -150,7 +150,7 @@ ORDER BY dt_check DESC;
 
 <div style="padding-left:40px;width:410px;line-height:17px;"> 
 
-	<table class="table_overview"> 
+	<table class="table table-hover"> 
 
 	  <tr class="tbl_overview_header">
 

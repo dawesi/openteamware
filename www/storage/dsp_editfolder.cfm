@@ -158,9 +158,9 @@
 			
 		</td>
 		<td>
-			<input type="submit" class="btn" value="<cfoutput>#htmleditformat(getlangval('sto_wd_save'))#</cfoutput>" />
+			<input type="submit" class="btn btn-primary" value="<cfoutput>#htmleditformat(getlangval('sto_wd_save'))#</cfoutput>" />
 			
-			<input type="button" onClick="CancelEditing();" value="<cfoutput>#GetLangVal('cm_wd_cancel')#</cfoutput> ..." class="btn2" />
+			<input type="button" onClick="CancelEditing();" value="<cfoutput>#GetLangVal('cm_wd_cancel')#</cfoutput> ..." class="btn" />
 		</td>
 	</tr>
 	</form>
@@ -219,7 +219,7 @@
 		  <tr>
 			<td class="field_name"></td>
 			<td>
-			<input type="submit" name="frm_subaction_update" value="<cfoutput>#getlangval('sto_ph_savepassword')#</cfoutput>" class="btn" />
+			<input type="submit" name="frm_subaction_update" value="<cfoutput>#getlangval('sto_ph_savepassword')#</cfoutput>" class="btn btn-primary" />
 			</td>
 		  </tr>
 		  <tr>
@@ -230,7 +230,7 @@
 		  <tr>
 			<td class="field_name"></td>
 			<td>
-				<input type="submit" name="frm_subaction_delete" value="<cfoutput>#getlangval('sto_ph_deletepublicshare')#</cfoutput>" class="btn" />
+				<input type="submit" name="frm_subaction_delete" value="<cfoutput>#getlangval('sto_ph_deletepublicshare')#</cfoutput>" class="btn btn-primary" />
 			</td>
 		  </tr>
 		  </form>
@@ -255,7 +255,7 @@
 			</tr>
 			<tr>
 				<td class="field_name"></td>
-				<td><input type="submit" value="<cfoutput>#getlangval('sto_ph_createpublicshare')#</cfoutput>" class="btn" /></td>
+				<td><input type="submit" value="<cfoutput>#getlangval('sto_ph_createpublicshare')#</cfoutput>" class="btn btn-primary" /></td>
 			</tr>
 		</table>
 			 

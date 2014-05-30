@@ -31,12 +31,12 @@ TODO hp: implement this feature in future release
 <cfoutput>#GetLangVal('cm_wd_new')#</cfoutput>:
 <cfoutput>
 <cfif request.stSecurityContext.q_select_workgroup_permissions.recordcount GT 0>
-<input class="btn2" type="button" onClick="AddAttendeeToEvent('#jsstringformat(Variables.NewOrEditEvent.Query.entrykey)#', 0, '#GetLangVal('cm_wd_employee')#');" value="#GetLangVal('cm_wd_employee')#" />
+<input class="btn" type="button" onClick="AddAttendeeToEvent('#jsstringformat(Variables.NewOrEditEvent.Query.entrykey)#', 0, '#GetLangVal('cm_wd_employee')#');" value="#GetLangVal('cm_wd_employee')#" />
 </cfif>
 
-<input class="btn2" type="button" onclick="AddAttendeeToEvent('#jsstringformat(Variables.NewOrEditEvent.Query.entrykey)#', 1, '#GetLangVal('cm_wd_contact')# (#GetLangVal('cm_wd_addressbook')#)');" value="#GetLangVal('cm_wd_contact')# (#GetLangVal('cm_wd_addressbook')#)" />
-<input class="btn2" type="button" onclick="AddAttendeeToEvent('#jsstringformat(Variables.NewOrEditEvent.Query.entrykey)#', 2, '#GetLangVal('adrb_wd_email_address')#');" value="#GetLangVal('adrb_wd_email_address')#" />
-<input class="btn2" type="button" onclick="AddAttendeeToEvent('#jsstringformat(Variables.NewOrEditEvent.Query.entrykey)#', 4, '#GetLangVal('cm_wd_resource')#');" value="#GetLangVal('cm_wd_resource')#" />
+<input class="btn" type="button" onclick="AddAttendeeToEvent('#jsstringformat(Variables.NewOrEditEvent.Query.entrykey)#', 1, '#GetLangVal('cm_wd_contact')# (#GetLangVal('cm_wd_addressbook')#)');" value="#GetLangVal('cm_wd_contact')# (#GetLangVal('cm_wd_addressbook')#)" />
+<input class="btn" type="button" onclick="AddAttendeeToEvent('#jsstringformat(Variables.NewOrEditEvent.Query.entrykey)#', 2, '#GetLangVal('adrb_wd_email_address')#');" value="#GetLangVal('adrb_wd_email_address')#" />
+<input class="btn" type="button" onclick="AddAttendeeToEvent('#jsstringformat(Variables.NewOrEditEvent.Query.entrykey)#', 4, '#GetLangVal('cm_wd_resource')#');" value="#GetLangVal('cm_wd_resource')#" />
 </cfoutput>
 </div>
 

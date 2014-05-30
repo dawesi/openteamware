@@ -50,7 +50,7 @@
 		
 		<div class="mischeader">
 		<b><img src="/images/si/asterisk_yellow.png" class="si_img" alt="" /> <cfoutput>#GetLangVal('crm_ph_dup_check_maybe_found')#</cfoutput></b>
-		<table class="table_overview">
+		<table class="table table-hover">
 			<cfoutput>
 			<tr class="tbl_overview_header">
 				<td>

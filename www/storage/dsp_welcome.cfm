@@ -85,7 +85,7 @@
 
 							</td>
 							<td>
-								<input type="submit" value="Suchen" class="btn2" />
+								<input type="submit" value="Suchen" class="btn" />
 							</td>
 						</tr>
 						

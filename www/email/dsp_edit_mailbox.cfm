@@ -110,9 +110,9 @@ WHERE
 		  <tr>
 			<td class="field_name"></td>
 			<td>
-				<input type="submit" name="frmsubmit" value="Umbenennen" class="btn" />
+				<input type="submit" name="frmsubmit" value="Umbenennen" class="btn btn-primary" />
 		
-				<input onClick="location.href='index.cfm';" type="button" class="btn3" value="<cfoutput>#GetLangVal('cm_wd_cancel')#</cfoutput>" />
+				<input onClick="location.href='index.cfm';" type="button" class="btn" value="<cfoutput>#GetLangVal('cm_wd_cancel')#</cfoutput>" />
 			</td>
 		  </tr>
 		</table>

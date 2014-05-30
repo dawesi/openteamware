@@ -188,12 +188,12 @@
 
 <cfsavecontent variable="a_str_buttons">
 <cfoutput>
-	<input type="button" value="#MakeFirstCharUCase(GetLangVal('cm_wd_edit'))#" onclick="GotoLocHref('index.cfm?action=EditProject&entrykey=#url.entrykey#');" class="btn" />
+	<input type="button" value="#MakeFirstCharUCase(GetLangVal('cm_wd_edit'))#" onclick="GotoLocHref('index.cfm?action=EditProject&entrykey=#url.entrykey#');" class="btn btn-primary" />
 	
 	<cfif q_select_project.closed IS 0>
-		<input type="button" value="#GetLangVal('prj_ph_close_project')#" onclick="DoCloseProject('#jsstringformat(q_select_project.title)#', '#url.entrykey#');" class="btn2" />
+		<input type="button" value="#GetLangVal('prj_ph_close_project')#" onclick="DoCloseProject('#jsstringformat(q_select_project.title)#', '#url.entrykey#');" class="btn" />
 	</cfif>
-	<input type="button" value="#MakeFirstCharUCase(GetLangVal('cm_wd_delete'))#" onclick="GotoLocHref('index.cfm?action=DeleteProject&entrykey=#url.entrykey#');" class="btn2" />
+	<input type="button" value="#MakeFirstCharUCase(GetLangVal('cm_wd_delete'))#" onclick="GotoLocHref('index.cfm?action=DeleteProject&entrykey=#url.entrykey#');" class="btn" />
 </cfoutput>
 </cfsavecontent>
 
@@ -217,7 +217,7 @@ function DoCloseProject(title, entrykey) {
 <cfif q_select_project.project_type IS 1 AND q_select_sales_project_stage_trends.recordcount GT 0>
 	<cfsavecontent variable="a_str_content">
 	
-		<table class="table_overview" cellspacing="0">
+		<table class="table table-hover" cellspacing="0">
 			<cfoutput>
 			<tr class="tbl_overview_header">
 				<td width="25%">

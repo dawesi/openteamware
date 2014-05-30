@@ -75,7 +75,7 @@ ORDER BY
 &nbsp;<a href="index.cfm?action=birthdaylist&timeframe=30"><cfoutput>#GetLangVal('cal_wd_month')#</cfoutput> (30 <cfoutput>#GetLangVal('cm_wd_days')#</cfoutput>)</a>&nbsp;|
 &nbsp;<a href="index.cfm?action=birthdaylist&timeframe=0"><cfoutput>#GetLangVal('cm_wd_all')#</cfoutput></a>
 <br /><br />  
-<table class="table_overview">
+<table class="table table-hover">
   <tr class="tbl_overview_header">
     <td colspan="2">
 		<cfoutput>#GetLangVal('cm_wd_name')#</cfoutput></td>

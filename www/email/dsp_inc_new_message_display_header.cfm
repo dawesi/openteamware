@@ -454,31 +454,31 @@ WHERE
 	<!--- is this message saved in the "drafts" folder? --->
 	<cfif CompareNoCase(url.mailbox, "inbox.drafts") is 0>
 	
-		<input type="button" class="btn" onclick="OpenDraftMsg('<cfoutput>#url.id#</cfoutput>'); return false;" value="<cfoutput>#GetLangVal('mail_ph_msg_draft_continue')#</cfoutput>">
+		<input type="button" class="btn btn-primary" onclick="OpenDraftMsg('<cfoutput>#url.id#</cfoutput>'); return false;" value="<cfoutput>#GetLangVal('mail_ph_msg_draft_continue')#</cfoutput>">
 	
 	<cfelse>
 	
 		<!--- no draft msg ... --->
-		<input type="button" class="btn" onclick="OpenComposeWindow(1,<cfoutput>#url.id#</cfoutput>,'<cfoutput>#url.mailbox#</cfoutput>');" value="<cfoutput>#GetLangVal("mail_wd_reply")#</cfoutput>"/>
-		<!--- <input type="button" class="btn2" onclick="ShowQA();" value="<cfoutput>#GetLangVal('mail_wd_quick_reply')#</cfoutput>"/> --->
+		<input type="button" class="btn btn-primary" onclick="OpenComposeWindow(1,<cfoutput>#url.id#</cfoutput>,'<cfoutput>#url.mailbox#</cfoutput>');" value="<cfoutput>#GetLangVal("mail_wd_reply")#</cfoutput>"/>
+		<!--- <input type="button" class="btn" onclick="ShowQA();" value="<cfoutput>#GetLangVal('mail_wd_quick_reply')#</cfoutput>"/> --->
 		
 		<cfif a_int_to_count GT 1>
-			<input type="button" class="btn2" onclick="OpenComposeWindow(1,<cfoutput>#url.id#</cfoutput>,'<cfoutput>#url.mailbox#</cfoutput>', '', 1);" value="<cfoutput>#GetLangVal("mail_ph_reply_all")#</cfoutput>"/>
+			<input type="button" class="btn" onclick="OpenComposeWindow(1,<cfoutput>#url.id#</cfoutput>,'<cfoutput>#url.mailbox#</cfoutput>', '', 1);" value="<cfoutput>#GetLangVal("mail_ph_reply_all")#</cfoutput>"/>
 		</cfif>
 		
-		<input type="button" class="btn2" onclick="OpenComposeWindow(2,<cfoutput>#url.id#</cfoutput>,'<cfoutput>#url.mailbox#</cfoutput>');" value="<cfoutput>#GetLangVal("mail_wd_forward")#</cfoutput>"/>
-		<input type="button" id="id_btn_link_mail_move" onclick="ShowHTMLActionPopup(this.id, a_mv2folder_pop_men);" class="btn2" value="<cfoutput>#GetLangVal('mail_wd_move_to_folder')#</cfoutput>"/>
+		<input type="button" class="btn" onclick="OpenComposeWindow(2,<cfoutput>#url.id#</cfoutput>,'<cfoutput>#url.mailbox#</cfoutput>');" value="<cfoutput>#GetLangVal("mail_wd_forward")#</cfoutput>"/>
+		<input type="button" id="id_btn_link_mail_move" onclick="ShowHTMLActionPopup(this.id, a_mv2folder_pop_men);" class="btn" value="<cfoutput>#GetLangVal('mail_wd_move_to_folder')#</cfoutput>"/>
 	
 		<!--- offer to add email to history ... --->
 		<cfif a_bol_msg_has_crm_contact AND NOT a_bol_history_item_exists>
-			<input type="button" class="btn2" onclick="AddMailToCRMHistory('<cfoutput>#url.mailbox#</cfoutput>', '<cfoutput>#url.id#</cfoutput>', '<cfoutput>#JsStringFormat(a_str_message_id)#</cfoutput>', '<cfoutput>#JsStringFormat(a_str_primary_crm_contact_entrykey)#</cfoutput>');" value="<cfoutput>#GetLangVal('crm_ph_add_to_crm_history')#</cfoutput>" />
+			<input type="button" class="btn" onclick="AddMailToCRMHistory('<cfoutput>#url.mailbox#</cfoutput>', '<cfoutput>#url.id#</cfoutput>', '<cfoutput>#JsStringFormat(a_str_message_id)#</cfoutput>', '<cfoutput>#JsStringFormat(a_str_primary_crm_contact_entrykey)#</cfoutput>');" value="<cfoutput>#GetLangVal('crm_ph_add_to_crm_history')#</cfoutput>" />
 		</cfif>
 		
 	</cfif>
 	
-	<input type="button" onclick="DeleteMessage(<cfoutput>#url.id#</cfoutput>,'<cfoutput>#jsstringformat(url.mailbox)#</cfoutput>','<cfoutput>#url.rowno#</cfoutput>', true, <cfoutput>#ReturnTrueFalseOnZeroOne(url.openfullcontent)#</cfoutput>, '<cfoutput>#JsStringFormat(url.mbox_query_md5)#</cfoutput>');" class="btn2" value="<cfoutput>#GetLangVal('mail_wd_delete')#</cfoutput>" />
+	<input type="button" onclick="DeleteMessage(<cfoutput>#url.id#</cfoutput>,'<cfoutput>#jsstringformat(url.mailbox)#</cfoutput>','<cfoutput>#url.rowno#</cfoutput>', true, <cfoutput>#ReturnTrueFalseOnZeroOne(url.openfullcontent)#</cfoutput>, '<cfoutput>#JsStringFormat(url.mbox_query_md5)#</cfoutput>');" class="btn" value="<cfoutput>#GetLangVal('mail_wd_delete')#</cfoutput>" />
 	
-	<input type="button" id="id_btn_link_open_mail_action_popup" onclick="ShowHTMLActionPopup(this.id, a_misc_actions_popup_menu);" class="btn2" value="<cfoutput>#GetLangVal('cm_wd_link_more')#</cfoutput>" />
+	<input type="button" id="id_btn_link_open_mail_action_popup" onclick="ShowHTMLActionPopup(this.id, a_misc_actions_popup_menu);" class="btn" value="<cfoutput>#GetLangVal('cm_wd_link_more')#</cfoutput>" />
 	
 
 </form>

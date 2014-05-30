@@ -66,7 +66,7 @@
 			<cfoutput>#GetLangVal('crm_ph_links_no_links_found')#</cfoutput>
 		<cfelse>
 		
-			<table class="table_overview">
+			<table class="table table-hover">
 			  <cfoutput query="q_select_links">
 			  <tr>
 				<td>
@@ -115,7 +115,7 @@
 
 	
 		<form id="id_form_search" onSubmit="DoContactsSearch();return false;" style="margin:0px;" action="#">
-		<table class="table_overview">
+		<table class="table table-hover">
 		  <tr>
 			<td width="200px;" align="right">
 				<cfoutput>#GetLangVal('cm_wd_search')# (#GetLangVal('cm_wd_addressbook')#)</cfoutput>:
@@ -123,7 +123,7 @@
 			<td>
 				<input type="text" name="frmsearch" id="frmsearch" value="" size="20">
 				
-				<input type="submit" value="<cfoutput>#GetLangVal('cm_wd_search')#</cfoutput>" class="btn">
+				<input type="submit" value="<cfoutput>#GetLangVal('cm_wd_search')#</cfoutput>" class="btn btn-primary">
 			</td>
 		  </tr>
 		 </table>
@@ -183,7 +183,7 @@
 			  <tr>
 				<td>&nbsp;</td>
 				<td>
-					<input type="submit" class="btn" value="<cfoutput>#GetLangVal('cm_wd_save_button_caption')#</cfoutput>">
+					<input type="submit" class="btn btn-primary" value="<cfoutput>#GetLangVal('cm_wd_save_button_caption')#</cfoutput>">
 				</td>
 			  </tr>
 			</table>

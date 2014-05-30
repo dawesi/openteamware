@@ -116,7 +116,7 @@
 			<td class="field_name">
 			</td>
 			<td>
-				<input type="submit" value="<cfoutput>#GetLangVal('cm_wd_search')#</cfoutput>" class="btn2" />
+				<input type="submit" value="<cfoutput>#GetLangVal('cm_wd_search')#</cfoutput>" class="btn" />
 			</td>
 		</tr>
 		<cfif q_select_last_displayed_contacts.recordcount GT 0>

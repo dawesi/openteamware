@@ -17,8 +17,8 @@
 </cfscript>
 	
 <cfsavecontent variable="a_str_buttons">
-	<input id="id_btn_call_tsk_evnt_actions" onClick="ShowHTMLActionPopup('id_btn_call_tsk_evnt_actions', a_pop_act_evnt_tsk);return false;" type="button" value="<cfoutput>#htmleditformat(GetLangVal('cm_wd_new'))#</cfoutput>" class="btn" />
-	<input onClick="call_edit_contact('<cfoutput>#jsstringformat(url.entrykey)#</cfoutput>', 'activities');" type="button" value="<cfoutput>#htmleditformat(MakeFirstCharUCase(GetLangVal('cm_wd_edit')))#</cfoutput>" class="btn2" />
+	<input id="id_btn_call_tsk_evnt_actions" onClick="ShowHTMLActionPopup('id_btn_call_tsk_evnt_actions', a_pop_act_evnt_tsk);return false;" type="button" value="<cfoutput>#htmleditformat(GetLangVal('cm_wd_new'))#</cfoutput>" class="btn btn-primary" />
+	<input onClick="call_edit_contact('<cfoutput>#jsstringformat(url.entrykey)#</cfoutput>', 'activities');" type="button" value="<cfoutput>#htmleditformat(MakeFirstCharUCase(GetLangVal('cm_wd_edit')))#</cfoutput>" class="btn" />
 </cfsavecontent>
 
 <cfoutput>#WriteNewContentBox(GetLangVal('adrb_wd_activities'), a_str_buttons, GenerateSimpleDivWithID('id_div_crm_show_contact_tasks_and_appointments'), 'id_fieldset_tasks_appointments_followups', 'hidden')#</cfoutput>
@@ -33,9 +33,9 @@
 <cfif Len(a_str_products_of_contact) GT 0>
 
 <cfsavecontent variable="a_str_buttons">
-	<input onclick="GotoLocHref('/crm/index.cfm?action=addProductToContact&contactkey=<cfoutput>#url.entrykey#</cfoutput>');" type="button" value="<cfoutput>#GetLangVal('cm_wd_new')#</cfoutput>" class="btn" />
-	<input onclick="GotoLocHref('/crm/index.cfm?action=addMultipleProductsToContact&contactkey=<cfoutput>#url.entrykey#</cfoutput>');" type="button" value="<cfoutput>#GetLangVal('cm_wd_new_multiple')#</cfoutput>" class="btn" />
-	<input onclick="GotoLocHref('/crm/index.cfm?action=showProductsOfContact&contactkey=<cfoutput>#url.entrykey#</cfoutput>&editmode=true');" type="button" value="<cfoutput>#GetLangVal('crm_ph_products_history')#</cfoutput>" class="btn2" />	
+	<input onclick="GotoLocHref('/crm/index.cfm?action=addProductToContact&contactkey=<cfoutput>#url.entrykey#</cfoutput>');" type="button" value="<cfoutput>#GetLangVal('cm_wd_new')#</cfoutput>" class="btn btn-primary" />
+	<input onclick="GotoLocHref('/crm/index.cfm?action=addMultipleProductsToContact&contactkey=<cfoutput>#url.entrykey#</cfoutput>');" type="button" value="<cfoutput>#GetLangVal('cm_wd_new_multiple')#</cfoutput>" class="btn btn-primary" />
+	<input onclick="GotoLocHref('/crm/index.cfm?action=showProductsOfContact&contactkey=<cfoutput>#url.entrykey#</cfoutput>&editmode=true');" type="button" value="<cfoutput>#GetLangVal('crm_ph_products_history')#</cfoutput>" class="btn" />	
 </cfsavecontent>
 
 <cfoutput>#WriteNewContentBox(GetLangVal('crm_ph_products'), a_str_buttons, a_str_products_of_contact, 'id_div_fieldset_contacts_products')#</cfoutput>
@@ -46,8 +46,8 @@
 		
 	<!--- buttons --->
 	<cfsavecontent variable="a_str_buttons">
-		<input onClick="call_edit_contact('<cfoutput>#jsstringformat(url.entrykey)#</cfoutput>', 'files');" type="button" value=" <cfoutput>#htmleditformat(GetLangVal('cm_wd_edit'))#</cfoutput> " class="btn">
-		<input onClick="call_edit_contact('<cfoutput>#jsstringformat(url.entrykey)#</cfoutput>', 'files');" type="button" value=" <cfoutput>#htmleditformat(GetLangVal('cm_wd_new'))#</cfoutput> " class="btn">
+		<input onClick="call_edit_contact('<cfoutput>#jsstringformat(url.entrykey)#</cfoutput>', 'files');" type="button" value=" <cfoutput>#htmleditformat(GetLangVal('cm_wd_edit'))#</cfoutput> " class="btn btn-primary">
+		<input onClick="call_edit_contact('<cfoutput>#jsstringformat(url.entrykey)#</cfoutput>', 'files');" type="button" value=" <cfoutput>#htmleditformat(GetLangVal('cm_wd_new'))#</cfoutput> " class="btn btn-primary">
 	</cfsavecontent>
 	
 	<!--- write --->

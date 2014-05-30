@@ -209,7 +209,7 @@
 	<td>
 		<!--- reset criteria --->
 		<cfif attributes.OfferResetButton>
-			<input type="button" class="btn3" value="#GetLangVal('cm_wd_reset')#..." />
+			<input type="button" class="btn" value="#GetLangVal('cm_wd_reset')#..." />
 			<!---<a href="javascript:ResetFilterCriteria('#jsstringformat(a_str_uuid_item)#');"><img src="/images/si/delete.png" align="absmiddle" border="0" /></a>--->
 		<cfelse>
 			&nbsp;

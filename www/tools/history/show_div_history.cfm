@@ -30,7 +30,7 @@ LIMIT
 
 <cfinclude template="/common/scripts/script_utils.cfm">
 
-<table class="table_overview">
+<table class="table table-hover">
 		
 	<cfif q_select_history.recordcount IS 0>
 		<tr>

@@ -29,12 +29,12 @@
 <form name="frmassignusers" id="frmassignusers" class="frm_inpage" action="#" onsubmit="UniversalSelectorSetReturnValues(CollectCheckedSelectBoxesValues('frmassignusers'), UniversalSelectorGetDisplayValuesOfCheckedElements('frmassignusers', 'frm_username_'));return false;">
 
 <div class="div_form_btn_area">
-	<input type="submit" value="<cfoutput>#GetLangVal('cm_ph_btn_action_apply')#</cfoutput>" class="btn" />
+	<input type="submit" value="<cfoutput>#GetLangVal('cm_ph_btn_action_apply')#</cfoutput>" class="btn btn-primary" />
 </div>
 
 <cfoutput>#WriteSimpleHeaderDiv(GetLangVal('cm_ph_assign_objects'))#</cfoutput>
 
-<table class="table_overview">
+<table class="table table-hover">
 		
 	<cfloop list="#a_str_existing_assignments#" index="a_str_userkey">
 	<cfoutput>
@@ -89,7 +89,7 @@
 	</tr>
 	<tr>
 		<td>
-			<input type="submit" value="<cfoutput>#GetLangVal('cm_wd_add')#</cfoutput>" class="btn" />
+			<input type="submit" value="<cfoutput>#GetLangVal('cm_wd_add')#</cfoutput>" class="btn btn-primary" />
 		</td>
 	</tr>
 </table>

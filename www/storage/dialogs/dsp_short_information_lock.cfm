@@ -85,7 +85,7 @@
 		<td class="field_name"></td>
 		<td>
 			<cfif a_struct_lock.userkey IS request.stSecurityContext.myuserkey>
-				<input onclick="DeleteExclusiveLock('#url.filekey#');" class="btn2" type="button" value="Objekt-Sperre aufheben ..." />
+				<input onclick="DeleteExclusiveLock('#url.filekey#');" class="btn" type="button" value="Objekt-Sperre aufheben ..." />
 			</cfif>
 		</td>
 	</tr>

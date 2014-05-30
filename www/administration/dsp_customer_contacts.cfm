@@ -14,7 +14,7 @@
 
 <h4><cfoutput>#GetLangVal('adm_ph_administrative_contacts')#</cfoutput></h4>
 
-<table class="table_overview">
+<table class="table table-hover">
   <tr class="tbl_overview_header">
     <td><b><cfoutput>#GetLangVal('cm_wd_user')#</cfoutput></b></td>
     <td>Level</td>
@@ -115,7 +115,7 @@ WHERE entrykey NOT IN
   </tr>
   <tr>
     <td class="field_name"></td>
-    <td><input type="submit" name="frmsubmit" class="btn" value="Hinzufuegen ..."></td>
+    <td><input type="submit" name="frmsubmit" class="btn btn-primary" value="Hinzufuegen ..."></td>
   </tr>
 </table>
 </form>

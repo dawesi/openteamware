@@ -151,7 +151,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0072c6', end
 					</tr>
 					<tr>
 						<td>
-							<input type="submit" value="<cfoutput>#GetLangVal( 'cm_wd_login' )#</cfoutput>" class="btn" />
+							<input type="submit" value="<cfoutput>#GetLangVal( 'cm_wd_login' )#</cfoutput>" class="btn btn-primary" />
 						</td>
 					</tr>
 				</table>

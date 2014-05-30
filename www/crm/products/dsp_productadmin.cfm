@@ -26,7 +26,7 @@
 </cfif>
 
 <cfsavecontent variable="a_str_products_table">
-<table class="table_overview">
+<table class="table table-hover">
 	<cfoutput>
 	  <tr class="tbl_overview_header">
 		<td width="25%">

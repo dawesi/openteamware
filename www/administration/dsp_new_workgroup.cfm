@@ -76,7 +76,7 @@ WHERE
   </tr>
   <tr>
     <td class="field_name">&nbsp;</td>
-    <td><input type="submit" class="btn" name="frmsubmit" value="<cfoutput>#GetLangVal('adm_ph_create_new_group')#</cfoutput>"></td>
+    <td><input type="submit" class="btn btn-primary" name="frmsubmit" value="<cfoutput>#GetLangVal('adm_ph_create_new_group')#</cfoutput>"></td>
   </tr>
 </form>
 </table>

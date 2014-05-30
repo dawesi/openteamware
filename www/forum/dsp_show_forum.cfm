@@ -29,7 +29,7 @@ WHERE
 <cfset tmp = SetHeaderTopInfoString(q_select_postings.subject) />
 
 <cfsavecontent variable="a_str_content">
-<table class="table_overview">
+<table class="table table-hover">
   <tr class="tbl_overview_header">
     <td width="50">&nbsp;</td>
     <td><cfoutput>#GetLangVal('cm_wd_subject')#</cfoutput></td>
@@ -68,7 +68,7 @@ WHERE
 </cfsavecontent>
 
 <cfsavecontent variable="a_str_buttons">
-	<input class="btn" onClick="location.href = 'index.cfm?action=NewPosting&forumkey=<cfoutput>#urlencodedformat(url.entrykey)#</cfoutput>';" type="button" value="<cfoutput>#GetLangVal('forum_ph_compose_new_article')#</cfoutput>">
+	<input class="btn btn-primary" onClick="location.href = 'index.cfm?action=NewPosting&forumkey=<cfoutput>#urlencodedformat(url.entrykey)#</cfoutput>';" type="button" value="<cfoutput>#GetLangVal('forum_ph_compose_new_article')#</cfoutput>">
 </cfsavecontent>
 
 <cfoutput>#WriteNewContentBox(application.components.cmp_forum.GetForumNameByEntrykey(url.entrykey), a_str_buttons, a_str_content)#</cfoutput>

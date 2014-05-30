@@ -40,7 +40,7 @@ ORDER BY
 </cfquery>
 
 <cfsavecontent variable="a_str_content">
-<table class="table_overview">
+<table class="table table-hover">
   <tr class="tbl_overview_header">
 	<td>
 		<cfoutput>#GetLangVal("mail_wd_foldername")#</cfoutput>
@@ -147,13 +147,13 @@ ORDER BY
 </cfsavecontent>
 
 <cfsavecontent variable="a_str_buttons">
-<input type="button" class="btn" onclick="GotoLocHref('index.cfm?action=NewFolder');" type="button" value="<cfoutput>#GetLangval("mail_ph_newFolder")#</cfoutput>" />
+<input type="button" class="btn btn-primary" onclick="GotoLocHref('index.cfm?action=NewFolder');" type="button" value="<cfoutput>#GetLangval("mail_ph_newFolder")#</cfoutput>" />
 
-<input type="button" class="btn2" onclick="GotoLocHref('index.cfm?action=EmptyFolder&foldername=INBOX.Trash&maxage=0');" value="Papierkorb <cfoutput>#GetLangVal('mail_wd_empty')#</cfoutput>" />
-<input type="button" class="btn2" onclick="GotoLocHref('index.cfm?action=EmptyFolder&foldername=INBOX.Junkmail&maxage=0');" value="Junkmail <cfoutput>#GetLangVal('mail_wd_empty')#</cfoutput>" />
+<input type="button" class="btn" onclick="GotoLocHref('index.cfm?action=EmptyFolder&foldername=INBOX.Trash&maxage=0');" value="Papierkorb <cfoutput>#GetLangVal('mail_wd_empty')#</cfoutput>" />
+<input type="button" class="btn" onclick="GotoLocHref('index.cfm?action=EmptyFolder&foldername=INBOX.Junkmail&maxage=0');" value="Junkmail <cfoutput>#GetLangVal('mail_wd_empty')#</cfoutput>" />
 
 <cfif request.appsettings.properties.mailspeedenabled IS 1>
-<input class="btn2" onclick="GotoLocHref('act_reload_folder_structure.cfm');" href="##" value="<cfoutput>#GetLangVal('mail_ph_reload_folder_structure')#</cfoutput>" />
+<input class="btn" onclick="GotoLocHref('act_reload_folder_structure.cfm');" href="##" value="<cfoutput>#GetLangVal('mail_ph_reload_folder_structure')#</cfoutput>" />
 </cfif>
 
 </cfsavecontent>

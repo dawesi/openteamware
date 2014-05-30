@@ -34,7 +34,7 @@ ORDER BY
 </cfquery>
 
 <b><cfoutput>#GetLangVal('adm_ph_last_50_logins')#</cfoutput></b><hr size="1" noshade>
-<table class="table_overview">
+<table class="table table-hover">
   <tr class="tbl_overview_header"> 
     <td>&nbsp;</td>
     <td><cfoutput>#GetLangVal('cm_ph_date_time')#</cfoutput></td>

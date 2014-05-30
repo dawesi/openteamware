@@ -68,7 +68,7 @@
 		<tr>
 			<td class="field_name"></td>
 			<td>
-				<input type="submit" class="btn" value="<cfoutput>#GetLangVal('adrb_ph_re_send_invitations')#</cfoutput>" />
+				<input type="submit" class="btn btn-primary" value="<cfoutput>#GetLangVal('adrb_ph_re_send_invitations')#</cfoutput>" />
 			</td>
 		</tr>
 

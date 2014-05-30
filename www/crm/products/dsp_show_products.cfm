@@ -28,8 +28,8 @@
 </cfif>
 
 <cfsavecontent variable="a_str_buttons">
-	<input onclick="GotoLocHref('/crm/index.cfm?action=addProductToContact&contactkey=<cfoutput>#url.contactkey#</cfoutput>');" type="button" value="<cfoutput>#GetLangVal('cm_wd_new')#</cfoutput>" class="btn" />
-	<input onclick="GotoLocHref('/crm/index.cfm?action=addMultipleProductsToContact&contactkey=<cfoutput>#url.contactkey#</cfoutput>');" type="button" value="<cfoutput>#GetLangVal('cm_wd_new_multiple')#</cfoutput>" class="btn" />
+	<input onclick="GotoLocHref('/crm/index.cfm?action=addProductToContact&contactkey=<cfoutput>#url.contactkey#</cfoutput>');" type="button" value="<cfoutput>#GetLangVal('cm_wd_new')#</cfoutput>" class="btn btn-primary" />
+	<input onclick="GotoLocHref('/crm/index.cfm?action=addMultipleProductsToContact&contactkey=<cfoutput>#url.contactkey#</cfoutput>');" type="button" value="<cfoutput>#GetLangVal('cm_wd_new_multiple')#</cfoutput>" class="btn btn-primary" />
 </cfsavecontent>
 
 <cfoutput>#WriteNewContentBox(GetLangVal('crm_ph_products'), a_str_buttons, a_str_products_of_contact)#</cfoutput>
@@ -45,7 +45,7 @@
 </cfinvoke>
 
 <cfsavecontent variable="a_str_history_table">
-<table class="table_overview">
+<table class="table table-hover">
 	<cfoutput>
 	  <tr class="tbl_overview_header">
 		<td width="25%">

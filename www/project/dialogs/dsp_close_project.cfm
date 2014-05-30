@@ -30,7 +30,7 @@
 	
 	<br /> 
 	<cfoutput>
-	<input class="btn" type="button" value="#GetLangVal('cm_wd_close_btn_caption')#" onclick="GotoLocHref('index.cfm');" />
+	<input class="btn btn-primary" type="button" value="#GetLangVal('cm_wd_close_btn_caption')#" onclick="GotoLocHref('index.cfm');" />
 	</cfoutput>
 	
 	<cfexit method="exittemplate">
@@ -65,7 +65,7 @@
 			
 		</td>
 		<td>
-			<input type="submit" name="frmsubmit" class="btn" value="#GetLangVal('prj_ph_close_project')#" />
+			<input type="submit" name="frmsubmit" class="btn btn-primary" value="#GetLangVal('prj_ph_close_project')#" />
 		</td>
 	</tr>
 </table>

@@ -91,7 +91,7 @@ WHERE
 
 <cfsavecontent variable="a_str_buttons">
 	<cfoutput>
-	<input onClick="location.href = 'index.cfm?action=newissue&listkey=#q_select_issue.listkey#&tempaltekey=#q_select_issue.entrykey#';" type="button" class="btn" value="#GetLangVal('nl_ph_use_as_template')#"/>
+	<input onClick="location.href = 'index.cfm?action=newissue&listkey=#q_select_issue.listkey#&tempaltekey=#q_select_issue.entrykey#';" type="button" class="btn btn-primary" value="#GetLangVal('nl_ph_use_as_template')#"/>
 	</cfoutput>
 </cfsavecontent>
 
@@ -139,7 +139,7 @@ valuecolumn=" ">
 <cfoutput>#ReplaceNoCase(a_str_chart, 'http://', 'https://', 'ALL')#</cfoutput>
 
 	
-	<table class="table_overview">
+	<table class="table table-hover">
 	  <tr class="tbl_overview_header">
 		<td align="center">#</td>
 		<td>

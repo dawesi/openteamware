@@ -84,7 +84,7 @@ where userid = <cfqueryparam cfsqltype="cf_sql_integer" value="#request.stSecuri
 </tr>
 <tr>
 	<td class="field_name"></td>
-	<td><input type="Submit" name="frmSubmit" value="<cfoutput>#GetLangVal('prf_ph_pwd_change_now')#</cfoutput>" class="btn" /></td>
+	<td><input type="Submit" name="frmSubmit" value="<cfoutput>#GetLangVal('prf_ph_pwd_change_now')#</cfoutput>" class="btn btn-primary" /></td>
 </tr>
 </table>
 </form>

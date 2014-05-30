@@ -55,7 +55,7 @@
   <tr>
   	<td class="field_name"></td>
 	<td>
-		<input type="submit" name="frmsubmit" value="<cfoutput>#GetLangVal('cm_wd_save')#</cfoutput>" class="btn" />
+		<input type="submit" name="frmsubmit" value="<cfoutput>#GetLangVal('cm_wd_save')#</cfoutput>" class="btn btn-primary" />
 	</td>
   </tr>
 </form>

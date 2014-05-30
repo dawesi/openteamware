@@ -517,6 +517,6 @@
 </table>
 </div>
 <div style="padding:10px; ">
-	<input class="btn" type="submit" value="<cfoutput>#GetLangVal('cm_wd_save')#</cfoutput>" name="submit">
+	<input class="btn btn-primary" type="submit" value="<cfoutput>#GetLangVal('cm_wd_save')#</cfoutput>" name="submit">
 </div>
 </form>

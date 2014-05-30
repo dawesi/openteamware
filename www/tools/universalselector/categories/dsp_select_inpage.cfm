@@ -26,7 +26,7 @@
 <cfset ii = 0 />
 
 <form class="frm_inpage" name="formdummyform" id="formdummyform">
-<input type="button" class="btn" name="frmbtnsetcategories" onClick="UniversalSelectorSetReturnValues(CollectCheckedSelectBoxesValues('formdummyform'),CollectCheckedSelectBoxesValues('formdummyform'));" value="<cfoutput>#GetLangVal('cm_ph_btn_action_apply')#</cfoutput>"/>
+<input type="button" class="btn btn-primary" name="frmbtnsetcategories" onClick="UniversalSelectorSetReturnValues(CollectCheckedSelectBoxesValues('formdummyform'),CollectCheckedSelectBoxesValues('formdummyform'));" value="<cfoutput>#GetLangVal('cm_ph_btn_action_apply')#</cfoutput>"/>
 
 <div class="clear bb" style="padding-top:8px"></div>
 <!--- <table class="table_details">

@@ -31,7 +31,7 @@
 
 <!--- render product groups --->
 <cfsavecontent variable="a_str_content_group">
-<table class="table_overview">
+<table class="table table-hover">
 	<tr class="tbl_overview_header">
         <td style="width: 20%">
             <cfoutput>#GetLangval('cm_wd_name')#</cfoutput>
@@ -77,7 +77,7 @@
 </cfsavecontent>
 
 <cfsavecontent variable="a_str_button_group">
-	<input type="button" value="<cfoutput>#GetLangVal('cm_wd_new')#</cfoutput>" onclick="GotoLocHref('index.cfm?action=productadministration<cfoutput>#WriteURLTags()#</cfoutput>&subaction=addproductgroup');" class="btn" />
+	<input type="button" value="<cfoutput>#GetLangVal('cm_wd_new')#</cfoutput>" onclick="GotoLocHref('index.cfm?action=productadministration<cfoutput>#WriteURLTags()#</cfoutput>&subaction=addproductgroup');" class="btn btn-primary" />
 </cfsavecontent>
 
 <cfoutput>#WriteNewContentBox(GetLangVal('crm_ph_product_groups'), a_str_button_group, a_str_content_group)#</cfoutput>
@@ -94,7 +94,7 @@
 
 <!--- render products --->
 <cfsavecontent variable="a_str_content_products">
-<table class="table_overview">
+<table class="table table-hover">
 	<tr class="tbl_overview_header">
          <td style="width: 20%">
             <cfoutput>#GetLangval('cm_wd_name')#</cfoutput>
@@ -150,7 +150,7 @@
 </cfsavecontent>
 
 <cfsavecontent variable="a_str_button_product">
-	<input type="button" value="<cfoutput>#GetLangVal('cm_wd_new')#</cfoutput>" onclick="GotoLocHref('index.cfm?action=productadministration<cfoutput>#WriteURLTags()#</cfoutput>&subaction=addproduct');" class="btn" />
+	<input type="button" value="<cfoutput>#GetLangVal('cm_wd_new')#</cfoutput>" onclick="GotoLocHref('index.cfm?action=productadministration<cfoutput>#WriteURLTags()#</cfoutput>&subaction=addproduct');" class="btn btn-primary" />
 </cfsavecontent>
 <cfoutput>#WriteNewContentBox(GetLangVal('cm_wd_products'), a_str_button_product, a_str_content_products)#</cfoutput>
 

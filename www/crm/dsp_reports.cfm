@@ -24,7 +24,7 @@
 	<cfoutput>#GetLangVal('crm_ph_default_reports_hint')#</cfoutput>
 	</div>
 	
-	<table class="table_overview">
+	<table class="table table-hover">
 	  <tr class="tbl_overview_header">
 		<td>
 			<cfoutput>#GetLangVal('cm_wd_name')#</cfoutput>
@@ -121,7 +121,7 @@
 <br /><br />
   
 <cfsavecontent variable="a_str_content">
-	<table class="table_overview">
+	<table class="table table-hover">
 	  	<tr class="tbl_overview_header">
 			<td>
 				<cfoutput>#GetLangVal('cm_wd_name')#</cfoutput>

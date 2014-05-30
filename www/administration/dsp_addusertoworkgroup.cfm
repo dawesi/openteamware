@@ -181,7 +181,7 @@ WHERE
 
     <td class="field_name"></td>
 
-    <td><input class="btn" type="submit" name="frmsubmit" value="<cfoutput>#GetLangVal('cm_wd_add')#</cfoutput> ..."></td>
+    <td><input class="btn btn-primary" type="submit" name="frmsubmit" value="<cfoutput>#GetLangVal('cm_wd_add')#</cfoutput> ..."></td>
 
   </tr>
 <tr>

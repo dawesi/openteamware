@@ -130,7 +130,7 @@
 		<td class="field_name">
 		</td>
 		<td>
-			<input type="submit" value="#GetLangVal('cm_wd_save')#" class="btn" />
+			<input type="submit" value="#GetLangVal('cm_wd_save')#" class="btn btn-primary" />
 		</td>
 	</tr>
 </table>

@@ -56,7 +56,7 @@ b) No products assigned? Display most used products (assigned to other customers
 <cfset a_str_productkeys = '' />
 
 <cfsavecontent variable="a_str_table">
-<table class="table_overview">
+<table class="table table-hover">
 	<cfoutput>
 	  <tr class="tbl_overview_header">
 		<td width="10%">
@@ -113,15 +113,15 @@ b) No products assigned? Display most used products (assigned to other customers
       </cfif>
 	</cfoutput> 
       <tr>
-          <td colspan="6" class="table_overview">
+          <td colspan="6" class="table table-hover">
               <cfoutput>#GetLangVal('crm_wd_product_date')#: 
               <input type="text" size="20" name="frmdt_added" value="#LSDateFormat(Now())#">
               </cfoutput>
           </td>
       </tr>
       <tr>
-          <td colspan="6" class="table_overview">
-        	  <input type="submit" value="<cfoutput>#GetLangVal('cm_wd_add')#</cfoutput>" class="btn" />
+          <td colspan="6" class="table table-hover">
+        	  <input type="submit" value="<cfoutput>#GetLangVal('cm_wd_add')#</cfoutput>" class="btn btn-primary" />
           </td>
       </tr>
 </table>

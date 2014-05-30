@@ -35,7 +35,7 @@
 		<b><cfoutput>#GetLangVal('adm_ph_group_admin_no_teams_defined')#</cfoutput></b>
 	<cfelse>
 	
-	<table class="table_overview">
+	<table class="table table-hover">
 	  <tr class="tbl_overview_header">
 		<td><b><cfoutput>#GetLangVal('cm_wd_name')#</cfoutput></b></td>
 		<td><cfoutput>#GetLangVal('cm_wd_description')#</cfoutput></td>
@@ -60,7 +60,7 @@
 	<input type="hidden" name="action" value="newworkgroup">
 	<input type="hidden" name="resellerkey" value="<cfoutput>#url.resellerkey#</cfoutput>">
 	<input type="hidden" name="companykey" value="<cfoutput>#url.companykey#</cfoutput>">
-		<input type="submit" class="btn" value="<cfoutput>#GetLangVal('adm_ph_create_new_group')#</cfoutput> ..." />
+		<input type="submit" class="btn btn-primary" value="<cfoutput>#GetLangVal('adm_ph_create_new_group')#</cfoutput> ..." />
 	</form>
 </cfsavecontent>
 
@@ -91,7 +91,7 @@ ORDER BY
 
 <cfset a_cmp_user = application.components.cmp_user>
 
-<table class="table_overview">
+<table class="table table-hover">
   <tr class="tbl_overview_header">
     <td><cfoutput>#GetLangVal('adm_wd_secretary_assistant')#</cfoutput></td>  
     <td><cfoutput>#GetLangVal('cm_wd_user')#</cfoutput></td>
@@ -171,7 +171,7 @@ ORDER BY
 
 </cfsavecontent>
 <cfsavecontent variable="a_str_buttons">
-<input onclick="GotoLocHref('index.cfm?action=secretary.new<cfoutput>#writeurltags()#</cfoutput>');" type="button" value="<cfoutput>#GetLangVal('cm_ph_create_new_entry')#</cfoutput>" class="btn" />
+<input onclick="GotoLocHref('index.cfm?action=secretary.new<cfoutput>#writeurltags()#</cfoutput>');" type="button" value="<cfoutput>#GetLangVal('cm_ph_create_new_entry')#</cfoutput>" class="btn btn-primary" />
 </cfsavecontent>
 
 <cfoutput>#WriteNewContentBox(GetLangVal('adm_ph_nav_group_administration_secretary'), a_str_buttons, a_str_content)#</cfoutput>

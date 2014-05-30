@@ -127,8 +127,8 @@
 <input type="hidden" name="frmshowaspopup" value="<cfoutput>#Variables.NewOrEditEvent.ShowAsPopup#</cfoutput>">
 
 <div style="padding-bottom:6px;">
-<input class="btn" name="frmsubmit" id="frmsubmit" type="submit" value="Speichern" />
-<input style="width:auto;" type="button" class="btn2" value="Abbrechen" onclick="alert('2do');" />
+<input class="btn btn-primary" name="frmsubmit" id="frmsubmit" type="submit" value="Speichern" />
+<input style="width:auto;" type="button" class="btn" value="Abbrechen" onclick="alert('2do');" />
 </div>
 
 <cfoutput>#BuildTabNavigation('', false)#</cfoutput>

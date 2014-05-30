@@ -116,7 +116,7 @@
 
 <cfset a_int_days_of_month = DaysInMonth(a_dt_first_day_of_month) />
 
-<table class="table_overview" border="1" cellpadding="0" bordercolordark="#EEEEEE" bordercolor="#EEEEEE" bordercolorlight="#EEEEEE" style="border-collapse:collapse;">
+<table class="table table-hover" border="1" cellpadding="0" bordercolordark="#EEEEEE" bordercolor="#EEEEEE" bordercolorlight="#EEEEEE" style="border-collapse:collapse;">
 	<tr class="tbl_overview_header mischeader">
 		
 	<cfset a_dt_first_day = CreateDate(1899, 12, 31) />
@@ -368,7 +368,7 @@
 	</cfif>
 	</div>
 	
-	<table class="table_overview" style="width:90% ">
+	<table class="table table-hover" style="width:90% ">
 	  <cfset q_select_events = a_struct_user_calendars[a_str_userkey].q_select_events>
 	  <tr>
 	  	<td colspan="3">

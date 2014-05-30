@@ -298,7 +298,7 @@
   <tr> 
     <td valign="top" class="b_all">
 	
-		<table class="table_overview">
+		<table class="table table-hover">
         <tr> 
           <td colspan="2" style="padding:3px;"><b><cfoutput>#si_img('calendar')# #GetLangVal('task_wd_due')#</cfoutput></b></td>
         </tr>
@@ -341,7 +341,7 @@
 	</td>
     <td valign="top" class="b_all">
 		
-		<table class="table_overview">
+		<table class="table table-hover">
         <tr> 
           <td colspan="2" style="padding:3px;"><b><cfoutput>#si_img('clock')# #GetLangVal('cm_wd_status')#</cfoutput></b></td>
         </tr>
@@ -381,7 +381,7 @@
 	  
     <td valign="top" class="b_all">
 		
-		<table class="table_overview">
+		<table class="table table-hover">
         <tr> 
           <td colspan="2" style="padding:3px;"><b><cfoutput>#si_img('user')# #GetLangVal('cm_wd_concerned')#</cfoutput></b></td>
         </tr>
@@ -409,7 +409,7 @@
 		
     <td valign="top" class="b_all"> 
 	
-		<table class="table_overview">
+		<table class="table table-hover">
         <tr> 
           <td colspan="2" style="padding:3px;"><b><cfoutput>#si_img('exclamation')# #GetLangVal('cm_wd_priority')#</cfoutput></b></td>
         </tr>
@@ -447,7 +447,7 @@
     <td valign="top" class="b_all">
 	
 		<!--- display distinct categories ... --->
-		<table class="table_overview">
+		<table class="table table-hover">
         <tr> 
           <td colspan="2" style="padding:3px;"><b><cfoutput>#si_img('tag_blue')# #GetLangVal('cm_wd_categories')#</cfoutput></b></td>
         </tr>
@@ -467,7 +467,7 @@
 	<td valign="top" class="b_all">
 		
 		<!--- search ... --->
-		<table class="table_overview">
+		<table class="table table-hover">
         <tr> 
           <td colspan="2" style="padding:3px;"><b><cfoutput>#si_img('magnifier')# #GetLangVal('cm_Wd_search')#</cfoutput></b></td>
         </tr>
@@ -477,7 +477,7 @@
 	
 			<input value="<cfoutput>#htmleditformat(url.search)#</cfoutput>" type="text" name="frmsearch" size="10" />
 			<br /><br />
-			<input type="submit" name="frmsubmit" value="Start" class="btn2" />
+			<input type="submit" name="frmsubmit" value="Start" class="btn" />
 		
 			</form>
 			</td>
@@ -510,7 +510,7 @@
 
 <form action="act_multi_edit.cfm" method="post">
 <!--- output now ... --->
-<table class="table_overview">
+<table class="table table-hover">
 <cfif len(url.search) gt 0 AND q_select_tasks.recordcount is 0>
 <tr>
 	<td colspan="8" style="padding:10px;" align="center">
@@ -669,16 +669,16 @@
 <tr>
 	<td colspan="6" class="mischeader bb" style="padding:4px;">
 	<cfoutput>#GetLangVal('cm_ph_selected_items')#</cfoutput> ... 
-	<input onClick="return confirm('<cfoutput>#GetLangValJS('cm_ph_are_you_sure')#</cfoutput>');" type="submit" name="frmsubmitdelete" value="<cfoutput>#GetLangVal('cm_wd_delete')#</cfoutput>" class="btn2" />
+	<input onClick="return confirm('<cfoutput>#GetLangValJS('cm_ph_are_you_sure')#</cfoutput>');" type="submit" name="frmsubmitdelete" value="<cfoutput>#GetLangVal('cm_wd_delete')#</cfoutput>" class="btn" />
 	&nbsp;&nbsp;&nbsp;
 	<cfoutput>#GetLangVal('tsk_ph_set_status_to')#</cfoutput>
 		<select name="frmsetstatus">
 			<option value="done"><cfoutput>#GetLangVal('tsk_wd_done')#</cfoutput></option>
 			<option value="open"><cfoutput>#GetLangVal('tsk_ph_status_open')#</cfoutput></option>
 		</select>
-	<input type="submit" name="frmsubmitsetstatus" value="<cfoutput>#GetLangVal('tsk_wd_set')#</cfoutput>" class="btn2" />
+	<input type="submit" name="frmsubmitsetstatus" value="<cfoutput>#GetLangVal('tsk_wd_set')#</cfoutput>" class="btn" />
 	&nbsp;&nbsp;&nbsp;
-	<input type="submit" name="frmprintversion" value="<cfoutput>#GetLangVal('cm_ph_printversion')#</cfoutput>" class="btn2" />
+	<input type="submit" name="frmprintversion" value="<cfoutput>#GetLangVal('cm_ph_printversion')#</cfoutput>" class="btn" />
 	</td>
 	<td colspan="2">
 	</td>

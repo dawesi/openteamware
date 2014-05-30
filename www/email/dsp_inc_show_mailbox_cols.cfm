@@ -98,7 +98,7 @@
 			<cfoutput>#si_img( 'bin' )#</cfoutput>
 		</td>
 		<td colspan="2">
-			<input class="btn2" type="submit" name="frmSubmitDelete" value="<cfoutput>#GetLangVal('email_wd_btn_delete')#</cfoutput>" />
+			<input class="btn" type="submit" name="frmSubmitDelete" value="<cfoutput>#GetLangVal('email_wd_btn_delete')#</cfoutput>" />
 		</td>
 	  </tr>
 	  <tr>
@@ -114,7 +114,7 @@
 			</select>
 		</td>
 		<td>
-			<input class="btn2" type="submit" name="frmSubmitChangeReadStatus1" value="<cfoutput>#GetLangVal('cm_wd_ok')#</cfoutput>" />
+			<input class="btn" type="submit" name="frmSubmitChangeReadStatus1" value="<cfoutput>#GetLangVal('cm_wd_ok')#</cfoutput>" />
 		</td>
 	  </tr>
 	  <tr>
@@ -130,7 +130,7 @@
 			</select>			
 		</td>
 		<td>
-			<input class="btn2" type="submit" name="frmSubmitMove1" value="<cfoutput>#GetLangVal('cm_wd_ok')#</cfoutput>" />
+			<input class="btn" type="submit" name="frmSubmitMove1" value="<cfoutput>#GetLangVal('cm_wd_ok')#</cfoutput>" />
 		</td>
 	  </tr>
 	  <tr>
@@ -161,7 +161,7 @@
 
 </div> --->
 
-<table class="table_overview" id="id_table_msg_header_displays">
+<table class="table table-hover" id="id_table_msg_header_displays">
 <cfif q_select_mailbox.recordcount GT a_int_mails_per_page>
 <tr>
 	<td colspan="2" align="center" class="bb">

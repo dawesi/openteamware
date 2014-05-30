@@ -74,7 +74,7 @@ ORDER BY
 </cfquery>
 
 <form action="act_multi_edit_remote_edit_status.cfm" name="formcontacts" method="post" style="margin:0px; ">
-<table class="table_overview">
+<table class="table table-hover">
   <tr class="tbl_overview_header">
     <td>
 	</td>
@@ -131,7 +131,7 @@ ORDER BY
 		</select>
 		
 		&nbsp;
-		<input type="submit" value="<cfoutput>#GetLangVal('cm_wd_proceed')#</cfoutput>" class="btn" />
+		<input type="submit" value="<cfoutput>#GetLangVal('cm_wd_proceed')#</cfoutput>" class="btn btn-primary" />
 	</td>
   </tr>
 </table>

@@ -63,7 +63,7 @@ FROM
 		
 			
 <cfsavecontent variable="a_str_content">
-<table class="table_overview">
+<table class="table table-hover">
   <tr class="tbl_overview_header">
 	<cfoutput>
     <td>#GetLangVal('cm_wd_title')#</td>
@@ -138,7 +138,7 @@ FROM
 
 </cfsavecontent>
 <cfsavecontent variable="a_str_buttons">
-	<input type="button" class="btn" value="<cfoutput>#GetLangval('cm_wd_new')#</cfoutput>" onclick="GotoLocHref('index.cfm?action=NewProject&type=1');" />
+	<input type="button" class="btn btn-primary" value="<cfoutput>#GetLangval('cm_wd_new')#</cfoutput>" onclick="GotoLocHref('index.cfm?action=NewProject&type=1');" />
 </cfsavecontent>
 <cfoutput>#WriteNewContentBox(GetLangVal('crm_ph_project_type_1') & ' (' & q_select_sales_projects.recordcount & ')', a_str_buttons, a_str_content)#</cfoutput>
 <br /> 
@@ -146,7 +146,7 @@ FROM
 
 
 <cfsavecontent variable="a_str_content">
-<table class="table_overview">
+<table class="table table-hover">
   <tr class="tbl_overview_header">
 	<cfoutput>
     <td>#GetLangVal('cm_wd_title')#</td>
@@ -193,7 +193,7 @@ FROM
 </table>
 </cfsavecontent>
 <cfsavecontent variable="a_str_buttons">
-	<input type="button" class="btn" value="<cfoutput>#GetLangval('cm_wd_new')#</cfoutput>" onclick="GotoLocHref('index.cfm?action=NewProject&type=0');" />
+	<input type="button" class="btn btn-primary" value="<cfoutput>#GetLangval('cm_wd_new')#</cfoutput>" onclick="GotoLocHref('index.cfm?action=NewProject&type=0');" />
 </cfsavecontent>
 <cfoutput>#WriteNewContentBox(GetLangVal('crm_ph_project_type_0') & ' (' & q_select_common_projects.recordcount & ')', a_str_buttons, a_str_content)#</cfoutput>
 <br /> 
@@ -210,7 +210,7 @@ WHERE
 
 <cfsavecontent variable="a_str_content">
 
-<table class="table_overview">
+<table class="table table-hover">
   <tr class="tbl_overview_header">
 	<cfoutput>
     <td>#GetLangVal('cm_wd_title')#</td>

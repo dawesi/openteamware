@@ -152,7 +152,7 @@
 		  
 		  <tr>
 			<td class="field_name">&nbsp;</td>
-			<td><input type="submit" value="<cfoutput>#GetLangVal('adm_ph_btn_search_filter')#</cfoutput>" class="btn" /></td>
+			<td><input type="submit" value="<cfoutput>#GetLangVal('adm_ph_btn_search_filter')#</cfoutput>" class="btn btn-primary" /></td>
 		  </tr>
 			  
 		<cfif StructKeyExists(session, 'a_str_last_companykey')>

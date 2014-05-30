@@ -176,7 +176,7 @@ Nutzen Sie bitte das folgende Formular:
 <form action="index.cfm?<cfoutput>#cgi.QUERY_STRING#</cfoutput>" method="post">
 	<textarea name="frmbody" cols="40" rows="5"></textarea>
 	<br><br>
-	<input type="submit" name="frmsubmit" value="Absenden ..." class="btn" />
+	<input type="submit" name="frmsubmit" value="Absenden ..." class="btn btn-primary" />
 </form>
 </div>
 

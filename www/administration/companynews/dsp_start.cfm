@@ -19,7 +19,7 @@
 <!---<cfdump var="#q_select_news#">--->
 
 <cfsavecontent variable="a_str_content">
-<table class="table_overview">
+<table class="table table-hover">
   <tr class="tbl_overview_header">
     <td>#</td>
     <td><cfoutput>#GetLangVal('cm_wd_subject')#</cfoutput></td>
@@ -52,7 +52,7 @@
 </cfsavecontent>
 <cfsavecontent variable="a_str_buttons">
 <cfoutput >
-<input value="#GetLangVal('adm_ph_company_news_new_item')#" type="button" onclick="GotoLocHref('index.cfm?action=companynews.new#WriteURLTags()#');" class="btn" />
+<input value="#GetLangVal('adm_ph_company_news_new_item')#" type="button" onclick="GotoLocHref('index.cfm?action=companynews.new#WriteURLTags()#');" class="btn btn-primary" />
 </cfoutput>
 </cfsavecontent>
 

@@ -20,7 +20,7 @@ ORDER BY
 
 
 <cfsavecontent variable="a_str_content">
-<table class="table_overview" cellspacing="0">
+<table class="table table-hover" cellspacing="0">
 	<tr class="tbl_overview_header">
 		<td>date</td>
 		<td>user</td>

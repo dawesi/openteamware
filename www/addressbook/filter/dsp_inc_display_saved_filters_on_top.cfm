@@ -17,7 +17,7 @@
 <br /> 
 <cfoutput>#GetLangVal('crm_ph_filter_click_to_load')#</cfoutput>
 
-<table class="table_overview" style="margin-top:10px;">
+<table class="table table-hover" style="margin-top:10px;">
 	<tr class="tbl_overview_header">
 		<td>
 			<cfoutput>#GetLangVal('cm_wd_name')#</cfoutput>
@@ -38,7 +38,7 @@
 			#htmleditformat(q_select_all_filters.description)#
 		</td>
 		<td>
-			<input onClick="GotoLocHref('index.cfm?action=ShowContacts&filterviewkey=#q_select_all_filters.entrykey#')" class="btn2" type="button" value="#GetLangVal('cm_ph_btn_action_apply')# ..." />
+			<input onClick="GotoLocHref('index.cfm?action=ShowContacts&filterviewkey=#q_select_all_filters.entrykey#')" class="btn" type="button" value="#GetLangVal('cm_ph_btn_action_apply')# ..." />
 		</td>
 	</tr>
 	</cfoutput>

@@ -93,7 +93,7 @@
 			<cfoutput>#sReturn#</cfoutput>
 
 		<cfoutput>
-		<input type="button" onclick="AddFilterCriteria('criteria', '0', '#jsstringformat(url.viewkey)#', CollectCheckedSelectBoxesValues('<cfoutput>#a_str_tree_id#</cfoutput>'));" value="#GetLangVal('cm_ph_btn_action_apply')#" class="btn" />
+		<input type="button" onclick="AddFilterCriteria('criteria', '0', '#jsstringformat(url.viewkey)#', CollectCheckedSelectBoxesValues('<cfoutput>#a_str_tree_id#</cfoutput>'));" value="#GetLangVal('cm_ph_btn_action_apply')#" class="btn btn-primary" />
 		</cfoutput>
 		</form>
 	

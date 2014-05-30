@@ -105,7 +105,7 @@ WHERE
 	
 	<cfset a_str_edit_location = 'index.cfm?action=workgroup.edit&entrykey=#urlencodedformat(url.entrykey)##WriteURLTags()#' />
 	<cfoutput>
-	<input type="button" class="btn2" value="#GetLangVal('cm_wd_edit')#" onclick="GotoLocHref('#a_str_edit_location#');" />
+	<input type="button" class="btn" value="#GetLangVal('cm_wd_edit')#" onclick="GotoLocHref('#a_str_edit_location#');" />
 	</cfoutput>
 </cfsavecontent>
 
@@ -118,7 +118,7 @@ WHERE
 <!--- load inherited members too?? --->
 
 <cfsavecontent variable="a_str_content">
-<table class="table_overview">
+<table class="table table-hover">
   <tr class="tbl_overview_header">
     <td colspan="2"><cfoutput>#GetLangVal('cm_wd_user')#</cfoutput></td>
     <td><cfoutput>#GetLangVal('adm_wd_roles')#</cfoutput></td>
@@ -169,7 +169,7 @@ WHERE
 <cfoutput>
 	<cfset a_Str_loc = 'index.cfm?action=Addusertoworkgroup&workgroupkey=#urlencodedformat(url.entrykey)##writeurltags()#' />
 	
-	<input type="button" onclick="GotoLocHref('#a_Str_loc#');" value="#GetLangVal('adm_ph_workgroups_add_new_member')#" class="btn" />
+	<input type="button" onclick="GotoLocHref('#a_Str_loc#');" value="#GetLangVal('adm_ph_workgroups_add_new_member')#" class="btn btn-primary" />
 </cfoutput>
 </cfsavecontent>
 

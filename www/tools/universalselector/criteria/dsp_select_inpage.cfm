@@ -23,7 +23,7 @@
 </cfoutput>
 
 <div class="div_form_btn_area">
-	<input type="submit" value="<cfoutput>#GetLangVal('cm_ph_btn_action_apply')#</cfoutput>" class="btn" />
+	<input type="submit" value="<cfoutput>#GetLangVal('cm_ph_btn_action_apply')#</cfoutput>" class="btn btn-primary" />
 </div>
 <cfoutput>#sReturn#</cfoutput>
 

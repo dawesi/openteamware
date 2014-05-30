@@ -22,7 +22,7 @@
 <div id="id_div_upload_status_msg" style="display:none;">
 	<h4>please wait</h4>
 	<iframe name="idiframeupload" name="idiframeupload" src="/content/dummy/dummy.html"></iframe>
-	<input type="button" value="cancel" onclick="CancelEmailAttachmentUpload()" class="btn2" />
+	<input type="button" value="cancel" onclick="CancelEmailAttachmentUpload()" class="btn" />
 </div>
 
 <div id="id_email_upload_div">
@@ -60,7 +60,7 @@
 		  <tr>
 		  	<td class="field_name">&nbsp;</td>
 			<td>
-				<input class="btn" type="submit" name="frmSubmit" value="<cfoutput>#GetLangVal('mail_ph_add_attachments_submit')#</cfoutput>" />
+				<input class="btn btn-primary" type="submit" name="frmSubmit" value="<cfoutput>#GetLangVal('mail_ph_add_attachments_submit')#</cfoutput>" />
 			</td>
 		  </tr>
 		</table>

@@ -12,7 +12,7 @@
  --->
 <!--- load data? --->
 
-<table class="table_overview">
+<table class="table table-hover">
 <tr>
 	<td class="field_name">
 			<input type="Radio" checked name="frmrepeat_type" <cfoutput>#WriteCheckedElement(Variables.NewOrEditEvent.query.repeat_type, 0)#</cfoutput> value="0" class="noborder" />

@@ -11,7 +11,7 @@
 </cfinvoke>
 
 <cfsavecontent variable="a_str_content">
-<table class="table_overview">
+<table class="table table-hover">
   <tr class="tbl_overview_header">
     <td><cfoutput>#GetLangVal('cm_wd_name')#</cfoutput></td>
     <td><cfoutput>#GetLangVal('cm_wd_description')#</cfoutput></td>
@@ -38,7 +38,7 @@
 
 <cfsavecontent variable="a_str_buttons">
 <cfoutput>
-<input class="btn" type="button" value="#GetLangVal('adm_ph_create_new_forum')#" onclick="GotoLocHref('index.cfm?action=forum#WriteURLTags()#&subaction=createnewforum');return false;" />
+<input class="btn btn-primary" type="button" value="#GetLangVal('adm_ph_create_new_forum')#" onclick="GotoLocHref('index.cfm?action=forum#WriteURLTags()#&subaction=createnewforum');return false;" />
 </cfoutput>
 </cfsavecontent>
 

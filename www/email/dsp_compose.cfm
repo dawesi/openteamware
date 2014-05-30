@@ -239,19 +239,19 @@
 				<img src="/images/space_1_1.gif" class="si_img" />
 				<br />
 				<!--- actions ... --->
-				<input class="btn" type="submit" name="SubmitSendMessage2" onclick="SetMailAction('sendmail');" value="<cfoutput>#GetLangVal('mail_ph_SendNow')#</cfoutput>" style="font-weight:bold;">
+				<input class="btn btn-primary" type="submit" name="SubmitSendMessage2" onclick="SetMailAction('sendmail');" value="<cfoutput>#GetLangVal('mail_ph_SendNow')#</cfoutput>" style="font-weight:bold;">
 				<cfoutput>#request.a_str_toolbar_sep_img#</cfoutput>
 				
-				<input type="button" onclick="SetMailAction('addattachment');document.sendform.submit();" class="btn2" value="<cfoutput>#GetLangVal('mail_ph_add_attachments_header')#</cfoutput>">
+				<input type="button" onclick="SetMailAction('addattachment');document.sendform.submit();" class="btn" value="<cfoutput>#GetLangVal('mail_ph_add_attachments_header')#</cfoutput>">
 				<cfoutput>#request.a_str_toolbar_sep_img#</cfoutput>
 				
-				<input type="button" onclick="ShowOrHideAddressbook();" class="btn2" value="<cfoutput>#GetLangVal('cm_wd_addressbook')#</cfoutput>">
+				<input type="button" onclick="ShowOrHideAddressbook();" class="btn" value="<cfoutput>#GetLangVal('cm_wd_addressbook')#</cfoutput>">
 				<cfoutput>#request.a_str_toolbar_sep_img#</cfoutput>
 				
-				<input class="btn2" type="button" onClick="SetMailAction('savedraft');document.sendform.submit();" value="<cfoutput>#GetLangVal('mail_ph_saveDraft')#</cfoutput>">
+				<input class="btn" type="button" onClick="SetMailAction('savedraft');document.sendform.submit();" value="<cfoutput>#GetLangVal('mail_ph_saveDraft')#</cfoutput>">
 				<cfoutput>#request.a_str_toolbar_sep_img#</cfoutput>
 				
-				<input class="btn2" type="button" onClick="SetMailAction('cancelmsg');document.sendform.submit();" value="<cfoutput>#GetLangVal("mail_wd_discard")#</cfoutput>">
+				<input class="btn" type="button" onClick="SetMailAction('cancelmsg');document.sendform.submit();" value="<cfoutput>#GetLangVal("mail_wd_discard")#</cfoutput>">
 				  
 			</td>
 		</tr>

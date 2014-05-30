@@ -152,7 +152,7 @@
 									
 					<span style="font-weight:bold;">#application.components.cmp_user.getusernamebyentrykey(entrykey = a_str_userkey)#</span>
 					&nbsp;&nbsp;&nbsp;
-					<input type="button" class="btn2" value="#GetLangVal('cm_wd_close_btn_caption')#" onclick="GotoLocHref('act_remove_usercalendar.cfm?userkey=#urlencodedformat(a_str_userkey)#');" />
+					<input type="button" class="btn" value="#GetLangVal('cm_wd_close_btn_caption')#" onclick="GotoLocHref('act_remove_usercalendar.cfm?userkey=#urlencodedformat(a_str_userkey)#');" />
 				</cfoutput>
 			</div>
 		<cfelse>

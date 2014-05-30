@@ -28,7 +28,7 @@
 			
 	<cfif q_select_follow_ups.recordcount GT 0>
 		<br />
-		<table class="table_overview">
+		<table class="table table-hover">
 		  <tr>
 			<td colspan="2"  class="mischeader bb bt">
 			<a href="/tools/followups/"><img src="/images/flag.gif" align="absmiddle" vspace="2" hspace="2" border="0"> <cfoutput>#GetLangVal('crm_wd_follow_ups')#</cfoutput></a>
@@ -129,7 +129,7 @@ ORDER BY
 ;
 </cfquery>
 
-<table width="100%" border="0" cellspacing="0" cellpadding="2" class="table_overview">
+<table width="100%" border="0" cellspacing="0" cellpadding="2" class="table table-hover">
   <tr>
   	<td colspan="2" style="font-weight:bold;" class="addinfotext">
 	<a href="../tasks/" class="addinfotext"><cfoutput>#GetLangVal('cm_wd_tasks')#</cfoutput></a>

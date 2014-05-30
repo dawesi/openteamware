@@ -384,12 +384,12 @@ WHERE
 </cfsavecontent>
 <cfsavecontent variable="a_str_buttons">
 <cfoutput>
-	<input type="button" value="#GetLangVal('adm_ph_nav_account_data')#" class="btn2" onclick="GotoLocHref('index.cfm?action=editcustomer&#WriteURLTags()#');" />
-	<input type="button" value="#GetLangVal('adm_wd_administrators')#" class="btn2" onclick="GotoLocHref('index.cfm?action=customercontacts&#WriteURLTags()#');" />
-	<input type="button" value="#GetLangVal('adm_ph_create_datasheet')#" class="btn2" onclick="GotoLocHref('index.cfm?action=customer.createfulldatasheet&#WriteURLTags()#');" />
+	<input type="button" value="#GetLangVal('adm_ph_nav_account_data')#" class="btn" onclick="GotoLocHref('index.cfm?action=editcustomer&#WriteURLTags()#');" />
+	<input type="button" value="#GetLangVal('adm_wd_administrators')#" class="btn" onclick="GotoLocHref('index.cfm?action=customercontacts&#WriteURLTags()#');" />
+	<input type="button" value="#GetLangVal('adm_ph_create_datasheet')#" class="btn" onclick="GotoLocHref('index.cfm?action=customer.createfulldatasheet&#WriteURLTags()#');" />
 	
 	<cfif request.a_bol_is_reseller>
-		<input type="button" value="#GetLangVal('adm_ph_assign_to_other_partner')#" class="btn2" onclick="GotoLocHref('index.cfm?action=assigntootherreseller&#WriteURLTags()#');" />
+		<input type="button" value="#GetLangVal('adm_ph_assign_to_other_partner')#" class="btn" onclick="GotoLocHref('index.cfm?action=assigntootherreseller&#WriteURLTags()#');" />
 	</cfif>
 	
 </cfoutput>
@@ -406,7 +406,7 @@ WHERE
 			<form>
 			<tr>
 				<td colspan="3">
-				<input type="button" class="btn" name="frmbtn" value="<cfoutput>#GetLangVal('adm_ph_add_user_now')#</cfoutput>" onClick="location.href='?action=useradministration&<cfoutput>#WriteURLTags()#</cfoutput>';">
+				<input type="button" class="btn btn-primary" name="frmbtn" value="<cfoutput>#GetLangVal('adm_ph_add_user_now')#</cfoutput>" onClick="location.href='?action=useradministration&<cfoutput>#WriteURLTags()#</cfoutput>';">
 				</td>
 			</tr>
 			</form>
@@ -432,7 +432,7 @@ WHERE
 </cfsavecontent>
 <cfsavecontent variable="a_str_buttons">
 	<cfoutput>
-		<input type="button" value="#GetLangVal('cm_wd_edit')#" onclick="GotoLocHref('index.cfm?action=useradministration&#WriteURLTags()#');" class="btn2" />
+		<input type="button" value="#GetLangVal('cm_wd_edit')#" onclick="GotoLocHref('index.cfm?action=useradministration&#WriteURLTags()#');" class="btn" />
 	</cfoutput>
 </cfsavecontent>
 
@@ -453,7 +453,7 @@ WHERE
 </cfsavecontent>
 <cfsavecontent variable="a_str_buttons">
 	<cfoutput >
-		<input type="button" class="btn2" onclick="GotoLocHref('index.cfm?action=workgroups&#writeurltags()#');" value="#GetLangVal('cm_wd_edit')#" />
+		<input type="button" class="btn" onclick="GotoLocHref('index.cfm?action=workgroups&#writeurltags()#');" value="#GetLangVal('cm_wd_edit')#" />
 	</cfoutput>
 </cfsavecontent>
 

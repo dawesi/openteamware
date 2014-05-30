@@ -106,7 +106,7 @@ ORDER BY
 	  <tr>
 			<td class="field_name"></td>
 			<td>
-				<input type="submit" class="btn" name="frmsubmit" value="<cfoutput>#GetLangVal('cal_wd_list_reload')#</cfoutput>" />
+				<input type="submit" class="btn btn-primary" name="frmsubmit" value="<cfoutput>#GetLangVal('cal_wd_list_reload')#</cfoutput>" />
 			</td>
 	  </tr>
 	</table>
@@ -130,7 +130,7 @@ function AllMessages()
 
 <form action="act_multi_edit.cfm" method="post" name="formcalendarselect" onSubmit="return confirm('<cfoutput>#GetLangVal('cm_ph_are_you_sure')#</cfoutput>')">
 
-<table class="table_overview">
+<table class="table table-hover">
   <tr class="tbl_overview_header"> 
     <td><cfoutput>#GetLangVal('cal_wd_month')#</cfoutput></td>
 	<td align="center"><cfoutput>#GetLangVal('cal_wd_week')#</cfoutput></td>
@@ -226,7 +226,7 @@ function AllMessages()
 		
 	</td>
 	<td colspan="7" class="bt">
-		<cfoutput>#GetLangVal('cal_ph_selected_items')#</cfoutput> ... <input class="btn2" type="submit" value="<cfoutput>#GetLangVal('cm_wd_delete')#</cfoutput>">
+		<cfoutput>#GetLangVal('cal_ph_selected_items')#</cfoutput> ... <input class="btn" type="submit" value="<cfoutput>#GetLangVal('cm_wd_delete')#</cfoutput>">
 	</td>
   </tr>
  </form>

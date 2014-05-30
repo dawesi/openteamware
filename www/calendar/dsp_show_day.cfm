@@ -115,7 +115,7 @@ FROM
 	</div>
 </cfif>
 
-	<table class="table_overview" cellpadding="6">
+	<table class="table table-hover" cellpadding="6">
 	
 	<!--- do we need special headers? --->
 	<cfif StructCount(a_struct_user_calendars) GT 0>

@@ -36,7 +36,7 @@
 	<!--- write "sso" box --->
 	<cfsavecontent variable="a_str_btn">
 		<cfoutput>
-		<input onClick="GotoLocHref('/settings/index.cfm?Action=ManageSSO');" type="button" class="btn" value="Manage SSO Preferences" />
+		<input onClick="GotoLocHref('/settings/index.cfm?Action=ManageSSO');" type="button" class="btn btn-primary" value="Manage SSO Preferences" />
 		</cfoutput>
 	</cfsavecontent>
 	
@@ -112,9 +112,9 @@
 
 <cfsavecontent variable="a_str_btn">
 	<cfoutput>
-	<input onClick="GotoLocHref('/calendar/index.cfm?Action=ViewDay');" type="button" class="btn" value="#GetLangVal('cal_wd_day')#" />
-	<input onClick="GotoLocHref('/calendar/index.cfm?Action=ViewWeek');" type="button" class="btn" value="#GetLangVal('cal_wd_week')#" />
-	<input onClick="GotoLocHref('/calendar/index.cfm?Action=ViewMonth');" type="button" class="btn" value="#GetLangVal('cal_wd_month')#" />	
+	<input onClick="GotoLocHref('/calendar/index.cfm?Action=ViewDay');" type="button" class="btn btn-primary" value="#GetLangVal('cal_wd_day')#" />
+	<input onClick="GotoLocHref('/calendar/index.cfm?Action=ViewWeek');" type="button" class="btn btn-primary" value="#GetLangVal('cal_wd_week')#" />
+	<input onClick="GotoLocHref('/calendar/index.cfm?Action=ViewMonth');" type="button" class="btn btn-primary" value="#GetLangVal('cal_wd_month')#" />	
 	</cfoutput>
 </cfsavecontent>
 

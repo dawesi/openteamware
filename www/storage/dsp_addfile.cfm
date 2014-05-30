@@ -97,7 +97,7 @@
 			
 		</td>
 		<td id="tdSubmit">
-			<input type="submit" name="frm_Submit" class="btn" value="<cfoutput>#getlangval('sto_wd_upload')#</cfoutput>">
+			<input type="submit" name="frm_Submit" class="btn btn-primary" value="<cfoutput>#getlangval('sto_wd_upload')#</cfoutput>">
 		</td>
 	</tr>
 	<tr>

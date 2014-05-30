@@ -91,7 +91,7 @@
 		  <tr>
 			<td class="bt">&nbsp;</td>
 			<td class="bt">
-				<input class="btn" type="submit" value="<cfoutput>#GetLangVal('cm_wd_proceed')#</cfoutput> ...">
+				<input class="btn btn-primary" type="submit" value="<cfoutput>#GetLangVal('cm_wd_proceed')#</cfoutput> ...">
 			</td>
 			<td class="bt" colspan="2">&nbsp;</td>
 		  </tr>
@@ -295,7 +295,7 @@
     </tr>
     <tr> 
       <td class="field_name">&nbsp;</td>
-      <td><input type="submit" name="frmsubmit" value="<cfoutput>#GetLangVal('adm_ph_add_user_now')#</cfoutput>" class="btn" /></td>
+      <td><input type="submit" name="frmsubmit" value="<cfoutput>#GetLangVal('adm_ph_add_user_now')#</cfoutput>" class="btn btn-primary" /></td>
     </tr>
 
 </table>

@@ -82,7 +82,7 @@
 </tr>
 <tr>
 	<td class="field_name"></td>
-	<td><input type="submit" value="<cfoutput>#GetLangVal("mail_ph_startsearch")#</cfoutput>" class="btn" /></td>
+	<td><input type="submit" value="<cfoutput>#GetLangVal("mail_ph_startsearch")#</cfoutput>" class="btn btn-primary" /></td>
 </tr>
 </table>
 </form>

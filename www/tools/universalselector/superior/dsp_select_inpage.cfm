@@ -47,7 +47,7 @@ WHERE
 	<cfexit method="exittemplate">
 </cfif>
 	
-<table class="table_overview">
+<table class="table table-hover">
 	<tr class="tbl_overview_header">
 		<td>
 			<cfoutput>#GetLangVal('cm_wd_name')#</cfoutput>
@@ -71,7 +71,7 @@ WHERE
 			#htmleditformat(q_select_hits.department)# #htmleditformat(q_select_hits.aposition)#
 		</td>
 		<td>
-			<input onclick="UniversalSelectorSetReturnValues('#q_select_hits.entrykey#', '#jsstringformat(a_str_display_name)#');" type="button" value="#GetLangval('cm_ph_btn_action_apply')#" class="btn2" />
+			<input onclick="UniversalSelectorSetReturnValues('#q_select_hits.entrykey#', '#jsstringformat(a_str_display_name)#');" type="button" value="#GetLangval('cm_ph_btn_action_apply')#" class="btn" />
 		</td>
 	</tr>
 	</cfoutput>

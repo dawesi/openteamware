@@ -14,7 +14,7 @@
 <br />
  
 <cfsavecontent variable="a_str_content">
-<table class="table_overview">
+<table class="table table-hover">
 	<tr class="tbl_overview_header">
 	<cfoutput>
 		<td>

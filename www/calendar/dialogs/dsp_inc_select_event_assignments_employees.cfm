@@ -25,7 +25,7 @@ WHERE
 ;
 </cfquery>
 
-<table class="table_overview">
+<table class="table table-hover">
 	<tr class="tbl_overview_header">
 		<td>
 		</td>

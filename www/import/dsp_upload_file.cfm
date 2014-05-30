@@ -56,7 +56,7 @@
 	<tr>
 		<td class="field_name"></td>
 		<td>
-			<input type="submit" value="<cfoutput>#GetLangVal('sto_wd_upload')#</cfoutput>" class="btn" />
+			<input type="submit" value="<cfoutput>#GetLangVal('sto_wd_upload')#</cfoutput>" class="btn btn-primary" />
 		</td>
 	</tr>
 </table>

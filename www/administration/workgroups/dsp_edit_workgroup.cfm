@@ -80,7 +80,7 @@ WHERE
   </tr>
   <tr>
     <td class="field_name">&nbsp;</td>
-    <td><input type="submit" name="frmsubmit" value="<cfoutput>#GetLangVal('cm_wd_save')#</cfoutput> ..." class="btn" /></td>
+    <td><input type="submit" name="frmsubmit" value="<cfoutput>#GetLangVal('cm_wd_save')#</cfoutput> ..." class="btn btn-primary" /></td>
   </tr>
 </form>
 </table>

@@ -91,7 +91,7 @@
 								<input type="hidden" name="frmsurname_displayname" value="<cfoutput>#GetLangVal('adrb_wd_surname')#</cfoutput>" />
 							</td>
 							<td>
-								<input type="submit" value="<cfoutput>#GetLangVal('cm_wd_search')#</cfoutput>" class="btn2" />
+								<input type="submit" value="<cfoutput>#GetLangVal('cm_wd_search')#</cfoutput>" class="btn" />
 							</td>
 						</tr>
 						<tr>
@@ -167,7 +167,7 @@
 							<td>
 							</td>
 							<td>
-								<input type="submit" value="<cfoutput>#GetLangVal('cm_wd_search')#</cfoutput>" class="btn2" />
+								<input type="submit" value="<cfoutput>#GetLangVal('cm_wd_search')#</cfoutput>" class="btn" />
 							</td>
 						</tr>
 						</cfcase>
@@ -185,7 +185,7 @@
 							<td>
 							</td>
 							<td>
-								<input type="submit" value="<cfoutput>#GetLangVal('cm_wd_search')#</cfoutput>" class="btn2" />
+								<input type="submit" value="<cfoutput>#GetLangVal('cm_wd_search')#</cfoutput>" class="btn" />
 							</td>
 						</tr>
 						

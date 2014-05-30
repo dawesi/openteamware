@@ -442,7 +442,7 @@ WHERE
 </cfif>
   <tr>
     <td class="field_name">&nbsp;</td>
-    <td><input type="submit" name="frmsubmit" value="#GetLangVal('adm_ph_btn_save_edit')#" class="btn" /></td>
+    <td><input type="submit" name="frmsubmit" value="#GetLangVal('adm_ph_btn_save_edit')#" class="btn btn-primary" /></td>
   </tr>
   <tr>
   	<td class="field_name">&nbsp;</td>

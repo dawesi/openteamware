@@ -110,8 +110,8 @@ WHERE
 
 </cfsavecontent>
 <cfsavecontent variable="a_str_buttons">
-	<input onClick="GotoLocHref('index.cfm?action=NewPosting&forumkey=<cfoutput>#urlencodedformat(q_select_top_posting.forumkey)#</cfoutput>&replytopostingkey=<cfoutput>#urlencodedformat(url.entrykey)#</cfoutput>');return false;" class="btn" type="button" value="<cfoutput>#GetLangVal('forum_ph_compose_new_answer')#</cfoutput>" />
-	<input type="button" onclick="SubscribeAlertOnChange();return false;" class="btn2" value="<cfoutput>#GetLangVal('forum_ph_alert_on_new_postings_to_this_thread')#</cfoutput>" />
+	<input onClick="GotoLocHref('index.cfm?action=NewPosting&forumkey=<cfoutput>#urlencodedformat(q_select_top_posting.forumkey)#</cfoutput>&replytopostingkey=<cfoutput>#urlencodedformat(url.entrykey)#</cfoutput>');return false;" class="btn btn-primary" type="button" value="<cfoutput>#GetLangVal('forum_ph_compose_new_answer')#</cfoutput>" />
+	<input type="button" onclick="SubscribeAlertOnChange();return false;" class="btn" value="<cfoutput>#GetLangVal('forum_ph_alert_on_new_postings_to_this_thread')#</cfoutput>" />
 	
 </cfsavecontent>
 

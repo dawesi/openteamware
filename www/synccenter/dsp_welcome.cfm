@@ -12,7 +12,7 @@
 	<div style="padding:20px; ">
 	<cfoutput>#GetLangVal('sync_ph_outlooksync_into')#</cfoutput>
 	</div>
-	<table class="table_overview">
+	<table class="table table-hover">
 	  <tr class="tbl_overview_header">
 		<td  style="width:40px;">&nbsp;</td>
 		<td>
@@ -56,7 +56,7 @@
 
 <cfsavecontent variable="a_str_buttons">
 	<cfoutput>
-		<input onClick="location.href = '/download/';" type="button" value="#GetLangVal('cm_wd_download')#" class="btn">
+		<input onClick="location.href = '/download/';" type="button" value="#GetLangVal('cm_wd_download')#" class="btn btn-primary">
 	</cfoutput>
 </cfsavecontent>
 
@@ -74,7 +74,7 @@
 		<cfoutput>#GetLangVal('sync_ph_mobilesync_intro')#</cfoutput>
 	</div>
 		
-		<table class="table_overview">
+		<table class="table table-hover">
 	 	 <tr class="tbl_overview_header">
 			<td style="width:40px;">&nbsp;</td>
 			<td width="30%">
@@ -134,7 +134,7 @@
 
 <cfsavecontent variable="a_str_buttons">
 	<cfoutput>
-		<input onClick="location.href = 'index.cfm?action=addmobilesyncdevice';" type="button" value="#GetLangVal('sync_ph_add_new_device')#" class="btn">
+		<input onClick="location.href = 'index.cfm?action=addmobilesyncdevice';" type="button" value="#GetLangVal('sync_ph_add_new_device')#" class="btn btn-primary">
 	</cfoutput>
 </cfsavecontent>
 

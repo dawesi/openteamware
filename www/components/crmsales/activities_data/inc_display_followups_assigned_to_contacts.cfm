@@ -50,7 +50,7 @@
 	<div style="padding:0px;padding-top:8px;padding-bottom:8px;margin-top:10px;margin-bottom:10px;border-top:orange solid 2px;border-bottom:orange solid 2px;">
 </cfif>
 
-<table class="table_overview">
+<table class="table table-hover">
   <tr class="tbl_overview_header">
 	<cfif arguments.usersettings.device.type IS 'pda'>
 

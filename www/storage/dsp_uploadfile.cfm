@@ -36,7 +36,7 @@
 <br />
 <div style="text-align:center; ">
 	<form style="margin:0px; ">
-		<input onClick="window.close();" type="button" class="btn" value="<cfoutput>#GetLangVal('cm_wd_close_btn_caption')#</cfoutput>"/>
+		<input onClick="window.close();" type="button" class="btn btn-primary" value="<cfoutput>#GetLangVal('cm_wd_close_btn_caption')#</cfoutput>"/>
 	</form>
 </div>
 

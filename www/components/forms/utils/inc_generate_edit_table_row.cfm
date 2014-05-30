@@ -90,7 +90,7 @@
 			<tr>
 				<td class="field_name"></td>
 				<td colspan="#(request.a_struct_form_properties.columns_no)#">
-					<input class="btn" name="#a_struct_form_element.input_name#" id="#a_struct_form_element.input_name#" type="submit" value="#htmleditformat(a_struct_form_element.field_name)#" />
+					<input class="btn btn-primary" name="#a_struct_form_element.input_name#" id="#a_struct_form_element.input_name#" type="submit" value="#htmleditformat(a_struct_form_element.field_name)#" />
 					
 					<cfif IsInPagePopupOrActionPageCall()>
 						<cfset a_str_onclick_cancel = 'CloseSimpleModalDialog();return false;' />
@@ -98,7 +98,7 @@
 						<cfset a_str_onclick_cancel = 'ShowSimpleConfirmationDialog(''#JsStringFormat(ReturnRedirectURL())#'');' />
 					</cfif>
 					
-					<input style="width:auto;" type="button" class="btn2" value="#GetLangVal('cm_wd_cancel')#" onclick="#a_str_onclick_cancel#" />
+					<input style="width:auto;" type="button" class="btn" value="#GetLangVal('cm_wd_cancel')#" onclick="#a_str_onclick_cancel#" />
 					
 					
 				</td>
@@ -295,7 +295,7 @@
 
 				</cfcase>
 				<cfcase value="submit">
-					<input class="btn" name="#a_struct_form_element.input_name#" id="#a_struct_form_element.input_name#" type="submit" value="#htmleditformat(a_struct_form_element.field_name)#" />
+					<input class="btn btn-primary" name="#a_struct_form_element.input_name#" id="#a_struct_form_element.input_name#" type="submit" value="#htmleditformat(a_struct_form_element.field_name)#" />
 				</cfcase>
 				<cfcase value="boolean">
 					<!--- checkbox with 0/1 --->
@@ -327,7 +327,7 @@
 					
 					<cfset a_str_js_call = a_str_js_selector_fn & '(''' & a_struct_form_element.useuniversalselectorjsfunction_type & ''',''' & request.a_struct_form_properties.form_id & ''',''' & a_struct_form_element.input_name & ''', document.' & request.a_struct_form_properties.form_id & '.' & a_struct_form_element.input_name & '.value' & ',''' & a_struct_form_element.input_name & '_display''' & ',' & '''input''' & ',''' & request.a_struct_form_properties.servicekey & ''',''' & request.a_struct_form_properties.objectkey & ''', document.' & request.a_struct_form_properties.form_id & '.' & a_struct_form_element.input_name & '_display.value,''frmcompany'');' />
 					
-					<input class="btn3" style="width:auto;" type="button" value="#GetLangval('cm_wd_selector_btn_caption')#" onclick="#a_str_js_call#" />
+					<input class="btn" style="width:auto;" type="button" value="#GetLangval('cm_wd_selector_btn_caption')#" onclick="#a_str_js_call#" />
 					
 				</cfcase>
 				<cfcase value="rating">

@@ -77,7 +77,7 @@
 			
 		</td>
 		<td>
-			<input type="button" value="<cfoutput>#GetLangVal('adrb_ph_actions_compose_mail')#</cfoutput>" class="btn" />
+			<input type="button" value="<cfoutput>#GetLangVal('adrb_ph_actions_compose_mail')#</cfoutput>" class="btn btn-primary" />
 		</td>
 	</tr>
 </table>

@@ -48,10 +48,10 @@
 <cfsavecontent variable="a_str_buttons">
 
 <cfif a_struct_rights.edit>
-	<input type="button" onClick="location.href='index.cfm?action=ShowEditEvent&entrykey=<cfoutput>#urlencodedformat(url.entrykey)#</cfoutput>';" value="<cfoutput>#GetLangVal('cal_wd_edit')#</cfoutput>" class="btn">
+	<input type="button" onClick="location.href='index.cfm?action=ShowEditEvent&entrykey=<cfoutput>#urlencodedformat(url.entrykey)#</cfoutput>';" value="<cfoutput>#GetLangVal('cal_wd_edit')#</cfoutput>" class="btn btn-primary">
 </cfif>
 <cfif a_struct_rights.delete>
-	<input type="button" onClick="DeleteThisEvent('<cfoutput>#JsStringFormat(url.entrykey)#</cfoutput>');" class="btn" value="<cfoutput>#GetLangVal('cal_wd_action_delete')#</cfoutput>">
+	<input type="button" onClick="DeleteThisEvent('<cfoutput>#JsStringFormat(url.entrykey)#</cfoutput>');" class="btn btn-primary" value="<cfoutput>#GetLangVal('cal_wd_action_delete')#</cfoutput>">
 </cfif>
 </cfsavecontent>
 

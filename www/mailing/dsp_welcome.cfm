@@ -61,7 +61,7 @@ ORDER BY
 		<img src="/images/si/lock.png" class="si_img" /> <cfoutput>#GetLangVal('nl_ph_waiting_jobs_need_authorisation')#</cfoutput>
 	</div>
 	<br /> 
-	<table class="table_overview">
+	<table class="table table-hover">
 	<cfoutput query="q_select_un_approved_issues">
 		<tr>
 			<td>
@@ -111,7 +111,7 @@ ORDER BY
 			<br /><br />  
 		<cfelse>
 		
-			<table class="table_overview">
+			<table class="table table-hover">
 			<tr class="tbl_overview_header">
 				<td>
 					<cfoutput>#GetLangVal('cm_wd_name')#/#GetLangVal('cm_wd_description')#</cfoutput>
@@ -238,7 +238,7 @@ ORDER BY
 
 <cfsavecontent variable="a_str_buttons">
 	<cfoutput>
-		<input onClick="location.href = 'index.cfm?action=newprofile';" type="button" value="#GetLangVal('cm_ph_create_new_profile')#" class="btn">
+		<input onClick="location.href = 'index.cfm?action=newprofile';" type="button" value="#GetLangVal('cm_ph_create_new_profile')#" class="btn btn-primary">
 	</cfoutput>
 </cfsavecontent>
 
@@ -264,7 +264,7 @@ ORDER BY
 
 <cfsavecontent variable="a_str_content">
 
-		<table class="table_overview">
+		<table class="table table-hover">
 			<tr class="tbl_overview_header">
 				<td>
 					<cfoutput>#GetLangVal('cm_wd_name')#/#GetLangVal('cm_wd_description')#</cfoutput>

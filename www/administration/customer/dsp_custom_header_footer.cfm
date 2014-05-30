@@ -116,5 +116,5 @@
 
 <br />
 
-<input type="submit" value="Speichern" class="btn" />
+<input type="submit" value="Speichern" class="btn btn-primary" />
 </form>

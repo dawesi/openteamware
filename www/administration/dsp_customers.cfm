@@ -267,7 +267,7 @@ WHERE
 
 <br>
 
-<table class="table_overview" cellspacing="0">
+<table class="table table-hover" cellspacing="0">
 
 <!--- scroller --->
 <cfset a_int_maxrows = 100>

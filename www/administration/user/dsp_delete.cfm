@@ -128,7 +128,7 @@
   <tr>
   	<td></td>
 	<td>
-		<input class="btn" type="submit" value="<cfoutput>#htmleditformat(GetLangVal('adm_ph_user_delete_sure'))#</cfoutput>">
+		<input class="btn btn-primary" type="submit" value="<cfoutput>#htmleditformat(GetLangVal('adm_ph_user_delete_sure'))#</cfoutput>">
 	</td>
   </tr>
 </table>

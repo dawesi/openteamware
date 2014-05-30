@@ -32,10 +32,10 @@
 <cfsavecontent variable="a_str_buttons">
 <cfoutput>
 	<form style="margin:0px;" name="form_set_crm_history_days">
-		<input class="btn" type="button" style="width:auto;" onclick="call_new_item_for_contact('#jsstringformat(url.entrykey)#', 'history');return false;" value="#GetLangVal('crm_ph_record_event')#" />			
+		<input class="btn btn-primary" type="button" style="width:auto;" onclick="call_new_item_for_contact('#jsstringformat(url.entrykey)#', 'history');return false;" value="#GetLangVal('crm_ph_record_event')#" />			
 	
 		<cfif a_struct_object.rights.delete>
-			<input type="button" class="btn2" value="#MakeFirstCharUCase(GetLangVal('cm_wd_edit'))#" onclick="ShowActivitiesData('#jsstringformat(url.entrykey)#', 'activities', GetCurrentCRMHistoryDays(), true);" />
+			<input type="button" class="btn" value="#MakeFirstCharUCase(GetLangVal('cm_wd_edit'))#" onclick="ShowActivitiesData('#jsstringformat(url.entrykey)#', 'activities', GetCurrentCRMHistoryDays(), true);" />
 		</cfif>
 		
 		<div style="display:none;">
@@ -52,7 +52,7 @@
 		</div>
 	</form> 
 </cfoutput>
-	<!--- <input onClick="call_edit_contact('<cfoutput>#jsstringformat(url.entrykey)#</cfoutput>', 'history');" type="button" value=" <cfoutput>#htmleditformat(GetLangVal('cm_wd_edit'))#</cfoutput> " class="btn">
+	<!--- <input onClick="call_edit_contact('<cfoutput>#jsstringformat(url.entrykey)#</cfoutput>', 'history');" type="button" value=" <cfoutput>#htmleditformat(GetLangVal('cm_wd_edit'))#</cfoutput> " class="btn btn-primary">
  --->
 
 </cfsavecontent>
@@ -77,8 +77,8 @@
 <cfif a_struct_linked_contacts.recordcount GT 0>
 	
 	<cfsavecontent variable="a_str_buttons">
-		<input onClick="call_edit_contact('<cfoutput>#jsstringformat(url.entrykey)#</cfoutput>', 'contact_links');" type="button" value=" <cfoutput>#htmleditformat(GetLangVal('cm_wd_edit'))#</cfoutput> " class="btn">
-		<input onClick="call_edit_contact('<cfoutput>#jsstringformat(url.entrykey)#</cfoutput>', 'contact_links');" type="button" value=" <cfoutput>#htmleditformat(GetLangVal('cm_wd_new'))#</cfoutput> " class="btn">
+		<input onClick="call_edit_contact('<cfoutput>#jsstringformat(url.entrykey)#</cfoutput>', 'contact_links');" type="button" value=" <cfoutput>#htmleditformat(GetLangVal('cm_wd_edit'))#</cfoutput> " class="btn btn-primary">
+		<input onClick="call_edit_contact('<cfoutput>#jsstringformat(url.entrykey)#</cfoutput>', 'contact_links');" type="button" value=" <cfoutput>#htmleditformat(GetLangVal('cm_wd_new'))#</cfoutput> " class="btn btn-primary">
 	</cfsavecontent>
 	
 	<cfoutput>#WriteNewContentBox(GetLangVal('cm_wd_links'), a_str_buttons, a_struct_linked_contacts.a_str_content, 'id_div_fieldset_contacts_linked_to')#</cfoutput>

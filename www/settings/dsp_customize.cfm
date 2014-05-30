@@ -53,7 +53,7 @@
 	<tr>
 		<td></td>
 		<td>
-			<input type="submit" class="btn" value="Use Theme">
+			<input type="submit" class="btn btn-primary" value="Use Theme">
 		</td>
 	</tr>
 </table>

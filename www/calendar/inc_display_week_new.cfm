@@ -27,7 +27,7 @@
 </cfloop>
 
 
-<table class="table_overview">
+<table class="table table-hover">
 	<tr class="tbl_overview_header mischeader">
 		<td width="50px" style="vertical-align:middle;text-align:center;" class="addinfotext">h</td>
 		<cfloop from="#DisplayWeek.FirstDayOfTheWeek#" to="7" index="a_int_day">

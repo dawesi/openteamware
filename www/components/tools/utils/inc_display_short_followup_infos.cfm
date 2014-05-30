@@ -37,7 +37,7 @@ WHERE
 <cfset stReturn.q_select_follow_ups = q_select_follow_ups />
 
 <cfsavecontent variable="a_str_content">
-<table class="table_overview">
+<table class="table table-hover">
 	<tr class="tbl_overview_header">
 		<td><cfoutput>#GetLangVal('cm_wd_comment')#</cfoutput></td>
 		<td><cfoutput>#GetLangVal('cm_wd_type')#</cfoutput></td>

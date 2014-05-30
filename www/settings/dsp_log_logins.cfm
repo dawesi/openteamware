@@ -13,7 +13,7 @@
 <cfoutput>#GetLangVal('prf_ph_security_logbook')#</cfoutput><br>
 <br>
 
-<table class="table_overview">
+<table class="table table-hover">
   <tr class="tbl_overview_header">
     <td></td>
     <td><cfoutput>#GetLangVal('mail_ph_datetime')#</cfoutput></b></td>

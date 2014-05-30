@@ -260,7 +260,7 @@ WHERE
   </tr>
   <tr id="idtrqasend">
     <td>
-		<input type="submit" class="btn" value="<cfoutput>#GetLangVal("mail_ph_SendNow")#</cfoutput>">
+		<input type="submit" class="btn btn-primary" value="<cfoutput>#GetLangVal("mail_ph_SendNow")#</cfoutput>">
 		&nbsp;&nbsp;
 		<input type="checkbox" name="frmquote" class="noborder" value="1" checked> <cfoutput>#GetLangVal('mail_ph_msg_quickanswer_quote')#</cfoutput>
 	</td>

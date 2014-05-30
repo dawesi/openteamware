@@ -53,7 +53,7 @@ ORDER BY
 
 <cfset a_cmp_users = application.components.cmp_user>
 
-<table class="table_overview" cellspacing="0">
+<table class="table table-hover" cellspacing="0">
   <tr class="tbl_overview_header">
 	<cfif arguments.usersettings.device.type IS 'pda'>
 	<td>

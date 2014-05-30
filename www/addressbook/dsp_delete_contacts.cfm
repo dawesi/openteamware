@@ -70,7 +70,7 @@
 	</ul>
 	
 	<br /><br />
-	<input type="button" onclick="GotoLocHref('<cfoutput>#cgi.SCRIPT_NAME#?#cgi.QUERY_STRING#</cfoutput>&confirmed=true');" class="btn" value="<cfoutput>#GetLangVal('adrb_ph_delete_contacts_yes_delete_now')#</cfoutput>" />
+	<input type="button" onclick="GotoLocHref('<cfoutput>#cgi.SCRIPT_NAME#?#cgi.QUERY_STRING#</cfoutput>&confirmed=true');" class="btn btn-primary" value="<cfoutput>#GetLangVal('adrb_ph_delete_contacts_yes_delete_now')#</cfoutput>" />
 	<br /><br />    
 	<a href="javascript:history.go(-1);"><cfoutput>#GetLangVal('adrb_ph_delete_contacts_no_go_back')#</cfoutput></a>
 

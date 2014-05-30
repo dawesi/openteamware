@@ -108,7 +108,7 @@
 	
 	<form action="../addressbook/index.cfm?action=QuickAddFromWebmail" method="POST" target="_blank" style="margin:0px;">
 	
-	<table class="table_overview">
+	<table class="table table-hover">
 		<!--- <tr>
 			<td></td>
 			<td colspan="2"><cfoutput>#GetLangVal('mail_ph_select_contacts_to_add_to_adrb')#</cfoutput></td>
@@ -228,7 +228,7 @@
 		<!--- do we have any addresses to add? --->
 		<tr>
 			<td colspan="3">
-			<input class="btn" type="submit" name="frmsubmit" value="<cfoutput>#GetLangVal('email_ph_confirmation_add_to_addressbook')#</cfoutput>">
+			<input class="btn btn-primary" type="submit" name="frmsubmit" value="<cfoutput>#GetLangVal('email_ph_confirmation_add_to_addressbook')#</cfoutput>">
 			</td>
 		</tr>
 	</cfif> --->
@@ -238,7 +238,7 @@
 </cfsavecontent>
 
 <cfsavecontent variable="a_str_btn">
-<input type="button" onclick="window.close();" class="btn2" value="<cfoutput>#GetLangVal('cm_wd_close_btn_caption')#</cfoutput>" />
+<input type="button" onclick="window.close();" class="btn" value="<cfoutput>#GetLangVal('cm_wd_close_btn_caption')#</cfoutput>" />
 </cfsavecontent>
 
 <cfoutput>#WriteNewContentBox(GetLangVal('email_wd_confirmation'), a_str_btn, a_str_content)#</cfoutput>

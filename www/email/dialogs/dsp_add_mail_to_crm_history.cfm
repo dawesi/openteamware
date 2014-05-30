@@ -163,5 +163,5 @@ window.setTimeout('DoAddNow()', 100);
 <img src="/images/si/vcard.png" class="si_img" /> <cfoutput>#GetLangVal('cm_wd_contact')#</cfoutput>: <a href="#" onclick="GotoLocHrefMain('/addressbook/?action=ShowItem&entrykey=<cfoutput>#url.contactkey#</cfoutput>');return false;"><cfoutput>#htmleditformat(application.components.cmp_addressbook.GetContactDisplayNameData(url.contactkey))#</cfoutput></a>
 <br /><br />
 
-<input type="button" value="<cfoutput>#GetLangVal('cm_wd_close_btn_caption')#</cfoutput>" onclick="CloseSimpleModalDialog();" class="btn2" />  
+<input type="button" value="<cfoutput>#GetLangVal('cm_wd_close_btn_caption')#</cfoutput>" onclick="CloseSimpleModalDialog();" class="btn" />  
 

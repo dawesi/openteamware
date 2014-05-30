@@ -30,7 +30,7 @@ ORDER BY
 <cfsavecontent variable="sReturn">
 	
 <!--- 	<cfdump var="#stReturn.q_select_products_of_contact#"> --->
-<table class="table_overview">
+<table class="table table-hover">
 	<cfoutput>
 	  <tr class="tbl_overview_header">
 		<td width="25%">

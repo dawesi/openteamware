@@ -15,7 +15,7 @@
 </cfif>
 
 <cfoutput>#GetLangVal('wrkgr_ph_you_are_member_of_the_following_groups')#</cfoutput>
-<table class="table_overview">
+<table class="table table-hover">
   <tr class="tbl_overview_header">
     <td colspan="2"><b><cfoutput>#GetLangVal('cm_wd_workgroup')#</cfoutput></b></td>
     <td><cfoutput>#GetLangVal('wrkgr_ph_your_rights')#</cfoutput></td>

@@ -554,13 +554,13 @@ function processReqCustomConfirmActionChange()
 
 
 	<cfsavecontent variable="a_str_buttons">
-			<input class="btn" type="button" name="frm_btn_edit_task" onClick="EditThisTaskNow();" value="<cfoutput>#GetLangVal('cm_wd_edit')#</cfoutput>">
-			<input class="btn" type="button" name="frm_btn_delete_task" onClick="DeleteThisTaskNow();" value="<cfoutput>#GetLangVal('cm_wd_delete')#</cfoutput>">
+			<input class="btn btn-primary" type="button" name="frm_btn_edit_task" onClick="EditThisTaskNow();" value="<cfoutput>#GetLangVal('cm_wd_edit')#</cfoutput>">
+			<input class="btn btn-primary" type="button" name="frm_btn_delete_task" onClick="DeleteThisTaskNow();" value="<cfoutput>#GetLangVal('cm_wd_delete')#</cfoutput>">
 			
 			<cfif q_select_task.status NEQ 0>
-				<input class="btn" type="button" onClick="UpdateStatusOfThisTaskNow(0);" name="frm_set_done" value="<cfoutput>#GetLangVal('tsk_ph_set_done')#</cfoutput>">
+				<input class="btn btn-primary" type="button" onClick="UpdateStatusOfThisTaskNow(0);" name="frm_set_done" value="<cfoutput>#GetLangVal('tsk_ph_set_done')#</cfoutput>">
 			<cfelse>
-				<input class="btn" type="button" onClick="UpdateStatusOfThisTaskNow(1);" name="frm_set_done" value="<cfoutput>#GetLangVal('tsk_ph_set_open')#</cfoutput>">
+				<input class="btn btn-primary" type="button" onClick="UpdateStatusOfThisTaskNow(1);" name="frm_set_done" value="<cfoutput>#GetLangVal('tsk_ph_set_open')#</cfoutput>">
 			</cfif>
 		
 	</cfsavecontent>

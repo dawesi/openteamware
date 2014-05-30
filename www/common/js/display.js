@@ -803,7 +803,7 @@ function cSimpleModalDialog() {
 				case 'information': {
 					a_str_inner_html = a_str_header_div_start + a_str_header_close + ' Information' + a_str_header_div_end;
 					a_str_inner_html += '<div style="padding:20px;">'  + self.customcontent + '</div>';
-					a_str_inner_html += '<p align="center" style="padding:8px;"><input id="id_modal_dialog_default_button" type="submit" class="btn" onClick="CloseSimpleModalDialog();" value="' + GetLangData(6) + '">' + '</p>';
+					a_str_inner_html += '<p align="center" style="padding:8px;"><input id="id_modal_dialog_default_button" type="submit" class="btn btn-primary" onClick="CloseSimpleModalDialog();" value="' + GetLangData(6) + '">' + '</p>';
 					break;
 					}
 				case 'confirmation': {
@@ -824,9 +824,9 @@ function cSimpleModalDialog() {
 					
 					a_str_onclick_yes_action = 'CallConfirmationYesAction();';
 					
-					a_str_inner_html += '<input target="' + self.target + '" onClick="' + a_str_onclick_yes_action + '" id="id_modal_dialog_default_button" type="button" value="' + GetLangData(0) + '" class="btn">&nbsp;&nbsp;&nbsp;';
+					a_str_inner_html += '<input target="' + self.target + '" onClick="' + a_str_onclick_yes_action + '" id="id_modal_dialog_default_button" type="button" value="' + GetLangData(0) + '" class="btn btn-primary">&nbsp;&nbsp;&nbsp;';
 					// no ... just close
-					a_str_inner_html += '<input type="button" value="' + GetLangData(1) + '" class="btn2" onClick="CloseSimpleModalDialog();">';
+					a_str_inner_html += '<input type="button" value="' + GetLangData(1) + '" class="btn" onClick="CloseSimpleModalDialog();">';
 					
 					a_str_inner_html += '</p>';
 					
@@ -836,7 +836,7 @@ function cSimpleModalDialog() {
 					// custom dialog
 					a_str_inner_html = a_str_header_div_start + a_str_header_close + a_str_header_div_title_start + self.customtitle + a_str_header_div_title_end + a_str_header_div_end;
 					a_str_inner_html += '<div style="padding:10px;">'  + self.customcontent + '</div>';
-					// a_str_inner_html = a_str_inner_html + '<p align="center" style="padding:8px;"><input type="submit" class="btn" onClick="CloseSimpleModalDialog();" value="' + GetLangData(6) + '">' + '</p>';
+					// a_str_inner_html = a_str_inner_html + '<p align="center" style="padding:8px;"><input type="submit" class="btn btn-primary" onClick="CloseSimpleModalDialog();" value="' + GetLangData(6) + '">' + '</p>';
 					break;
 					}
 				default: {
@@ -1765,7 +1765,6 @@ function SerializeForm(theform) {
 	
 // highlight rows in overview tables
 function HLOverviewTbl() {
-	$(".table_overview tr").mouseover(function() {$(this).addClass("over");}).mouseout(function() {$(this).removeClass("over");});
 	return true;
 	}
 	

@@ -527,7 +527,7 @@
 			</cfif>--->
 			
 			<div style="padding-left:140px; ">
-			<input class="btn" type="submit" value="<cfoutput>#GetLangVal('snp_ph_login_now')#</cfoutput>">
+			<input class="btn btn-primary" type="submit" value="<cfoutput>#GetLangVal('snp_ph_login_now')#</cfoutput>">
 			</div>
 		</div>
 		

@@ -131,7 +131,7 @@
 	
 	<cfsavecontent variable="a_str_btn">
 		<cfoutput >
-		<input type="button" class="btn" value="#GetLangVal('cm_wd_edit')#" onclick="location.href='index.cfm?action=user.edit&section=data&entrykey=#urlencodedformat(url.entrykey)##WriteURLTags()#';"/>
+		<input type="button" class="btn btn-primary" value="#GetLangVal('cm_wd_edit')#" onclick="location.href='index.cfm?action=user.edit&section=data&entrykey=#urlencodedformat(url.entrykey)##WriteURLTags()#';"/>
 		</cfoutput>
 	</cfsavecontent>
 	
@@ -195,7 +195,7 @@
 	
 	<cfsavecontent variable="a_str_btn">
 		<cfoutput >
-		<input type="button" class="btn" value="#GetLangVal('cm_wd_edit')#" onclick="location.href='index.cfm?action=user.edit&section=workgroups&entrykey=#urlencodedformat(url.entrykey)##WriteURLTags()#';"/>
+		<input type="button" class="btn btn-primary" value="#GetLangVal('cm_wd_edit')#" onclick="location.href='index.cfm?action=user.edit&section=workgroups&entrykey=#urlencodedformat(url.entrykey)##WriteURLTags()#';"/>
 		</cfoutput>
 	</cfsavecontent>
 	
@@ -207,7 +207,7 @@
 	<cfsavecontent variable="a_str_content">
 		
 		
-		<table class="table_overview">
+		<table class="table table-hover">
  			<tr class="tbl_overview_header">
             	<td>#GetLangVal('adm_ph_security_role')#</td>
             <td>
@@ -233,7 +233,7 @@
 		<cfif q_select_sso_settings.recordcount GT 0>
 			<br/>
 			<b>Single Sign On</b>
-			<table class="table_overview">
+			<table class="table table-hover">
 				<tr class="tbl_overview_header">
 					<td>Username</td>
 					<td>Company</td>
@@ -255,8 +255,8 @@
 	
 	<cfsavecontent variable="a_str_btn">
 		<cfoutput >
-		<input type="button" class="btn" value="#GetLangVal('cm_wd_edit')#" onclick="location.href='index.cfm?action=user.edit&section=security&entrykey=#urlencodedformat(url.entrykey)##WriteURLTags()#';"/>
-		<input type="button" class="btn" value="#GetLangVal('cm_wd_edit')# SSO" onclick="location.href='index.cfm?action=user.managesso&entrykey=#urlencodedformat(url.entrykey)##WriteURLTags()#'"/>
+		<input type="button" class="btn btn-primary" value="#GetLangVal('cm_wd_edit')#" onclick="location.href='index.cfm?action=user.edit&section=security&entrykey=#urlencodedformat(url.entrykey)##WriteURLTags()#';"/>
+		<input type="button" class="btn btn-primary" value="#GetLangVal('cm_wd_edit')# SSO" onclick="location.href='index.cfm?action=user.managesso&entrykey=#urlencodedformat(url.entrykey)##WriteURLTags()#'"/>
 		</cfoutput>
 	</cfsavecontent>
 	
@@ -267,7 +267,7 @@
 		
 		<cfsavecontent variable="a_str_content">
 		
-		<table class="table_overview">
+		<table class="table table-hover">
 			<tr class="tbl_overview_header">
 				<td><cfoutput>#GetLangVal('cm_wd_type')#</cfoutput></td>
 				<td><cfoutput>#GetLangVal('cm_wd_email_address')#</cfoutput></td>
@@ -311,7 +311,7 @@
 	</cfsavecontent>
 		
 	<cfsavecontent variable="a_str_btn">
-		<input type="button" class="btn" value="#GetLangVal('cm_wd_edit')#" onclick="location.href='index.cfm?action=user.edit&section=emailaddresses&entrykey=#urlencodedformat(url.entrykey)##WriteURLTags()#';"/>
+		<input type="button" class="btn btn-primary" value="#GetLangVal('cm_wd_edit')#" onclick="location.href='index.cfm?action=user.edit&section=emailaddresses&entrykey=#urlencodedformat(url.entrykey)##WriteURLTags()#';"/>
 	</cfsavecontent>
 	
 	<cfoutput>#WriteNewContentBox(GetLangVal('prf_ph_email_addresses'), a_str_btn, a_str_content)#</cfoutput>

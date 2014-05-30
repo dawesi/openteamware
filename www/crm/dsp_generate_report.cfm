@@ -324,7 +324,7 @@
 	  <tr>
 		<td>&nbsp;</td>
 		<td>
-			<input type="submit" value="#GetLangVal('crm_ph_reports_execute_now')#" class="btn">
+			<input type="submit" value="#GetLangVal('crm_ph_reports_execute_now')#" class="btn btn-primary">
 		</td>
 	  </tr>
 	</table>
@@ -345,7 +345,7 @@
 		
 		<cfoutput>#a_str#</cfoutput>
 		<br><br>
-		<input type="button" onClick="javascript:history.go(-1);" value="<cfoutput>#GetLangVal('cm_wd_cancel')#</cfoutput>" class="btn2" />
+		<input type="button" onClick="javascript:history.go(-1);" value="<cfoutput>#GetLangVal('cm_wd_cancel')#</cfoutput>" class="btn" />
 	</div>
 	<div id="id_div_status_create_report_will_take_longer" style="display:none;padding:8px;" class="mischeader">
 		<cfoutput>#GetLangVal('crm_report_will_take_longer_create_notification_description')#</cfoutput>

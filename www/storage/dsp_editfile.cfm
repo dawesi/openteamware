@@ -113,7 +113,7 @@
 		
 	</td>
 	<td>
-		<input style="font-weight:bold; " name="submit" id="submit" class="btn" type="submit" value="#getlangval('sto_wd_save')#" />
+		<input style="font-weight:bold; " name="submit" id="submit" class="btn btn-primary" type="submit" value="#getlangval('sto_wd_save')#" />
 	</td>
 </tr>
 

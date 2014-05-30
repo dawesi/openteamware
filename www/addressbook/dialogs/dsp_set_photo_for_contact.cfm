@@ -30,14 +30,14 @@
 	<td class="field_name">
 	</td>
 	<td>
-		<input type="submit" value="<cfoutput>#GetLangVal('adm_ph_save_photos')#</cfoutput>" class="btn" />
+		<input type="submit" value="<cfoutput>#GetLangVal('adm_ph_save_photos')#</cfoutput>" class="btn btn-primary" />
 	</td>
 </tr>
 <tr>
 	<td class="field_name">
 	</td>
 	<td>
-		<input type="submit" name="frmsubmit_removephoto" value="<cfoutput>#GetLangVal('adrb_ph_remove_photo_completly')#</cfoutput>" class="btn" />
+		<input type="submit" name="frmsubmit_removephoto" value="<cfoutput>#GetLangVal('adrb_ph_remove_photo_completly')#</cfoutput>" class="btn btn-primary" />
 	</td>
 </tr>
 </table>

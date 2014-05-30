@@ -20,7 +20,7 @@
 </cfinvoke>
 
 <cfsavecontent variable="a_str_content">
-<table class="table_overview">
+<table class="table table-hover">
 	<tr class="tbl_overview_header">
 		<td></td>
 		<td>
@@ -56,7 +56,7 @@
 </cfsavecontent>
 
 <cfsavecontent variable="a_str_buttons">
-	<input type="button" value="<cfoutput>#GetLangVal('cm_wd_new')#</cfoutput>" onclick="GotoLocHref('index.cfm?action=AddEditVirtualCalendar');" class="btn" />
+	<input type="button" value="<cfoutput>#GetLangVal('cm_wd_new')#</cfoutput>" onclick="GotoLocHref('index.cfm?action=AddEditVirtualCalendar');" class="btn btn-primary" />
 </cfsavecontent>
 
 <cfoutput>#WriteNewContentBox(GetLangVal('cal_wd_own_calendars'), a_str_buttons, a_str_content)#</cfoutput>

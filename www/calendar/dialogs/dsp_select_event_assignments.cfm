@@ -62,8 +62,8 @@
 <!--- render the buttons and close the form only for single address and resource --->
 <cfif url.type EQ 2 or url.type EQ 4>
 	<br /> 
-		<input type="button" value="<cfoutput>#GetLangVal('cm_ph_btn_action_apply')#</cfoutput>" class="btn" onclick="DoAssignElements();" />
-		<input type="button" value="<cfoutput>#GetLangVal('cm_wd_cancel')#</cfoutput>" class="btn2" onclick="CloseSimpleModalDialog();" />
+		<input type="button" value="<cfoutput>#GetLangVal('cm_ph_btn_action_apply')#</cfoutput>" class="btn btn-primary" onclick="DoAssignElements();" />
+		<input type="button" value="<cfoutput>#GetLangVal('cm_wd_cancel')#</cfoutput>" class="btn" onclick="CloseSimpleModalDialog();" />
 	</form>
 </cfif>
 

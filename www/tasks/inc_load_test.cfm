@@ -37,7 +37,7 @@
   <tr>
     <td>&nbsp;</td>
     <td>
-		<input type="submit" value="Speichern" class="btn">
+		<input type="submit" value="Speichern" class="btn btn-primary">
 	</td>
   </tr>
 </table>

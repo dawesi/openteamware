@@ -15,7 +15,7 @@
 <cfset tmp = SetHeaderTopInfoString('Single Sign On')>
 
 Currently, the followings bindings are defined:
-<table class="table_overview">
+<table class="table table-hover">
 	<tr class="tbl_overview_header">
 		<cfoutput>
 		<td>
@@ -82,7 +82,7 @@ Currently, the followings bindings are defined:
 		<tr>
 			<td></td>
 			<Td>
-				<input class="btn" type="submit" value="Add binding ...">
+				<input class="btn btn-primary" type="submit" value="Add binding ...">
 			</Td>
 		</tr>
 	</table>

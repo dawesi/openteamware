@@ -12,7 +12,7 @@
 <form action="index.cfm" method="get" name="formsearch" style="margin:0px; ">
 <input type="hidden" name="action" value="dosearch">
 
-<table class="table_overview">
+<table class="table table-hover">
 
 <tr class="mischeader">
 

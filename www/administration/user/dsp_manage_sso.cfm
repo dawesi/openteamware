@@ -19,7 +19,7 @@
 <cfset q_select_sso_settings = application.components.cmp_security.LoadSwitchUsersData(userkey = url.entrykey)>
 
 <h4>Single Sign On <cfoutput>#a_cmp_users.GetUsernameByEntrykey(url.entrykey)#</cfoutput></h4> 
-<table class="table_overview">
+<table class="table table-hover">
 	<tr class="tbl_overview_header">
 		<cfoutput>
 		<td>
@@ -111,7 +111,7 @@
 		<tr>
 			<td></td>
 			<Td>
-				<input class="btn" type="submit" value="Add binding ...">
+				<input class="btn btn-primary" type="submit" value="Add binding ...">
 			</Td>
 		</tr>
 	</table>

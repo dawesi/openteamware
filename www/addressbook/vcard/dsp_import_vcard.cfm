@@ -19,7 +19,7 @@ TODO: think about implementing this feature
 
 <form action="index.cfm?action=ImportVcard" method="post" enctype="multipart/form-data">
 	<input type="file" name="frmfileupload" />
-	<input type="submit" value="upload" class="btn" />
+	<input type="submit" value="upload" class="btn btn-primary" />
 </form>
 
 <cfexit method="exittemplate">

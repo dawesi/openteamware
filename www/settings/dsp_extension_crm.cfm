@@ -89,7 +89,7 @@
   </tr>
     <td class="field_name"></td>
     <td>
-		<input class="btn" type="submit" value="<cfoutput>#GetLangVal('cm_wd_save')#</cfoutput>" name="frmsubmit" class="btn" />
+		<input class="btn btn-primary" type="submit" value="<cfoutput>#GetLangVal('cm_wd_save')#</cfoutput>" name="frmsubmit" class="btn btn-primary" />
 	</td>
   </tr>
 </table>

@@ -84,7 +84,7 @@ WHERE
 
 <img src="/images/si/information.png" class="si_img" /> <cfoutput>#GetLangVal('cal_ph_newedit_related_events')#</cfoutput>
 
-<table class="table_overview">
+<table class="table table-hover">
   <tr class="tbl_overview_header">
     <td><cfoutput>#GetLangVal('cal_wd_title')#</cfoutput></td>
 	<td><cfoutput>#GetLangVal('cal_wd_location')#</cfoutput></td>

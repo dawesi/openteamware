@@ -8,7 +8,7 @@
 // --->
 
 
-<table class="table_overview">
+<table class="table table-hover">
   <tr class="tbl_overview_header">
 	<td style="width:35px;">
 		<a href="#" onclick="SelectAllDisplayedItems();return false;"><cfoutput>#GetLangVal('cm_wd_all')#</cfoutput></a>

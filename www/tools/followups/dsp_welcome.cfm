@@ -20,7 +20,7 @@
 		<cfoutput>#GetLangVal('crm_ph_followups_explanation')#</cfoutput>
 	</div>
 	
-		<table class="table_overview">
+		<table class="table table-hover">
 		  <tr class="tbl_overview_header">
 			<td><cfoutput>#GetLangVal('cm_wd_title')#</cfoutput></td>
 			<td><cfoutput>#GetLangVal('cm_wd_type')#</cfoutput></td>
@@ -80,7 +80,7 @@
 	
 	<cfset variables.a_cmp_show_username = CreateObject('component', request.a_str_component_users)>
 	
-	<table class="table_overview">
+	<table class="table table-hover">
 	<tr class="tbl_overview_header">
 		<td><cfoutput>#GetLangVal('cm_wd_title')#</cfoutput></td>
 		<td><cfoutput>#GetLangVal('cm_ph_created_for')#</cfoutput></td>

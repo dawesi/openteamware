@@ -27,7 +27,7 @@
 
 <br /><br />  
 <form name="form1" action="#">
-<table class="table_overview">
+<table class="table table-hover">
 	<tr class="tbl_overview_header">
 		<td>
 			<cfoutput>#GetLangVal('cm_wd_title')#</cfoutput>
@@ -49,7 +49,7 @@
 			#ReplaceNoCase(htmleditformat(q_select_notices.notice), chr(10), ' ... ', 'ALL')#
 		</td>
 		<td style="text-align:right;">
-			<input type="button" name="frmInsertText" class="btn2" value="#GetLangVal('mail_ph_insert_text')#" onClick="AddTextToBody('text', 'frmnotice#q_select_notices.currentrow#');" />
+			<input type="button" name="frmInsertText" class="btn" value="#GetLangVal('mail_ph_insert_text')#" onClick="AddTextToBody('text', 'frmnotice#q_select_notices.currentrow#');" />
 		</td>
 	</tr>
 	
@@ -84,7 +84,7 @@
 
 	<br /><br />  
 	<form name="form1" action="#">
-	<table class="table_overview">
+	<table class="table table-hover">
 		<tr class="tbl_overview_header">
 			<td>
 				<cfoutput>#GetLangVal('cm_wd_title')#</cfoutput>
@@ -112,7 +112,7 @@
 				</cfif>
 			</td>
 			<td style="text-align:right;">
-				<input type="button" name="frmInsertText" class="btn2" value="#GetLangVal('mail_ph_insert_text')#" onClick="AddTextToBody('#a_str_format#', 'frmsignature_#q_select_signatures.currentrow#');" />
+				<input type="button" name="frmInsertText" class="btn" value="#GetLangVal('mail_ph_insert_text')#" onClick="AddTextToBody('#a_str_format#', 'frmsignature_#q_select_signatures.currentrow#');" />
 			</td>
 		</tr>
 		

@@ -26,7 +26,7 @@
     </select>
     <br />
     <br />
-    <input type="Submit" value="<cfoutput>#GetLangVal('mail_ph_alerts_show_settings')#</cfoutput>" class="btn" />
+    <input type="Submit" value="<cfoutput>#GetLangVal('mail_ph_alerts_show_settings')#</cfoutput>" class="btn btn-primary" />
   </form>
   <cfexit method="EXITTEMPLATE">
 </cfif>

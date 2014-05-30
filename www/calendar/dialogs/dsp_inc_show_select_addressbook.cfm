@@ -5,8 +5,8 @@
 		<input type="hidden" name="frmentrykey" value="#url.entrykey#"/>
 		<input type="hidden" name="frmtype" value="#url.type#"/>
       ......contact selection......
-		<input type="button" value="assign" class="btn" onclick="DoAssignElements();"/>
-		<input type="button" value="cancel" class="btn2" onclick="CloseSimpleModalDialog();"/>
+		<input type="button" value="assign" class="btn btn-primary" onclick="DoAssignElements();"/>
+		<input type="button" value="cancel" class="btn" onclick="CloseSimpleModalDialog();"/>
 	</form>
     
     The form should also contain checkboxes or hidden fields named "assigned_elements". These form elements should 
@@ -66,7 +66,7 @@
 
 <cfset q_select_hits = stReturn.q_select_contacts />
 
-<table class="table_overview">
+<table class="table table-hover">
 			<cfoutput>
 			<tr class="tbl_overview_header">
 				<td>
@@ -95,7 +95,7 @@
 					#htmleditformat(q_select_hits.b_city)#
 				</td>
 				<td>
-					<input type="button" value="<cfoutput>#GetLangVal('cm_ph_btn_action_apply')#</cfoutput>" class="btn" onclick="$('##ASSIGNED_ELEMENTS').val('#jsstringformat(q_select_hits.entrykey)#');DoAssignElements();" />
+					<input type="button" value="<cfoutput>#GetLangVal('cm_ph_btn_action_apply')#</cfoutput>" class="btn btn-primary" onclick="$('##ASSIGNED_ELEMENTS').val('#jsstringformat(q_select_hits.entrykey)#');DoAssignElements();" />
 				</td>
 			</tr>
 			</cfloop>
@@ -116,9 +116,9 @@
 	<tr>
 		<td class="field_name"></td>
 		<td>
-			<input type="submit" class="btn" value="#GetLangVal('cm_wd_search')#" />
+			<input type="submit" class="btn btn-primary" value="#GetLangVal('cm_wd_search')#" />
 			
-			<input type="button" value="<cfoutput>#GetLangVal('cm_wd_cancel')#</cfoutput>" class="btn2" onclick="CloseSimpleModalDialog();" />
+			<input type="button" value="<cfoutput>#GetLangVal('cm_wd_cancel')#</cfoutput>" class="btn" onclick="CloseSimpleModalDialog();" />
 		</td>
 	</tr>
 </table>

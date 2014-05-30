@@ -297,7 +297,7 @@
 <tr>
 	<td></td>
 	<td>
-		<input type="submit" class="btn" name="frmSubmitAdd" value="<cfoutput>#GetLangVal('cm_wd_save_button_caption')#</cfoutput>" />
+		<input type="submit" class="btn btn-primary" name="frmSubmitAdd" value="<cfoutput>#GetLangVal('cm_wd_save_button_caption')#</cfoutput>" />
 	</td>
 </tr>
 </table>

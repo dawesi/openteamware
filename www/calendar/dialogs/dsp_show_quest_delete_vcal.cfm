@@ -26,8 +26,8 @@ Are you sure that you want to delete the virtual calendar '<cfoutput>#url.title#
 </tr>
 <tr>
 	<td colspan="2">
-	<input type="submit" value="delete" class="btn" />
-	<input type="button" value="no, do not delete" onclick="CloseSimpleModalDialog();" class="btn2" />
+	<input type="submit" value="delete" class="btn btn-primary" />
+	<input type="button" value="no, do not delete" onclick="CloseSimpleModalDialog();" class="btn" />
 	</td>
 </tr>
 </table>

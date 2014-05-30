@@ -42,7 +42,18 @@
 	</script>
 	
 	<style type="text/css" media="all">
-	a {border-bottom:gray dashed 1px;}
+		body {
+background: rgb(0,114,198); /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover,  rgba(0,114,198,1) 0%, rgba(98,162,214,1) 0%, rgba(0,114,198,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(0,114,198,1)), color-stop(0%,rgba(98,162,214,1)), color-stop(100%,rgba(0,114,198,1))); /* Chrome,Safari4+ */
+background: -webkit-radial-gradient(center, ellipse cover,  rgba(0,114,198,1) 0%,rgba(98,162,214,1) 0%,rgba(0,114,198,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-radial-gradient(center, ellipse cover,  rgba(0,114,198,1) 0%,rgba(98,162,214,1) 0%,rgba(0,114,198,1) 100%); /* Opera 12+ */
+background: -ms-radial-gradient(center, ellipse cover,  rgba(0,114,198,1) 0%,rgba(98,162,214,1) 0%,rgba(0,114,198,1) 100%); /* IE10+ */
+background: radial-gradient(ellipse at center,  rgba(0,114,198,1) 0%,rgba(98,162,214,1) 0%,rgba(0,114,198,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0072c6', endColorstr='#0072c6',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+
+		}
 	</style>
 </head>
 
@@ -52,7 +63,7 @@
   <cfset a_str_js_onload = "onload=""document.formlogin.frmusername.focus();""">
 </cfif>
 
-<body class="body_login" scroll=no <cfoutput>#a_str_js_onload#</cfoutput>>
+<body class="body_login" <cfoutput>#a_str_js_onload#</cfoutput>>
 
 
 <cfset a_struct_medium_logo = application.components.cmp_customize.GetCustomStyleDataWithoutUsersettings(style = request.appsettings.default_stylesheet, entryname = 'medium_logo') />
@@ -73,7 +84,7 @@
 
 <cfsavecontent variable="a_str_content">
 	
-	<div style="text-align:left;background-image:URL(/images/menu/img_key_login_bg.gif);background-position:right bottom;background-color:white;background-repeat:no-repeat;-moz-border-radius: 8px;">
+	<div style="text-align:left;background-position:right bottom;background-color:rgba(255,255,255,0.95);background-repeat:no-repeat;border-radius: 8px;">
 		
 		<table border="0" cellpadding="14" cellspacing="0" width="580">
 		<tr>
@@ -158,11 +169,8 @@
 				  	/
 				</cfif>
 				
-				<a href="mailto:<cfoutput>#ExtractEmailAdr( application.components.cmp_customize.GetCustomStyleDataWithoutUsersettings( entryname = 'mail', style = '' ).FeedbackMailSender )#</cfoutput>?subject=Request%20Password"><cfoutput>#GetLangVal('lg_wd_data_forgotten')#</cfoutput></a>
 				
-				/
-				
-				<a href="/rd/about/" target="_blank"><cfoutput>#GetLangVal( 'cm_wd_about' )#</cfoutput></a>
+				<a href="https://github.com/funkymusic/openteamware">&copy; 2014 otw</a>
 			</td>
 		</tr>
 		</table>

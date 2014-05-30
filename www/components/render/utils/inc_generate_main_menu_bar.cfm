@@ -21,78 +21,59 @@
 
 
 <!--- display top menu ... --->
-<!--- TODO: translate and fix links ... --->
-<cfscript>
-	StartNewJSPopupMenu('a_menu_new_items');
-	AddNewJSPopupMenuItem(GetLangval('cm_wd_contact'), '/addressbook/?action=CreateNewItem&datatype=0');
-	AddNewJSPopupMenuItem(GetLangval('cm_wd_account'), '/addressbook/?action=CreateNewItem&datatype=1');
-	AddNewJSPopupMenuItem(GetLangval('crm_ph_project_type_1'), '/project/?action=NewProject&type=1');	
-	AddNewJSPopupMenuItem(GetLangval('cm_wd_appointment'), '/calendar/index.cfm?action=ShowNewEvent');
-	AddNewJSPopupMenuItem(GetLangval('cm_wd_task'), '/tasks/index.cfm?action=newtask');
-	// AddNewJSPopupMenuItem(GetLangval('cm_wd_file'), '/storage/?action=UploadNewFile');
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/" title="<cfoutput>#GetLangVal('cm_wd_home')#</cfoutput>">otw</a>
+    </div>
 
-	AddNewJSPopupMenuToPage();
-</cfscript>
-
-<div id="id_header_menu_user">
-	<span id="id_activites_new_msg_indicator" style="display:none"></span>
-	
-	<a href="/"><cfoutput>#htmleditformat(request.stSecurityContext.myusername)#</cfoutput></a>
-	&#160;|&#160;
-					
-					<cfif request.stSecurityContext.ISUSERSWITCHENABLED>
-						<a  href="javascript:LoadUserSwitchData();">Single Sign On</a>
-	&#160;|&#160;
-					</cfif>
-					
-					<a href="/settings/"><cfoutput>#GetLangVal('cm_wd_preferences')#</cfoutput></a>
-					&#160;|&#160;
-					<a target="_top" onclick="ShowLogoutDialog();return false;" href="/logout.cfm"><cfoutput>#GetLangVal('cm_wd_logout')#</cfoutput></a>
-
-					
-</div>
-
-<!--- status box --->
-<div style="display:none;" id="id_top_status_information">&#160;</div>
-
-
-
-<div class="header_menu" id="id_header_menu">
-<ul>
-	<li>
-		<a href="/start/default/"><cfoutput>#GetLangVal('cm_wd_home')#</cfoutput></a>
-	</li>
-	<li>
-		 <a href="/" id="idnewtest" onmouseover="ShowHTMLActionPopup('idnewtest', a_menu_new_items, false);" onclick="ShowHTMLActionPopup('idnewtest', a_menu_new_items, false);return false;"><cfoutput>#GetLangVal('cm_wd_new')#</cfoutput> &raquo;</a>
-	</li>
-
-    <li>
-    	<a href="/crm/?action=activities"><cfoutput>#GetLangVal('adrb_wd_activities')#</cfoutput></a>
-    </li>
-   	<li>
-    	<a href="/addressbook/index.cfm?filterdatatype=0"><cfoutput>#GetLangVal('cm_wd_contacts')#</cfoutput></a>
-    </li>
-    <li>
-     	<a href="/addressbook/index.cfm?filterdatatype=1"><cfoutput>#GetLangVal('crm_wd_accounts')#</cfoutput></a>
-     </li>		
-     <!--- <li>
-         <a href="/calendar/" id="id_men_cal" onmouseover="ShowHTMLActionPopup('id_men_cal', a_men_cal, false);" onclick="ShowHTMLActionPopup('id_men_cal', a_men_cal, false);"><cfoutput>#GetLangVal('cm_wd_calendar')#</cfoutput> &raquo;</a>
-     </li> --->
-	<li>
-		<a href="/project"><cfoutput>#GetLangval('cm_wd_projects')#</cfoutput></a>
-	</li>
-    <!---<li>
-		<a href="/email/" id="id_men_mail" onmouseover="ShowHTMLActionPopup('id_men_mail', a_men_email, false);" onclick="ShowHTMLActionPopup('id_men_mail', a_men_email, false);"><cfoutput>#GetLangVal('cm_wd_email')# &raquo;</cfoutput></a>
-   	</li>--->
-	<!--- <li>
-        <a href="/mailing/"><cfoutput>#GetLangVal('cm_wd_mailings')#</cfoutput></a>
-    </li> --->
-	<!--- <li>
-         <a href="/extras/" id="id_men_ex" onmouseover="ShowHTMLActionPopup('id_men_ex', a_men_ex, false);" onclick="ShowHTMLActionPopup('id_men_ex', a_men_ex, false);"><cfoutput>#GetLangVal('cm_wd_extras')#</cfoutput> &raquo;</a>
-     </li>	 --->
-</ul>
-
-</div>
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <cfoutput><li class="dropdown">
+          <a href="##" class="dropdown-toggle" data-toggle="dropdown">#GetLangVal('cm_wd_new')# <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="/addressbook/?action=CreateNewItem&datatype=0">#GetLangval('cm_wd_contact')#</a></li>
+            <li><a href="/addressbook/?action=CreateNewItem&datatype=1">#GetLangval('cm_wd_account')#</a></li>
+            <li><a href="/project/?action=NewProject&type=1">#GetLangval('crm_ph_project_type_1')#</a></li>
+            <li class="divider"></li>
+            <li><a href="/calendar/index.cfm?action=ShowNewEvent">#GetLangval('cm_wd_appointment')#</a></li>
+            <li><a href="/tasks/index.cfm?action=newtask">#GetLangval('cm_wd_task')#</a></li>
+          </ul>
+        </li>
+		<li>
+			<a href="/crm/?action=activities"><cfoutput>#GetLangVal('adrb_wd_activities')#</cfoutput></a>
+		</li>
+	   	<li>
+	    	<a href="/addressbook/index.cfm?filterdatatype=0"><cfoutput>#GetLangVal('cm_wd_contacts')#</cfoutput></a>
+	    </li>
+	    <li>
+	     	<a href="/addressbook/index.cfm?filterdatatype=1"><cfoutput>#GetLangVal('crm_wd_accounts')#</cfoutput></a>
+	     </li>	
+	     <li>
+			<a href="/project"><cfoutput>#GetLangval('cm_wd_projects')#</cfoutput></a>
+		</li>
+		</cfoutput>
+      </ul>
+      <!--- <form class="navbar-form navbar-left" role="search">
+        <div class="form-group">
+          <input type="text" class="form-control" placeholder="Search">
+        </div>
+        <button type="submit" class="btn btn-default">Submit</button>
+      </form> --->
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#"></a></li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><cfoutput>#htmleditformat(request.stSecurityContext.myusername)#</cfoutput> <b class="caret"></b></a>
+          <ul class="dropdown-menu">
+            <li><a href="/settings/"><cfoutput>#GetLangVal('cm_wd_preferences')#</cfoutput></a></li>
+            <li><a target="_top" onclick="ShowLogoutDialog();return false;" href="/logout.cfm"><cfoutput>#GetLangVal('cm_wd_logout')#</cfoutput></a></li>
+          </ul>
+        </li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
 
 <div style="clear:both"></div>
 

@@ -10,13 +10,16 @@
 <html>
 	<head>
 		
-	
-		<!--- call js include ... important to do first because of init.js (has to be called first of all)  --->
-		#CallJavaScriptsInclude(currentaction = arguments.currentaction)#
-		
 		<!--- call CSS include ... --->
+		<link rel="stylesheet" media="all" type="text/css" href="/assets/css/bootstrap.css">
 		<link rel="stylesheet" media="all" type="text/css" href="/assets/css/default.css">
-		<link rel="stylesheet" media="print" type="text/css" href="/assets/css/print.css">		
+		<link rel="stylesheet" media="print" type="text/css" href="/assets/css/print.css">	
+		
+
+		<!--- call js include ... important to do first because of init.js (has to be called first of all)  --->
+		
+		#CallJavaScriptsInclude(currentaction = arguments.currentaction)#
+		<script src="/assets/js/bootstrap.min.js"></script>
 				
 		<!--- custom html header --->
 		#GenerateCustomHTMLHeader()#
@@ -25,18 +28,6 @@
 		
 		<link rel="shortcut icon" href="/images/si/group_add.png" type="image/png" />
 		
-		<!--- <base href="http://www.stage.openTeamware.com:8080/start/default/"> --->
-		
-		<cfif StructKeyExists(request, 'stSecurityContext')>
-		
-			<cfif request.stSecurityContext.mycompanykey IS '299932A4-DB03-3450-03F0C1F65D836F5E'>
-				<style type="text/css">
-				.div_top_menu_outer {
-				display:block;
-				}
-				</style>
-			</cfif>
-		</cfif>
 	</head>
 			
 </cfoutput>

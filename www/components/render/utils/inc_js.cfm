@@ -8,7 +8,7 @@
 // --->
 
 <script src="/common/js/init.js" type="text/javascript"></script>
-<script src="/common/js/jquery-1.2.js" type="text/javascript"></script>
+<script src="/assets/js/jquery-1.11.1.min.js" type="text/javascript"></script>
 <script src="/common/js/display.js" type="text/javascript"></script>
 
 <!--- list of JavaScript files to load ... --->

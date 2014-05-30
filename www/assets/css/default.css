@@ -668,46 +668,20 @@ fieldset.bg_fieldset legend {
 	color:rgb(68, 68, 68);
 	}
 	
-.table_edit_form select {
-	border:gray dotted 1px;
-	}
-	
-.table_edit_form textarea{
-	border:gray dotted 1px;
-	}
-
-.table_edit_form input{
-	border:gray dotted 1px;
-	}
-	
-.table_edit_form select:focus {
-	border: silver solid 1px;
-	}
-	
-.table_edit_form textarea:focus {
-	border: silver solid 1px;
-	}
-	
-.table_edit_form input:focus {
-	border: silver solid 1px;
-	}
 
 .table_edit_form input {
 	width:250px;
 	padding:5px;
-	font-size:12px;
 	}		
 .table_edit_form select {
 	width:250px;
 	border: gray silver 1px;
 	padding:5px;
-	font-size:12px;	
 	}
 	
 .table_edit_form textarea {
 	width:250px;
 	padding:5px;
-	font-size:12px;
 	}		
 
 .table_edit_form .btn {

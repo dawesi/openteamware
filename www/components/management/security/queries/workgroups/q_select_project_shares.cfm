@@ -13,11 +13,11 @@ FROM	projects;
 	<cfinvokeargument name="loadoptions" value="#{}#">
 </cfinvoke>
 	
-<cfquery name="local.qProjects">
+<!--- <cfquery name="local.qProjects">
 SELECT	entrykey
 FROM	projects
-WHERE	contactkey IN
-</cfquery>
+WHERE	contactkey IN 
+</cfquery> --->
 
 <cfquery name="q_select_shares">
 SELECT

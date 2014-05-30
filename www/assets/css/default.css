@@ -485,33 +485,22 @@ ul.divleftpanelactions li div:hover {
 	}
 .div_module_tabs ul li {
 	float:left;
-	padding:0px;
-	padding-top:4px;
-	border-top:white solid 2px;
-	border-right:white solid 8px;
-	background-color:#F2F2F2;
-	background-image:URL(/include/0BE35216-925A-52BE-17F514120CF7FC05/images/img_bg_btn3.gif);
-	height:17px;
-	}
-	
-.div_module_tabs ul li a {
 	padding:4px;
-	text-decoration:none;
-	height:100%;
-	text-decoration:none;
-	border:0px;
+	margin:0px;
+	background-color:#F2F2F2;
+	margin-right: 8px;
 	border-left:silver solid 1px;
 	border-right:silver solid 1px;
 	border-top:silver solid 1px;
 	}
 	
+.div_module_tabs ul li a {
+	text-decoration:none;	
+	}
+	
 .div_module_tabs ul li a:hover {
 	text-decoration:none;
 		border-bottom:0px;
-	background-image:URL(/include/0BE35216-925A-52BE-17F514120CF7FC05/images/img_bg_btn.gif);
-	}
-.div_module_tabs ul .active_tab {
-	background-image:URL(/include/0BE35216-925A-52BE-17F514120CF7FC05/images/img_bg_btn2.gif);
 	}
 	
 .div_module_tabs ul .active_tab a {

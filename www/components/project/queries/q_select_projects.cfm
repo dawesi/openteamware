@@ -12,7 +12,14 @@
 	<!--- select all contact keys, use this one as filter --->
 	<cfquery name="local.qProjectContacts">
 	SELECT	contactkey
-	FROM	projects;
+	FROM	projects
+	WHERE	(1=1)
+	
+	<cfif StructKeyExists(arguments.filter, 'contactkeys')>
+			AND
+			(projects.contactkey IN (<cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.filter.contactkeys#" list="true">))
+	</cfif>
+	
 	</cfquery>
 	
 	<!--- load all contacts shared with this user --->

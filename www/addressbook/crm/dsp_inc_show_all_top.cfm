@@ -35,7 +35,7 @@
 
 <cfoutput>#BuildTabNavigation('id_div_search_panel_content', false)#</cfoutput><div id="id_div_search_panel_simple" style="display:none;padding:10px;">
 	
-	<table border="0" cellpadding="6" cellspacing="0">
+	<table border="0" cellpadding="6" cellspacing="0" class="table">
 		<tr>
 			<td class="br" valign="top">
 			
@@ -70,7 +70,7 @@
 					<input type="hidden" name="frmdisplaydatatype" value="<cfoutput>#a_str_display_data_type#</cfoutput>" />
 					<input type="hidden" name="frmarea" value="contact" />
 					
-					<table cellpadding="4" cellspacing="0" border="0">
+					<table class="table">
 						
 					<cfswitch expression="#a_str_display_data_type#">
 						<cfcase value="0,3" delimiters=",">

@@ -8,10 +8,6 @@
 <cfparam name="url.userkey" type="string" default="#request.stSecurityContext.myuserkey#">
 <cfparam name="url.salesprojectkey" type="string" default="">
 
-<cfinclude template="../browser/inc_check_browser.cfm">
-
-
-
 <html>
 <head>
 	<script type="text/javascript" src="/include/js/NonIECalendarPopup.js"></script>

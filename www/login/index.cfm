@@ -43,16 +43,7 @@
 	
 	<style type="text/css" media="all">
 		body {
-background: rgb(0,114,198); /* Old browsers */
-background: -moz-radial-gradient(center, ellipse cover,  rgba(0,114,198,1) 0%, rgba(98,162,214,1) 0%, rgba(0,114,198,1) 100%); /* FF3.6+ */
-background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(0,114,198,1)), color-stop(0%,rgba(98,162,214,1)), color-stop(100%,rgba(0,114,198,1))); /* Chrome,Safari4+ */
-background: -webkit-radial-gradient(center, ellipse cover,  rgba(0,114,198,1) 0%,rgba(98,162,214,1) 0%,rgba(0,114,198,1) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-radial-gradient(center, ellipse cover,  rgba(0,114,198,1) 0%,rgba(98,162,214,1) 0%,rgba(0,114,198,1) 100%); /* Opera 12+ */
-background: -ms-radial-gradient(center, ellipse cover,  rgba(0,114,198,1) 0%,rgba(98,162,214,1) 0%,rgba(0,114,198,1) 100%); /* IE10+ */
-background: radial-gradient(ellipse at center,  rgba(0,114,198,1) 0%,rgba(98,162,214,1) 0%,rgba(0,114,198,1) 100%); /* W3C */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0072c6', endColorstr='#0072c6',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
-
+			background-color:rgb(87, 87, 87) !important;
 		}
 	</style>
 </head>
@@ -84,7 +75,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0072c6', end
 
 <cfsavecontent variable="a_str_content">
 	
-	<div style="text-align:left;background-position:right bottom;background-color:rgba(255,255,255,0.95);background-repeat:no-repeat;border-radius: 8px;">
+	<div style="text-align:left;background-position:right bottom;background-color:rgba(255,255,255,0.95);background-repeat:no-repeat;border-radius: 8px;box-shadow:rgba(255, 255, 255, 0.317647) 0px 5px 400px 0px;">
 		
 		<table border="0" cellpadding="14" cellspacing="0" width="580">
 		<tr>
@@ -151,7 +142,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0072c6', end
 					</tr>
 					<tr>
 						<td>
-							<input type="submit" value="<cfoutput>#GetLangVal( 'cm_wd_login' )#</cfoutput>" class="btn btn-primary" />
+							<input type="submit" value="<cfoutput>#GetLangVal( 'cm_wd_login' )#</cfoutput>" class="btn btn-success" />
 						</td>
 					</tr>
 				</table>

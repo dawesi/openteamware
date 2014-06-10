@@ -13,7 +13,7 @@
 
 <html>
 <head>
-<LINK REL=stylesheet HREF="/standard.css" TYPE="text/css"> 
+	<LINK REL=stylesheet HREF="/assets/css/default.css" type="text/css" media="all" /> 
 	<title>Fehler | Error </title>
 </head>
 <body style="padding:15px;">

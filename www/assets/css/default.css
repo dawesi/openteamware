@@ -1,6 +1,5 @@
 body,p,td,div,a,textarea,select {
 	font-family: "Lucida Grande", Tahoma, Arial, Verdana, Helvetica, sans-serif;
-	
 	}
 
 .navbar-default {
@@ -31,13 +30,6 @@ body,p,td,div,a,textarea,select {
 	margin:0px;
 	padding:0px;
 	color:rgb(051,051,051);
-	}
-	
-body.bottomframe {
-	padding:4px;
-	font-family: "Lucida Grande", Tahoma, Verdana, Helvetica, sans-serif;
-	border-top:silver solid 1px;
-	background-color:#EEEEEE;
 	}
 	
 .body_popup {padding:12px;}
@@ -76,44 +68,7 @@ body.bottomframe {
 
 .div_main_fullwindow {
 	}
-	
-/* top menu */
-.div_top_menu_outer {
-	padding:0px;
-	border:0px;
-	color:white;
-	border-bottom:#E5C57E solid 1px;
-	background:white;
-	}
-	
-	
-/* top row with logo */
-.div_logo_information_on_top {
-	height:30px;
-	background-image:URL(/images/menu/img_bg_top_header.jpg);
-	}
-	
-/* div holding the logo */
-.div_logo_information_on_top .div_logo_image_top_container{
-	background-image:URL(/images/menu/img_bg_top_header_logo.jpg);
-	background-repeat:no-repeat;
-	background-position:left top;
-	padding:0px;
-	margin:0px;
-	float:left;
-	}
-	
-/* the logo */
-.div_logo_information_on_top .img_logo_top {
-	width:160px;
-	height:30px;
-	}
-
-.div_top_menu_inner {
-	padding:3px;
-	border:0px;
-	}
-	
+		
 .div_main_content_outer {
 	top:0px;
 	border:0px;
@@ -170,50 +125,6 @@ body.bottomframe {
 	border-bottom:rgb(229, 197, 126) solid 1px;
 	}
 	
-/* submenu */
-#ul_submenu_items div {
-	border:0px;
-	border-bottom:white solid 1px;
-	}
-			
-#ul_submenu_items div a {
-	width:100%;
-	display: block;
-	color:black;
-	font-weight:normal;
-	padding:2px;
-	border:0px;	
-	}
-
-#ul_submenu_items div a:hover {
-	background-color:silver;
-	text-decoration:none;
-	color:white;
-	border:0px;
-	font-weight:bold;	
-	}
-	
-#ul_submenu_items div {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	border: none;
-	}
-		
-#ul_submenu_items div {
-	border-bottom: 1px solid silver;
-	margin: 0;
-	width:100%;
-	}
-		
-#ul_submenu_items
-	{
-	width: 12em;
-	margin:0px;
-	padding:0px;
-	line-height:16px;	
-	}		
-		
 .cal_month_view_span {
 	float:right;width:35px;height:5px;
 	}
@@ -230,7 +141,7 @@ h1 {font-size:17px;}
 td.calnav{text-align:right;font-size:10px;}
 
 input, select, textarea {
-	font-family:"Lucida Grande",Arial,Helvetica;
+	
 	border: silver solid 1px;
 	}
 
@@ -532,16 +443,16 @@ ul.divleftpanelactions li div:hover {
 	padding-left:0px;
 	width:100%;		
 	font-weight:bold;
-	border-bottom: #C0C0C0 solid 1px;
-
+	border-bottom:#EEEEEE solid 1px;
 	}
 	
 .div_box .div_legend .div_caption {
 	width:25%;
 	
-	padding:3px;
 	font-size:14px;
 	color: #666666;
+	float:left;
+	text-transform:uppercase;
 	}
 	
 .div_box .div_legend .div_buttons {

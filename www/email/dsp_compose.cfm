@@ -79,8 +79,6 @@
 	<cfset url.format = 'html' />
 </cfif>
 
-<cfinclude template="../tools/browser/inc_check_browser.cfm">
-
 <!--- important ... load draft mail ... --->
 <cfset a_int_draft_id = url.draftid />
 

@@ -162,9 +162,9 @@
 		WHERE	entrykey = <cfqueryparam cfsqltype="cf_sql_varchar" value="#q_select_follow_ups.objectkey#" />
 		</cfquery>
 		
-		<tr <cfif q_select_follow_ups.currentrow MOD 2 IS 0>class="odd"</cfif>>
-			<td>
-				<img src="/images/si/vcard.png" class="si_img hideprint" alt="" /> #application.components.cmp_tools.GenerateLinkToItem(usersettings = request.stUserSettings, servicekey = q_select_follow_ups.servicekey, title = q_select_follow_ups.objecttitle, objectkey = q_select_follow_ups.objectkey)#
+		<tr>
+			<td style="font-weight:bold">
+				#application.components.cmp_tools.GenerateLinkToItem(usersettings = request.stUserSettings, servicekey = q_select_follow_ups.servicekey, title = q_select_follow_ups.objecttitle, objectkey = q_select_follow_ups.objectkey)#
 				
 				<cfif q_select_follow_ups.priority IS 5>
 					<img src="/images/si/exclamation.png" class="si_img" />

@@ -36,9 +36,6 @@
 		<cfcase value="10100">
 			<b><cfoutput>#GetLangVal('cm_ph_object_not_found')#</cfoutput></b>
 		</cfcase>
-		<cfdefaultcase>
-		
-		</cfdefaultcase>
 	</cfswitch>
 	
 	<cfexit method="exittemplate">
@@ -97,7 +94,8 @@
 
 <cfset request.a_str_current_page_title = a_str_display_header />
 
-<cfset tmp = SetHeaderTopInfoString(a_str_display_header) />
+<cfset SetHeaderTopInfoString(a_str_display_header) />
+
 
 <cfsavecontent variable="a_str_js">
 function NewElementClickEv(item_type) {
@@ -128,16 +126,10 @@ function NewElementClickEv(item_type) {
 
 <cfoutput>
 <div style="padding:6px;">
-	<input type="button" class="btn" onclick="ShowHTMLActionPopup('id_btn_new_activity', a_pop_crm_new_activity);return false;" value="<cfoutput>#GetLangVal('crm_ph_set_new_activity_collect_data')#</cfoutput>" id="id_btn_new_activity" />
-	
-	<!--- <cfif q_select_contact_data.contacttype NEQ 1 AND val(q_select_contact_data.id_re_job_available) IS 0>
-		<input onClick="CallRemoteEditDialog('#JSStringformat(url.entrykey)#');" type="button" value=" #htmleditformat(GetLangVal('adrb_ph_enable_remoteedit'))# " class="btn">
-	</cfif> --->
+	<input type="button" class="btn btn-success" onclick="ShowHTMLActionPopup('id_btn_new_activity', a_pop_crm_new_activity);return false;" value="<cfoutput>#GetLangVal('crm_ph_set_new_activity_collect_data')#</cfoutput>" id="id_btn_new_activity" />
 	
 	<input type="button" value="#GetLangVal('cm_ph_more_actions')# ..." id="id_btn_contacts_further_actions" class="btn" onClick="ShowHTMLActionPopup('id_btn_contacts_further_actions', a_pop_further_actions);return false;">
-		
-	<input type="button" class="btn" onclick="location.reload();return false;" value="<cfoutput>#GetLangVal('adrb_wd_reload')#</cfoutput>" />
-
+	
 	<input type="button" class="btn" onclick="ShowSimpleConfirmationDialog('index.cfm?action=deletecontacts&entrykeys=#url.entrykey#&confirmed=true&redirect_start_contacts=true');return false;" value="#MakeFirstCharUCase(GetLangVal('cm_wd_delete'))#" />
 </div>
 </cfoutput>
@@ -156,37 +148,6 @@ function NewElementClickEv(item_type) {
 <cfif (q_select_contact_data.contacttype IS 0) AND (q_select_contact_data.length_private_data IS 0)>
 	<cfset a_bol_display_private_data = false />
 </cfif>
-
-
-<!--- check for open remote edit operations ... --->
-<cfset a_bol_re_available =  StructKeyExists(a_struct_object.rights, 'edit') AND
-		a_struct_object.rights.edit AND
-		(Len(q_select_contact_data.is_re_data_available) GT 0) />
-	
-<cfif a_bol_re_available>
-		<cfoutput>
-		<table class="table_simple mischeader" cellpadding="8">
-		  <tr>
-			<td>
-				#si_img('exclamation')#
-			</td>
-			<td class="bl mischeader" style="padding:12px;">
-			<b>#GetLangVal('adrb_ph_remoteedit_contact_has_updated_data1')#</b>
-			<br />
-			#GetLangVal('adrb_ph_remoteedit_contact_has_updated_data2')#
-			<br /><br />
-			<a href="?action=edititem&entrykey=#urlencodedformat(url.entrykey)#">#si_img('pencil')#<b>Jetzt in den Editiert-Modus wechseln ...</b></a>
-			</td>
-		  </tr>
-		</table>
-		</cfoutput>
-</cfif>
-
-
-<!--- <cfset variables.a_cmp_route_planner = CreateObject('component', '/components/tools/cmp_route_planner')>
- --->
-<!--- TODO: Remove this ugly code ... --->
-
 
 <!--- add action popop menu javascript to header --->
 <!--- TODO translate --->
@@ -258,7 +219,7 @@ function NewElementClickEv(item_type) {
 
 <!--- business data --->
 <cfsavecontent variable="a_str_business_contact_data">
-	
+		
 	<!--- build box around ... --->	
 	<cfif a_bol_display_private_data>
 		<div class="div_module_tabs_content_box" style="width:99%;" id="<cfoutput>#a_str_id_business_data_box#</cfoutput>">
@@ -657,12 +618,15 @@ function NewElementClickEv(item_type) {
 	</cfsavecontent>
 	
 </cfif>
+
+<h2><cfoutput>#htmleditformat( a_str_display_header )#</cfoutput></h2>
 	
 <!--- write tab header and business/private content ... or just business data if no private data available --->
 <cfif a_bol_display_private_data>
 	
 	<!--- join string together ... --->
 	<cfsavecontent variable="a_str_business_data">
+
 		#a_str_business_data#
 		#a_str_business_contact_data#
 		#a_str_private_contact_data#

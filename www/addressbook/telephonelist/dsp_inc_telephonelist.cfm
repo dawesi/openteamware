@@ -60,7 +60,7 @@ WHERE
 	<td class="bb bl"><cfoutput>#GetLangVal('cm_wd_categories')#</cfoutput></td>
   </tr>
   <cfoutput query="q_select_contacts">
-  <tr id="idtr#q_select_contacts.currentrow#" onMouseOver="hilite(this.id);"  onMouseOut="restore(this.id);">
+  <tr>
     <td class="bb">
 	<a href="index.cfm?action=ShowItem&entrykey=#urlencodedformat(q_select_contacts.entrykey)#"><b>#htmleditformat(checkZeroString(q_select_contacts.surname))#</b>, #q_select_contacts.firstname#</a>
 	<br>

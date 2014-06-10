@@ -321,7 +321,7 @@
 		<cfargument name="center" type="boolean" required="no" default="true">
 		<cfargument name="hide_if_not_enough_data_for_scroller" type="boolean" default="false" required="no"
 			hint="do not display scroller if only a few records">
-		<cfargument name="main_template_filename" type="string" required="no" default="default.cfm"
+		<cfargument name="main_template_filename" type="string" required="no" default="index.cfm"
 			hint="the name of the main template file name used for the generated links">
 
 		<cfset var sReturn = '' />

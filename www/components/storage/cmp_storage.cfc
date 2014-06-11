@@ -312,7 +312,7 @@
 		</cfif>
 		
 		<!--- Update Count for parentdirectory --->
-		<cfset tmp = UpdateFilesCount(update_filescount.entrykey) />		
+		<cfset UpdateFilesCount(update_filescount.entrykey) />		
 
 		<!--- generate thumbnail? --->
 		<cfif ListFindNoCase(arguments.contenttype, 'image', '/') GT 0>
@@ -388,7 +388,7 @@
 		</cfif>
 		<cfinclude template="queries/q_insert_directory.cfm">
 
-		<cfset tmp = UpdateFilesCount(arguments.parentdirectorykey) />	
+		<cfset UpdateFilesCount(arguments.parentdirectorykey) />	
 
 		<cfreturn SetReturnStructSuccessCode(stReturn) />
 	</cffunction>
@@ -717,52 +717,52 @@
 			<cfcase value="a_str_shared_files_uuid">
 				
 				<cfset q_select_directory = QueryNew(a_str_default_query_fields) />
-				<cfset tmp = QueryAddRow(q_select_directory) />
-				<cfset tmp = QuerySetCell(q_select_directory, 'directorykey', a_str_shared_files_uuid) />
-				<cfset tmp = QuerySetCell(q_select_directory, 'parentdirectorykey','') />
-				<cfset tmp = QuerySetCell(q_select_directory, 'description',getlangval('sto_ph_sharedfiles',client.langno)) />
-				<cfset tmp = QuerySetCell(q_select_directory, 'shared_workgroupkey','') />
-				<cfset tmp = QuerySetCell(q_select_directory, 'publicshare_directorykey','') />
-				<cfset tmp = QuerySetCell(q_select_directory, 'displaytype','') />
-				<cfset tmp = QuerySetCell(q_select_directory, 'shared_directorykey','') />
-				<cfset tmp = QuerySetCell(q_select_directory, 'publicshare_directorykey','') />
-				<cfset tmp = QuerySetCell(q_select_directory, 'specialtype',1) />
-				<cfset tmp = QuerySetCell(q_select_directory, 'versioning',0) />
-				<cfset tmp = QuerySetCell(q_select_directory, 'directoryname',getlangval('sto_ph_sharedfiles',client.langno)) />
+				<cfset QueryAddRow(q_select_directory) />
+				<cfset QuerySetCell(q_select_directory, 'directorykey', a_str_shared_files_uuid) />
+				<cfset QuerySetCell(q_select_directory, 'parentdirectorykey','') />
+				<cfset QuerySetCell(q_select_directory, 'description',getlangval('sto_ph_sharedfiles',client.langno)) />
+				<cfset QuerySetCell(q_select_directory, 'shared_workgroupkey','') />
+				<cfset QuerySetCell(q_select_directory, 'publicshare_directorykey','') />
+				<cfset QuerySetCell(q_select_directory, 'displaytype','') />
+				<cfset QuerySetCell(q_select_directory, 'shared_directorykey','') />
+				<cfset QuerySetCell(q_select_directory, 'publicshare_directorykey','') />
+				<cfset QuerySetCell(q_select_directory, 'specialtype',1) />
+				<cfset QuerySetCell(q_select_directory, 'versioning',0) />
+				<cfset QuerySetCell(q_select_directory, 'directoryname',getlangval('sto_ph_sharedfiles',client.langno)) />
 				
 			</cfcase>
 			<cfcase value="a_str_workdir_uuid">
 				
 				<cfset q_select_directory=QueryNew(a_str_default_query_fields)>
-				<cfset tmp = QueryAddRow(q_select_directory)>
-				<cfset tmp = QuerySetCell(q_select_directory,'directorykey',a_str_workdir_uuid)>
-				<cfset tmp = QuerySetCell(q_select_directory,'parentdirectorykey','')>
-				<cfset tmp = QuerySetCell(q_select_directory,'shared_workgroupkey','')>
-				<cfset tmp = QuerySetCell(q_select_directory,'publicshare_directorykey','')>
-				<cfset tmp = QuerySetCell(q_select_directory,'description',getlangval('sto_ph_workgroupfiles',client.langno))>
-				<cfset tmp = QuerySetCell(q_select_directory,'displaytype','')>
-				<cfset tmp = QuerySetCell(q_select_directory,'shared_directorykey','')>
-				<cfset tmp = QuerySetCell(q_select_directory,'publicshare_directorykey','')>
-				<cfset tmp = QuerySetCell(q_select_directory,'specialtype',1)>
-				<cfset tmp = QuerySetCell(q_select_directory,'versioning',0)>
-				<cfset tmp = QuerySetCell(q_select_directory,'directoryname',getlangval('sto_ph_workgroupfiles',client.langno))>
+				<cfset QueryAddRow(q_select_directory)>
+				<cfset QuerySetCell(q_select_directory,'directorykey',a_str_workdir_uuid)>
+				<cfset QuerySetCell(q_select_directory,'parentdirectorykey','')>
+				<cfset QuerySetCell(q_select_directory,'shared_workgroupkey','')>
+				<cfset QuerySetCell(q_select_directory,'publicshare_directorykey','')>
+				<cfset QuerySetCell(q_select_directory,'description',getlangval('sto_ph_workgroupfiles',client.langno))>
+				<cfset QuerySetCell(q_select_directory,'displaytype','')>
+				<cfset QuerySetCell(q_select_directory,'shared_directorykey','')>
+				<cfset QuerySetCell(q_select_directory,'publicshare_directorykey','')>
+				<cfset QuerySetCell(q_select_directory,'specialtype',1)>
+				<cfset QuerySetCell(q_select_directory,'versioning',0)>
+				<cfset QuerySetCell(q_select_directory,'directoryname',getlangval('sto_ph_workgroupfiles',client.langno))>
 				
 			</cfcase>
 			<cfcase value="a_str_public_shares_uuid">
 				
 				<cfset q_select_directory = QueryNew(a_str_default_query_fields) />
-				<cfset tmp = QueryAddRow(q_select_directory)>
-				<cfset tmp = QuerySetCell(q_select_directory,'directorykey',a_str_public_shares_uuid)>
-				<cfset tmp = QuerySetCell(q_select_directory,'parentdirectorykey','')>
-				<cfset tmp = QuerySetCell(q_select_directory,'shared_workgroupkey','')>
-				<cfset tmp = QuerySetCell(q_select_directory,'publicshare_directorykey','')>
-				<cfset tmp = QuerySetCell(q_select_directory,'description',getlangval('sto_ph_publicfiles',client.langno))>
-				<cfset tmp = QuerySetCell(q_select_directory,'displaytype','')>
-				<cfset tmp = QuerySetCell(q_select_directory,'shared_directorykey','')>
-				<cfset tmp = QuerySetCell(q_select_directory,'publicshare_directorykey','')>
-				<cfset tmp = QuerySetCell(q_select_directory,'specialtype',1)>
-				<cfset tmp = QuerySetCell(q_select_directory,'versioning',0)>
-				<cfset tmp = QuerySetCell(q_select_directory,'directoryname',getlangval('sto_ph_publicfiles',client.langno))>
+				<cfset QueryAddRow(q_select_directory)>
+				<cfset QuerySetCell(q_select_directory,'directorykey',a_str_public_shares_uuid)>
+				<cfset QuerySetCell(q_select_directory,'parentdirectorykey','')>
+				<cfset QuerySetCell(q_select_directory,'shared_workgroupkey','')>
+				<cfset QuerySetCell(q_select_directory,'publicshare_directorykey','')>
+				<cfset QuerySetCell(q_select_directory,'description',getlangval('sto_ph_publicfiles',client.langno))>
+				<cfset QuerySetCell(q_select_directory,'displaytype','')>
+				<cfset QuerySetCell(q_select_directory,'shared_directorykey','')>
+				<cfset QuerySetCell(q_select_directory,'publicshare_directorykey','')>
+				<cfset QuerySetCell(q_select_directory,'specialtype',1)>
+				<cfset QuerySetCell(q_select_directory,'versioning',0)>
+				<cfset QuerySetCell(q_select_directory,'directoryname',getlangval('sto_ph_publicfiles',client.langno))>
 			</cfcase>
 			<cfdefaultcase>
 				
@@ -772,18 +772,18 @@
 				<cfif SelectDirectoryRequest.directorykey eq arguments.securitycontext.q_select_workgroup_permissions.workgroup_key>
 					<cfset a_bool_found=true>
 					<cfset q_select_directory=QueryNew(a_str_default_query_fields)>
-					<cfset tmp = QueryAddRow(q_select_directory)>
-					<cfset tmp = QuerySetCell(q_select_directory,'directorykey',arguments.securitycontext.q_select_workgroup_permissions.workgroup_key)>
-					<cfset tmp = QuerySetCell(q_select_directory,'parentdirectorykey',a_str_workdir_uuid)>
-					<cfset tmp = QuerySetCell(q_select_directory,'shared_workgroupkey','')>
-					<cfset tmp = QuerySetCell(q_select_directory,'description',arguments.securitycontext.q_select_workgroup_permissions.workgroup_name)>
-					<cfset tmp = QuerySetCell(q_select_directory,'publicshare_directorykey','')>
-					<cfset tmp = QuerySetCell(q_select_directory,'displaytype','')>
-					<cfset tmp = QuerySetCell(q_select_directory,'shared_directorykey','')>
-					<cfset tmp = QuerySetCell(q_select_directory,'publicshare_directorykey','')>
-					<cfset tmp = QuerySetCell(q_select_directory,'specialtype',1)>
-					<cfset tmp = QuerySetCell(q_select_directory,'versioning',0)>
-					<cfset tmp = QuerySetCell(q_select_directory,'directoryname',arguments.securitycontext.q_select_workgroup_permissions.workgroup_name)>
+					<cfset QueryAddRow(q_select_directory)>
+					<cfset QuerySetCell(q_select_directory,'directorykey',arguments.securitycontext.q_select_workgroup_permissions.workgroup_key)>
+					<cfset QuerySetCell(q_select_directory,'parentdirectorykey',a_str_workdir_uuid)>
+					<cfset QuerySetCell(q_select_directory,'shared_workgroupkey','')>
+					<cfset QuerySetCell(q_select_directory,'description',arguments.securitycontext.q_select_workgroup_permissions.workgroup_name)>
+					<cfset QuerySetCell(q_select_directory,'publicshare_directorykey','')>
+					<cfset QuerySetCell(q_select_directory,'displaytype','')>
+					<cfset QuerySetCell(q_select_directory,'shared_directorykey','')>
+					<cfset QuerySetCell(q_select_directory,'publicshare_directorykey','')>
+					<cfset QuerySetCell(q_select_directory,'specialtype',1)>
+					<cfset QuerySetCell(q_select_directory,'versioning',0)>
+					<cfset QuerySetCell(q_select_directory,'directoryname',arguments.securitycontext.q_select_workgroup_permissions.workgroup_name)>
 				</cfif>
 				
 			</cfloop>
@@ -793,7 +793,7 @@
 				<cfinclude template="queries/q_select_directory.cfm">
 				
 				<cfif a_bool_isrootdir>
-					<cfset tmp = QuerySetCell(q_select_directory,'specialtype',1) />
+					<cfset QuerySetCell(q_select_directory,'specialtype',1) />
 				</cfif>
 			</cfif>
 				
@@ -878,29 +878,29 @@
 			<cfif SelectDirectoryRequest.directorykey eq a_str_shared_files_uuid>
 				<cfinclude template="queries/q_select_root_directorykey.cfm">
 				<cfset q_select_parent_directory=QueryNew('directorykey,directoryname,parentdirectorykey,userkey')>
-				<cfset tmp = QueryAddRow(q_select_parent_directory)>
-				<cfset tmp = QuerySetCell(q_select_parent_directory,'directorykey',a_str_shared_files_uuid)>
-				<cfset tmp = QuerySetCell(q_select_parent_directory,'parentdirectorykey',q_select_root_directorykey.entrykey)>
-				<cfset tmp = QuerySetCell(q_select_parent_directory,'directoryname','/')>
-				<cfset tmp = QuerySetCell(q_select_parent_directory,'userkey',arguments.securitycontext.myuserkey)>
+				<cfset QueryAddRow(q_select_parent_directory)>
+				<cfset QuerySetCell(q_select_parent_directory,'directorykey',a_str_shared_files_uuid)>
+				<cfset QuerySetCell(q_select_parent_directory,'parentdirectorykey',q_select_root_directorykey.entrykey)>
+				<cfset QuerySetCell(q_select_parent_directory,'directoryname','/')>
+				<cfset QuerySetCell(q_select_parent_directory,'userkey',arguments.securitycontext.myuserkey)>
 				
 			<cfelseif SelectDirectoryRequest.directorykey eq a_str_workdir_uuid>
 				<cfinclude template="queries/q_select_root_directorykey.cfm">
 				<cfset q_select_parent_directory=QueryNew('directorykey,directoryname,parentdirectorykey,userkey')>
-				<cfset tmp = QueryAddRow(q_select_parent_directory)>
-				<cfset tmp = QuerySetCell(q_select_parent_directory,'directorykey',a_str_workdir_uuid)>
-				<cfset tmp = QuerySetCell(q_select_parent_directory,'parentdirectorykey',q_select_root_directorykey.entrykey)>
-				<cfset tmp = QuerySetCell(q_select_parent_directory,'directoryname','/')>
-				<cfset tmp = QuerySetCell(q_select_parent_directory,'userkey',arguments.securitycontext.myuserkey)>
+				<cfset QueryAddRow(q_select_parent_directory)>
+				<cfset QuerySetCell(q_select_parent_directory,'directorykey',a_str_workdir_uuid)>
+				<cfset QuerySetCell(q_select_parent_directory,'parentdirectorykey',q_select_root_directorykey.entrykey)>
+				<cfset QuerySetCell(q_select_parent_directory,'directoryname','/')>
+				<cfset QuerySetCell(q_select_parent_directory,'userkey',arguments.securitycontext.myuserkey)>
 
 			<cfelseif SelectDirectoryRequest.directorykey eq a_str_public_shares_uuid>
 				<cfinclude template="queries/q_select_root_directorykey.cfm">
 				<cfset q_select_parent_directory=QueryNew('directorykey,directoryname,parentdirectorykey,userkey')>
-				<cfset tmp = QueryAddRow(q_select_parent_directory)>
-				<cfset tmp = QuerySetCell(q_select_parent_directory,'directorykey',a_str_public_shares_uuid)>
-				<cfset tmp = QuerySetCell(q_select_parent_directory,'parentdirectorykey',q_select_root_directorykey.entrykey)>
-				<cfset tmp = QuerySetCell(q_select_parent_directory,'directoryname','/')>
-				<cfset tmp = QuerySetCell(q_select_parent_directory,'userkey',arguments.securitycontext.myuserkey)>
+				<cfset QueryAddRow(q_select_parent_directory)>
+				<cfset QuerySetCell(q_select_parent_directory,'directorykey',a_str_public_shares_uuid)>
+				<cfset QuerySetCell(q_select_parent_directory,'parentdirectorykey',q_select_root_directorykey.entrykey)>
+				<cfset QuerySetCell(q_select_parent_directory,'directoryname','/')>
+				<cfset QuerySetCell(q_select_parent_directory,'userkey',arguments.securitycontext.myuserkey)>
 
 			<cfelse>
 				<cfset a_bool_found=false>
@@ -908,11 +908,11 @@
 					<cfif arguments.securitycontext.q_select_workgroup_permissions.workgroup_key eq SelectDirectoryRequest.directorykey>
 						<cfset a_bool_found=true>
 						<cfset q_select_parent_directory=QueryNew('directorykey,directoryname,parentdirectorykey,userkey')>
-						<cfset tmp = QueryAddRow(q_select_parent_directory)>
-						<cfset tmp = QuerySetCell(q_select_parent_directory,'directorykey',arguments.securitycontext.q_select_workgroup_permissions.workgroup_key)>
-						<cfset tmp = QuerySetCell(q_select_parent_directory,'parentdirectorykey',a_str_workdir_uuid)>
-						<cfset tmp = QuerySetCell(q_select_parent_directory,'directoryname',getlangval('sto_ph_workgroupfiles',client.langno))>
-						<cfset tmp = QuerySetCell(q_select_parent_directory,'userkey',arguments.securitycontext.myuserkey)>
+						<cfset QueryAddRow(q_select_parent_directory)>
+						<cfset QuerySetCell(q_select_parent_directory,'directorykey',arguments.securitycontext.q_select_workgroup_permissions.workgroup_key)>
+						<cfset QuerySetCell(q_select_parent_directory,'parentdirectorykey',a_str_workdir_uuid)>
+						<cfset QuerySetCell(q_select_parent_directory,'directoryname',getlangval('sto_ph_workgroupfiles',client.langno))>
+						<cfset QuerySetCell(q_select_parent_directory,'userkey',arguments.securitycontext.myuserkey)>
 					</cfif>
 				</cfloop>
 				<cfif (not a_bool_found) and q_select_parent_directory.userkey neq arguments.securitycontext.myuserkey>
@@ -925,11 +925,11 @@
 					<cfif len(q_directory_info.shared_directorykey) gt 0 >
 						<cfset a_bool_found=true>
 						<cfset q_select_parent_directory=QueryNew('directorykey,directoryname,parentdirectorykey,userkey')>
-						<cfset tmp = QueryAddRow(q_select_parent_directory)>
-						<cfset tmp = QuerySetCell(q_select_parent_directory,'directorykey',a_str_currentkey)>
-						<cfset tmp = QuerySetCell(q_select_parent_directory,'parentdirectorykey',a_str_shared_files_uuid)>
-						<cfset tmp = QuerySetCell(q_select_parent_directory,'directoryname',getlangval('sto_ph_sharedfiles',client.langno))>
-						<cfset tmp = QuerySetCell(q_select_parent_directory,'userkey',arguments.securitycontext.myuserkey)>
+						<cfset QueryAddRow(q_select_parent_directory)>
+						<cfset QuerySetCell(q_select_parent_directory,'directorykey',a_str_currentkey)>
+						<cfset QuerySetCell(q_select_parent_directory,'parentdirectorykey',a_str_shared_files_uuid)>
+						<cfset QuerySetCell(q_select_parent_directory,'directoryname',getlangval('sto_ph_sharedfiles',client.langno))>
+						<cfset QuerySetCell(q_select_parent_directory,'userkey',arguments.securitycontext.myuserkey)>
 					</cfif>
 				</cfif>
 				<cfif not a_bool_found>
@@ -1105,7 +1105,7 @@
 		
 		<cfinclude template="queries/q_delete_file.cfm">
 		
-		<cfset tmp = UpdateFilesCount(q_query_file.parentdirectorykey) />
+		<cfset UpdateFilesCount(q_query_file.parentdirectorykey) />
 		
 		<cfreturn SetReturnStructSuccessCode(stReturn) />
 	</cffunction>
@@ -1151,7 +1151,7 @@
 		<cfif q_select_directory.filescount lte 0 >
 			<cfinclude template="queries/q_delete_directory.cfm">
 
-			<cfset tmp = UpdateFilesCount(q_select_directory.parentdirectorykey) />
+			<cfset UpdateFilesCount(q_select_directory.parentdirectorykey) />
 			
 			<cfreturn true>
 		<cfelse>
@@ -1458,7 +1458,7 @@
 
 		<cfloop query="stReturn.query">
 			
-			<cfset tmp = QueryAddRow(stReturn.expanded_query) />
+			<cfset QueryAddRow(stReturn.expanded_query) />
 			
 			<cfset a_query_findfile=FindFile(securitycontext=arguments.securitycontext,
 				usersettings=arguments.usersettings,
@@ -1466,20 +1466,20 @@
 				includeshareddirectories = arguments.includeshareddirectories) />
 				
 			<cfif a_query_findfile.recordcount IS 1>
-				<cfset tmp = QuerySetCell(stReturn.expanded_query,"filetype",a_query_findfile.filetype)>
-				<cfset tmp = QuerySetCell(stReturn.expanded_query,"locked",a_query_findfile.locked)>
-				<cfset tmp = QuerySetCell(stReturn.expanded_query,"specialtype",a_query_findfile.specialtype)>
-				<cfset tmp = QuerySetCell(stReturn.expanded_query,"filescount",a_query_findfile.filescount)>
-				<cfset tmp = QuerySetCell(stReturn.expanded_query,"entrykey",a_query_findfile.entrykey)>
-				<cfset tmp = QuerySetCell(stReturn.expanded_query,"name",a_query_findfile.name)>
-				<cfset tmp = QuerySetCell(stReturn.expanded_query,"description",a_query_findfile.description)>
-				<cfset tmp = QuerySetCell(stReturn.expanded_query,"categories",a_query_findfile.categories)>
-				<cfset tmp = QuerySetCell(stReturn.expanded_query,"filesize",a_query_findfile.filesize)>
-				<cfset tmp = QuerySetCell(stReturn.expanded_query,"contenttype",a_query_findfile.contenttype)>
-				<cfset tmp = QuerySetCell(stReturn.expanded_query,"userkey",a_query_findfile.userkey)>
-				<cfset tmp = QuerySetCell(stReturn.expanded_query,"dt_created",a_query_findfile.dt_created)>
-				<cfset tmp = QuerySetCell(stReturn.expanded_query,"dt_lastmodified",a_query_findfile.dt_lastmodified)>
-				<cfset tmp = QuerySetCell(stReturn.expanded_query,"shared",0)>
+				<cfset QuerySetCell(stReturn.expanded_query,"filetype",a_query_findfile.filetype)>
+				<cfset QuerySetCell(stReturn.expanded_query,"locked",a_query_findfile.locked)>
+				<cfset QuerySetCell(stReturn.expanded_query,"specialtype",a_query_findfile.specialtype)>
+				<cfset QuerySetCell(stReturn.expanded_query,"filescount",a_query_findfile.filescount)>
+				<cfset QuerySetCell(stReturn.expanded_query,"entrykey",a_query_findfile.entrykey)>
+				<cfset QuerySetCell(stReturn.expanded_query,"name",a_query_findfile.name)>
+				<cfset QuerySetCell(stReturn.expanded_query,"description",a_query_findfile.description)>
+				<cfset QuerySetCell(stReturn.expanded_query,"categories",a_query_findfile.categories)>
+				<cfset QuerySetCell(stReturn.expanded_query,"filesize",a_query_findfile.filesize)>
+				<cfset QuerySetCell(stReturn.expanded_query,"contenttype",a_query_findfile.contenttype)>
+				<cfset QuerySetCell(stReturn.expanded_query,"userkey",a_query_findfile.userkey)>
+				<cfset QuerySetCell(stReturn.expanded_query,"dt_created",a_query_findfile.dt_created)>
+				<cfset QuerySetCell(stReturn.expanded_query,"dt_lastmodified",a_query_findfile.dt_lastmodified)>
+				<cfset QuerySetCell(stReturn.expanded_query,"shared",0)>
 			</cfif>
 		</cfloop>
 		
@@ -1500,14 +1500,14 @@
 		<cfset var q_select_new_item = QueryNew('currentlevel,entrykey,directoryname,parentdirectorykey,description,filescount,dt_created,dt_lastmodified,userkey', 'BigInt,VarChar,VarChar,VarChar,VarChar,BigInt,date,date,VarChar') />
 		<cfset var tmp = QueryAddRow(q_select_new_item, 1) />
 
-		<cfset tmp = QuerySetCell(q_select_new_item, 'directoryname', arguments.directoryname, 1) />
-		<cfset tmp = QuerySetCell(q_select_new_item, 'entrykey', arguments.entrykey, 1) />
-		<cfset tmp = QuerySetCell(q_select_new_item, 'parentdirectorykey', arguments.parentdirectorykey, 1) />
-		<cfset tmp = QuerySetCell(q_select_new_item, 'currentlevel', arguments.currentlevel, 1) />
-		<cfset tmp = QuerySetCell(q_select_new_item, 'filescount', 0, 1) />
-		<cfset tmp = QuerySetCell(q_select_new_item, 'dt_created', '2000-01-01 00:00:00.0', 1) />
-		<cfset tmp = QuerySetCell(q_select_new_item, 'dt_lastmodified', '2000-01-01 00:00:00.0', 1) />
-		<cfset tmp = QuerySetCell(q_select_new_item, 'userkey', arguments.securitycontext.myuserkey, 1) />
+		<cfset QuerySetCell(q_select_new_item, 'directoryname', arguments.directoryname, 1) />
+		<cfset QuerySetCell(q_select_new_item, 'entrykey', arguments.entrykey, 1) />
+		<cfset QuerySetCell(q_select_new_item, 'parentdirectorykey', arguments.parentdirectorykey, 1) />
+		<cfset QuerySetCell(q_select_new_item, 'currentlevel', arguments.currentlevel, 1) />
+		<cfset QuerySetCell(q_select_new_item, 'filescount', 0, 1) />
+		<cfset QuerySetCell(q_select_new_item, 'dt_created', '2000-01-01 00:00:00.0', 1) />
+		<cfset QuerySetCell(q_select_new_item, 'dt_lastmodified', '2000-01-01 00:00:00.0', 1) />
+		<cfset QuerySetCell(q_select_new_item, 'userkey', arguments.securitycontext.myuserkey, 1) />
 		
 		<!--- add and return --->
 		<cfset arguments.query = AddDirectoryToReturnStructure(query = arguments.query, query_to_add = q_select_new_item) />
@@ -1685,7 +1685,7 @@
 		<cfset var a_str_columns = arguments.query.columnlist />
 		
 		<!--- add rows and set data --->
-		<cfset tmp = QueryAddRow(arguments.query, arguments.query_to_add.recordcount) />
+		<cfset QueryAddRow(arguments.query, arguments.query_to_add.recordcount) />
 		
 		<cfloop from="1" to="#arguments.query_to_add.recordcount#" index="ii">
 			<cfloop list="#a_str_columns#" index="a_str_col_name">
@@ -1736,13 +1736,13 @@
 				<cfset select_directories.a_arr_directorykeys = ArrayNew(1) />
 				
 				<cfloop query="q_select_multiple_sub_directories">
-					<cfset tmp = ArrayAppend(select_directories.a_arr_directorykeys, entrykey)>
+					<cfset ArrayAppend(select_directories.a_arr_directorykeys, entrykey)>
 					<cfset stReturn.directories[entrykey] = StructNew()>
 					<cfset stReturn.directories[entrykey].name = q_select_multiple_sub_directories.directoryname>
 					<cfset stReturn.directories[entrykey].parentdirectorykey = q_select_multiple_sub_directories.parentdirectorykey>
 					<cfset stReturn.directories[entrykey].subdirectories = ArrayNew(1)>
 					<cfset stReturn.directories[entrykey].filescount = filescount>
-					<cfset tmp = ArrayAppend(stReturn.directories[parentdirectorykey].subdirectories,q_select_multiple_sub_directories.entrykey)>
+					<cfset ArrayAppend(stReturn.directories[parentdirectorykey].subdirectories,q_select_multiple_sub_directories.entrykey)>
 				</cfloop>
 			<cfelse>
 				<cfset a_int_counter = arguments.maxdepth + 50>
@@ -1754,13 +1754,13 @@
 			<!--- include shared directories as well ... --->
 			<cfset a_struct_list_shared_directories = ListFilesAndDirectories(directorykey = a_str_shared_files_uuid, securitycontext = arguments.securitycontext, usersettings = arguments.usersettings) />
 			
-			<cfset tmp = ArrayAppend(select_directories.a_arr_directorykeys, a_str_shared_files_uuid) />
+			<cfset ArrayAppend(select_directories.a_arr_directorykeys, a_str_shared_files_uuid) />
 			<cfset stReturn.directories[a_str_shared_files_uuid] = StructNew() />
 			<cfset stReturn.directories[a_str_shared_files_uuid].name = 'Shared directories' />
 			<cfset stReturn.directories[a_str_shared_files_uuid].parentdirectorykey = 'null' />
 			<cfset stReturn.directories[a_str_shared_files_uuid].subdirectories = ArrayNew(1) />
 			<cfset stReturn.directories[a_str_shared_files_uuid].filescount = a_struct_list_shared_directories.files.recordcount />
-			<!--- <cfset tmp = ArrayAppend(stReturn.directories[a_str_shared_files_uuid].subdirectories, q_select_multiple_sub_directories.entrykey)> --->
+			<!--- <cfset ArrayAppend(stReturn.directories[a_str_shared_files_uuid].subdirectories, q_select_multiple_sub_directories.entrykey)> --->
 		</cfif>
 		
 		<cfreturn SetReturnStructSuccessCode(stReturn) />
@@ -1799,8 +1799,8 @@
 		<cfinclude template="queries/q_select_file.cfm">
 		<cfinclude template="queries/q_update_parentdirectory.cfm">
 
-		<cfset tmp = UpdateFilesCount(arguments.destination_directorykey) />
-		<cfset tmp = UpdateFilesCount(q_select_file.parentdirectorykey) />
+		<cfset UpdateFilesCount(arguments.destination_directorykey) />
+		<cfset UpdateFilesCount(q_select_file.parentdirectorykey) />
 
 		<cfreturn SetReturnStructSuccessCode(stReturn) />
 	</cffunction>

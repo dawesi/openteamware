@@ -27,7 +27,7 @@
 			
 		
 		<!---<cflock name="lck_check_session_path_exists" timeout="3" type="readonly">
-			<cfset tmp = StructKeyExists(request, "a_struct_navigation_history")>
+			<cfset StructKeyExists(request, "a_struct_navigation_history")>
 		</cflock>
 		
 		<cfif tmp is false>
@@ -36,14 +36,14 @@
 		</cfif>
 		
 		<cfif ArrayLen(request.a_struct_navigation_history) gt 7>
-			<cfset tmp = ArrayDeleteAt(request.a_struct_navigation_history, 1)>
+			<cfset ArrayDeleteAt(request.a_struct_navigation_history, 1)>
 		</cfif>	
 		
 		<cfif ArrayLen(request.a_struct_navigation_history) is 0>
-			<cfset tmp = ArraySet(request.a_struct_navigation_history, 1, 1, StructNew())>
+			<cfset ArraySet(request.a_struct_navigation_history, 1, 1, StructNew())>
 		</cfif>
 		
-		<cfset tmp = ArrayInsertAt(request.a_struct_navigation_history, 1, StructNew())>
+		<cfset ArrayInsertAt(request.a_struct_navigation_history, 1, StructNew())>
 		<cfset request.a_struct_navigation_history[1].pagename = arguments.pagename>
 		<cfset request.a_struct_navigation_history[1].href = arguments.href>--->
 		

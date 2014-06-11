@@ -55,7 +55,7 @@
 				</cflock>
 			</cfif>
 			
-			<cfset tmp = RemoveElementFromCache(arguments.hashid) />
+			<cfset RemoveElementFromCache(arguments.hashid) />
 		</cfif>
 		
 		<!--- store information in cache ... --->
@@ -109,7 +109,7 @@
 		<cfswitch expression="#a_struct_data.cache_built_in_datatostore_type#">
 			<cfcase value="imap_connection">
 				<cftry>
-					<cfset tmp = application.cache.cached_elements[arguments.hashid].data.store.close() />
+					<cfset application.cache.cached_elements[arguments.hashid].data.store.close() />
 				<cfcatch type="any">
 				</cfcatch>
 				</cftry>
@@ -117,8 +117,8 @@
 		</cfswitch>
 			
 		<cflock scope="Application" type="exclusive" timeout="10">
-			<cfset tmp = StructDelete(application.cache.cached_elements, arguments.hashid) />
-			<cfset tmp = StructDelete(application.cache.cache_expire_information, arguments.hashid) />
+			<cfset StructDelete(application.cache.cached_elements, arguments.hashid) />
+			<cfset StructDelete(application.cache.cache_expire_information, arguments.hashid) />
 		</cflock>
 
 		<cfreturn true />

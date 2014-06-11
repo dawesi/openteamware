@@ -120,7 +120,7 @@
 		<cfset var tmp = false />
 		<cfset var UpdateOpenRecordsRequest = StructNew() />
 		
-		<cfset tmp = UpdateLicencingInformation(entrykey = arguments.companykey)>
+		<cfset UpdateLicencingInformation(entrykey = arguments.companykey)>
 		
 		<cfset UpdateOpenRecordsRequest.companykey = arguments.companykey>
 		<cfinclude template="queries/q_update_open_records.cfm">		

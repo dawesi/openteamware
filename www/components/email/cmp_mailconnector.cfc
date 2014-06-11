@@ -118,9 +118,9 @@
 		</cfif>
 		
 		<cfif arguments.readwrite>
-			<cfset tmp = a_var_folder.open(a_var_folder.READ_WRITE) />
+			<cfset a_var_folder.open(a_var_folder.READ_WRITE) />
 		<cfelse>
-			<cfset tmp = a_var_folder.open(a_var_folder.READ_ONLY) />
+			<cfset a_var_folder.open(a_var_folder.READ_ONLY) />
 		</cfif>
 		
 		<!--- return folder now ... --->		
@@ -130,7 +130,7 @@
 		<cfset stReturn.UidNext = a_var_folder.getUIDNext() />
 		<cfset stReturn.MessageCount = a_var_folder.getMessageCount() />
 		
-		<cfset tmp = LogIMAPData('done reading folder ' & arguments.foldername) />
+		<cfset LogIMAPData('done reading folder ' & arguments.foldername) />
 
 		<cfreturn SetReturnStructSuccessCode(stReturn) />	
 	</cffunction>
@@ -183,9 +183,9 @@
 				
 		<cfset stReturn.q_select_folders = q_select_folders />
 		
-		<cfset tmp = LogIMAPData('DONE: getting all folders for ' & arguments.username) />
+		<cfset LogIMAPData('DONE: getting all folders for ' & arguments.username) />
 		
-		<cfset tmp = CheckCloseConnection(a_var_store) />
+		<cfset CheckCloseConnection(a_var_store) />
 		
 		<cfreturn SetReturnStructSuccessCode(stReturn) />
 	</cffunction>
@@ -204,15 +204,15 @@
 			<cfreturn false />
 		</cfif>
 		
-		 <cfset tmp = LogIMAPData('Closing connection for ' & arguments.ConnectionStore.username) />
+		 <cfset LogIMAPData('Closing connection for ' & arguments.ConnectionStore.username) />
 		
 		<!--- close connection ... --->
 		<cftry>
-			<cfset tmp = arguments.ConnectionStore.store.close() />
+			<cfset arguments.ConnectionStore.store.close() />
 			<cfset arguments.ConnectionStore.store = 0 />
 		<cfcatch type="any">
 			<!--- log exception --->
-			<cfset tmp = LogIMAPData('EXCEPTION WHILE CLOSING AN IMAP CONNECTION ' & cfcatch.Message) />
+			<cfset LogIMAPData('EXCEPTION WHILE CLOSING AN IMAP CONNECTION ' & cfcatch.Message) />
 		</cfcatch>
 		</cftry>
 		
@@ -274,12 +274,12 @@
 													update_expire_time = true) />
 		
 			<!--- use it? --->
-			<cfset tmp = LogIMAPData('Checking for cached connection for ' & arguments.username) />
+			<cfset LogIMAPData('Checking for cached connection for ' & arguments.username) />
 			<cfset a_bol_use_cached_conn = (a_struct_cached_conn_available.result AND a_struct_cached_conn_available.data.IsConnected()) />
 		
 			<cfif a_bol_use_cached_conn>
 				
-				<cfset tmp = LogIMAPData('Returning cached connection for ' & arguments.username) />
+				<cfset LogIMAPData('Returning cached connection for ' & arguments.username) />
 				<cfset stReturn.cachedconnection = true />
 				<cfset stReturn.store = a_struct_cached_conn_available.data />
 				
@@ -292,7 +292,7 @@
 		<!--- try to connect to imap server and return stReturn.connection --->
 		<cftry>
 			
-			<cfset tmp = LogIMAPData('Used plain old IMAP direct connection ' & arguments.username & ' host: ' & arguments.server & ' port: ' & a_imap_port &  ' store: ' & a_imap_store ) />
+			<cfset LogIMAPData('Used plain old IMAP direct connection ' & arguments.username & ' host: ' & arguments.server & ' port: ' & a_imap_port &  ' store: ' & a_imap_store ) />
 			
 			<cflock name="#createUUID()#" timeout="5" throwontimeout="true">
 						
@@ -331,9 +331,9 @@
 			<!--- store in cache ... only if desired --->
 			<cfif arguments.ConnectionCachingEnabled>
 				
-				<cfset tmp = LogIMAPData('storing connection in cache for ' & arguments.username) />
+				<cfset LogIMAPData('storing connection in cache for ' & arguments.username) />
 				
-				<cfset tmp = application.components.cmp_cache.AddOrUpdateInCacheStore(hashid = a_str_hash_id,
+				<cfset application.components.cmp_cache.AddOrUpdateInCacheStore(hashid = a_str_hash_id,
 											datatostore = stReturn.store,
 											description = arguments.username & ' @ ' & arguments.server,
 											built_in_datatostore_type = 'imap_connection') />
@@ -344,7 +344,7 @@
 		
 			<cfcatch type="any">
 				<!--- an error occured ... --->
-				<cfset tmp = LogIMAPData('FAILED ' & arguments.username & ' host: ' & arguments.server & '; message: ' & cfcatch.Message ) />
+				<cfset LogIMAPData('FAILED ' & arguments.username & ' host: ' & arguments.server & '; message: ' & cfcatch.Message ) />
 
 				
 				<cfreturn SetReturnStructErrorCode(stReturn, 2000) />
@@ -391,8 +391,8 @@
 		</cfloop>
 		
 		<!--- clean folder ... --->
-		<cfset tmp = a_var_folder.folder.expunge() />
-		<cfset tmp = a_var_folder.folder.close(true) />
+		<cfset a_var_folder.folder.expunge() />
+		<cfset a_var_folder.folder.close(true) />
 		
 		<cfreturn SetReturnStructSuccessCode(stReturn) />
 		
@@ -444,18 +444,18 @@
 		<cfset objSession = clssession.getInstance(objProperties) />
 		
 		<cfset a_message = CreateObject("Java", "javax.mail.internet.MimeMessage").init(objSession, a_fs) />
-		<cfset tmp = a_message.setFlag(a_flags['SEEN'], true) />
+		<cfset a_message.setFlag(a_flags['SEEN'], true) />
 				
 		<!--- add the message ... --->
 		<cfset a_arr_messages[1] = a_message />
 
-		<cfset tmp = a_var_folder.folder.appendMessages(a_arr_messages) />
+		<cfset a_var_folder.folder.appendMessages(a_arr_messages) />
 		
 		<cftry>
-		<cfset tmp = a_var_folder.folder.close() />
+		<cfset a_var_folder.folder.close() />
 		<cfcatch type="any"></cfcatch></cftry>
 		
-		 <cfset tmp = LogIMAPData('DONE adding new mail ' & arguments.username) />
+		 <cfset LogIMAPData('DONE adding new mail ' & arguments.username) />
 		
 		<cfreturn SetReturnStructSuccessCode(stReturn) />
 
@@ -480,7 +480,7 @@
 		<cfset var tmp = false />
 		
 		<cfif NOT arguments.folder.isOpen()>
-			<cfset tmp = arguments.folder.open(arguments.folder.READ_WRITE) />
+			<cfset arguments.folder.open(arguments.folder.READ_WRITE) />
 		</cfif>
 		
 		<cfset a_arr_objMessage = arguments.folder.getMessageByUID(arguments.uid) />
@@ -602,7 +602,7 @@
 		<cfset fp.add('Received') />
 		<!--- <cfset fp.add('Message-ID') /> --->
 		
-        <cfset tmp = a_var_folder.folder.fetch(a_arr_Messages,fp) />
+        <cfset a_var_folder.folder.fetch(a_arr_Messages,fp) />
 		
 		<!--- start / end ... --->
 		<cfif arguments.startrow LTE 0>
@@ -641,7 +641,7 @@
 			<!--- the real index ... not the dummy loop index ... --->
 			<cfset query_index = query_index + 1 />
 			
-			<!--- <cfset tmp = LogIMAPData('parsing message ' & msg_index & ' of ' & a_int_to) /> --->
+			<!--- <cfset LogIMAPData('parsing message ' & msg_index & ' of ' & a_int_to) /> --->
 			
             <cfset objMessage = a_arr_Messages[msg_index] />
 			<cfset a_int_uid = a_var_folder.folder.getUID(objMessage) />
@@ -650,7 +650,7 @@
 					list of messages to parse --->
 			<cfif a_bol_parse_all_messages OR (ListFindNoCase(uids_to_parse, a_int_uid) GT 0)>
 			
-				<cfset tmp = ParseMessageAndSetQueryData(q = q_select_messages, MessageObject = objMessage, q_row = msg_index,
+				<cfset ParseMessageAndSetQueryData(q = q_select_messages, MessageObject = objMessage, q_row = msg_index,
 												uid_to_set = a_int_uid, foldername_to_set = arguments.foldername,
 												server_to_set = arguments.server,
 												beautifyfromto = true) />	
@@ -658,7 +658,7 @@
         </cfloop>
 		
 		<!--- insert into CACHE --->
-		<cfset tmp = application.components.cmp_cache.AddOrUpdateInCacheStore(hashid = a_str_hash_id,
+		<cfset application.components.cmp_cache.AddOrUpdateInCacheStore(hashid = a_str_hash_id,
 											datatostore = q_select_messages,
 											description = arguments.username & ' @ ' & arguments.server,
 											built_in_datatostore_type = 'imap_message_list' ) />
@@ -667,10 +667,10 @@
 		
 		<cfset stReturn.runtime = (GetTickCount() - abegin) />
 		
-		<cfset tmp = LogIMAPData('DONE: listing messages for ' & arguments.username & ' folder ' & arguments.foldername) />
+		<cfset LogIMAPData('DONE: listing messages for ' & arguments.username & ' folder ' & arguments.foldername) />
 		
-		<cfset tmp = a_var_folder.folder.close(true) />
-		<cfset tmp = CheckCloseConnection(a_var_store) />
+		<cfset a_var_folder.folder.close(true) />
+		<cfset CheckCloseConnection(a_var_store) />
 		
 		<cfreturn SetReturnStructSuccessCode(stReturn) />
 	</cffunction>
@@ -863,9 +863,9 @@
 				<cfset a_str_headers = a_str_headers & a_str_header_feld & ': ' & a_str_header_value & Chr(13) & Chr(10) />
 				
 				<cfif StructKeyExists(arguments, 'q_headers')>
-					<cfset tmp = QueryAddRow(arguments.q_headers, 1) />
-					<cfset tmp = QuerySetCell(arguments.q_headers, 'feld', a_str_header_feld, arguments.q_headers.recordcount) />
-					<cfset tmp = QuerySetCell(arguments.q_headers, 'wert', a_str_header_value, arguments.q_headers.recordcount) />
+					<cfset QueryAddRow(arguments.q_headers, 1) />
+					<cfset QuerySetCell(arguments.q_headers, 'feld', a_str_header_feld, arguments.q_headers.recordcount) />
+					<cfset QuerySetCell(arguments.q_headers, 'wert', a_str_header_value, arguments.q_headers.recordcount) />
 				</cfif>
 			</cfloop>
 			
@@ -947,9 +947,9 @@
 			<cfreturn SetReturnStructErrorCode(stReturn, 10100) />
 		</cfif>
 		
-		<cfset tmp = QueryAddRow(q_select_message, 1) />
+		<cfset QueryAddRow(q_select_message, 1) />
 		
-		<cfset tmp = ParseMessageAndSetQueryData(q = q_select_message, MessageObject = objMessage, q_row = 1,
+		<cfset ParseMessageAndSetQueryData(q = q_select_message, MessageObject = objMessage, q_row = 1,
 											q_headers = q_select_headers,
 											uid_to_set = arguments.uid,
 											foldername_to_set = arguments.foldername,

@@ -27,12 +27,12 @@
 		
 		<cfoutput query="GetList">
 			<cfif GetList.Name IS 'givenName'>
-				<cfset tmp = QueryAddRow(q_select_results, 1)>
+				<cfset QueryAddRow(q_select_results, 1)>
 				<cfset a_int_currentrow = q_select_results.recordcount>
 			</cfif>
 			
 			<cftry>
-			<cfset tmp = QuerySetCell(q_select_results, Replace(GetList.name, ';binary', ''), GetList.value, a_int_currentrow)>
+			<cfset QuerySetCell(q_select_results, Replace(GetList.name, ';binary', ''), GetList.value, a_int_currentrow)>
 			<cfcatch type="any"></cfcatch></cftry>
 			
 		</cfoutput>

@@ -62,7 +62,7 @@
 		<cfset var tmp = false />
 		
 		<cfif len(arguments.entrykey) GT 0>
-			<cfset tmp = DeleteSignature(entrykey=arguments.entrykey, securitycontext=arguments.securitycontext)>
+			<cfset DeleteSignature(entrykey=arguments.entrykey, securitycontext=arguments.securitycontext)>
 		</cfif>
 		
 		<cfif Len(arguments.entrykey) IS 0>

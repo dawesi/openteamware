@@ -33,7 +33,7 @@
 		
 		<!--- if transparent reseller, always accept = true --->
 		<cfif (q_select_ctac_accepted.recordcount IS 1) AND (q_select_ctac_accepted.settlement_type NEQ 0)>
-			<cfset tmp = QuerySetCell(q_select_ctac_accepted, 'generaltermsandconditions_accepted', 1, 1)>
+			<cfset QuerySetCell(q_select_ctac_accepted, 'generaltermsandconditions_accepted', 1, 1)>
 		</cfif>
 		
 		<cfif q_select_ctac_accepted.generaltermsandconditions_accepted IS 1>
@@ -208,12 +208,12 @@
 			
 				f.e. a user buys three new groupware seats, the old licences become free
 			--->
-			<cfset tmp = AddAvailableSeats(companykey=arguments.companykey,productkey=q_select_productkey_of_user.productkey,addseats=1)>
+			<cfset AddAvailableSeats(companykey=arguments.companykey,productkey=q_select_productkey_of_user.productkey,addseats=1)>
 
 		</cfif>
 		
 		<!--- remove now one seat ... --->
-		<cfset tmp = AddAvailableSeats(companykey=arguments.companykey,productkey=arguments.productkey,addseats=-1)>
+		<cfset AddAvailableSeats(companykey=arguments.companykey,productkey=arguments.productkey,addseats=-1)>
 
 		<cfinclude template="queries/q_update_user_productkey.cfm">
 		
@@ -305,7 +305,7 @@
 		<cfargument name="points" type="numeric" required="yes">
 		
 		<!--- update account ... --->
-		<cfset tmp = AddAvailablePoints(companykey = arguments.securitycontext.mycompanykey, points = -arguments.points)>
+		<cfset AddAvailablePoints(companykey = arguments.securitycontext.mycompanykey, points = -arguments.points)>
 		
 		<!--- insert history ... --->
 		<cfinclude template="queries/q_insert_consumergoods_history.cfm">

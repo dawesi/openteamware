@@ -101,7 +101,7 @@
 		
 		<!--- cache folder data ... only if everything has worked like a charm ... --->
 		<cfif arguments.CacheFolderData>
-			<cfset tmp = application.components.cmp_cache.AddOrUpdateInCacheStore(hashid = a_str_hash_id,
+			<cfset application.components.cmp_cache.AddOrUpdateInCacheStore(hashid = a_str_hash_id,
 												description = arguments.accessdata.a_str_imap_username,
 												datatostore = a_struct_load_imap,
 												updatetimeout_only_if_found = false) />
@@ -253,11 +253,11 @@
 		
 		<cfset a_arr_tmp = ArrayNew(1)>
 		<cfif ListFindNoCase(q_select_attachments.columnlist, 'filenamelen') IS 0>
-			<cfset tmp = QueryAddColumn(q_select_attachments, "filenamelen", a_arr_tmp)>
+			<cfset QueryAddColumn(q_select_attachments, "filenamelen", a_arr_tmp)>
 		</cfif>
 		
 		<cfif ListFindNoCase(q_select_attachments.columnlist, 'simplecontentid') IS 0>
-			<cfset tmp = QueryAddColumn(q_select_attachments, "simplecontentid", a_arr_tmp)>
+			<cfset QueryAddColumn(q_select_attachments, "simplecontentid", a_arr_tmp)>
 		</cfif>
 		
 		<cfloop query="q_select_attachments">
@@ -448,12 +448,12 @@
 			<cfset a_str_file_location = q_select_read_attachments.tempfilename />
 		
 			<!--- add this file now to the virtual query --->
-			<cfset tmp = QueryAddRow(q_return_attachments, 1) />
-			<cfset tmp = QuerySetCell(q_return_attachments, "location", a_str_file_location, q_return_attachments.recordcount) />	
-			<cfset tmp = QuerySetCell(q_return_attachments, "afilename", q_select_read_attachments.afilename,q_return_attachments.recordcount) />
-			<cfset tmp = QuerySetCell(q_return_attachments, "contenttype", q_select_read_attachments.contenttype,q_return_attachments.recordcount) />
-			<cfset tmp = QuerySetCell(q_return_attachments, "contentid", q_select_read_attachments.contentid,q_return_attachments.recordcount) />
-			<cfset tmp = QuerySetCell(q_return_attachments, "filenamelen", len(q_select_read_attachments.afilename),q_return_attachments.recordcount) />
+			<cfset QueryAddRow(q_return_attachments, 1) />
+			<cfset QuerySetCell(q_return_attachments, "location", a_str_file_location, q_return_attachments.recordcount) />	
+			<cfset QuerySetCell(q_return_attachments, "afilename", q_select_read_attachments.afilename,q_return_attachments.recordcount) />
+			<cfset QuerySetCell(q_return_attachments, "contenttype", q_select_read_attachments.contenttype,q_return_attachments.recordcount) />
+			<cfset QuerySetCell(q_return_attachments, "contentid", q_select_read_attachments.contentid,q_return_attachments.recordcount) />
+			<cfset QuerySetCell(q_return_attachments, "filenamelen", len(q_select_read_attachments.afilename),q_return_attachments.recordcount) />
 		
 		</cfoutput>
 		

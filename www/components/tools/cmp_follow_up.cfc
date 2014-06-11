@@ -43,7 +43,7 @@
 		<cfinclude template="queries/q_insert_follow_up.cfm">
 		
 		<!--- update activity index of contact ... --->
-		<cfset tmp = application.components.cmp_crmsales.UpdateActivityCountOfContact(objectkey = arguments.objectkey,
+		<cfset application.components.cmp_crmsales.UpdateActivityCountOfContact(objectkey = arguments.objectkey,
 																		servicekey = arguments.servicekey,
 																		itemtype = 'followups') />
 		
@@ -90,7 +90,7 @@
 		
 		<cfinclude template="queries/q_update_followup.cfm">
 		
-		<cfset tmp = application.components.cmp_crmsales.UpdateActivityCountOfContact(objectkey = arguments.objectkey,
+		<cfset application.components.cmp_crmsales.UpdateActivityCountOfContact(objectkey = arguments.objectkey,
 																		servicekey = '52227624-9DAA-05E9-0892A27198268072',
 																		itemtype = 'followups') />
 		
@@ -179,7 +179,7 @@
 			
 		</cfif>
 		
-		<cfset tmp = application.components.cmp_crmsales.UpdateActivityCountOfContact(objectkey = arguments.database_values.objectkey,
+		<cfset application.components.cmp_crmsales.UpdateActivityCountOfContact(objectkey = arguments.database_values.objectkey,
 																		servicekey = arguments.database_values.servicekey,
 																		itemtype = 'followups') />
 	

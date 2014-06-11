@@ -278,13 +278,13 @@
 		</cfif>
 		
 		<!--- add now all users with some information ... --->
-		<cfset tmp = QueryAddRow(q_Select_users, q_select_workgroup_members.recordcount)>
+		<cfset QueryAddRow(q_Select_users, q_select_workgroup_members.recordcount)>
 		
 		<cfset variables.a_cmp_load_user_data = CreateObject('component', '/components/management/users/cmp_load_userdata')>
 		
 		<cfloop query="q_select_workgroup_members">
-			<cfset tmp = QuerySetCell(q_Select_users, 'userkey', q_select_workgroup_members.userkey, q_select_workgroup_members.currentrow)>
-			<cfset tmp = QuerySetCell(q_Select_users, 'workgroupkey', arguments.workgroupkey, q_select_workgroup_members.currentrow)>
+			<cfset QuerySetCell(q_Select_users, 'userkey', q_select_workgroup_members.userkey, q_select_workgroup_members.currentrow)>
+			<cfset QuerySetCell(q_Select_users, 'workgroupkey', arguments.workgroupkey, q_select_workgroup_members.currentrow)>
 			
 			<cfinvoke component="#variables.a_cmp_load_user_data#" method="LoadUserData" returnvariable="a_struct_userdata">
 				<cfinvokeargument name="entrykey" value="#q_select_workgroup_members.userkey#">
@@ -293,10 +293,10 @@
 			<cfif a_struct_userdata.result is "OK">
 				<cfset q_select_user_data = a_struct_userdata.query>
 				
-				<cfset tmp = QuerySetCell(q_Select_users, 'username', q_select_user_data.username, q_select_workgroup_members.currentrow)>
-				<cfset tmp = QuerySetCell(q_Select_users, 'firstname', q_select_user_data.firstname, q_select_workgroup_members.currentrow)>
-				<cfset tmp = QuerySetCell(q_Select_users, 'surname', q_select_user_data.surname, q_select_workgroup_members.currentrow)>
-				<cfset tmp = QuerySetCell(q_Select_users, 'fullname', q_select_user_data.surname&", "&q_select_user_data.firstname, q_select_workgroup_members.currentrow)>
+				<cfset QuerySetCell(q_Select_users, 'username', q_select_user_data.username, q_select_workgroup_members.currentrow)>
+				<cfset QuerySetCell(q_Select_users, 'firstname', q_select_user_data.firstname, q_select_workgroup_members.currentrow)>
+				<cfset QuerySetCell(q_Select_users, 'surname', q_select_user_data.surname, q_select_workgroup_members.currentrow)>
+				<cfset QuerySetCell(q_Select_users, 'fullname', q_select_user_data.surname&", "&q_select_user_data.firstname, q_select_workgroup_members.currentrow)>
 			</cfif>
 			
 			<!--- load roles ... --->

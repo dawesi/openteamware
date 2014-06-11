@@ -53,7 +53,7 @@
 		<cfloop index="a_int_loop" from="1" to="#stReturn_parsedata.q_select_data.recordcount#">
 			<cfset a_arr_uuids[a_int_loop] = CreateUUID() />
 		</cfloop>
-		<cfset tmp = QueryAddColumn(stReturn_parsedata.q_select_data, 'ibx_entrykey', a_arr_uuids)>
+		<cfset QueryAddColumn(stReturn_parsedata.q_select_data, 'ibx_entrykey', a_arr_uuids)>
 		
 		<!--- convert the query to wddx (to be able to store it in db) --->
 		<cfwddx action="cfml2wddx" input="#stReturn_parsedata.q_select_data#" output="a_str_wddx">
@@ -148,11 +148,11 @@
 			<cfif FindNoCase('SetCriteriaIfTrue_', q_select_field_mappings.ibxfield_md5) IS 1>
 			
 				<cfset a_int_rcount = (q_select_return.recordcount + 1) />
-				<cfset tmp = QueryAddRow(q_select_return, 1) />
-				<cfset tmp = QuerySetCell(q_select_return, 'displayname', q_select_field_mappings.ibxfield_md5, a_int_rcount) />
-				<cfset tmp = QuerySetCell(q_select_return, 'fieldname', q_select_field_mappings.ibxfield_md5, a_int_rcount) />
-				<cfset tmp = QuerySetCell(q_select_return, 'importfieldname', q_select_field_mappings.importfieldname, a_int_rcount) />
-				<cfset tmp = QuerySetCell(q_select_return, 'ibxfield_md5', q_select_field_mappings.ibxfield_md5, a_int_rcount) />
+				<cfset QueryAddRow(q_select_return, 1) />
+				<cfset QuerySetCell(q_select_return, 'displayname', q_select_field_mappings.ibxfield_md5, a_int_rcount) />
+				<cfset QuerySetCell(q_select_return, 'fieldname', q_select_field_mappings.ibxfield_md5, a_int_rcount) />
+				<cfset QuerySetCell(q_select_return, 'importfieldname', q_select_field_mappings.importfieldname, a_int_rcount) />
+				<cfset QuerySetCell(q_select_return, 'ibxfield_md5', q_select_field_mappings.ibxfield_md5, a_int_rcount) />
 				
 			</cfif>
 			

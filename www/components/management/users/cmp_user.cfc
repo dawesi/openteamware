@@ -383,7 +383,7 @@
 		
 		<cfinclude template="queries/q_select_shortest_possible_userid_by_entrykey.cfm">
 		
-		<cfset tmp = application.components.cmp_cache.AddOrUpdateInCacheStore(hashid = a_str_hash_id, datatostore = sReturn)>
+		<cfset application.components.cmp_cache.AddOrUpdateInCacheStore(hashid = a_str_hash_id, datatostore = sReturn)>
 					
 		<cfreturn sReturn />
 	

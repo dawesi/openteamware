@@ -205,7 +205,7 @@
 			
 		<cfelse>
 				<!--- nothing found ... invalid ... --->
-				<cfset tmp = StructClear(session) />
+				<cfset StructClear(session) />
 				<cfcookie name="ib_session_key" value="">						
 	
 				<cfreturn false />
@@ -218,7 +218,7 @@
 
 		<cfif NOT a_bol_session_is_open>
 			<!--- no session is open ... clear scope and exit --->
-			<cfset tmp = StructClear(session) />
+			<cfset StructClear(session) />
 			<cfcookie name="ib_session_key" value="">
 			
 			<cfreturn false />
@@ -232,7 +232,7 @@
 			<cfset a_str_userkey = GetUserkeyFromSessionkey(sessionkey = a_str_sessionkey) />
 			
 			<cfif Len(a_str_userkey) IS 0>
-				<cfset tmp = StructClear(session) />
+				<cfset StructClear(session) />
 				<cfcookie name="ib_session_key" value="">			
 			
 				<cfreturn false />
@@ -250,7 +250,7 @@
 			<cfset session.a_str_sessionkey = a_str_sessionkey />
 			
 			<cflock scope="session" timeout="30" type="readonly">
-				<cfset tmp = CopyUserStructuresFromSession2RequestScope() />
+				<cfset CopyUserStructuresFromSession2RequestScope() />
 			</cflock>
 					
 		</cfif>

@@ -424,10 +424,10 @@
 			
 			<cfif q_select_real_attachments.contentid neq arguments.removeattachmentid>
 				<!--- only add if not the attachment item to remove --->
-				<cfset tmp = QueryAddRow(q_new_attachments, 1) />
-				<cfset tmp = QuerySetCell(q_new_attachments, "afilename", q_select_real_attachments.afilename, q_new_attachments.recordcount) />
-				<cfset tmp = QuerySetCell(q_new_attachments, "contenttype", q_select_real_attachments.contenttype, q_new_attachments.recordcount) />
-				<cfset tmp = QuerySetCell(q_new_attachments, "location", q_select_real_attachments.tempfilename, q_new_attachments.recordcount) />
+				<cfset QueryAddRow(q_new_attachments, 1) />
+				<cfset QuerySetCell(q_new_attachments, "afilename", q_select_real_attachments.afilename, q_new_attachments.recordcount) />
+				<cfset QuerySetCell(q_new_attachments, "contenttype", q_select_real_attachments.contenttype, q_new_attachments.recordcount) />
+				<cfset QuerySetCell(q_new_attachments, "location", q_select_real_attachments.tempfilename, q_new_attachments.recordcount) />
 			</cfif>
 			
 		</cfoutput>
@@ -578,18 +578,18 @@
 		
 		<cfoutput query="q_select_real_attachments">
 			<!--- loop through the original attachments --->
-			<cfset tmp = QueryAddRow(q_new_attachments, 1)>
-			<cfset tmp = QuerySetCell(q_new_attachments, "afilename", q_select_real_attachments.afilename, q_new_attachments.recordcount)>
-			<cfset tmp = QuerySetCell(q_new_attachments, "contenttype", q_select_real_attachments.contenttype, q_new_attachments.recordcount)>
-			<cfset tmp = QuerySetCell(q_new_attachments, "location", q_select_real_attachments.tempfilename, q_new_attachments.recordcount)>
+			<cfset QueryAddRow(q_new_attachments, 1)>
+			<cfset QuerySetCell(q_new_attachments, "afilename", q_select_real_attachments.afilename, q_new_attachments.recordcount)>
+			<cfset QuerySetCell(q_new_attachments, "contenttype", q_select_real_attachments.contenttype, q_new_attachments.recordcount)>
+			<cfset QuerySetCell(q_new_attachments, "location", q_select_real_attachments.tempfilename, q_new_attachments.recordcount)>
 		</cfoutput>
 		
 		<!--- add new row ... and the new attachment --->
 		<cfoutput query="arguments.attachments">
-			<cfset tmp = QueryAddRow(q_new_attachments, 1)>
-			<cfset tmp = QuerySetCell(q_new_attachments, "afilename", arguments.attachments.afilename, q_new_attachments.recordcount)>
-			<cfset tmp = QuerySetCell(q_new_attachments, "contenttype", arguments.attachments.contenttype, q_new_attachments.recordcount)>
-			<cfset tmp = QuerySetCell(q_new_attachments, "location", arguments.attachments.location, q_new_attachments.recordcount)>		
+			<cfset QueryAddRow(q_new_attachments, 1)>
+			<cfset QuerySetCell(q_new_attachments, "afilename", arguments.attachments.afilename, q_new_attachments.recordcount)>
+			<cfset QuerySetCell(q_new_attachments, "contenttype", arguments.attachments.contenttype, q_new_attachments.recordcount)>
+			<cfset QuerySetCell(q_new_attachments, "location", arguments.attachments.location, q_new_attachments.recordcount)>		
 		</cfoutput>
 		
 		<!--- check the content-type ... --->

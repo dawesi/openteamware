@@ -42,7 +42,7 @@
 			
 			<cfcatch type = "any">
 				
-				<cfset tmp = application.components.cmp_log.LogException(error = cfcatch, session = session, args = arguments, message = cfcatch.Message, url = url) />
+				<cfset application.components.cmp_log.LogException(error = cfcatch, session = session, args = arguments, message = cfcatch.Message, url = url) />
 				<cflog text="There was a problem reading XLS file: '#arguments.filename#'." type="warning" log="Application" file="ibx_import_excel_error_log">
 				
 				<cfreturn SetReturnStructErrorCode(stReturn, 12501, cfcatch.Message) />

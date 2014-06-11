@@ -66,7 +66,7 @@
 		<cfinclude template="queries/q_delete_posting.cfm">
 
 		<cfif Len(q_select_raw_posting.parentpostingkey) GT 0>
-			<cfset tmp = UpdatePostingCount(q_select_raw_posting.parentpostingkey) />
+			<cfset UpdatePostingCount(q_select_raw_posting.parentpostingkey) />
 		</cfif>
 
 		<cfreturn a_bol_return />
@@ -224,7 +224,7 @@
 				
 		<!--- update answer count ... --->
 		<cfif Len(a_str_parent_postingkey) GT 0>
-			<cfset tmp = UpdatePostingCount(a_str_parent_postingkey) />
+			<cfset UpdatePostingCount(a_str_parent_postingkey) />
 		</cfif>
 
 		<cfif Len(a_str_parent_postingkey) GT 0>
@@ -234,10 +234,10 @@
 		</cfif>
 
 		<!--- update last posting ... --->
-		<cfset tmp = UpdateLastPosting(forumkey = arguments.database_values.forumkey, threadkey = a_str_threadkey) />
+		<cfset UpdateLastPosting(forumkey = arguments.database_values.forumkey, threadkey = a_str_threadkey) />
 		
 		<!--- send alerts? --->
-		<cfset tmp = CheckOnChangeAlertsToSend(userkey_posting = arguments.securitycontext.myuserkey, threadkey = a_str_threadkey) />
+		<cfset CheckOnChangeAlertsToSend(userkey_posting = arguments.securitycontext.myuserkey, threadkey = a_str_threadkey) />
 		
 		<cfreturn SetReturnStructSuccessCode(stReturn) />
 		
@@ -255,7 +255,7 @@
 		<cfinclude template="queries/q_insert_edited_posting.cfm">
 		<cfinclude template="queries/q_update_posting.cfm">
 
-		<cfset tmp = UpdateLastPosting(forumkey = arguments.forumkey, threadkey = arguments.entrykey)>
+		<cfset UpdateLastPosting(forumkey = arguments.forumkey, threadkey = arguments.entrykey)>
 		<cfreturn true>
 	</cffunction>
 	

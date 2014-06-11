@@ -684,11 +684,11 @@
 			</cfif>
 		
 			<cfif a_bol_add>
-				<cfset tmp = QueryAddRow(q_select_folders, 1)>
-				<cfset tmp = QuerySetCell(q_select_folders, 'workgroupkey', q_select_shared_folders.workgroupkey, q_select_folders.recordcount)>
+				<cfset QueryAddRow(q_select_folders, 1)>
+				<cfset QuerySetCell(q_select_folders, 'workgroupkey', q_select_shared_folders.workgroupkey, q_select_folders.recordcount)>
 								
-				<cfset tmp = QuerySetCell(q_select_folders, 'account', a_str_account, q_select_folders.recordcount)>
-				<cfset tmp = QuerySetCell(q_select_folders, 'foldername', a_str_foldername, q_select_folders.recordcount)>
+				<cfset QuerySetCell(q_select_folders, 'account', a_str_account, q_select_folders.recordcount)>
+				<cfset QuerySetCell(q_select_folders, 'foldername', a_str_foldername, q_select_folders.recordcount)>
 			</cfif>
 		</cfloop>
 		

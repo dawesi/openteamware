@@ -56,7 +56,7 @@
 		</cfif>
 		
 		<!--- maybe update information in database ... --->
-		<cfset tmp = UpdateServiceInformation(securitycontext = arguments.securitycontext, usersettings = arguments.usersettings,
+		<cfset UpdateServiceInformation(securitycontext = arguments.securitycontext, usersettings = arguments.usersettings,
 												servicekey = arguments.servicekey, objectkey = arguments.objectkey, lock_exists = true) />
 		
 		<cfreturn SetReturnStructSuccessCode(stReturn) />
@@ -123,11 +123,11 @@
 		</cfif>
 		
 		<!--- maybe update information in database ... --->
-		<cfset tmp = UpdateServiceInformation(securitycontext = arguments.securitycontext, usersettings = arguments.usersettings,
+		<cfset UpdateServiceInformation(securitycontext = arguments.securitycontext, usersettings = arguments.usersettings,
 												servicekey = arguments.servicekey, objectkey = arguments.objectkey, lock_exists = false) />
 		
 		<!--- del now ... --->
-		<cfset tmp = DeleteLockInternally(entrykey = a_struct_lock.entrykey) />
+		<cfset DeleteLockInternally(entrykey = a_struct_lock.entrykey) />
 
 		<cfreturn SetReturnStructSuccessCode(stReturn) />
 	</cffunction>
@@ -143,13 +143,13 @@
 		<!--- loop through locks and delete timed out ones ... --->
 		<cfloop query="q_select_timed_out_locks">
 			
-			<cfset tmp = UpdateServiceInformation(servicekey = q_select_timed_out_locks.servicekey,
+			<cfset UpdateServiceInformation(servicekey = q_select_timed_out_locks.servicekey,
 							objectkey = q_select_timed_out_locks.objectkey,
 							lock_exists = false,
 							securitycontext = application.components.cmp_security.GetSecurityContextStructure(userkey = q_select_timed_out_locks.userkey),
 							usersettings = application.components.cmp_user.GetUsersettings(userkey = q_select_timed_out_locks.userkey)) />
 				
-				<cfset tmp = DeleteLockInternally(entrykey = q_select_timed_out_locks.entrykey) />
+				<cfset DeleteLockInternally(entrykey = q_select_timed_out_locks.entrykey) />
 		</cfloop>
 
 		<cfreturn true />

@@ -70,7 +70,7 @@
 										object_entrykey = q_select_sub_items.entrykey,
 										neededaction = arguments.neededaction) />
 										
-			<cfset tmp = QuerySetCell(q_select_sub_items, 'allowed', ReturnZeroOneOnTrueFalse(a_struct_permissions.result), q_select_sub_items.currentrow) />
+			<cfset QuerySetCell(q_select_sub_items, 'allowed', ReturnZeroOneOnTrueFalse(a_struct_permissions.result), q_select_sub_items.currentrow) />
 		</cfloop>
 		
 		<!--- select now all allowed items ... --->
@@ -443,7 +443,7 @@
 			
 		</cfif>
 		
-		<cfset tmp = ClearCachedIDsForCompany(arguments.securitycontext) />		
+		<cfset ClearCachedIDsForCompany(arguments.securitycontext) />		
 		
 		<cfreturn SetReturnStructSuccessCode(stReturn) />
 	</cffunction>
@@ -627,7 +627,7 @@
 										sender = arguments.sender,
 										securitycontext = arguments.securitycontext) />
 			
-		<cfset tmp = ClearCachedIDsForCompany(arguments.securitycontext) />
+		<cfset ClearCachedIDsForCompany(arguments.securitycontext) />
 		
 		<cfreturn SetReturnStructSuccessCode(stReturn) />
 			
@@ -677,7 +677,7 @@
 		</cfinvoke>
 		
 		
-		<cfset tmp = RemoveContactPhoto(securitycontext = arguments.securitycontext, usersettings = arguments.usersettings, entrykey = arguments.entrykey) />
+		<cfset RemoveContactPhoto(securitycontext = arguments.securitycontext, usersettings = arguments.usersettings, entrykey = arguments.entrykey) />
 			
 		<cfset a_str_title = q_select_contact_raw.surname />
 			
@@ -697,7 +697,7 @@
 		</cfif>
 		
 		<!--- clear cache --->
-		<cfset tmp = ClearCachedIDsForCompany(arguments.securitycontext) />		
+		<cfset ClearCachedIDsForCompany(arguments.securitycontext) />		
 
 		<!--- return the result ... --->
 		<cfset a_bol_event_insert = application.components.cmp_events.LogEvent(servicekey = sServiceKey,
@@ -876,7 +876,7 @@
 			<cfset q_select_nace_all_nace_codes = a_struct_cached_nace_query.data />
 		<cfelse>
 			<cfinclude template="queries/q_select_nace_all_nace_codes.cfm">
-			<cfset tmp = application.components.cmp_cache.AddOrUpdateInCacheStore(hashid = a_str_hash_id, datatostore = q_select_nace_all_nace_codes) />
+			<cfset application.components.cmp_cache.AddOrUpdateInCacheStore(hashid = a_str_hash_id, datatostore = q_select_nace_all_nace_codes) />
 		</cfif>
 		
 		<cfreturn q_select_nace_all_nace_codes />		

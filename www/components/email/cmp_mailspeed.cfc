@@ -139,7 +139,7 @@
 		<!--- call the AddFolderToWatch method ... --->
 		<cfloop query="q_select_folders">
 
-			<cfset tmp = AddFolderToWatch(username = lcase(a_struct_imap_access_data.a_str_imap_username), foldername = q_select_folders.fullfoldername, userid = a_int_userid, forceadd = true)>
+			<cfset AddFolderToWatch(username = lcase(a_struct_imap_access_data.a_str_imap_username), foldername = q_select_folders.fullfoldername, userid = a_int_userid, forceadd = true)>
 
 		</cfloop>
 		

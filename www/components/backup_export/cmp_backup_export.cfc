@@ -133,14 +133,14 @@
 			<cfreturn stReturn />
 		</cfif>
 		
-		<cfset tmp = SetLogDataVariables(companykey = arguments.companykey, jobkey = a_str_jobkey) />
+		<cfset SetLogDataVariables(companykey = arguments.companykey, jobkey = a_str_jobkey) />
 		
 		<cfinclude template="queries/q_insert_running_job.cfm">
 		
 		<!--- backup now one by one ... --->
 		<cfoutput query="q_select_users">
 			<!--- set the logging context --->
-			<cfset tmp = SetLogDataVariables(companykey = arguments.companykey, jobkey = a_str_jobkey, userkey = q_select_users.entrykey) />
+			<cfset SetLogDataVariables(companykey = arguments.companykey, jobkey = a_str_jobkey, userkey = q_select_users.entrykey) />
 			
 			<!--- backup user data --->
 			<cfset a_struct_backup_user = BackupUserAccountData(userkey = q_select_users['entrykey'][q_select_users.currentrow], companybackup = true, basedirectory = a_str_backup_directory) />
@@ -209,9 +209,9 @@
 			<cfreturn stReturn>
 		</cfif>
 		
-		<cfset tmp = LogMessage('username: ' & a_struct_load_userdata.query.username)>
+		<cfset LogMessage('username: ' & a_struct_load_userdata.query.username)>
 		
-		<cfset tmp = CheckCompanyBackupAccount(companykey = a_struct_load_userdata.query.companykey) />
+		<cfset CheckCompanyBackupAccount(companykey = a_struct_load_userdata.query.companykey) />
 		
 		<!--- if company backup and no account exists, cancel! --->
 		<cfif arguments.companybackup AND NOT tmp>
@@ -233,7 +233,7 @@
 			<cfset a_str_backup_directory = request.a_str_temp_directory_local & request.a_str_dir_separator & createuuid() & request.a_str_dir_separator />
 		</cfif>
 		
-		<cfset tmp = LogMessage('a_str_backup_directory: ' & a_str_backup_directory) />
+		<cfset LogMessage('a_str_backup_directory: ' & a_str_backup_directory) />
 		
 		<cfset stReturn.directory = a_str_backup_directory>
 		
@@ -262,7 +262,7 @@
 		<cftry>
 			<cfinclude template="utils/inc_backup_email.cfm">
 		<cfcatch type="any">
-			<cfset tmp = LogMessage('error on email: ' & cfcatch.Message)>
+			<cfset LogMessage('error on email: ' & cfcatch.Message)>
 			<cfmail from="#request.appsettings.properties.NotifyEmail#" to="#request.appsettings.properties.NotifyEmail#" subject="cfcatch backup email" type="html"><cfdump var="#arguments#"><cfdump var="#cfcatch#"></cfmail>
 		</cfcatch>
 		</cftry>
@@ -271,7 +271,7 @@
 		<cftry>
 			<cfinclude template="utils/inc_backup_contacts.cfm">
 		<cfcatch type="any">
-			<cfset tmp = LogMessage('error on contacts: ' & cfcatch.Message)>
+			<cfset LogMessage('error on contacts: ' & cfcatch.Message)>
 			<cfmail from="#request.appsettings.properties.NotifyEmail#" to="#request.appsettings.properties.NotifyEmail#" subject="cfcatch backup contacts" type="html"><cfdump var="#arguments#"><cfdump var="#cfcatch#"></cfmail>
 		</cfcatch>
 		</cftry>
@@ -280,7 +280,7 @@
 		<cftry>
 			<cfinclude template="utils/inc_backup_accounts.cfm">
 		<cfcatch type="any">
-			<cfset tmp = LogMessage('error on contacts: ' & cfcatch.Message)>
+			<cfset LogMessage('error on contacts: ' & cfcatch.Message)>
 			<cfmail from="#request.appsettings.properties.NotifyEmail#" to="#request.appsettings.properties.NotifyEmail#" subject="cfcatch backup contacts" type="html"><cfdump var="#arguments#"><cfdump var="#cfcatch#"></cfmail>
 		</cfcatch>
 		</cftry>		
@@ -289,7 +289,7 @@
 		<cftry>
 			<cfinclude template="utils/inc_backup_history.cfm">
 		<cfcatch type="any">
-			<cfset tmp = LogMessage('error on history: ' & cfcatch.Message)>
+			<cfset LogMessage('error on history: ' & cfcatch.Message)>
 			<cfmail from="#request.appsettings.properties.NotifyEmail#" to="#request.appsettings.properties.NotifyEmail#" subject="cfcatch backup contacts" type="html"><cfdump var="#arguments#"><cfdump var="#cfcatch#"></cfmail>
 		</cfcatch>
 		</cftry>			
@@ -298,7 +298,7 @@
 		<cftry>
 		<cfinclude template="utils/inc_backup_events.cfm">
 		<cfcatch type="any">
-			<cfset tmp = LogMessage('error on events: ' & cfcatch.Message)>
+			<cfset LogMessage('error on events: ' & cfcatch.Message)>
 			<cfmail from="#request.appsettings.properties.NotifyEmail#" to="#request.appsettings.properties.NotifyEmail#" subject="cfcatch backup events" type="html"><cfdump var="#arguments#"><cfdump var="#cfcatch#"></cfmail>
 		</cfcatch>
 		</cftry>
@@ -307,7 +307,7 @@
 		<cftry>
 			<cfinclude template="utils/inc_backup_tasks.cfm">
 		<cfcatch type="any">
-			<cfset tmp = LogMessage('error on tasks: ' & cfcatch.Message)>
+			<cfset LogMessage('error on tasks: ' & cfcatch.Message)>
 			<cfmail from="#request.appsettings.properties.NotifyEmail#" to="#request.appsettings.properties.NotifyEmail#" subject="cfcatch backup tasks" type="html"><cfdump var="#arguments#"><cfdump var="#cfcatch#"></cfmail>
 		</cfcatch>
 		</cftry>
@@ -317,7 +317,7 @@
 		<cftry>
 			<cfinclude template="utils/inc_backup_bookmarks.cfm">
 		<cfcatch type="any">
-			<cfset tmp = LogMessage('error on bookmarks: ' & cfcatch.Message)>
+			<cfset LogMessage('error on bookmarks: ' & cfcatch.Message)>
 			<cfmail from="#request.appsettings.properties.NotifyEmail#" to="#request.appsettings.properties.NotifyEmail#" subject="cfcatch backup bookmarks" type="html"><cfdump var="#arguments#"><cfdump var="#cfcatch#"></cfmail>
 		</cfcatch>
 		</cftry>
@@ -326,7 +326,7 @@
 		<cftry>
 			<cfinclude template="utils/inc_backup_storage.cfm">
 		<cfcatch type="any">
-			<cfset tmp = LogMessage('error on storage: ' & cfcatch.Message)>
+			<cfset LogMessage('error on storage: ' & cfcatch.Message)>
 			<cfmail from="#request.appsettings.properties.NotifyEmail#" to="#request.appsettings.properties.NotifyEmail#" subject="cfcatch backup storage" type="html"><cfdump var="#arguments#"><cfdump var="#cfcatch#"></cfmail>
 		</cfcatch>
 		</cftry>
@@ -335,7 +335,7 @@
 		<!--- <cftry>
 			<cfinclude template="utils/inc_backup_database.cfm">
 		<cfcatch type="any">
-			<cfset tmp = LogMessage('error on database: ' & cfcatch.Message)>
+			<cfset LogMessage('error on database: ' & cfcatch.Message)>
 			<cfmail from="#request.appsettings.properties.NotifyEmail#" to="#request.appsettings.properties.NotifyEmail#" subject="cfcatch backup database" type="html"><cfdump var="#arguments#"><cfdump var="#cfcatch#"></cfmail>
 		</cfcatch>
 		</cftry> --->
@@ -344,7 +344,7 @@
 		<cftry>
 			<cfinclude template="utils/inc_backup_followups.cfm">
 		<cfcatch type="any">
-			<cfset tmp = LogMessage('error on followups: ' & cfcatch.Message)>
+			<cfset LogMessage('error on followups: ' & cfcatch.Message)>
 			<cfmail from="#request.appsettings.properties.NotifyEmail#" to="#request.appsettings.properties.NotifyEmail#" subject="cfcatch backup followups" type="html"><cfdump var="#arguments#"><cfdump var="#cfcatch#"></cfmail>
 		</cfcatch>
 		</cftry>
@@ -356,7 +356,7 @@
 		
 		<cfset stReturn.duration = GetTickCount() - a_int_begin />
 		
-		<cfset tmp = LogMessage('duration: ' & stReturn.duration) />
+		<cfset LogMessage('duration: ' & stReturn.duration) />
 		
 		<cfset stReturn.result = true />
 		<cfreturn stReturn />

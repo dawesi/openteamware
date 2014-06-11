@@ -206,7 +206,7 @@
 		<cfinclude template="queries/q_delete_all_attendees.cfm">
 		
 		<!--- delete reminders ... --->
-		<cfset tmp = DeleteReminders(securitycontext = arguments.securitycontext, eventkey = arguments.entrykey) />
+		<cfset DeleteReminders(securitycontext = arguments.securitycontext, eventkey = arguments.entrykey) />
 		
 		<cfif arguments.clearoutlooksyncmetadata is true>
 			<!--- clear outlook sync information for all users ... --->
@@ -538,7 +538,7 @@
 			
 			<!--- update activity index of contact ... --->
 			<cfif arguments.type IS 1>
-				<cfset tmp = application.components.cmp_crmsales.UpdateActivityCountOfContact(objectkey = arguments.parameter,
+				<cfset application.components.cmp_crmsales.UpdateActivityCountOfContact(objectkey = arguments.parameter,
 														servicekey = '52227624-9DAA-05E9-0892A27198268072',
 														itemtype = 'appointments') />
 			</cfif>
@@ -572,7 +572,7 @@
 		
 		<!--- update activity index of contact ... --->
 		<cfif arguments.type IS 1>
-			<cfset tmp = application.components.cmp_crmsales.UpdateActivityCountOfContact(objectkey = arguments.parameter,
+			<cfset application.components.cmp_crmsales.UpdateActivityCountOfContact(objectkey = arguments.parameter,
 													servicekey = '52227624-9DAA-05E9-0892A27198268072',
 													itemtype = 'appointments') />
 		</cfif>

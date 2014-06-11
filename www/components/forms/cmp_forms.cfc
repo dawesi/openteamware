@@ -182,7 +182,7 @@
 			});
 			</cfsavecontent>
 			
-			<cfset tmp = AddJSToExecuteAfterPageLoad('', a_str_js) />
+			<cfset AddJSToExecuteAfterPageLoad('', a_str_js) />
 		</cfif> --->
 				
 		<cfreturn sReturn />

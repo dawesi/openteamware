@@ -602,10 +602,10 @@
 			
 			<!--- if the entry is ok, add now to the return query ... --->
 			<cfif a_bol_match>
-				<cfset tmp = QueryAddRow(q_select_possible_workgroups, 1) />
+				<cfset QueryAddRow(q_select_possible_workgroups, 1) />
 				
 				<cfloop list="#arguments.q_workgroup_permissions.columnlist#" delimiters="," index="a_str_colname">
-					<cfset tmp = QuerySetCell(q_select_possible_workgroups, a_str_colname, arguments.q_workgroup_permissions[a_str_colname][arguments.q_workgroup_permissions.currentrow], q_select_possible_workgroups.recordcount) />
+					<cfset QuerySetCell(q_select_possible_workgroups, a_str_colname, arguments.q_workgroup_permissions[a_str_colname][arguments.q_workgroup_permissions.currentrow], q_select_possible_workgroups.recordcount) />
 				</cfloop>
 			</cfif>
 		</cfloop>
@@ -667,7 +667,7 @@
 													entrykey = arguments.entrykey) />
 													
 		<cfloop query="q_select_wg_shares">
-			<cfset tmp = RemoveWorkgroupShare(securitycontext = arguments.securitycontext,
+			<cfset RemoveWorkgroupShare(securitycontext = arguments.securitycontext,
 											servicekey = arguments.servicekey,
 											entrykey = arguments.entrykey,
 											workgroupkey = q_select_wg_shares.workgroupkey) />
@@ -813,7 +813,7 @@
 			
 			<cfloop query="q_select_shares">
 				
-				<cfset tmp = QuerySetCell(q_select_shares, 'workgroupname', arguments.securitycontext.a_struct_workgroups[q_select_shares.workgroupkey], q_select_shares.currentrow) />
+				<cfset QuerySetCell(q_select_shares, 'workgroupname', arguments.securitycontext.a_struct_workgroups[q_select_shares.workgroupkey], q_select_shares.currentrow) />
 				
 			</cfloop>
 			
@@ -1186,7 +1186,7 @@
 		
 		<!--- log this login (update lastlogin?) ... --->
 		<cfif arguments.log_login>
-			<cfset tmp = application.components.cmp_session.UpdateLastLoginAndLoginCount(userkey = sEntrykey, remote_ip = arguments.remote_ip) />
+			<cfset application.components.cmp_session.UpdateLastLoginAndLoginCount(userkey = sEntrykey, remote_ip = arguments.remote_ip) />
 		</cfif>
 		
 		<cfreturn SetReturnStructSuccessCode(stReturn) />

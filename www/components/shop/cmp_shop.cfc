@@ -71,7 +71,7 @@
 		</cfquery>
 		
 		<!--- set quantity to the current number ... --->
-		<cfset tmp = QuerySetCell(q_select_price, 'quantity', arguments.quantity, 1)>
+		<cfset QuerySetCell(q_select_price, 'quantity', arguments.quantity, 1)>
 		
 		<cfset stReturn.q_select_price = q_select_price>
 				

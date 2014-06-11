@@ -165,13 +165,13 @@
 		<cflock timeout="30" throwontimeout="No" type="EXCLUSIVE" scope="APPLICATION">
 			
 		<cfif StructKeyExists(application.langdata, 'lang' & arguments.langno)>
-			<cfset tmp = StructDelete(application.langdata, 'lang' & arguments.langno) />
+			<cfset StructDelete(application.langdata, 'lang' & arguments.langno) />
 		</cfif>
 		
 		<cfset application.langdata['lang' & arguments.langno] = StructNew() />
 		
 		<cfoutput query="q_select_translation_data">
-			<cfset tmp = StructInsert(application.langdata['lang' & arguments.langno], q_select_translation_data.entryid, q_select_translation_data.entryvalue, true) />
+			<cfset StructInsert(application.langdata['lang' & arguments.langno], q_select_translation_data.entryid, q_select_translation_data.entryvalue, true) />
 		</cfoutput>
 		
 		</cflock>

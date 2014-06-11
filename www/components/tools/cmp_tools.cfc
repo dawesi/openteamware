@@ -276,13 +276,13 @@
 		<cfset var q_select_fields = arguments.q />
 		<cfset var tmp = false />
 		
-		<cfset tmp = QueryAddRow(q_select_fields, 1)>
-		<cfset tmp = QuerySetCell(q_select_fields, 'fieldname', arguments.fieldname, q_select_fields.recordcount)>
-		<cfset tmp = QuerySetCell(q_select_fields, 'displayname', arguments.displayname, q_select_fields.recordcount)>
-		<cfset tmp = QuerySetCell(q_select_fields, 'description', arguments.description, q_select_fields.recordcount)>
-		<cfset tmp = QuerySetCell(q_select_fields, 'datatype', arguments.datatype, q_select_fields.recordcount)>
-		<cfset tmp = QuerySetCell(q_select_fields, 'maxsize', arguments.maxsize, q_select_fields.recordcount)>
-		<cfset tmp = QuerySetCell(q_select_fields, 'name_md5', Hash(arguments.fieldname), q_select_fields.recordcount)>
+		<cfset QueryAddRow(q_select_fields, 1)>
+		<cfset QuerySetCell(q_select_fields, 'fieldname', arguments.fieldname, q_select_fields.recordcount)>
+		<cfset QuerySetCell(q_select_fields, 'displayname', arguments.displayname, q_select_fields.recordcount)>
+		<cfset QuerySetCell(q_select_fields, 'description', arguments.description, q_select_fields.recordcount)>
+		<cfset QuerySetCell(q_select_fields, 'datatype', arguments.datatype, q_select_fields.recordcount)>
+		<cfset QuerySetCell(q_select_fields, 'maxsize', arguments.maxsize, q_select_fields.recordcount)>
+		<cfset QuerySetCell(q_select_fields, 'name_md5', Hash(arguments.fieldname), q_select_fields.recordcount)>
 				
 		<cfreturn q_select_fields>
 	</cffunction>

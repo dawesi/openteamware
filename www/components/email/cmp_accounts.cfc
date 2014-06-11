@@ -64,7 +64,7 @@
 								userkey = arguments.userkey)>
 		
 		<!--- create maildir now ... ---->
-		<cfset tmp = CreateMailDirectory(arguments.emailaddress) />
+		<cfset CreateMailDirectory(arguments.emailaddress) />
 		
 		<!--- set spam assassin config now ... --->
 		<cfset a_bol_return = UpdateOrInsertSpamassassinEntry(emailaddress = arguments.emailaddress,
@@ -82,10 +82,10 @@
 		</cfif>
 		
 		<!--- insert quota entry ... --->
-		<cfset tmp = UpdateOrInsertQuotaEntry(arguments.emailaddress, arguments.quota)>
+		<cfset UpdateOrInsertQuotaEntry(arguments.emailaddress, arguments.quota)>
 		
 		<cfif arguments.createconfig is true>
-			<cfset tmp = CreateMailConfig(arguments.emailaddress)>
+			<cfset CreateMailConfig(arguments.emailaddress)>
 		</cfif> --->
 		
 		<cfreturn true />
@@ -243,7 +243,7 @@
 		<cfinclude template="queries/q_insert_forwarding.cfm">
 		
 		<cfif arguments.createconfig>
-			<cfset tmp = CreateMailConfig(arguments.source)>
+			<cfset CreateMailConfig(arguments.source)>
 		</cfif>
 		
 		<cfreturn true>
@@ -365,10 +365,10 @@
 		</cfinvoke>
 		
 		<!--- create the maildir --->
-		<cfset tmp = CreateMailDirectory(arguments.aliasaddress) />
+		<cfset CreateMailDirectory(arguments.aliasaddress) />
 		
 		<!--- create the mail config ... --->
-		<cfset tmp = CreateMailConfig(arguments.aliasaddress)>
+		<cfset CreateMailConfig(arguments.aliasaddress)>
 		
 		<!--- create the forwarding ... --->
 		<cfinvoke component="cmp_accounts" method="UpdateForwarding" returnvariable="a_bol_return">
@@ -379,7 +379,7 @@
 		</cfinvoke>
 		
 		<!--- create the mail config again ... --->
-		<cfset tmp = CreateMailConfig(arguments.aliasaddress)>		
+		<cfset CreateMailConfig(arguments.aliasaddress)>		
 		
 		<!--- insert into internal table --->
 		<cfinclude template="queries/q_insert_alias.cfm">

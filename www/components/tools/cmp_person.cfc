@@ -59,7 +59,7 @@
 		
 		<!--- should we save the setting to database? --->
 		<cfif arguments.savesetting>
-			<cfset tmp = SaveUserPreference(userid = arguments.userid, section = arguments.section, name = arguments.name, value = sReturn) />
+			<cfset SaveUserPreference(userid = arguments.userid, section = arguments.section, name = arguments.name, value = sReturn) />
 		</cfif>
 	
 		<cfreturn sReturn />
@@ -100,7 +100,7 @@
 		<!--- if it exists in cached version, delete it from cache ... --->
 		<cfif a_bol_exists_in_session>
 			<cflock scope="session" timeout="30" type="exclusive">
-				<cfset tmp = StructDelete(session.stUserSettings.cached_personal_properties, a_str_hash_id) />
+				<cfset StructDelete(session.stUserSettings.cached_personal_properties, a_str_hash_id) />
 			</cflock>	
 		</cfif>
 		

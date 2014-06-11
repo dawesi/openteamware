@@ -176,7 +176,7 @@
 		</cfif> --->
 
 		<!--- update activity index of contact ... --->
-		<cfset tmp = application.components.cmp_crmsales.UpdateActivityCountOfContact(objectkey = arguments.database_values.contactkey,
+		<cfset application.components.cmp_crmsales.UpdateActivityCountOfContact(objectkey = arguments.database_values.contactkey,
 																		itemtype = 'projects_' & arguments.database_values.project_type) />
 
 		<cfreturn SetReturnStructSuccessCode(stReturn) />

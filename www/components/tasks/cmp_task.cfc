@@ -133,7 +133,7 @@
 		<cfif StructKeyExists(a_struct_load_task, 'q_select_task')>
 			<!--- ok, task exists --->			
 			<cfloop list="#a_struct_load_task.q_select_task.assignedtouserkeys#" index="a_str_userkey" delimiters=",">
-				<cfset tmp = SendAlertAboutNewAssignedTask(taskkey = arguments.entrykey, securitycontext = arguments.securitycontext, usersettings = arguments.usersettings, urge = true, userkey = a_str_userkey)>
+				<cfset SendAlertAboutNewAssignedTask(taskkey = arguments.entrykey, securitycontext = arguments.securitycontext, usersettings = arguments.usersettings, urge = true, userkey = a_str_userkey)>
 			</cfloop>
 			
 			 <cfinvoke component="#request.a_str_component_logs#" method="CreateLogEntry">

@@ -152,7 +152,7 @@
 		<cfset var q_query_dir = 0 />
 		<cfset var a_str_uuid = '' />
 		<cfset var SelectFileVersions = StructNew() />
-		<cfset var tmp = false />
+		
 		<cfset var a_int_newversion = 1 />
 		<cfset var a_str_dir1 = '' />
 		<cfset var a_str_dir2 = '' />
@@ -340,7 +340,7 @@
 		
 		<cfset var a_bool_isrootdir=false />
 		<cfset var q_select_root_directorykey = 0 />
-		<cfset var tmp = false />
+		
 		<cfset var a_query_finddirectory = 0 />
 		
 		<cfif Len(arguments.parentdirectorykey) eq  0>
@@ -690,7 +690,7 @@
 		<cfset var stReturn = GenerateReturnStruct() />
 		<cfset var a_bool_isrootdir = false />
 		<cfset var q_select_directory = 0 />
-		<cfset var tmp = false />
+		
 		<cfset var a_bool_found = false />
 		<cfset var SelectDirectoryRequest = StructNew() />
 		<cfset var a_str_rootdirectorykey = GetRootDirKey(securitycontext=arguments.securitycontext, usersettings=arguments.usersettings) />
@@ -859,7 +859,7 @@
 		<cfset var q_select_parent_directory = 0 />
 		<cfset var SelectDirectoryRequest = StructNew() />
 		<cfset var a_str_currentkey = '' />
-		<cfset var tmp = false />
+		
 		<cfset var a_bool_found = false />	 
 		<cfset var q_directory_info = 0 />
 		<cfset var a_str_rootdirkey = '' />
@@ -1081,7 +1081,7 @@
 		<cfset var update_filescount = StructNew() />
 		<cfset var sFilename_delete = '' />
 		<cfset var q_query_file = 0 />
-		<cfset var tmp = false />
+		
 
 		<cfif not checkaccess( securitycontext = arguments.securitycontext,
 			usersettings = arguments.usersettings,
@@ -1135,7 +1135,7 @@
 		<cfargument name="entrykey" type="string" required="true">
 
 		<cfset var SelectDirectoryRequest = StructNew() />
-		<cfset var tmp = 0 />
+		<cfset 0 />
 		
 		<cfif not checkaccess( securitycontext = arguments.securitycontext,
 			usersettings = arguments.usersettings,
@@ -1398,7 +1398,7 @@
 		<cfset var stReturn = GenerateReturnStruct() />
 		<cfset var a_query_items = QueryNew('entrykey,excerpt') />
 		<cfset var a_query_findfile = 0 />
-		<cfset var tmp = false />
+		
 		<cfset var xnResults = 0 />
 		<cfset var CFHTTP = 0 />
 		<cfset var a_str_xml = '' />
@@ -1498,7 +1498,7 @@
 		<cfargument name="currentlevel" type="numeric" default="0" required="false">
 		
 		<cfset var q_select_new_item = QueryNew('currentlevel,entrykey,directoryname,parentdirectorykey,description,filescount,dt_created,dt_lastmodified,userkey', 'BigInt,VarChar,VarChar,VarChar,VarChar,BigInt,date,date,VarChar') />
-		<cfset var tmp = QueryAddRow(q_select_new_item, 1) />
+		<cfset QueryAddRow(q_select_new_item, 1) />
 
 		<cfset QuerySetCell(q_select_new_item, 'directoryname', arguments.directoryname, 1) />
 		<cfset QuerySetCell(q_select_new_item, 'entrykey', arguments.entrykey, 1) />
@@ -1678,7 +1678,7 @@
 		<cfargument name="query" type="query" required="true" hint="Query holding all found directories">
 		<cfargument name="query_to_add" type="query" required="true" hint="query holding the data to add to the main query">
 		
-		<cfset var tmp = 0 />
+		<cfset 0 />
 		<cfset var a_int_current_recordcount = arguments.query.recordcount />
 		<cfset var ii = 0 />
 		<cfset var a_str_col_name = '' />
@@ -1708,7 +1708,7 @@
 		<cfset var stReturn = GenerateReturnStruct() />
 		<cfset var q_select_root_directorykey = 0 />
 		<cfset var temp = false />
-		<cfset var tmp = false />
+		
 		<cfset var a_int_counter = 0 />
 		<cfset var select_directories = StructNew() />
 		<cfset var a_struct_list_shared_directories = StructNew() />
@@ -1776,7 +1776,7 @@
 		<cfset var stReturn = GenerateReturnStruct() />
 		<cfset var SelectFileRequest = StructNew() />
 		<cfset var q_select_file = 0 />
-		<cfset var tmp = false />
+		
 		<cfif not checkaccess(securitycontext = arguments.securitycontext,
 			usersettings = arguments.usersettings,
 			access_type = 'w',
@@ -1831,7 +1831,7 @@
 		<cfset var a_arr_path_arguments = ArrayNew(1)>
 		<cfset var a_arr_uuids = ArrayNew(1)>
 		<cfset var a_str_rootdirectorykey = '' />
-		<cfset var tmp = false />
+		
 		<cfset var current_directorykey = '' />
 		<cfset var a_int_start = 0 />
 		<cfset var a_query_folder = 0 />

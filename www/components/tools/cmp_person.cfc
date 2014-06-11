@@ -25,7 +25,7 @@
 			hint="Save setting to database">
 			
 		<cfset var sReturn = arguments.defaultvalue />
-		<cfset var tmp = false />
+		
 		<cfset var a_str_hash_id = Hash(UCase(arguments.userid & arguments.section & arguments.name)) />
 		
 		<!--- are we quering a value for the currently logged in user? --->
@@ -90,7 +90,7 @@
 		<!--- generate hash ID ... --->
 		<cfset var a_str_hash_id = Hash(UCase(arguments.userid & arguments.section & arguments.name)) />
 		<cfset var a_bol_exists_in_session = false />
-		<cfset var tmp = false />
+		
 		
 		<cflock scope="session" timeout="3" type="readonly">
 			<cfset a_bol_exists_in_session = StructKeyExists(session, 'stUserSettings') AND 

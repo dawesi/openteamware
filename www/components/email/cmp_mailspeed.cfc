@@ -76,7 +76,7 @@
 		
 		<cfset var a_int_userid = 0 />
 		<cfset var q_select_folders = 0 />
-		<cfset var tmp = false />
+		
 		<cfset var stReturn = 0 />
 		<cfset var a_struct_settings = 0 />
 		<cfset var a_struct_imap_access_data = 0 />

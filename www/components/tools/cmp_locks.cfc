@@ -25,7 +25,7 @@
 			hint="comment by user">
 		
 		<cfset var stReturn = GenerateReturnStruct() />
-		<cfset var tmp = false />
+		
 		<cfset var a_struct_lock_exists = ExclusiveLockExistsForObject(servicekey = arguments.servicekey,
 																		objectkey = arguments.objectkey) />
 		<cfset var a_str_lock_entrykey = CreateUUID() />
@@ -70,7 +70,7 @@
 			hint="entrykey of object">
 
 		<cfset var stReturn = GenerateReturnStruct() />
-		<cfset var tmp = false />
+		
 		<cfset var q_select_lock = 0 />
 		
 		<cfinclude template="queries/locks/q_select_lock.cfm">
@@ -108,7 +108,7 @@
 		<cfargument name="objectkey" type="string" required="true" hint="entrykey of object">
 		
 		<cfset var stReturn = GenerateReturnStruct() />
-		<cfset var tmp = false />
+		
 		<cfset var a_struct_lock = ExclusiveLockExistsForObject(servicekey = arguments.servicekey, objectkey = arguments.objectkey) />
 		<cfset var a_bol_allowed = (a_struct_lock.userkey IS arguments.securitycontext.myuserkey) OR (arguments.securitycontext.iscompanyadmin) />
 		
@@ -135,7 +135,7 @@
 	<cffunction access="public" name="RemoveTimedOutExclusiveLocks" returntype="boolean" output="false"
 			hint="remove all locks which have timed out">
 			
-		<cfset var tmp = false />
+		
 		<cfset var q_select_timed_out_locks = 0 />
 		
 		<cfinclude template="queries/locks/q_select_timed_out_locks.cfm">

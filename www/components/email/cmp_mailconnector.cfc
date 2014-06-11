@@ -111,7 +111,7 @@
 			
 		<cfset var stReturn = GenerateReturnStruct() />
 		<cfset var a_var_folder = arguments.store.getFolder(arguments.foldername) />
-		<cfset var tmp = LogIMAPData('start reading folder ' & arguments.foldername & ' ' & ' MessageCount ' & a_var_folder.getMessageCount() & ' next UID: ' & a_var_folder.getUIDNext() ) />
+		<cfset LogIMAPData('start reading folder ' & arguments.foldername & ' ' & ' MessageCount ' & a_var_folder.getMessageCount() & ' next UID: ' & a_var_folder.getUIDNext() ) />
 		
 		<cfif NOT a_var_folder.exists()>
 			<cfreturn SetReturnStructErrorCode(stReturn, 2201) />
@@ -163,7 +163,7 @@
 		<cfset var q_select_folders = QueryNew('foldername,fullfoldername,uffn,level,fullparentfoldername,messagescount,parentfoldername,unreadmessagescount', 'Varchar,VarChar,VarChar,Integer,VarChar,Integer,VarChar,Integer') />
 	
 		<!--- try to connect ... --->
-		<cfset var tmp = LogIMAPData('getting all folders for ' & arguments.username) />
+		<cfset LogIMAPData('getting all folders for ' & arguments.username) />
 		<cfset var a_var_store = ConnectToIMAPAccountAndReturnStore(server = arguments.server,
 										username = arguments.username,
 										password = arguments.password,
@@ -196,7 +196,7 @@
 			hint="the structure holding the IMAP store plus the the unique hash id ... used for checking if this connection is in cache status or not (and if not, close connection)">
 			
 		<cfset var a_bol_return = false />
-		<cfset var tmp = false />
+		
 		<cfset var a_bol_exists_in_cache = application.components.cmp_cache.ElementExistsInCache(arguments.ConnectionStore.hash_id) />
 		
 		<!--- exists in cache, exit! ... --->
@@ -246,7 +246,7 @@
 		<cfset var obj_Properties = 0 />
 		<cfset var cls_Session = 0 />
 		<cfset var obj_Store = 0 />
-		<cfset var tmp = LogIMAPData('connecting to IMAP server using username ' & arguments.username) />
+		<cfset LogIMAPData('connecting to IMAP server using username ' & arguments.username) />
 		<cfset var a_imap_port = 143 />
 		<cfset var a_imap_store = 'imap' />
 		
@@ -369,7 +369,7 @@
 		
 		<cfset var stReturn = GenerateReturnStruct() />
 		<cfset var a_int_uid = 0 />
-		<cfset var tmp = false />
+		
 		<cfset var a_var_store = ConnectToIMAPAccountAndReturnStore(server = arguments.server,
 										username = arguments.username,
 										password = arguments.password) />
@@ -430,7 +430,7 @@
 		<cfset var objProperties = createObject("Java", "java.util.Properties") />
 		<cfset var objSession = 0 />
 		<cfset var a_flags = CreateObject("Java", "javax.mail.Flags$Flag") />
-        <cfset var tmp = LogIMAPData('adding new mail ' & arguments.username) />
+        <cfset LogIMAPData('adding new mail ' & arguments.username) />
 		
 		<!--- error, exit --->
 		<cfif NOT a_var_store.result>
@@ -477,7 +477,7 @@
 		<cfset var a_arr_objMessage = 0 />
 		<cfset var a_objMessage = 0 />
 		<cfset var ii = 0 />
-		<cfset var tmp = false />
+		
 		
 		<cfif NOT arguments.folder.isOpen()>
 			<cfset arguments.folder.open(arguments.folder.READ_WRITE) />
@@ -557,7 +557,7 @@
 		<cfset var a_str_contenttype = '' />
 		<cfset var a_int_to = 0 />
 		<cfset var index = 0 />
-		<cfset var tmp = LogIMAPData('listing messages for ' & arguments.username & ' folder ' & arguments.foldername) />
+		<cfset LogIMAPData('listing messages for ' & arguments.username & ' folder ' & arguments.foldername) />
 		<cfset var a_str_hash_id = '' /> 
 
 		<cfif NOT a_var_store.result>
@@ -711,7 +711,7 @@
 		<cfset var header = 0 />
 		<cfset var a_str_header_feld = '' />
 		<cfset var a_str_header_value = '' />
-		<cfset var tmp = false />
+		
 		<cfset var content = '' />
 		<cfset var a_int_flags = 0 />
 		<cfset var a_bol_java_return = 0 />
@@ -927,7 +927,7 @@
 		<cfset var a_var_folder = 0 />
 		<cfset var a_bol_read_write = false />
 		<cfset var objMessage = 0 />
-		<cfset var tmp = false />
+		
 		<cfset var q_select_message = ReturnQueryHoldingMessages() />
 		<cfset var q_select_headers = QueryNew('feld,wert', 'varchar,varchar') />
 		<cfset var q_select_attachments = QueryNew('afilename,asize,charset,cid,contentid,contentlanguage,contenttype,encoding,fullheader,tempfilename,simplecontentid,filenamelen',

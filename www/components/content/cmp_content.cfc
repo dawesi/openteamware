@@ -59,7 +59,7 @@
 		<cfargument name="email_adr" type="string" required="no" default="">
 		<cfargument name="default" type="boolean" required="no" default="false">
 		
-		<cfset var tmp = false />
+		
 		
 		<cfif len(arguments.entrykey) GT 0>
 			<cfset DeleteSignature(entrykey=arguments.entrykey, securitycontext=arguments.securitycontext)>

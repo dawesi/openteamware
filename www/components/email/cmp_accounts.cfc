@@ -48,7 +48,6 @@
 			hint="create default folders ...">
 		
 		<cfset var sReturn = '' />
-		<cfset var tmp = false />
 		<cfset var a_bol_return = false />
 		<cfset var stReturn_createstandardfolders = 0 />
 		<cfset var q_insert_pop3_data = 0 />
@@ -232,7 +231,7 @@
 		<!--- create the config? --->
 		<cfargument name="createconfig" type="boolean" default="true" required="false">
 		
-		<cfset var tmp = 0 />
+		<cfset 0 />
 		<cfset var DeleteForwardingRequest = StructNew() />
 		
 		<!--- delete old entry and insert new one ... --->
@@ -343,7 +342,7 @@
 		
 		<cfset var stReturn = StructNew() />
 		<cfset var a_bol_return = false />
-		<cfset var tmp = false />
+		
 		
 		<cfif ExtractEmailAdr(arguments.aliasaddress) IS ''>
 			<cfset stReturn.error = true>

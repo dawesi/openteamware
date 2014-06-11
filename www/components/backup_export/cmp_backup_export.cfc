@@ -89,7 +89,7 @@
 		<cfset var a_str_backup_directory = '' />
 		<cfset var a_str_replication_file = '' />
 		<cfset var q_select_users = 0 />
-		<cfset var tmp = false />
+		
 		<cfset var a_struct_backup_user = 0 />
 		<cfset var a_int_datasize = 0 />
 		<cfset var a_str_description = '' />
@@ -176,7 +176,7 @@
 		<cfset var a_int_begin = GetTickCount()>
 		<cfset var a_str_jobkey = CreateUUID()>
 		<cfset var a_str_backup_directory = ''>
-		<cfset var tmp = false />
+		
 		<cfset var a_struct_load_userdata = 0 />
 		<cfset var a_struct_filter = 0 />
 		<cfset var a_struct_loadoptions = 0 />

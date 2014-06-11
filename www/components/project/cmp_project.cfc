@@ -165,7 +165,7 @@
 										entrykey = arguments.database_values.entrykey) />
 										
 		<cfset var q_select_original_data = 0 />
-		<cfset var tmp = false />
+		
 		
 		<!--- insert into history - if something has changed only --->
 		<!--- <cfif (a_struct_project.result) AND (arguments.action_type IS 'edit') AND (q_select_original_data.project_type IS 1)>

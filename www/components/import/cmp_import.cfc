@@ -115,7 +115,7 @@
 		<cfargument name="jobkey" type="string" required="true" hint="entrykey of import job">
 		<cfargument name="servicekey" type="string" required="true" hint="entrykey of service for obtaining the displayname of the mapping record">
 		
-		<cfset var tmp = 0 />
+		<cfset 0 />
 		<cfset var q_fields_of_service = 0 />
 		<cfset var q_select_field_mappings = 0 />
 		<cfset var a_int_rcount = 0 />

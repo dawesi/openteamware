@@ -274,7 +274,7 @@
 		<cfargument name="maxsize" type="numeric" default="0">
 		
 		<cfset var q_select_fields = arguments.q />
-		<cfset var tmp = false />
+		
 		
 		<cfset QueryAddRow(q_select_fields, 1)>
 		<cfset QuerySetCell(q_select_fields, 'fieldname', arguments.fieldname, q_select_fields.recordcount)>

@@ -665,7 +665,7 @@
 		<cfset var a_bol_add = false />
 		<cfset var a_str_account = '' />
 		<cfset var a_str_foldername = '' />
-		<cfset var tmp = false />
+		
 		<cfset var q_select_shared_folders = 0 />
 		
 		<cfinclude template="queries/q_select_shared_folders.cfm">

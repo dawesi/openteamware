@@ -968,7 +968,7 @@
 		<cfset var a_str_contactkey = arguments.contactkey />
 		<cfset var a_str_root_directory = '' />
 		<cfset var q_select_directory_exists = 0 />
-		<cfset var tmp = false />
+		
 		<cfset var a_struct_binding = GetCRMSalesBinding(companykey = arguments.securitycontext.mycompanykey) />
 		
 		<cfinclude template="utils/storage/inc_check_create_storage_directory_for_contact.cfm">

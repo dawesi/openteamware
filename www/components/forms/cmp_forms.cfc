@@ -152,7 +152,7 @@
 			
 		<cfset var sReturn = '' />
 		<cfset var a_str_displayed_form_elements = '' />
-		<cfset var tmp = false />
+		
 		<cfset var ii = 0 />
 		<cfset var a_str_js = '' />
 		

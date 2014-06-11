@@ -190,7 +190,7 @@
 		<cfset var a_str_sessionkey = '' />
 		<cfset var a_bol_session_is_open = false />
 		<cfset var a_str_userkey = '' />
-		<cfset var tmp = false />
+		
 		<cfset var a_struct_session_data = 0 />
 		<cfset var a_bol_update = false />
 		<cfset var a_str_item = '' />

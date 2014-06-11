@@ -85,7 +85,7 @@
 		<cfargument name="securitycontext" type="struct" required="yes">
 		<cfargument name="newvalues" type="struct" required="no" default="#StructNew()#">
 		
-		<cfset var tmp = false />
+		
 		<cfset var q_update_followup = 0 />
 		
 		<cfinclude template="queries/q_update_followup.cfm">
@@ -144,7 +144,7 @@
 		<cfset var a_struct_do_action = StructNew() />
 		<cfset var sEntrykey = CreateUUID() />
 		<cfset var a_update_item = 0 />
-		<cfset var tmp = 0 />
+		<cfset 0 />
 		
 		<cfif arguments.action_type IS 'create'>
 		

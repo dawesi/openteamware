@@ -375,7 +375,7 @@
 		<cfset var q_select_msg = 0 />
 		<cfset var q_select_all_attachments = 0 />
 		<cfset var a_struct_createmsg_return = 0 />
-		<cfset var tmp = false />
+		
 		<cfset var a_struct_msg_load = 0 />
 		<cfset var q_select_real_attachments = 0 />
 		<cfset var a_str_body = '' />
@@ -537,7 +537,7 @@
 		<cfset var a_struct_addmail_return = 0 />
 		<cfset var a_struct_delete_msg = 0 />
 		<cfset var a_str_add_headers = '' />
-		<cfset var tmp = false />
+		
 		<cfset var a_str_format = '' />
 		<cfset var a_str_body = '' />
 		<cfset var a_str_headerinfo_wddx_filename = '' />

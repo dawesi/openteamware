@@ -62,7 +62,7 @@
 		
 		<cfset var q_select_sub_items = ReturnSubItems(entrykey = arguments.entrykey) />
 		<cfset var a_struct_permissions = 0 />
-		<cfset var tmp = QueryAddColumn(q_select_sub_items, 'allowed', 'Integer', ArrayNew(1)) />
+		<cfset QueryAddColumn(q_select_sub_items, 'allowed', 'Integer', ArrayNew(1)) />
 		
 		<cfloop query="q_select_sub_items">
 			<cfset a_struct_permissions = application.components.cmp_security.CheckIfActionIsAllowed(servicekey = sServiceKey,
@@ -394,7 +394,7 @@
 		
 		<cfset var stReturn = GenerateReturnStruct() />
 		<cfset var sEntrykey = CreateUUID() />
-		<cfset var tmp = 0 />
+		<cfset 0 />
 		<cfset var a_struct_crmsales_bindings = 0 />
 		<cfset var stReturn_assign_criteria = 0 />
 		<cfset var q_insert_contact = 0 />
@@ -527,7 +527,7 @@
 		<cfset var a_struct_get_contact = 0 />
 		<cfset var stUpdate_sub = 0 />
 		<cfset var a_struct_lock = 0 />
-		<cfset var tmp = 0 />
+		<cfset 0 />
 		<cfset var a_bol_event_insert = false />
 		<cfset var a_bol_return_save_edited = false />
 		<cfset var stReturn_assign_criteria = 0 />
@@ -649,7 +649,7 @@
 		<cfset var a_str_title = "" />
 		<cfset var q_select_contact_raw = 0 />
 		<cfset var a_orm = 0 />
-		<cfset var tmp = 0 />
+		<cfset 0 />
 		<cfset var a_bol_event_insert = false />
 		<cfset var a_bol_remove_share = false />
 		<cfset var a_bol_return_save_deleted = false />
@@ -869,7 +869,7 @@
 		<cfset var a_str_hash_id = 'q_select_nace_code_data_cached_lang_' & arguments.language />
 		<cfset var a_struct_cached_nace_query = application.components.cmp_cache.CheckAndReturnStoredCacheElement(a_str_hash_id) />
 		<cfset var q_select_nace_all_nace_codes = 0 />
-		<cfset var tmp = 0 />
+		<cfset 0 />
 		
 		<!--- if cached version exists, fine ... --->		
 		<cfif a_struct_cached_nace_query.result>

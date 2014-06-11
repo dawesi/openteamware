@@ -39,7 +39,7 @@
 			hint="update the expiration time only if found ... do not set new data">
 			
 		<cfset var a_return_struct = GenerateReturnStruct() />
-		<cfset var tmp = false />
+		
 		
 		<cfif Len(arguments.hashid) IS 0>
 			<cfreturn SetReturnStructErrorCode(a_return_struct, 999) />
@@ -91,7 +91,7 @@
 			
 		<cfset var a_bol_exists = ElementExistsInCache(arguments.hashid) />
 		<cfset var a_struct_data = 0 />
-		<cfset var tmp = false />
+		
 		
 		<cflog application="false" file="ib_cache" log="Application" text="Exists #arguments.hashid#? #a_bol_exists#">
 		
@@ -144,7 +144,7 @@
 		
 		<cfset var a_struct_expired = 0 />
 		<cfset var a_str_item = '' />
-		<cfset var tmp = 0 />
+		<cfset 0 />
 		
 		<cflog application="false" file="ib_cache" log="Application" text="Starting cache cleanup">
 		

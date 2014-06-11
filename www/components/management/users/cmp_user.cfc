@@ -373,7 +373,7 @@
 		<cfset var a_str_hash_id = 'LookupUserNameDef_ ' & Hash(arguments.entrykey) />
 		<cfset var a_struct_cached_conn_available = false />
 		<cfset var q_select_shortest_possible_userid_by_entrykey = 0 />
-		<cfset var tmp = false />
+		
 		
 		<cfset a_struct_cached_conn_available = application.components.cmp_cache.CheckAndReturnStoredCacheElement(a_str_hash_id) />
 		

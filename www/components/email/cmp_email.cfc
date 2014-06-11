@@ -42,7 +42,7 @@
 		<cfset var a_str_fullparentfoldername = '' />
 		
 		<cfset var a_struct_cache = 0 />
-		<cfset var tmp = false />
+		
 		
 		<!--- userid ... use current or given in arguments ... --->
 		<cfif CompareNocase(arguments.securitycontext.myusername, arguments.accessdata.a_str_imap_username) IS 0>
@@ -211,7 +211,7 @@
 		<cfset var q_select_attachments = 0 />
 		<cfset var IMAPRESULT = 'FALSE' />
 		<cfset var a_arr_tmp = 0 />
-		<cfset var tmp = false />
+		
 	
 		<!--- move to imap connector in future times ... --->
 		<cftry>
@@ -326,7 +326,7 @@
 		<cfset var stReturn = GenerateReturnStruct() />
 		<cfset var a_struct_add_mail = 0 />
 		<cfset var a_str_hash_id = a_str_email_folders_hash_name & Hash(arguments.server & arguments.username) />
-		<cfset var tmp = application.components.cmp_cache.RemoveElementFromCache(a_str_hash_id) />
+		<cfset application.components.cmp_cache.RemoveElementFromCache(a_str_hash_id) />
 		<cfset var a_return_struct_search = 0 />
 		
 		<cfset a_struct_add_mail = application.components.cmp_email_mailconnector.AddNewEmail(foldername = arguments.destinationfolder,
@@ -375,7 +375,7 @@
 		
 		<cfset var stReturn = GenerateReturnStruct() />
 		<cfset var a_str_hash_id = a_str_email_folders_hash_name & Hash(arguments.server & arguments.username) />
-		<cfset var tmp = application.components.cmp_cache.RemoveElementFromCache(a_str_hash_id) />
+		<cfset application.components.cmp_cache.RemoveElementFromCache(a_str_hash_id) />
 		<cfset var a_struct_delete_mails = 0 />
 
 		<cfif request.appsettings.properties.MailSpeedEnabled IS 1>
@@ -417,7 +417,7 @@
 											foldername = arguments.foldername,
 											savecontenttypes = '*') />
 		<cfset var a_str_file_location = '' />
-		<cfset var tmp = false />
+		
 		
 		<!--- error? ... --->
 		<cfif NOT a_struct_msg_load.result>

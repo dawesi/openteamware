@@ -158,7 +158,7 @@
 			hint="number of language">
 			
 		<cfset var q_select_translation_data = 0 />
-		<cfset var tmp = false />
+		
 			
 		<cfinclude template="queries/q_select_translation_data.cfm">
 		

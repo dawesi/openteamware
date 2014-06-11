@@ -218,7 +218,7 @@
 		<cfset var a_struct_load_contacts = StructNew() />
 		<cfset var q_select_subscribers_entrykeys = 0 />
 		<cfset var a_struct_subscribers_entrykeys = StructNew() />
-		<cfset var tmp = false />
+		
 
 		<!--- remote ignore list --->
 		<cfif ListFindNoCase(arguments.options, 'donotremoveignoreitems') IS 0>

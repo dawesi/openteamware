@@ -117,7 +117,7 @@
 	<cffunction access="public" name="UpdateLicenceStatusOnlyAndDoNotCreateAnInvoice" output="false" returntype="boolean">
 		<cfargument name="companykey" 	type="string" 	required="yes" hint="entrykey of company">
 		
-		<cfset var tmp = false />
+		
 		<cfset var UpdateOpenRecordsRequest = StructNew() />
 		
 		<cfset UpdateLicencingInformation(entrykey = arguments.companykey)>

@@ -171,7 +171,7 @@
 
 		<!--- create the return array --->
 		<cfset var a_arr_return = ArrayNew(1)>
-		<cfset var tmp = ArraySet(a_arr_return, 1, 7, "0")>
+		<cfset ArraySet(a_arr_return, 1, 7, "0")>
 		
 		<!--- olSunday(1), olMonday(2), olTuesday(4), olWednesday(8), olThursday(16),
 			olFriday(32) oder olSaturday(64). --->

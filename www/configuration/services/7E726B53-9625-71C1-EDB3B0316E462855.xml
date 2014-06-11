@@ -10,7 +10,7 @@
 		<name>showwelcome</name>
 		<description>show welcome screen</description>
 		<template>dsp_welcome.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -20,7 +20,7 @@
 		<name>outlooksync</name>
 		<description></description>
 		<template>dsp_outlooksync.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -30,7 +30,7 @@
 		<name>mobilesync</name>
 		<description></description>
 		<template>dsp_mobilesync.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -40,7 +40,7 @@
 		<name>addmobilesyncdevice</name>
 		<description></description>
 		<template>dsp_addmobilesyncdevice.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -50,7 +50,7 @@
 		<name>enablemobilesync</name>
 		<description></description>
 		<template>dsp_enable_mobilesync.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>

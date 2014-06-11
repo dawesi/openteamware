@@ -10,7 +10,7 @@
 		<name>showwelcome</name>
 		<description>show welcome screen</description>
 		<template>dsp_welcome.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -30,7 +30,7 @@
 		<name>ShowFiles</name>
 		<description></description>
 		<template>dsp_showfiles.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -40,7 +40,7 @@
 		<name>ShowFile</name>
 		<description></description>
 		<template>dsp_showfile.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -50,7 +50,7 @@
 		<name>EditFolder</name>
 		<description></description>
 		<template>dsp_editfolder.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -60,7 +60,7 @@
 		<name>NewFolder</name>
 		<description></description>
 		<template>dsp_editfolder.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -70,7 +70,7 @@
 		<name>CreateNewFile</name>
 		<description></description>
 		<template>dsp_create_new_file.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -90,7 +90,7 @@
 		<name>Fileinfo</name>
 		<description></description>
 		<template>dsp_fileinfo.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -100,7 +100,7 @@
 		<name>Search</name>
 		<description></description>
 		<template>dsp_search.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -110,7 +110,7 @@
 		<name>EditFile</name>
 		<description></description>
 		<template>dsp_editfile.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -120,7 +120,7 @@
 		<name>SaveFileInformation</name>
 		<description></description>
 		<template>act_savefileinformation.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>actions</directory>
 		<productkeysincluded></productkeysincluded>
@@ -180,7 +180,7 @@
 		<name>showstructure</name>
 		<description></description>
 		<template>dsp_showstructure.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -190,7 +190,7 @@
 		<name>movefiles</name>
 		<description></description>
 		<template>dsp_movefiles.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -200,7 +200,7 @@
 		<name>trafficinfo</name>
 		<description></description>
 		<template>dsp_trafficinfo.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -210,7 +210,7 @@
 		<name>usageinfo</name>
 		<description></description>
 		<template>dsp_usageinfo.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -220,7 +220,7 @@
 		<name>test_path2uuid</name>
 		<description></description>
 		<template>dsp_test_path2uuid.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -230,7 +230,7 @@
 		<name>shares</name>
 		<description></description>
 		<template>dsp_shares.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -241,7 +241,7 @@
 		<description></description>
 		<type>action</type>
 		<template>act_display_new_files.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>actions</directory>
 		<productkeysincluded></productkeysincluded>
@@ -252,7 +252,7 @@
 		<description></description>
 		<type>inpage</type>
 		<template>dsp_create_exclusive_lock.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>dialogs</directory>
 		<productkeysincluded></productkeysincluded>
@@ -263,7 +263,7 @@
 		<description></description>
 		<type>inpage</type>
 		<template>dsp_short_information_lock.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>dialogs</directory>
 		<productkeysincluded></productkeysincluded>
@@ -274,7 +274,7 @@
 		<type>action</type>
 		<description></description>
 		<template>act_dopost_background_action.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>actions</directory>
 		<productkeysincluded></productkeysincluded>

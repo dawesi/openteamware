@@ -10,7 +10,7 @@
 		<name>showwelcome</name>
 		<description>show welcome screen</description>
 		<template>dsp_welcome.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 		<directory></directory>
 		<attributes></attributes>
@@ -19,77 +19,77 @@
 		<name>invoices</name>
 		<description></description>
 		<template>dsp_invoices.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<directory></directory>
 	</item>
 	<item>
 		<name>reseller</name>
 		<description></description>
 		<template>dsp_reseller.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<directory></directory>
 	</item>
 	<item>
 		<name>useradministration</name>
 		<description></description>
 		<template>dsp_useradministration.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<directory></directory>
 	</item>
 	<item>
 		<name>customers</name>
 		<description></description>
 		<template>dsp_customers.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<directory></directory>
 	</item>
 	<item>
 		<name>newcustomer</name>
 		<description></description>
 		<template>dsp_new_customer.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<directory></directory>
 	</item>
 	<item>
 		<name>customerproperties</name>
 		<description></description>
 		<template>dsp_customer_properties.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<directory></directory>
 	</item>
 	<item>
 		<name>searchuser</name>
 		<description></description>
 		<template>dsp_search_user.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<directory></directory>
 	</item>
 	<item>
 		<name>editcustomer</name>
 		<description></description>
 		<template>dsp_edit_customer.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<directory></directory>
 	</item>
 	<item>
 		<name>newaccount</name>
 		<description></description>
 		<template>dsp_new_account.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<directory></directory>
 	</item>
 	<item>
 		<name>showuser</name>
 		<description></description>
 		<template>dsp_show_user.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<directory></directory>
 	</item>
 	<item>
 		<name>resellerproperties</name>
 		<description></description>
 		<template>dsp_reseller_properties.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<directory></directory>
 	</item>
 	<item>

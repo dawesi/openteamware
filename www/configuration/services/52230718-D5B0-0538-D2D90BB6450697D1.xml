@@ -10,7 +10,7 @@
 		<name>showwelcome</name>
 		<description>show welcome screen</description>
 		<template>dsp_welcome.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -20,7 +20,7 @@
 		<name>ShowTasks</name>
 		<description>display tasks</description>
 		<template>dsp_tasks.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -40,7 +40,7 @@
 		<name>ShowTask</name>
 		<description>display task</description>
 		<template>dsp_task.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -60,7 +60,7 @@
 		<name>deletenotice</name>
 		<description>delete notice</description>
 		<template>act_delete_notice.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -70,7 +70,7 @@
 		<name>ShowNotices</name>
 		<description>show notices</description>
 		<template>dsp_show_notices.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>

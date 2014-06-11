@@ -10,70 +10,70 @@
 		<name>showwelcome</name>
 		<description>show welcome screen</description>
 		<template>dsp_welcome.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 	</item>	
 	<item>
 		<name>newprofile</name>
 		<description></description>
 		<template>dsp_new_profile.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 	</item>	
 	<item>
 		<name>newissue</name>
 		<description></description>
 		<template>dsp_new_issue.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 	</item>	
 	<item>
 		<name>editprofile</name>
 		<description></description>
 		<template>dsp_edit_profile.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 	</item>	
 	<item>
 		<name>editissue</name>
 		<description></description>
 		<template>dsp_edit_issue.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 	</item>	
 	<item>
 		<name>approveissue</name>
 		<description></description>
 		<template>dsp_approve_issue.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 	</item>	
 	<item>
 		<name>previewissue</name>
 		<description></description>
 		<template>dsp_preview_issue.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 	</item>
 	<item>
 		<name>editsubscribers</name>
 		<description></description>
 		<template>dsp_edit_subscribers.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 	</item>	
 	<item>
 		<name>NewMailingFromAddressbook</name>
 		<description></description>
 		<template>dsp_new_mailing_from_addressbook.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 	</item>		
 	<item>
 		<name>stat</name>
 		<description></description>
 		<template>dsp_stat.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 	</item>	
 	<item>
@@ -82,7 +82,7 @@
 		<type>action</type>
 		<directory>actions</directory>
 		<template>act_create_mailing_from_addressbook.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 	</item>	
 	<item>
@@ -91,7 +91,7 @@
 		<type>inpage</type>
 		<directory>dialogs</directory>
 		<template>dsp_send_test_mails.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 	</item>	
 	<item>
@@ -100,7 +100,7 @@
 		<type>action</type>
 		<directory>actions</directory>
 		<template>act_calc_number_of_subscribers.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 	</item>
 </actions>

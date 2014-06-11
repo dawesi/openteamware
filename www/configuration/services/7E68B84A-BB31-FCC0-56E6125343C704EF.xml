@@ -10,7 +10,7 @@
 		<name>ShowWelcome</name>
 		<description>show welcome screen</description>
 		<template>dsp_welcome.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -20,7 +20,7 @@
 		<name>Reports</name>
 		<description></description>
 		<template>dsp_reports.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>h
@@ -30,7 +30,7 @@
 		<name>CreateReport</name>
 		<description></description>
 		<template>dsp_create_report.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -40,7 +40,7 @@
 		<name>GenerateReport</name>
 		<description></description>
 		<template>dsp_generate_report.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -50,7 +50,7 @@
 		<name>StartGenerateReport</name>
 		<description></description>
 		<template>dsp_start_generate_report.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -60,7 +60,7 @@
 		<name>ShowReportOutput</name>
 		<description></description>
 		<template>dsp_report_output.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -81,7 +81,7 @@
 		<name>SalesProjects</name>
 		<description></description>
 		<template>dsp_all_sales_projects.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 		<directory>salesprojects</directory>
 		<productkeysincluded></productkeysincluded>
@@ -91,7 +91,7 @@
 		<name>ShowSalesProjectsAssignedToContact</name>
 		<description></description>
 		<template>dsp_customer_sales_projects.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 		<directory>salesprojects</directory>
 		<productkeysincluded></productkeysincluded>
@@ -101,7 +101,7 @@
 		<name>ShowSalesProject</name>
 		<description></description>
 		<template>dsp_sales_project.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 		<directory>salesprojects</directory>
 		<productkeysincluded></productkeysincluded>
@@ -111,7 +111,7 @@
 		<name>Activities</name>
 		<description>2do list</description>
 		<template>dsp_activities.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -130,7 +130,7 @@
 		<name>EditFollowup</name>
 		<description>2do list</description>
 		<template>dsp_edit_followup.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 		<directory>followups</directory>
 		<productkeysincluded></productkeysincluded>
@@ -140,7 +140,7 @@
 		<name>DisplayFollowups</name>
 		<description></description>
 		<template>dsp_follow_ups.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 		<directory>followups</directory>
 		<productkeysincluded></productkeysincluded>
@@ -151,7 +151,7 @@
 		<type>action</type>
 		<description></description>
 		<template>act_delete_followups.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 		<directory>followups/actions</directory>
 		<productkeysincluded></productkeysincluded>
@@ -195,7 +195,7 @@
 		<type>action</type>
 		<description></description>
 		<template>act_dopost_background_action.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>actions</directory>
 		<productkeysincluded></productkeysincluded>
@@ -205,7 +205,7 @@
 		<name>CreateAppointmentWithContact</name>
 		<description></description>
 		<template>dsp_create_appointment_with_contact.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>activities</directory>
 		<productkeysincluded></productkeysincluded>
@@ -215,7 +215,7 @@
 		<name>addProductToContact</name>
 		<description></description>
 		<template>dsp_add_product.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>products</directory>
 		<productkeysincluded></productkeysincluded>
@@ -225,7 +225,7 @@
 		<name>setAvailableQuantity</name>
 		<description></description>
 		<template>dsp_set_available_quantity.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>products</directory>
 		<productkeysincluded></productkeysincluded>
@@ -235,7 +235,7 @@
 		<name>addMultipleProductsToContact</name>
 		<description></description>
 		<template>dsp_add_multiple_products.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>products</directory>
 		<productkeysincluded></productkeysincluded>
@@ -245,7 +245,7 @@
 		<name>showProductsOfContact</name>
 		<description></description>
 		<template>dsp_show_products.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>products</directory>
 		<productkeysincluded></productkeysincluded>
@@ -255,7 +255,7 @@
 		<name>removeProductFromContact</name>
 		<description></description>
 		<template>act_remove_product_from_contact.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>products/actions</directory>
 		<productkeysincluded></productkeysincluded>
@@ -265,7 +265,7 @@
 		<name>doAddMultipleProductsToContact</name>
 		<description></description>
 		<template>act_add_products_to_contact.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>products/actions</directory>
 		<productkeysincluded></productkeysincluded>
@@ -275,7 +275,7 @@
 		<name>doSetAvailableQuantity</name>
 		<description></description>
 		<template>act_set_availablequantity.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>products/actions</directory>
 		<productkeysincluded></productkeysincluded>
@@ -285,7 +285,7 @@
 		<name>LoadFullHistoryItem</name>
 		<type>action</type>
 		<template>act_load_full_history_item.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>history/actions/</directory>
 		<productkeysincluded></productkeysincluded>
@@ -294,7 +294,7 @@
 	<item>
 		<name>ShowEditHistoryItem</name>
 		<template>dsp_edit_history_item.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>history/</directory>
 		<productkeysincluded></productkeysincluded>
@@ -304,7 +304,7 @@
 		<name>DeleteHistoryItem</name>
 		<type>action</type>
 		<template>act_delete_history_item.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>history/actions/</directory>
 		<productkeysincluded></productkeysincluded>
@@ -314,7 +314,7 @@
 		<name>productadmin</name>
 		<description></description>
 		<template>dsp_productadmin.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>products</directory>
 		<productkeysincluded></productkeysincluded>

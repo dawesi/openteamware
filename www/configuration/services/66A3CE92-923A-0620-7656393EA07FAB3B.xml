@@ -10,7 +10,7 @@
 		<name>showwelcome</name>
 		<description>show welcome screen</description>
 		<template>dsp_welcome.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -20,7 +20,7 @@
 		<name>ShowForum</name>
 		<description></description>
 		<template>dsp_show_forum.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -30,7 +30,7 @@
 		<name>ShowThread</name>
 		<description></description>
 		<template>dsp_show_thread.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -40,7 +40,7 @@
 		<name>NewPosting</name>
 		<description></description>
 		<template>dsp_new_posting.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -50,7 +50,7 @@
 		<name>EditPosting</name>
 		<description></description>
 		<template>dsp_edit_posting.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -61,7 +61,7 @@
 		<type>action</type>
 		<description></description>
 		<template>act_dopost_background_action.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>actions</directory>
 		<productkeysincluded></productkeysincluded>

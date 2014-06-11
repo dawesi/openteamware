@@ -10,7 +10,7 @@
 		<name>ShowWelcome</name>
 		<description></description>
 		<template>dsp_welcome.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -20,7 +20,7 @@
 		<name>newproject</name>
 		<description></description>
 		<template>dsp_new_project.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -30,7 +30,7 @@
 		<name>timeline</name>
 		<description></description>
 		<template>dsp_timeline.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -40,7 +40,7 @@
 		<name>ShowProject</name>
 		<description></description>
 		<template>dsp_show_project.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -50,7 +50,7 @@
 		<name>editproject</name>
 		<description></description>
 		<template>dsp_edit_project.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -61,7 +61,7 @@
 		<type>inpage</type>
 		<description></description>
 		<template>dsp_close_project.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 		<directory>dialogs</directory>
 		<productkeysincluded></productkeysincluded>
@@ -72,7 +72,7 @@
 		<type>action</type>
 		<description></description>
 		<template>act_delete_project.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 		<directory>actions</directory>
 		<productkeysincluded></productkeysincluded>

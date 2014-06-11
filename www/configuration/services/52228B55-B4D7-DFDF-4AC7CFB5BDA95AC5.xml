@@ -20,7 +20,7 @@
 		<name>showmailbox</name>
 		<description>compose a new mail</description>
 		<template>dsp_show_mbox.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<attributes></attributes>	
@@ -77,7 +77,7 @@
 		<name>showwelcome</name>
 		<description>compose a new mail</description>
 		<template>dsp_welcome.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -86,7 +86,7 @@
 		<name>editmailbox</name>
 		<description></description>
 		<template>dsp_edit_mailbox.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -95,7 +95,7 @@
 		<name>ViewFolders</name>
 		<description></description>
 		<template>dsp_all_folders.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -104,7 +104,7 @@
 		<name>Filter</name>
 		<description></description>
 		<template>dsp_filter.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -122,7 +122,7 @@
 		<name>CreateFilter</name>
 		<description></description>
 		<template>dsp_create_filter.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -131,7 +131,7 @@
 		<name>editfilter</name>
 		<description></description>
 		<template>dsp_edit_filter.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -140,7 +140,7 @@
 		<name>DeleteMessage</name>
 		<description></description>
 		<template>dsp_delete_message.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -149,7 +149,7 @@
 		<name>EmptyTrash</name>
 		<description></description>
 		<template>act_empty_trash.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -159,7 +159,7 @@
 		<name>ShowSearch</name>
 		<description></description>
 		<template>dsp_search.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -168,7 +168,7 @@
 		<name>AddToSpamList</name>
 		<description></description>
 		<template>dsp_add_spammer.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -177,7 +177,7 @@
 		<name>POP3Check</name>
 		<description></description>
 		<template>dsp_pop3_check.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -186,7 +186,7 @@
 		<name>Alerts</name>
 		<description></description>
 		<template>dsp_alerts.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -195,7 +195,7 @@
 		<name>WirelessAccess</name>
 		<description></description>
 		<template>dsp_wireless.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -214,7 +214,7 @@
 		<name>AutoAnswer</name>
 		<description></description>
 		<template>dsp_auto_answer.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -233,7 +233,7 @@
 		<description></description>
 		<type>inpage</type>
 		<template>dsp_delete_mbox.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -242,7 +242,7 @@
 		<name>Extras</name>
 		<description></description>
 		<template>dsp_extras.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -251,7 +251,7 @@
 		<name>NewFolder</name>
 		<description></description>
 		<template>dsp_newfolder.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -269,7 +269,7 @@
 		<name>logbookexternalaccounts</name>
 		<description></description>
 		<template>dsp_fetchmail_logbook.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -278,7 +278,7 @@
 		<name>DoSearch</name>
 		<description></description>
 		<template>dsp_show_do_search.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<attributes></attributes>	
@@ -298,7 +298,7 @@
 		<name>editshare</name>
 		<description></description>
 		<template>dsp_edit_share.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -307,7 +307,7 @@
 		<name>displayusermailbox</name>
 		<description></description>
 		<template>dsp_usermailbox.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -316,7 +316,7 @@
 		<name>blocksender</name>
 		<description></description>
 		<template>dsp_block_sender.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -325,7 +325,7 @@
 		<name>blocksender</name>
 		<description></description>
 		<template>dsp_block_sender.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -335,7 +335,7 @@
 		<type>action</type>
 		<description></description>
 		<template>act_autosave_mail_data.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>actions</directory>
 		<productkeysincluded></productkeysincluded>
@@ -345,7 +345,7 @@
 		<type>action</type>
 		<description></description>
 		<template>act_dopost_background_action.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>actions</directory>
 		<productkeysincluded></productkeysincluded>
@@ -356,7 +356,7 @@
 		<type>action</type>
 		<description></description>
 		<template>act_load_attachment.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>actions</directory>
 		<productkeysincluded></productkeysincluded>
@@ -367,7 +367,7 @@
 		<type>inpage</type>
 		<description></description>
 		<template>dsp_inc_bottom_info.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>dialogs</directory>
 		<productkeysincluded></productkeysincluded>
@@ -378,7 +378,7 @@
 		<type>inpage</type>
 		<description></description>
 		<template>act_check_sendmail_operation.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>actions</directory>
 		<productkeysincluded></productkeysincluded>
@@ -389,7 +389,7 @@
 		<type>inpage</type>
 		<description></description>
 		<template>dsp_show_select_text_blocks.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>dialogs</directory>
 		<productkeysincluded></productkeysincluded>
@@ -400,7 +400,7 @@
 		<type>inpage</type>
 		<description></description>
 		<template>dsp_add_attachment.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>dialogs</directory>
 		<productkeysincluded></productkeysincluded>
@@ -411,7 +411,7 @@
 		<type>inpage</type>
 		<description></description>
 		<template>dsp_add_mail_to_crm_history.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>dialogs</directory>
 		<productkeysincluded></productkeysincluded>
@@ -422,7 +422,7 @@
 		<type>action</type>
 		<description></description>
 		<template>act_empty_folder.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>actions</directory>
 		<productkeysincluded></productkeysincluded>
@@ -433,7 +433,7 @@
 		<type>action</type>
 		<description></description>
 		<template>act_add_domain_to_exceptions_for_image_display.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>actions</directory>
 		<productkeysincluded></productkeysincluded>
@@ -454,7 +454,7 @@
 		<type>action</type>
 		<description></description>
 		<template>act_move_message.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>actions</directory>
 		<productkeysincluded></productkeysincluded>
@@ -465,7 +465,7 @@
 		<type>action</type>
 		<description></description>
 		<template>act_goto_msg_by_messageid.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>actions</directory>
 		<productkeysincluded></productkeysincluded>

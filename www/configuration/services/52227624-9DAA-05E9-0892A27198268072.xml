@@ -11,7 +11,7 @@
 		<name>showwelcome</name>
 		<description>show welcome screen</description>
 		<template>dsp_welcome.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -21,7 +21,7 @@
 		<name>AddContactsToMailinglist</name>
 		<description></description>
 		<template>dsp_add_contacts_to_mailinglist.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -31,7 +31,7 @@
 		<name>AddContactsToNewsletter</name>
 		<description></description>
 		<template>dsp_add_to_newsletter.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -41,7 +41,7 @@
 		<name>ShowItem</name>
 		<description>display contact/account/lead ...</description>
 		<template>dsp_show_item.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -51,7 +51,7 @@
 		<name>MailingLists</name>
 		<description>mailinglists overview</description>
 		<template>dsp_mailinglists.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -61,7 +61,7 @@
 		<name>WirelessAccess</name>
 		<description>wireless access</description>
 		<template>dsp_wireless.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -91,7 +91,7 @@
 		<name>editcontact</name>
 		<description></description>
 		<template>dsp_edit_contact.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -101,7 +101,7 @@
 		<name>EditItem</name>
 		<description></description>
 		<template>dsp_edit_item.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -111,7 +111,7 @@
 		<name>CreateNewContact</name>
 		<description></description>
 		<template>dsp_create_new_contact.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -121,7 +121,7 @@
 		<name>CreateNewItem</name>
 		<description></description>
 		<template>dsp_create_new_item.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -132,7 +132,7 @@
 		<type>action</type>
 		<description></description>
 		<template>act_create_item.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>actions</directory>
 		<productkeysincluded></productkeysincluded>
@@ -143,7 +143,7 @@
 		<type>action</type>
 		<description></description>
 		<template>act_update_item.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>actions</directory>
 		<productkeysincluded></productkeysincluded>
@@ -153,7 +153,7 @@
 		<name>deletecontacts</name>
 		<description></description>
 		<template>dsp_delete_contacts.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -163,7 +163,7 @@
 		<name>remoteedit</name>
 		<description></description>
 		<template>dsp_remote_edit.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -173,7 +173,7 @@
 		<name>remoteeditstatus</name>
 		<description></description>
 		<template>dsp_remote_edit_status.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -183,7 +183,7 @@
 		<name>birthdaylist</name>
 		<description></description>
 		<template>dsp_birthday_list.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -193,7 +193,7 @@
 		<name>forward</name>
 		<description></description>
 		<template>dsp_show_forward.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -203,7 +203,7 @@
 		<name>confirmforward</name>
 		<description></description>
 		<template>forward/dsp_confirm_forward.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -213,7 +213,7 @@
 		<name>telephonelist</name>
 		<description></description>
 		<template>dsp_telephonelist.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -223,7 +223,7 @@
 		<name>advancedsearch</name>
 		<description></description>
 		<template>dsp_search.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -233,7 +233,7 @@
 		<name>exportcontacts</name>
 		<description></description>
 		<template>dsp_export_contacts.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -243,7 +243,7 @@
 		<name>owncontactcard</name>
 		<description></description>
 		<template>dsp_own_contact_card.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -254,7 +254,7 @@
 		<type>inpage</type>
 		<description></description>
 		<template>dsp_activate_re_inpage.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>dialogs</directory>
 		<productkeysincluded></productkeysincluded>
@@ -265,7 +265,7 @@
 		<type>action</type>
 		<description></description>
 		<template>act_dopost_background_action.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>actions</directory>
 		<productkeysincluded></productkeysincluded>
@@ -276,7 +276,7 @@
 		<type>inpage</type>
 		<description></description>
 		<template>dsp_show_call_dialog.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>dialogs</directory>
 		<productkeysincluded></productkeysincluded>
@@ -287,7 +287,7 @@
 		<type>inpage</type>
 		<description></description>
 		<template>dsp_show_email_dialog.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>dialogs</directory>
 		<productkeysincluded></productkeysincluded>
@@ -298,7 +298,7 @@
 		<type>inpage</type>
 		<description></description>
 		<template>dsp_show_address_options_dialog.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>dialogs</directory>
 		<productkeysincluded></productkeysincluded>
@@ -309,7 +309,7 @@
 		<type>action</type>
 		<description></description>
 		<template>dsp_show_google_maps.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>dialogs</directory>
 		<productkeysincluded></productkeysincluded>
@@ -320,7 +320,7 @@
 		<type>action</type>
 		<description></description>
 		<template>act_do_add_filter_search_criteria.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>actions</directory>
 		<productkeysincluded></productkeysincluded>
@@ -331,7 +331,7 @@
 		<type>action</type>
 		<description></description>
 		<template>act_delete_filter_criteria.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>actions</directory>
 		<productkeysincluded></productkeysincluded>
@@ -342,7 +342,7 @@
 		<type>action</type>
 		<description></description>
 		<template>act_delete_crm_filter.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>filter</directory>
 		<productkeysincluded></productkeysincluded>
@@ -353,7 +353,7 @@
 		<type>inpage</type>
 		<description></description>
 		<template>dsp_short_contact_information.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>dialogs</directory>
 		<productkeysincluded></productkeysincluded>
@@ -364,7 +364,7 @@
 		<type>action</type>
 		<description></description>
 		<template>act_forward_contacts.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>actions</directory>
 		<productkeysincluded></productkeysincluded>
@@ -375,7 +375,7 @@
 		<type>action</type>
 		<description></description>
 		<template>act_multi_select_action.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>actions</directory>
 		<productkeysincluded></productkeysincluded>
@@ -386,7 +386,7 @@
 		<type></type>
 		<description></description>
 		<template>dsp_mass_actions.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -397,7 +397,7 @@
 		<type>action</type>
 		<description></description>
 		<template>act_exec_mass_update.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>actions</directory>
 		<productkeysincluded></productkeysincluded>
@@ -408,7 +408,7 @@
 		<type>inpage</type>
 		<description></description>
 		<template>dsp_add_filter_criteria.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>dialogs</directory>
 		<productkeysincluded></productkeysincluded>
@@ -419,7 +419,7 @@
 		<type>inpage</type>
 		<description></description>
 		<template>dsp_show_top_search_filter_panel.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>crm</directory>
 		<productkeysincluded></productkeysincluded>
@@ -430,7 +430,7 @@
 		<type></type>
 		<description></description>
 		<template>dsp_import_vcard.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>vcard</directory>
 		<productkeysincluded></productkeysincluded>
@@ -441,7 +441,7 @@
 		<type></type>
 		<description></description>
 		<template>dsp_organigramm.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -452,7 +452,7 @@
 		<type>action</type>
 		<description></description>
 		<template>act_save_filter_criterias.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>filter</directory>
 		<productkeysincluded></productkeysincluded>
@@ -463,7 +463,7 @@
 		<type>action</type>
 		<description></description>
 		<template>act_add_filter_criteria.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>filter</directory>
 		<productkeysincluded></productkeysincluded>
@@ -474,7 +474,7 @@
 		<type>inpage</type>
 		<description></description>
 		<template>dsp_inc_display_saved_filters_on_top.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>filter</directory>
 		<productkeysincluded></productkeysincluded>
@@ -485,7 +485,7 @@
 		<type>inpage</type>
 		<description></description>
 		<template>dsp_set_photo_for_contact.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>dialogs</directory>
 		<productkeysincluded></productkeysincluded>
@@ -496,7 +496,7 @@
 		<type>action</type>
 		<description></description>
 		<template>act_upload_photo_for_contact.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>actions</directory>
 		<productkeysincluded></productkeysincluded>
@@ -507,7 +507,7 @@
 		<type>action</type>
 		<description></description>
 		<template>act_show_contact_photo.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>1</setservice>
 		<directory>actions</directory>
 		<productkeysincluded></productkeysincluded>

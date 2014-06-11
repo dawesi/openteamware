@@ -10,7 +10,7 @@
 		<name>ShowWelcome</name>
 		<description>show welcome screen</description>
 		<template>dsp_welcome.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -20,7 +20,7 @@
 		<name>ImportData</name>
 		<description>import data screen</description>
 		<template>dsp_import_data.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -30,7 +30,7 @@
 		<name>DoImportData</name>
 		<description>import data action</description>
 		<template>act_do_import.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 		<directory>actions</directory>
 		<productkeysincluded></productkeysincluded>
@@ -40,7 +40,7 @@
 		<name>UploadFile</name>
 		<description>upload data screen</description>
 		<template>dsp_upload_file.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -50,7 +50,7 @@
 		<name>DoUploadFile</name>
 		<description>upload action template</description>
 		<template>act_upload_file.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 		<directory>actions</directory>
 		<productkeysincluded></productkeysincluded>
@@ -60,7 +60,7 @@
 		<name>FieldMappings</name>
 		<description>field mappings screen</description>
 		<template>dsp_field_mappings.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -70,7 +70,7 @@
 		<name>DoCreateMapping</name>
 		<description>field mappings action template</description>
 		<template>act_create_mapping.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 		<directory>actions</directory>
 		<productkeysincluded></productkeysincluded>
@@ -80,7 +80,7 @@
 		<name>PreviewData</name>
 		<description>prieview import screen</description>
 		<template>dsp_preview_data.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>
@@ -90,7 +90,7 @@
 		<name>ShowResult</name>
 		<description>result of import process</description>
 		<template>dsp_show_result.cfm</template>
-		<checkframeset>1</checkframeset>
+		
 		<setservice>0</setservice>
 		<directory></directory>
 		<productkeysincluded></productkeysincluded>

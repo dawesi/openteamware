@@ -861,17 +861,6 @@
 		<!--- get workgroup names in a structure (for a MUCH FASTER lookup) ... --->
 		<cfset stReturn.a_struct_workgroups = GetSimpleStructOfWorkgroups(q_select_security = stReturn.q_select_workgroup_permissions) />
 		
-		<!--- <cfset stReturn.a_struct_workgroups_shortnames = GetSimpleStructOfWorkgroupsShortNames(q_select_security = stReturn.q_select_workgroup_permissions) />
-		 --->
-		<!--- load mail access data ... --->
-		<cfset stReturn.a_struct_imap_access_data = application.components.cmp_email_accounts.GetIMAPAccessdata(userkey = arguments.userkey) />
-		
-		<!--- load address data ... --->
-		<cfset stReturn.q_select_all_email_addresses = application.components.cmp_email_accounts.GetEmailAccounts(userkey = arguments.userkey) />
-		
-		<!--- multiple identities? ... --->
-		<cfset stReturn.isuserswitchenabled = (LoadSwitchUsersData(userkey = arguments.userkey).recordcount GT 0) />
-		
 		<!--- logging enabled? .... --->
 		<cfset stReturn.logging_enabled = false />
 		

@@ -30,34 +30,10 @@
 
 <cfset q_select_sso_settings = application.components.cmp_security.LoadSwitchUsersData(userkey = request.stSecurityContext.myuserkey) />
 
-<!--- allow user switch if enabled ... --->
-<cfif request.stSecurityContext.isuserswitchenabled>
-	
-	<!--- write "sso" box --->
-	<cfsavecontent variable="a_str_btn">
-		<cfoutput>
-		<input onClick="GotoLocHref('/settings/index.cfm?Action=ManageSSO');" type="button" class="btn btn-primary" value="Manage SSO Preferences" />
-		</cfoutput>
-	</cfsavecontent>
-	
-	<cfset a_str_content = application.components.cmp_content.DisplayUserSwitchDialog(securitycontext = request.stSecurityContext) />
-
-	<cfoutput>#WriteNewContentBox('Single Sign On', a_str_btn, a_str_content)#</cfoutput>
-
-</cfif>
 
 <!--- build list of company news to load ... --->
 <cfset a_str_companies_check_companynews = request.stSecurityContext.mycompanykey />
 <cfset a_str_startpage_content = '' />
-
-<cfif request.stSecurityContext.isuserswitchenabled>
-	<cfloop query="q_select_sso_settings">
-		<!--- if company is not yet in the list, add it now ... --->
-		<cfif ListFindNoCase(a_str_companies_check_companynews, application.components.cmp_user.GetCompanyKeyOfuser(userkey = q_select_sso_settings.otheruserkey)) IS 0>
-			<cfset a_str_companies_check_companynews = ListAppend(a_str_companies_check_companynews, application.components.cmp_user.GetCompanyKeyOfuser(userkey = q_select_sso_settings.otheruserkey))>
-		</cfif>
-	</cfloop>
-</cfif>
 
 <!--- generate startpage content ... --->
 <cfsavecontent variable="a_str_startpage_companynews">
@@ -83,31 +59,7 @@
 
 <!--- today outlook --->
 <cfsavecontent variable="a_str_today">
-<table border="0" cellspacing="0" cellpadding="4" width="100%">
-  <tr>
-    <td width="50%" valign="top">
-		
-		<!--- email --->
-		<cfif request.stSecurityContext.A_STRUCT_IMAP_ACCESS_DATA.enabled>
-			<cfinclude template="../../../email/dsp_outlook_default.cfm">
-		<cfelse>
-			<!--- <cfoutput>
-			<div class="status">
-			<b>Finish the setup</b>
-			<br />
-			<a href="/settings/?action=AddemailAccount">Click here to add your email account</a>
-			</div>
-			</cfoutput> --->
-		</cfif>
-
-	</td>
-    <td width="50%" valign="top">
-	
-		<cfinclude template="../../../calendar/dsp_outlook_default.cfm">
-		
-	</td>
-  </tr>
-</table>
+	<cfinclude template="../../../calendar/dsp_outlook_default.cfm">
 </cfsavecontent>
 
 <cfsavecontent variable="a_str_btn">

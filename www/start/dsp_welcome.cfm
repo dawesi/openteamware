@@ -59,7 +59,7 @@
 
 <!--- today outlook --->
 <cfsavecontent variable="a_str_today">
-	<cfinclude template="../../../calendar/dsp_outlook_default.cfm">
+	<cfinclude template="../calendar/dsp_outlook_default.cfm">
 </cfsavecontent>
 
 <cfsavecontent variable="a_str_btn">
@@ -73,7 +73,7 @@
 <!--- write "today" box --->
 <cfoutput>#WriteNewContentBox(GetLangVal('cm_wd_today') & ' (' & LsDateFormat(now(), 'dddd, ' & request.stUserSettings.DEFAULT_DATEFORMAT) & ')', a_str_btn, a_str_today)#</cfoutput>
 
-	<cfinclude template="/crm/dsp_outlook_default.cfm">
+	<cfinclude template="../crm/dsp_outlook_default.cfm">
 
 <!--- <cfinclude template="dsp_inc_startpage_welcome_current_items.cfm"> --->
 

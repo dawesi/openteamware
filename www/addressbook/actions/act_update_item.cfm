@@ -77,9 +77,4 @@
 
 </cfloop>
 
-<!--- remove open re jobs ... --->
-<cfinvoke component="#application.components.cmp_addressbook#" method="DeleteRemoteEditJob" returnvariable="a_bol_return">
-	<cfinvokeargument name="entrykey" value="#form.frmentrykey#">
-</cfinvoke>
-
 <cflocation addtoken="false" url="index.cfm?action=ShowItem&entrykey=#form.frmentrykey#">

@@ -252,37 +252,6 @@
 		</cfquery>
 			
 		<table class="table_details">
-		
-		<cfif q_select_not_approved_issues.recordcount GT 0>
-		<tr>
-			<td class="field_name">
-				<cfoutput>#si_img('page_save')#</cfoutput>
-			</td>
-			<td style="font-weight:bold;">
-				<a href="/mailing/"><cfoutput>#GetLangVal('nl_ph_waiting_jobs')# (#q_select_not_approved_issues.recordcount#)</cfoutput></a>
-			</td>
-		</tr>
-		<tr>
-			<td class="field_name"></td>
-			<td>
-			
-				<table class="table_simple">
-				<cfoutput query="q_select_not_approved_issues">
-				<tr>
-					<td>
-						#si_img('bullet_orange')# <a href="/mailing/">#htmleditformat(q_select_not_approved_issues.subject)# (#htmleditformat(q_select_not_approved_issues.description)#), #htmleditformat(q_select_not_approved_issues.profile_name)#</a>
-					</td>
-					<td class="addinfotext" style="text-align:right;">
-						#FormatDateTimeAccordingToUserSettings(q_select_not_approved_issues.dt_send)#<img src="/images/space_1_1.gif" class="si_img" />
-					</td>
-				</tr>
-				</cfoutput>
-				</table>
-			
-			</td>
-		</tr>
-		</cfif>
-		
 		<cfif q_select_sales_projects.recordcount GT 0>
 		<tr>
 			<td class="field_name">

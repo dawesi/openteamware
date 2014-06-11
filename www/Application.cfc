@@ -1,7 +1,4 @@
-<!--- //
-	Basic application for otw
-// --->
-<cfcomponent output="false" hint="Application ...">
+<cfcomponent output="false" extends="framework">
 
 <!--- generate unique app name --->
 <cfset variables.sAppName = "app_otw_" & ReplaceNoCase(ReplaceNoCase( ListFirst( cgi.HTTP_HOST, ':') , ".", "", "ALL"), ':', '', 'ALL') />

@@ -231,7 +231,7 @@
 		<!--- create the config? --->
 		<cfargument name="createconfig" type="boolean" default="true" required="false">
 		
-		<cfset 0 />
+		
 		<cfset var DeleteForwardingRequest = StructNew() />
 		
 		<!--- delete old entry and insert new one ... --->

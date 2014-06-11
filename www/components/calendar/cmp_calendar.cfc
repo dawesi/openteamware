@@ -172,7 +172,7 @@
 		<cfset var q_select_event_raw = 0 />
 		<cfset var stReturn_rights = 0 />
 		<cfset var a_str_title = "" />
-		<cfset 0 />
+		
 		<cfset var a_bol_return_save_deleted = 0 />
 		
 		<!--- check if we can now really delete the task ... --->
@@ -496,7 +496,7 @@
 		<cfset var stReturn = GenerateReturnStruct() />
         <cfset var q_insert_attendee = 0 />
 		<cfset var stCRMFilter = 0 />
-		<cfset 0 />
+		
 		<cfset var stReturn_search_contact = 0 />
 		
 		<cfset stReturn.a_bol_new = false />
@@ -565,7 +565,7 @@
 		<cfargument name="usersettings" type="struct" required="yes">
 		
 		<cfset var stReturn = GenerateReturnStruct() />
-		<cfset 0 />
+		
 		<cfset var q_delete_attendee = 0 />
 
 		<cfinclude template="queries/q_delete_attendee.cfm">

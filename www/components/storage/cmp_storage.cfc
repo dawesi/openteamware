@@ -1135,7 +1135,7 @@
 		<cfargument name="entrykey" type="string" required="true">
 
 		<cfset var SelectDirectoryRequest = StructNew() />
-		<cfset 0 />
+		
 		
 		<cfif not checkaccess( securitycontext = arguments.securitycontext,
 			usersettings = arguments.usersettings,
@@ -1678,7 +1678,7 @@
 		<cfargument name="query" type="query" required="true" hint="Query holding all found directories">
 		<cfargument name="query_to_add" type="query" required="true" hint="query holding the data to add to the main query">
 		
-		<cfset 0 />
+		
 		<cfset var a_int_current_recordcount = arguments.query.recordcount />
 		<cfset var ii = 0 />
 		<cfset var a_str_col_name = '' />

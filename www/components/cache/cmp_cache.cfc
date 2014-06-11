@@ -144,7 +144,7 @@
 		
 		<cfset var a_struct_expired = 0 />
 		<cfset var a_str_item = '' />
-		<cfset 0 />
+		
 		
 		<cflog application="false" file="ib_cache" log="Application" text="Starting cache cleanup">
 		

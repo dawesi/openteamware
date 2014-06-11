@@ -144,7 +144,7 @@
 		<cfset var a_struct_do_action = StructNew() />
 		<cfset var sEntrykey = CreateUUID() />
 		<cfset var a_update_item = 0 />
-		<cfset 0 />
+		
 		
 		<cfif arguments.action_type IS 'create'>
 		

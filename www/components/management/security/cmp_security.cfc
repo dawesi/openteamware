@@ -661,7 +661,7 @@
 			hint="entrykey of the service">
 		<cfargument name="securitycontext" type="struct" required="true">
 		
-		<cfset 0 />
+		
 		<cfset var q_select_wg_shares = GetWorkgroupSharesForObject(securitycontext = arguments.securitycontext,
 													servicekey = arguments.servicekey,
 													entrykey = arguments.entrykey) />
@@ -776,7 +776,7 @@
 		<cfargument name="entrykey" type="string" required="true">
 		
 		<cfset var q_select_shares = 0 />
-		<cfset 0 />
+		
 		<cfset var q_select_task_shares = 0 />
 		
 		<cfif arguments.securitycontext.q_select_workgroup_permissions.recordcount IS 0>

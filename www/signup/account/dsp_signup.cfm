@@ -561,11 +561,6 @@
 		<span class="reg_req">*</span> = <cfoutput>#GetLangVal('snp_ph_required_field')#</cfoutput>
 	</td>
   </tr>
-  <!---<cfif CompareNoCase('08157A5F-A19B-29A3-9E95FB9C0442E545', request.appsettings.default_stylesheet) IS 0>
-  <tr>
-  	<td class="bt" colspan="2" background="/images/homepage/img_homepage_footer_900x120.jpg" width="900" height="120" style="padding:0px; ">&nbsp;</td>
-  </tr>
-  </cfif>--->
 </table>
 </form>
 

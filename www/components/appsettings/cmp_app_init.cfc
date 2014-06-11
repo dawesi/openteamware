@@ -31,18 +31,12 @@
 			<cfset application.components.cmp_followups = CreateObject("component", request.a_str_component_followups) />
 			
 			<cfset application.components.cmp_load_user_data = CreateObject("component", "/components/management/users/cmp_load_userdata") />
-			
-			<cfset application.components.cmp_fckeditor = CreateObject('component', request.a_str_component_fckeditor) />
-			
+						
 			<cfset application.components.cmp_session = CreateObject('component', request.a_str_component_session) />
 			
 			<cfset application.components.cmp_licence = CreateObject('component', request.a_str_component_licence) />
 			
 			<cfset application.components.cmp_email = CreateObject('component', request.a_str_component_email) />
-			
-			<cfset application.components.cmp_email_tools = CreateObject('component', '/components/email/cmp_tools') />
-									
-			<cfset application.components.cmp_email_accounts = CreateObject('component', request.a_str_component_email_accounts) />
 			
 			<cfset application.components.cmp_email_mailconnector = CreateObject('component', request.a_str_component_mailconnector) />
 			

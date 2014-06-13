@@ -32,30 +32,7 @@
 
 
 <!--- build list of company news to load ... --->
-<cfset a_str_companies_check_companynews = request.stSecurityContext.mycompanykey />
 <cfset a_str_startpage_content = '' />
-
-<!--- generate startpage content ... --->
-<cfsavecontent variable="a_str_startpage_companynews">
-	<cfloop list="#a_str_companies_check_companynews#" index="a_str_companykey">
-
-		<cfset a_str_custom_startpage_content = application.components.cmp_content.GetCompanyCustomElement(companykey = a_str_companykey,
-																							elementname = 'startpage') />
-
-		<cfif Len(a_str_custom_startpage_content)>
-			
-			<cfset a_str_custom_startpage_content = '<div style="padding:6px;"><i>' & htmleditformat(application.components.cmp_customer.GetCustomerNameByEntrykey(entrykey = a_str_companykey)) & '</i><br/>' & a_str_custom_startpage_content & '</div>' />
-			
-			<cfset a_str_startpage_content = a_str_startpage_content & a_str_custom_startpage_content />
-		
-		</cfif>
-		
-	</cfloop>
-</cfsavecontent>
-
-<cfif Len(a_str_startpage_content) GT 0>
-	<cfoutput>#WriteNewContentBox(GetLangVal('adm_ph_nav_companynews'), '', a_str_startpage_content)#</cfoutput>	
-</cfif>
 
 <!--- today outlook --->
 <cfsavecontent variable="a_str_today">
@@ -71,9 +48,7 @@
 </cfsavecontent>
 
 <!--- write "today" box --->
-<cfoutput>#WriteNewContentBox(GetLangVal('cm_wd_today') & ' (' & LsDateFormat(now(), 'dddd, ' & request.stUserSettings.DEFAULT_DATEFORMAT) & ')', a_str_btn, a_str_today)#</cfoutput>
+<h2><cfoutput>#GetLangVal('cm_wd_today')# (#LsDateFormat(now(), 'dddd, ' & request.stUserSettings.DEFAULT_DATEFORMAT)#)</cfoutput></h2>
+<cfoutput>#WriteNewContentBox('', a_str_btn, a_str_today)#</cfoutput>
 
-	<cfinclude template="../crm/dsp_outlook_default.cfm">
-
-<!--- <cfinclude template="dsp_inc_startpage_welcome_current_items.cfm"> --->
-
+<cfinclude template="../crm/dsp_outlook_default.cfm">

@@ -2,7 +2,7 @@
 
 	Module:		Framework
 	Description:The login form
-	
+
 // --->
 
 <cfif StructKeyExists(request, 'stSecurityContext')>
@@ -26,21 +26,21 @@
 <head>
 
 	<link rel="stylesheet" media="all" type="text/css" href="/assets/css/default.css">
-	<link rel="stylesheet" media="print" type="text/css" href="/assets/css/print.css">		
-	
+	<link rel="stylesheet" media="print" type="text/css" href="/assets/css/print.css">
+
 	<title><cfoutput>#htmleditformat(request.appsettings.description)# #GetLangVal('lg_ph_title')#</cfoutput></title>
 
 	<cfinclude template="/common/js/inc_js.cfm">
-	
+
 	<link rel="shortcut icon" href="/images/si/server_key.png" type="image/png" />
-	
+
 	<script type="text/javascript">
 	var a_str_img = "/images/status/img_circle_loading.gif";
 	image1 = new Image();
 	image1.src = a_str_img;
 	a_str_loading_status_img_login = '<img src="' + a_str_img + ' " />';
 	</script>
-	
+
 	<style type="text/css" media="all">
 		body {
 			background-color:rgb(87, 87, 87) !important;
@@ -62,7 +62,7 @@
 <cfset a_str_product_name = application.components.cmp_customize.GetCustomStyleDataWithoutUsersettings(style = request.appsettings.default_stylesheet, entryname = 'main').productname />
 
 
-	
+
 
 <form action="act_login.cfm" method="post" onsubmit="$('#id_login_img').append(a_str_loading_status_img_login);$('#frmlogin').hide();" name="formlogin" style="margin:0px;">
 <input type="hidden" name="frmdomain" value="<cfoutput>#request.appsettings.properties.defaultdomain#</cfoutput>">
@@ -74,33 +74,33 @@
 
 
 <cfsavecontent variable="a_str_content">
-	
+
 	<div style="text-align:left;background-position:right bottom;background-color:rgba(255,255,255,0.95);background-repeat:no-repeat;border-radius: 8px;box-shadow:rgba(255, 255, 255, 0.317647) 0px 5px 400px 0px;">
-		
+
 		<table border="0" cellpadding="14" cellspacing="0" width="580">
 		<tr>
 			<td class="bb">
 
 				<div style="float:right;width:auto;padding-top:12px">
 				<a href="/rd/signup/?source=loginbox" style="font-weight:bold"><cfoutput>#GetLangVal('lg_ph_no_account_yet')#</cfoutput></a>
-				</div>				
+				</div>
 
 				<a href="/" class="nl"><img alt="<cfoutput>#GetLangVal('lg_ph_goto_homepage')#</cfoutput>" src="<cfoutput>#a_struct_medium_logo.path#</cfoutput>" width="<cfoutput>#a_struct_medium_logo.width#</cfoutput>" height="<cfoutput>#a_struct_medium_logo.height#</cfoutput>" hspace="12" vspace="12" border="0" align="absmiddle"></a>
 			</td>
 		</tr>
 			<tr>
 			<td valign="top">
-			
-			
+
+
 				<div class="" style="margin-top:14px;">
-				
-								
-				
-				
+
+
+
+
 				<table class="table_details table_edit_form" style="margin-left:20px">
 					<tr>
 						<td>
-							<cfoutput>#GetLangVal('lg_ph_please_enter_your_data')#</cfoutput> 
+							<cfoutput>#GetLangVal('lg_ph_please_enter_your_data')#</cfoutput>
 						</td>
 					</tr>
 					 <cfif url.loginfailed>
@@ -109,7 +109,7 @@
 								<div class="status">
 								<cfoutput>#GetLangVal('lg_ph_login_failed_please_try_again_or_subscribe')#</cfoutput>
 								</div>
-							</td>	
+							</td>
 						</tr>
 					 </cfif>
 					<tr>
@@ -117,26 +117,26 @@
 							<div style="padding-bottom:8px;">
 							<b><cfoutput>#GetLangVal("cm_wd_username")#</cfoutput></b>
 							</div>
-							
+
 							<cfif StructKeyExists(client, 'LastLoginUsername') and Len(Client.LastLoginUsername) GT 0>
 		                		<!--- // show last used username // --->
 		                		<input type="hidden" name="frmUsername" value="<cfoutput>#htmleditformat(client.LastLoginUsername)#</cfoutput>" />
 		               			<b><cfoutput>#htmleditformat(client.LastLoginUsername)#</cfoutput></b>
-								<br /> 
+								<br />
 		                		<a href="index.cfm?url=<cfoutput>#urlencodedformat(url.url)#</cfoutput>&resetloginusername=1"><cfoutput>#GetLangVal("lg_changeuser")#</cfoutput> ...</a>
 		                	<cfelse>
 								<input style="font-weight:bold;width:250px;" type="text" name="frmusername" size="35" maxlength="100" />
 							</cfif>
-							
+
 						</td>
 					</tr>
-					
+
 					<tr>
 						<td>
 							<div style="padding-bottom:8px;">
 							<b><cfoutput>#GetLangVal("cm_wd_password")#</cfoutput></b>
 							</div>
-							
+
 							<input style="font-weight:bold;width:250px;" type="password" size="35" maxlength="100" name="frmpassword" />
 						</td>
 					</tr>
@@ -146,27 +146,26 @@
 						</td>
 					</tr>
 				</table>
-			
+
 				</div>
-				
-							
+
+
 			</td>
 		</tr>
 		<tr>
 			<td class="bt">
-				
-				<cfif cgi.SERVER_PORT NEQ "443">
+
+				<!--- <cfif cgi.SERVER_PORT NEQ "443">
 				  	<a href="https://<cfoutput>#cgi.HTTP_HOST##cgi.SCRIPT_NAME#?#cgi.QUERY_STRING#</cfoutput>"><cfoutput>#GetLangVal("start_ph_change_secure")#</cfoutput></a>
 				  	/
-				</cfif>
-				
-				
+				</cfif> --->
+
 				<a href="https://github.com/funkymusic/openteamware">&copy; 2014 otw</a>
 			</td>
 		</tr>
 		</table>
 	</div>
-	
+
 </cfsavecontent>
 
 
@@ -174,12 +173,12 @@
 <table style="width:100%;height:70%;" border="0" cellpadding="0" cellspacing="0">
 	<tr>
 		<td valign="middle" align="center">
-		
+
 		<div style="width:600px;">
-		
+
 			<cfoutput>#a_str_content#</cfoutput>
 		</div>
-		
+
 
 		</td>
 

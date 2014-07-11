@@ -188,7 +188,7 @@
 		#byteconvert(val(q_select_mailbox.asize))#
 	</td>
 	<td>
-		<a  href="act_delete_message.cfm?id=#q_select_mailbox.id#&mailbox=#urlencodedformat(q_select_mailbox.foldername)#&mbox_md5=#a_str_mbox_query_md5#&redirect=">#si_img('delete')#</a>
+		<a  href="act_delete_message.cfm?id=#q_select_mailbox.id#&mailbox=#urlencodedformat(q_select_mailbox.foldername)#&mbox_md5=#a_str_mbox_query_md5#&redirect="><span class="glyphicon glyphicon-trashÓ></span></a>
 	</td>
   </tr>
   </cfoutput>

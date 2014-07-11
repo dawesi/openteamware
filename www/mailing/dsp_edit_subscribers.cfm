@@ -72,7 +72,7 @@
 			</td>
 		</cfif>
 		<td align="center">
-			<a onClick="return confirm('#GetLangValJS('cm_ph_are_you_sure')#');" href="act_delete_subscriber.cfm?listkey=#url.listkey#&listtype=2&contactkey=#q_select_subscribers.entrykey#">#si_img('delete')#</a>
+			<a onClick="return confirm('#GetLangValJS('cm_ph_are_you_sure')#');" href="act_delete_subscriber.cfm?listkey=#url.listkey#&listtype=2&contactkey=#q_select_subscribers.entrykey#"><span class="glyphicon glyphicon-trashÓ></span></a>
 		</td>
 	  </tr>
 	  </cfoutput>

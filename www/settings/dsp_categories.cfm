@@ -18,7 +18,7 @@
 <ul class="img_points">
 <cfloop list="#a_str_categories#" index="a_str_category" delimiters=",">
 <cfoutput>
-	<li>#htmleditformat(a_str_category)# <a href="javascript:deletecategory('#jsstringformat(a_str_category)#');">#si_img('delete')#</a></li>
+	<li>#htmleditformat(a_str_category)# <a href="javascript:deletecategory('#jsstringformat(a_str_category)#');"><span class="glyphicon glyphicon-trashÓ></span></a></li>
 </cfoutput>
 
 </cfloop>

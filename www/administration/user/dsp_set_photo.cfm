@@ -33,7 +33,7 @@
   <tr>
   	<td>&nbsp;</td>
 	<td>
-	<a onClick="return confirm('<cfoutput>#GetLangVal('cm_ph_are_you_sure')#</cfoutput>');" href="user/act_remove_photo.cfm?entrykey=<cfoutput>#url.entrykey#</cfoutput>&type=0"><cfoutput>#si_img('delete')# #GetLangVal('cm_wd_delete')#</cfoutput></a>
+	<a onClick="return confirm('<cfoutput>#GetLangVal('cm_ph_are_you_sure')#</cfoutput>');" href="user/act_remove_photo.cfm?entrykey=<cfoutput>#url.entrykey#</cfoutput>&type=0"><cfoutput><span class="glyphicon glyphicon-trashÓ></span> #GetLangVal('cm_wd_delete')#</cfoutput></a>
 	<br>
 	<img src="/tools/img/show_small_userphoto.cfm?entrykey=<cfoutput>#urlencodedformat(url.entrykey)#</cfoutput>">
 	</td>
@@ -67,7 +67,7 @@
   <tr>
   	<td>&nbsp;</td>
 	<td>
-	<a onClick="return confirm('<cfoutput>#GetLangVal('cm_ph_are_you_sure')#</cfoutput>');" href="user/act_remove_photo.cfm?entrykey=<cfoutput>#url.entrykey#</cfoutput>&type=1"><cfoutput>#si_img('delete')# #GetLangVal('cm_wd_delete')#</cfoutput></a>
+	<a onClick="return confirm('<cfoutput>#GetLangVal('cm_ph_are_you_sure')#</cfoutput>');" href="user/act_remove_photo.cfm?entrykey=<cfoutput>#url.entrykey#</cfoutput>&type=1"><cfoutput><span class="glyphicon glyphicon-trashÓ></span> #GetLangVal('cm_wd_delete')#</cfoutput></a>
 	<br>
 	<img src="/tools/img/show_big_userphoto.cfm?entrykey=<cfoutput>#urlencodedformat(url.entrykey)#</cfoutput>">
 	</td>

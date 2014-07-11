@@ -60,7 +60,7 @@
 			<p>
 				<a href="index.cfm?action=signatures&email_adr=#urlencodedformat(url.email_adr)#&subaction=createnewedit&entrykey=#q_select_signatures.entrykey#">#si_img('pencil')# #GetLangval('cm_wd_edit')#</a>
 				&nbsp;|&nbsp;
-				<a href="act_delete_signatur.cfm?entrykey=#q_select_signatures.entrykey#" onClick="return confirm('#GetLangValJS('cm_ph_are_you_sure')#');">#si_img('delete')# #GetLangVal('cm_wd_delete')#</a>
+				<a href="act_delete_signatur.cfm?entrykey=#q_select_signatures.entrykey#" onClick="return confirm('#GetLangValJS('cm_ph_are_you_sure')#');"><span class="glyphicon glyphicon-trashÓ></span> #GetLangVal('cm_wd_delete')#</a>
 			</p>
 			
 			<div class="b_all mischeader" style="margin-top:10px; ">

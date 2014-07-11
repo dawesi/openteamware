@@ -152,7 +152,7 @@ Mit Filtern k&ouml;nnen Sie Ihre E-Mails effizient vorsortieren lassen und auch 
 		&nbsp;|&nbsp;
 		<a href="index.cfm?action=editfilter&id=#q_select_filter.id#">#si_img('pencil')#</a>
 		&nbsp;|&nbsp;
-		<a href="javascript:deletefilter('#q_select_filter.id#');">#si_img('delete')#</a></td>
+		<a href="javascript:deletefilter('#q_select_filter.id#');"><span class="glyphicon glyphicon-trashÓ></span></a></td>
   </tr>
   </cfoutput>
 </table>

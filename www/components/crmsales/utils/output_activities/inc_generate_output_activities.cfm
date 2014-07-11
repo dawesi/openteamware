@@ -140,7 +140,7 @@
 				<cfif arguments.managemode>
 					<td>
 						<a href="/crm/?action=ShowEditHistoryItem&amp;entrykey=#q_select_history_items.entrykey#">#si_img('pencil')#</a>
-						<a href="##" onclick="ShowSimpleConfirmationDialog('/crm/?action=DeleteHistoryItem&amp;entrykey=#q_select_history_items.entrykey#');return false;">#si_img('delete')#</a>
+						<a href="##" onclick="ShowSimpleConfirmationDialog('/crm/?action=DeleteHistoryItem&amp;entrykey=#q_select_history_items.entrykey#');return false;"><span class="glyphicon glyphicon-trashÓ></span></a>
 					</td>
 				</cfif>
 			</cfif>	

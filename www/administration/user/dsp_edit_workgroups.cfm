@@ -25,13 +25,13 @@
     <td>
 				 <cfloop index="a_str_role_key" list="#q_select_workgroups.roles#" delimiters=",">
                   <cfset a_str_rolename = cmp_get_workgroup_name.getrolenamebyentrykey(a_str_role_key)>
-                  #a_str_rolename# </cfloop>	
+                  #a_str_rolename# </cfloop>
 	</td>
     <td>
 	<!---<img src="/images/editicon.gif" align="absmiddle">
 	&nbsp;&nbsp;&nbsp;--->
-	<a href="index.cfm?action=workgroups.removeuser&workgroupkey=#urlencodedformat(q_select_workgroups.workgroupkey)#&entrykey=#urlencodedformat(url.entrykey)##WriteURLTags()#">#si_img('delete')#</a>
-	
+	<a href="index.cfm?action=workgroups.removeuser&workgroupkey=#urlencodedformat(q_select_workgroups.workgroupkey)#&entrykey=#urlencodedformat(url.entrykey)##WriteURLTags()#"><span class="glyphicon glyphicon-trashÓ></span></a>
+
 	</td>
   </tr>
   </cfoutput>

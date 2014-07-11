@@ -330,7 +330,7 @@ ORDER BY
 					<a href="index.cfm?action=newissue&listkey=#q_select_approved.listkey#&templatekey=#q_select_approved.entrykey#">Als Vorlage verwenden ...</a>
 				</td>
 				<td align="center">
-					<a onClick="return confirm('#GetLangValJS('cm_ph_are_you_sure')#');" href="act_remove_issue.cfm?listkey=#q_select_approved.listkey#&issuekey=#q_select_approved.entrykey#">#si_img('delete')#</a>
+					<a onClick="return confirm('#GetLangValJS('cm_ph_are_you_sure')#');" href="act_remove_issue.cfm?listkey=#q_select_approved.listkey#&issuekey=#q_select_approved.entrykey#"><span class="glyphicon glyphicon-trashÓ></span></a>
 				</td>
 			</tr>
 			</cfoutput>

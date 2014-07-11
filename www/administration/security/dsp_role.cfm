@@ -76,31 +76,31 @@
 	<td>
 		#YesNoFormat(q_select_role.ALLOW_MAILACCESSDATA_ACCESS)#
 	</td>
-  </tr>    
+  </tr>
  </cfoutput>
  <tr>
  	<td align="right" valign="top">#GetLangVal('adm_ph_security_role_restrict_ip_access')#:</td>
 	<td>
 	<cfoutput>#YesNoFormat(q_select_securityroles_ip_restrictions.recordcount)#</cfoutput>
 	<br>
-	
-	
+
+
 	</td>
  </tr>
  <cfinvoke component="#application.components.cmp_security#" method="GetUsersUsingRole" returnvariable="q_select_users"
  	entrykey=#url.entrykey#
-	companykey=#url.companykey#>	
+	companykey=#url.companykey#>
  </cfinvoke>
  <tr>
  	<td colspan="2" class="bb"><cfoutput>#GetLangVal('adm_ph_security_role_apply_to')#</cfoutput> (<cfoutput>#q_select_users.recordcount#</cfoutput>)</td>
  </tr>
 
-		
+
  <tr>
  	<td></td>
 	<td>
 	<cfoutput query="q_select_users">
-	#q_select_users.surname#, #q_select_users.firstname# (#q_select_users.username#) <a href="index.cfm?action=securityrole.removeuser&rolekey=#urlencodedformat(url.entrykey)#&userkey=#urlencodedformat(q_select_users.entrykey)##WriteURLTags()#">#si_img('delete')#</a><br>
+	#q_select_users.surname#, #q_select_users.firstname# (#q_select_users.username#) <a href="index.cfm?action=securityrole.removeuser&rolekey=#urlencodedformat(url.entrykey)#&userkey=#urlencodedformat(q_select_users.entrykey)##WriteURLTags()#"><span class="glyphicon glyphicon-trashÓ></span></a><br>
 	</cfoutput>
 	</td>
  </tr>

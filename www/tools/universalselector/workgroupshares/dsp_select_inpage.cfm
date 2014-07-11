@@ -30,7 +30,7 @@
 
 </div>
 
-<table class="table_details">
+<table class="table table_details">
 <cfoutput query="q_select_workgroups">
 <tr>
 	<td>

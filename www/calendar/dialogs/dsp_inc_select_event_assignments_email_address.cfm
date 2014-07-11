@@ -8,7 +8,7 @@
 // --->
 
 
-<table class="table_details">
+<table class="table table_details">
 	<tr>
 		<td class="field_name">
 			<cfoutput>#GetLangVal('adrb_wd_email_address')#</cfoutput>

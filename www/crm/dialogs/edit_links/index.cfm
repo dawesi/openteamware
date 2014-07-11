@@ -142,7 +142,7 @@
 			<input type="hidden" name="frm_dest_servicekey" id="frm_dest_servicekey" value="<cfoutput>#url.dest_servicekey#</cfoutput>">
 						
 						
-			<table class="table_details">
+			<table class="table table_details">
 			<tr>
 				<td align="right" width="200px;">
 					<cfoutput>#htmleditformat(a_Str_source_name)#</cfoutput>

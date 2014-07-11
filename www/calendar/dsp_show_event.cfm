@@ -57,7 +57,7 @@
 
 <cfsavecontent variable="a_str_content">
 
-<table cellspacing="0" class="table_details">
+<table cellspacing="0" class="table table_details">
 	<tr class="mischeader">
 		<td colspan="2">
 			<cfoutput>#GetLangVal('cm_wd_summary')#</cfoutput>

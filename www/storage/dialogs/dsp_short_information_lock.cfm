@@ -37,7 +37,7 @@
 </cfinvoke>	 
 
 <cfoutput>
-<table class="table_details">
+<table class="table table_details">
 	<tr>
 		<td class="field_name">
 			#GetLangVal('cm_wd_file')#

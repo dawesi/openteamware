@@ -32,7 +32,7 @@
 
 <cfset a_int_dt_current_display = DateFormat(DateAdd('d', -1, Now()), 'ddmmyyyy') />
 
-	<table class="table_details">
+	<table class="table table_details">
 	<!--- <tr>
 		<td colspan="2">
 			<a href="/calendar/" class="nl"><img src="/images/si/calendar.png" class="si_img" /><cfoutput>#GetLangVal('cm_ph_next_events_days')#</cfoutput></a>

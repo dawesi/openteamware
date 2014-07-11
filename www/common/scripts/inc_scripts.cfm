@@ -1658,7 +1658,7 @@ function WriteNewContentBox(title, button_area, content) {
 		a_str_params = arguments[5];
 		}
 	
-	sReturn = '<div class="div_box"';
+	sReturn = '<div class="panel panel-default"';
 	
 	if (Len(a_box_id) GT 0) {
 		// include box id if given
@@ -1672,25 +1672,27 @@ function WriteNewContentBox(title, button_area, content) {
 	
 	sReturn = sReturn & '>';
 	
-	sReturn = sReturn & '<div class="div_legend">';
+	sReturn = sReturn & '<div class="panel-heading">';
 	
 		// title
-		sReturn = sReturn & '<div class="div_caption">';
+		sReturn = sReturn & '<div class="panel-title">';
 		sReturn = sReturn & htmleditformat(title);		
-		sReturn = sReturn & '</div>';
+		
 		
 		
 		// buttons
 		if (Len(button_area) GT 0) {
-			sReturn = sReturn & '<div class="div_buttons">';
+			sReturn = sReturn & '<div class="btn-group pull-right">';
 			sReturn = sReturn & button_area;
 			sReturn = sReturn & '</div>';
 			}
 	
+	sReturn = sReturn & '</div>';//close caption
+	
 	sReturn = sReturn & '</div>';
 
 	// content
-	sReturn = sReturn & '<div class="div_box_content">';
+	sReturn = sReturn & '<div class="panel-body">';
 	sReturn = sReturn & a_str_content;
 	sReturn = sReturn & '</div>';
 	

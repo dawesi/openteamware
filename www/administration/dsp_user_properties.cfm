@@ -56,7 +56,7 @@
 	 
 	 
 	<cfsavecontent variable="a_str_content">
-		  <table class="table_details">
+		  <table class="table table_details">
 		  <cfif IsInternalIPOrUser()>
 		  	<tr>
 				<td class="field_name">Entrykey</td>
@@ -146,7 +146,7 @@
 	<cfsavecontent variable="a_str_content">
 		
 		
-		<table class="table_details">
+		<table class="table table_details">
   			<cfloop query="q_select_workgroups">
             <tr> 
               <td class="field_name">###q_select_workgroups.currentrow#</td>
@@ -319,7 +319,7 @@
 	<br /> 
 	
 	<cfsavecontent variable="a_str_content">
-		<table class="table_details">
+		<table class="table table_details">
   <!--- edit mailbox limit ... --->		  
 		  <cfinvoke component="#application.components.cmp_email_tools#" method="GetQuotaDataForUser" returnvariable="a_struct_quota">
 		  	<cfinvokeargument name="username" value="#q_userdata.username#">
@@ -377,7 +377,7 @@
 	<br /> 
 		
 		<cfsavecontent variable="a_str_content">
-		<table class="table_details">
+		<table class="table table_details">
  			<tr> 
              <td class="field_name">#GetLangVal('adm_wd_logins')#:</td>
             <td>#val(q_userdata.login_count)#</td>

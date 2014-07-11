@@ -56,7 +56,7 @@
 	<cfif not request.a_bool_msie>
 					<table cellspacing="0" cellpadding="4" class="bb bt" height="100%" border="0" width="160">
 	<cfelse>
-					<table cellspacing="0" cellpadding="4" class="table_details" height="100%" border="0" width="160"
+					<table cellspacing="0" cellpadding="4" class="table table_details" height="100%" border="0" width="160"
 						style="margin:5px;">
 	</cfif>
 					  	<tr class="mischeader">

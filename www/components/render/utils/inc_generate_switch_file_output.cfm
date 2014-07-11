@@ -110,7 +110,6 @@
 
 <div class="container-fluid">
 <div class="row">
-
 		 <div class="12">
 
 		<cftry>

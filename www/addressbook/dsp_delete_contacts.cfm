@@ -26,7 +26,7 @@
 <cfif Len(url.confirmed) IS 0>
 
 	<br />  
-	<img src="/images/si/exclamation.png" class="si_img" /> <b><cfoutput>#GetLangVal('adrb_ph_delete_contacts_sure')#</cfoutput></b>
+	<span class="glyphicon glyphicon-exclamation-sign"></span> <b><cfoutput>#GetLangVal('adrb_ph_delete_contacts_sure')#</cfoutput></b>
 	<br /> 
 
 	<!--- load contact data ... --->

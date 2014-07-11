@@ -3,7 +3,7 @@
 	Component:	CRMSales
 	Function:	GetItemActivitiesAndData
 	Description:Display projects assigned to certain contacts
-	
+
 
 // --->
 
@@ -76,17 +76,17 @@ WHERE
 			</cfoutput>
 		</td>
 		<td width="25%"><cfoutput>
-			
+
 			<cfif ListLen(arguments.contactkeys) GT 1>
 				#GetLangVal('cm_wd_contact')# /
 			</cfif>
-			
+
 			#GetLangVal('crm_ph_closing_date')# / #GetLangVal('cm_wd_responsible_person')#</cfoutput></td>
 	</tr>
 	<cfoutput query="q_select_sales_projects">
 	<tr>
 		<td>
-			<a href="/project/?action=ShowProject&entrykey=#q_select_sales_projects.entrykey#"><img src="/images/si/coins.png" class="si_img" /> #htmleditformat(CheckZeroString(q_select_sales_projects.title))#</a>
+			<a href="/project/?action=ShowProject&entrykey=#q_select_sales_projects.entrykey#"><span class="glyphicon glyphicon-usd"></span> #htmleditformat(CheckZeroString(q_select_sales_projects.title))#</a>
 		</td>
 		<td>
 			#q_select_sales_projects.sales# #htmleditformat(q_select_sales_projects.currency)#
@@ -98,13 +98,13 @@ WHERE
 			<cfif ListLen(arguments.contactkeys) GT 1>
 				<a href="/addressbook/?action=ShowItem&entrykey=#q_select_sales_projects.contactkey#">#application.components.cmp_addressbook.GetContactDisplayNameData(entrykey = q_select_sales_projects.contactkey)#</a> /
 			</cfif>
-			
+
 			#FormatDateTimeAccordingToUserSettings(q_select_sales_projects.dt_closing)#
 
 			<cfif Len(q_select_sales_projects.projectleaderuserkey) GT 0>
 			/ <a href="/workgroups/?action=Showuser&entrykey=#q_select_sales_projects.projectleaderuserkey#">#htmleditformat(application.components.cmp_user.GetFullNameByentrykey(q_select_sales_projects.projectleaderuserkey))#</a>
 			</cfif>
-			
+
 			<cfif arguments.managemode>
 				<br />
 				<a href="/project/index.cfm?action=EditProject&entrykey=#q_select_sales_projects.entrykey#"><img src="/images/si/pencil.png" class="si_img" /> #MakeFirstCharUCase(GetLangVal('cm_wd_edit'))#</a>
@@ -117,7 +117,7 @@ WHERE
 
 <!--- // common projects ... // --->
 <cfif q_select_common_projects.recordcount GT 0>
-	
+
 	<table class="table table-hover">
 		<tr class="tbl_overview_header">
 			<td width="25%"><cfoutput>#GetLangVal('prj_ph_project_type_0')# (#q_select_projects.recordcount#)</cfoutput></td>
@@ -145,11 +145,11 @@ WHERE
 				<cfif ListLen(arguments.contactkeys) GT 1>
 					<a href="/addressbook/?action=ShowItem&entrykey=#q_select_common_projects.contactkey#">#application.components.cmp_addressbook.GetContactDisplayNameData(entrykey = q_select_common_projects.contactkey)#</a> /
 				</cfif>
-				
+
 				#FormatDateTimeAccordingToUserSettings(q_select_common_projects.dt_begin)#
-	
+
 				#htmleditformat(application.components.cmp_user.GetFullNameByentrykey(q_select_common_projects.projectleaderuserkey))#
-				
+
 				<cfif arguments.managemode>
 				<br />
 				<a href="/project/index.cfm?action=EditProject&entrykey=#q_select_common_projects.entrykey#"><img src="/images/si/pencil.png" class="si_img" /> #MakeFirstCharUCase(GetLangVal('cm_wd_edit'))#</a>
@@ -161,17 +161,6 @@ WHERE
 </cfif>
 </cfsavecontent>
 
-<cfif q_select_sales_projects.recordcount GT 0>
-	<cfset a_str_info_cal = '<img src="/images/si/coins.png" class="si_img" /> #GetLangValJS('prj_ph_project_type_1')# (#q_select_sales_projects.recordcount#)' />
-	
-	<cfset tmp = AddJSToExecuteAfterPageLoad('AddCRMTopInfoString(''' & a_str_info_cal & ''')', '') />
-</cfif>
-
-<cfif q_select_common_projects.recordcount GT 0>
-	<cfset a_str_info_cal = '<img src="/images/si/chart_organisation.png" class="si_img" /> #GetLangValJS('prj_ph_project_type_0')# (#q_select_common_projects.recordcount#)' />
-	
-	<cfset tmp = AddJSToExecuteAfterPageLoad('AddCRMTopInfoString(''' & a_str_info_cal & ''')', '') />
-</cfif>
 
 <cfset stReturn.a_str_content = sReturn />
 
@@ -181,7 +170,7 @@ WHERE
 			</td>
 			<td width="17%">
 				#GetLangVal('cm_wd_contact')#
-			</td>			
+			</td>
 			<td width="17%">
 				#GetLangVal('crm_ph_expected_sales')#
 			</td>
@@ -193,7 +182,7 @@ WHERE
 			</td>
 			<td width="17%">
 				#GetLangVal('cm_wd_concerned')#
-			</td>			
+			</td>
 		<cfelse>
 			<td width="25%">
 				#GetLangVal('cm_wd_title')#

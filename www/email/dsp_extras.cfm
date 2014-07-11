@@ -48,7 +48,7 @@
 </div>
 <br />
 
-<table class="table_details">
+<table class="table table_details">
 	<tr>
 		<td class="field_name">
 			<a style="font-weight:bold; "  href="../settings/index.cfm?action=spamguard"><cfoutput>#GetLangVal("mail_wd_extras_spamguard")#</cfoutput></a>

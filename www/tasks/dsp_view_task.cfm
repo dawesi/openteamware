@@ -171,7 +171,7 @@ function processReqCustomConfirmActionChange()
 <cfsavecontent variable="a_str_task_view">
 		
 		
-			<table border="0" cellspacing="0" cellpadding="6" class="table_details">
+			<table border="0" cellspacing="0" cellpadding="6" class="table table_details">
 
 			<cfoutput query="q_select_task">
 			  <tr class="mischeader">

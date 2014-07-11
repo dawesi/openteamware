@@ -124,7 +124,7 @@
 <cfif q_select_filter.recordcount GT 0>
 <cfsavecontent variable="a_str_content">
 
-	<table class="table_details">
+	<table class="table table_details">
 	  <tr>
 		<td>
 	

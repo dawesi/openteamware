@@ -92,7 +92,7 @@
 <input type="hidden" name="frmredirect" value="<cfoutput>#cgi.http_referer#</cfoutput>" />
 <div style="padding:4px;display:none;" id="iddivactions" class="bb mischeader">
 
-	<table class="table_details">
+	<table class="table table_details">
 	  <tr>
 	  	<td class="field_name">
 			<cfoutput>#si_img( 'bin' )#</cfoutput>

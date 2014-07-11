@@ -29,7 +29,7 @@
 <input type="button" class="btn btn-primary" name="frmbtnsetcategories" onClick="UniversalSelectorSetReturnValues(CollectCheckedSelectBoxesValues('formdummyform'),CollectCheckedSelectBoxesValues('formdummyform'));" value="<cfoutput>#GetLangVal('cm_ph_btn_action_apply')#</cfoutput>"/>
 
 <div class="clear bb" style="padding-top:8px"></div>
-<!--- <table class="table_details">
+<!--- <table class="table table_details">
   <tr>
 	<td colspan="2">
 		

@@ -54,7 +54,7 @@
 <cfoutput>#BuildTabNavigation('', false)#</cfoutput>
 
 <div id="<cfoutput>#a_str_id_workgroups#</cfoutput>" class="div_module_tabs_content_box">
-<table class="table_details">
+<table class="table table_details">
 	<tr>	
 		<td>
 

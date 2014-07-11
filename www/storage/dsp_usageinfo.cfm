@@ -34,7 +34,7 @@
 	</cfchartseries>
 </cfchart>
 
-<table class="table_details">
+<table class="table table_details">
 <cfoutput>
   <tr>
     <td class="field_name">

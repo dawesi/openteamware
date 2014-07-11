@@ -3,9 +3,9 @@
 	Module:		Addressbook
 	Action:		ShowContacts
 	Description:Display all contacts
-	
+
 				Show top header with filters, search and so on ...
-	
+
 // --->
 
 <cfset a_int_clear_all_stored_criteria_for_simple_filter = GetUserPrefPerson('addressbook', 'clearcriteria.unstoredfilter', '1', '', false) />
@@ -13,21 +13,21 @@
 <cfinvoke component="#application.components.cmp_crmsales#" method="GetListOfViewFilters" returnvariable="q_select_all_filters">
 	<cfinvokeargument name="securitycontext" value="#request.stSecurityContext#">
 	<cfinvokeargument name="usersettings" value="#request.stUserSettings#">
-</cfinvoke>		
+</cfinvoke>
 
 <cfset tmp = StartNewTabNavigation() />
-<cfset tmp = AddTabNavigationItem(GetLangVal('adrb_wd_the_view') & '/' & GetLangVal('adrb_wd_quicksearch'), 'javascript:ShowTopCRMPanel(''simple'');', '') /> 
+<cfset tmp = AddTabNavigationItem(GetLangVal('adrb_wd_the_view') & '/' & GetLangVal('adrb_wd_quicksearch'), 'javascript:ShowTopCRMPanel(''simple'');', '') />
 
 <!--- for crm customers, display filters plus advanced search ... --->
-<cfset tmp = AddTabNavigationItem(GetLangVal('adrb_ph_advanced_search'), 'javascript:ShowTopCRMPanel(''advanced'', #url.filterdatatype#);', '') /> 
+<cfset tmp = AddTabNavigationItem(GetLangVal('adrb_ph_advanced_search'), 'javascript:ShowTopCRMPanel(''advanced'', #url.filterdatatype#);', '') />
 
 <cfif q_select_all_filters.recordcount GT 0>
-	<cfset tmp = AddTabNavigationItem(GetLangVal('crm_ph_saved_filters') & ' (' & q_select_all_filters.recordcount & ')', 'javascript:ShowTopCRMPanel(''savedfilters'', #url.filterdatatype#);', '')> 
+	<cfset tmp = AddTabNavigationItem(GetLangVal('crm_ph_saved_filters') & ' (' & q_select_all_filters.recordcount & ')', 'javascript:ShowTopCRMPanel(''savedfilters'', #url.filterdatatype#);', '')>
 </cfif>
 
 <cfinvoke component="#application.components.cmp_crmsales#" method="BuildCRMFilterStruct" returnvariable="a_struct_crm_filter">
 	<cfinvokeargument name="securitycontext" value="#request.stSecurityContext#">
-	<cfinvokeargument name="usersettings" value="#request.stUserSettings#">	
+	<cfinvokeargument name="usersettings" value="#request.stUserSettings#">
 	<cfinvokeargument name="viewkey" value="#url.filterviewkey#">
 	<cfinvokeargument name="mergecriterias" value="true">
 	<cfinvokeargument name="itemttype" value="#a_str_display_data_type#">
@@ -40,13 +40,13 @@
 </ul>
 
 <cfoutput>#BuildTabNavigation('id_div_search_panel_content', false)#</cfoutput><div id="id_div_search_panel_simple" style="display:none;padding:10px;">
-	
+
 	<table border="0" cellpadding="6" cellspacing="0" class="table">
 		<tr>
 			<td class="br" valign="top">
-			
+
 					<b><img src="/images/si/eye.png" class="si_img" /> <cfoutput>#GetLangVal('adrb_wd_view')#</cfoutput></b>
-					
+
 					<table cellpadding="4" cellspacing="0" border="0">
 						<tr>
 							<td>
@@ -65,19 +65,19 @@
 							</td>
 						</tr>
 					</table>
-					
+
 			</td>
 			<td class="br" valign="top">
-				
+
 				 	<b><img src="/images/si/find.png" class="si_img" /><cfoutput>#GetLangVal('cm_wd_search')#</cfoutput></b>
-				 	
+
 				 	<form id="idformtopsearch" name="idformtopsearch" method="POST" onSubmit="ShowLoadingStatus();" action="index.cfm?action=DoAddFilterSearchCriteria" style="margin:0px;">
 					<input type="hidden" name="frmfilterviewkey" value="<cfoutput>#url.filterviewkey#</cfoutput>" />
 					<input type="hidden" name="frmdisplaydatatype" value="<cfoutput>#a_str_display_data_type#</cfoutput>" />
 					<input type="hidden" name="frmarea" value="contact" />
-					
+
 					<table class="table">
-						
+
 					<cfswitch expression="#a_str_display_data_type#">
 						<cfcase value="0,3" delimiters=",">
 						<input type="hidden" name="frm_fields" value="surname,firstname,company,email_prim,b_city,b_zipcode" />
@@ -130,7 +130,7 @@
 								<input type="hidden" name="frmb_city_displayname" value="<cfoutput>#GetLangVal('adrb_wd_city')#</cfoutput>" />
 							</td>
 							<td>
-								<cfoutput>#GetLangVal('adrb_wd_zipcode')#</cfoutput>								
+								<cfoutput>#GetLangVal('adrb_wd_zipcode')#</cfoutput>
 							</td>
 							<td>
 								<input type="text" name="frmb_zipcode" value="" size="10" />
@@ -194,18 +194,18 @@
 								<input type="submit" value="<cfoutput>#GetLangVal('cm_wd_search')#</cfoutput>" class="btn" />
 							</td>
 						</tr>
-						
+
 						</cfcase>
 					</cfswitch>
 					</table>
 					</form>
-						
-				
-			</td>	
+
+
+			</td>
 			<td valign="top">
-				
+
 				<b><img src="/images/si/database_add.png" class="si_img" /><cfoutput>#GetLangVal('adrb_wd_filter')#</cfoutput></b>
-				
+
 				<cfoutput>
 				<table cellpadding="4" cellspacing="0" border="0">
 					<tr>
@@ -219,32 +219,39 @@
 					<tr>
 						<td>
 							<a href="##" onclick="ShowFilterAreaData('#url.filterviewkey#', '0', 'custodian', '#a_str_display_data_type#');">#GetLangVal('crm_wd_custodian')#</a>
-						</td>		
+						</td>
 						<td>
 							<a href="##" onclick="ShowFilterAreaData('#url.filterviewkey#', '2', 'criteria', '#a_str_display_data_type#');">#GetLangVal('crm_wd_criteria')#</a>
 						</td>
 					</tr>
 				</table>
 				</cfoutput>
+				<br /><br />
+				<b>Spezial-Ansichten</b>
+				<br />
+				<a href="index.cfm?action=telephonelist"><cfoutput>#GetLangVal('adb_wd_telephonelist')#</cfoutput></a>
+				<br />
+				<a href="index.cfm?action=birthdaylist"><cfoutput>#GetLangVal('adrb_wd_birthdaylist')#</cfoutput></a>
+
 
 			</td>
-			<td valign="top" class="bl" id="idtdfilterselect"></td>	
+			<td valign="top" class="bl" id="idtdfilterselect"></td>
 		</tr>
 	</table>
-	
-	<!--- 
-	
+
+	<!---
+
 		<table border="0" cellspacing="0" cellpadding="6">
 			  <tr>
 			  <cfif ArrayLen(a_struct_crm_filter.criterias) GT 0>
 			  	<td nowrap valign="top" class="br">
-					
+
 					<cfif Len(url.filterviewkey) GT 0>
 						<cfinvoke component="#a_cmp_crm_sales#" method="GetListOfViewFilters" returnvariable="q_select_all_filters">
 							<cfinvokeargument name="securitycontext" value="#request.stSecurityContext#">
 							<cfinvokeargument name="usersettings" value="#request.stUserSettings#">
-						</cfinvoke>		
-						
+						</cfinvoke>
+
 						<cfquery name="q_select_current_filter" dbtype="query">
 						SELECT
 							*
@@ -253,56 +260,56 @@
 						WHERE
 							entrykey = <cfqueryparam cfsqltype="cf_sql_varchar" value="#url.filterviewkey#">
 						;
-						</cfquery>			
-		
+						</cfquery>
+
 
 
 						<cfoutput query="q_select_current_filter">
-						
+
 							<div style="line-height:18px;">
-							
+
 								<b>#GetLangVal('crm_ph_filter_active')#: "#htmleditformat(q_select_current_filter.viewname)#"</b>
 								<cfif Len(q_select_current_filter.description) GT 0>
 								<br />
 								#htmleditformat(q_select_current_filter.description)#
-								</cfif>								
+								</cfif>
 								<br />
-								
+
 							<a href="index.cfm?action=AdvancedSearch&entrykey=#url.filterviewkey#">#GetLangVal('crm_ph_edit_filter_criteria')#</a>
-							
-							
+
+
 							</div>
-						
+
 						</cfoutput>
 						<br />
 					<cfelse>
 						<b><cfoutput>#GetLangVal('crm_ph_active_filter_criteria')#</cfoutput></b>
 					<br /><br />
-					</cfif>	
-					
+					</cfif>
+
 					<!--- if not saved, allow to delete criteria --->
 					<cfif Len(url.filterviewkey) GT 0>
-						<cfset ShowViewFilterCriteriaRequest.AllowDeleteCriteria = false>				
+						<cfset ShowViewFilterCriteriaRequest.AllowDeleteCriteria = false>
 					<cfelse>
 						<cfset ShowViewFilterCriteriaRequest.AllowDeleteCriteria = true>
 					</cfif>
 					<cfset ShowViewFilterCriteriaRequest.Viewkey = url.filterviewkey>
 					<cfinclude template="dsp_inc_show_view_filter_criteria.cfm">
-					
+
 				</td>
 			  </cfif>
 					  	<td nowrap valign="top" class="br">
-						 
-						  	
+
+
 						<!--- 	<form name="formtopcrmsearch" id="formtopcrmsearch" action="index.cfm" method="get" style="margin:0px; ">
 							<b><cfoutput>#GetLangVal('cm_wd_search')#</cfoutput></b>
 							<br /><br />
 							<input type="text" name="search" style="width:100px; " size="10">&nbsp;
 							</form> --->
-							
+
 						</td>
 --->
-		
+
 </div>
 
 
@@ -310,21 +317,21 @@
 <cfset ShowViewFilterCriteriaRequest.Viewkey = url.filterviewkey />
 
 <cfif ArrayLen(a_struct_crm_filter.criterias) GT 0>
-	
+
 	<div class="bb bl br mischeader" style="padding:0px;display:none;padding-top:8px;" id="iddiv_current_filter_criteria">
-		
+
 		<table border="0" style="padding:4px;padding-left:10px;width:100%;">
 			<tr>
 				<td style="width:170px;font-weight:bold;" nowrap>
 					<img src="/images/si/find.png" class="si_img" /> <cfoutput>#GetLangVal('crm_ph_active_filter_criteria')# (#ArrayLen(a_struct_crm_filter.criterias)#)</cfoutput>
-					
+
 					<cfif Len(url.filterviewkey) GT 0>
-						
+
 						<cfinvoke component="#application.components.cmp_crmsales#" method="GetListOfViewFilters" returnvariable="q_select_all_filters">
 							<cfinvokeargument name="securitycontext" value="#request.stSecurityContext#">
 							<cfinvokeargument name="usersettings" value="#request.stUserSettings#">
-						</cfinvoke>	
-						
+						</cfinvoke>
+
 						<cfquery name="q_select_filter_name" dbtype="query">
 						SELECT
 							*
@@ -333,12 +340,12 @@
 						WHERE
 							entrykey = <cfqueryparam cfsqltype="cf_sql_varchar" value="#url.filterviewkey#">
 						</cfquery>
-						
-						<br /> 
+
+						<br />
 						<img src="/images/space_1_1.gif" class="si_img" alt="" /> <cfoutput>#GetLangVal('crm_ph_filter_active')#: #htmleditformat(q_select_filter_name.viewname)#</cfoutput>
-						
+
 					</cfif>
-				
+
 				</td>
 				<td style="width:100%" valign="top">
 					<cfinclude template="../filter/dsp_inc_show_view_filter_criteria.cfm">
@@ -346,14 +353,14 @@
 			</tr>
 		</table>
 	</div>
-	
+
 	<cfsavecontent variable="a_str_js">
 		$(document).ready(function() { $('#iddiv_current_filter_criteria').fadeIn('slow'); });
 		function doAddCRMSearchParameter(filterviewkey,property,value) {
-			
+
 			}
 	</cfsavecontent>
-	
+
 	<cfset tmp = AddJSToExecuteAfterPageLoad('', a_str_js) />
 </cfif>
 

@@ -10,7 +10,7 @@
 <input type="hidden" name="frmentrykey" value="<cfoutput>#htmleditformat(url.filterviewkey)#</cfoutput>">
 <input type="hidden" name="frmredirect" value="addressbook">
 
-<table class="table_details">
+<table class="table table_details">
 	<!--- display the reset option only if unsaved filterviewkey --->
 	<tr class="mischeader" <cfif Len(url.filterviewkey) GT 0>style="display:none;"</cfif>>
 		<td class="bb"></td>

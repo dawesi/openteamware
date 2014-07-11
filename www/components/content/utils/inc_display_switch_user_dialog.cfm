@@ -15,7 +15,7 @@
 
 <cfset a_cmp_email_accounts = CreateObject('component', '/components/email/cmp_accounts')>
 
-<table class="table_details">
+<table class="table table_details">
 <tr>
 
 <cfoutput query="q_select_sso_settings">

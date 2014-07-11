@@ -126,7 +126,7 @@
 		<cfif ListFindNoCase('submit,button', a_struct_form_element.datatype) IS 0>
 			
 			<cfif ListFindNoCase(request.a_struct_form_properties.missing_required_fields_input_names, a_struct_form_element.input_name) GT 0>
-				<img src="/images/si/exclamation.png" class="si_img" />
+				<span class="glyphicon glyphicon-exclamation-sign"></span>
 			</cfif>
 			#htmleditformat(a_struct_form_element.field_name)#
 		</cfif>

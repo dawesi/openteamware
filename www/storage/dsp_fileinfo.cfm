@@ -56,7 +56,7 @@
 <cfsavecontent variable="a_str_content">
 <cfoutput>
 	
-	<table class="table_details">
+	<table class="table table_details">
 		<tr>
 			<td class="field_name">
 				#getlangval('sto_wd_filename')#

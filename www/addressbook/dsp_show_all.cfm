@@ -3,10 +3,10 @@
 	Module:		Addressbook
 	Action:		ShowContacts
 	Description:Display all contacts
-	
+
 
 // --->
-	
+
 <cfparam name="url.startchar" default="" type="string">
 <!---<cfparam name="url.viewmode" type="string" default="box">--->
 <cfparam name="url.startrow" type="numeric" default="1">
@@ -25,7 +25,7 @@
 
 <!--- only allow *one* datatype at a single time ... --->
 <cfset a_str_display_data_type = Val(a_str_display_data_type) />
-		
+
 <cfset a_struct_filter = StructNew() />
 <cfset a_struct_loadoptions = StructNew() />
 
@@ -36,7 +36,7 @@
 
 <!--- crm extensions enabled? --->
 <cfset a_struct_loadoptions.loadmaincontactsonly = true />
-	
+
 <cfset a_struct_loadoptions.load_sub_contacts = true />
 
 <cfswitch expression="#a_str_display_data_type#">
@@ -82,11 +82,11 @@
 
 <cfinvoke component="#application.components.cmp_addressbook#" method="GetAllContacts" returnvariable="stReturn">
 	<cfinvokeargument name="securitycontext" value="#request.stSecurityContext#">
-	<cfinvokeargument name="usersettings" value="#request.stUserSettings#">	
+	<cfinvokeargument name="usersettings" value="#request.stUserSettings#">
 	<cfinvokeargument name="filter" value="#a_struct_filter#">
 	<cfinvokeargument name="convert_lastcontact_utc" value="false">
 	<cfinvokeargument name="loadoptions" value="#a_struct_loadoptions#">
-	<cfinvokeargument name="orderby" value="#sOrderBy#">	
+	<cfinvokeargument name="orderby" value="#sOrderBy#">
 	<cfinvokeargument name="filterdatatypes" value="#a_str_display_data_type#">
 	<cfinvokeargument name="crmfilter" value="#a_struct_crm_filter#">
 </cfinvoke>
@@ -121,6 +121,33 @@
 </cfif>
 
 
+<!---
+
+<cfif StructKeyExists(session, 'adrb_display_list_entrykeys') AND ListLen(session.adrb_display_list_entrykeys) GT 1>
+		<div class="divleftnavpanelactions">
+
+		<div class="divleftnavpanelheader"><cfoutput>#a_str_title_left#</cfoutput></div>
+
+			<ul class="divleftpanelactions" >
+
+					<cfset a_int_list_index = ListFind(session.adrb_display_list_entrykeys, url.entrykey) />
+
+					<!--- next or previous --->
+					<cfif a_int_list_index GT 1>
+						<li><a href="index.cfm?action=ShowItem&entrykey=<cfoutput>#ListGetat(session.adrb_display_list_entrykeys, (a_int_list_index - 1))#</cfoutput>"><cfoutput>#MakeFirstCharUCase(GetLangVal('adrb_ph_previous_contact'))#</cfoutput></a></li>
+					</cfif>
+
+					<cfif ListLen(session.adrb_display_list_entrykeys) GT a_int_list_index>
+						<li>
+						<a href="index.cfm?action=ShowItem&entrykey=<cfoutput>#ListGetat(session.adrb_display_list_entrykeys, (a_int_list_index + 1))#</cfoutput>"><cfoutput>#MakeFirstCharUCase(GetLangVal('adrb_ph_next_contact'))#</cfoutput></a>
+						</li>
+					</cfif>
+			</ul>
+		</div>
+
+	</cfif>
+ --->
+
 
 <!--- <cfif len(url.search) gt 0>
   <!--- hinweis zum suchergebnis ... --->
@@ -139,18 +166,14 @@
 	<cfinvokeargument name="recordcount" value="#a_int_contacts_recordcount#">
 	<cfinvokeargument name="current_record" value="#url.startrow#">
 </cfinvoke>
-	
+
 <cfoutput>#a_str_page_scroller#</cfoutput>
-	
+
 <cfset request.a_str_page_scroller = a_str_page_scroller />
 
-<cfif comparenocase(a_str_viewmode, "box") is 0>
-	<cfinclude template="dsp_show_all_boxes.cfm">
-<cfelse>
 	<!--- list --->
 	<cfset begin = GetTickCount()>
 	<cfinclude template="dsp_show_all_list.cfm">
-</cfif>
 
 <cfif a_int_contacts_recordcount GT a_int_max_rows_per_page>
 	<!--- display scroller ... --->
@@ -158,14 +181,14 @@
 </cfif>
 
 <cfif a_str_viewmode IS 'list'>
-	
+
 	<div class="bt" style="padding:6px; ">
 		<input type="hidden" name="frmselectaction" value="" />
 		<input class="btn" onClick="ShowCommonContactsActionOptions();" type="button" value="<cfoutput>#GetLangVal('cm_ph_show_common_action_options')#</cfoutput>" />
-		
+
 		<cfif a_int_contacts_recordcount GT a_int_max_rows_per_page>
 			<input type="button" class="btn" onclick="GotoLocHref('index.cfm?<cfoutput>#ReplaceOrAddURLParameter(cgi.query_string, 'maxrows', 9999)#</cfoutput>');" value="<cfoutput>#GetLangVal('crm_ph_show_all_applying_data_at_once')#</cfoutput>" />
-		</cfif>		
+		</cfif>
 	</div>
 	</form>
 </cfif>
@@ -173,10 +196,10 @@
 
 
 <cfsavecontent variable="a_str_content">
-	
+
 <cfif a_str_display_data_type NEQ 1>
 	<cfoutput>#WriteSimpleheaderDiv(GetLangVal('cm_wd_email'))#</cfoutput>
-	
+
 	<ul class="ul_nopoints">
 		<li>
 			<a href="javascript:SetContactsCommonAction('createmailing');"><cfoutput>#si_img('arrow_out')#</cfoutput> <cfoutput>#GetLangVal('crm_ph_create_new_mailing')#</cfoutput></a>
@@ -239,8 +262,8 @@
 </ul>
 
 
-	
-				
+
+
 
 </cfsavecontent>
 
@@ -252,9 +275,9 @@
 		a_simple_modal_dialog.customtitle = '<cfoutput>#jsstringformat(GetLangValJS('cm_ph_please_select_option'))#</cfoutput>';
 		a_simple_modal_dialog.customcontent = a_str_content;
 		// show dialog
-		a_simple_modal_dialog.ShowDialog();	
+		a_simple_modal_dialog.ShowDialog();
 		}
-		
+
 
 // set action and submit
 function SetContactsCommonAction(action, parameter){

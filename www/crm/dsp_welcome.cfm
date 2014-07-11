@@ -68,10 +68,7 @@
 	<cfoutput query="q_select_follow_ups">
 		<tr>
 			<td>
-				<img src="/images/si/telephone.png" class="si_img" alt="" />
-				<cfif q_select_follow_ups.priority IS 5>
-					<img src="/images/si/exclamation.png" class="si_img" />
-				</cfif>
+				<span class="glyphicon glyphicon-earphone"></span>
 				#application.components.cmp_tools.GenerateLinkToItem(usersettings = request.stUserSettings, servicekey = q_select_follow_ups.servicekey, title = q_select_follow_ups.objecttitle, objectkey = q_select_follow_ups.objectkey)#
 			</td>
 			<td>
@@ -82,7 +79,7 @@
 				#FormatDateTimeAccordingToUserSettings(q_select_follow_ups.dt_due)#
 
 				<cfif IsDate(q_select_follow_ups.dt_due) AND q_select_follow_ups.dt_due LT Now()>
-					<img src="/images/si/exclamation.png" class="si_img" />
+					<span class="glyphicon glyphicon-exclamation-sign"></span>
 				</cfif>
 			</td>
 			<td>
@@ -237,11 +234,15 @@ FROM	qFollowUpsAssignedToOthers
 				#FormatDateTimeAccordingToUserSettings(q_select_follow_ups.dt_due)#
 
 				<cfif q_select_follow_ups.priority IS 5>
-					<img src="/images/si/exclamation.png" class="si_img" />
+					<span class="glyphicon glyphicon-exclamation-sign"></span>
 				</cfif>
 			</td>
 			<td>
-				#application.components.cmp_user.GetShortestPossibleUserIDByEntrykey(q_select_follow_ups.userkey)#
+				<cfset username = application.components.cmp_user.GetShortestPossibleUserIDByEntrykey(q_select_follow_ups.userkey) />
+
+				<!--- <div style="background-color:<cfif username IS 'andrea.ristl'>darkgreen<cfelseif username IS 'barbara.posch'>orange<cfelse>darkred</cfif>;color:white;width: auto;float:left;padding: 8px;font-size:16px;text-transform:uppercase;font-weight:bold">#Left( username, 1 )#</div> --->
+
+				#username#
 			</td>
 			<td align="right" nowrap="true" class="hideprint">
 				<a href="index.cfm?action=EditFollowup&amp;entrykey=#q_select_follow_ups.entrykey#" class="nl"><span class="glyphicon glyphicon-pencil"></span></a>
@@ -304,7 +305,7 @@ ORDER BY
 <cfoutput query="q_select_sales_projects">
   <tr>
     <td>
-		<a href="/project/index.cfm?action=ShowProject&amp;entrykey=#q_select_sales_projects.entrykey#"><img src="/images/si/coins.png" class="si_img" />#htmleditformat(CheckZeroString(q_select_sales_projects.title))#</a>
+		<a href="/project/index.cfm?action=ShowProject&amp;entrykey=#q_select_sales_projects.entrykey#"><span class="glyphicon glyphicon-usd"></span>#htmleditformat(CheckZeroString(q_select_sales_projects.title))#</a>
 	</td>
 	<td>
 		#GetLangVal('crm_wd_sales_stage_' & q_select_sales_projects.stage)#
@@ -329,6 +330,7 @@ ORDER BY
 </cfsavecontent>
 
 <cfoutput>#WriteNewContentBox(GetLangVal('crm_ph_sales_projects'), '', a_str_content)#</cfoutput>
+
 
 <!---
 

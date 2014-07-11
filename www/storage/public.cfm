@@ -329,7 +329,7 @@ VALUES
 							<br><br>
 							<cfoutput>
 								
-								<table class="table_details" cellpadding="4" cellspacing="0" border="0">
+								<table class="table table_details" cellpadding="4" cellspacing="0" border="0">
 									<tr>
 										<td class="field_name">
 											#getlangval('sto_wd_filename')#

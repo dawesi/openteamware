@@ -3,7 +3,7 @@
 	Module:		CRM
 	Function:	GetItemActivitiesAndData
 	Description:Display assigned follow up items
-	
+
 
 // --->
 
@@ -13,8 +13,8 @@
 <cfinvoke component="#application.components.cmp_followups#" method="GetFollowUps" returnvariable="q_select_follow_ups">
 	<cfinvokeargument name="servicekey" value="#request.sCurrentServiceKey#">
 	<cfinvokeargument name="usersettings" value="#arguments.usersettings#">
-	<cfinvokeargument name="objectkeys" value="#arguments.contactkeys#">				
-</cfinvoke>		
+	<cfinvokeargument name="objectkeys" value="#arguments.contactkeys#">
+</cfinvoke>
 
 <cfif StructKeyExists(arguments.filter, 'statusonly')>
 	<cfquery name="q_select_follow_ups" dbtype="query">
@@ -65,7 +65,7 @@
 				<cfoutput>#GetLangVal('cm_wd_Action')#</cfoutput>
 			</cfif>
 		</td>
-		
+
 	<cfelse>
 		<td width="50%">
 			<cfoutput>#GetLangVal('crm_wd_follow_ups')# (#q_select_follow_ups.recordcount#)</cfoutput></td>
@@ -84,7 +84,7 @@
   <cfoutput query="q_select_follow_ups">
   <tr>
   	<td <cfif q_select_follow_ups.done GT 0>style="text-decoration:line-through;"</cfif>>
-		
+
 		<a href="/crm/?action=ShowFollowUp&entrykey=#q_select_follow_ups.entrykey#">
 		<cfswitch expression="#q_select_follow_ups.followuptype#">
 			<cfcase value="0"><img align="absmiddle" src="/images/si/flag_red.png" alt="" class="si_img" />#GetLangVal('crm_wd_follow_up')#</cfcase>
@@ -92,36 +92,36 @@
 			<cfcase value="2"><img align="absmiddle" src="/images/si/telephone.png" alt="" class="si_img" />#GetLangVal('crm_wd_follow_up_call')#</cfcase>
 			<cfdefaultcase><img align="absmiddle" src="/images/si/flag_red.png" alt="" class="si_img" />#GetLangVal('crm_wd_follow_up')#</cfdefaultcase>
 		</cfswitch>
-		
+
 		<cfif Len(q_select_follow_ups.comment) GT 0>
 			- #ReplaceNoCase(htmleditformat(trim(shortenstring(q_select_follow_ups.comment, 100))), chr(10), ' ... ', 'ALL')#
 		</cfif>
 		</a>
-	
+
 	#a_str_td_break#
-	
+
 		<a href="/workgroups/?action=ShowUser&entrykey=#q_select_follow_ups.userkey#">#application.components.cmp_user.GetShortestPossibleUserIDByEntrykey(q_select_follow_ups.userkey)#</a>
-	
+
 	#a_str_td_break#
-	
-		#LsDateFormat(q_select_follow_ups.dt_due, arguments.usersettings.default_dateformat)#<cfif Hour(q_select_follow_ups.dt_due) NEQ 0> #TimeFormat(q_select_follow_ups.dt_due, arguments.usersettings.default_timeformat)#</cfif>					
-		
+
+		#LsDateFormat(q_select_follow_ups.dt_due, arguments.usersettings.default_dateformat)#<cfif Hour(q_select_follow_ups.dt_due) NEQ 0> #TimeFormat(q_select_follow_ups.dt_due, arguments.usersettings.default_timeformat)#</cfif>
+
 		<cfif q_select_follow_ups.done IS 0 AND q_select_follow_ups.dt_due LT Now()>
-			<img src="/images/si/exclamation.png" class="si_img" />
+			<span class="glyphicon glyphicon-exclamation-sign"></span>
 		</cfif>
-		
+
 		<cfif arguments.managemode>
-			
+
 			<br/>
 			<cfset sReturn_url = cgi.SCRIPT_NAME&'?'&cgi.QUERY_STRING>
 			<a onclick="SetFollowUpDone('#jsstringformat(q_select_follow_ups.entrykey)#', '#JsStringFormat(q_select_follow_ups.objectkey)#');CloseSimpleModalDialog();location.reload();return false;" href="##"><img src="/images/si/accept.png" class="si_img" />#GetLangVal('tsk_ph_set_done')#</a>
 			<br/>
 			<a href="/crm/?action=EditFollowup&entrykey=#q_select_follow_ups.entrykey#&returnurl=#urlencodedformat(sReturn_url)#"><img src="/images/si/pencil.png" class="si_img" /> #MakeFirstCharUCase(GetLangVal('cm_wd_edit'))#</a>
-			
+
 			<a href="##" onClick="ShowSimpleConfirmationDialog('/crm/index.cfm?action=DeleteFollowups&entrykeys=#q_select_follow_ups.entrykey#');"><img src="/images/si/delete.png" class="si_img" /> #MakeFirstCharUCase(GetLangVal('cm_wd_delete'))#</a>
 		</cfif>
 	</td>
-  </tr>  
+  </tr>
   </cfoutput>
  </table>
 
@@ -129,12 +129,6 @@
 	</div>
 </cfif>
 </cfsavecontent>
-
-<cfif q_select_follow_ups.recordcount GT 0>
-	<cfset a_str_info_cal = '<img src="/images/si/flag_red.png" class="si_img" /> #GetLangValJS('crm_wd_follow_ups')# (#q_select_follow_ups.recordcount#)' />
-	
-	<cfset tmp = AddJSToExecuteAfterPageLoad('AddCRMTopInfoString(''' & a_str_info_cal & ''')', '') />
-</cfif>
 
 <cfset stReturn.a_str_content = sReturn />
 

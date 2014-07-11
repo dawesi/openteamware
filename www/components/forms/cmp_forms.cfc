@@ -118,7 +118,7 @@
 		</cfif>
 		
 		<cfif Len(request.a_struct_form_properties.missing_required_fields_input_names) GT 0>
-			<cfset sReturn = sReturn & '<tr><td class="field_name"><img src="/images/si/exclamation.png" class="si_img" /></td><td style="font-weight:bold;">' & 'Please enter all required fields!' &  '<img src="/images/space_1_1.gif" class="si_img" /></td></tr>' />
+			<cfset sReturn = sReturn & '<tr><td class="field_name"><span class="glyphicon glyphicon-exclamation-sign"></span></td><td style="font-weight:bold;">' & 'Please enter all required fields!' &  '<img src="/images/space_1_1.gif" class="si_img" /></td></tr>' />
 		</cfif>
 		
 		<cfreturn sReturn />

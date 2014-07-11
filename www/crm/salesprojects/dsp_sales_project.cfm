@@ -43,7 +43,7 @@
 
 <cfsavecontent variable="a_str_content">
 <cfoutput query="q_select_sales_project">
-	<table cellspacing="0" class="table_details">
+	<table cellspacing="0" class="table table_details">
 	<tr>
 		<td class="field_name">
 			#GetLangVal('cm_wd_title')#

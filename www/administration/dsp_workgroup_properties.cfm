@@ -49,7 +49,7 @@ WHERE
 
 <cfsavecontent variable="a_str_content">
 
-<table class="table_details">
+<table class="table table_details">
 <cfoutput query="q_select_workgroup">
   <tr>
     <td class="field_name"><cfoutput>#GetLangVal('cm_wd_name')#</cfoutput>:</td>

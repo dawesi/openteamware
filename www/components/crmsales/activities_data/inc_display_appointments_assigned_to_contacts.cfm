@@ -3,10 +3,10 @@
 	Module:		CRMSales
 	Function:	DisplayAppointmentsAssignedToContact
 	Description:display the appointments where a user is assigned ...
-	
+
 
 // --->
-	
+
 <cfset a_struct_filter = StructNew() />
 <cfset a_struct_filter.meetingmember_contact_entrykeys = arguments.contactkeys />
 
@@ -18,7 +18,7 @@
 	<cfinvokeargument name="calculaterepeatingevents" value="false">
 	<cfinvokeargument name="filter" value="#a_struct_filter#">
 </cfinvoke>
-			
+
 <cfset q_select_meeting_members_information = stReturn_calendar.q_select_meeting_members_eventskeys_by_parameter />
 <cfset q_select_events = stReturn_calendar.q_select_events />
 
@@ -49,7 +49,7 @@
 			<cfoutput>#GetLangVal('cm_wd_date')#</cfoutput>
 			/
 			<cfoutput>#GetLangVal('cal_wd_participants')#</cfoutput>
-		</td>	
+		</td>
 	<cfelse>
 		<td width="25%">
 			<cfoutput>#GetLangVal('cm_wd_events')# (#q_select_events.recordcount#)</cfoutput>
@@ -65,7 +65,7 @@
 				<cfoutput>#GetLangVal('cm_wd_contact')#</cfoutput> /
 			</cfif>
 			<cfoutput>#GetLangVal('cm_wd_location')#</cfoutput>
-		</td>	
+		</td>
 	</cfif>
 
   </tr>
@@ -74,25 +74,25 @@
 		<td>
 			<a name="appointments" id="id_test_123"></a>
 			<a href="/calendar/?action=ShowEvent&entrykey=#q_select_events.entrykey#"><img src="/images/si/calendar.png" class="si_img" />#htmleditformat(CheckZeroString(q_select_events.title))#</a>
-		
+
 		#a_str_td_break#
-		
+
 			#FormatDateTimeAccordingToUserSettings(q_select_events.date_start)#
-			
+
 			<cfset a_int_hours = DateDiff('h', q_select_events.date_start, q_select_events.date_end) />
 			<cfset a_int_minutes = DateDiff('n', q_select_events.date_start, q_select_events.date_end) />
 			(<cfif a_int_hours GT 0>#a_int_hours# #GetLangVal('cal_wd_hours')# </cfif><cfif a_int_minutes GT 0>#a_int_minutes# #GetLangVal('cal_wd_minutes')#</cfif>)
-		
+
 		#a_str_td_break#
-		
+
 			#htmleditformat(q_select_events.description)#
-		
-		#a_str_td_break#	
-		
+
+		#a_str_td_break#
+
 			<cfif ListLen(arguments.contactkeys) GT 1>
-				
+
 				<cfquery name="q_select_meeting_contact" dbtype="query">
-				SELECT 
+				SELECT
 					parameter AS contactkey
 				FROM
 					q_select_meeting_members_information
@@ -102,15 +102,15 @@
 					type = 1
 				;
 				</cfquery>
-				
+
 				<cfloop query="q_select_meeting_contact">
 					<a href="/addressbook/?action=ShowItem&entrykey=#q_select_meeting_contact.contactkey#">#application.components.cmp_addressbook.GetContactDisplayNameData(entrykey = q_select_meeting_contact.contactkey)#</a>
 				</cfloop>
-				<br /> 
+				<br />
 			</cfif>
-			
+
 			#htmleditformat(q_select_events.location)#
-			
+
 			<cfif arguments.managemode>
 				<br />
 				<a href="/calendar/index.cfm?action=ShowEvent&entrykey=#q_select_events.entrykey#"><img src="/images/si/pencil.png" class="si_img" /> #MakeFirstCharUCase(GetLangVal('cm_wd_edit'))#</a>
@@ -122,11 +122,6 @@
 
 </cfsavecontent>
 
-<cfif q_select_events.recordcount GT 0>
-	<cfset a_str_info_cal = '<img src="/images/si/calendar.png" class="si_img" /> #GetLangValJS('cm_wd_events')# (#q_select_events.recordcount#)' />
-	
-	<cfset tmp = AddJSToExecuteAfterPageLoad('AddCRMTopInfoString(''' & a_str_info_cal & ''')', '') />
-</cfif>
 
 <!--- set content return string ... --->
 <cfset stReturn.a_str_content = sReturn />

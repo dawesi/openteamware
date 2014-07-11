@@ -411,7 +411,7 @@
 	
 		<table class="table table-hover">
         <tr> 
-          <td colspan="2" style="padding:3px;"><b><cfoutput>#si_img('exclamation')# #GetLangVal('cm_wd_priority')#</cfoutput></b></td>
+          <td colspan="2" style="padding:3px;"><b><cfoutput><span class="glyphicon glyphicon-exclamation-sign"></span> #GetLangVal('cm_wd_priority')#</cfoutput></b></td>
         </tr>
         <tr> 
           <td>
@@ -515,7 +515,7 @@
 <tr>
 	<td colspan="8" style="padding:10px;" align="center">
 	
-	<img src="/images/si/exclamation.png" class="si_img" />&nbsp;<b><cfoutput>#GetLangVal('tsk_ph_search_no_hits')#</cfoutput></b>
+	<span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp;<b><cfoutput>#GetLangVal('tsk_ph_search_no_hits')#</cfoutput></b>
 	<br><br>
 	<a href="index.cfm"><cfoutput>#GetLangVal('cm_wd_back')#</cfoutput></a>
 	</td>
@@ -528,7 +528,7 @@
 <tr>
 	<td colspan="8" style="padding:10px;" align="center">
 	
-	<img src="/images/si/exclamation.png" class="si_img" />&nbsp;<b><cfoutput>#GetLangVal('tsk_ph_filter_no_hits_1')#</cfoutput></b>
+	<span class="glyphicon glyphicon-exclamation-sign"></span>&nbsp;<b><cfoutput>#GetLangVal('tsk_ph_filter_no_hits_1')#</cfoutput></b>
 	<br><br>
 	<cfoutput>#GetLangVal('tsk_ph_filter_no_hits_2')#</cfoutput>
 	<br><br>
@@ -597,7 +597,7 @@
     <td>
 	<cfif q_select_tasks.priority is 3>
 		<!--- high --->
-		#si_img('exclamation')#
+		<span class="glyphicon glyphicon-exclamation-sign"></span>
 	</cfif>
 
 	<cfif len(q_select_tasks.dt_due) gt 0>

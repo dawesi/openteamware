@@ -16,7 +16,7 @@
 
 <form action="index.cfm?action=DoSaveCustomize" method="POST">
 
-<table class="table_details">
+<table class="table table_details">
 	
 	<tr>
 		<td>

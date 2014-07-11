@@ -59,7 +59,7 @@ Currently, the followings bindings are defined:
 <br />
 <cfoutput>
 <form action="index.cfm?action=CreateSSOBinding" method="post">
-	<table class="table_details">
+	<table class="table table_details">
 		<tr>
 			<td class="field_name">#GetLangVal('cm_wd_username')#</td>
 			<td>

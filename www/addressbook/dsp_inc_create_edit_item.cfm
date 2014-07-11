@@ -41,7 +41,7 @@
 			<cfset a_str_db_fields = ValueList(q_select_form_fields.db_fieldname) />
 			
 			<div class="bb" style="padding:8px;">
-			<h4 style="margin-bottom:5px;"><cfoutput>#si_img('exclamation')# #GetLangVal('adrb_ph_remoteedit_contact_has_updated_data1')#</cfoutput></h4>
+			<h4 style="margin-bottom:5px;"><cfoutput><span class="glyphicon glyphicon-exclamation-sign"></span> #GetLangVal('adrb_ph_remoteedit_contact_has_updated_data1')#</cfoutput></h4>
 			
 			<cfloop list="#q_select_remote_edit_data.columnlist#" index="a_str_col">
 				

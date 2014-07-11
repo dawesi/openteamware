@@ -22,7 +22,7 @@
 <h4><cfoutput>#GetLangVal('adm_ph_edit_administrator_security')#</cfoutput></h4>
 
 
-<table class="table_details">
+<table class="table table_details">
 	<tr class="mischeader">
 		<td>Feature</td>
 		<td align="center">

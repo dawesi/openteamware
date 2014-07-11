@@ -79,7 +79,7 @@ FROM
 <cfoutput query="q_select_sales_projects">
   <tr>
     <td>
-		<a href="index.cfm?action=ShowProject&entrykey=#q_select_sales_projects.entrykey#"><img src="/images/si/coins.png" class="si_img" />#htmleditformat(CheckZeroString(q_select_sales_projects.title))#</a>
+		<a href="index.cfm?action=ShowProject&entrykey=#q_select_sales_projects.entrykey#"><span class="glyphicon glyphicon-usd"></span>#htmleditformat(CheckZeroString(q_select_sales_projects.title))#</a>
 	</td>
 	<td>
 		#GetLangVal('crm_wd_sales_stage_' & q_select_sales_projects.stage)#

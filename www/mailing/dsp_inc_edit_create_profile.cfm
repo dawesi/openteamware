@@ -26,7 +26,7 @@
 
 <input type="hidden" name="frmentrykey" value="#CreateEditNLProfile.Query.entrykey#">
 <div style="padding:4px;">
-<img src="/images/si/exclamation.png" class="si_img" /> #GetLangVal('cm_ph_please_do_not_forget_saving_changes')#
+<span class="glyphicon glyphicon-exclamation-sign"></span> #GetLangVal('cm_ph_please_do_not_forget_saving_changes')#
 </div>
 
 <table class="table_details table_edit_form">

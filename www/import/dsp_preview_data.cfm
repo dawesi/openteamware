@@ -226,7 +226,7 @@ function CheckAllItems() {
 				<input type="checkbox" name="frm_data_entrykey" value="<cfoutput>#a_struct_fields_source.q_select_data.ibx_entrykey#</cfoutput>" <cfif NOT a_bol_duplicate_found>checked="yes"</cfif> />
 
 				<!--- <cfif a_bol_is_addressbook_contacts AND a_bol_dup_check_is_possible AND a_bol_duplicate_found>
-					<img src="/images/si/exclamation.png" class="si_img" />
+					<span class="glyphicon glyphicon-exclamation-sign"></span>
 				<cfelse>
 					<img src="/images/si/add.png" class="si_img" />
 				</cfif> --->
@@ -238,7 +238,7 @@ function CheckAllItems() {
 				<td>
 				<cfif a_bol_duplicate_found>
 					
-					<img src="/images/si/exclamation.png" class="si_img" />
+					<span class="glyphicon glyphicon-exclamation-sign"></span>
 					
 					<!--- display possible duplicates ... --->					
 					<cfoutput query="q_select_is_duplicate">

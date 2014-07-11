@@ -55,7 +55,7 @@
 <input type="hidden" name="frmcompanykey" value="#url.companykey#">
 <input type="hidden" name="frmresellerkey" value="#url.resellerkey#">
 <input type="hidden" name="frmuserkey" value="#url.entrykey#">
-	<table class="table_details">
+	<table class="table table_details">
 		<tr>
 			<td class="field_name">#GetLangVal('cm_wd_username')#</td>
 			<td>

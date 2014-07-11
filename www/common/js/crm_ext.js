@@ -264,9 +264,3 @@ function CheckShowCriteriaUsed(o, id) {
 				}
 	}
 	
-// add crm top info string
-function AddCRMTopInfoString(s) {
-	var o = $('#id_crm_info_block_top');
-	if (o.html() == '') {o.html(vl_ibx_langdata_adrb_wd_activities + ': ');}
-	if (o.text().indexOf(s) == -1) {o.append(s + ' &nbsp');}
-	}

@@ -33,7 +33,7 @@
 <form action="act_update_email_account_settings.cfm" method="post" name="formsettings">
 <input type="hidden" name="frmid" value="#q_select_email_account.id#">
 <input type="hidden" name="frmemailaddress" value="#htmleditformat(q_select_email_account.emailadr)#">
-<table class="table_details">
+<table class="table table_details">
   <tr>
     <td class="field_name">#GetLangVal('mail_ph_email_address')#</td>
     <td><b>#htmleditformat(q_select_email_account.emailadr)#</b></td>

@@ -116,7 +116,7 @@
 		  <tr>
 			<td class="field_name"></td> 
 			<td>
-				<b><cfoutput>#si_img('exclamation')# #GetLangVal('adm_ph_please_select_desired_customer')#</cfoutput></b>
+				<b><cfoutput><span class="glyphicon glyphicon-exclamation-sign"></span> #GetLangVal('adm_ph_please_select_desired_customer')#</cfoutput></b>
 			</td>
 		  <tr>
 			<td class="field_name"><cfoutput>#GetLangVal('adm_wd_customer')#</cfoutput>:</td>

@@ -24,7 +24,7 @@
 <input type="hidden" name="frmresellerkey" value="<cfoutput>#url.resellerkey#</cfoutput>">
 	
 <cfoutput query="CreateEditForumRequest.query">
-<table class="table_details table_edit_form">
+<table class="table table_details table_edit_form">
   <tr>
     <td class="field_name">#GetLangVal('cm_wd_name')#:</td>
     <td>

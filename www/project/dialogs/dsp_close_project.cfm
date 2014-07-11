@@ -40,7 +40,7 @@
 <form class="frm_inpage" action="#cgi.SCRIPT_NAME#?#cgi.query_string#" name="form123" id="form123" method="post" onsubmit="DoHandleAjaxForm(this.id);return false;">
 <input type="hidden" name="frmprojectkey" value="#htmleditformat(url.entrykey)#" />
 <input type="hidden" name="frmdoclose" value="true" />
-<table class="table_details table_edit_form">
+<table class="table table_details table_edit_form">
 	<tr>
 		<td class="field_name">
 			#GetLangVal('cm_wd_title')#

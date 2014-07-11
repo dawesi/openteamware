@@ -43,7 +43,7 @@
 <input type="hidden" name="frm_parentdirectorykey" value="#q_query_file.parentdirectorykey#" />
 
 
-<table class="table_details table_edit_form">
+<table class="table table_details table_edit_form">
 <tr>
 	<td class="field_name">
 		#getlangval('sto_wd_filename')#

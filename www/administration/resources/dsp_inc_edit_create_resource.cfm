@@ -22,7 +22,7 @@
 
 <cfinclude template="../queries/q_select_workgroups.cfm">
 
-<table class="table_details table_edit_form">
+<table class="table table_details table_edit_form">
   <tr>
     <td class="field_name"><cfoutput>#GetLangVal('cm_wd_name')#</cfoutput>:</td>
     <td>

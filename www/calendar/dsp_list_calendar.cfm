@@ -66,7 +66,7 @@ ORDER BY
 
 	<form action="index.cfm" method="get" name="form_display_events_list">
 	<input type="hidden" name="action" value="listevents">	
-	<table class="table_details table_edit_form">
+	<table class="table table_details table_edit_form">
 	  <tr>
 		<td class="field_name"><cfoutput>#GetLangVal('cal_wd_start')#</cfoutput>:</td>
 		<td>

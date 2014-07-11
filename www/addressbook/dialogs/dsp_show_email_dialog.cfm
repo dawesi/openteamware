@@ -53,7 +53,7 @@
 </cfif>
 
 <!--- load available templates ... --->
-<table class="table_details table_edit_form">
+<table class="table table_details table_edit_form">
 	<tr>
 		<td class="field_name">
 			<cfoutput>#GetLangVal('cm_wd_templates')#</cfoutput>:

@@ -71,7 +71,7 @@
 <input type="hidden" name="frmlistkey" value="#htmleditformat(CreateEditIssue.Query.listkey)#">
 <input type="hidden" name="frmentrykey" value="#htmleditformat(CreateEditIssue.Query.entrykey)#">
 
-		<table class="table_details table_edit_form">
+		<table class="table table_details table_edit_form">
 		  <tr>
 			<td class="field_name">
 				#GetLangVal('cm_wd_name')#:
@@ -123,7 +123,7 @@
 
 <cfsavecontent variable="a_str_content">
 <cfoutput query="CreateEditIssue.Query">
-<table class="table_details table_edit_form">
+<table class="table table_details table_edit_form">
 		  <tr>
 			<td class="field_name">
 				#GetLangVal('mail_wd_subject')#:

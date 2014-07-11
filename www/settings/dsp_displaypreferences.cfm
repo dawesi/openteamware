@@ -160,7 +160,7 @@
 
 <cfoutput>
 <div class="b_all" id="<cfoutput>#a_str_tab_id_extensions#</cfoutput>">
-	<table class="table_details table_edit_form">
+	<table class="table table_details table_edit_form">
 	
 	<cfset a_arr_options = ArrayNew(1)>
 	<cfset a_arr_options = a_cmp_tools.AddOptionToInputElementOptions(a_arr_options, GetLangVal('cm_wd_yes'), '1')>
@@ -175,7 +175,7 @@
 
 <div class="b_all" id="<cfoutput>#a_str_tab_id_common#</cfoutput>">
 
-<table class="table_details table_edit_form">
+<table class="table table_details table_edit_form">
 <cfoutput>
 <cfset a_arr_options = ArrayNew(1)>
 <cfset a_arr_options = a_cmp_tools.AddOptionToInputElementOptions(a_arr_options, GetLangVal('prf_ph_display_left_nav_full'), 'full')>
@@ -239,7 +239,7 @@
 
 <div class="b_all" id="<cfoutput>#a_str_tab_id_email#</cfoutput>">
 
-<table class="table_details table_edit">
+<table class="table table_details table_edit">
 <tr>
 	<td class="field_name"><cfoutput>#GetLangVal('prf_ph_charset_mails')#</cfoutput>:</td>
 	<td>
@@ -381,7 +381,7 @@
 
 <div class="b_all" id="<cfoutput>#a_str_tab_id_calendar#</cfoutput>">
 
-<table class="table_details table_edit">
+<table class="table table_details table_edit">
 <tr>
 	<td class="field_name"><cfoutput>#GetLangVal('cal_ph_set_standard_view')#</cfoutput>:</td>
 	<td>
@@ -428,7 +428,7 @@
 
 <div class="b_all" id="<cfoutput>#a_str_tab_id_addressbook#</cfoutput>">
 
-<table class="table_details table_edit">
+<table class="table table_details table_edit">
 <tr>
 	<td class="field_name"><cfoutput>#GetLangVal('prf_ph_items_per_page')#</cfoutput>:</td>
 	<td>
@@ -463,7 +463,7 @@
 
 <div class="b_all" id="<cfoutput>#a_str_tab_id_security#</cfoutput>">
 
-<table class="table_details table_edit">
+<table class="table table_details table_edit">
 <tr>
 	<td class="field_name">Session-Timeout:</td>
 	<td>

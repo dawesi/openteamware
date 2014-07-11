@@ -23,7 +23,7 @@
 
 <input type="hidden" name="frmsource" value="<cfoutput>#url.source#</cfoutput>">
 
-<table class="table_details table_edit_form">
+<table class="table table_details table_edit_form">
 <cfoutput>
 #application.components.cmp_tools.GenerateEditingTableRow(datatype = 'string', field_name = GetLangVal('cm_wd_subject'), input_name = 'frmtitle', input_value = NewOrEditTask.query.title)#
 #application.components.cmp_tools.GenerateEditingTableRow(datatype = 'memo', field_name = GetLangVal('cm_wd_text'), input_name = 'frmNotice', input_value = NewOrEditTask.query.notice)#

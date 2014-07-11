@@ -109,7 +109,7 @@
 		<cfset sReturn = sReturn & '<input type="hidden" name="frmhttpreferer" value="'& htmleditformat(ReturnRedirectURL()) & '"/>' />
 		
 		<cfif request.a_struct_form_properties.write_table>
-			<cfset sReturn = sReturn & '<table class="table_details table_edit_form">'>
+			<cfset sReturn = sReturn & '<table class="table table_details table_edit_form">'>
 			
 			<!--- not a very simple table, make sure that column widths are equal --->
 			<cfif request.a_struct_form_properties.columns_no GT 1>

@@ -17,7 +17,7 @@
 			
 		
 		<form method="get" action="<cfoutput>#cgi.SCRIPT_NAME#</cfoutput>">
-		<table class="table_details table_edit_form">
+		<table class="table table_details table_edit_form">
 
 			<cfloop collection="#url#" item="F">
 			

@@ -1,9 +1,4 @@
-<!--- //
-
-	Module:		Framework
-	Description:The login form
-
-// --->
+<!DOCTYPE html>
 
 <cfif StructKeyExists(request, 'stSecurityContext')>
 	<!--- forward to the startscreen --->
@@ -25,21 +20,14 @@
 <html>
 <head>
 
+	<link rel="stylesheet" media="all" type="text/css" href="/assets/css/bootstrap.min.css">
 	<link rel="stylesheet" media="all" type="text/css" href="/assets/css/default.css">
-	<link rel="stylesheet" media="print" type="text/css" href="/assets/css/print.css">
 
 	<title><cfoutput>#htmleditformat(request.appsettings.description)# #GetLangVal('lg_ph_title')#</cfoutput></title>
 
 	<cfinclude template="/common/js/inc_js.cfm">
 
 	<link rel="shortcut icon" href="/images/si/server_key.png" type="image/png" />
-
-	<script type="text/javascript">
-	var a_str_img = "/images/status/img_circle_loading.gif";
-	image1 = new Image();
-	image1.src = a_str_img;
-	a_str_loading_status_img_login = '<img src="' + a_str_img + ' " />';
-	</script>
 
 	<style type="text/css" media="all">
 		body {
@@ -54,15 +42,10 @@
   <cfset a_str_js_onload = "onload=""document.formlogin.frmusername.focus();""">
 </cfif>
 
-<body class="body_login" <cfoutput>#a_str_js_onload#</cfoutput>>
-
+<body <cfoutput>#a_str_js_onload#</cfoutput>>
 
 <cfset a_struct_medium_logo = application.components.cmp_customize.GetCustomStyleDataWithoutUsersettings(style = request.appsettings.default_stylesheet, entryname = 'medium_logo') />
-
 <cfset a_str_product_name = application.components.cmp_customize.GetCustomStyleDataWithoutUsersettings(style = request.appsettings.default_stylesheet, entryname = 'main').productname />
-
-
-
 
 <form action="act_login.cfm" method="post" onsubmit="$('#id_login_img').append(a_str_loading_status_img_login);$('#frmlogin').hide();" name="formlogin" style="margin:0px;">
 <input type="hidden" name="frmdomain" value="<cfoutput>#request.appsettings.properties.defaultdomain#</cfoutput>">
@@ -73,31 +56,18 @@
 </cfif>
 
 
-<cfsavecontent variable="a_str_content">
-
-	<div style="text-align:left;background-position:right bottom;background-color:rgba(255,255,255,0.95);background-repeat:no-repeat;border-radius: 8px;box-shadow:rgba(255, 255, 255, 0.317647) 0px 5px 400px 0px;">
-
-		<table border="0" cellpadding="14" cellspacing="0" width="580">
-		<tr>
-			<td class="bb">
-
-				<div style="float:right;width:auto;padding-top:12px">
-				<a href="/rd/signup/?source=loginbox" style="font-weight:bold"><cfoutput>#GetLangVal('lg_ph_no_account_yet')#</cfoutput></a>
-				</div>
-
-				<a href="/" class="nl"><img alt="<cfoutput>#GetLangVal('lg_ph_goto_homepage')#</cfoutput>" src="<cfoutput>#a_struct_medium_logo.path#</cfoutput>" width="<cfoutput>#a_struct_medium_logo.width#</cfoutput>" height="<cfoutput>#a_struct_medium_logo.height#</cfoutput>" hspace="12" vspace="12" border="0" align="absmiddle"></a>
-			</td>
-		</tr>
-			<tr>
-			<td valign="top">
+<div style="text-align:center">
+<div class="panel panel-default" style="margin-top:120px;box-shadow:rgba(255, 255, 255, 0.317647) 0px 5px 400px 0px;width:600px;margin-left: auto; margin-right: auto">
+  <div class="panel-heading">
+    <h3 class="panel-title">
+		<!--- <a href="/" class="nl"><img alt="<cfoutput>#GetLangVal('lg_ph_goto_homepage')#</cfoutput>" src="<cfoutput>#a_struct_medium_logo.path#</cfoutput>" width="<cfoutput>#a_struct_medium_logo.width#</cfoutput>" height="<cfoutput>#a_struct_medium_logo.height#</cfoutput>" hspace="12" vspace="12" border="0" align="absmiddle"></a> --->
+		<cfoutput>#htmleditformat(request.appsettings.description)# #GetLangVal('lg_ph_title')#</cfoutput>
+	</h3>
+  </div>
+<div class="panel-body">
 
 
-				<div class="" style="margin-top:14px;">
-
-
-
-
-				<table class="table_details table_edit_form" style="margin-left:20px">
+		<table class="table table_details table_edit_form" style="margin-left:20px">
 					<tr>
 						<td>
 							<cfoutput>#GetLangVal('lg_ph_please_enter_your_data')#</cfoutput>
@@ -147,45 +117,13 @@
 					</tr>
 				</table>
 
-				</div>
 
-
-			</td>
-		</tr>
-		<tr>
-			<td class="bt">
-
-				<!--- <cfif cgi.SERVER_PORT NEQ "443">
-				  	<a href="https://<cfoutput>#cgi.HTTP_HOST##cgi.SCRIPT_NAME#?#cgi.QUERY_STRING#</cfoutput>"><cfoutput>#GetLangVal("start_ph_change_secure")#</cfoutput></a>
-				  	/
-				</cfif> --->
-
-				<a href="https://github.com/funkymusic/openteamware">&copy; 2014 otw</a>
-			</td>
-		</tr>
-		</table>
+  </div>
+	<div class="panel-footer">
+		<a href="https://github.com/funkymusic/openteamware">&copy; 2014 otw</a>
 	</div>
-
-</cfsavecontent>
-
-
-
-<table style="width:100%;height:70%;" border="0" cellpadding="0" cellspacing="0">
-	<tr>
-		<td valign="middle" align="center">
-
-		<div style="width:600px;">
-
-			<cfoutput>#a_str_content#</cfoutput>
-		</div>
-
-
-		</td>
-
-	</tr>
-
-</table>
-
+</div>
+</div>
 </form>
 
 <script type="text/javascript">

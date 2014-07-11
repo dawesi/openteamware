@@ -26,7 +26,7 @@
 <form action="index.cfm" method="get" style="margin:0px; ">
 <input type="hidden" name="action" value="search">
 
-<table class="table_details table_edit_form">
+<table class="table table_details table_edit_form">
 	<tr>
 		<td class="field_name">
 			<cfoutput>#getlangval('sto_ph_searchterm')#</cfoutput>

@@ -6,7 +6,7 @@
 	<input type="hidden" name="frmresellerkey" value="<cfoutput>#url.resellerkey#</cfoutput>">
 	<input type="hidden" name="frmparentid" value="<cfoutput>#url.parentid#</cfoutput>">
 	
-	<table class="table_details table_edit_form">
+	<table class="table table_details table_edit_form">
 	  <tr>
 		<td class="field_name">
 			<cfoutput>#GetLangVal('cm_wd_name')#</cfoutput>:

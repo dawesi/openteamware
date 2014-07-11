@@ -26,7 +26,7 @@
 
 <cfset a_int_criteria_count = application.components.cmp_crmsales.GetCriteriaCount(companykey = request.stSecurityContext.mycompanykey) />
 
-<table class="table_details table_edit_form" style="width:auto;">
+<table class="table table_details table_edit_form" style="width:auto;">
 <tr>
 	<td colspan="5">
 		<cfoutput>#WriteSimpleHeaderDiv(GetLangVal('crm_ph_filter_default_fields'))#</cfoutput>

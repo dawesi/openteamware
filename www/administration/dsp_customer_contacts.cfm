@@ -67,7 +67,7 @@ WHERE entrykey NOT IN
 <form action="act_new_customer_contact.cfm" method="post">
 <input type="hidden" name="frmcompanykey" value="<cfoutput>#htmleditformat(url.companykey)#</cfoutput>">
 <b>Hinzufuegen ...</b>
-<table class="table_details table_edit_form">
+<table class="table table_details table_edit_form">
   <tr>
     <td class="field_name"><cfoutput>#GetLangVal('cm_wd_user')#</cfoutput>:</td>
     <td>

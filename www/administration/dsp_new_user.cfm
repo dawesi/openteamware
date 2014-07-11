@@ -128,7 +128,7 @@
     <input type="hidden" name="frmcompanykey" value="<cfoutput>#htmleditformat(url.companykey)#</cfoutput>">
 	<input type="hidden" name="frmproductkey" value="<cfoutput>#url.productkey#</cfoutput>">
 
-<table class="table_details table_edit_form">
+<table class="table table_details table_edit_form">
 	<tr>
 		<td class="field_name"><b><cfoutput>#GetLangVal('adm_wd_customer')#</cfoutput>:</b></td>
 		<td>

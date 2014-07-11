@@ -69,7 +69,7 @@ where userid = <cfqueryparam cfsqltype="cf_sql_integer" value="#request.stSecuri
 <br>
 <br>
 <form action="index.cfm?action=Password" method="POST">
-<table class="table_details table_edit_form">
+<table class="table table_details table_edit_form">
 <tr>
 	<td class="field_name"><cfoutput>#GetLangVal('prf_ph_pwd_current_pwd')#</cfoutput>:</td>
 	<td><input type="Password" name="frmCurrentPassword" required="Yes" size="25" maxlength="50"></td>

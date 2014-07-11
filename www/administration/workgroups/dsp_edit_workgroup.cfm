@@ -42,7 +42,7 @@ WHERE
 <input type="hidden" name="frmresellerkey" value="<cfoutput>#htmleditformat(url.resellerkey)#</cfoutput>">
 <input type="hidden" name="frmcompanykey" value="<cfoutput>#htmleditformat(url.companykey)#</cfoutput>">
 <input type="hidden" name="frmworkgroupkey" value="<cfoutput>#htmleditformat(url.entrykey)#</cfoutput>">
-<table class="table_details table_edit_form">
+<table class="table table_details table_edit_form">
   <tr>
     <td class="field_name"><cfoutput>#GetLangVal('cm_wd_name')#</cfoutput>:</td>
     <td>

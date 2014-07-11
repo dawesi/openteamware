@@ -223,7 +223,7 @@
 <tr>
 	<td>
 	
-	<table class="table_details table_edit_form table_compose_mail">
+	<table class="table table_details table_edit_form table_compose_mail">
 		<tr class="div_header_top">
 			<td style="text-align:right;" class="bb">
 				

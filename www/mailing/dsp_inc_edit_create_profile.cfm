@@ -29,7 +29,7 @@
 <span class="glyphicon glyphicon-exclamation-sign"></span> #GetLangVal('cm_ph_please_do_not_forget_saving_changes')#
 </div>
 
-<table class="table_details table_edit_form">
+<table class="table table_details table_edit_form">
   <tr>
     <td class="field_name">
 		#GetLangVal('cm_wd_name')#:

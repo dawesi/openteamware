@@ -79,7 +79,7 @@ WHERE
 	
 		
 		<form action="index.cfm?action=editmailbox&mailbox=<cfoutput>#urlencodedformat(url.mailbox)#</cfoutput>" method="post" style="margin:0px;">
-		<table class="table_details table_edit_form">
+		<table class="table table_details table_edit_form">
 		  <tr class="mischeader">
 			<td colspan="2">
 				<cfoutput>#GetLangVal('email_ph_rename_folder')#</cfoutput> (<cfoutput>#htmleditformat(a_str_foldername_without_dot_inbox)#</cfoutput>)

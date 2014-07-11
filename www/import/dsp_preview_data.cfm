@@ -131,7 +131,7 @@ function CheckAllItems() {
 </div>
 
 <cfsavecontent variable="a_str_content">
-<table class="table_details table_edit_form">
+<table class="table table_details table_edit_form">
 <cfoutput>
 	#application.components.cmp_forms.WriteFormElements()#
 </cfoutput>

@@ -29,7 +29,7 @@
 
 
 <form action="act_save_personal_data.cfm" method="POST" enablecab="No">
-<table class="table_details table_edit_form">
+<table class="table table_details table_edit_form">
 <tr>
 	<td class="field_name">
 		<cfoutput>#GetLangVal('adrb_wd_firstname')#</cfoutput>

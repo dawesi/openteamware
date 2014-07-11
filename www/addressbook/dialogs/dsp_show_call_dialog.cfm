@@ -59,7 +59,7 @@
 
 	
 	<form action="" id="idform" onsubmit="SendSMSBG()">
-	<table class="table_details table_edit_form">
+	<table class="table table_details table_edit_form">
 		<tr>
 			<td class="field_name">
 				<cfoutput>#GetLangVal('cm_wd_text')#</cfoutput>

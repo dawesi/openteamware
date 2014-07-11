@@ -48,7 +48,7 @@
 
 	<cfoutput>#GetLangVal('adrb_ph_selected_contacts')#</cfoutput>
 	
-	<table class="table_details table_edit_form">
+	<table class="table table_details table_edit_form">
 		<cfoutput query="q_select_contacts">
 		<tr>
 			<td class="field_name">###q_select_contacts.currentrow#</td>

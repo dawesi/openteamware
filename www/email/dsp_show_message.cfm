@@ -245,7 +245,7 @@ WHERE
 <form action="#" method="post" name="formqa" target="_self" onSubmit="SendQANew('<cfoutput>#jsstringformat(url.mailbox)#</cfoutput>','<cfoutput>#jsstringformat(url.id)#</cfoutput>');return false;" style="margin:0px; ">
 <input type="hidden" name="frmmailbox" value="<cfoutput>#url.mailbox#</cfoutput>">
 <input type="hidden" name="frmid" value="<cfoutput>#url.id#</cfoutput>">
-<table class="table_details table_edit_form">
+<table class="table table_details table_edit_form">
   <tr>
     <td>
 		<textarea class="b_all" name="frmtext" cols="20" rows="5" style="width:100%; "></textarea>

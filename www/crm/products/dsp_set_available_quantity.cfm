@@ -20,7 +20,7 @@
  <!--- render form --->
 <form action="index.cfm?action=doSetAvailableQuantity" method="post">
 <cfsavecontent variable="a_str_table">
- <table class="table_details table_edit_form">
+ <table class="table table_details table_edit_form">
 	<cfoutput>
 		  <tr>
 	        <td class="field_name">

@@ -11,7 +11,7 @@
 
 <form action="index.cfm?action=UploadPhotoForContact" method="post" enctype="multipart/form-data">
 <input type="hidden" name="frmentrykey" value="<cfoutput>#url.entrykey#</cfoutput>" />
-<table class="table_details table_edit_form">
+<table class="table table_details table_edit_form">
 <tr>
 	<td class="field_name"></td>
 	<td>

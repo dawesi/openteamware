@@ -35,7 +35,7 @@ WHERE
 	<legend><cfoutput>#GetLangVal('adm_ph_create_new_group')#</cfoutput></legend>
 
 
-<table class="table_details table_edit_form">
+<table class="table table_details table_edit_form">
 <form action="act_new_workgroup.cfm" method="post">
 <input type="hidden" name="frmresellerkey" value="<cfoutput>#htmleditformat(url.resellerkey)#</cfoutput>">
 <input type="hidden" name="frmcompanykey" value="<cfoutput>#htmleditformat(url.companykey)#</cfoutput>">

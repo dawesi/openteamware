@@ -119,7 +119,7 @@
 	
 	<input type="hidden" name="frmformat" value="<cfoutput>#val(url.format)#</cfoutput>">
 	
-	<table class="table_details table_edit">
+	<table class="table table_details table_edit">
 	  <tr>
 	  	<td class="field_name">
 			<cfoutput>#GetLangVal('prf_ph_signatures_email_addresses')#</cfoutput>

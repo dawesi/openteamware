@@ -76,7 +76,7 @@
 <form class="frm_inpage" action="#cgi.SCRIPT_NAME#" name="form1" id="form1" method="get" onsubmit="DoHandleAjaxForm(this.id);return false;">
 #CreateHiddenFieldsOfURLParameters('frmadduserkey')#
 </cfoutput>
-<table class="table_details table_edit_form">
+<table class="table table_details table_edit_form">
 	<tr>
 		<td>
 			<select name="frmadduserkey" size="5">

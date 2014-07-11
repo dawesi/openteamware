@@ -22,7 +22,7 @@
 </cfif>
 
 <form name="frm_simpleadd_address" onSubmit="ExecuteSimpleAddAddressbookDialog();CloseSimpleModalDialog();return false;" method="post" style="margin:0px; ">
-<table border="0" cellspacing="0" cellpadding="4" class="table_details table_edit_form">
+<table border="0" cellspacing="0" cellpadding="4" class="table table_details table_edit_form">
   <tr>
    <td class="field_name">
 		<cfoutput>#GetLangVal('adrb_wd_firstname')#</cfoutput>

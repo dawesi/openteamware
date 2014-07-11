@@ -84,7 +84,7 @@
 	<input type="hidden" name="frm_parentdirectorykey" value="<cfoutput>#url.parentdirectorykey#</cfoutput>">
 	<input type="hidden" name="frm_currentdir" value="<cfoutput>#url.currentdir#</cfoutput>">
 		
-<table class="table_details table_edit_form">
+<table class="table table_details table_edit_form">
 	<tr>
 		<td class="field_name">
 			<cfoutput>#getlangval('sto_wd_directoryname')#</cfoutput>:
@@ -185,7 +185,7 @@
 			<input type="hidden" name="frm_currentdir" value="<cfoutput>#url.currentdir#</cfoutput>">
 			<input type="hidden" name="frm_entrykey" value="<cfoutput>#a_query_directory.entrykey#</cfoutput>">
 			<input type="hidden" name="frm_parentdirectorykey" value="<cfoutput>#a_query_directory.parentdirectorykey#</cfoutput>">	
-		<table class="table_details table_edit_form">
+		<table class="table table_details table_edit_form">
 		
 		  <tr>
 			<td colspan="2" class="bb">
@@ -243,7 +243,7 @@
 			<input type="hidden" name="action" value="PublicShare">
 			<input type="hidden" name="frm_entrykey" value="<cfoutput>#a_query_directory.entrykey#</cfoutput>">
 			<input type="hidden" name="frm_parentdirectorykey" value="<cfoutput>#a_query_directory.parentdirectorykey#</cfoutput>">
-		<table class="table_details table_edit_form">
+		<table class="table table_details table_edit_form">
 			<tr>
 				<td colspan="2">
 				<cfoutput>#GetLangVal('sto_ph_public_description')#</cfoutput>

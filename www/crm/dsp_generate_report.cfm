@@ -53,7 +53,7 @@
 	#GetLangVal('crm_ph_generate_report_intro')#
 	<br /><br />  
 	
-	<table class="table_details table_edit_form">
+	<table class="table table_details table_edit_form">
 	  <!---<tr>
 	  	<td align="right">
 			#GetLangVal('cm_wd_name')#:

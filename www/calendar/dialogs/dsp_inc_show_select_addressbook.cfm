@@ -104,7 +104,7 @@
 </cfif>
 
 
-<table class="table_details table_edit_form">
+<table class="table table_details table_edit_form">
 	<tr>
 		<td class="field_name">
 			#GetLangVal('cm_wd_search')#

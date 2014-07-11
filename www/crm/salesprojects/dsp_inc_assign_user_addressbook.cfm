@@ -16,7 +16,7 @@
 <input type="hidden" name="frmsalesprojectkey" value="<cfoutput>#q_select_sales_project.entrykey#</cfoutput>">
 
 <cfoutput>
-<table class="table_details table_edit_form">
+<table class="table table_details table_edit_form">
 #a_cmp_tools.GenerateEditingTableRow(field_name = GetLangVal('crm_ph_sales_project'), input_value = q_select_sales_project.title, output_only = true)#
 
 <cfset a_arr_options = ArrayNew(1)>

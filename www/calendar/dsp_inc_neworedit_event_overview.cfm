@@ -8,7 +8,7 @@
 // --->
 
 
-<table class="table_details table_edit_form">
+<table class="table table_details table_edit_form">
   <tr>
     <td class="field_name" style="font-weight:bold; ">
 		<cfoutput>#GetLangVal('cal_wd_title')#</cfoutput>

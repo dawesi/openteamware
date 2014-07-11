@@ -30,7 +30,7 @@
 </cfif>
 
 <form action="actions/act_save_extension_crm.cfm" method="post" style="margin:0px; ">
-<table class="table_details table_edit_form">
+<table class="table table_details table_edit_form">
   <tr>
     <td class="field_name">
 		Kontaktdatendarstellung Kalender:

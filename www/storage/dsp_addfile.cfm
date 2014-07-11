@@ -22,7 +22,7 @@
 
 
 	
-	<table class="table_details table_edit_form" style="margin-top:14px; ">
+	<table class="table table_details table_edit_form" style="margin-top:14px; ">
 	<tr>
 		<td colspan="2">
 			<cfoutput>#getlangval('sto_ph_chooseuploadfiles')#</cfoutput>

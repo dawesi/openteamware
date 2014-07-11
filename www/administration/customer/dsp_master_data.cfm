@@ -16,7 +16,7 @@
 
 
 <br /><br />  
-<table class="table_details table_edit_form">
+<table class="table table_details table_edit_form">
 <form action="customer/act_edit_masterdata.cfm" method="post">
 
 

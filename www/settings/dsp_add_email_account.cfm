@@ -64,7 +64,7 @@
 	
 <h4>Please enter your data</h4>
 
-<table class="table_details table_edit_form" style="width:auto">
+<table class="table table_details table_edit_form" style="width:auto">
 	<tr>
 		<td class="field_name">
 			#GetLangVal( 'prf_ph_email_sender_name' )#

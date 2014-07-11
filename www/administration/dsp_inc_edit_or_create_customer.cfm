@@ -54,7 +54,7 @@ WHERE
 <cfoutput query="CreateorEditCustomer.Query">
 <input type="hidden" name="frmentrykey" value="<cfoutput>#htmleditformat(CreateorEditCustomer.Query.entrykey)#</cfoutput>" />
 
-<table class="table_details table_edit">
+<table class="table table_details table_edit">
 
   <tr class="mischeader">
     <td colspan="2">#GetLangVal('adm_ph_nav_account_data')#</td>

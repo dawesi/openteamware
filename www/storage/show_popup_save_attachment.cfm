@@ -38,7 +38,7 @@
 <input type="hidden" name="frmid" value="<cfoutput>#url.id#</cfoutput>">
 <input type="hidden" name="frmpartid" value="<cfoutput>#url.partid#</cfoutput>">
 
-<table class="table_details table_edit_form">
+<table class="table table_details table_edit_form">
 	<tr>
 		<td colspan="2">
 		<cfoutput>#GetLangVal('sto_ph_please_chose_dest_dir_for_attachment')#</cfoutput>

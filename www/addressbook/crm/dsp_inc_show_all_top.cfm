@@ -33,6 +33,12 @@
 	<cfinvokeargument name="itemttype" value="#a_str_display_data_type#">
 </cfinvoke>
 
+<ul class="nav nav-tabs">
+  <li class="active"><a href="#"><cfoutput>#( GetLangVal('adrb_wd_the_view') & '/' & GetLangVal('adrb_wd_quicksearch') )#</cfoutput></a></li>
+  <li><a href="#"><cfoutput>#GetLangVal('adrb_ph_advanced_search')#</cfoutput></a></li>
+  <li><a href="#"><cfoutput>#( GetLangVal('crm_ph_saved_filters') & ' (' & q_select_all_filters.recordcount & ')' )#</cfoutput></a></li>
+</ul>
+
 <cfoutput>#BuildTabNavigation('id_div_search_panel_content', false)#</cfoutput><div id="id_div_search_panel_simple" style="display:none;padding:10px;">
 	
 	<table border="0" cellpadding="6" cellspacing="0" class="table">

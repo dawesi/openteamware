@@ -24,7 +24,6 @@
 <!--- get the default action ... --->
 <cfset a_struct_service.defaultaction = a_xml_root.defaultaction.xmltext>
 <cfset a_str_default_action = a_xml_root.defaultaction.xmltext>
-<cfset a_struct_service.frontend = a_xml_root.frontend.xmltext>
 
 <cfset a_struct_service.headerinclude = ''>
 

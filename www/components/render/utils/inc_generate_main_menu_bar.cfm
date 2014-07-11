@@ -3,7 +3,7 @@
 	Component:	Render
 	Function:	GenerateMainMenuBar
 	Description:
-	
+
 // --->
 
 <cfset a_bol_force_header = StructKeyExists(url, 'includeheader') AND (url.includeheader IS 1)>
@@ -30,6 +30,9 @@
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
+		<li>
+			<a href="/crm/"><cfoutput>#GetLangVal('adrb_wd_activities')#</cfoutput></a>
+		</li>
         <cfoutput><li class="dropdown">
           <a href="##" class="dropdown-toggle" data-toggle="dropdown">#GetLangVal('cm_wd_new')# <b class="caret"></b></a>
           <ul class="dropdown-menu">
@@ -41,28 +44,18 @@
             <li><a href="/tasks/index.cfm?action=newtask">#GetLangval('cm_wd_task')#</a></li>
           </ul>
         </li>
-		<li>
-			<a href="/crm/?action=activities"><cfoutput>#GetLangVal('adrb_wd_activities')#</cfoutput></a>
-		</li>
 	   	<li>
 	    	<a href="/addressbook/index.cfm?filterdatatype=0"><cfoutput>#GetLangVal('cm_wd_contacts')#</cfoutput></a>
 	    </li>
 	    <li>
 	     	<a href="/addressbook/index.cfm?filterdatatype=1"><cfoutput>#GetLangVal('crm_wd_accounts')#</cfoutput></a>
-	     </li>	
+	     </li>
 	     <li>
 			<a href="/project"><cfoutput>#GetLangval('cm_wd_projects')#</cfoutput></a>
 		</li>
 		</cfoutput>
       </ul>
-      <!--- <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form> --->
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"></a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"><cfoutput>#htmleditformat(request.stSecurityContext.myusername)#</cfoutput> <b class="caret"></b></a>
           <ul class="dropdown-menu">
@@ -71,18 +64,30 @@
           </ul>
         </li>
       </ul>
+
+      <form class="navbar-form navbar-right" role="search" action="/addressbook/index.cfm?action=DoAddFilterSearchCriteria" method="post">
+		<input type="hidden" name="frmfilterviewkey" value="" />
+		<input type="hidden" name="frmdisplaydatatype" value="0" />
+		<input type="hidden" name="frmarea" value="contact" />
+		<input type="hidden" name="frm_fields" value="surname" />
+		<input type="hidden" name="frmclearallstoredcriteria" value="1" />
+        <div class="form-group">
+			<input type="text" name="frmsurname" class="form-control" placeholder="<cfoutput>#GetLAngVal( 'cm_wd_search') #</cfoutput>" />
+			<input type="hidden" name="frmsurname_displayname" value="<cfoutput>#GetLangVal('adrb_wd_surname')#</cfoutput>" />
+        </div>
+      </form>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
 
 <div style="clear:both"></div>
 
-<!--- 		
+<!---
  --->
 
 <div class="div_top_header_info" id="id_top_header_navigation">
 openTeamware.com &gt;
-<span id="id_span_header_top_info"></span>	
+<span id="id_span_header_top_info"></span>
 <span><a href="#" class="nl"><img src="/images/space_1_1.gif" class="si_img" /></a></span>
 </div>
 

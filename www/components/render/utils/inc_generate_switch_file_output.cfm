@@ -53,12 +53,12 @@
 
 <!--- did an error occur? fire an error message? --->
 <cfif val(url.ibxerrorno) GT 0>
-	<cfset tmp = AddJSToExecuteAfterPageLoad('OpenErrorMessagePopup(''' & url.ibxerrorno & ''',''' & JsStringFormatEx(url.ibxerrormsg) & ''');', '') />
+	<cfset  AddJSToExecuteAfterPageLoad('OpenErrorMessagePopup(''' & url.ibxerrorno & ''',''' & JsStringFormatEx(url.ibxerrormsg) & ''');', '') />
 </cfif>
 
 
 <cfif Val(url.otwinfono) GT 0>
-	<cfset tmp = AddJSToExecuteAfterPageLoad('OpenInfoMessagePopup(''' & url.otwinfono & ''');', '') />
+	<cfset AddJSToExecuteAfterPageLoad('OpenInfoMessagePopup(''' & url.otwinfono & ''');', '') />
 </cfif>
 
 <cfif request.a_struct_current_service_action.type IS 'popup'>
@@ -108,21 +108,23 @@
 	
 </cfif>
 
-<div id="iddivmainbody" class="div_main_box">
-<table border="0" cellpadding="6" cellspacing="0" width="100%">
-	<tr>
-		<cfif Len( request.a_str_left_include ) GT 0>
-		<td id="id_left_nav">
-			
-			<cfinclude template="#request.a_str_left_include#">
-			
-		</td>
-		</cfif>
-		<td id="id_content_main_box">
-			
-			
-			
-			<cftry>
+<div class="container-fluid">
+<div class="row">
+
+	<cfset mainCols = 12 />
+	
+	<cfif Len( request.a_str_left_include )>
+	<div class="col-md-2" style="max-width:200px;">
+		<cfinclude template="#request.a_str_left_include#" />
+		
+		<!--- only 10 --->
+		<cfset mainCols = 10 />
+	</div>
+	</cfif>
+	
+	 <div class="col-md-<cfoutput>#mainCols#</cfoutput>">
+		
+		<cftry>
 				<cfinclude template="#variables.a_str_action_file_directory##request.a_struct_current_service_action.template#">
 				<cfcatch type="any">
 					
@@ -138,27 +140,10 @@
 					
 				</cfcatch>
 			</cftry>
-			
-		</td>
-		<!--- 
-		<!--- advertisment --->
-		<td valign="top" style="width:130px">
-		<script type="text/javascript"><!--
-google_ad_client = "pub-5279195474591127";
-/* openTeamWare */
-google_ad_slot = "0114813449";
-google_ad_width = 120;
-google_ad_height = 600;
-//-->
-</script>
-<script type="text/javascript"
-src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
-</script>
-		<!--- 	google ads --->
-		</td> --->
-	</tr>
-</table>
-</div>
+	
+	</div>
 
+</div>
+</div>
 
 <div class="bottom_info_box" id="id_bottom_info"></div>

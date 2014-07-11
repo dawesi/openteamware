@@ -1,262 +1,352 @@
+
+
 <!--- //
 
 	Module:		CRM
-	Description:Show Welcome screen ... not needed to be honest
-	
+	Action:		Activities
+	Description:Display all open activities ...
+
 
 // --->
 
-<cflocation addtoken="false" url="index.cfm?action=activities">
+<cfset tmp = SetHeaderTopInfoString(GetLangVal('adrb_wd_activities')) />
 
-<cfinvoke component="#application.components.cmp_crmsales#" method="GetListOfViewFilters" returnvariable="q_select_filters">
-	<cfinvokeargument name="securitycontext" value="#request.stSecurityContext#">
+<h2><cfoutput>#GetLangVal('cm_wd_today')# (#LsDateFormat(now(), 'dddd, ' & request.stUserSettings.DEFAULT_DATEFORMAT)#)</cfoutput></h2>
+
+<cfinclude template="/common/scripts/script_utils.cfm" />
+
+<cfset a_struct_filter = StructNew() />
+<cfset a_struct_filter.userkey = request.stSecurityContext.myuserkey />
+<cfset a_struct_filter.servicekey = '52227624-9DAA-05E9-0892A27198268072' />
+<cfset a_struct_filter.done = 0 />
+<cfset a_struct_filter.type = 2 />
+
+<cfinvoke component="#application.components.cmp_followups#" method="GetFollowUps" returnvariable="q_select_follow_ups">
+	<cfinvokeargument name="servicekey" value="52227624-9DAA-05E9-0892A27198268072">
+	<cfinvokeargument name="objectkeys" value="">
 	<cfinvokeargument name="usersettings" value="#request.stUserSettings#">
-</cfinvoke>					
+	<cfinvokeargument name="filter" value="#a_struct_filter#">
+</cfinvoke>
 
-<cfset tmp = SetHeaderTopInfoString(GetLangVal('cm_wd_overview'))>
+<cfset a_str_contactkeys = ValueList(q_select_follow_ups.objectkey) />
+<!---
+<cfif Len(a_str_contactkeys) GT 0>
 
+	<cfset a_struct_filter = StructNew() />
+	<cfset a_struct_filter.entrykeys = a_str_contactkeys />
 
-<cfexit method="exittemplate">
+	<cfinvoke component="#application.components.cmp_addressbook#" method="GetAllContacts" returnvariable="stReturn">
+		<cfinvokeargument name="securitycontext" value="#request.stSecurityContext#">
+		<cfinvokeargument name="usersettings" value="#request.stUserSettings#">
+		<cfinvokeargument name="filter" value="#a_struct_filter#">
+	</cfinvoke>
 
-	
-<!--- <cfif request.stSecurityContext.myusername IS 'vertriebsmitarbeiter1@openTeamware.com'>
-	
-	<div style="padding:8px; ">
-		<fieldset class="bg_fieldset">
-			<legend>
-				<img src="/images/menu/img_icon_followups_32x32.gif" align="absmiddle"> Unbearbeitete Anfragen
-			</legend>
-			<div>
-				
-				Es liegen 3 unbeantwortete Anfragen im Pool:
-				
-				<br /><br />
-				
-				<table border="0" cellspacing="0" cellpadding="4" width="90%">
-					<tr>
-						<td class="bb bt addinfotext" align="center" width="120px" style="font-size:10px;text-transform:uppercase; ">Typ</td>
-						<td class="bb bt addinfotext" style="font-size:10px;text-transform:uppercase; ">Von</td>
-						<td class="bb bt addinfotext" style="font-size:10px;text-transform:uppercase; ">Betreff</td>
-						<td class="bb bt addinfotext" style="font-size:10px;text-transform:uppercase; ">eingetroffen</td>
-						<td class="bb bt addinfotext" style="font-size:10px;text-transform:uppercase; ">Dokumenten-Nr</td>
-						<td class="bb bt addinfotext" style="font-size:10px;text-transform:uppercase; ">&nbsp;</td>
-					</tr>
-				  <tr>
-					<td style="text-align:center;" class="bb">
-						<div style="text-align:center;color:white;font-size:10px;text-transform:uppercase;background-color:#CC3300;width:80px;padding:1px;">E-Mail</div>
-					</td>
-					<td class="bb">
-						max.mustermann@musterfirma.at
-					</td>
-					<td class="bb">
-						Durchrechnungszeitraum
-					</td>
-					<td class="bb">
-						vor 27 min
-					</td>
-					<td class="bb">
-						#234727
-					</td>
-					<td class="bb">
-						Anzeigen &amp; Zuweisen ...
-					</td>
-				  </tr>
-				  <tr>
-					<td style="text-align:center;" class="bb">
-						<div style="text-align:center;color:white;font-size:10px;text-transform:uppercase;background-color:#3366CC;width:80px;padding:1px;">Fax</div>
-					</td>
-					<td class="bb">
-						+43 1 991 28238
-					</td>
-					<td class="bb">&nbsp;</td>
-					<td class="bb">
-						vor 3 Stunden
-					</td>					
-					<td class="bb">
-						#233739
-					</td>
-					<td class="bb">
-						Anzeigen &amp; Zuweisen ...
-					</td>
-				  </tr>
-				  <tr>
-					<td style="text-align:center;" class="bb">
-						<div style="text-align:center;color:white;font-size:10px;text-transform:uppercase;background-color:#CC9933;width:80px;padding:1px;">Webform</div>
-					</td>
-					<td class="bb">
-						Manfred Mustermann &lt;m.mustermann@musterfirma.at&gt;
-					</td>
-					<td class="bb">
-						Angebot 2006/23737
-					</td>
-					<td class="bb">
-						gestern um 19:23
-					</td>
-					<td class="bb">
-						#232782
-					</td>
-					<td class="bb">
-						Anzeigen &amp; Zuweisen ...
-					</td>
-				  </tr>
-				</table>
-				
-				
-			</div>
-		</fieldset>
-	</div>
+	<cfset q_select_contacts = stReturn.q_select_contacts />
 
-	<br />
 </cfif> --->
 
-<table width="100%"  border="0" cellspacing="0" cellpadding="8">
+<cfsavecontent variable="a_str_content">
+
+<table class="table table-hover">
+	<tr class="tbl_overview_header">
+		<td width="25%">
+			<cfoutput>#GetLangVal('cm_wd_contact')#</cfoutput>
+		</td>
+		<td width="25%">
+			<cfoutput>#GetLangVal('cm_wd_comment')# / #GetLangVal('cm_wd_categories')#</cfoutput>
+		</td>
+		<td width="25%">
+			<cfoutput>#GetLangVal('cm_ph_timestamp')#</cfoutput>
+		</td>
+		<td width="25%">
+			<cfoutput>#GetLangVal('cm_wd_user')#</cfoutput>
+		</td>
+		<td align="right">
+			<cfoutput>#GetLangVal('cm_wd_action')#</cfoutput>
+		</td>
+	</tr>
+	<cfoutput query="q_select_follow_ups">
+		<tr>
+			<td>
+				<img src="/images/si/telephone.png" class="si_img" alt="" />
+				<cfif q_select_follow_ups.priority IS 5>
+					<img src="/images/si/exclamation.png" class="si_img" />
+				</cfif>
+				#application.components.cmp_tools.GenerateLinkToItem(usersettings = request.stUserSettings, servicekey = q_select_follow_ups.servicekey, title = q_select_follow_ups.objecttitle, objectkey = q_select_follow_ups.objectkey)#
+			</td>
+			<td>
+				#htmleditformat(q_select_follow_ups.comment)#
+				#q_select_follow_ups.categories#
+			</td>
+			<td>
+				#FormatDateTimeAccordingToUserSettings(q_select_follow_ups.dt_due)#
+
+				<cfif IsDate(q_select_follow_ups.dt_due) AND q_select_follow_ups.dt_due LT Now()>
+					<img src="/images/si/exclamation.png" class="si_img" />
+				</cfif>
+			</td>
+			<td>
+				<a href="/workgroups/?action=ShowUser&amp;entrykey=#q_select_follow_ups.userkey#">#application.components.cmp_user.GetShortestPossibleUserIDByEntrykey(q_select_follow_ups.userkey)#</a>
+			</td>
+			<td align="right" nowrap="true">
+				<a href="/crm/?action=EditFollowup&amp;entrykey=#q_select_follow_ups.entrykey#" class="nl"><span class="glyphicon glyphicon-pencil"></span></a>
+				<a class="nl" href="##" onclick="ShowSimpleConfirmationDialog('index.cfm?action=DeleteFollowups&amp;entrykeys=#q_select_follow_ups.entrykey#');"><span class="glyphicon glyphicon-trash"></span></a>
+			</td>
+		</tr>
+	</cfoutput>
+</table>
+</cfsavecontent>
+
+<cfif q_select_follow_ups.recordcount GT 0>
+	<cfoutput>#WriteNewContentBox(GetLangVal('adb_wd_telephonelist') & ' (' & q_select_follow_ups.recordcount & ')', '', a_str_content)#</cfoutput>
+</cfif>
+
+<cfset a_struct_filter = StructNew() />
+<cfset a_struct_filter.userkey = request.stSecurityContext.myuserkey />
+<cfset a_struct_filter.done = 0 />
+<cfset a_struct_filter.not_type = 2 />
+
+<cfinvoke component="#application.components.cmp_followups#" method="GetFollowUps" returnvariable="q_select_follow_ups">
+	<cfinvokeargument name="servicekey" value="">
+	<cfinvokeargument name="objectkeys" value="">
+	<cfinvokeargument name="usersettings" value="#request.stUserSettings#">
+	<cfinvokeargument name="filter" value="#a_struct_filter#">
+</cfinvoke>
+
+<!--- merge with follow-ups created by myself --->
+<cfset a_struct_filter = StructNew() />
+<cfset a_struct_filter.createdbyuserkey = request.stSecurityContext.myuserkey />
+<cfset a_struct_filter.not_userkey = request.stSecurityContext.myuserkey />
+<cfset a_struct_filter.servicekey = '52227624-9DAA-05E9-0892A27198268072' />
+<cfset a_struct_filter.done = 0 />
+
+<cfinvoke component="#application.components.cmp_followups#" method="GetFollowUps" returnvariable="qFollowUpsAssignedToOthers">
+	<cfinvokeargument name="servicekey" value="52227624-9DAA-05E9-0892A27198268072">
+	<cfinvokeargument name="objectkeys" value="">
+	<cfinvokeargument name="usersettings" value="#request.stUserSettings#">
+	<cfinvokeargument name="filter" value="#a_struct_filter#">
+</cfinvoke>
+
+<cfquery name="q_select_follow_ups" dbtype="query">
+SELECT	*
+FROM	q_select_follow_ups
+UNION ALL
+SELECT	*
+FROM	qFollowUpsAssignedToOthers
+</cfquery>
+
+
+<cfset sContactKeys = ValueList(q_select_follow_ups.objectkey) />
+
+<cfif Len(sContactKeys) GT 0>
+
+	<cfset a_struct_filter = StructNew() />
+	<cfset a_struct_filter.entrykeys = sContactKeys />
+
+	<cfinvoke component="#application.components.cmp_addressbook#" method="GetAllContacts" returnvariable="stContacts">
+		<cfinvokeargument name="securitycontext" value="#request.stSecurityContext#">
+		<cfinvokeargument name="usersettings" value="#request.stUserSettings#">
+		<cfinvokeargument name="filter" value="#a_struct_filter#">
+	</cfinvoke>
+
+	<cfset qContacts = stContacts.q_select_contacts />
+
+</cfif>
+
+<cfif q_select_follow_ups.recordcount GT 0>
+<cfsavecontent variable="a_str_content">
+
+<table class="table table-hover">
+	<tr class="tbl_overview_header">
+		<td width="20%">
+			<cfoutput>#GetLangVal('cm_wd_title')#</cfoutput>
+		</td>
+		<td width="20%">
+			<cfoutput>#GetLangVal('cm_wd_comment')#/#GetLangVal('cm_wd_categories')#</cfoutput>
+		</td>
+		<td width="20%">
+			<cfoutput>#GetLangVal('adrb_ph_contact_data')#</cfoutput>
+		</td>
+		<td width="20%">
+			<cfoutput>#GetLangVal('cm_ph_timestamp')#</cfoutput>
+		</td>
+		<td width="15%">
+			<cfoutput>#GetLangVal('cm_wd_user')#</cfoutput>
+		</td>
+		<td align="right" class="hideprint">
+			<cfoutput>#GetLangVal('cm_wd_action')#</cfoutput>
+		</td>
+	</tr>
+	<cfoutput query="q_select_follow_ups">
+
+
+		<!--- get the contact --->
+		<cfquery name="qContact" dbtype="query">
+		SELECT	*
+		FROM	qContacts
+		WHERE	entrykey = <cfqueryparam cfsqltype="cf_sql_varchar" value="#q_select_follow_ups.objectkey#" />
+		</cfquery>
+
+		<tr>
+			<td style="font-weight:bold">
+				#application.components.cmp_tools.GenerateLinkToItem(usersettings = request.stUserSettings, servicekey = q_select_follow_ups.servicekey, title = q_select_follow_ups.objecttitle, objectkey = q_select_follow_ups.objectkey)#
+
+			</td>
+			<td title="#htmleditformat(q_select_follow_ups.comment)#">
+				<!--- TODO: print mode? --->
+
+				<cfparam name="url.format" type="string" default="" />
+
+				<cfswitch expression="#url.format#">
+
+					<cfcase value="pdf">
+						#htmleditformat( q_select_follow_ups.comment )#
+					</cfcase>
+					<cfdefaultcase>
+						#htmleditformat( ShortenString( q_select_follow_ups.comment, 140 ))#
+					</cfdefaultcase>
+				</cfswitch>
+
+				#htmleditformat( q_select_follow_ups.categories )#
+
+				<cfif q_select_follow_ups.followuptype GT 0>
+					<br />
+					<span class="addinfotext">#GetLangVal('crm_ph_followup_type_' & q_select_follow_ups.followuptype)#</span>
+				</cfif>
+			</td>
+			<td>
+				<cfsavecontent variable="sContactData">
+
+					<cfif len(qContact.b_telephone) GT 0>
+						/ <a href="javascript:OpenCallPopup('#qContact.entrykey#', '#jsstringformat(qContact.b_telephone)#');">#htmleditformat(qContact.b_telephone)#</a>
+					<cfelseif len(qContact.b_MOBILE) GT 0>
+						/ <a href="javascript:OpenCallPopup('#urlencodedformat(qContact.b_MOBILE)#', 'mobile');">#htmleditformat(qContact.b_mobile)#</a>
+					<cfelseif len(qContact.p_telephone) GT 0>
+						/ <a href="javascript:OpenCallPopup('#urlencodedformat(qContact.p_telephone)#', 'mobile');">#htmleditformat(qContact.p_telephone)#</a>
+					</cfif>
+
+				</cfsavecontent>
+
+				<cfset sContactData = ReReplace(Trim(sContactData), '^/', '', 'one') />
+
+				<cfif Len(sContactData)>#sContactData#<br /></cfif>
+
+				#htmleditformat(qContact.b_zipcode)# #htmleditformat(qContact.b_city)#
+			</td>
+			<td>
+				#FormatDateTimeAccordingToUserSettings(q_select_follow_ups.dt_due)#
+
+				<cfif q_select_follow_ups.priority IS 5>
+					<img src="/images/si/exclamation.png" class="si_img" />
+				</cfif>
+			</td>
+			<td>
+				#application.components.cmp_user.GetShortestPossibleUserIDByEntrykey(q_select_follow_ups.userkey)#
+			</td>
+			<td align="right" nowrap="true" class="hideprint">
+				<a href="index.cfm?action=EditFollowup&amp;entrykey=#q_select_follow_ups.entrykey#" class="nl"><span class="glyphicon glyphicon-pencil"></span></a>
+				<a class="nl" href="##" onclick="ShowSimpleConfirmationDialog('index.cfm?action=DeleteFollowups&amp;entrykeys=#q_select_follow_ups.entrykey#');"><span class="glyphicon glyphicon-trash"></span></a>
+			</td>
+		</tr>
+	</cfoutput>
+</table>
+</cfsavecontent>
+</cfif>
+
+
+<cfsavecontent variable="a_str_btn">
+	<input onClick="window.open('<cfoutput>#cgi.SCRIPT_NAME#?#cgi.QUERY_STRING#</cfoutput>&amp;format=pdf&amp;extractcontentid=followuplist');return false" type="button" value=" Export as PDF " class="btn btn-primary" />
+</cfsavecontent>
+
+<!--- <cfset a_str_btn = '' /> --->
+
+<div id="followuplist">
+<cfoutput>#WriteNewContentBox(GetLangVal('crm_wd_follow_ups') & ' (' & q_select_follow_ups.recordcount & ')', a_str_btn, a_str_content)#</cfoutput>
+</div>
+
+<cfinvoke component="#application.components.cmp_projects#" method="GetAllProjects" returnvariable="stReturn">
+	<cfinvokeargument name="securitycontext" value="#request.stSecurityContext#">
+	<cfinvokeargument name="usersettings" value="#request.stUserSettings#">
+</cfinvoke>
+
+<cfset q_select_projects = stReturn.q_select_projects />
+
+<cfset a_dt_closing = DateAdd('d', -21, Now()) />
+
+<cfquery name="q_select_sales_projects" dbtype="query" maxrows="5">
+SELECT
+	*
+FROM
+	q_select_projects
+WHERE
+	closed = 0
+ORDER BY
+	sales_probability DESC
+;
+</cfquery>
+
+<cfsavecontent variable="a_str_content">
+
+
+
+<table class="table table-hover">
+  <tr class="tbl_overview_header">
+	<cfoutput>
+    <td>#GetLangVal('cm_wd_title')#</td>
+	<td>#GetLangVal('cm_wd_stage')#</td>
+    <td>#GetLangVal('crm_ph_expected_sales')#</td>
+	<td>#GetLangVal('cm_wd_contact')#</td>
+	<td>#GetLangVal('cm_wd_responsible_person')#</td>
+	<td>#GetLangVal('crm_ph_closing_date')#</td>
+	</cfoutput>
+  </tr>
+
+<cfoutput query="q_select_sales_projects">
   <tr>
-    <td width="50%" valign="top">
-		<fieldset class="bg_fieldset">
-			<legend>
-				<a href="/addressbook/"><img src="/images/menu/img_heads_32x32.gif" width="32" height="32" hspace="0" vspace="0" border="0" align="absmiddle"> <cfoutput>#GetLangVal('cm_wd_accounts')#/#GetLangVal('cm_wd_contacts')#</cfoutput></a>
-			</legend>
-			<div>
-				<div class="bb">
-					<a href="/addressbook/"><cfoutput>#GetLangVal('adrb_ph_show_all_contacts')#</cfoutput></a>
-					&nbsp;|&nbsp;
-					<a href="/addressbook/?action=createnewitem"><cfoutput>#GetLangVal('adrb_ph_new_contact')#</cfoutput></a>
-					&nbsp;|&nbsp;
-					<a href="/addressbook/?action=telephonelist"><cfoutput>#GetLangVal('adb_wd_telephonelist')#</cfoutput></a>
-				</div>
-				
-				
-				<div class="bb">
-				<form action="/addressbook/" method="get" style="margin:0px; ">
-					<cfoutput>#GetLangVal('adrb_ph_fulltext_search')#</cfoutput>: <input type="text" name="search" value="" size="12"> <input type="submit" value="<cfoutput>#GetLangVal('cm_wd_search')#</cfoutput>">
-					
-				</form>
-				</div>
-				
-				<br />
-				
-				<div class="bb">
-				<a href="/addressbook/?action=advancedsearch"><cfoutput>#GetLangVal('crm_ph_saved_filters')#</cfoutput> (<cfoutput>#q_select_filters.recordcount#</cfoutput>):</a>
-				
-
-				<ul>
-					<cfoutput query="q_select_filters">
-						<li>
-							<a style="font-weight:bold; " href="../addressbook/?action=showcontacts&filterviewkey=#urlencodedformat(q_select_filters.entrykey)#">#htmleditformat(q_select_filters.viewname)#</a>
-							<br />
-							#GetLangVal('cm_wd_created')#: #DateFormat(q_select_filters.dt_created, 'dd.mm.yyyy')#
-							
-							<cfif Len(q_select_filters.description) GT 0>
-							<br />#htmleditformat(q_select_filters.description)#
-							</cfif>
-						</li>
-					</cfoutput>
-				</ul>
-				</div>
-				
-			
-			<cfquery name="q_select_open_re_requests" datasource="#request.a_str_db_tools#">
-			SELECT
-				COUNT(remoteedit.id) AS count_id
-			FROM
-				remoteedit
-			WHERE
-				remoteedit.userkey = <cfqueryparam cfsqltype="cf_sql_varchar" value="#request.stSecurityContext.myuserkey#">
-			;
-			</cfquery>			
-			
-				<div>
-					<cfset a_str_open_res = ReplaceNoCase(GetLangVal('adrb_ph_outlook_open_remote_edits'), '%RECORDCOUNT%', q_select_open_re_requests.count_id)>
-					<a href="/addressbook/?action=remoteeditstatus"><cfoutput>#a_str_open_res#</cfoutput></a>
-				</div>
-				
-				
-				<cfset a_dt_check = DateAdd('d', -5, Now())>
-
-				<div class="bb bt">
-					<cfoutput>#GetLangVal('cm_ph_last_displayed')#</cfoutput>&nbsp;
-				</div>
-				
-				<cfset ab = GetTickCount()>
-				<cfquery name="q_select_latest" datasource="#request.a_str_db_log#">
-				SELECT
-					title,query_string
-				FROM
-					clickstream
-				WHERE
-					userkey = <cfqueryparam cfsqltype="cf_sql_varchar" value="#request.stSecurityContext.myuserkey#">
-					AND
-					servicekey = <cfqueryparam cfsqltype="cf_sql_varchar" value="52227624-9DAA-05E9-0892A27198268072">
-					AND
-					dt_created > <cfqueryparam cfsqltype="cf_sql_timestamp" value="#CreateODBCDateTime(a_dt_check)#">
-					AND
-					Length(title) > 0
-					AND
-					action = 'ShowContact'
-				ORDER BY
-					dt_created DESC
-				LIMIT
-					7
-				;
-				</cfquery>
-				
-					<ul>
-					<cfoutput query="q_select_latest">
-						<li><a href="/addressbook/index.cfm?#q_select_latest.query_string#">#htmleditformat(q_select_latest.title)#</a></li>
-					</cfoutput>
-					</ul>
-			</div>
-		</fieldset>
-		
-		<br /><br />
-		
-		<!--- calendar --->
-		<cfinclude template="../calendar/dsp_outlook_index.cfm">
-
-		
-		<!---<fieldset class="bg_fieldset">
-			<legend><cfoutput>#GetLangVal('cm_wd_opportunities')#</cfoutput> </legend>
-			<div>
-				<a href="index.cfm?action=opportunities">Reports</a>
-			</div>
-		</fieldset>			
-		
-		<br /><br />--->
-		
-		<!---<fieldset class="bg_fieldset">
-			<legend><cfoutput>#GetLangVal('cm_wd_settings')#</cfoutput> </legend>
-			<div>
-			
-				<div class="bb">
-				Sie k�nnen im Administrations-Tool diverse Einstellungen f�r das CRM Modul vornehmen um das System f�r Ihre Bed�rfnisse anzupassen.
-				</div>
-				
-				<br />
-				<div>
-				<a href="/administration/?action=crm" target="_blank"><cfoutput>#GetLangVal('cm_wd_settings')#</cfoutput></a>
-				</div> 
-			</div>
-		</fieldset>			--->
+    <td>
+		<a href="/project/index.cfm?action=ShowProject&amp;entrykey=#q_select_sales_projects.entrykey#"><img src="/images/si/coins.png" class="si_img" />#htmleditformat(CheckZeroString(q_select_sales_projects.title))#</a>
 	</td>
-    <td width="50%" valign="top">
-		
-			
-		<cfinclude template="../tools/followups/dsp_outlook.cfm">
-
-		
-		<br /><br />
-		
-		<cfinvoke component="/components/crmsales/crm_reports" method="GetReportDatabaseOfUser" returnvariable="a_str_databasekey">
-			<cfinvokeargument name="securitycontext" value="#request.stSecurityContext#">
-			<cfinvokeargument name="usersettings" value="#request.stUserSettings#">
-		</cfinvoke>		
-		
-		<cfset a_struct_options = StructNew()>
-		<cfset a_struct_options.tabletyp = 'report'>
-		
-		
+	<td>
+		#GetLangVal('crm_wd_sales_stage_' & q_select_sales_projects.stage)#
+	</td>
+    <td>
+		#Val(q_select_sales_projects.sales)# #q_select_sales_projects.currency#
+	</td>
+	<td>
+		<a href="/addressbook/?action=ShowItem&amp;entrykey=#q_select_sales_projects.contactkey#">#application.components.cmp_addressbook.GetContactDisplayNameData(entrykey = q_select_sales_projects.contactkey)#</a>
+	</td>
+    <td>
+		#application.components.cmp_user.GetUsernameByEntrykey(q_select_sales_projects.projectleaderuserkey)#
+	</td>
+	<td>
+		<cfif IsDate(q_select_sales_projects.dt_closing)>
+			#LSDateFormat(q_select_sales_projects.dt_closing, request.stUserSettings.default_dateformat)#
+		</cfif>
 	</td>
   </tr>
+</cfoutput>
 </table>
+</cfsavecontent>
 
+<cfoutput>#WriteNewContentBox(GetLangVal('crm_ph_sales_projects'), '', a_str_content)#</cfoutput>
+
+<!---
+
+
+<!--- today outlook --->
+<cfsavecontent variable="a_str_today">
+	<cfinclude template="../calendar/dsp_outlook_default.cfm">
+</cfsavecontent>
+
+<cfsavecontent variable="a_str_btn">
+	<cfoutput>
+	<input onClick="GotoLocHref('/calendar/index.cfm?Action=ViewDay');" type="button" class="btn btn-primary" value="#GetLangVal('cal_wd_day')#" />
+	<input onClick="GotoLocHref('/calendar/index.cfm?Action=ViewWeek');" type="button" class="btn btn-primary" value="#GetLangVal('cal_wd_week')#" />
+	<input onClick="GotoLocHref('/calendar/index.cfm?Action=ViewMonth');" type="button" class="btn btn-primary" value="#GetLangVal('cal_wd_month')#" />
+	</cfoutput>
+</cfsavecontent>
+
+<!--- write "today" box --->
+<cfoutput>#WriteNewContentBox('', a_str_btn, a_str_today)#</cfoutput>
+ --->
 

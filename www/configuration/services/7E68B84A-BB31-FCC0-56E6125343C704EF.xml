@@ -2,9 +2,6 @@
 	<servicekey>7E68B84A-BB31-FCC0-56E6125343C704EF</servicekey>
 	<basedirectory>/crm/</basedirectory>
 	<defaultaction>showwelcome</defaultaction>
-	<frontend>www</frontend>
-	<headerinclude>dsp_inc_top.cfm</headerinclude>
-	<leftinclude>dsp_inc_left.cfm</leftinclude>
 <actions>	
 	<item>
 		<name>ShowWelcome</name>

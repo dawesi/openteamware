@@ -32,6 +32,15 @@ body,p,td,div,a,textarea,select {
 	color:rgb(051,051,051);
 	}
 	
+.glyphicon {
+	margin-right: 8px;
+	color: rgb(051,051,051);
+	}
+	
+.glyphicon:hover {
+	color: #428bca;
+	}
+	
 .body_popup {padding:12px;}
 	
 .tbl_bottom_view {
@@ -443,14 +452,10 @@ ul.divleftpanelactions li div:hover {
 	padding-left:0px;
 	width:100%;		
 	font-weight:bold;
-	border-bottom:#EEEEEE solid 1px;
 	}
 	
 .div_box .div_legend .div_caption {
-	width:25%;
-	
-	font-size:14px;
-	color: #666666;
+	font-size: 16px;
 	float:left;
 	text-transform:uppercase;
 	}

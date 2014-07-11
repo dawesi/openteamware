@@ -149,22 +149,7 @@ function findObj(n, d) {
 function PageIsLoadedInFrameSet() {
 	return (parent.location.href !== location.href);
 	}
-// check if page is loaded in the frameset
-function CheckFrameSet() {
-	// TODO hp: add check for double frameset loading
-	return;
-	var url = location.pathname + location.search;
-	if (parent.location.href == location.href) {
-		location.href = '/start/default/?url='+escape(url);
-		}				
-	}
-// change main frame only
-function GotoLocHrefMain(u) {
-	if (parent.location.href == location.href) {
-		location.href = '/start/default/?url='+escape(u);
-		} else parent.location.href = u;
-	}
-	
+
 function OpenComposePopupTo(email_adr) {
 	var ato = '';
 	if (email_adr) {ato = email_adr;}

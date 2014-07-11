@@ -55,5 +55,4 @@
 </cfif>
 		
 <cfoutput><body id="id_body" #a_str_style# class="#a_str_classname#" #variables.a_str_js_onload#></cfoutput>
-
 <cfsetting enablecfoutputonly="false">

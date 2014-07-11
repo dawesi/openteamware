@@ -68,7 +68,7 @@
 <input type="hidden" name="frmdomain" value="<cfoutput>#request.appsettings.properties.defaultdomain#</cfoutput>">
 
 <!--- set forwarding target ... --->
-<cfif (len(url.url) gt 0) AND (CompareNoCase(url.url, "/index.cfm") neq 0) AND (CompareNoCase(url.url, '/start/') NEQ 0)>
+<cfif (len(url.url) gt 0) AND (CompareNoCase(url.url, "/index.cfm") neq 0) AND (CompareNoCase(url.url, '/crm/') NEQ 0)>
 	<input type="Hidden" name="url" value="<cfoutput>#urlencodedformat(url.url)#</cfoutput>" />
 </cfif>
 

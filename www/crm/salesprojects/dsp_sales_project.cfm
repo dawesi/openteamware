@@ -3,9 +3,9 @@
 	Module:			CRM
 	Action:			ShowSalesProject
 	Description:	Show details for one Sales project
-	
 
-// --->	
+
+// --->
 <cfparam name="url.entrykey" type="string" default="">
 
 <cfset a_cmp_crm_sales = CreateObject('component', request.a_str_component_crm_sales)>
@@ -37,8 +37,7 @@
 
 	<input onClick="location.href= 'index.cfm?action=EditOrNewSalesProject&entrykey=<cfoutput>#urlencodedformat(url.entrykey)#</cfoutput>';" type="button" value=" <cfoutput>#htmleditformat(GetLangVal('cm_wd_edit'))#</cfoutput> " class="btn btn-primary">
 	<input onClick="call_edit_contact('<cfoutput>#jsstringformat(url.entrykey)#</cfoutput>', 'sales_projects');" type="button" value=" <cfoutput>#htmleditformat(GetLangVal('cm_wd_new'))#</cfoutput> " class="btn btn-primary">
-	<input type="button" value="<cfoutput>#GetLangVal('crm_ph_close_deal')#</cfoutput>" class="btn btn-primary" onClick="alert('2do');">
-	
+
 </cfsavecontent>
 
 <cfsavecontent variable="a_str_content">
@@ -70,7 +69,7 @@
 		</td>
 		<td width="25%">
 			#val(q_select_sales_project.sales)# #q_select_sales_project.currency#
-		</td>			
+		</td>
 	</tr>
 	<tr>
 		<td class="td_title field_name">
@@ -123,18 +122,18 @@
 		</td>
 		<td>
 			#GetLangVal('crm_ph_leadsource_' & q_select_sales_project.lead_source)#
-			
+
 			<cfif Len(q_select_sales_project.lead_source_id) GT 0>
 				(#htmleditformat(q_select_sales_project.lead_source_id)#)
-			</cfif>			
+			</cfif>
 		</td>
 		<!--- internal name for source ... --->
 		<td class="td_title field_name">
-			
+
 		</td>
 		<td>
-			
-		</td>		
+
+		</td>
 	</tr>
 	<!---
 	<tr>
@@ -151,7 +150,7 @@
 			#q_select_sales_project.dt_offer_made#
 		</td>
 	</tr>--->
-	
+
 	<cfif IsDate(q_select_sales_project.dt_project_start) OR IsDate(q_select_sales_project.dt_project_end)>
 	<tr>
 		<td class="td_title field_name">
@@ -184,33 +183,33 @@
 	function DisplayTasksAndAppointmentsAssignedToContacts(editmode) {
 		var a_editmode = false;
 		var a_simple_get = new cBasicBgOperation();
-		
+
 		if (editmode) {
 			a_editmode = editmode;
 			}
-		
+
 		a_simple_get.url = '/addressbook/crm/utils/inc_load_contacts_data_tasks_appointments.cfm?salesprojectkey=<cfoutput>#urlencodedformat(url.entrykey)#</cfoutput>&entrykeys=<cfoutput>#urlencodedformat(q_select_sales_project.contactkey)#</cfoutput>&editmode=' + a_editmode + '&r=' + escape(Math.random());
 		a_simple_get.callback_function = processReqDisplayTasksAndAppointments;
 		a_simple_get.doOperation();
 		}
 
 	function processReqDisplayTasksAndAppointments(responseText) {
-		obj1 = findObj('id_div_crm_show_contact_tasks_and_appointments');										
-		obj1.innerHTML = responseText;	
-		
+		obj1 = findObj('id_div_crm_show_contact_tasks_and_appointments');
+		obj1.innerHTML = responseText;
+
 		if (responseText == '') {
 			obj1.innerHTML = 'no data found';
 			// findObj('id_fieldset_tasks_appointments_followups').style.display = 'none';
 			}
 		}
-		
+
 	<cfoutput>
 	var a_pop_further_actions_evnt_tsk = new cActionPopupMenuItems();
 	a_pop_further_actions_evnt_tsk.AddItem('#GetLangValJS('crm_wd_follow_up')#','javascript:call_new_item_for_contact(\'<cfoutput>#jsstringformat(q_select_sales_project.contactkey)#</cfoutput>\', \'followup\');','','','','');
 	a_pop_further_actions_evnt_tsk.AddItem('#GetLangValJS('cm_wd_task')#','javascript:call_new_item_for_contact(\'<cfoutput>#jsstringformat(q_select_sales_project.contactkey)#</cfoutput>\', \'task\')','','','','');
 	a_pop_further_actions_evnt_tsk.AddItem('#GetLangValJS('cm_wd_appointment')#','javascript:call_new_item_for_contact(\'<cfoutput>#jsstringformat(q_select_sales_project.contactkey)#</cfoutput>\', \'appointment\')','','','','');
 	</cfoutput>
-	
+
 </cfsavecontent>
 
 <cfscript>
@@ -224,7 +223,7 @@
 
 <!--- write --->
 <cfoutput>#WriteNewContentBox(GetLangVal('crm_wd_follow_ups') & ', ' & GetLangVal('cm_wd_tasks') & ' & ' & GetLangVal('cm_wd_events'), a_str_buttons, GenerateSimpleDivWithID('id_div_crm_show_contact_tasks_and_appointments'), 'id_fieldset_tasks_appointments_followups')#</cfoutput>
-	
+
 <br/>
 
 <!--- history --->
@@ -324,7 +323,7 @@
 			<td width="25%">
 				#GetLangVal('cm_wd_created')#
 			</td>
-			
+
 		</tr>
 		</cfoutput>
 		<cfoutput query="q_select_sales_project_stage_trends">

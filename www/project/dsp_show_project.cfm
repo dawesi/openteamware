@@ -3,7 +3,7 @@
 	Module:		Project
 	Action:		ShowProject
 	Description:show connected notices, files, emails, tasks, events AND custom  database entries
-	
+
 
 // --->
 
@@ -33,7 +33,7 @@
 	<cfinvokeargument name="securitycontext" value="#request.stSecurityContext#">
 	<cfinvokeargument name="usersettings" value="#request.stUserSettings#">
 	<cfinvokeargument name="projectkey" value="#url.entrykey#">
-</cfinvoke> 
+</cfinvoke>
 
 <cfset tmp = SetHeaderTopInfoString(GetLangVal('cm_wd_project') & ' ' & q_select_project.title) />
 
@@ -68,12 +68,12 @@
 		</td>
 		<td>
 			<a href="/workgroups/?action=ShowUser&entrykey=#q_select_project.projectleaderuserkey#">#application.components.cmp_user.GetShortestPossibleUserIDByEntrykey(q_select_project.projectleaderuserkey)#</a>
-		</td>	
+		</td>
 	</tr>
-	
+
 	<cfif q_select_project.project_type IS 1>
 		<tr>
-			<td class="field_name">			
+			<td class="field_name">
 				#GetLangVal('cm_wd_stage')#
 			</td>
 			<td>
@@ -84,7 +84,7 @@
 			</td>
 			<td>
 				#val(q_select_project.sales)# #q_select_project.currency#
-			</td>	
+			</td>
 		</tr>
 		<tr>
 			<td class="td_title field_name">
@@ -113,17 +113,17 @@
 		</td>
 		<td>
 			#GetLangVal('crm_ph_leadsource_' & q_select_project.lead_source)#
-			
+
 			<cfif Len(q_select_project.lead_source_id) GT 0>
 				(#htmleditformat(q_select_project.lead_source_id)#)
-			</cfif>			
+			</cfif>
 		</td>
 		<td class="field_name">
-			
+
 		</td>
 		<td>
-			
-		</td>		
+
+		</td>
 	</tr>
 	</cfif>
 	<tr>
@@ -135,7 +135,7 @@
 		</td>
 		<td class="field_name"></td>
 		<td></td>
-	</tr>	
+	</tr>
 	<cfif IsDate(q_select_project.dt_begin) OR IsDate(q_select_project.dt_end)>
 	<tr>
 		<td class="field_name">
@@ -163,7 +163,7 @@
 			#GetLangVal('cm_wd_workgroups')#
 		</td>
 		<td>
-			
+
 		</td>
 	</tr>
 	<cfif q_select_project.closed IS 1>
@@ -172,7 +172,7 @@
 				#GetLangVal('prj_wd_closed')#
 			</td>
 			<td>
-			
+
 			</td>
 			<td class="field_name">
 				#GetLangVal('prj_ph_closed_by_user')#
@@ -189,7 +189,7 @@
 <cfsavecontent variable="a_str_buttons">
 <cfoutput>
 	<input type="button" value="#MakeFirstCharUCase(GetLangVal('cm_wd_edit'))#" onclick="GotoLocHref('index.cfm?action=EditProject&entrykey=#url.entrykey#');" class="btn btn-primary" />
-	
+
 	<cfif q_select_project.closed IS 0>
 		<input type="button" value="#GetLangVal('prj_ph_close_project')#" onclick="DoCloseProject('#jsstringformat(q_select_project.title)#', '#url.entrykey#');" class="btn" />
 	</cfif>
@@ -205,7 +205,7 @@ function DoCloseProject(title, entrykey) {
 	a_simple_modal_dialog.type = 'custom';
 	a_simple_modal_dialog.customtitle = '<cfoutput>#GetLangValJS('prj_ph_close_project')#</cfoutput>';
 	a_simple_modal_dialog.customcontent_load_from_url = 'index.cfm?Action=CloseProject&entrykey=' + escape(entrykey) + '&title=' + escape(title);
-	a_simple_modal_dialog.ShowDialog();	
+	a_simple_modal_dialog.ShowDialog();
 	return false;
 	}
 </cfsavecontent>
@@ -216,7 +216,7 @@ function DoCloseProject(title, entrykey) {
 
 <cfif q_select_project.project_type IS 1 AND q_select_sales_project_stage_trends.recordcount GT 0>
 	<cfsavecontent variable="a_str_content">
-	
+
 		<table class="table table-hover" cellspacing="0">
 			<cfoutput>
 			<tr class="tbl_overview_header">
@@ -259,9 +259,9 @@ function DoCloseProject(title, entrykey) {
 				</tr>
 			</cfoutput>
 		</table>
-	
+
 	</cfsavecontent>
-	
+
 	<cfoutput>#WriteNewContentBox(GetLangval('crm_ph_stage_trends'), '', a_str_content)#</cfoutput>
 </cfif>
 
@@ -334,7 +334,7 @@ WHERE
   	<cfinvokeargument name="usersettings" value="#request.stUserSettings#">
   	<cfinvokeargument name="filter" value="#a_struct_filter#">
 	<cfinvokeargument name="startdate" value="#a_dt_start#">
-	<cfinvokeargument name="enddate" value="#a_dt_end#">  
+	<cfinvokeargument name="enddate" value="#a_dt_end#">
 </cfinvoke>
 
 <cfset q_select_events = stReturn_events.q_select_events>
@@ -350,7 +350,7 @@ WHERE
 
 <div class="bb"><b><img src="/images/tasks/menu_neue_aufgabe.gif" align="absmiddle" border="0" hspace="4" vspace="4">Aufgaben (<cfoutput>#q_select_tasks.recordcount#</cfoutput>)</b></div>
 
-	
+
 
 		<table border="0" cellspacing="0" cellpadding="3"  width="100%">
 
@@ -368,7 +368,7 @@ WHERE
 
 		<cfoutput query="q_select_tasks" startrow="1" maxrows="5">
 
-		  <tr id="idtrtasks#q_select_tasks.currentrow#"  onMouseOver="hilite(this.id);"  onMouseOut="restore(this.id);">
+		  <tr>
 
 			<td><a href="../tasks/index.cfm?action=ShowTask&entrykey=#q_select_tasks.entrykey#&returnurl=#sReturnurl#"><img src="/images/icon/notizen.gif" align="absmiddle" vspace="0" hspace="0" border="0" height="12" width="12">&nbsp;#q_select_tasks.title#</a></td>
 
@@ -416,13 +416,13 @@ WHERE
 
     <td valign="top">
 
-		
+
 
 		<div class="bb"><img src="/images/addressbook/menu_gruppen.gif" align="absmiddle" vspace="4" hspace="4" border="0"><b>Kontakte (<cfoutput>#q_select_contacts.recordcount#</cfoutput>)</b></div>
 
-		
 
-		
+
+
 
 		<table border="0" cellspacing="0" cellpadding="3" style="margin-left:15px;">
 
@@ -450,21 +450,21 @@ WHERE
 
 			</tr>
 
-		</cfif>	
+		</cfif>
 
-		</table>	
+		</table>
 
-	
 
-		
 
-	
+
+
+
 
 	</td>
 
 	<td valign="top">
 
-		
+
 
 		<div class="bb"><img src="/images/webmail/menu_posteingang.gif" hspace="4" vspace="4" align="absmiddle" border="0"><b>E-Mails</b></div>
 
@@ -476,17 +476,17 @@ WHERE
 
     <td valign="top">
 
-	
 
-	
+
+
 
 	</td>
 
     <td valign="top">
 
-	
 
-	
+
+
 
 	</td>
 
@@ -498,7 +498,7 @@ WHERE
 
 	<div class="bb"><img src="/images/storage/menu_neues-verzeichnis.gif" align="absmiddle" hspace="4" vspace="4" border="0"><b>Dateien</b></div>
 
-	
+
 
 	</td>
 
@@ -506,7 +506,7 @@ WHERE
 
 	<div class="bb"><img src="/images/webmail/menu_als_entwurf_speichern.gif" align="absmiddle" vspace="4" hspace="4" border="0"><b>Eigene Datenbanken</b></div>
 
-	
+
 
 	</td>
 
@@ -540,7 +540,7 @@ WHERE
 
 	<div class="bb"><b><img src="/images/calendar/menu_heute.gif" vspace="4" hspace="4" align="absmiddle" border="0">Termine (<cfoutput>#q_select_events.recordcount#</cfoutput>)</b></div>
 
-	
+
 
 		<table border="0" cellspacing="0" cellpadding="3" style="margin-left:15px;">
 
@@ -552,7 +552,7 @@ WHERE
 
 			</tr>
 
-		</cfoutput>	
+		</cfoutput>
 
 		</table>
 

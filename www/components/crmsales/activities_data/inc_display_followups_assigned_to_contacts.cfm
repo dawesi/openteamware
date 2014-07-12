@@ -87,10 +87,10 @@
 
 		<a href="/crm/?action=ShowFollowUp&entrykey=#q_select_follow_ups.entrykey#">
 		<cfswitch expression="#q_select_follow_ups.followuptype#">
-			<cfcase value="0"><img align="absmiddle" src="/images/si/flag_red.png" alt="" class="si_img" />#GetLangVal('crm_wd_follow_up')#</cfcase>
+			<cfcase value="0"><span class="glyphicon glyphicon-flag"></span> #GetLangVal('crm_wd_follow_up')#</cfcase>
 			<cfcase value="1"><img align="absmiddle" src="/images/si/email.png" alt="" class="si_img" />#GetLangVal('cm_wd_email')#</cfcase>
-			<cfcase value="2"><img align="absmiddle" src="/images/si/telephone.png" alt="" class="si_img" />#GetLangVal('crm_wd_follow_up_call')#</cfcase>
-			<cfdefaultcase><img align="absmiddle" src="/images/si/flag_red.png" alt="" class="si_img" />#GetLangVal('crm_wd_follow_up')#</cfdefaultcase>
+			<cfcase value="2"><span class="glyphicon glyphicon-earphone"></span> #GetLangVal('crm_wd_follow_up_call')#</cfcase>
+			<cfdefaultcase><span class="glyphicon glyphicon-flag"></span> #GetLangVal('crm_wd_follow_up')#</cfdefaultcase>
 		</cfswitch>
 
 		<cfif Len(q_select_follow_ups.comment) GT 0>

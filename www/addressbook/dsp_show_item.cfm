@@ -128,9 +128,9 @@ function NewElementClickEv(item_type) {
 <div style="padding:6px;">
 	<input type="button" class="btn btn-success" onclick="ShowHTMLActionPopup('id_btn_new_activity', a_pop_crm_new_activity);return false;" value="<cfoutput>#GetLangVal('crm_ph_set_new_activity_collect_data')#</cfoutput>" id="id_btn_new_activity" />
 
-	<input type="button" value="#GetLangVal('cm_ph_more_actions')# ..." id="id_btn_contacts_further_actions" class="btn" onClick="ShowHTMLActionPopup('id_btn_contacts_further_actions', a_pop_further_actions);return false;">
+	<input type="button" value="#GetLangVal('cm_ph_more_actions')# ..." id="id_btn_contacts_further_actions" class="btn btn-default" onClick="ShowHTMLActionPopup('id_btn_contacts_further_actions', a_pop_further_actions);return false;">
 
-	<input type="button" class="btn" onclick="ShowSimpleConfirmationDialog('index.cfm?action=deletecontacts&entrykeys=#url.entrykey#&confirmed=true&redirect_start_contacts=true');return false;" value="#MakeFirstCharUCase(GetLangVal('cm_wd_delete'))#" />
+	<input type="button" class="btn btn-default" onclick="ShowSimpleConfirmationDialog('index.cfm?action=deletecontacts&entrykeys=#url.entrykey#&confirmed=true&redirect_start_contacts=true');return false;" value="#MakeFirstCharUCase(GetLangVal('cm_wd_delete'))#" />
 </div>
 </cfoutput>
 
@@ -680,7 +680,7 @@ function NewElementClickEv(item_type) {
 						<img src="/images/space_1_1.gif" class="si_img" alt="" />
 					</cfif>
 					<cfif q_select_sub_items.activity_count_followups GT 0>
-						<img src="/images/si/flag_red.png" class="si_img" />
+						<span class="glyphicon glyphicon-flag"></span>
 					<cfelse>
 						<img src="/images/space_1_1.gif" class="si_img" alt="" />
 					</cfif>

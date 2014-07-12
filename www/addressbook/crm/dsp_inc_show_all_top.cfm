@@ -15,14 +15,14 @@
 	<cfinvokeargument name="usersettings" value="#request.stUserSettings#">
 </cfinvoke>
 
-<cfset tmp = StartNewTabNavigation() />
-<cfset tmp = AddTabNavigationItem(GetLangVal('adrb_wd_the_view') & '/' & GetLangVal('adrb_wd_quicksearch'), 'javascript:ShowTopCRMPanel(''simple'');', '') />
+<cfset StartNewTabNavigation() />
+<cfset AddTabNavigationItem(GetLangVal('adrb_wd_the_view') & '/' & GetLangVal('adrb_wd_quicksearch'), 'javascript:ShowTopCRMPanel(''simple'');', '') />
 
 <!--- for crm customers, display filters plus advanced search ... --->
-<cfset tmp = AddTabNavigationItem(GetLangVal('adrb_ph_advanced_search'), 'javascript:ShowTopCRMPanel(''advanced'', #url.filterdatatype#);', '') />
+<cfset AddTabNavigationItem(GetLangVal('adrb_ph_advanced_search'), 'javascript:ShowTopCRMPanel(''advanced'', #url.filterdatatype#);', '') />
 
 <cfif q_select_all_filters.recordcount GT 0>
-	<cfset tmp = AddTabNavigationItem(GetLangVal('crm_ph_saved_filters') & ' (' & q_select_all_filters.recordcount & ')', 'javascript:ShowTopCRMPanel(''savedfilters'', #url.filterdatatype#);', '')>
+	<cfset AddTabNavigationItem(GetLangVal('crm_ph_saved_filters') & ' (' & q_select_all_filters.recordcount & ')', 'javascript:ShowTopCRMPanel(''savedfilters'', #url.filterdatatype#);', '')>
 </cfif>
 
 <cfinvoke component="#application.components.cmp_crmsales#" method="BuildCRMFilterStruct" returnvariable="a_struct_crm_filter">
@@ -33,211 +33,234 @@
 	<cfinvokeargument name="itemttype" value="#a_str_display_data_type#">
 </cfinvoke>
 
-<ul class="nav nav-tabs">
-  <li class="active"><a href="#"><cfoutput>#( GetLangVal('adrb_wd_the_view') & '/' & GetLangVal('adrb_wd_quicksearch') )#</cfoutput></a></li>
-  <li><a href="#"><cfoutput>#GetLangVal('adrb_ph_advanced_search')#</cfoutput></a></li>
-  <li><a href="#"><cfoutput>#( GetLangVal('crm_ph_saved_filters') & ' (' & q_select_all_filters.recordcount & ')' )#</cfoutput></a></li>
+<ul class="nav nav-tabs" role="tablist" id="myTab">
+  <li class="active"><a href="#basicFilter" role="tab" data-toggle="tab"><cfoutput>#( GetLangVal('adrb_wd_the_view') & '/' & GetLangVal('adrb_wd_quicksearch') )#</cfoutput></a></li>
+  <li><a href="?action=AdvancedSearch&filterdatatype=0"><cfoutput>#GetLangVal('adrb_ph_advanced_search')#</cfoutput></a></li>
+  <li><a href="#storedFilters" role="tab" data-toggle="tab"><cfoutput>#( GetLangVal('crm_ph_saved_filters') & ' (' & q_select_all_filters.recordcount & ')' )#</cfoutput></a></li>
 </ul>
 
+<!-- Tab panes -->
+<div class="tab-content" style="border:silver solid 1px">
+	<div class="tab-pane active" id="basicFilter">
+
+
+			<table border="0" cellpadding="6" cellspacing="0" class="table table_details">
+				<tr>
+					<td>
+
+							<b><span class="glyphicon glyphicon-eye-open"></span> <cfoutput>#GetLangVal('adrb_wd_view')#</cfoutput></b>
+
+							<table class="table">
+								<tr>
+									<td>
+										<a <cfif sOrderBy IS ''></cfif> href="index.cfm?&orderby=company%2Csurname&filterdatatype=<cfoutput>#url.filterdatatype#</cfoutput>"><cfoutput>#GetLangVal('cm_wd_all')#</cfoutput></a>
+									</td>
+									<td>
+										<a <cfif sOrderBy IS 'lastdisplayed'>style="font-weight:bold;"</cfif> href="index.cfm?&orderby=lastdisplayed&filterdatatype=<cfoutput>#url.filterdatatype#</cfoutput>"><cfoutput>#GetLangVal('cm_ph_last_displayed')#</cfoutput></a>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<a <cfif sOrderBy IS 'latelyadded'>style="font-weight:bold;"</cfif> href="index.cfm?&orderby=latelyadded&filterdatatype=<cfoutput>#url.filterdatatype#</cfoutput>"><cfoutput>#GetLangVal('cm_ph_last_added')#</cfoutput></a>
+									</td>
+									<td>
+										<a <cfif sOrderBy IS 'ownitems'>style="font-weight:bold;"</cfif> href="index.cfm?&orderby=ownitems&filterdatatype=<cfoutput>#url.filterdatatype#</cfoutput>"><cfoutput>#GetLangVal('cm_ph_my_items')#</cfoutput></a>
+									</td>
+								</tr>
+							</table>
+
+					</td>
+					<td>
+
+						 	<b><span class="glyphicon glyphicon-search"></span> <cfoutput>#GetLangVal('cm_wd_search')#</cfoutput></b>
+
+						 	<form id="idformtopsearch" name="idformtopsearch" method="POST" onSubmit="ShowLoadingStatus();" action="index.cfm?action=DoAddFilterSearchCriteria" style="margin:0px;">
+							<input type="hidden" name="frmfilterviewkey" value="<cfoutput>#url.filterviewkey#</cfoutput>" />
+							<input type="hidden" name="frmdisplaydatatype" value="<cfoutput>#a_str_display_data_type#</cfoutput>" />
+							<input type="hidden" name="frmarea" value="contact" />
+
+							<table class="table table_details">
+
+							<cfswitch expression="#a_str_display_data_type#">
+								<cfcase value="0,3" delimiters=",">
+								<input type="hidden" name="frm_fields" value="surname,firstname,company,email_prim,b_city,b_zipcode" />
+								<tr>
+									<td>
+										<cfoutput>#GetLangVal('adrb_wd_firstname')#</cfoutput>
+									</td>
+									<td>
+										<input type="text" name="frmfirstname" value="" size="10" />
+										<input type="hidden" name="frmfirstname_displayname" value="<cfoutput>#GetLangVal('adrb_wd_firstname')#</cfoutput>" />
+									</td>
+									<td>
+										<cfoutput>#GetLangVal('adrb_wd_surname')#</cfoutput>
+										</td>
+									<td>
+										<input type="text" name="frmsurname" value="" size="10" />
+										<input type="hidden" name="frmsurname_displayname" value="<cfoutput>#GetLangVal('adrb_wd_surname')#</cfoutput>" />
+									</td>
+									<td>
+										<input type="submit" value="<cfoutput>#GetLangVal('cm_wd_search')#</cfoutput>" class="btn btn-success" />
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<cfoutput>#GetLangVal('adrb_wd_organisation')#</cfoutput>
+									</td>
+									<td>
+										<input type="text" name="frmcompany" value="" size="10" />
+										<input type="hidden" name="frmcompany_displayname" value="<cfoutput>#GetLangVal('adrb_wd_company')#</cfoutput>" />
+									</td>
+									<td>
+										<cfoutput>#GetLangVal('cm_wd_email')#</cfoutput>
+									</td>
+									<td>
+										<input type="text" name="frmemail_prim" value="" size="10" />
+										<input type="hidden" name="frmemail_prim_displayname" value="<cfoutput>#GetLangVal('cm_wd_email')#</cfoutput>" />
+									</td>
+									<td>
+										<cfif Len(url.filterviewkey) IS 0>
+											<input type="checkbox" value="1" name="frmclearallstoredcriteria" <cfoutput>#WriteCheckedElement(a_int_clear_all_stored_criteria_for_simple_filter, 1)#</cfoutput> /> <cfoutput>#GetLangVal('adrb_ph_start_new_search')#</cfoutput>
+										</cfif>
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<cfoutput>#GetLangVal('adrb_wd_city')#</cfoutput>
+									</td>
+									<td>
+										<input type="text" name="frmb_city" value="" size="10" />
+										<input type="hidden" name="frmb_city_displayname" value="<cfoutput>#GetLangVal('adrb_wd_city')#</cfoutput>" />
+									</td>
+									<td>
+										<cfoutput>#GetLangVal('adrb_wd_zipcode')#</cfoutput>
+									</td>
+									<td>
+										<input type="text" name="frmb_zipcode" value="" size="10" />
+										<input type="hidden" name="frmb_zipcode_displayname" value="<cfoutput>#GetLangVal('adrb_wd_zipcode')#</cfoutput>" />
+									</td>
+								</tr>
+								</cfcase>
+								<cfcase value="2">
+								<!--- leads --->
+								<input type="hidden" name="frm_fields" value="surname,company,leadsource" />
+								<tr>
+									<td>
+										<cfoutput>#GetLangVal('crm_ph_lead_source')#</cfoutput>
+									</td>
+									<td>
+										<select name="frmleadsource">
+										<cfoutput>
+										<cfloop from="0" to="8" index="ii">
+											<option value="#ii#">#htmleditformat(GetLangVal('crm_ph_leadsource_' & ii))#</option>
+										</cfloop>
+										</cfoutput>
+										<input type="hidden" name="frmfirstname_displayname" value="<cfoutput>#GetLangVal('crm_ph_lead_source')#</cfoutput>" />
+									</td>
+									<td>
+										<cfoutput>#GetLangVal('adrb_wd_surname')#</cfoutput>
+										</td>
+									<td>
+										<input type="text" name="frmsurname" value="" size="10" />
+										<input type="hidden" name="frmsurname_displayname" value="<cfoutput>#GetLangVal('adrb_wd_surname')#</cfoutput>" />
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<cfoutput>#GetLangVal('adrb_wd_organisation')#</cfoutput>
+									</td>
+									<td>
+										<input type="text" name="frmcompany" value="" size="10" />
+										<input type="hidden" name="frmcompany_displayname" value="<cfoutput>#GetLangVal('adrb_wd_company')#</cfoutput>" />
+									</td>
+									<td>
+									</td>
+									<td>
+										<input type="submit" value="<cfoutput>#GetLangVal('cm_wd_search')#</cfoutput>" class="btn" />
+									</td>
+								</tr>
+								</cfcase>
+								<cfcase value="1">
+								<input type="hidden" name="frm_fields" value="company" />
+								<!--- accounts ... --->
+								<tr>
+									<td>
+										<cfoutput>#GetLangVal('adrb_wd_organisation')#</cfoutput>
+									</td>
+									<td>
+										<input type="text" name="frmcompany" value="" size="10" />
+										<input type="hidden" name="frmcompany_displayname" value="<cfoutput>#GetLangVal('adrb_wd_company')#</cfoutput>" />
+									</td>
+									<td>
+									</td>
+									<td>
+										<input type="submit" value="<cfoutput>#GetLangVal('cm_wd_search')#</cfoutput>" class="btn" />
+									</td>
+								</tr>
+
+								</cfcase>
+							</cfswitch>
+							</table>
+							</form>
+
+
+					</td>
+					<td>
+
+						<b><span class="glyphicon glyphicon-folder-open"></span> <cfoutput>#GetLangVal('adrb_wd_filter')#</cfoutput></b>
+
+						<cfoutput>
+						<table class="table table_details">
+							<tr>
+								<td>
+									<a href="##" onclick="ShowFilterAreaData('#url.filterviewkey#', '2', 'category', '#a_str_display_data_type#');">#GetLangVal('cm_wd_category')#</a>
+								</td>
+								<td>
+									<a href="##" onclick="ShowFilterAreaData('#url.filterviewkey#', '0', 'workgroup', '#a_str_display_data_type#');">#GetLangVal('cm_wd_workgroup')#</a>
+								</td>
+							</tr>
+							<tr>
+								<td>
+									<a href="##" onclick="ShowFilterAreaData('#url.filterviewkey#', '0', 'custodian', '#a_str_display_data_type#');">#GetLangVal('crm_wd_custodian')#</a>
+								</td>
+								<td>
+									<a href="##" onclick="ShowFilterAreaData('#url.filterviewkey#', '2', 'criteria', '#a_str_display_data_type#');">#GetLangVal('crm_wd_criteria')#</a>
+								</td>
+							</tr>
+						</table>
+						</cfoutput>
+
+						<b>Spezial-Ansichten</b>
+						<br />
+						<a href="index.cfm?action=telephonelist"><cfoutput>#GetLangVal('adb_wd_telephonelist')#</cfoutput></a>
+|
+						<a href="index.cfm?action=birthdaylist"><cfoutput>#GetLangVal('adrb_wd_birthdaylist')#</cfoutput></a>
+
+
+					</td>
+					<td valign="top" class="" id="idtdfilterselect"></td>
+				</tr>
+			</table>
+
+
+	</div>
+	<div class="tab-pane" id="storedFilters">
+
+
+	</div>
+</div>
+
+<script>
+$('#myTab a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+</script>
+
+<!---
 <cfoutput>#BuildTabNavigation('id_div_search_panel_content', false)#</cfoutput><div id="id_div_search_panel_simple" style="display:none;padding:10px;">
+ --->
 
-	<table border="0" cellpadding="6" cellspacing="0" class="table">
-		<tr>
-			<td class="br" valign="top">
-
-					<b><img src="/images/si/eye.png" class="si_img" /> <cfoutput>#GetLangVal('adrb_wd_view')#</cfoutput></b>
-
-					<table cellpadding="4" cellspacing="0" border="0">
-						<tr>
-							<td>
-								<a <cfif sOrderBy IS ''></cfif> href="index.cfm?&orderby=company%2Csurname&filterdatatype=<cfoutput>#url.filterdatatype#</cfoutput>"><cfoutput>#GetLangVal('cm_wd_all')#</cfoutput></a>
-							</td>
-							<td>
-								<a <cfif sOrderBy IS 'lastdisplayed'>style="font-weight:bold;"</cfif> href="index.cfm?&orderby=lastdisplayed&filterdatatype=<cfoutput>#url.filterdatatype#</cfoutput>"><cfoutput>#GetLangVal('cm_ph_last_displayed')#</cfoutput></a>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<a <cfif sOrderBy IS 'latelyadded'>style="font-weight:bold;"</cfif> href="index.cfm?&orderby=latelyadded&filterdatatype=<cfoutput>#url.filterdatatype#</cfoutput>"><cfoutput>#GetLangVal('cm_ph_last_added')#</cfoutput></a>
-							</td>
-							<td>
-								<a <cfif sOrderBy IS 'ownitems'>style="font-weight:bold;"</cfif> href="index.cfm?&orderby=ownitems&filterdatatype=<cfoutput>#url.filterdatatype#</cfoutput>"><cfoutput>#GetLangVal('cm_ph_my_items')#</cfoutput></a>
-							</td>
-						</tr>
-					</table>
-
-			</td>
-			<td class="br" valign="top">
-
-				 	<b><img src="/images/si/find.png" class="si_img" /><cfoutput>#GetLangVal('cm_wd_search')#</cfoutput></b>
-
-				 	<form id="idformtopsearch" name="idformtopsearch" method="POST" onSubmit="ShowLoadingStatus();" action="index.cfm?action=DoAddFilterSearchCriteria" style="margin:0px;">
-					<input type="hidden" name="frmfilterviewkey" value="<cfoutput>#url.filterviewkey#</cfoutput>" />
-					<input type="hidden" name="frmdisplaydatatype" value="<cfoutput>#a_str_display_data_type#</cfoutput>" />
-					<input type="hidden" name="frmarea" value="contact" />
-
-					<table class="table">
-
-					<cfswitch expression="#a_str_display_data_type#">
-						<cfcase value="0,3" delimiters=",">
-						<input type="hidden" name="frm_fields" value="surname,firstname,company,email_prim,b_city,b_zipcode" />
-						<tr>
-							<td>
-								<cfoutput>#GetLangVal('adrb_wd_firstname')#</cfoutput>
-							</td>
-							<td>
-								<input type="text" name="frmfirstname" value="" size="10" />
-								<input type="hidden" name="frmfirstname_displayname" value="<cfoutput>#GetLangVal('adrb_wd_firstname')#</cfoutput>" />
-							</td>
-							<td>
-								<cfoutput>#GetLangVal('adrb_wd_surname')#</cfoutput>
-								</td>
-							<td>
-								<input type="text" name="frmsurname" value="" size="10" />
-								<input type="hidden" name="frmsurname_displayname" value="<cfoutput>#GetLangVal('adrb_wd_surname')#</cfoutput>" />
-							</td>
-							<td>
-								<input type="submit" value="<cfoutput>#GetLangVal('cm_wd_search')#</cfoutput>" class="btn" />
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<cfoutput>#GetLangVal('adrb_wd_organisation')#</cfoutput>
-							</td>
-							<td>
-								<input type="text" name="frmcompany" value="" size="10" />
-								<input type="hidden" name="frmcompany_displayname" value="<cfoutput>#GetLangVal('adrb_wd_company')#</cfoutput>" />
-							</td>
-							<td>
-								<cfoutput>#GetLangVal('cm_wd_email')#</cfoutput>
-							</td>
-							<td>
-								<input type="text" name="frmemail_prim" value="" size="10" />
-								<input type="hidden" name="frmemail_prim_displayname" value="<cfoutput>#GetLangVal('cm_wd_email')#</cfoutput>" />
-							</td>
-							<td>
-								<cfif Len(url.filterviewkey) IS 0>
-									<input type="checkbox" value="1" name="frmclearallstoredcriteria" <cfoutput>#WriteCheckedElement(a_int_clear_all_stored_criteria_for_simple_filter, 1)#</cfoutput> /> <cfoutput>#GetLangVal('adrb_ph_start_new_search')#</cfoutput>
-								</cfif>
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<cfoutput>#GetLangVal('adrb_wd_city')#</cfoutput>
-							</td>
-							<td>
-								<input type="text" name="frmb_city" value="" size="10" />
-								<input type="hidden" name="frmb_city_displayname" value="<cfoutput>#GetLangVal('adrb_wd_city')#</cfoutput>" />
-							</td>
-							<td>
-								<cfoutput>#GetLangVal('adrb_wd_zipcode')#</cfoutput>
-							</td>
-							<td>
-								<input type="text" name="frmb_zipcode" value="" size="10" />
-								<input type="hidden" name="frmb_zipcode_displayname" value="<cfoutput>#GetLangVal('adrb_wd_zipcode')#</cfoutput>" />
-							</td>
-						</tr>
-						</cfcase>
-						<cfcase value="2">
-						<!--- leads --->
-						<input type="hidden" name="frm_fields" value="surname,company,leadsource" />
-						<tr>
-							<td>
-								<cfoutput>#GetLangVal('crm_ph_lead_source')#</cfoutput>
-							</td>
-							<td>
-								<select name="frmleadsource">
-								<cfoutput>
-								<cfloop from="0" to="8" index="ii">
-									<option value="#ii#">#htmleditformat(GetLangVal('crm_ph_leadsource_' & ii))#</option>
-								</cfloop>
-								</cfoutput>
-								<input type="hidden" name="frmfirstname_displayname" value="<cfoutput>#GetLangVal('crm_ph_lead_source')#</cfoutput>" />
-							</td>
-							<td>
-								<cfoutput>#GetLangVal('adrb_wd_surname')#</cfoutput>
-								</td>
-							<td>
-								<input type="text" name="frmsurname" value="" size="10" />
-								<input type="hidden" name="frmsurname_displayname" value="<cfoutput>#GetLangVal('adrb_wd_surname')#</cfoutput>" />
-							</td>
-						</tr>
-						<tr>
-							<td>
-								<cfoutput>#GetLangVal('adrb_wd_organisation')#</cfoutput>
-							</td>
-							<td>
-								<input type="text" name="frmcompany" value="" size="10" />
-								<input type="hidden" name="frmcompany_displayname" value="<cfoutput>#GetLangVal('adrb_wd_company')#</cfoutput>" />
-							</td>
-							<td>
-							</td>
-							<td>
-								<input type="submit" value="<cfoutput>#GetLangVal('cm_wd_search')#</cfoutput>" class="btn" />
-							</td>
-						</tr>
-						</cfcase>
-						<cfcase value="1">
-						<input type="hidden" name="frm_fields" value="company" />
-						<!--- accounts ... --->
-						<tr>
-							<td>
-								<cfoutput>#GetLangVal('adrb_wd_organisation')#</cfoutput>
-							</td>
-							<td>
-								<input type="text" name="frmcompany" value="" size="10" />
-								<input type="hidden" name="frmcompany_displayname" value="<cfoutput>#GetLangVal('adrb_wd_company')#</cfoutput>" />
-							</td>
-							<td>
-							</td>
-							<td>
-								<input type="submit" value="<cfoutput>#GetLangVal('cm_wd_search')#</cfoutput>" class="btn" />
-							</td>
-						</tr>
-
-						</cfcase>
-					</cfswitch>
-					</table>
-					</form>
-
-
-			</td>
-			<td valign="top">
-
-				<b><img src="/images/si/database_add.png" class="si_img" /><cfoutput>#GetLangVal('adrb_wd_filter')#</cfoutput></b>
-
-				<cfoutput>
-				<table cellpadding="4" cellspacing="0" border="0">
-					<tr>
-						<td>
-							<a href="##" onclick="ShowFilterAreaData('#url.filterviewkey#', '2', 'category', '#a_str_display_data_type#');">#GetLangVal('cm_wd_category')#</a>
-						</td>
-						<td>
-							<a href="##" onclick="ShowFilterAreaData('#url.filterviewkey#', '0', 'workgroup', '#a_str_display_data_type#');">#GetLangVal('cm_wd_workgroup')#</a>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<a href="##" onclick="ShowFilterAreaData('#url.filterviewkey#', '0', 'custodian', '#a_str_display_data_type#');">#GetLangVal('crm_wd_custodian')#</a>
-						</td>
-						<td>
-							<a href="##" onclick="ShowFilterAreaData('#url.filterviewkey#', '2', 'criteria', '#a_str_display_data_type#');">#GetLangVal('crm_wd_criteria')#</a>
-						</td>
-					</tr>
-				</table>
-				</cfoutput>
-				<br /><br />
-				<b>Spezial-Ansichten</b>
-				<br />
-				<a href="index.cfm?action=telephonelist"><cfoutput>#GetLangVal('adb_wd_telephonelist')#</cfoutput></a>
-				<br />
-				<a href="index.cfm?action=birthdaylist"><cfoutput>#GetLangVal('adrb_wd_birthdaylist')#</cfoutput></a>
-
-
-			</td>
-			<td valign="top" class="bl" id="idtdfilterselect"></td>
-		</tr>
-	</table>
 
 	<!---
 
@@ -318,12 +341,9 @@
 
 <cfif ArrayLen(a_struct_crm_filter.criterias) GT 0>
 
-	<div class="bb bl br mischeader" style="padding:0px;display:none;padding-top:8px;" id="iddiv_current_filter_criteria">
+	<div class="bb bl br mischeader" style="padding:6px;display:none;padding-top:8px;" id="iddiv_current_filter_criteria">
 
-		<table border="0" style="padding:4px;padding-left:10px;width:100%;">
-			<tr>
-				<td style="width:170px;font-weight:bold;" nowrap>
-					<img src="/images/si/find.png" class="si_img" /> <cfoutput>#GetLangVal('crm_ph_active_filter_criteria')# (#ArrayLen(a_struct_crm_filter.criterias)#)</cfoutput>
+					<span class="glyphicon glyphicon-search"></span> <cfoutput>#GetLangVal('crm_ph_active_filter_criteria')# (#ArrayLen(a_struct_crm_filter.criterias)#)</cfoutput>
 
 					<cfif Len(url.filterviewkey) GT 0>
 
@@ -346,12 +366,9 @@
 
 					</cfif>
 
-				</td>
-				<td style="width:100%" valign="top">
+
 					<cfinclude template="../filter/dsp_inc_show_view_filter_criteria.cfm">
-				</td>
-			</tr>
-		</table>
+
 	</div>
 
 	<cfsavecontent variable="a_str_js">
@@ -361,7 +378,7 @@
 			}
 	</cfsavecontent>
 
-	<cfset tmp = AddJSToExecuteAfterPageLoad('', a_str_js) />
+	<cfset AddJSToExecuteAfterPageLoad('', a_str_js) />
 </cfif>
 
 <cfsavecontent variable="a_str_js">

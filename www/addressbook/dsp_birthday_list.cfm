@@ -2,8 +2,8 @@
 
 	Module:		Address Book
 	Action:		Birthdaylist
-	Description: 
-	
+	Description:
+
 
 // --->
 
@@ -14,7 +14,7 @@
 
 <cfinvoke component="#application.components.cmp_addressbook#" method="GetAllContacts" returnvariable="stReturn">
 	<cfinvokeargument name="securitycontext" value="#request.stSecurityContext#">
-	<cfinvokeargument name="usersettings" value="#request.stUserSettings#">	
+	<cfinvokeargument name="usersettings" value="#request.stUserSettings#">
 	<cfinvokeargument name="loadoptions" value="#a_struct_loadoptions#">
 	<cfinvokeargument name="fieldlist" value="company,surname,firstname,b_telephone,p_telephone,email_prim,username,b_mobile,lastemailcontact,p_mobile,reupdateavaliable,categories,company,lastsmssent,archiveentry">
 </cfinvoke>
@@ -39,13 +39,13 @@ WHERE
 <cfloop query="q_select_contacts">
 
 	<cfset a_dt_birthday_this_year = CreateDate(Year(now()), Month(q_select_contacts.birthday), Day(q_select_contacts.birthday)) />
-	
+
 	<cfif a_dt_birthday_this_year LT Now()>
 		<cfset a_dt_birthday_this_year = DateAdd('yyyy', 1, a_dt_birthday_this_year) />
 	</cfif>
-	
+
 	<cfset a_int_diff_days = DateDiff('d', Now(), a_dt_birthday_this_year) />
-	
+
 	<cfset tmp = QuerySetCell(q_select_contacts, 'birthdaythisyear', a_dt_birthday_this_year, q_select_contacts.currentrow) />
 	<cfset tmp = QuerySetCell(q_select_contacts, 'birthdayindays', a_int_diff_days, q_select_contacts.currentrow) />
 </cfloop>
@@ -65,16 +65,14 @@ ORDER BY
 ;
 </cfquery>
 
-<cfset tmp = SetHeaderTopInfoString(GetLangVal('adrb_wd_birthdaylist')) />
-
 <cfoutput>#GetLangVal('adrb_ph_birthdaylist_description')#</cfoutput>
-<br /><br />  
+<br /><br />
 <cfoutput>#GetLangVal('cal_wd_period')#</cfoutput>:
 &nbsp;<a href="index.cfm?action=birthdaylist&timeframe=3">3 <cfoutput>#GetLangVal('cm_wd_days')#</cfoutput></a>&nbsp;|
 &nbsp;<a href="index.cfm?action=birthdaylist&timeframe=7">1 <cfoutput>#GetLangVal('cal_wd_week')#</cfoutput> (7 <cfoutput>#GetLangVal('cm_wd_days')#</cfoutput>)</a>&nbsp;|
 &nbsp;<a href="index.cfm?action=birthdaylist&timeframe=30"><cfoutput>#GetLangVal('cal_wd_month')#</cfoutput> (30 <cfoutput>#GetLangVal('cm_wd_days')#</cfoutput>)</a>&nbsp;|
 &nbsp;<a href="index.cfm?action=birthdaylist&timeframe=0"><cfoutput>#GetLangVal('cm_wd_all')#</cfoutput></a>
-<br /><br />  
+<br /><br />
 <table class="table table-hover">
   <tr class="tbl_overview_header">
     <td colspan="2">
@@ -91,12 +89,12 @@ ORDER BY
     <td class="bb bt">&nbsp;</td>
   </tr>
   <cfoutput query="q_select_contacts">
-  
+
   <cfset a_dt_birthday_this_year = CreateDate(Year(now()), Month(q_select_contacts.birthday), Day(q_select_contacts.birthday)) />
-  
+
   <cfset a_str_dt_link = DateFormat(a_dt_birthday_this_year, 'mm/dd/yyyy') />
   <tr>
-  	<td>		
+  	<td>
 		<img src="/images/si/bullet_orange.png" class="si_img" />
 	</td>
     <td>
@@ -106,26 +104,26 @@ ORDER BY
 		<a href="../calendar/?action=ViewDay&date=#urlencodedformat(a_str_dt_link)#">#DateFormat(q_select_contacts.birthday, 'dd.mm.yyyy')#</a>
 	</td>
 	<td>
-	
+
 		<cfif a_dt_birthday_this_year LT Now()>
 			<cfset a_dt_birthday_this_year = DateAdd('yyyy', 1, a_dt_birthday_this_year) />
 		</cfif>
-		
+
 		<cfset a_int_diff_months = DateDiff('m', Now(), a_dt_birthday_this_year) />
 		<cfset a_int_diff_days = DateDiff('d', Now(), a_dt_birthday_this_year) />
-		
+
 		<cfif a_int_diff_months GT 0>
 			#a_int_diff_months# Monat(en)
 		<cfelse>
 			#a_int_diff_days# Tag(en)
-		</cfif>	
-	
+		</cfif>
+
 	</td>
     <td align="center">
 		#(DateDiff('yyyy', q_select_contacts.birthday, Now()) + 1)#
 	</td>
     <td>&nbsp;</td>
-  </tr>  
+  </tr>
   </cfoutput>
 </table>
 

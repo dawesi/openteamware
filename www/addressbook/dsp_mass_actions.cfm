@@ -3,13 +3,11 @@
 	Module:		Address Book
 	Action:		ShowMassActions
 	Description:Display possible mass actions
-	
+
 
 // --->
 
 <cfparam name="url.datatype" type="numeric" default="0">
-
-<cfset tmp = SetHeaderTopInfoString(MakeFirstCharUCase(GetLangVal('cm_ph_edit_together'))) />
 
 <cfset a_struct_filter = StructNew() />
 <cfset a_struct_filter.entrykeys = session.a_struct_temp_data.addressbook_selected_entrykeys />
@@ -20,8 +18,8 @@
 <cfinvoke component="#application.components.cmp_addressbook#" method="GetAllContacts" returnvariable="stReturn">
 	<cfinvokeargument name="securitycontext" value="#request.stSecurityContext#">
 	<cfinvokeargument name="usersettings" value="#request.stUserSettings#">
-	<cfinvokeargument name="filter" value="#a_struct_filter#">	
-	<cfinvokeargument name="filterdatatypes" value="#url.datatype#">	
+	<cfinvokeargument name="filter" value="#a_struct_filter#">
+	<cfinvokeargument name="filterdatatypes" value="#url.datatype#">
 	<cfinvokeargument name="loadoptions" value="#stOpts#" />
 </cfinvoke>
 
@@ -33,7 +31,7 @@
 <div style="height:150px;overflow:auto;" class="b_all">
 <ol>
 <cfoutput query="q_select_contacts">
-	
+
 	<cfquery name="q_select_contact" dbtype="query">
 	SELECT
 		*
@@ -43,12 +41,12 @@
 		entrykey = <cfqueryparam cfsqltype="cf_sql_varchar" value="#q_select_contacts.entrykey#">
 	;
 	</cfquery>
-	
+
 	<li>#si_img('bullet_orange')# #application.components.cmp_addressbook.GetContactDisplayNameData(entrykey = q_select_contacts.entrykey, query_holding_data = q_select_contact)#</li>
 </cfoutput>
 </ol>
 </div>
-<br /> 
+<br />
 <cfoutput>#WriteSimpleHeaderDiv(MakeFirstCharUCase(GetLangVal('cm_ph_edit_together')))#</cfoutput>
 
 <!--- ... set mass criteria ... --->
@@ -59,25 +57,25 @@
 				method = 'POST',
 				onSubmit = 'DisplayPleaseWaitMsgOnLocChange()',
 				form_id = a_str_form_id) />
-				
+
 <cfset tmp = application.components.cmp_forms.AddFormElement(securitycontext = request.stSecurityContext,
 				usersettings = request.stUserSettings,
 				datatype = 'hidden',
 				input_name = 'frmentrykeys',
 				input_value = session.a_struct_temp_data.addressbook_selected_entrykeys) />
-				
+
 <cfset tmp = application.components.cmp_forms.AddFormElement(securitycontext = request.stSecurityContext,
 				usersettings = request.stUserSettings,
 				datatype = 'hidden',
 				input_name = 'frmdatatype',
-				input_value = url.datatype) />			
-				
+				input_value = url.datatype) />
+
 <cfset tmp = application.components.cmp_forms.AddFormElement(securitycontext = request.stSecurityContext,
 				usersettings = request.stUserSettings,
 				datatype = 'boolean',
 				field_name = GetLangVal('crm_ph_replace_existing_assignments'),
-				input_name = 'frmreplaceexistingassignments') />			
-				
+				input_name = 'frmreplaceexistingassignments') />
+
 <cfset tmp = application.components.cmp_forms.AddFormElement(securitycontext = request.stSecurityContext,
 				usersettings = request.stUserSettings,
 				datatype = 'selector',
@@ -85,7 +83,7 @@
 				input_name = 'frmcriteria',
 				useuniversalselectorjsfunction = 1,
 				useuniversalselectorjsfunction_type = 'criteria') />
-				
+
 <cfset tmp = application.components.cmp_forms.AddFormElement(securitycontext = request.stSecurityContext,
 				usersettings = request.stUserSettings,
 				datatype = 'selector',
@@ -93,7 +91,7 @@
 				input_name = 'frmcategories',
 				useuniversalselectorjsfunction = 1,
 				useuniversalselectorjsfunction_type = 'categories') />
-				
+
 <cfset tmp = application.components.cmp_forms.AddFormElement(securitycontext = request.stSecurityContext,
 				usersettings = request.stUserSettings,
 				datatype = 'selector',
@@ -101,7 +99,7 @@
 				input_name = 'frmassignedusers',
 				useuniversalselectorjsfunction = 1,
 				useuniversalselectorjsfunction_type = 'assignedusers') />
-				
+
 
 <cfset tmp = application.components.cmp_forms.AddFormElement(securitycontext = request.stSecurityContext,
 				usersettings = request.stUserSettings,
@@ -110,15 +108,15 @@
 				input_name = 'frmworkgroupshares',
 				useuniversalselectorjsfunction = 1,
 				useuniversalselectorjsfunction_type = 'workgroupshares') />
-	
-				
+
+
 <cfset tmp = application.components.cmp_forms.AddFormElement(securitycontext = request.stSecurityContext,
 				usersettings = request.stUserSettings,
 				datatype = 'submit',
 				field_name = MakeFirstCharUCase(GetLangVal('cm_ph_edit_together')),
 				input_name = 'frmsubmit',
 				input_value = session.a_struct_temp_data.addressbook_selected_entrykeys) />
-				
+
 <cfoutput>
 #application.components.cmp_forms.WriteFormStart()#
 #application.components.cmp_forms.WriteFormElements()#

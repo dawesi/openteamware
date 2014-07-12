@@ -119,14 +119,6 @@ function CenterElementToBody(element) {
 	$(element).css('left', divPos).css('top', t);			
 	}
 
-function hilite(id) {
-	$('#' + id).toggleClass('ContentAlternateRow');
-	}
-
-function restore(id) {
-	$('#' + id).removeClass('ContentAlternateRow');
-	}
-
 function getDim(el) {
    var coords = {x: 0, y: 0};
    while (el) {

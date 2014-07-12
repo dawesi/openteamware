@@ -1,19 +1,4 @@
-<!--- //
-
-	Module:		
-	Action:		
-	Function:	
-	Description:
-	
-	Header:		
-
-// --->
-
-TODO: think about implementing this feature
-
 <cfparam name="form.frmfileupload" type="string" default="">
-
-<cfset tmp = SetHeaderTopInfoString(GetLangVal('adrb_ph_import_vcard')) />
 
 <cfif Len(form.frmfileupload) IS 0>
 

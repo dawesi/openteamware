@@ -44,13 +44,17 @@ body,p,td,div,a,textarea,select {
 .glyphicon-exclamation-sign {
 	color: red;
 	}
-	
+
+.glyphicon-flag {
+	color: orange;
+	font-weight: bold;
+	}
+
 .panel-title {
 	font-weight: bold;
 	clear:both;
 	}
 	
-
 .panel-heading {
 	clear:both;
 	}

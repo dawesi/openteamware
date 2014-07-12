@@ -30,13 +30,6 @@ function ShowTopCRMPanel(area, filterdatatype) {
 		}
 	
 		
-	if (area == 'advanced') {
-		GotoLocHref('index.cfm?action=AdvancedSearch&filterdatatype=' + filterdatatype);
-	//	a_simple_get.url = 'crm/show_include_search_panel.cfm?resetallunsavedcriterias=false&filterviewkey=';
-	//	a_simple_get.url = 'index.cfm?action=ShowAdvancedSearchFilterPanel';
-	//	a_simple_get.id_obj_display_content = 'id_div_search_panel_content';		
-	//	a_simple_get.doOperation();
-		}
 	}
 
 function DisplayActivitiesAssignedToObject(contactkey, editmode) {

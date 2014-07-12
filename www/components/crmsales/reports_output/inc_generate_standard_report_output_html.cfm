@@ -12,16 +12,16 @@
 	</td>
 <cfloop list="#arguments.query.columnlist#" index="a_str_col_name">
     <td class="bb bt bl" style="font-size:10px;font-weight:bold; ">
-	
+
 		<a class="addinfotext" href="javascript:SortByField('<cfoutput>#jsstringformat(a_str_col_name)#</cfoutput>');">
-	
+
 		<!--- // check if another name exists // --->
 		<cfif StructKeyExists(a_struct_db_fieldnames, a_str_col_name)>
 			<cfoutput>#a_struct_db_fieldnames[a_str_col_name]#</cfoutput>
 		<cfelse>
 			<cfoutput>#a_str_col_name#</cfoutput>
 		</cfif>
-	
+
 		</a>
 	</td>
 </cfloop>
@@ -30,7 +30,7 @@
 <tr>
 	<td colspan="2" class="bb">&nbsp;</td>
 	<cfloop list="#arguments.query.columnlist#" index="a_str_col_name">
-	
+
 		<cfquery name="q_select_distinct" dbtype="query">
 		SELECT
 			DISTINCT(#a_str_col_name#) AS distinct_value
@@ -38,9 +38,9 @@
 			arguments.query
 		;
 		</cfquery>
-	
+
 		<td class="bb bl">
-		
+
 			<cfif q_select_distinct.recordcount GT 1 AND q_select_distinct.recordcount LTE 10>
 				<select name="frm">
 					<option value=""></option>
@@ -53,13 +53,13 @@
 			<cfelse>
 				&nbsp;
 			</cfif>
-			
+
 		</td>
 	</cfloop>
 </tr>
 
 <cfoutput query="arguments.query">
-  <tr id="id_tr_report_#arguments.query.currentrow#" onMouseOver="hilite(this.id);"  onMouseOut="restore(this.id);" >
+  <tr>
   	<td class="bb bl" align="right">
 		<input type="checkbox" name="frmentrykey" value="" class="noborder">
 	</td>
@@ -70,22 +70,22 @@
     <td class="bb bl" valign="top">
 		<cfset a_str_value = arguments.query[a_str_col_name][arguments.query.currentrow]>
 		<cfif Len(a_str_value) GT 0>
-		
+
 			<cfif isDate(a_str_value)>
 				#dateformat(a_str_value, arguments.usersettings.default_dateformat)#
 			<cfelseif (1 IS 0)>
-			
+
 			<cfelse>
 				#htmleditformat(a_str_value)#
 			</cfif>
-			
+
 		<cfelse>
-			&nbsp;		
+			&nbsp;
 		</cfif>
 	</td>
 	</cfloop>
   </tr>
-</cfoutput>  
+</cfoutput>
 
 </table>
 

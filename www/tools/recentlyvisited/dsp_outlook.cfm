@@ -9,22 +9,22 @@
   </tr>
   <tr>
   	<td>
-	
+
 	<table width="100%" border="0" cellspacing="0" cellpadding="4">
-      <cfoutput query="q_select_clickstream"> 
-        <tr id="idtrrecentlyvisited#q_select_clickstream.currentrow#" onMouseOver="hilite(this.id);"  onMouseOut="restore(this.id);"> 
-          <td <cfif q_select_clickstream.currentrow GT 1>class="bdashedtop"</cfif>> 
+      <cfoutput query="q_select_clickstream">
+        <tr>
+          <td <cfif q_select_clickstream.currentrow GT 1>class="bdashedtop"</cfif>>
             <cfif len(q_select_clickstream.servicekey) gt 0>
               <cfset a_str_image_name = q_select_clickstream.servicekey>
               <cfelse>
               <cfset a_str_image_name = "space_1_1">
             </cfif>
-			&nbsp;<a href="#q_select_clickstream.href#" title="#htmleditformat(q_select_clickstream.pagename)#"><img src="/images/icon/services/#a_str_image_name#.gif" width="12" height="12" hspace="0" vspace="0" border="0" align="absmiddle"> 
+			&nbsp;<a href="#q_select_clickstream.href#" title="#htmleditformat(q_select_clickstream.pagename)#"><img src="/images/icon/services/#a_str_image_name#.gif" width="12" height="12" hspace="0" vspace="0" border="0" align="absmiddle">
             #htmleditformat(Mid(q_select_clickstream.pagename, 1, 35)&" ...")#</a> </td>
         </tr>
-      </cfoutput> 
+      </cfoutput>
     </table>
-	
+
 	</td>
   </tr>
  </table>

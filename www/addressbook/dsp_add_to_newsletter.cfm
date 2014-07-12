@@ -1,7 +1,7 @@
 <!--- //
 
-	add to newsletter 
-	
+	add to newsletter
+
 	// --->
 
 <cfparam name="session.a_struct_temp_data.addressbook_selected_entrykeys" type="string" default="">
@@ -19,8 +19,6 @@ WHERE
 	listtype IN (1,2)
 ;
 </cfquery>
-
-<cfset tmp = SetHeaderTopInfoString(GetLangVal('nl_ph_add_subscribers')) />
 
 <cfif q_select_profiles.recordcount IS 0>
 	<a href="/mailing/"><cfoutput>#GetLangVal('nl_ph_no_profiles_created_please_do_that')#</cfoutput></a>

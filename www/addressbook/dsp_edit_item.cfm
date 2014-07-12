@@ -3,14 +3,14 @@
 	Module:		Address Book
 	Action:		Edit item (contact, account, ...)
 	Description:
-	
 
-	
-	
+
+
+
 	Edit an account, contact or lead ... load data and call edit form
-	
+
 	Set the default exclusive lock
-	
+
 // --->
 
 <cfparam name="url.entrykey" type="string" default="">
@@ -26,19 +26,19 @@
 
 <!--- check for errors ... --->
 <cfif NOT stReturn.result>
-	
+
 	<cfswitch expression="#stReturn.error#">
 		<cfcase value="5300">
 			<!--- A lock could not be obtained. --->
 			<cfset a_str_custom_msg = application.components.cmp_locks.GenerateLockDefaultInformationString(entrykey = stReturn.lock_information.lock.entrykey) />
-			
-			<cflocation addtoken="false" url="index.cfm?action=ShowItem&entrykey=#url.entrykey#&ibxerrorno=5300&ibxerrormsg=#urlencodedformat(a_str_custom_msg)#">			
+
+			<cflocation addtoken="false" url="index.cfm?action=ShowItem&entrykey=#url.entrykey#&ibxerrorno=5300&ibxerrormsg=#urlencodedformat(a_str_custom_msg)#">
 		</cfcase>
 		<cfdefaultcase>
 			an error occured ... TODO: default handling
 		</cfdefaultcase>
 	</cfswitch>
-	
+
 	<cfexit method="exittemplate">
 </cfif>
 
@@ -46,8 +46,6 @@
 	Not allowed.
 	<cfexit method="exittemplate">
 </cfif>
-
-<cfset tmp = SetHeaderTopInfoString(MakeFirstCharUCase(GetLangVal('cm_wd_edit'))) />
 
 <cfset CreateEditItem = StructNew() />
 <cfset CreateEditItem.Action = 'update' />

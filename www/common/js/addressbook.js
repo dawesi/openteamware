@@ -52,11 +52,6 @@ function DoHandleCurItemAction(action) {
 
 // Show Skype status
 function ShowSkypeOnlineStatusData(skypeusername, contactkey) {
-	var a_simple_get = new cBasicBgOperation();
-	a_simple_get.url = '/addressbook/extensions/show_inc_get_skype_status.cfm?skypeusername=' + escape(skypeusername) + '&contactkey=' + escape(contactkey);
-	//a_simple_get.callback_function = processSkypeStatusCheckReqChange;
-	a_simple_get.id_obj_display_content = 'id_div_skype_status';
-	a_simple_get.doOperation();
 	}
 
 // call an edit action

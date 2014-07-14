@@ -11,8 +11,6 @@
 
 
 	<cfset tmp = StartNewTabNavigation() />
-	<!--- <cfset tmp = AddTabNavigationItem(GetLangVal('cm_wd_overview'), 'javascript:ShowActivitiesData(''' & jsstringformat(url.entrykey) & ''', ''overview'', GetCurrentCRMHistoryDays());', '') />
-	 --->
 	 <cfset tmp = AddTabNavigationItem(GetLangVal('adrb_wd_activities'), 'javascript:ShowActivitiesData(''' & jsstringformat(url.entrykey) & ''', ''activities'', GetCurrentCRMHistoryDays());', '') />
 	<cfset tmp = AddTabNavigationItem(GetLangVal('crm_wd_telephone_calls'), 'javascript:ShowActivitiesData(''' & jsstringformat(url.entrykey) & ''', ''telephonecalls'', GetCurrentCRMHistoryDays());', '') />
 	<cfset tmp = AddTabNavigationItem(GetLangVal('cm_wd_email') & '/' & GetLangVal('cm_wd_fax'), 'javascript:ShowActivitiesData(''' & jsstringformat(url.entrykey) & ''', ''emailfaxsms'', GetCurrentCRMHistoryDays());', '') />

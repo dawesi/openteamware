@@ -1832,34 +1832,7 @@ function WriteSimpleHeaderDiv(txt) {
 function AddParamStringItem(param_string, item, value) {
 	return ListAppend(param_string, item & '=' & urlencodedformat(value), '&');
 	}
-	
-// call someone using skype(out) ... real telephone numbers ...
-// TODO hp: edit ... and replace old JS calls
-function WriteSkypeCallLink(telnr, contactkey, crm_enabled) {
-	var areturn = '';
-	var a_str_img_pic = '<img src="/images/skype/img_call_start_12x12.png" width="12" height="12" align="absmiddle" border="0"/>';
-	var a_str_tel_nr = telnr;
-	var a_str_add_crm = '';
-	
-	// if an empty number, return!
-	if (Len(trim(telnr)) IS 0) {
-		return areturn;
-		}
 		
-	// get telnr only
-	a_str_tel_nr = '+' & ReReplaceNoCase(a_str_tel_nr, '[^0-9]*', '', 'ALL'); 
-	
-	// crm enabled?
-	if (crm_enabled IS 1) {
-		a_str_add_crm = 'call_new_item_for_contact(''#jsstringformat(contactkey)#'', ''event'', ''call'');';
-		}
-	
-	// compose return string
-	areturn = '<a title="' & htmleditformat(GetLangVal('cm_ph_call_with_skype')) & '" onclick="' & a_str_add_crm & 'return skypeCheck();" href="skype:' & htmleditformat(a_str_tel_nr) & '?call">' & a_str_img_pic & '</a>';
-	
-	return areturn;
-	}	
-	
 function CreateDefaultTopHeader(title) {
 	var a_str_content = '';
 	var a_str_link = '';
@@ -1883,7 +1856,6 @@ function CreateDefaultTopHeader(title) {
 	return a_str_content;
 	}// set "title" of current page
 function SetHeaderTopInfoString(s) {
-	AddJSToExecuteAfterPageLoad( 'ShowHeaderTopInformationString(''' & jsstringformat(s) & ''');', '');
 	return true;
 	}
 // read an entry of properties file and return default value if empty

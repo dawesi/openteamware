@@ -5,7 +5,7 @@
 
 // --->
 
-<cfset tmp = AddJSToExecuteAfterPageLoad('DisplayActivitiesAssignedToObject(''' & jsstringformat(url.entrykey) & ''')', '') />
+<cfset AddJSToExecuteAfterPageLoad('DisplayActivitiesAssignedToObject(''' & jsstringformat(url.entrykey) & ''')', '') />
 
 <cfscript>
 	StartNewJSPopupMenu('a_pop_act_evnt_tsk');

@@ -1166,14 +1166,7 @@ function OpenEmailQuickSearch() {
 	var url = '/email/show_popup_search.cfm';
 	window.open(url, 'show_email_search','resizable=no,width=750,height=450');
 	}
-	
-// show information string in top header of page
-function ShowHeaderTopInformationString(s) {
-	$('#id_span_header_top_info').html(s);
-	
-	document.title = s + ' - ' + document.title;
-	}
-	
+
 // add comment ...
 function AddComment(servicekey,objectkey) {
 	var mywindow=open('/tools/comments/show_add_comment.cfm?servicekey='+escape(servicekey)+'&objectkey='+escape(objectkey),'show_add_comment','resizable=no,width=380,height=250');

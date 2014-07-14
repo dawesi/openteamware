@@ -257,9 +257,6 @@ $('#myTab a').click(function (e) {
 })
 </script>
 
-<!---
-<cfoutput>#BuildTabNavigation('id_div_search_panel_content', false)#</cfoutput><div id="id_div_search_panel_simple" style="display:none;padding:10px;">
- --->
 
 
 	<!---

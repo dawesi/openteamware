@@ -4,12 +4,12 @@
 	Action:		OpenCallDialog
 	Description:Open call dialog ...
 				Offer to launch a call using
-				
+
 				- Jajah
 				- Skype
 				- ?
-				
-	
+
+
 
 // --->
 
@@ -26,9 +26,6 @@
 
 <div style="font-weight:bold;padding-bottom:10px;font-size:18px;">
 <cfoutput>#htmleditformat(url.telnr)#</cfoutput>
-<!--- <cfif a_bol_skype_enabled>
-	<cfoutput>#WriteSkypeCallLink(url.telnr, url.contactkey, 1)#</cfoutput>
-</cfif> --->
 
 
 </div>
@@ -57,7 +54,7 @@
 
 <div id="id_div_sendsms" style="display:none">
 
-	
+
 	<form action="" id="idform" onsubmit="SendSMSBG()">
 	<table class="table table_details table_edit_form">
 		<tr>

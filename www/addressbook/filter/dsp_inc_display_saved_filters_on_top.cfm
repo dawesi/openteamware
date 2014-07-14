@@ -3,7 +3,7 @@
 	Module:		Address Book
 	Action:		ShowTopPanelSavedFilterList
 	Description:Display list of saved filters
-	
+
 
 // --->
 
@@ -14,7 +14,7 @@
 </cfinvoke>
 
 </cfsilent>
-<br /> 
+<br />
 <cfoutput>#GetLangVal('crm_ph_filter_click_to_load')#</cfoutput>
 
 <table class="table table-hover" style="margin-top:10px;">
@@ -26,7 +26,7 @@
 			<cfoutput>#GetLangVal('cm_wd_description')#</cfoutput>
 		</td>
 		<td>
-			&nbsp;			
+			&nbsp;
 		</td>
 	</tr>
 	<cfoutput query="q_select_all_filters">
@@ -45,7 +45,7 @@
 	<tr>
 		<td colspan="3">
 			<cfoutput>
-				<a href="index.cfm?action=AdvancedSearch&filterdatatype=#url.filterdatatype#"><img src="/images/si/pencil.png" class="si_img" /> #GetLangVal('crm_ph_edit_filter_criteria')#</a>
+				<a href="index.cfm?action=AdvancedSearch&filterdatatype=#url.filterdatatype#"><span class="glyphicon glyphicon-pencil"></span> #GetLangVal('crm_ph_edit_filter_criteria')#</a>
 			</cfoutput>
 		</td>
 	</tr>

@@ -9,21 +9,12 @@
 // --->
 
 <cfset a_int_clear_all_stored_criteria_for_simple_filter = GetUserPrefPerson('addressbook', 'clearcriteria.unstoredfilter', '1', '', false) />
+<cfset a_str_js = '' />
 
 <cfinvoke component="#application.components.cmp_crmsales#" method="GetListOfViewFilters" returnvariable="q_select_all_filters">
 	<cfinvokeargument name="securitycontext" value="#request.stSecurityContext#">
 	<cfinvokeargument name="usersettings" value="#request.stUserSettings#">
 </cfinvoke>
-
-<cfset StartNewTabNavigation() />
-<cfset AddTabNavigationItem(GetLangVal('adrb_wd_the_view') & '/' & GetLangVal('adrb_wd_quicksearch'), 'javascript:ShowTopCRMPanel(''simple'');', '') />
-
-<!--- for crm customers, display filters plus advanced search ... --->
-<cfset AddTabNavigationItem(GetLangVal('adrb_ph_advanced_search'), 'javascript:ShowTopCRMPanel(''advanced'', #url.filterdatatype#);', '') />
-
-<cfif q_select_all_filters.recordcount GT 0>
-	<cfset AddTabNavigationItem(GetLangVal('crm_ph_saved_filters') & ' (' & q_select_all_filters.recordcount & ')', 'javascript:ShowTopCRMPanel(''savedfilters'', #url.filterdatatype#);', '')>
-</cfif>
 
 <cfinvoke component="#application.components.cmp_crmsales#" method="BuildCRMFilterStruct" returnvariable="a_struct_crm_filter">
 	<cfinvokeargument name="securitycontext" value="#request.stSecurityContext#">
@@ -34,13 +25,16 @@
 </cfinvoke>
 
 <ul class="nav nav-tabs" role="tablist" id="myTab">
-  <li class="active"><a href="#basicFilter" role="tab" data-toggle="tab"><cfoutput>#( GetLangVal('adrb_wd_the_view') & '/' & GetLangVal('adrb_wd_quicksearch') )#</cfoutput></a></li>
-  <li><a href="?action=AdvancedSearch&filterdatatype=0"><cfoutput>#GetLangVal('adrb_ph_advanced_search')#</cfoutput></a></li>
-  <li><a href="#storedFilters" role="tab" data-toggle="tab"><cfoutput>#( GetLangVal('crm_ph_saved_filters') & ' (' & q_select_all_filters.recordcount & ')' )#</cfoutput></a></li>
+  <li class="active"><a href="#basicFilter" role="tab" data-toggle="tab" data-type="static"><cfoutput>#( GetLangVal('adrb_wd_the_view') & '/' & GetLangVal('adrb_wd_quicksearch') )#</cfoutput></a></li>
+  <li><a href="#advancedSearch" data-toggle="tab" data-type="redirect" data-url="index.cfm?action=AdvancedSearch&amp;filterdatatype=0"><cfoutput>#GetLangVal('adrb_ph_advanced_search')#</cfoutput></a></li>
+  <li><a href="#storedFilters" role="tab" data-toggle="tab" data-type="remote" data-url="index.cfm?Action=ShowTopPanelSavedFilterList&filterdatatype=<cfoutput>#Val(url.filterdatatype)#</cfoutput>"><cfoutput>#( GetLangVal('crm_ph_saved_filters') & ' (' & q_select_all_filters.recordcount & ')' )#</cfoutput></a></li>
 </ul>
 
 <!-- Tab panes -->
-<div class="tab-content" style="border:silver solid 1px">
+<div class="tab-content" style="border-left: silver solid 1px;border-bottom:silver solid 1px;border-right: silver solid 1px">
+	<div class="tab-pane" id="storedFilters">
+
+	</div>
 	<div class="tab-pane active" id="basicFilter">
 
 
@@ -252,8 +246,30 @@
 
 <script>
 $('#myTab a').click(function (e) {
-  e.preventDefault()
-  $(this).tab('show')
+  e.preventDefault();
+  $(this).tab('show');
+
+	switch ($(this).attr('data-type')) {
+
+		case "remote": {
+
+				var u =  $(this).data('url');
+
+				$.get( u, function( data ) {
+				  $( "#storedFilters" ).html( data );
+
+				});
+
+				break;
+		}
+
+		case "redirect": {
+				location.href = $(this).data('url');
+				break;
+		}
+
+	}
+
 })
 </script>
 
@@ -342,7 +358,7 @@ $('#myTab a').click(function (e) {
 
 					<span class="glyphicon glyphicon-search"></span> <cfoutput>#GetLangVal('crm_ph_active_filter_criteria')# (#ArrayLen(a_struct_crm_filter.criterias)#)</cfoutput>
 
-					<cfif Len(url.filterviewkey) GT 0>
+					<cfif Len(url.filterviewkey)>
 
 						<cfinvoke component="#application.components.cmp_crmsales#" method="GetListOfViewFilters" returnvariable="q_select_all_filters">
 							<cfinvokeargument name="securitycontext" value="#request.stSecurityContext#">
@@ -377,9 +393,5 @@ $('#myTab a').click(function (e) {
 
 	<cfset AddJSToExecuteAfterPageLoad('', a_str_js) />
 </cfif>
-
-<cfsavecontent variable="a_str_js">
-	$(document).ready(function() { ShowTopCRMPanel('simple'); });
-</cfsavecontent>
 
 <cfset AddJSToExecuteAfterPageLoad('', a_str_js) />

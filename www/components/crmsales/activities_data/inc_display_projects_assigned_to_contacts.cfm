@@ -99,7 +99,9 @@ WHERE
 				<a href="/addressbook/?action=ShowItem&entrykey=#q_select_sales_projects.contactkey#">#application.components.cmp_addressbook.GetContactDisplayNameData(entrykey = q_select_sales_projects.contactkey)#</a> /
 			</cfif>
 
-			#FormatDateTimeAccordingToUserSettings(q_select_sales_projects.dt_closing)#
+			<!--- <cfif IsDate( q_select_sales_projects.dt_closing )>
+				#FormatDateTimeAccordingToUserSettings(q_select_sales_projects.dt_closing)#
+			</cfif> --->
 
 			<cfif Len(q_select_sales_projects.projectleaderuserkey) GT 0>
 			/ <a href="/workgroups/?action=Showuser&entrykey=#q_select_sales_projects.projectleaderuserkey#">#htmleditformat(application.components.cmp_user.GetFullNameByentrykey(q_select_sales_projects.projectleaderuserkey))#</a>
@@ -107,7 +109,7 @@ WHERE
 
 			<cfif arguments.managemode>
 				<br />
-				<a href="/project/index.cfm?action=EditProject&entrykey=#q_select_sales_projects.entrykey#"><img src="/images/si/pencil.png" class="si_img" /> #MakeFirstCharUCase(GetLangVal('cm_wd_edit'))#</a>
+				<a href="/project/index.cfm?action=EditProject&entrykey=#q_select_sales_projects.entrykey#"><span class="glyphicon glyphicon-pencil"></span> #MakeFirstCharUCase(GetLangVal('cm_wd_edit'))#</a>
 			</cfif>
 		</td>
 	</tr>
@@ -152,7 +154,7 @@ WHERE
 
 				<cfif arguments.managemode>
 				<br />
-				<a href="/project/index.cfm?action=EditProject&entrykey=#q_select_common_projects.entrykey#"><img src="/images/si/pencil.png" class="si_img" /> #MakeFirstCharUCase(GetLangVal('cm_wd_edit'))#</a>
+				<a href="/project/index.cfm?action=EditProject&entrykey=#q_select_common_projects.entrykey#"><span class="glyphicon glyphicon-pencil"></span> #MakeFirstCharUCase(GetLangVal('cm_wd_edit'))#</a>
 			</cfif>
 			</td>
 		</tr>

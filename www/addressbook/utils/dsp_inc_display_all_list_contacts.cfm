@@ -22,9 +22,6 @@
 		</cfif>
 	</td>
 	<td>
-		<cfoutput>#htmleditformat(GetLangVal('adrb_wd_position'))#</cfoutput>
-	</td>
-	<td>
 		<cfset a_str_href = ReplaceOrAddURLParameter(cgi.QUERY_STRING, 'orderby', 'company,surname')>
 		<a href="index.cfm?<cfoutput>#a_str_href#</cfoutput>"><cfoutput>#GetLangVal('adrb_wd_organisation')#</cfoutput></a>
 
@@ -41,9 +38,9 @@
 	<td>
 		<cfoutput>#GetLangVal('crm_wd_custodian')#</cfoutput>
 	</td>
-    <td>
-		<cfoutput>#GetLangVal('cm_wd_action')#</cfoutput>
-	</td>
+   <!---  <td>
+		Activity
+	</td> --->
   </tr>
 
   <cfoutput query="q_select_contacts">
@@ -54,14 +51,13 @@
 	<td>
 		<span class="glyphicon glyphicon-user"></span> <a href="index.cfm?action=ShowItem&entrykey=#urlencodedformat(q_select_contacts.entrykey)#" style="font-weight:bold;">#htmleditformat(checkzerostring(trim(q_select_contacts.surname)))#<cfif Len(q_select_contacts.firstname) GT 0>, #htmleditformat(q_select_contacts.firstname)#</cfif></a>
 	</td>
-    <td title="#htmleditformat( q_select_contacts.aposition )#">
-		#htmleditformat(shortenstring ( q_select_contacts.aposition, 25 ))#
-	</td>
 	<td>
+		#htmleditformat(shortenstring ( q_select_contacts.aposition, 25 ))# at
+
 		<cfif Len(q_select_contacts.parentcontactkey) GT 0>
-			<a href="index.cfm?action=ShowItem&entrykey=#urlencodedformat(q_select_contacts.parentcontactkey)#">#htmleditformat(shortenstring(q_select_contacts.company, 25))#</a>
+			<a href="index.cfm?action=ShowItem&entrykey=#urlencodedformat(q_select_contacts.parentcontactkey)#">#htmleditformat(shortenstring(q_select_contacts.company, 40))#</a>
 		<cfelse>
-			#htmleditformat(shortenstring(q_select_contacts.company, 25))#
+			<span style="color:gray">#htmleditformat(shortenstring(q_select_contacts.company, 40))#</span>
 		</cfif>
 	</td>
 	<td>
@@ -126,6 +122,13 @@
 			</cfloop>
 		</cfif>
 	</td>
+	<!--- <td>
+	<div class="progress">
+		<div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="0%;">
+
+  		</div>
+	</div>
+	</td> --->
 	<!--- <cfif variables.a_bol_crm_extensions_enabled>
 		<td>
 
@@ -184,9 +187,9 @@
 			<cfif NOT a_bol_crm_data_available>&nbsp;</cfif>
 		</td>
 	</cfif> --->
-    <td>
+  <!---   <td>
 		<span class="glyphicon glyphicon-pencil"></span>
-	</td>
+	</td> --->
   </tr>
   </cfoutput>
 </table>

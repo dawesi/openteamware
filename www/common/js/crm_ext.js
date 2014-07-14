@@ -13,24 +13,6 @@ function LoadFullHistoryItem(servicekey, objectkey, entrykey, id_obj) {
 	a_simple_get.doOperation();
 	}
 	
-// ** display top header ...
-function ShowTopCRMPanel(area, filterdatatype) {
-	var a_simple_get = new cBasicBgOperation();
-	var myobj = $('#id_div_search_panel_content');
-	
-	if (area == 'simple') {
-		myobj.html($('#id_div_search_panel_simple').html());
-		}
-		
-	if (area == 'savedfilters') {
-		myobj.css('height', 'auto').html(a_str_loading_status_img);
-		a_simple_get.url = 'index.cfm?Action=ShowTopPanelSavedFilterList&filterdatatype=' + filterdatatype;
-		a_simple_get.id_obj_display_content = 'id_div_search_panel_content';
-		a_simple_get.doOperation();
-		}
-	
-		
-	}
 
 function DisplayActivitiesAssignedToObject(contactkey, editmode) {
 	var a_editmode = false;

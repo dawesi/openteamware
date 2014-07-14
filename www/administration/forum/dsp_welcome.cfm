@@ -3,9 +3,9 @@
 	Module:		Admintool
 	Action:		forum
 	Description:display all forums
-	
+
 // --->
-	
+
 <cfinvoke component="#application.components.cmp_forum#" method="GetAllForumsOfACompany" returnvariable="q_select_foren">
 	<cfinvokeargument name="companykey" value="#url.companykey#">
 </cfinvoke>
@@ -28,7 +28,7 @@
 	</td>
     <td>&nbsp;</td>
     <td>
-		<img src="/images/si/pencil.png" class="si_img" />
+		<span class="glyphicon glyphicon-pencil"></span>
 		<img src="/images/si/delete.png" class="si_img" />
 	</td>
   </tr>

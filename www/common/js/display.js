@@ -88,7 +88,7 @@ function Trim(s) {
 // init the in page background div ... for inPage popups
 function initInPagePopupThings() {	
 	// a) content
-	$("body").append('<div id="id_div_inpage_popup"/>');
+	$("body").append('<div id="id_div_inpage_popup" />');
 	$('#id_div_inpage_popup').css({display:"none", zIndex:"202"}).addClass('in_page_popup_default');
 	
 	// b) background

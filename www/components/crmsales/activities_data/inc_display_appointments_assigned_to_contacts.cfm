@@ -113,7 +113,7 @@
 
 			<cfif arguments.managemode>
 				<br />
-				<a href="/calendar/index.cfm?action=ShowEvent&entrykey=#q_select_events.entrykey#"><img src="/images/si/pencil.png" class="si_img" /> #MakeFirstCharUCase(GetLangVal('cm_wd_edit'))#</a>
+				<a href="/calendar/index.cfm?action=ShowEvent&entrykey=#q_select_events.entrykey#"><span class="glyphicon glyphicon-pencil"></span> #MakeFirstCharUCase(GetLangVal('cm_wd_edit'))#</a>
 			</cfif>
 		</td>
 	</tr>

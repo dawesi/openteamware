@@ -2,8 +2,8 @@
 
 	Module:		Log
 	Function:	LogException
-	Description: 
-	
+	Description:
+
 
 // --->
 
@@ -35,7 +35,7 @@ VALUES
 	<cfqueryparam cfsqltype="cf_sql_varchar" value="#sEntrykey#">,
 	<cfqueryparam cfsqltype="cf_sql_timestamp" value="#Now()#">,
 	<cfqueryparam cfsqltype="cf_sql_varchar" value="#Left( arguments.message, 500)#">,
-	<cfqueryparam cfsqltype="cf_sql_longvarchar" value="#a_str_wddx_error#">,
+	<cfqueryparam cfsqltype="cf_sql_longvarchar" value="#SerializeJSON( arguments.error )#">,
 	<cfqueryparam cfsqltype="cf_sql_longvarchar" value="#a_str_wddx_url#">,
 	<cfqueryparam cfsqltype="cf_sql_longvarchar" value="#a_str_wddx_form#">,
 	<cfqueryparam cfsqltype="cf_sql_longvarchar" value="#a_str_wddx_cgi#">,

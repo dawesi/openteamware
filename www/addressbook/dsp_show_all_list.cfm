@@ -3,7 +3,7 @@
 	Module:		AddressBook
 	Action:		Showall
 	Description:Display all contacts which apply
-	
+
 
 // --->
 
@@ -20,15 +20,13 @@
 	AddNewJSPopupMenuItem(GetLangValJS('adrb_wd_view'), 'javascript:DoHandleCurItemAction(\''display\'');');
 	AddNewJSPopupMenuItem('-', '');
 	AddNewJSPopupMenuItem(MakeFirstCharUCase(GetLangValJS('cm_wd_edit')), 'javascript:DoHandleCurItemAction(\''edit\'');');
-	AddNewJSPopupMenuItem(MakeFirstCharUCase(GetLangValJS('adrb_ph_enable_remoteedit')), 'javascript:DoHandleCurItemAction(\''enablere\'');');
-	AddNewJSPopupMenuItem(MakeFirstCharUCase(GetLangValJS('cm_wd_forward')), 'javascript:DoHandleCurItemAction(\''forward\'');');
 	AddNewJSPopupMenuItem(MakeFirstCharUCase(GetLangValJS('cm_wd_delete')), 'javascript:DoHandleCurItemAction(\''delete\'');');
-	
+
 	//if (a_str_display_data_type NEQ 1) {
 	//	AddNewJSPopupMenuItem('-', '');
 	//	AddNewJSPopupMenuItem('Google Maps', 'javascript:DoHandleCurItemAction(\''googlemaps\'');');
 	//	}
-		
+
 	AddNewJSPopupMenuToPage();
 </cfscript>
 
@@ -37,27 +35,14 @@
 <cfset a_str_display_email_col = (a_str_display_data_type NEQ 1)>
 
 
-	<!--- CRM ... check what to display exactly ... --->
-	<cfswitch expression="#a_str_display_data_type#">
-		<cfcase value="0">
-			<!--- contacts only ... --->
-			<cfinclude template="utils/dsp_inc_display_all_list_contacts.cfm">
-		</cfcase>
-		<cfcase value="1">
-			<!--- accounts only ... --->
-			<cfinclude template="utils/dsp_inc_display_all_list_accounts.cfm">
-		</cfcase>
-		<cfcase value="2">
-			<!--- leads --->
-			<cfinclude template="utils/dsp_inc_display_all_list_leads.cfm">
-		</cfcase>
-		<cfcase value="3">
-			<!--- inactive ... --->
-			<cfinclude template="utils/dsp_inc_display_all_list_index.cfm">
-		</cfcase>
-		<cfdefaultcase>
-			<!--- default ... --->
-			<cfinclude template="utils/dsp_inc_display_all_list_index.cfm">
-		</cfdefaultcase>
-	
-	</cfswitch>
+<!--- CRM ... check what to display exactly ... --->
+<cfswitch expression="#a_str_display_data_type#">
+	<cfcase value="0">
+		<!--- contacts only ... --->
+		<cfinclude template="utils/dsp_inc_display_all_list_contacts.cfm">
+	</cfcase>
+	<cfcase value="1">
+		<!--- accounts only ... --->
+		<cfinclude template="utils/dsp_inc_display_all_list_accounts.cfm">
+	</cfcase>
+</cfswitch>

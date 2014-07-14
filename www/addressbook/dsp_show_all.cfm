@@ -12,16 +12,17 @@
 <cfparam name="url.startrow" type="numeric" default="1">
 <!--- crm view key ... --->
 <cfparam name="url.filterviewkey" type="string" default="">
-
+<cfparam name="url.filterdatatype" type="numeric" default="0" />
 
 <!--- load various preferences ... --->
 <cfset a_int_max_rows_per_page = GetUserPrefPerson('addressbook', 'adressbook.maxrowsperpage', '50', 'url.maxrows', false) />
 <cfset a_str_viewmode = GetUserPrefPerson('addressbook', 'display.viewmode', 'list', 'url.viewmode', true) />
 <cfset a_str_filter_workgroupkey = GetUserPrefPerson('addressbook', 'display.filterworkgroupkey', '', 'url.filterworkgroupkey', false) />
 <cfset a_str_filter_category = GetUserPrefPerson('addressbook', 'display.filtercategory', '', 'url.filtercategory', false) />
+
 <cfset a_str_filter_category = urldecode(a_str_filter_category,'utf-8') />
 <cfset a_str_display_data_type = GetUserPrefPerson('extensions.crm', 'addressbook.display_data_types', '0', 'url.filterdatatype', false) />
-<cfset a_str_last_shown_entrykeys = GetUserPrefPerson('addressbook', 'lastshown.entrykeys#url.filterdatatype#', '', '', false) />
+<cfset a_str_last_shown_entrykeys = GetUserPrefPerson('addressbook', 'lastshown.entrykeys#a_str_display_data_type#', '', '', false) />
 
 <!--- only allow *one* datatype at a single time ... --->
 <cfset a_str_display_data_type = Val(a_str_display_data_type) />

@@ -7,66 +7,6 @@ var a_current_contact_data_business = '';
 var a_current_contact_data_private = '';
 var a_currently_selected_contact_entrykeys = '';
 
-// skype check ...
-var activex = ((navigator.userAgent.indexOf('Win')  != -1) && (navigator.userAgent.indexOf('MSIE') != -1) && (parseInt(navigator.appVersion) >= 4 ));
-var CantDetect = ((navigator.userAgent.indexOf('Safari')  != -1) || (navigator.userAgent.indexOf('Opera')  != -1));
-var isMacFirefox = ((navigator.userAgent.indexOf('Firefox') != -1) && (navigator.platform.indexOf('Mac') != -1));
-
-function NoSkypeFoundPopup() {
-	var a_alg = new cSimpleModalDialog();
-	a_alg.type = 'information';
-	a_alg.customcontent_load_from_url = '/tools/skype/show_hint_not_installed.cfm?';
-	a_alg.ShowDialog();	
-	return false;
-}
-
-function SetPhotoForContact(entrykey) {
-	var a_alg = new cSimpleModalDialog();
-	a_alg.type = 'custom';
-	a_alg.customtitle = 'Photo';
-	a_alg.customcontent_load_from_url = 'index.cfm?action=SetPhotoForContact&entrykey=' + escape(entrykey);
-	a_alg.ShowDialog();	
-}
-
-if(typeof(detected) == "undefined" && activex) {
-    document.write(
-        ['<script language="VBscript">',
-        'Function isSkypeInstalled()',
-        'on error resume next',
-        'Set oSkype = CreateObject("Skype.Detection")',
-        'isSkypeInstalled = IsObject(oSkype)',
-        'Set oSkype = nothing',
-        'End Function',
-        '</script>'].join("\n")
-    );
-}
-
-// check if skype is has been detected
-function skypeCheck() {
-    if(CantDetect) {
-        return true;
-    } else if(!activex) {
-        var skypeMime = navigator.mimeTypes["application/x-skype"];
-        detected = true;
-        if(typeof(skypeMime) == "object") {
-            return true;
-        } else {
-		  if (isMacFirefox) {
-			return true;
-		  } else {
-			return NoSkypeFoundPopup();
-		  }
-        }
-    } else {
-        if(isSkypeInstalled()) {
-            detected = true;
-            return true;
-        }
-    }
-    detected = true;
-    return NoSkypeFoundPopup();
-}
-
 // select all displayed contacts
 function SelectAllDisplayedItems() { 
 	   for(var x=0;x<document.formcontacts.elements.length;x++) 

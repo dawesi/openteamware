@@ -167,13 +167,13 @@
 			<!--- update ... --->
 			<cfquery name="followup">
 			UPDATE	followups
-			SET		comment	= <cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.database_values.comment#" />,
-					dt_due	= <cfqueryparam cfsqltype="cf_sql_date" value="#arguments.database_values.dt_due#" />,
+			SET		comment			= <cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.database_values.comment#" />,
+					dt_due			= <cfqueryparam cfsqltype="cf_sql_date" value="#arguments.database_values.dt_due#" />,
 					followuptype	= <cfqueryparam cfsqltype="cf_sql_integer" value="#arguments.database_values.followuptype#" />,
 					userkey			= <cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.database_values.userkey#">,
-					alert_email= <cfqueryparam cfsqltype="cf_sql_integer" value="#Val(arguments.database_values.alert_email)#">,
-					priority	= <cfqueryparam cfsqltype="cf_sql_integer" value="#Val(arguments.database_values.priority)#">,
-					categories = <cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.database_values.categories#">
+					alert_email		= <cfqueryparam cfsqltype="cf_sql_integer" value="#Val(arguments.database_values.alert_email)#">,
+					priority		= <cfqueryparam cfsqltype="cf_sql_integer" value="#Val(arguments.database_values.priority)#">,
+					categories 		= <cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.database_values.categories#">
 			WHERE	entrykey = <cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.database_values.entrykey#" />
 			</cfquery>
 

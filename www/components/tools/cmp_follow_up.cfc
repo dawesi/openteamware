@@ -166,7 +166,7 @@
 
 			<!--- update ... --->
 			<cfquery name="followup">
-			UPDATE	followup
+			UPDATE	followups
 			SET		comment	= <cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.database_values.comment#" />,
 					dt_due	= <cfqueryparam cfsqltype="cf_sql_date" value="#arguments.database_values.dt_due#" />,
 					followuptype	= <cfqueryparam cfsqltype="cf_sql_integer" value="#arguments.database_values.followuptype#" />,

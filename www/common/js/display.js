@@ -1049,7 +1049,6 @@ function cBasicBgOperation() {
 function CallHTTPPost(httpobj, url, request, callbackfunction) {
 	httpobj.open("POST", url, true);
 	httpobj.setRequestHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
-	httpobj.setRequestHeader("Connection", "close");
 	httpobj.send(request);
 	
 	if (callbackfunction) {

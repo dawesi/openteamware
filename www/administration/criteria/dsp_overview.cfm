@@ -3,7 +3,7 @@
 	Module:		admintool
 	Action:		criteria
 	Description:display existing criteria
-	
+
 // --->
 
 <cfset a_str_id = 'id_' & CreateUUIDJS() />
@@ -21,7 +21,7 @@
 
 <div style="padding:10px;">
 <img src="/images/si/add.png" class="si_img" /> = <cfoutput>#GetLangVal('adm_wd_add')#</cfoutput>
-<img src="/images/si/delete.png" class="si_img" /> = <cfoutput>#GetLangVal('cm_wd_delete')#</cfoutput>
+<span class="glyphicon glyphicon-trash"></span> = <cfoutput>#GetLangVal('cm_wd_delete')#</cfoutput>
 </div>
 
 </cfsavecontent>

@@ -29,7 +29,7 @@
     <td>&nbsp;</td>
     <td>
 		<span class="glyphicon glyphicon-pencil"></span>
-		<img src="/images/si/delete.png" class="si_img" />
+		<span class="glyphicon glyphicon-trash"></span>
 	</td>
   </tr>
 	</cfoutput>

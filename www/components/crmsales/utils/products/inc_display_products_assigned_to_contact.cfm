@@ -2,8 +2,8 @@
 
 	Component:	Products
 	Function:	DisplayProductsOfContact
-	Description: 
-	
+	Description:
+
 
 // --->
 
@@ -12,7 +12,7 @@
 									usersettings = arguments.usersettings,
 									contactkey = arguments.contactkey,
 									filter = arguments.filter) />
-									
+
 <cfif stReturn.q_select_products_of_contact.recordcount IS 0>
 	<cfexit method="exittemplate">
 </cfif>
@@ -28,7 +28,7 @@ ORDER BY
 </cfquery>
 
 <cfsavecontent variable="sReturn">
-	
+
 <!--- 	<cfdump var="#stReturn.q_select_products_of_contact#"> --->
 <table class="table table-hover">
 	<cfoutput>
@@ -49,7 +49,7 @@ ORDER BY
 			#GetLangVal('crm_wd_product_categories')#
 		</td> --->
 		<cfif arguments.editmode>
-	        <td style="width: 5%"> 
+	        <td style="width: 5%">
 	            &nbsp;
 	        </td>
 	        <td style="width: 5%">
@@ -59,17 +59,17 @@ ORDER BY
 	  </tr>
     </cfoutput>
 	<cfoutput query="stReturn.q_select_products_of_contact">
-		
+
 	  <tr>
         <td>
            #si_img( 'note' )# #htmleditformat(stReturn.q_select_products_of_contact.title)#
-		
+
 			<cfif Len(stReturn.q_select_products_of_contact.internalid) GT 0>
 				(#htmleditformat(stReturn.q_select_products_of_contact.internalid)#)
 			</cfif>
-		
+
 			(#htmleditformat(stReturn.q_select_products_of_contact.quantity)#x)
-			
+
 			<cfif Len(stReturn.q_select_products_of_contact.comment) GT 0>
 				(#htmleditformat(stReturn.q_select_products_of_contact.comment)#)
 			</cfif>
@@ -94,12 +94,12 @@ ORDER BY
 	        </td>
 	        <td>
 				<a href="##" onclick="ConfirmRemoveProductsOfContact('#jsstringformat(stReturn.q_select_products_of_contact.entrykey)#', '#jsstringformat(stReturn.q_select_products_of_contact.title)#');return false;">
-	                <img src="/images/si/delete.png" class="si_img" />
+	                <span class="glyphicon glyphicon-trash"></span>
 	            </a>
 	        </td>
         </cfif>
-	  </tr> 
-	</cfoutput> 
+	  </tr>
+	</cfoutput>
 </table>
 </cfsavecontent>
 

@@ -44,7 +44,7 @@ ORDER BY
 <td>
 	<a href="index.cfm?action=workgroup.edit&entrykey=#urlencodedformat(q_select_current_workgroups.entrykey)##WriteURLTags()#"><img src="/images/si/pencil.png" class="si_img" /> #GetLangVal('cm_wd_edit')#</a>
 	&nbsp;|&nbsp;
-	<a href="index.cfm?action=workgroup.delete&entrykey=#urlencodedformat(q_select_current_workgroups.entrykey)##WriteURLTags()#"><img src="/images/si/delete.png" class="si_img" /> #GetLangVal('cm_wd_delete')#</a>
+	<a href="index.cfm?action=workgroup.delete&entrykey=#urlencodedformat(q_select_current_workgroups.entrykey)##WriteURLTags()#"><span class="glyphicon glyphicon-trash”></span> #GetLangVal('cm_wd_delete')#</a>
 </td>
 </tr>
 

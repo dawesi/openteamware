@@ -2,8 +2,8 @@
 
 	Module:		Admin
 	Action:		Customercontacts
-	Description:display the customer contacts concerning business and technical issues 
-	
+	Description:display the customer contacts concerning business and technical issues
+
 // --->
 
 
@@ -21,33 +21,33 @@
     <td><cfoutput>#GetLangVal('cm_wd_action')#</cfoutput></td>
   </tr>
   <cfoutput query="q_select_customer_contacts">
-  
+
   <!--- load username ... --->
 	<cfset a_str_username = application.components.cmp_user.getusernamebyentrykey(q_select_customer_contacts.userkey) />
-  
+
   <cfif a_str_username IS ''>
   	user does not exist
   </cfif>
   <tr>
     <td>
 		<a href="index.cfm?action=userproperties&entrykey=#urlencodedformat(q_select_customer_contacts.userkey)##WriteURLTags()#">#a_str_username#</a>
-		
+
 		<cfloop list="#q_select_customer_contacts.permissions#" delimiters="," index="a_str_index">
 		<li>#a_str_index#</li>
 		</cfloop>
 	</td>
-    
+
     <td>#q_select_customer_contacts.user_level#</td>
     <td>
 	<a href="index.cfm?action=editcompanyadmin&userkey=#urlencodedformat(q_select_customer_contacts.userkey)##writeurltags()#"><img src="/images/si/pencil.png" class="si_img" /></a>
 	&nbsp;&nbsp;
-	<a onClick="return confirm('Sind sie sicher?');" href="user/act_remove_company_admin.cfm?userkey=#urlencodedformat(q_select_customer_contacts.userkey)##writeurltags()#"><img src="/images/si/delete.png" class="si_img" /></a>
-	
+	<a onClick="return confirm('Sind sie sicher?');" href="user/act_remove_company_admin.cfm?userkey=#urlencodedformat(q_select_customer_contacts.userkey)##writeurltags()#"><span class="glyphicon glyphicon-trash"></span></a>
+
 	</td>
   </tr>
   </cfoutput>
 </table>
-<br /> 
+<br />
 
 <cfset SelectAccounts.CompanyKey = url.companykey>
 <cfinclude template="queries/q_select_accounts.cfm">
@@ -94,7 +94,7 @@ WHERE entrykey NOT IN
 	<input type="checkbox" name="frmcbpermissions" value="order"> Erweiterungen/Produkte bestellen<br>
 	<input type="checkbox" name="frmcbpermissions" value="resetpassword"> Passwort zuruecksetzen<br>
 	<input type="checkbox" name="frmcbpermissions" value="useradministration"> Benutzerverwaltung<br>
-	<input type="checkbox" name="frmcbpermissions" value="groupadministration"> Gruppenverwaltung<br>	
+	<input type="checkbox" name="frmcbpermissions" value="groupadministration"> Gruppenverwaltung<br>
 	<input type="checkbox" name="frmcbpermissions" value="securityadministration"> Sicherheitsverwaltung<br>
 	<input type="checkbox" name="frmcbpermissions" value="newsadministration"> Newsverwaltung<br>
 	<input type="checkbox" name="frmcbpermissions" value="viewlog"> Logbuch einsehen<br>

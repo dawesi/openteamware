@@ -77,7 +77,7 @@ FROM
 	<td align="right" nowrap="true">
 		<a class="nl" href="index.cfm?action=editproject&entrykey=#q_select_sales_projects.entrykey#"><span class="glyphicon glyphicon-pencil"></span></a>
 		<cfif q_select_sales_projects.projectleaderuserkey IS request.stSecurityContext.myuserkey>
-		<a class="nl" href="##" onclick="ShowSimpleConfirmationDialog('index.cfm?action=DoDeleteproject&entrykey=#q_select_sales_projects.entrykey#');"><img src="/images/si/delete.png" class="si_img" /></a>
+		<a class="nl" href="##" onclick="ShowSimpleConfirmationDialog('index.cfm?action=DoDeleteproject&entrykey=#q_select_sales_projects.entrykey#');"><span class="glyphicon glyphicon-trash"></span></a>
 		</cfif>
 	</td>
   </tr>
@@ -163,7 +163,7 @@ WHERE
 	</td>
 	<td align="right">
 		<!--- <a class="nl" href="index.cfm?action=editproject&entrykey=#q_select_closed_projects.entrykey#"><img src="/images/si/pencil.png" class="si_img" /></a> --->
-		<a class="nl" href="##" onclick="ShowSimpleConfirmationDialog('index.cfm?action=DoDeleteproject&entrykey=#q_select_sales_projects.entrykey#');"><img src="/images/si/delete.png" class="si_img" /></a>
+		<a class="nl" href="##" onclick="ShowSimpleConfirmationDialog('index.cfm?action=DoDeleteproject&entrykey=#q_select_sales_projects.entrykey#');"><span class="glyphicon glyphicon-trash”></span></a>
 	</td>
   </tr>	<!---
   <tr>

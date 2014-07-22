@@ -118,7 +118,7 @@
 			<br/>
 			<a href="/crm/?action=EditFollowup&entrykey=#q_select_follow_ups.entrykey#&returnurl=#urlencodedformat(sReturn_url)#"><span class="glyphicon glyphicon-pencil"></span> #MakeFirstCharUCase(GetLangVal('cm_wd_edit'))#</a>
 
-			<a href="##" onClick="ShowSimpleConfirmationDialog('/crm/index.cfm?action=DeleteFollowups&entrykeys=#q_select_follow_ups.entrykey#');"><img src="/images/si/delete.png" class="si_img" /> #MakeFirstCharUCase(GetLangVal('cm_wd_delete'))#</a>
+			<a href="##" onClick="ShowSimpleConfirmationDialog('/crm/index.cfm?action=DeleteFollowups&entrykeys=#q_select_follow_ups.entrykey#');"><span class="glyphicon glyphicon-trash"></span> #MakeFirstCharUCase(GetLangVal('cm_wd_delete'))#</a>
 		</cfif>
 	</td>
   </tr>

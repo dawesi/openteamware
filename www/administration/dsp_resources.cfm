@@ -2,8 +2,8 @@
 
 	Module:		Admintool
 	Action:		resources
-	Description: 
-	
+	Description:
+
 // --->
 
 
@@ -41,12 +41,12 @@
 		</ul>
 	</td>
     <td>
-	
+
 	<!--- TODO: allow to edit resources ... --->
 <!--- 	<a href="index.cfm?action=resource.edit&entrykey=#urlencodedformat(q_select_resources.entrykey)##WriteURLTags()#"><img src="/images/si/pencil.png" class="si_img" /> #GetLangVal('cm_wd_edit')#</a>
 	&nbsp;&nbsp;
- --->	<a onClick="return confirm('#GetLangValJS('cm_ph_are_you_sure')#');" href="index.cfm?action=action.resource.delete&entrykey=#urlencodedformat(q_select_resources.entrykey)##WriteURLTags()#"><img src="/images/si/delete.png" class="si_img" /> #GetLangVal('cm_wd_delete')#</a>
-	
+ --->	<a onClick="return confirm('#GetLangValJS('cm_ph_are_you_sure')#');" href="index.cfm?action=action.resource.delete&entrykey=#urlencodedformat(q_select_resources.entrykey)##WriteURLTags()#"><span class="glyphicon glyphicon-trash"></span> #GetLangVal('cm_wd_delete')#</a>
+
 	</td>
   </tr>
   </cfoutput>

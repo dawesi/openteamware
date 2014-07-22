@@ -3,10 +3,10 @@
 	Module:		AddressBook
 	Action:		AdvancedSearch
 	Description:advanced address book search
-	
+
 
 // --->
-	
+
 <!--- // entrykey of search/view // --->
 <cfparam name="url.entrykey" type="string" default="">
 <!--- type of item ... --->
@@ -25,13 +25,13 @@
 <cfinvoke component="#application.components.cmp_crmsales#" method="GetListOfViewFilters" returnvariable="q_select_all_filters">
 	<cfinvokeargument name="securitycontext" value="#request.stSecurityContext#">
 	<cfinvokeargument name="usersettings" value="#request.stUserSettings#">
-</cfinvoke>		
+</cfinvoke>
 
 
 <cfif (q_select_all_filters.recordcount GT 0) AND Len(url.entrykey) IS 0>
 
 <cfsavecontent variable="a_str_content">
-		
+
 	<div style="padding:6px; ">
 	<cfoutput>#GetLangVal('crm_ph_filter_click_to_load')#</cfoutput>
 	</div>
@@ -63,7 +63,7 @@
 			#DateFormat(q_select_all_filters.dt_created, request.stUserSettings.default_dateformat)#
 		</td>
 		<td>
-			<a onClick="ShowSimpleConfirmationDialog('index.cfm?action=DeleteCRMFilter&entrykey=#q_select_all_filters.entrykey#');" href="##"><img src="/images/si/delete.png" class="si_img" /> #GetLangVal('cm_wd_delete')#</a>
+			<a onClick="ShowSimpleConfirmationDialog('index.cfm?action=DeleteCRMFilter&entrykey=#q_select_all_filters.entrykey#');" href="##"><span class="glyphicon glyphicon-trash"></span> #GetLangVal('cm_wd_delete')#</a>
 		</td>
 	  </tr>
 	  </cfoutput>
@@ -79,13 +79,13 @@
 
 <cfif (q_select_filter.recordcount GT 0) AND (Len(url.entrykey) IS 0)>
 	<!--- if empty viewkey and criterias, offer option to save this data ... --->
-	
+
 	<cfsavecontent variable="a_str_content">
-	
+
 		<div style="padding:6px; ">
 			<cfoutput>#GetLangVal('crm_ph_save_filter_criterias_description')#</cfoutput>
 		</div>
-		
+
 		<form action="index.cfm?action=SaveCRMFilter" method="post" style="margin:0px; ">
 		<table class="table table_details table_edit_form">
 		  <tr>
@@ -112,13 +112,13 @@
 		  </tr>
 		</table>
 		</form>
-	
+
 		<br/>
 	</cfsavecontent>
-	
+
 	<cfoutput>#WriteNewContentBox(GetLangVal('crm_ph_save_filter_criterias'), '', a_str_content)#</cfoutput>
 
-	
+
 </cfif>
 
 <cfif q_select_filter.recordcount GT 0>
@@ -127,9 +127,9 @@
 	<table class="table table_details">
 	  <tr>
 		<td>
-	
+
 		<cfif Len(url.entrykey) GT 0>
-		
+
 			<cfquery name="q_select_current_filter" dbtype="query">
 			SELECT
 				*
@@ -139,17 +139,17 @@
 				entrykey = <cfqueryparam cfsqltype="cf_sql_varchar" value="#url.entrykey#">
 			;
 			</cfquery>
-			
+
 			<cfoutput>
 			<b>#GetLangVal('cm_wd_name')#: #htmleditformat(q_select_current_filter.viewname)#</b>
-			<br /> 
+			<br />
 			#GetLangVal('cm_wd_description')#: #htmleditformat(q_select_current_filter.description)#
-			<br /> 
+			<br />
 			#GetLangVal('cm_wd_created')#: #DateFormat(q_select_current_filter.dt_created, request.stUserSettings.default_Dateformat)#
 			</cfoutput>
-			<br /><br />  
+			<br /><br />
 		</cfif>
-		
+
 		<cfoutput>#GetLangVal('crm_ph_filter_current_criterias')#</cfoutput>
 
 		<cfset ShowViewFilterCriteriaRequest.Viewkey = url.entrykey>
@@ -157,7 +157,7 @@
 
 		</td>
 		<td>
-			
+
 		</td>
 	  </tr>
 	</table>

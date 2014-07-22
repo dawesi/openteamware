@@ -2,7 +2,7 @@
 	Module:            administration (products)
 	Action:            productadministration
     Description:       overview of all product groups and products
-		
+
 // --->
 
 <cfsavecontent variable="a_str_js">
@@ -10,7 +10,7 @@
     	var url = 'index.cfm?action=productadministration<cfoutput>#WriteURLTags()#</cfoutput>&subaction=deleteproductgroup&entrykey=' + escape(entrykey) + '&productgroupname=' + escape(productgroupname);
     	ShowSimpleConfirmationDialog(url);
     }
-    
+
     function ConfirmDeleteProduct(entrykey, productname) {
     	var url = 'index.cfm?action=productadministration<cfoutput>#WriteURLTags()#</cfoutput>&subaction=deleteproduct&entrykey=' + escape(entrykey) + '&productname=' + escape(productname);
 		ShowSimpleConfirmationDialog(url);
@@ -68,10 +68,10 @@
                 <img src="/images/si/pencil.png" class="si_img" />
             </a>
 			<a href="##" onclick="ConfirmDeleteProductGroup('#jsstringformat(stReturn.q_select_product_groups.entrykey)#', '#jsstringformat(stReturn.q_select_product_groups.productgroupname)#');return false;">
-                <img src="/images/si/delete.png" class="si_img" />
+                <span class="glyphicon glyphicon-trash"></span>
             </a>
         </td>
-    </tr>    
+    </tr>
 </cfoutput>
 </table>
 </cfsavecontent>
@@ -81,7 +81,7 @@
 </cfsavecontent>
 
 <cfoutput>#WriteNewContentBox(GetLangVal('crm_ph_product_groups'), a_str_button_group, a_str_content_group)#</cfoutput>
-<br /><br />  
+<br /><br />
 
 <!--- get all products of selected company --->
 <cfset a_struct_filter = StructNew()/>
@@ -108,7 +108,7 @@
 		<td>
 			<cfoutput>#GetLangval('cm_wd_categories')#</cfoutput>
 		</td>
-        <td style="width:10%"> 
+        <td style="width:10%">
            <cfoutput>#GetLangval('cm_wd_action')#</cfoutput>
         </td>
     </tr>
@@ -139,12 +139,12 @@
             <a href="index.cfm?action=productadministration#WriteURLTags()#&subaction=addproduct&entrykey=#stReturn.q_select_products.entrykey#">
                 <img src="/images/si/pencil.png" class="si_img" />
             </a>
-        
+
 			<a href="##" onclick="ConfirmDeleteProduct('#jsstringformat(stReturn.q_select_products.entrykey)#', '#jsstringformat(stReturn.q_select_products.title)#');return false;">
-                <img src="/images/si/delete.png" class="si_img" />
+                <span class="glyphicon glyphicon-trash"></span>
             </a>
         </td>
-    </tr>    
+    </tr>
 </cfoutput>
 </table>
 </cfsavecontent>

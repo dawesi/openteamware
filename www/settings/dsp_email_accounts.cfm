@@ -2,8 +2,8 @@
 
 	Module:		Preferences
 	Action:		emailaccounts
-	Description:display all email accounts 
-	
+	Description:display all email accounts
+
 
 // --->
 
@@ -61,7 +61,7 @@ ORDER BY origin,emailadr;
 
   <tr>
 
-  	<td  <cfif Len(q_select_all_email_data.markcolor) gt 0>bgcolor="#q_select_all_email_data.markcolor#"</cfif>>## #q_select_all_email_data.currentrow#</td>  
+  	<td  <cfif Len(q_select_all_email_data.markcolor) gt 0>bgcolor="#q_select_all_email_data.markcolor#"</cfif>>## #q_select_all_email_data.currentrow#</td>
 
   	<td>
 
@@ -89,14 +89,14 @@ ORDER BY origin,emailadr;
 		  <br /><b>#GetLangVal('prf_ph_email_is_standard_adr')#</b>
 
 	</cfif>
-	
+
 <!--- 	<cfif q_select_all_email_data.origin is 0>
 		<!--- load possible forwarding targets ... --->
 		<cfset SelectEmailForwardingRequest.emailadr = q_select_all_email_data.emailadr>
 		<cfinclude template="queries/q_select_email_forwarding_settings.cfm">
-		
+
 		<cfif q_select_forwarding.recordcount IS 1>
-		<br /><br />  
+		<br /><br />
 		<img src="/images/icon/arrow_r_yellow.gif" align="absmiddle" vspace="2" hspace="2"> #GetLangVal('cm_wd_forwarding')#: #GetLangVal('cm_wd_yes')#<br>
 		#GetLangVal('cm_ph_forwarding_target')#: #q_select_forwarding.destination#<br>
 		#GetLangVal('cm_ph_forwarding_leave_copy')#: <cfif q_select_forwarding.leavecopy IS 0>#GetLangVal('cm_wd_no')#<cfelse>#GetLangVal('cm_wd_yes')#</cfif>
@@ -123,7 +123,7 @@ ORDER BY origin,emailadr;
 
 	</td>
 
-	<cfelse>	
+	<cfelse>
 
     <!--- <td align="center"><cfif q_select_all_email_data.deletemsgonserver is 1>#GetLangVal('cm_wd_yes')#<cfelse>#GetLangVal('cm_wd_no')#</cfif></td> --->
 
@@ -135,7 +135,7 @@ ORDER BY origin,emailadr;
 
 	<font color="red">#GetLangVal('cm_wd_no')#</font><br>
 
-	<a href="index.cfm?action=Requestconfirmationcode&id=#q_select_all_email_data.id#"><b>#GetLangVal('prf_ph_email_re_request_confirmation_code')#</b></a>	
+	<a href="index.cfm?action=Requestconfirmationcode&id=#q_select_all_email_data.id#"><b>#GetLangVal('prf_ph_email_re_request_confirmation_code')#</b></a>
 
 	</cfif>
 
@@ -153,14 +153,14 @@ ORDER BY origin,emailadr;
 
 	&nbsp; --->
 
-	<a href="index.cfm?action=deleteemailaccount&id=#q_select_all_email_data.id#"><img src="/images/si/delete.png" class="si_img" /> #GetLangVal('cm_wd_delete')#</a>
+	<a href="index.cfm?action=deleteemailaccount&id=#q_select_all_email_data.id#"><span class="glyphicon glyphicon-trash"></span> #GetLangVal('cm_wd_delete')#</a>
 
 	</td>
 
-  </tr>  
+  </tr>
 
   </cfoutput>
-  
+
 
 
 </table>

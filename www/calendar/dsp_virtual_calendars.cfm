@@ -9,7 +9,7 @@
 	and display together with the other events.
 
 	see also www.apple.com/ical
-	
+
 
 // --->
 
@@ -47,8 +47,8 @@
 			</td>
 			<td>
 				<a href="index.cfm?action=AddEditVirtualCalendar&entrykey=#q_select_virtual_calendars.entrykey#"><img src="/images/si/pencil.png" class="si_img" /></a>
-				
-				<a href="##" onclick="ConfirmDeleteVirtualCalendar('#jsstringformat(q_select_virtual_calendars.entrykey)#', '#jsstringformat(q_select_virtual_calendars.title)#');return false;"><img src="/images/si/delete.png" class="si_img" /></a>
+
+				<a href="##" onclick="ConfirmDeleteVirtualCalendar('#jsstringformat(q_select_virtual_calendars.entrykey)#', '#jsstringformat(q_select_virtual_calendars.title)#');return false;"><span class="glyphicon glyphicon-trash"></span></a>
 			</td>
 		</tr>
 	</cfoutput>

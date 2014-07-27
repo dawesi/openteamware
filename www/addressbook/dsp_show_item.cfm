@@ -31,7 +31,7 @@
 	<cfinvokeargument name="loadmetainformations" value="true">
 </cfinvoke>
 
-<cfif NOT a_struct_object.result>
+<cfif !a_struct_object.result>
 	<cfswitch expression="#a_struct_object.error#">
 		<cfcase value="10100">
 			<b><cfoutput>#GetLangVal('cm_ph_object_not_found')#</cfoutput></b>
@@ -51,8 +51,6 @@
 <cfset q_select_user_data = application.components.cmp_user.GetUserData( request.stSecurityContext.myuserkey ) />
 
 <!--- // Load preferences // --->
-<cfset a_int_crm_enabled = true />
-<cfset a_int_skype_enabled = GetUserPrefPerson('extensions.skype', 'enabled', '1', '', false) />
 <cfset a_str_contact_own_comment = GetUserPrefPerson('crm.contact.owncomment', url.entrykey, '', '', false) />
 
 <!--- update list of lately shown contacts / accounts / leads (save individually) ... --->
@@ -94,6 +92,8 @@
 
 <cfset request.a_str_current_page_title = a_str_display_header />
 
+<h2><cfoutput>#htmleditformat( a_str_display_header )#</cfoutput></h2>
+
 <cfset SetHeaderTopInfoString(a_str_display_header) />
 
 
@@ -103,7 +103,7 @@ function NewElementClickEv(item_type) {
 	}
 </cfsavecontent>
 
-<cfset tmp = AddJSToExecuteAfterPageLoad('', a_str_js) />
+<cfset AddJSToExecuteAfterPageLoad('', a_str_js) />
 
 <cfscript>
 	StartNewJSPopupMenu('a_pop_crm_new_activity');
@@ -135,8 +135,6 @@ function NewElementClickEv(item_type) {
 </cfoutput>
 
 <cfset ExportTranslationValuesAsJS('adrb_wd_activities') />
-
-<cfset a_bol_skype_enabled = (a_int_skype_enabled IS 1) />
 
 <!--- display private data? --->
 <cfset a_bol_display_private_data = NOT (q_select_contact_data.contacttype IS 1) />
@@ -186,42 +184,11 @@ function NewElementClickEv(item_type) {
 	<!--- buttons --->
 	<cfsavecontent variable="a_str_buttons">
 		<cfif a_struct_object.rights.edit>
-		<input onClick="call_edit_contact('#jsstringformat(url.entrykey)#', 'contactdata');" type="button" value=" #htmleditformat(MakeFirstCharUCase(GetLangVal('cm_wd_edit')))# " class="btn btn-primary">
+			<input onClick="call_edit_contact('#jsstringformat(url.entrykey)#', 'contactdata');" type="button" value=" #htmleditformat(MakeFirstCharUCase(GetLangVal('cm_wd_edit')))# " class="btn btn-primary">
 		</cfif>
-
-		<!--- <cfif q_select_contact_data.contacttype NEQ 1 AND val(q_select_contact_data.id_re_job_available) IS 0>
-			&nbsp;
-			<input onClick="CallRemoteEditDialog('#JSStringformat(url.entrykey)#');" type="button" value=" #htmleditformat(GetLangVal('adrb_ph_enable_remoteedit'))# " class="btn">
-		</cfif>
-		&nbsp;
-		<input type="button" value="#GetLangVal('cm_ph_more_actions')# ..." id="id_btn_contacts_further_actions" class="btn" onClick="ShowHTMLActionPopup('id_btn_contacts_further_actions', a_pop_further_actions);return false;">
-		 --->
-
 	</cfsavecontent>
 
-
-	<!--- Create tab selection if private data available ... --->
-	<cfif a_bol_display_private_data>
-
-		<cfset tmp = StartNewTabNavigation() />
-		<cfset a_str_id_business_data_box = AddTabNavigationItem(GetLangVal('adrb_wd_business'), '', '') />
-		<cfset a_str_id_private_data_box = AddTabNavigationItem(GetLangVal('adrb_ph_private_data'), '', '') />
-
-		<cfsavecontent variable="a_str_business_data">
-			<cfoutput>#BuildTabNavigation('', false)#</cfoutput>
-		</cfsavecontent>
-
-	</cfif>
-
-
-<!--- business data --->
-<cfsavecontent variable="a_str_business_contact_data">
-
-	<!--- build box around ... --->
-	<cfif a_bol_display_private_data>
-		<div class="div_module_tabs_content_box" style="width:99%;" id="<cfoutput>#a_str_id_business_data_box#</cfoutput>">
-	</cfif>
-
+<cfsavecontent variable="contactData">
 	<table class="table table_details">
 
 		<cfif (val(q_select_contact_data.id_re_job_available) GT 0) AND NOT a_bol_re_available>
@@ -414,7 +381,7 @@ function NewElementClickEv(item_type) {
 				<td>
 					#htmleditformat(q_select_contact_data.skypeusername)#
 					<cfif (Len(q_select_contact_data.skypeusername) GT 0)>
-						<cfset tmp = AddJSToExecuteAfterPageLoad('ShowSkypeOnlineStatusData(''#jsstringformat(q_select_contact_data.skypeusername)#'', ''#jsstringformat(url.entrykey)#'')', '') />
+						<cfset AddJSToExecuteAfterPageLoad('ShowSkypeOnlineStatusData(''#jsstringformat(q_select_contact_data.skypeusername)#'', ''#jsstringformat(url.entrykey)#'')', '') />
 					</cfif>
 				</td>
 			  </tr>
@@ -542,18 +509,11 @@ function NewElementClickEv(item_type) {
 
 	</table>
 
-	<!--- close div holding the content ... only needed if tabs are enabled --->
-	<cfif a_bol_display_private_data>
-		</div>
-	</cfif>
-
-</cfsavecontent>
 
 <cfif a_bol_display_private_data>
 	<!--- table with private contact data ... --->
-	<cfsavecontent variable="a_str_private_contact_data">
 
-		<div class="div_module_tabs_content_box" id="#a_str_id_private_data_box#">
+		<div class="well">Privat
 		<table cellspacing="0" class="table table_details">
 			<tr>
 				<td class="td_title field_name">
@@ -612,33 +572,13 @@ function NewElementClickEv(item_type) {
 			  </tr>
 		</table>
 		</div>
-	</cfsavecontent>
 
 </cfif>
 
-<h2><cfoutput>#htmleditformat( a_str_display_header )#</cfoutput></h2>
-
-<!--- write tab header and business/private content ... or just business data if no private data available --->
-<cfif a_bol_display_private_data>
-
-	<!--- join string together ... --->
-	<cfsavecontent variable="a_str_business_data">
-
-		#a_str_business_data#
-		#a_str_business_contact_data#
-		#a_str_private_contact_data#
-	</cfsavecontent>
-
-	#WriteNewContentBox(GetLangVal('adrb_ph_contact_data'), a_str_buttons, a_str_business_data)#
+</cfsavecontent>
 
 
-	<cfscript>
-	// AddJSToExecuteAfterPageLoad('DisplayContactDataType(''business'');', '');
-	</cfscript>
-
-<cfelse>
-	#WriteNewContentBox(GetLangVal('adrb_ph_contact_data') & ' (' & GetLangVal('adrb_wd_business') & ')', a_str_buttons, a_str_business_contact_data)#
-</cfif>
+	#WriteNewContentBox(GetLangVal('adrb_ph_contact_data'), a_str_buttons, contactData)#
 
 
 </cfoutput>
@@ -716,31 +656,9 @@ function NewElementClickEv(item_type) {
 	<br />
 	<cfinclude template="crm/dsp_inc_history.cfm">
 
-
-
-  <cfsavecontent variable="a_str_contact_further_data_and_properties">
 	<cfoutput>
 
-	<table class="table table_details">
-
-		  <cfif Len(q_select_contact_data.notice) GT 0>
-		  <tr>
-			<td class="field_name">#GetLangVal('adrb_wd_notices')#</td>
-			<td colspan="3">#ReplaceNoCase(Trim(q_select_contact_data.notice), chr(13), '<br />', 'ALL')#</td>
-		  </tr>
-		  </cfif>
-
-		  <cfif Len(a_str_contact_own_comment) GT 0>
-		  	<tr>
-		  		<td class="field_name">#GetLangVal('adrb_ph_private_notices')#</td>
-				<td colspan="3">
-					#ReplaceNoCase(Trim(a_str_contact_own_comment), chr(13), '<br />', 'ALL')#
-				</td>
-			</tr>
-	  	</cfif>
-	  <tr>
-	  	<td colspan="4" class="addinfotext">
-
+		<p class="addinfotext">
 			#GetLangVal('cm_wd_created')#: #DateFormat(q_select_contact_data.dt_created, request.stUserSettings.default_dateformat)#
 			#GetLangVal('cm_wd_by')# #application.components.cmp_user.GetShortestPossibleUserIDByEntrykey(q_select_contact_data.createdbyuserkey)#
 
@@ -750,26 +668,11 @@ function NewElementClickEv(item_type) {
 				#GetLangVal('adrb_ph_last_edited')#: #DateFormat(q_select_contact_data.dt_lastmodified, request.stUserSettings.default_dateformat)# (#TimeFormat(q_select_contact_data.dt_lastmodified, request.stUserSettings.default_timeformat)#)
 					#GetLangVal('cm_wd_by')# #application.components.cmp_user.GetShortestPossibleUserIDByEntrykey(q_select_contact_data.lasteditedbyuserkey)#
 			</cfif>
-
-			<cfif IsDate(q_select_contact_data.dt_remoteedit_last_update)>
-				/
-				#GetLangVal('adrb_ph_dt_last_remote_edit')#: #DateFormat(q_select_contact_data.dt_lastmodified, request.stUserSettings.default_dateformat)#
-			</cfif>
-
-		</td>
-	  </tr>
-
-	</table>
-
+		</p>
 
 	</td>
   </tr>
 </table></cfoutput>
-  </cfsavecontent>
-
-<!--- <cfoutput>#WriteSimpleHeaderDiv(GetLangVal('adrb_ph_further_data_and_properties'))#</cfoutput> --->
-<cfoutput>#a_str_contact_further_data_and_properties#</cfoutput>
-<!--- <cfoutput>#WriteNewContentBox(GetLangVal('adrb_ph_further_data_and_properties'), '', a_str_contact_further_data_and_properties)#</cfoutput> --->
 
 
 

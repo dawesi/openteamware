@@ -169,7 +169,7 @@ function call_new_item_for_contact(entrykey, item_type, param1, param2) {
 var a_current_history_area = 'activities';
 
 function GetCurrentCRMHistoryDays(){
-	return document.forms.form_set_crm_history_days.frmdays.value;
+	return 999;
 	}
 
 // var a_http_display_activities_of_contacts;

@@ -6,25 +6,38 @@
 
 // --->
 
+<cfsavecontent variable="tablist">
+<cfoutput>
+<ul class="nav nav-tabs crmHistory" role="tablist">
+  <li class="active"><a href="##home" data-history-area="activities" role="tab" data-toggle="tab">#GetLangVal('adrb_wd_activities')#</a></li>
+  <li><a href="##messages" role="tab" data-history-area="appointments" data-toggle="tab">#GetLangVal('cm_wd_events')#</a></li>
+  <li><a href="##settings" role="tab" data-history-area="emailfaxsms" data-toggle="tab">#GetLangVal('cm_wd_email')#</a></li>
+</ul>
 
-<cfsavecontent variable="a_str_box">
+<!-- Tab panes -->
+<div class="tab-content">
+  <div class="tab-pane active" id="crmHistoryOutput">...</div>
+</div>
 
+<script>
+var contactKey = '#jsstringformat(url.entrykey)#';
+$('.crmHistory a').click(function (e) {
+  e.preventDefault();
+	var area = $(this).data( 'history-area' );
 
-	<cfset tmp = StartNewTabNavigation() />
-	 <cfset tmp = AddTabNavigationItem(GetLangVal('adrb_wd_activities'), 'javascript:ShowActivitiesData(''' & jsstringformat(url.entrykey) & ''', ''activities'', GetCurrentCRMHistoryDays());', '') />
-	<cfset tmp = AddTabNavigationItem(GetLangVal('crm_wd_telephone_calls'), 'javascript:ShowActivitiesData(''' & jsstringformat(url.entrykey) & ''', ''telephonecalls'', GetCurrentCRMHistoryDays());', '') />
-	<cfset tmp = AddTabNavigationItem(GetLangVal('cm_wd_email') & '/' & GetLangVal('cm_wd_fax'), 'javascript:ShowActivitiesData(''' & jsstringformat(url.entrykey) & ''', ''emailfaxsms'', GetCurrentCRMHistoryDays());', '') />
-	<cfset tmp = AddTabNavigationItem(GetLangVal('crm_wd_follow_ups'), 'javascript:ShowActivitiesData(''' & jsstringformat(url.entrykey) & ''', ''followups'', GetCurrentCRMHistoryDays());', '') />
-	<cfset tmp = AddTabNavigationItem(GetLangVal('cm_wd_events'), 'javascript:ShowActivitiesData(''' & jsstringformat(url.entrykey) & ''', ''appointments'', GetCurrentCRMHistoryDays());', '') />
-	<cfset tmp = AddTabNavigationItem(GetLangVal('cm_wd_tasks'), 'javascript:ShowActivitiesData(''' & jsstringformat(url.entrykey) & ''', ''tasks'', GetCurrentCRMHistoryDays());', '') />
-	<cfset tmp = AddTabNavigationItem(GetLangVal('cm_wd_mailings'), 'javascript:ShowActivitiesData(''' & jsstringformat(url.entrykey) & ''', ''newsletter'', GetCurrentCRMHistoryDays());', '') />
+	var u = '/crm/?action=DisplayAddresBookItemHistory&entrykeys=' + escape(contactKey) + '&area=' + escape( area );
 
-	<!--- history tab ... for admin only --->
-	<cfif request.stSecurityContext.iscompanyadmin IS 1>
-		<cfset tmp = AddTabNavigationItem('Admin', 'javascript:ShowActivitiesData(''' & jsstringformat(url.entrykey) & ''', ''admin'', GetCurrentCRMHistoryDays());', '') />
-	</cfif>
+	$.get( u, function( data ) {
+		$('##crmHistoryOutput').html( data );
 
-	<cfoutput>#BuildTabNavigation('id_content_output_activities', false)#</cfoutput>
+	});
+  //$(this).tab('show')
+})
+
+$('.crmHistory a:first').click();
+</script>
+
+</cfoutput>
 </cfsavecontent>
 
 <cfsavecontent variable="a_str_buttons">
@@ -32,32 +45,18 @@
 	<form style="margin:0px;" name="form_set_crm_history_days">
 		<input class="btn btn-primary" type="button" style="width:auto;" onclick="call_new_item_for_contact('#jsstringformat(url.entrykey)#', 'history');return false;" value="#GetLangVal('crm_ph_record_event')#" />
 
-		<cfif a_struct_object.rights.delete>
-			<input type="button" class="btn" value="#MakeFirstCharUCase(GetLangVal('cm_wd_edit'))#" onclick="ShowActivitiesData('#jsstringformat(url.entrykey)#', 'activities', GetCurrentCRMHistoryDays(), true);" />
-		</cfif>
+		<!--- <cfif a_struct_object.rights.delete>
+			<input type="button" class="btn btn-default" value="#MakeFirstCharUCase(GetLangVal('cm_wd_edit'))#" onclick="ShowActivitiesData('#jsstringformat(url.entrykey)#', 'activities', GetCurrentCRMHistoryDays(), true);" />
+		</cfif> --->
 
-		<div style="display:none;">
-		&nbsp;&nbsp;
-
-		#GetLangVal('cal_wd_timeframe')#:
-		<select name="frmdays" onChange="ShowActivitiesData('#jsstringformat(url.entrykey)#', a_current_history_area, this.value);">
-			<option value="30">30</option>
-			<option selected value="90">90</option>
-			<option value="360">360</option>
-			<option value="0">alle</option>
-		</select>
-		#GetLangVal('cm_wd_days')#
-		</div>
 	</form>
 </cfoutput>
-	<!--- <input onClick="call_edit_contact('<cfoutput>#jsstringformat(url.entrykey)#</cfoutput>', 'history');" type="button" value=" <cfoutput>#htmleditformat(GetLangVal('cm_wd_edit'))#</cfoutput> " class="btn btn-primary">
- --->
 
 </cfsavecontent>
 
-<cfoutput>#WriteNewContentBox(GetLangVal('crm_wd_history'), a_str_buttons, a_str_box)#</cfoutput>
+<cfoutput>#WriteNewContentBox(GetLangVal('crm_wd_history'), a_str_buttons, tablist)#</cfoutput>
 
-<cfset tmp = AddJSToExecuteAfterPageLoad('ShowActivitiesData(''#jsstringformat(url.entrykey)#'', ''activities'', ''30'')', '') />
+<cfset AddJSToExecuteAfterPageLoad('ShowActivitiesData(''#jsstringformat(url.entrykey)#'', ''activities'', ''30'')', '') />
 
 
 <!--- other linked contacts --->

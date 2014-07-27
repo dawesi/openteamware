@@ -15,11 +15,6 @@
 <!--- list of JavaScript files to load ... --->
 <cfset a_str_js_files_2_load = '' />
 
-<!--- <cfset a_str_js_files_2_load = ListAppend(a_str_js_files_2_load, '/common/js/display.js') /> --->
-<!--- <cfset a_str_js_files_2_load = ListAppend(a_str_js_files_2_load, '/common/js/jquery.validate.pack.js') /> --->
-<!--- <cfset a_str_js_files_2_load = ListAppend(a_str_js_files_2_load, '/common/js/jquery.shortkeys.js') /> --->
-<!--- <cfset a_str_js_files_2_load = ListAppend(a_str_js_files_2_load, '/common/js/jquery.plugins.js') /> --->
-
 <cfswitch expression="#request.sCurrentServiceKey#">
 	<cfcase value="7E68B84A-BB31-FCC0-56E6125343C704EF">
 		<!--- CRM overview --->
@@ -58,29 +53,6 @@
 		<cfset a_str_js_files_2_load = ListAppend(a_str_js_files_2_load, '/common/js/jquery.treeview.pack.js') />
 		<cfset a_str_js_files_2_load = ListAppend(a_str_js_files_2_load, '/common/js/admintool.js') />
 
-	</cfcase>
-
-	<cfcase value="52228B55-B4D7-DFDF-4AC7CFB5BDA95AC5">
-		<!--- e-mail ... --->
-		<cfset a_str_js_files_2_load = ListAppend(a_str_js_files_2_load, '/common/js/email.js') />
-		<cfset a_str_js_files_2_load = ListAppend(a_str_js_files_2_load, '/common/js/jquery.treeview.pack.js') />
-
-		<cfif ListFindNoCase('composemail', arguments.currentaction) GT 0>
-			<cfset a_str_js_files_2_load = ListAppend(a_str_js_files_2_load, '/common/js/wddx.js') />
-			<cfset a_str_js_files_2_load = ListAppend(a_str_js_files_2_load, '/common/js/email_compose.js') />
-		</cfif>
-	</cfcase>
-
-	<cfcase value="5222ECD3-06C4-3804-E92ED804C82B68A2">
-		<!--- storage ... --->
-		<cfset a_str_js_files_2_load = ListAppend(a_str_js_files_2_load, '/common/js/storage.js')>
-		<cfset a_str_js_files_2_load = ListAppend(a_str_js_files_2_load, '/common/js/jquery.calendar.js') />
-	</cfcase>
-
-	<cfcase value="startpagecontent">
-		<cfset a_str_js_files_2_load = ListAppend(a_str_js_files_2_load, '/common/js/calendar.js')>
-		<cfset a_str_js_files_2_load = ListAppend(a_str_js_files_2_load, '/common/js/email.js')>
-		<cfset a_str_js_files_2_load = ListAppend(a_str_js_files_2_load, '/common/js/addressbook.js')>
 	</cfcase>
 
 	<cfcase value="52230718-D5B0-0538-D2D90BB6450697D1">

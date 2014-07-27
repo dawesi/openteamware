@@ -1,5 +1,4 @@
 
-<cfoutput>#CreateDefaultTopHeader(GetLangVal('cm_wd_calendar'))#</cfoutput>
 
 <!---
 <cfexit method="exittemplate">
@@ -10,7 +9,7 @@
 
 <tr>
 
-	
+
 	<cfif IsInternalIPOrUser()>
 		<td class="addinfotext" style="font-weight:bold; ">
 			<a class="addinfotext" href="/calendar/"><cfoutput>#GetLangVal('cm_wd_calendar')#</cfoutput></a>
@@ -19,7 +18,7 @@
 
 	<td><a href="index.cfm" class="TopHeaderLink"><b><cfoutput>#GetLangVal('cal_wd_today')#</cfoutput></a></b></td>
 
-	
+
 	<td class="tdtopheaderdivider">|</td>
 	<td class="TopHeaderLink">
 	<cfoutput>#GetLangVal('cm_wd_view')#</cfoutput>:
@@ -33,9 +32,9 @@
 	<td class="tdtopheaderdivider">|</td>
 
 	<td><a href="index.cfm?action=newevent" class="TopHeaderLink"><cfoutput>#GetLangVal('cal_ph_top_createevent')#</cfoutput></a></td>
-	
+
 	<td class="tdtopheaderdivider">|</td>
-	
+
 	<cfif ListFindNoCase('ViewDay,ShowDay,ViewWeek,ViewMonth,ShowEvent,ListEvents', url.action) GT 0>
 		<td>
 			<a class="TopHeaderLink" target="_blank" href="<cfoutput>#cgi.SCRIPT_NAME#?#cgi.QUERY_STRING#</cfoutput>&printmode=true"><cfoutput>#GetLangVal('cal_ph_top_printversion')#</cfoutput></a>
@@ -45,8 +44,8 @@
 
 	<td><a href="/synccenter/" class="TopHeaderLink"><cfoutput>#GetLangVal('cm_ph_synccenter_link')#</cfoutput></a></td>
 
-	
+
 	</cfif>
 </tr>
-</table> 
+</table>
 --->

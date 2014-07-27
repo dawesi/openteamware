@@ -231,7 +231,7 @@
 
 					<cfsavecontent variable="a_str_js_cal">var #a_str_cal_name# = new CalendarPopup();</cfsavecontent>
 
-					<cfset tmp = AddJSToExecuteAfterPageLoad('', a_str_js_cal) /> --->
+					<cfset AddJSToExecuteAfterPageLoad('', a_str_js_cal) /> --->
 
 					<cfset a_str_add_cal_name = RandRange(1, 9999) />
 

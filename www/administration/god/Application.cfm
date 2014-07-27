@@ -47,6 +47,6 @@
 
 <!--- copy data to request scope --->
 <cflock scope="session" timeout="30" type="readonly">		
-	<cfset tmp = CopyUserStructuresFromSession2RequestScope() />
+	<cfset CopyUserStructuresFromSession2RequestScope() />
 </cflock>
 

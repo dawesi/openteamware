@@ -38,16 +38,16 @@ WHERE
 
 <cfloop query="q_select_followups">
 	<!--- add a new row to the output table --->
-	<cfset tmp = QueryAddRow(q_select_data, 1)>
+	<cfset QueryAddRow(q_select_data, 1)>
 	
 	<!--- set the address book key --->
-	<cfset tmp = QuerySetCell(q_select_data, 'addressbookkey', q_select_followups.objectkey, q_select_data.recordcount)>
+	<cfset QuerySetCell(q_select_data, 'addressbookkey', q_select_followups.objectkey, q_select_data.recordcount)>
 	
 	<!--- set common data like subject, item_Type ... these fields have ALWAYS to exist! --->
-	<cfset tmp = QuerySetCell(q_select_data, 'VIRT_ITEMTYPE', request.a_cmp_lang.GetLangValExt(entryid = 'crm_wd_follow_up', langno = arguments.usersettings.language), q_select_data.recordcount)>
-	<cfset tmp = QuerySetCell(q_select_data, 'VIRT_SUBJECT', q_select_followups.objecttitle, q_select_data.recordcount)>
-	<cfset tmp = QuerySetCell(q_select_data, 'VIRT_createdbyuserkey', q_select_followups.userkey, q_select_data.recordcount)>
-	<cfset tmp = QuerySetCell(q_select_data, 'virt_itemcreated', q_select_followups.dt_created, q_select_data.recordcount)>
+	<cfset QuerySetCell(q_select_data, 'VIRT_ITEMTYPE', request.a_cmp_lang.GetLangValExt(entryid = 'crm_wd_follow_up', langno = arguments.usersettings.language), q_select_data.recordcount)>
+	<cfset QuerySetCell(q_select_data, 'VIRT_SUBJECT', q_select_followups.objecttitle, q_select_data.recordcount)>
+	<cfset QuerySetCell(q_select_data, 'VIRT_createdbyuserkey', q_select_followups.userkey, q_select_data.recordcount)>
+	<cfset QuerySetCell(q_select_data, 'virt_itemcreated', q_select_followups.dt_created, q_select_data.recordcount)>
 
 	<cfsavecontent variable="a_str_description">
 		<cfoutput>
@@ -55,7 +55,7 @@ WHERE
 		</cfoutput>
 	</cfsavecontent>
 		
-	<cfset tmp = QuerySetCell(q_select_data, 'virt_description', trim(a_str_description), q_select_data.recordcount)>
+	<cfset QuerySetCell(q_select_data, 'virt_description', trim(a_str_description), q_select_data.recordcount)>
 
 <cflog text="row added" type="Information" log="Application" file="ib_crm_reports">
 

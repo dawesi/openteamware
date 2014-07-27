@@ -80,7 +80,7 @@ WHERE
 </cfloop>
 
 <!--- add the column ... --->
-<cfset tmp = QueryAddColumn(q_select_events, 'outlook_id', ArrayNew(1))>
+<cfset QueryAddColumn(q_select_events, 'outlook_id', ArrayNew(1))>
 
 <cfloop query="q_select_events">
 	<cfif StructKeyExists(a_struct_ol_data, q_select_events.entrykey)>

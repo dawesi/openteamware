@@ -43,7 +43,7 @@
 	</cfif>
 	
 	<cftry>
-		<cfset tmp = GetLocale() />
+		<cfset GetLocale() />
 		<cfset SetLocale("English (US)") />
 		<cfset ACurrentDate = LSParseDatetime(url.date) />
 		<cfset SetLocale(tmp) />

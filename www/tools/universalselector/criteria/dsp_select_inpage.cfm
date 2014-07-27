@@ -33,5 +33,5 @@
 $("#<cfoutput>#a_str_id#</cfoutput>").Treeview();
 </cfsavecontent>
 
-<cfset tmp = AddJSToExecuteAfterPageLoad('', a_str_js) />
+<cfset AddJSToExecuteAfterPageLoad('', a_str_js) />
 

@@ -45,11 +45,11 @@ WHERE
 </cfloop>
 
 <!--- add the column ... --->
-<cfset tmp = QueryAddColumn(q_select_tasks, 'outlook_id', ArrayNew(1))>
+<cfset QueryAddColumn(q_select_tasks, 'outlook_id', ArrayNew(1))>
 
 <cfloop query="q_select_tasks">
 	<cfif StructKeyExists(a_struct_ol_data, q_select_tasks.entrykey)>
-		<cfset tmp = QuerySetCell(q_select_tasks, 'outlook_id', a_struct_ol_data[q_select_tasks.entrykey], q_select_tasks.currentrow)>
+		<cfset QuerySetCell(q_select_tasks, 'outlook_id', a_struct_ol_data[q_select_tasks.entrykey], q_select_tasks.currentrow)>
 	</cfif>
 </cfloop>
 

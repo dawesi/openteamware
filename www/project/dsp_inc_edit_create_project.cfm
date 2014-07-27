@@ -14,13 +14,13 @@
 <cfparam name="CreateEditItem.contactkey" type="string" default="">
 
 <cfif CreateEditItem.action IS 'create' AND CreateEditItem.query.recordcount IS 0>
-	<cfset tmp = QueryAddRow(CreateEditItem.query, 1) />
-	<cfset tmp = QuerySetCell(CreateEditItem.query, 'contactkey', CreateEditItem.contactkey, 1) />
-	<cfset tmp = QuerySetCell(CreateEditItem.query, 'project_type', CreateEditItem.type, 1) />
+	<cfset QueryAddRow(CreateEditItem.query, 1) />
+	<cfset QuerySetCell(CreateEditItem.query, 'contactkey', CreateEditItem.contactkey, 1) />
+	<cfset QuerySetCell(CreateEditItem.query, 'project_type', CreateEditItem.type, 1) />
 </cfif>
 
 <cfif ListFindNoCase(CreateEditItem.Query.Columnlist, 'projecttypetitle') IS 0>
-	<cfset tmp = QueryAddColumn(CreateEditItem.Query, 'projecttypetitle', ArrayNew(1)) />
+	<cfset QueryAddColumn(CreateEditItem.Query, 'projecttypetitle', ArrayNew(1)) />
 </cfif>
 
 <cfset sEntrykeys_fields_to_ignore = '' />
@@ -44,9 +44,9 @@
 	</cfcase>
 </cfswitch>
 
-<cfset tmp = QuerySetCell(CreateEditItem.query, 'projecttypetitle', GetLangVal('prj_ph_project_type_' & CreateEditItem.Query.project_type), 1) />
+<cfset QuerySetCell(CreateEditItem.query, 'projecttypetitle', GetLangVal('prj_ph_project_type_' & CreateEditItem.Query.project_type), 1) />
 
-<cfset tmp = SetHeaderTopInfoString(CreateEditItem.query.projecttypetitle) />
+<cfset SetHeaderTopInfoString(CreateEditItem.query.projecttypetitle) />
 
 <cfset a_str_form = application.components.cmp_forms.DisplaySavedForm(action = CreateEditItem.action,
 						query = CreateEditItem.query,

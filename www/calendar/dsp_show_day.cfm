@@ -97,7 +97,7 @@ FROM
 <cfset a_int_diff_days = DateDiff('d', request.a_dt_current_date, Now())>
 
 
-<cfset tmp = SetHeaderTopInfoString(lsDateFormat(request.a_dt_current_date, 'dddd, dd.mmmm yyyy'))>
+<cfset SetHeaderTopInfoString(lsDateFormat(request.a_dt_current_date, 'dddd, dd.mmmm yyyy'))>
 
 
 <table width="100%" border="0" cellspacing="0" cellpadding="4">

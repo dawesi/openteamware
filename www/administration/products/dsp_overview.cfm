@@ -16,7 +16,7 @@
 		ShowSimpleConfirmationDialog(url);
     }
 </cfsavecontent>
-<cfset tmp = AddJSToExecuteAfterPageLoad('', a_str_js) />
+<cfset AddJSToExecuteAfterPageLoad('', a_str_js) />
 
 <!--- get all product groups of selected company --->
 <cfset a_struct_filter = StructNew()/>

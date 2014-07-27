@@ -28,27 +28,27 @@
 
 
 <cfloop from="1" to="#a_int_diff#" index="ii">
-	<cfset tmp = QueryAddRow(q_return, 1)>
+	<cfset QueryAddRow(q_return, 1)>
 	<cfset a_dt_show = DateAdd(a_str_date_part, ii-1, arguments.date_start)>
 	<cfswitch expression="#arguments.interval#">
 		<cfcase value="day">
-			<cfset tmp = QuerySetCell(q_return, 'date_data_display', DateFormat(a_dt_show, 'dd.mm.yy'), q_return.recordcount)>
+			<cfset QuerySetCell(q_return, 'date_data_display', DateFormat(a_dt_show, 'dd.mm.yy'), q_return.recordcount)>
 		</cfcase>
 		<cfcase value="week">
-			<cfset tmp = QuerySetCell(q_return, 'date_data_display', 'W '&Week(a_dt_show), q_return.recordcount)>
+			<cfset QuerySetCell(q_return, 'date_data_display', 'W '&Week(a_dt_show), q_return.recordcount)>
 		</cfcase>		
 		<cfcase value="month">
-			<cfset tmp = QuerySetCell(q_return, 'date_data_display', 'M '&LSDateFormat(a_dt_show, 'mmmm'), q_return.recordcount)>
+			<cfset QuerySetCell(q_return, 'date_data_display', 'M '&LSDateFormat(a_dt_show, 'mmmm'), q_return.recordcount)>
 		</cfcase>	
 		<cfcase value="year">
-			<cfset tmp = QuerySetCell(q_return, 'date_data_display', 'Y '&Year(a_dt_show), q_return.recordcount)>
+			<cfset QuerySetCell(q_return, 'date_data_display', 'Y '&Year(a_dt_show), q_return.recordcount)>
 		</cfcase>
 	</cfswitch>
 	
 	<cfloop from="1" to="100" index="ii">
-	<cfset tmp = QuerySetCell(q_return, 'data'&ii, 0, q_return.recordcount)>
+	<cfset QuerySetCell(q_return, 'data'&ii, 0, q_return.recordcount)>
 	</cfloop>
 	
-	<cfset tmp = QuerySetCell(q_return, 'date_start', DateAdd(a_str_date_part, ii-1, arguments.date_start), q_return.recordcount)>
-	<cfset tmp = QuerySetCell(q_return, 'date_end', DateAdd(a_str_date_part, ii, arguments.date_start), q_return.recordcount)>
+	<cfset QuerySetCell(q_return, 'date_start', DateAdd(a_str_date_part, ii-1, arguments.date_start), q_return.recordcount)>
+	<cfset QuerySetCell(q_return, 'date_end', DateAdd(a_str_date_part, ii, arguments.date_start), q_return.recordcount)>
 </cfloop>

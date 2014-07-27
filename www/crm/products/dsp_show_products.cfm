@@ -13,7 +13,7 @@
 		ShowSimpleConfirmationDialog(url);
     }
 </cfsavecontent>
-<cfset tmp = AddJSToExecuteAfterPageLoad('', a_str_js) />
+<cfset AddJSToExecuteAfterPageLoad('', a_str_js) />
 
 
 <cfinvoke component="#application.components.cmp_products#" method="DisplayProductsOfContact" returnvariable="a_str_products_of_contact">

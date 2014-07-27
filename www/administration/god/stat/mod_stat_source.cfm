@@ -56,10 +56,10 @@ WHERE
 	</cfquery>
 	
 	<cfloop query="q_select_old_companies">
-		<cfset tmp = QueryAddRow(q_select_companies, 1)>
+		<cfset QueryAddRow(q_select_companies, 1)>
 		
 		<cfloop list="#q_select_old_companies.columnlist#" index="a_str_column" delimiters=",">
-			<cfset tmp = QuerySetCell(q_select_companies, a_str_column, q_select_old_companies[a_str_column][q_select_old_companies.currentrow], q_select_companies.recordcount)>
+			<cfset QuerySetCell(q_select_companies, a_str_column, q_select_old_companies[a_str_column][q_select_old_companies.currentrow], q_select_companies.recordcount)>
 		</cfloop>
 	</cfloop>
 
@@ -74,7 +74,7 @@ FROM
 </cfquery>
 
 <cfloop query="q_select_companies">
-	<cfset tmp = QuerySetCell(q_select_companies, 'weekno', Week(q_select_companies.dt_created_original), q_select_companies.currentrow)>
+	<cfset QuerySetCell(q_select_companies, 'weekno', Week(q_select_companies.dt_created_original), q_select_companies.currentrow)>
 </cfloop>
 
 <cfset q_signup = QueryNew('source,count_total,date_selected,weekno')>
@@ -102,10 +102,10 @@ FROM
 		;
 		</cfquery>
 		
-		<cfset tmp = QueryAddRow(q_signup, 1)>
-		<cfset tmp = QuerySetCell(q_signup, 'source', q_select_sources.signupsource, q_signup.recordcount)>
-		<cfset tmp = QuerySetCell(q_signup, 'count_total', q_select_sum.count_id, q_signup.recordcount)>	
-		<cfset tmp = QuerySetCell(q_signup, 'weekno', Week(a_Dt_week), q_signup.recordcount)>
+		<cfset QueryAddRow(q_signup, 1)>
+		<cfset QuerySetCell(q_signup, 'source', q_select_sources.signupsource, q_signup.recordcount)>
+		<cfset QuerySetCell(q_signup, 'count_total', q_select_sum.count_id, q_signup.recordcount)>	
+		<cfset QuerySetCell(q_signup, 'weekno', Week(a_Dt_week), q_signup.recordcount)>
 		
 		<!---<cfdump var="#q_select_sum#">--->
 	</cfoutput>

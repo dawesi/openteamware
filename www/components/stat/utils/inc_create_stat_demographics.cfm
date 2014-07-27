@@ -67,7 +67,7 @@ WHERE
 		;
 		</cfquery>
 		
-		<cfset tmp = QuerySetCell(q_return, 'data'&q_select_distinct_countries.currentrow, Val(q_select_count.count_id), a_int_currentrow)>
+		<cfset QuerySetCell(q_return, 'data'&q_select_distinct_countries.currentrow, Val(q_select_count.count_id), a_int_currentrow)>
 			
 		
 	</cfloop>

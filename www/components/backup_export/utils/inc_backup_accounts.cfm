@@ -31,7 +31,7 @@
 <!--- remove unwanted columns (NEW: entrykey and userkey will be saved!!) --->
 <cfset q_select_accounts = queryRemoveColumns(thequery = stReturn_accounts.q_select_contacts, columnsToRemove = 'workgroupkeys') />
 
-<cfset tmp = LogMessage('contacts: ' & q_select_accounts.recordcount) />
+<cfset LogMessage('contacts: ' & q_select_accounts.recordcount) />
 
 <!--- generate CSV --->
 <cfset a_csv_accounts = QueryToCSV2(q_select_accounts) />

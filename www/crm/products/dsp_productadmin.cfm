@@ -8,7 +8,7 @@
 // --->
 
 
-<cfset tmp = SetHeaderTopInfoString(GetLangVal('crm_wd_product_admin')) />
+<cfset SetHeaderTopInfoString(GetLangVal('crm_wd_product_admin')) />
 <cfset stReturn = '' />		
 		
 <cfset a_struct_filter = StructNew() />

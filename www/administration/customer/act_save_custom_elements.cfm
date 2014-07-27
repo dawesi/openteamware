@@ -46,14 +46,14 @@
 
 <cfset a_cmp_content = application.components.cmp_content>
 
-<cfset tmp = a_cmp_content.SetCompanyCustomElement(createdbyuserkey = request.stSecurityContext.myuserkey, companykey = form.frmcompanykey, elementname = 'mail_header', elementvalue = form.frmmailheader)>
-<cfset tmp = a_cmp_content.SetCompanyCustomElement(createdbyuserkey = request.stSecurityContext.myuserkey, companykey = form.frmcompanykey, elementname = 'mail_footer', elementvalue = form.frmmailfooter)>
-<cfset tmp = a_cmp_content.SetCompanyCustomElement(createdbyuserkey = request.stSecurityContext.myuserkey, companykey = form.frmcompanykey, elementname = 'remote_edit_confirmation_page', elementvalue = form.frmremoteeditconfirmationpage)>
-<cfset tmp = a_cmp_content.SetCompanyCustomElement(createdbyuserkey = request.stSecurityContext.myuserkey, companykey = form.frmcompanykey, elementname = 'startpage', elementvalue = form.frmstartpage)>
-<cfset tmp = a_cmp_content.SetCompanyCustomElement(createdbyuserkey = request.stSecurityContext.myuserkey, companykey = form.frmcompanykey, elementname = 'welcomemail', elementvalue = form.frmwelcomemail)>
-<cfset tmp = a_cmp_content.SetCompanyCustomElement(createdbyuserkey = request.stSecurityContext.myuserkey, companykey = form.frmcompanykey, elementname = 'calendar_confirmation_page', elementvalue = form.frmcalendarconfirmationpage)>
-<cfset tmp = a_cmp_content.SetCompanyCustomElement(createdbyuserkey = request.stSecurityContext.myuserkey, companykey = form.frmcompanykey, elementname = 'productadd_confirmation', elementvalue = form.frmproductadd_confirmation)>
-<cfset tmp = a_cmp_content.SetCompanyCustomElement(createdbyuserkey = request.stSecurityContext.myuserkey, companykey = form.frmcompanykey, elementname = 'productadd_confirmation_sale', elementvalue = form.frmproductadd_confirmation_sale) />
+<cfset a_cmp_content.SetCompanyCustomElement(createdbyuserkey = request.stSecurityContext.myuserkey, companykey = form.frmcompanykey, elementname = 'mail_header', elementvalue = form.frmmailheader)>
+<cfset a_cmp_content.SetCompanyCustomElement(createdbyuserkey = request.stSecurityContext.myuserkey, companykey = form.frmcompanykey, elementname = 'mail_footer', elementvalue = form.frmmailfooter)>
+<cfset a_cmp_content.SetCompanyCustomElement(createdbyuserkey = request.stSecurityContext.myuserkey, companykey = form.frmcompanykey, elementname = 'remote_edit_confirmation_page', elementvalue = form.frmremoteeditconfirmationpage)>
+<cfset a_cmp_content.SetCompanyCustomElement(createdbyuserkey = request.stSecurityContext.myuserkey, companykey = form.frmcompanykey, elementname = 'startpage', elementvalue = form.frmstartpage)>
+<cfset a_cmp_content.SetCompanyCustomElement(createdbyuserkey = request.stSecurityContext.myuserkey, companykey = form.frmcompanykey, elementname = 'welcomemail', elementvalue = form.frmwelcomemail)>
+<cfset a_cmp_content.SetCompanyCustomElement(createdbyuserkey = request.stSecurityContext.myuserkey, companykey = form.frmcompanykey, elementname = 'calendar_confirmation_page', elementvalue = form.frmcalendarconfirmationpage)>
+<cfset a_cmp_content.SetCompanyCustomElement(createdbyuserkey = request.stSecurityContext.myuserkey, companykey = form.frmcompanykey, elementname = 'productadd_confirmation', elementvalue = form.frmproductadd_confirmation)>
+<cfset a_cmp_content.SetCompanyCustomElement(createdbyuserkey = request.stSecurityContext.myuserkey, companykey = form.frmcompanykey, elementname = 'productadd_confirmation_sale', elementvalue = form.frmproductadd_confirmation_sale) />
 
 <cflocation addtoken="no" url="#ReturnRedirectURL()#">
 

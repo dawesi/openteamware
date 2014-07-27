@@ -50,11 +50,11 @@
 
 <cfset a_str_tar_output = request.a_str_temp_directory_local & request.a_str_dir_separator & createuuid() & '.log' />
 
-<cfset tmp = LogMessage('sh file to execute: ' & a_str_sh_file) />
+<cfset LogMessage('sh file to execute: ' & a_str_sh_file) />
 
 <cfexecute timeout="5000" name="sh" arguments="#a_str_sh_file#" outputfile="#a_str_tar_output#"></cfexecute>
 
-<cfset tmp = LogMessage('sh file executed (done): ' & a_str_sh_file) />
+<cfset LogMessage('sh file executed (done): ' & a_str_sh_file) />
 
 <cfset a_str_tar_output = '' />
 

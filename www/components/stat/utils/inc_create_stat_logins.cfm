@@ -26,6 +26,6 @@
 	;
 	</cfquery>
 	
-	<cfset tmp = QuerySetCell(q_return, 'data1', val(q_select_login_count.count_id), q_return.currentrow)>
+	<cfset QuerySetCell(q_return, 'data1', val(q_select_login_count.count_id), q_return.currentrow)>
 
 </cfloop>

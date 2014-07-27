@@ -185,14 +185,14 @@ FROM
 		<cfloop list="#q_select_data.columnlist#" index="a_str_col_name">
 		
 			<cfif ListFindNoCase(q_select_current_contact.columnlist, a_str_col_name) GT 0>
-				<cfset tmp = QuerySetCell(q_select_data, a_str_col_name, q_select_current_contact[a_str_col_name][1], q_select_data.currentrow)>
+				<cfset QuerySetCell(q_select_data, a_str_col_name, q_select_current_contact[a_str_col_name][1], q_select_data.currentrow)>
 			</cfif>
 		
 		</cfloop>	
 	</cfif>
 	
 	<!--- update userkey to username --->
-	<cfset tmp = QuerySetCell(q_select_data, 'virt_createdbyuserkey', a_struct_unique_userkeys[q_select_data.virt_createdbyuserkey], q_select_data.currentrow)>
+	<cfset QuerySetCell(q_select_data, 'virt_createdbyuserkey', a_struct_unique_userkeys[q_select_data.virt_createdbyuserkey], q_select_data.currentrow)>
 
 </cfloop>
 

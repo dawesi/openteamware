@@ -56,7 +56,7 @@
 <cfloop from="1" to="#ArrayLen(arguments.virtualfields)#" index="ii">
 	
 	<!--- add column to table with information about fieldnames ... --->
-	<cfset tmp = QueryAddRow(q_select_fieldnames_of_contacts_table, 1)>
+	<cfset QueryAddRow(q_select_fieldnames_of_contacts_table, 1)>
 	<cfset QuerySetCell(q_select_fieldnames_of_contacts_table, 'fielddescription', '', q_select_fieldnames_of_contacts_table.recordcount)>
 	<cfset QuerySetCell(q_select_fieldnames_of_contacts_table, 'showname', arguments.virtualfields[ii].fieldname, q_select_fieldnames_of_contacts_table.recordcount)>
 	<cfset QuerySetCell(q_select_fieldnames_of_contacts_table, 'fieldname', arguments.virtualfields[ii].entrykey, q_select_fieldnames_of_contacts_table.recordcount)>
@@ -121,11 +121,11 @@ WHERE
 	
 	<!--- replace usernames ... --->
 	<cfif a_bol_userkey_field_exists>
-		<cfset tmp = QuerySetCell(q_select_contacts, 'virt_9vuwh513_0C384092805A28109057DA86', a_cmp_users.getusernamebyentrykey(q_select_contacts.virt_9vuwh513_0C384092805A28109057DA86), q_select_contacts.currentrow)>
+		<cfset QuerySetCell(q_select_contacts, 'virt_9vuwh513_0C384092805A28109057DA86', a_cmp_users.getusernamebyentrykey(q_select_contacts.virt_9vuwh513_0C384092805A28109057DA86), q_select_contacts.currentrow)>
 	</cfif>
 	
 	<cfif a_bol_createdbyuserkey_field_exists>
-		<cfset tmp = QuerySetCell(q_select_contacts, 'virt_d90dfgh20C384092805A28109057DA86', a_cmp_users.getusernamebyentrykey(q_select_contacts.virt_d90dfgh20C384092805A28109057DA86), q_select_contacts.currentrow)>	
+		<cfset QuerySetCell(q_select_contacts, 'virt_d90dfgh20C384092805A28109057DA86', a_cmp_users.getusernamebyentrykey(q_select_contacts.virt_d90dfgh20C384092805A28109057DA86), q_select_contacts.currentrow)>	
 	</cfif>
 	
 	<!--- replace followup type --->
@@ -146,7 +146,7 @@ WHERE
 			</cfdefaultcase>
 		</cfswitch>
 		
-		<cfset tmp = QuerySetCell(q_select_contacts, 'virt_39B385130C384092805A28109057DA86', a_str_followup_type, q_select_contacts.currentrow)>		
+		<cfset QuerySetCell(q_select_contacts, 'virt_39B385130C384092805A28109057DA86', a_str_followup_type, q_select_contacts.currentrow)>		
 	</cfif>
 	
 </cfloop>

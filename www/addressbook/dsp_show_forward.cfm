@@ -9,7 +9,7 @@
 
 <cfparam name="url.entrykeys" type="string" default="">
 
-<cfset tmp = SetHeaderTopInfoString(GetLangVal('adrb_ph_actions_forward')) />
+<cfset SetHeaderTopInfoString(GetLangVal('adrb_ph_actions_forward')) />
 
 <cfif Len(url.entrykeys) IS 0>
 	<cfmodule template="../common/snippets/mod_alert_box.cfm"

@@ -56,11 +56,11 @@ WHERE
 </cfif>
 
 <!--- add a new column where the date when the user has been added is saved ... --->
-<cfset tmp = QueryAddColumn(q_select_subscribers, 'dt_created_nl_subscription', 'Date', ArrayNew(1))>
+<cfset QueryAddColumn(q_select_subscribers, 'dt_created_nl_subscription', 'Date', ArrayNew(1))>
 
 <cfloop query="q_select_subscribers">
 	<cfif StructKeyExists(a_struct_subscribers_entrykeys, q_select_subscribers.entrykey)>
-		<cfset tmp = QuerySetCell(q_select_subscribers, 'dt_created_nl_subscription', a_struct_subscribers_entrykeys[q_select_subscribers.entrykey], q_select_subscribers.currentrow)>
+		<cfset QuerySetCell(q_select_subscribers, 'dt_created_nl_subscription', a_struct_subscribers_entrykeys[q_select_subscribers.entrykey], q_select_subscribers.currentrow)>
 	</cfif>
 </cfloop>
 

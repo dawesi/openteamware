@@ -12,7 +12,7 @@
 
 <cfloop list="#url.entrykeys#" index="sEntrykey">
 
-	<cfset tmp = application.components.cmp_followups.DeleteFollowup(securitycontext = request.stSecurityContext,
+	<cfset application.components.cmp_followups.DeleteFollowup(securitycontext = request.stSecurityContext,
 						entrykey = sEntrykey) />
 						
 </cfloop>

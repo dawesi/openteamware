@@ -11,7 +11,7 @@
 	<cfinvokeargument name="applicationname" value="#application.applicationname#">
 </cfinvoke>
 
-<cfset tmp = StructClear(session)>
+<cfset StructClear(session)>
 
 <cflocation addtoken="no" url="index.cfm">
 

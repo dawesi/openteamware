@@ -15,7 +15,7 @@
 	<cfinvokeargument name="filter" value="#a_struct_filter#">
 </cfinvoke>
 
-<cfset tmp = LogMessage('followups: ' & q_select_follow_ups.recordcount)>
+<cfset LogMessage('followups: ' & q_select_follow_ups.recordcount)>
 
 <!--- generate CSV --->
 <cfset a_csv_followups = QueryToCSV2(variables.q_select_follow_ups)>

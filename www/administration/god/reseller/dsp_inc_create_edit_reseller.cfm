@@ -40,16 +40,16 @@
 		;
 		</cfquery>
 		
-		<cfset tmp = QuerySetCell(CreateEditReseller.query, 'companyname', q_select_company.companyname, 1)>
-		<cfset tmp = QuerySetCell(CreateEditReseller.query, 'telephone', q_select_company.telephone, 1)>
-		<cfset tmp = QuerySetCell(CreateEditReseller.query, 'emailadr', q_select_company.email, 1)>
-		<cfset tmp = QuerySetCell(CreateEditReseller.query, 'country', q_select_company.country, 1)>
-		<cfset tmp = QuerySetCell(CreateEditReseller.query, 'city', q_select_company.city, 1)>
-		<cfset tmp = QuerySetCell(CreateEditReseller.query, 'street', q_select_company.street, 1)>
-		<cfset tmp = QuerySetCell(CreateEditReseller.query, 'zipcode', q_select_company.zipcode, 1)>
+		<cfset QuerySetCell(CreateEditReseller.query, 'companyname', q_select_company.companyname, 1)>
+		<cfset QuerySetCell(CreateEditReseller.query, 'telephone', q_select_company.telephone, 1)>
+		<cfset QuerySetCell(CreateEditReseller.query, 'emailadr', q_select_company.email, 1)>
+		<cfset QuerySetCell(CreateEditReseller.query, 'country', q_select_company.country, 1)>
+		<cfset QuerySetCell(CreateEditReseller.query, 'city', q_select_company.city, 1)>
+		<cfset QuerySetCell(CreateEditReseller.query, 'street', q_select_company.street, 1)>
+		<cfset QuerySetCell(CreateEditReseller.query, 'zipcode', q_select_company.zipcode, 1)>
 		
 		<cfset a_str_customercontact = q_select_company.telephone & chr(13) & chr(10) & q_select_company.email>
-		<cfset tmp = QuerySetCell(CreateEditReseller.query, 'CUSTOMERCONTACT', a_str_customercontact, 1)>
+		<cfset QuerySetCell(CreateEditReseller.query, 'CUSTOMERCONTACT', a_str_customercontact, 1)>
 	</cfif>
 </cfif>
 

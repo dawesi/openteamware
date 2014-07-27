@@ -48,7 +48,7 @@ ORDER BY
 <cfset a_struct_events = QueryToArrayOfStructures(q_select_events)>
 
 
-	<cfset tmp = QueryAddColumn(q_select_events, 'days', ArrayNew(1))>
+	<cfset QueryAddColumn(q_select_events, 'days', ArrayNew(1))>
 	
 	<cfset a_struct_events = QueryToArrayOfStructures(q_select_events)>
 	
@@ -100,7 +100,7 @@ ORDER BY
 			<cfset a_str_days = a_str_days & "," & a_int_day>
 		</cfloop>
 	
-		<cfset tmp = StructInsert(a_struct_events[ii], 'days',  a_str_days, true)>
+		<cfset StructInsert(a_struct_events[ii], 'days',  a_str_days, true)>
 	
 	</cfloop>--->
 

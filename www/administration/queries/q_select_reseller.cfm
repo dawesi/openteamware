@@ -30,6 +30,6 @@ WHERE
 
 
 
-<cfset tmp = QueryAddColumn(q_select_reseller, "resellerlevel", a_arr_tmp)>
+<cfset QueryAddColumn(q_select_reseller, "resellerlevel", a_arr_tmp)>
 
-<cfset tmp = QuerySetCell(q_select_reseller, "delegaterights", 0, 1)>
+<cfset QuerySetCell(q_select_reseller, "delegaterights", 0, 1)>

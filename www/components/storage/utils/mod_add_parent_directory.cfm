@@ -16,12 +16,12 @@ WHERE
 ;
 </cfquery>
 
-<cfset tmp = QueryAddRow(attributes.query, 1)>
+<cfset QueryAddRow(attributes.query, 1)>
 
-<cfset tmp = QuerySetCell(attributes.query, 'directorykey', attributes.directorykey, attributes.query.recordcount)>
-<cfset tmp = QuerySetCell(attributes.query, 'directoryname', q_select_directory.directoryname, attributes.query.recordcount)>
-<cfset tmp = QuerySetCell(attributes.query, 'description', q_select_directory.description, attributes.query.recordcount)>
-<cfset tmp = QuerySetCell(attributes.query, 'parentdirectorykey', q_select_directory.parentdirectorykey, attributes.query.recordcount)>
+<cfset QuerySetCell(attributes.query, 'directorykey', attributes.directorykey, attributes.query.recordcount)>
+<cfset QuerySetCell(attributes.query, 'directoryname', q_select_directory.directoryname, attributes.query.recordcount)>
+<cfset QuerySetCell(attributes.query, 'description', q_select_directory.description, attributes.query.recordcount)>
+<cfset QuerySetCell(attributes.query, 'parentdirectorykey', q_select_directory.parentdirectorykey, attributes.query.recordcount)>
 
 
 <cfif attributes.query.recordcount GT 10>

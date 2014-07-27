@@ -26,6 +26,6 @@
 	;
 	</cfquery>	
 	
-	<cfset tmp = QuerySetCell(q_parent_contact, 'parentcontactkey', url.parentcontactkey, 1) />
+	<cfset QuerySetCell(q_parent_contact, 'parentcontactkey', url.parentcontactkey, 1) />
 </cfif>
 

@@ -32,7 +32,7 @@ WHERE
 ;
 </cfquery>
 
-<cfset tmp = LogMessage('events: ' & variables.q_select_events.recordcount)>
+<cfset LogMessage('events: ' & variables.q_select_events.recordcount)>
 
 <!--- remove unwanted columns --->
 <cfset variables.q_select_events = queryRemoveColumns(thequery = variables.q_select_events, columnsToRemove = 'workgroupkeys,entrykey,userkey,createdbyuserkey,INT_START_NUM,MEETINGMEMBERSCOUNT,starthour')>

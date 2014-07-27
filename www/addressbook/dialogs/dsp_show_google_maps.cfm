@@ -38,7 +38,7 @@
     	}
     </cfsavecontent>
 	
-	<cfset tmp = AddJSToExecuteAfterPageLoad('', a_str_js) />
+	<cfset AddJSToExecuteAfterPageLoad('', a_str_js) />
   </head>
   <body onload="load()" onunload="GUnload()" style="padding:0px;">
     <div id="map" style="width: 740px; height: 380px"></div>

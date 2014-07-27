@@ -9,7 +9,7 @@
 	<form action="forum/act_new_forum.cfm" method="post">
 	
 	<!--- add a dummy row ... --->
-	<cfset tmp = queryAddRow(CreateEditForumRequest.query, 1)>
+	<cfset queryAddRow(CreateEditForumRequest.query, 1)>
 	
 <cfelse>
 	<form action="forum/act_update_forum.cfm" method="post">

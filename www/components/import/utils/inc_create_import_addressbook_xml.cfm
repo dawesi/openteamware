@@ -24,7 +24,7 @@
 			
 			<cfset a_str_current_category = q_select_data[q_fields_mapping.importfieldname][q_select_data.currentrow] />
 			
-			<cfset tmp = QuerySetCell(q_select_data, q_select_category_field_exists.importfieldname, ListAppend(a_str_current_category, arguments.categories_to_add), q_select_data.currentrow) />
+			<cfset QuerySetCell(q_select_data, q_select_category_field_exists.importfieldname, ListAppend(a_str_current_category, arguments.categories_to_add), q_select_data.currentrow) />
 		</cfloop>
 	<cfelse>
 		<cfset a_bol_add_own_category_field = true />

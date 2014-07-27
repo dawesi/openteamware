@@ -53,7 +53,7 @@ ORDER BY
 		;
 		</cfquery>
 		
-		<cfset tmp = QuerySetCell(q_return, 'data'&q_tmp_referer.currentrow, val(q_count_ref.count_id), q_return.currentrow)>
+		<cfset QuerySetCell(q_return, 'data'&q_tmp_referer.currentrow, val(q_count_ref.count_id), q_return.currentrow)>
 	
 	</cfloop>
 

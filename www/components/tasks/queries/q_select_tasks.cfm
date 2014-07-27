@@ -227,7 +227,7 @@ ORDER BY
 <cfloop query="q_select_tasks">
 
 	<cfif StructKeyExists(stWGInfo,q_select_tasks.entrykey)>
-		<cfset tmp = QuerySetCell(q_select_tasks, 'workgroupkeys', stWGInfo[q_select_tasks.entrykey], q_select_tasks.currentrow)>
+		<cfset QuerySetCell(q_select_tasks, 'workgroupkeys', stWGInfo[q_select_tasks.entrykey], q_select_tasks.currentrow)>
 	</cfif>
 		
 	<cfif arguments.createcategorylist>

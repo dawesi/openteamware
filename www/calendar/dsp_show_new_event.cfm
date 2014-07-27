@@ -15,7 +15,7 @@
 <cfparam name="url.assigned_addressbookkeys" type="string" default="">
 <cfparam name="url.assigned_userkey" type="string" default="">
 
-<cfset tmp = SetHeaderTopInfoString(GetLangVal('cal_ph_create_new_event'))>
+<cfset SetHeaderTopInfoString(GetLangVal('cal_ph_create_new_event'))>
 
 <cfset NewOrEditEvent = StructNew() />
 <cfset Variables.NewOrEditEvent.startdate = url.startdate />

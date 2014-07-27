@@ -52,7 +52,7 @@
 
 <cfif Len(a_struct_collect_form_data.missing_fields) GT 0>
 	<cfset stReturn.missing_fields = a_struct_collect_form_data.missing_fields />
-	<cfset tmp = SetReturnStructErrorCode(stReturn, 5202) />
+	<cfset SetReturnStructErrorCode(stReturn, 5202) />
 	<cfexit method="exittemplate">
 </cfif>
 

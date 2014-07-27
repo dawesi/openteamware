@@ -7,7 +7,7 @@
 // --->
 
 
-<cfset tmp = SetHeaderTopInfoString(Year(ACurrentDate)) />
+<cfset SetHeaderTopInfoString(Year(ACurrentDate)) />
 
 <cftry>
 

@@ -10,15 +10,15 @@
 <cfparam name="NewOrEditTask.query" type="query" default="#QueryNew('title,notice,status,priority,dt_due,categories,percentdone,actualwork,totalwork,assignedtouserkeys,private')#">
 
 <cfif NewOrEditTask.query.recordcount IS 0>
-	<cfset tmp = QueryAddRow(NewOrEditTask.query, 1)>
-	<cfset tmp = QuerySetCell(NewOrEditTask.query, 'status', 1, 1)>
-	<cfset tmp = QuerySetCell(NewOrEditTask.query, 'priority', 2, 1)>
-	<cfset tmp = QuerySetCell(NewOrEditTask.query, 'private', 0, 1)>	
+	<cfset QueryAddRow(NewOrEditTask.query, 1)>
+	<cfset QuerySetCell(NewOrEditTask.query, 'status', 1, 1)>
+	<cfset QuerySetCell(NewOrEditTask.query, 'priority', 2, 1)>
+	<cfset QuerySetCell(NewOrEditTask.query, 'private', 0, 1)>	
 </cfif>
 
 <!--- assign users to this task (by url parameter --->
 <cfif StructKeyExists(url, 'assigned_userkey') AND Len(url.assigned_userkey) GT 0>
-	<cfset tmp = QuerySetCell(NewOrEditTask.query, 'assignedtouserkeys', url.assigned_userkey, 1)>
+	<cfset QuerySetCell(NewOrEditTask.query, 'assignedtouserkeys', url.assigned_userkey, 1)>
 </cfif>
 
 <input type="hidden" name="frmsource" value="<cfoutput>#url.source#</cfoutput>">

@@ -52,31 +52,31 @@
 <!--- ... set mass criteria ... --->
 <cfset a_str_form_id = 'form' & CreateUUIDJS() />
 
-<cfset tmp = application.components.cmp_forms.StartNewForm(action = 'index.cfm?action=DoExecuteMassActions&type=any',
+<cfset application.components.cmp_forms.StartNewForm(action = 'index.cfm?action=DoExecuteMassActions&type=any',
 				action_type = 'create',
 				method = 'POST',
 				onSubmit = 'DisplayPleaseWaitMsgOnLocChange()',
 				form_id = a_str_form_id) />
 
-<cfset tmp = application.components.cmp_forms.AddFormElement(securitycontext = request.stSecurityContext,
+<cfset application.components.cmp_forms.AddFormElement(securitycontext = request.stSecurityContext,
 				usersettings = request.stUserSettings,
 				datatype = 'hidden',
 				input_name = 'frmentrykeys',
 				input_value = session.a_struct_temp_data.addressbook_selected_entrykeys) />
 
-<cfset tmp = application.components.cmp_forms.AddFormElement(securitycontext = request.stSecurityContext,
+<cfset application.components.cmp_forms.AddFormElement(securitycontext = request.stSecurityContext,
 				usersettings = request.stUserSettings,
 				datatype = 'hidden',
 				input_name = 'frmdatatype',
 				input_value = url.datatype) />
 
-<cfset tmp = application.components.cmp_forms.AddFormElement(securitycontext = request.stSecurityContext,
+<cfset application.components.cmp_forms.AddFormElement(securitycontext = request.stSecurityContext,
 				usersettings = request.stUserSettings,
 				datatype = 'boolean',
 				field_name = GetLangVal('crm_ph_replace_existing_assignments'),
 				input_name = 'frmreplaceexistingassignments') />
 
-<cfset tmp = application.components.cmp_forms.AddFormElement(securitycontext = request.stSecurityContext,
+<cfset application.components.cmp_forms.AddFormElement(securitycontext = request.stSecurityContext,
 				usersettings = request.stUserSettings,
 				datatype = 'selector',
 				field_name = GetLangVal('crm_wd_criteria'),
@@ -84,7 +84,7 @@
 				useuniversalselectorjsfunction = 1,
 				useuniversalselectorjsfunction_type = 'criteria') />
 
-<cfset tmp = application.components.cmp_forms.AddFormElement(securitycontext = request.stSecurityContext,
+<cfset application.components.cmp_forms.AddFormElement(securitycontext = request.stSecurityContext,
 				usersettings = request.stUserSettings,
 				datatype = 'selector',
 				field_name = GetLangVal('cm_wd_categories'),
@@ -92,7 +92,7 @@
 				useuniversalselectorjsfunction = 1,
 				useuniversalselectorjsfunction_type = 'categories') />
 
-<cfset tmp = application.components.cmp_forms.AddFormElement(securitycontext = request.stSecurityContext,
+<cfset application.components.cmp_forms.AddFormElement(securitycontext = request.stSecurityContext,
 				usersettings = request.stUserSettings,
 				datatype = 'selector',
 				field_name = GetLangVal('crm_wd_filter_element_assignedto'),
@@ -101,7 +101,7 @@
 				useuniversalselectorjsfunction_type = 'assignedusers') />
 
 
-<cfset tmp = application.components.cmp_forms.AddFormElement(securitycontext = request.stSecurityContext,
+<cfset application.components.cmp_forms.AddFormElement(securitycontext = request.stSecurityContext,
 				usersettings = request.stUserSettings,
 				datatype = 'selector',
 				field_name = GetLangVal('cm_wd_workgroups'),
@@ -110,7 +110,7 @@
 				useuniversalselectorjsfunction_type = 'workgroupshares') />
 
 
-<cfset tmp = application.components.cmp_forms.AddFormElement(securitycontext = request.stSecurityContext,
+<cfset application.components.cmp_forms.AddFormElement(securitycontext = request.stSecurityContext,
 				usersettings = request.stUserSettings,
 				datatype = 'submit',
 				field_name = MakeFirstCharUCase(GetLangVal('cm_ph_edit_together')),

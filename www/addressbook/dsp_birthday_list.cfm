@@ -33,8 +33,8 @@ WHERE
 ;
 </cfquery>
 
-<cfset tmp = QueryAddColumn(q_select_contacts, 'birthdayindays', ArrayNew(1)) />
-<cfset tmp = QueryAddColumn(q_select_contacts, 'birthdaythisyear', ArrayNew(1)) />
+<cfset QueryAddColumn(q_select_contacts, 'birthdayindays', ArrayNew(1)) />
+<cfset QueryAddColumn(q_select_contacts, 'birthdaythisyear', ArrayNew(1)) />
 
 <cfloop query="q_select_contacts">
 
@@ -46,8 +46,8 @@ WHERE
 
 	<cfset a_int_diff_days = DateDiff('d', Now(), a_dt_birthday_this_year) />
 
-	<cfset tmp = QuerySetCell(q_select_contacts, 'birthdaythisyear', a_dt_birthday_this_year, q_select_contacts.currentrow) />
-	<cfset tmp = QuerySetCell(q_select_contacts, 'birthdayindays', a_int_diff_days, q_select_contacts.currentrow) />
+	<cfset QuerySetCell(q_select_contacts, 'birthdaythisyear', a_dt_birthday_this_year, q_select_contacts.currentrow) />
+	<cfset QuerySetCell(q_select_contacts, 'birthdayindays', a_int_diff_days, q_select_contacts.currentrow) />
 </cfloop>
 
 <cfquery name="q_select_contacts" dbtype="query">

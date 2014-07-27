@@ -6,10 +6,10 @@
 
 // --->
 
-<cfset tmp = StructClear( application )>
+<cfset StructClear( application )>
 
 <cfif StructKeyExists(application, "components")>
-	<cfset tmp = StructClear(application.components) />
+	<cfset StructClear(application.components) />
 </cfif>
 
 <cfinvoke component="/components/appsettings/cmp_app_init" method="InitApplicationComponents" returnvariable="a_bol_init">

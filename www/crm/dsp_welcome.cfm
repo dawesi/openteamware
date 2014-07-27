@@ -9,8 +9,6 @@
 
 // --->
 
-<cfset tmp = SetHeaderTopInfoString(GetLangVal('adrb_wd_activities')) />
-
 <h2><cfoutput>#GetLangVal('cm_wd_today')# (#LsDateFormat(now(), 'dddd, ' & request.stUserSettings.DEFAULT_DATEFORMAT)#)</cfoutput></h2>
 
 <cfinclude template="/common/scripts/script_utils.cfm" />

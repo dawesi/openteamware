@@ -35,4 +35,4 @@ ORDER BY
 
 <!--- nun noch die workgroups hinzufuegen so wie bei den tasks ... --->
 
-<cfset tmp = QueryAddColumn(q_select_foren, 'workgroupkeys', ArrayNew(1))>
+<cfset QueryAddColumn(q_select_foren, 'workgroupkeys', ArrayNew(1))>

@@ -43,12 +43,12 @@
 <cfswitch expression="#a_str_display_data_type#">
 	<cfcase value="1">
 	<!--- accounts ... --->
-	<cfset tmp = SetHeaderTopInfoString(GetLangVal('crm_wd_accounts')) />
+	<cfset SetHeaderTopInfoString(GetLangVal('crm_wd_accounts')) />
 	<cfset sOrderBy = GetUserPrefPerson('addressbook', 'display.orderby_1', 'company,surname', 'url.orderby', true) />
 	</cfcase>
 	<cfcase value="2">
 	<!--- leads --->
-	<cfset tmp = SetHeaderTopInfoString(GetLangVal('crm_wd_leads')) />
+	<cfset SetHeaderTopInfoString(GetLangVal('crm_wd_leads')) />
 	<cfset sOrderBy = GetUserPrefPerson('addressbook', 'display.orderby_2', 'lastdisplayed', 'url.orderby', true) />
 	</cfcase>
 	<cfcase value="3">
@@ -57,7 +57,7 @@
 	</cfcase>
 	<cfdefaultcase>
 	<!--- contacts ... --->
-	<cfset tmp = SetHeaderTopInfoString(GetLangVal('cm_wd_contacts')) />
+	<cfset SetHeaderTopInfoString(GetLangVal('cm_wd_contacts')) />
 	<cfset sOrderBy = GetUserPrefPerson('addressbook', 'display.orderby_0', 'surname,company', 'url.orderby', true) />
 	</cfdefaultcase>
 </cfswitch>
@@ -287,4 +287,4 @@ function SetContactsCommonAction(action, parameter){
 	}
 </cfsavecontent>
 
-<cfset tmp = AddJSToExecuteAfterPageLoad('', a_str_js) />
+<cfset AddJSToExecuteAfterPageLoad('', a_str_js) />

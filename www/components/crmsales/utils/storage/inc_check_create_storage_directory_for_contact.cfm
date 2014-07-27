@@ -29,7 +29,7 @@
 	
 <cfif q_select_directory_exists.recordcount IS 0>
 	<!--- create base directory for this user --->
-	<cfset tmp = application.components.cmp_storage.CreateDirectory(securitycontext = variables.stSecurityContext_display_files,
+	<cfset application.components.cmp_storage.CreateDirectory(securitycontext = variables.stSecurityContext_display_files,
 												usersettings = variables.stUserSettings_display_files,
 												directoryname = a_str_contactkey,
 												parentdirectorykey = a_str_root_directory,

@@ -26,7 +26,7 @@ TODO hp: implement this feature in future release
 <div id="id_div_show_assigned_members_resources">
 </div>
 <br /> 
-<cfset tmp = AddJSToExecuteAfterPageLoad('loadAssignedResources("#Variables.NewOrEditEvent.query.entrykey#")', '') />
+<cfset AddJSToExecuteAfterPageLoad('loadAssignedResources("#Variables.NewOrEditEvent.query.entrykey#")', '') />
 
 <cfoutput>#GetLangVal('cm_wd_new')#</cfoutput>:
 <cfoutput>

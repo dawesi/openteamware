@@ -14,7 +14,7 @@
 
 
 
-<cfset tmp = SetHeaderTopInfoString( GetLangVal('start_ph_customize_page') ) />
+<cfset SetHeaderTopInfoString( GetLangVal('start_ph_customize_page') ) />
 <a href="/" target="_blank"><b><cfoutput>#GetLangVal('prf_ph_startpage_show_new_window')#</cfoutput></b></a>
 <br>
 <br>

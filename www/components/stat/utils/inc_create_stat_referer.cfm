@@ -4,22 +4,22 @@
 
 <cfoutput query="q_select_companies">
 	<cfif FindNoCase('homepage_', q_select_companies.signupsource) GT 0>
-		<cfset tmp = QuerySetCell(q_select_companies, 'signupsource', 'homepage', q_select_companies.currentrow)>
+		<cfset QuerySetCell(q_select_companies, 'signupsource', 'homepage', q_select_companies.currentrow)>
 	</cfif>
 	
 	<cfif FindNoCase('google', q_select_companies.signupsource) GT 0>
-		<cfset tmp = QuerySetCell(q_select_companies, 'signupsource', 'google', q_select_companies.currentrow)>
+		<cfset QuerySetCell(q_select_companies, 'signupsource', 'google', q_select_companies.currentrow)>
 	</cfif>	
 
 	<cfif FindNoCase('google', q_select_companies.httpreferer) GT 0>
-		<cfset tmp = QuerySetCell(q_select_companies, 'signupsource', 'google', q_select_companies.currentrow)>
+		<cfset QuerySetCell(q_select_companies, 'signupsource', 'google', q_select_companies.currentrow)>
 
 		<cfelseif Len(q_select_companies.httpreferer) GT 0>
-			<cfset tmp = QuerySetCell(q_select_companies, 'signupsource', 'weblink', q_select_companies.currentrow)>
+			<cfset QuerySetCell(q_select_companies, 'signupsource', 'weblink', q_select_companies.currentrow)>
 	</cfif>	
 	
 	<cfif Len(q_select_companies.createdbyuserkey) GT 0>
-		<cfset tmp = QuerySetCell(q_select_companies, 'signupsource', 'sales/partner', q_select_companies.currentrow)> 
+		<cfset QuerySetCell(q_select_companies, 'signupsource', 'sales/partner', q_select_companies.currentrow)> 
 	</cfif>
 </cfoutput>
 
@@ -47,8 +47,8 @@ WHERE
 </cfquery>
 
 <cfif q_select_google_item_exists.recordcount IS 0>
-	<cfset tmp = QueryAddRow(q_select_distinct_signupsources, 1)>
-	<cfset tmp = QuerySetCell(q_select_distinct_signupsources, 'signupsource', 'google', 1)>
+	<cfset QueryAddRow(q_select_distinct_signupsources, 1)>
+	<cfset QuerySetCell(q_select_distinct_signupsources, 'signupsource', 'google', 1)>
 </cfif>
 
 <cfoutput query="q_select_companies">

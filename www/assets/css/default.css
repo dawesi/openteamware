@@ -393,68 +393,6 @@ ul.divleftpanelactions li div:hover {
 .bg_fieldset legend a {
 	color:gray;
 	}
-.div_bottomframe_today_outer {
-	display:none;height:120px;padding:4px;
-	}
-.div_bottomframe_today_inner {
-	border:none;
-	background-color:#EEEEEE;
-	}
-.div_bottomframe_today_inner table td
-	{
-	padding:3px;
-	}	
-
-
-/* tab navigation start */
-.div_module_tabs {
-	border-top:solid 3px silver;
-	float:left;
-	margin-top:7px;
-	margin-left:12px;
-	}
-.div_module_tabs ul {
-	list-style:none;
-	margin:0px;
-	padding:0px;
-	}
-.div_module_tabs ul li {
-	float:left;
-	padding:4px;
-	margin:0px;
-	background-color:#F2F2F2;
-	margin-right: 8px;
-	border-left:silver solid 1px;
-	border-right:silver solid 1px;
-	border-top:silver solid 1px;
-	}
-	
-.div_module_tabs ul li a {
-	text-decoration:none;	
-	}
-	
-.div_module_tabs ul li a:hover {
-	text-decoration:none;
-		border-bottom:0px;
-	}
-	
-.div_module_tabs ul .active_tab a {
-	border-top-color:silver;
-	}	
-	
-.div_module_tabs_content_box {
-	padding:4px;
-	border:solid 1px silver;
-	margin:0px;
-	}
-	
-/* tab navigation end */
-
-/* small tab nav */
-.div_module_tabs_small_tab_nav {
-	border-top:0px;
-	}
-	
 	
 /* table with details */
 .table_details {

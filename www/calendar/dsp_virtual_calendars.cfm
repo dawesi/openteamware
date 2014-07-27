@@ -13,7 +13,7 @@
 
 // --->
 
-<cfset tmp = SetHeaderTopInfoString(GetLangVal('cal_wd_calendars'))>
+<cfset SetHeaderTopInfoString(GetLangVal('cal_wd_calendars'))>
 
 <cfinvoke component="#application.components.cmp_calendar#" method="GetVirtualCalendarsOfUser" returnvariable="q_select_virtual_calendars">
 	<cfinvokeargument name="userkey" value="#request.stSecurityContext.myuserkey#">

@@ -63,10 +63,10 @@
 <cfset a_str_dt_end = DateFormat(a_dt_new_end, 'yyyy-mm-dd')& ' ' & TimeFormat(a_dt_new_end, 'HH:mm:ss') />
 
 <!--- update table --->
-<!---<cfset tmp = QuerySetCell(q_select_events, 'date_start', a_dt_new_start, a_int_col_number)>
-<cfset tmp = QuerySetCell(q_select_events, 'date_end', a_dt_new_end, a_int_col_number)>--->
-<cfset tmp = QuerySetCell(q_select_events, 'date_start', a_str_dt_start, a_int_col_number) />
-<cfset tmp = QuerySetCell(q_select_events, 'date_end', a_str_dt_end, a_int_col_number) />
-<cfset tmp = QuerySetCell(q_select_events, 'uniquekey', RandRange(1, 100000), a_int_col_number) />
+<!---<cfset QuerySetCell(q_select_events, 'date_start', a_dt_new_start, a_int_col_number)>
+<cfset QuerySetCell(q_select_events, 'date_end', a_dt_new_end, a_int_col_number)>--->
+<cfset QuerySetCell(q_select_events, 'date_start', a_str_dt_start, a_int_col_number) />
+<cfset QuerySetCell(q_select_events, 'date_end', a_str_dt_end, a_int_col_number) />
+<cfset QuerySetCell(q_select_events, 'uniquekey', RandRange(1, 100000), a_int_col_number) />
 
 <cfset QuerySetCell(q_select_events, 'starthour', Hour(a_dt_new_start), a_int_col_number) />

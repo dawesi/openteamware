@@ -85,17 +85,17 @@ WHERE
 		<cfset a_int_cur_row = q_select_activities.currentrow>
 		
 		<!--- add a new row to the output table --->
-		<cfset tmp = QueryAddRow(q_select_data, 1)>
+		<cfset QueryAddRow(q_select_data, 1)>
 		
 		<!--- set the address book key and who has created this entry --->
-		<cfset tmp = QuerySetCell(q_select_data, 'addressbookkey', q_select_activities[a_str_addressbookkey_fieldname][a_int_cur_row], q_select_data.recordcount)>
-		<cfset tmp = QuerySetCell(q_select_data, 'VIRT_createdbyuserkey', q_select_activities['USERENTRYKEY_CREATED'][a_int_cur_row], q_select_data.recordcount)>
+		<cfset QuerySetCell(q_select_data, 'addressbookkey', q_select_activities[a_str_addressbookkey_fieldname][a_int_cur_row], q_select_data.recordcount)>
+		<cfset QuerySetCell(q_select_data, 'VIRT_createdbyuserkey', q_select_activities['USERENTRYKEY_CREATED'][a_int_cur_row], q_select_data.recordcount)>
 		
 		<!--- set common data like subject, item_Type ... these fields have ALWAYS to exist! --->
-		<cfset tmp = QuerySetCell(q_select_data, 'VIRT_ITEMTYPE', request.a_cmp_lang.GetLangValExt(entryid = 'cm_wd_crm_event', langno = arguments.usersettings.language), q_select_data.recordcount)>
+		<cfset QuerySetCell(q_select_data, 'VIRT_ITEMTYPE', request.a_cmp_lang.GetLangValExt(entryid = 'cm_wd_crm_event', langno = arguments.usersettings.language), q_select_data.recordcount)>
 		
 		<!--- creation date --->
-		<cfset tmp = QuerySetCell(q_select_data, 'virt_itemcreated', q_select_activities['dt_created'][a_int_cur_row], q_select_data.recordcount)>
+		<cfset QuerySetCell(q_select_data, 'virt_itemcreated', q_select_activities['dt_created'][a_int_cur_row], q_select_data.recordcount)>
 		
 		<!--- if the column exists in the output query (=user has selected the field, then set the data in the output query --->
 		<cfloop list="#a_str_col_list_q_delete_data#" index="a_str_col_name_q_data">
@@ -105,7 +105,7 @@ WHERE
 			
 			<cfif ListFindNoCase(a_str_col_list_activities, a_str_col_name_check) GT 0>
 			
-				<cfset tmp = QuerySetCell(q_select_data, a_str_col_name_q_data, q_select_activities[a_str_col_name_check][a_int_cur_row], q_select_data.recordcount)>
+				<cfset QuerySetCell(q_select_data, a_str_col_name_q_data, q_select_activities[a_str_col_name_check][a_int_cur_row], q_select_data.recordcount)>
 				
 			</cfif>
 			

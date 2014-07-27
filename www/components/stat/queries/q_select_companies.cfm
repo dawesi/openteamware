@@ -95,7 +95,7 @@ WHERE
 </cfquery>
 	
 <cfloop query="q_select_old_companies">
-	<cfset tmp = QueryAddRow(q_select_companies, 1)>
+	<cfset QueryAddRow(q_select_companies, 1)>
 	
 	<cfloop list="#q_select_companies.columnlist#" index="a_str_column" delimiters=",">
 		<cfset QuerySetCell(q_select_companies, a_str_column, q_select_old_companies[a_str_column][q_select_old_companies.currentrow], q_select_companies.recordcount)>

@@ -36,7 +36,7 @@ zuerst f�r alle files mit ln -s einen symbolischen link anlegen!!!
 	
 	<cfset a_struct_hint.counter = 0>
 	
-	<cfset tmp = ArrayAppend(a_arr_dirs,a_struct_hint)>
+	<cfset ArrayAppend(a_arr_dirs,a_struct_hint)>
 	
 	<cfloop  condition="arraylen(a_arr_dirs) gt 0 ">
 	
@@ -48,7 +48,7 @@ zuerst f�r alle files mit ln -s einen symbolischen link anlegen!!!
 		
 		<cfset a_str_current_storage_dir = a_str_backup_dir & request.a_str_dir_separator & sDirectory_name & '_' & createUUID() & request.a_Str_dir_separator>
 
-		<cfset tmp = LogMessage('storage: current directory: ' & a_str_current_storage_dir)>
+		<cfset LogMessage('storage: current directory: ' & a_str_current_storage_dir)>
 		
 		<cfdirectory action="create" directory="#a_str_current_storage_dir#">
 		

@@ -7,7 +7,7 @@
 
 // --->
 <cfif IsDefined("form.frmCurrentPassword")>
-<cfset tmp = SetHeaderTopInfoString(GetLangVal('prf_ph_change_password')) />
+<cfset SetHeaderTopInfoString(GetLangVal('prf_ph_change_password')) />
 
 
 <cfif len(trim(form.frmCurrentPassword)) is 0>
@@ -63,7 +63,7 @@ where userid = <cfqueryparam cfsqltype="cf_sql_integer" value="#request.stSecuri
 
 <cfelse>
 <!--- // passwort&auml;nderungsformular anzeigen // --->
-<cfset tmp = SetHeaderTopInfoString(GetLangVal('prf_ph_change_password')) />
+<cfset SetHeaderTopInfoString(GetLangVal('prf_ph_change_password')) />
 <br><br>
 <cfoutput>#GetLangVal('prf_ph_pwd_intro')#</cfoutput>
 <br>

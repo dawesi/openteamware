@@ -47,11 +47,11 @@
 	
 	<cfset q_select_sales_project = QueryNew('lead_source,lead_source_id,probability,comment,stage,project_type,responsibleuserkey,currency,entrykey,title,sales,contactkey')>
 	
-	<cfset tmp = QueryAddRow(q_select_sales_project, 1)>
-	<cfset tmp = QuerySetCell(q_select_sales_project, 'entrykey', CreateUUID(), 1)>
-	<cfset tmp = QuerySetCell(q_select_sales_project, 'contactkey', url.contactkey, 1)>
-	<cfset tmp = QuerySetCell(q_select_sales_project, 'currency', 'EUR', 1)>
-	<cfset tmp = QuerySetCell(q_select_sales_project, 'probability', '10', 1)>
+	<cfset QueryAddRow(q_select_sales_project, 1)>
+	<cfset QuerySetCell(q_select_sales_project, 'entrykey', CreateUUID(), 1)>
+	<cfset QuerySetCell(q_select_sales_project, 'contactkey', url.contactkey, 1)>
+	<cfset QuerySetCell(q_select_sales_project, 'currency', 'EUR', 1)>
+	<cfset QuerySetCell(q_select_sales_project, 'probability', '10', 1)>
 </cfif>
 
 <cfinvoke component="#application.components.cmp_addressbook#" method="GetContact" returnvariable="a_struct_contact">

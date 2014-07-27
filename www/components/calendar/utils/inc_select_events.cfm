@@ -77,7 +77,7 @@ ORDER BY
 	<cfset QuerySetCell(q_select_events, 'starthour', hour(q_select_events.date_start), q_select_events.currentrow)>
 	
 	<cfif StructKeyExists(stWGInfo,q_select_events.entrykey)>
-		<cfset tmp = QuerySetCell(q_select_events, 'workgroupkeys', stWGInfo[q_select_events.entrykey], q_select_events.currentrow)>
+		<cfset QuerySetCell(q_select_events, 'workgroupkeys', stWGInfo[q_select_events.entrykey], q_select_events.currentrow)>
 	</cfif>	
 </cfoutput>
 

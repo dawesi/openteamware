@@ -28,22 +28,22 @@
 	entryname = "surpress_external_elements_by_default"
 	defaultvalue1 = "1"
 	savesettings = true
-	setcallervariable1 = "a_int_surpress_external_elements_by_default">		
-	
+	setcallervariable1 = "a_int_surpress_external_elements_by_default">
+
 <cfmodule template="../common/person/getuserpref.cfm"
 	entrysection = "email"
 	entryname = "surpress_external_elements_exception_domains"
 	defaultvalue1 = ""
 	savesettings = true
-	setcallervariable1 = "a_str_surpress_external_elements_exception_domains">	
-	
+	setcallervariable1 = "a_str_surpress_external_elements_exception_domains">
+
 <cfmodule template="../common/person/getuserpref.cfm"
 	entrysection = "email"
 	entryname = "surpresssender.onexternaladdress"
 	defaultvalue1 = "0"
 	savesettings = true
 	setcallervariable1 = "a_int_surpress_sender_on_external_address">
-	
+
 <!--- default email folder display --->
 <cfmodule template="../common/person/getuserpref.cfm"
 	entrysection = "email"
@@ -51,7 +51,7 @@
 	defaultvalue1 = "box"
 	savesettings = true
 	setcallervariable1 = "a_str_email_default_folder_display_left">
-	
+
 <!--- insert signature by default? --->
 <cfmodule template="../common/person/getuserpref.cfm"
 	entrysection = "email"
@@ -59,7 +59,7 @@
 	defaultvalue1 = "0"
 	savesettings = true
 	setcallervariable1 = "a_str_insert_signature_by_default">
-	
+
 <!--- empty trash by default --->
 <cfmodule template="../common/person/getuserpref.cfm"
 	entrysection = "email"
@@ -67,7 +67,7 @@
 	defaultvalue1 = "0"
 	savesettings = true
 	setcallervariable1 = "a_str_email_empty_trash_on_logout">
-	
+
 <!--- forward format --->
 <cfmodule template="../common/person/getuserpref.cfm"
 	entrysection = "email"
@@ -75,10 +75,10 @@
 	defaultvalue1 = "easy"
 	savesettings = true
 	setcallervariable1 = "a_str_email_forward_format">
-	
+
 <!--- // calendar // --->
 <cfset a_str_startview_calendar = GetUserPrefPerson('calendar', 'calstartview_action', 'ViewWeek', '', false)>
-	
+
 <cfmodule template="../common/person/getuserpref.cfm"
 	entrysection = "calendar"
 	entryname = "calendar.daystarthour"
@@ -92,21 +92,21 @@
 	defaultvalue1 = "18"
 	setcallervariable1 = "a_int_day_endhour"
 	savesettings = true>
-	
+
 <cfmodule template="../common/person/getuserpref.cfm"
 	entrysection = "calendar"
 	entryname = "display.day.opentasks"
 	defaultvalue1 = "0"
 	setcallervariable1 = "a_int_show_open_tasks"
-	savesettings = true>		
-	
+	savesettings = true>
+
 <cfmodule template="../common/person/getuserpref.cfm"
 	entrysection = "startpage"
 	entryname = "display.leftnav.type"
 	defaultvalue1 = "full"
 	setcallervariable1 = "a_str_show_leftnav_type"
-	savesettings = true>		
-	
+	savesettings = true>
+
 
 <cfmodule template="../common/person/getuserpref.cfm"
 	entrysection = "email"
@@ -114,66 +114,55 @@
 	defaultvalue1 = "cols"
 	savesettings = true
 	setcallervariable1 = "a_str_mbox_display_style">
-	
+
 <cfmodule template="../common/person/getuserpref.cfm"
 	entrysection = "email"
 	entryname = "mbox.display.msgpreview"
 	defaultvalue1 = "1"
 	savesettings = true
 	setcallervariable1 = "a_int_display_mbox_msg_preview">
-	
+
 <cfmodule template="../common/person/getuserpref.cfm"
 	entrysection = "email"
 	entryname = "mbox.display.autoloadfirstmsg"
 	defaultvalue1 = "0"
 	savesettings = true
 	setcallervariable1 = "a_int_display_mbox_autoload_first_msg">
-	
+
 <cfmodule template="../common/person/getuserpref.cfm"
 	entrysection = "common"
 	entryname = "show.today.bydefault"
 	defaultvalue1 = "0"
-	setcallervariable1 = "a_int_display_inboxcc_today_by_default">	
-	
+	setcallervariable1 = "a_int_display_inboxcc_today_by_default">
+
 <!--- skype extension enabled? --->
 <cfmodule template="../common/person/getuserpref.cfm"
 	entrysection = "extensions.skype"
 	entryname = "enabled"
 	defaultvalue1 = "1"
-	setcallervariable1 = "a_int_skype_enabled">	
+	setcallervariable1 = "a_int_skype_enabled">
 
-<cfset tmp = SetHeaderTopInfoString(GetLangVal('prf_ph_display_view')) />
+<cfset SetHeaderTopInfoString(GetLangVal('prf_ph_display_view')) />
 
 <form action="actions/act_save_display_preferences.cfm" method="post" enctype="multipart/form-data" enablecab="no">
 
 
-<cfset tmp = StartNewTabNavigation() />
-<cfset a_str_tab_id_common = AddTabNavigationItem(GetLangVal('prf_wd_common'), '', '')> 
-<cfset a_str_tab_id_email = AddTabNavigationItem(GetLangVal('cm_wd_Email'), '', '')> 
-<cfset a_str_tab_id_calendar = AddTabNavigationItem(GetLangVal('cm_wd_calendar'), '', '')> 
-<cfset a_str_tab_id_addressbook = AddTabNavigationItem(GetLangVal('cm_wd_Address_book'), '', '')> 
-<cfset a_str_tab_id_security = AddTabNavigationItem(GetLangVal('cm_wd_security'), '', '')> 
-<cfset a_str_tab_id_extensions = AddTabNavigationItem(GetLangVal('cm_wd_extensions'), '', '')> 
-
-
-<cfoutput>#BuildTabNavigation('', false)#</cfoutput>
-
 <cfoutput>
-<div class="b_all" id="<cfoutput>#a_str_tab_id_extensions#</cfoutput>">
+<div class="b_all">
 	<table class="table table_details table_edit_form">
-	
+
 	<cfset a_arr_options = ArrayNew(1)>
 	<cfset a_arr_options = a_cmp_tools.AddOptionToInputElementOptions(a_arr_options, GetLangVal('cm_wd_yes'), '1')>
 	<cfset a_arr_options = a_cmp_tools.AddOptionToInputElementOptions(a_arr_options, GetLangVal('cm_wd_no'), '0')>
 
 	#a_cmp_tools.GenerateEditingTableRow(datatype = 'options', field_name = GetLangVal('cm_ph_extensions_skype_enabled'), input_name = 'frmExtensionsSkypeEnabled', input_value = a_int_skype_enabled, options = a_arr_options)#
 
-		
+
 	</table>
 </div>
 </cfoutput>
 
-<div class="b_all" id="<cfoutput>#a_str_tab_id_common#</cfoutput>">
+<div class="b_all">
 
 <table class="table table_details table_edit_form">
 <cfoutput>
@@ -237,155 +226,15 @@
 </table>
 </div>
 
-<div class="b_all" id="<cfoutput>#a_str_tab_id_email#</cfoutput>">
 
-<table class="table table_details table_edit">
-<tr>
-	<td class="field_name"><cfoutput>#GetLangVal('prf_ph_charset_mails')#</cfoutput>:</td>
-	<td>
-		<select name="frmmailcharset">
-			<option value="UTF-8" <cfoutput>#writeselectedelement(q_select_display_settings.mailcharset, 'UTF-8')#</cfoutput>>UTF-8 ()</option>
-			<option value="ISO-8859-1" <cfoutput>#writeselectedelement(q_select_display_settings.mailcharset, 'ISO-8859-1')#</cfoutput>>ISO-8859-1 (Westeurop. Zeichensatz)</option>
-		</select>
-	</td>
-</tr>
-<tr>
-	<td class="field_name"><cfoutput>#GetLangVal('prf_ph_emails_per_page')#</cfoutput>:</td>
-	<td>
-		<select name="frmWebmailEntriesPerPage">
-		<option value="30" <cfif a_int_mails_per_page is 30>selected</cfif>>30
-		<option value="50" <cfif a_int_mails_per_page is 50>selected</cfif>>50
-		<option value="70" <cfif a_int_mails_per_page is 70>selected</cfif>>70	
-		<option value="70" <cfif a_int_mails_per_page is 100>selected</cfif>>100		
-		</select>
-	</td>
-</tr>
-<tr>
-	<td class="field_name"><input style="width:auto; " <cfoutput>#writecheckedelement(a_int_confirmsend, 1)#</cfoutput> type="checkbox" name="frmcbasksemailendconfirmation" value="1" class="noborder"></td>
-	<td>
-		<cfoutput>#GetLangVal('prf_ph_confirmation_needed_to_send')#</cfoutput>
-	</td>
-</tr>
-<tr>
-	<td class="field_name"><cfoutput>#GetLangVal('prf_ph_email_standard_view')#</cfoutput>:</td>
-	<td>
-		<select name="frmemailstandarview">
-			<option value="overview" <cfoutput>#WriteSelectedElement(a_str_email_default_view, 'overview')#</cfoutput>><cfoutput>#GetLangVal('mail_wd_folders')#</cfoutput></option>
-			<option value="inbox" <cfoutput>#WriteSelectedElement(a_str_email_default_view, 'inbox')#</cfoutput>><cfoutput>#GetLangVal('cm_wd_inbox')#</cfoutput></option>
-			<option value="compose" <cfoutput>#WriteSelectedElement(a_str_email_default_view, 'compose')#</cfoutput>><cfoutput>#GetLangVal('mail_ph_compose_new_mail')#</cfoutput></option>
-		</select>
-	</td>
-</tr>
-<tr>
-	<td class="field_name"><cfoutput>#GetLangVal('prf_ph_email_folder_view')#</cfoutput>:</td>
-	<td>
-		<select name="frmemailfolderviewmode">
-			<option value="cols" <cfoutput>#WriteSelectedElement(a_str_mbox_display_style, 'cols')#</cfoutput>><cfoutput>#GetLangVal('mail_wd_top_link_columns')#</cfoutput></option>
-			<option value="rows" <cfoutput>#WriteSelectedElement(a_str_mbox_display_style, 'rows')#</cfoutput>><cfoutput>#GetLangVal('mail_wd_top_link_rows')#</cfoutput></option>
-		</select>
-	</td>
-</tr>
-<tr>
-	<td class="field_name"><input style="width:auto; " type="checkbox" name="frmcbemailmessagepreview" value="1" <cfoutput>#WriteCheckedElement(a_int_display_mbox_msg_preview,1)#</cfoutput> class="noborder"></td>
-	<td><cfoutput>#GetLangVal('prf_ph_email_enable_preview')#</cfoutput></td>
-</tr>
-<tr>
-	<td align="right"><input style="width:auto; " type="checkbox" name="frmcbemailautoloadfirstemail" value="1" <cfoutput>#WriteCheckedElement(a_int_display_mbox_autoload_first_msg,1)#</cfoutput> class="noborder"></td>
-	<td><cfoutput>#GetLangVal('prf_ph_email_autoload_first_mail')#</cfoutput></td>
-</tr>
-<tr>
-	<td class="field_name"><cfoutput>#GetLangVal('prf_ph_email_forward_format')#</cfoutput>:</td>
-	<td>
-	<select name="frmforwardformat">
-		<option value="attachment" <cfoutput>#writeselectedelement(a_str_email_forward_format, 'attachment')#</cfoutput>><cfoutput>#GetLangVal('prf_ph_email_forward_format_attachment')#</cfoutput>
-		<option value="easy" <cfoutput>#writeselectedelement(a_str_email_forward_format, 'easy')#</cfoutput>><cfoutput>#GetLangVal('prf_ph_email_forward_format_simple')#</cfoutput>
-	</select>
-	</td>
-</tr>
-<tr>
-	<td class="field_name">
-		<input style="width:auto; " type="checkbox" name="frmcbsurpresssenderonexternalsend" value="1" class="noborder" <cfoutput>#WriteCheckedElement(a_int_surpress_sender_on_external_address, 1)#</cfoutput>>
-	</td>
-	<td>
-		<cfoutput>#GetLangVal('prf_ph_email_surpress_ibx_header')#</cfoutput>
-	</td>
-</tr>
-<!---<tr>
-	<td align="right"><input type="checkbox" name="frmCBAutoClearTrashCanOnLogout" value="1" <cfoutput>#WriteCheckedElement(a_str_email_empty_trash_on_logout,1)#</cfoutput> class="noborder"></td>
-	<td>Papierkorb beim Ausloggen automatisch entleeren</td>
-</tr>--->
-<tr>
-	<td class="field_name">
-		<cfoutput>#GetLangVal('prf_ph_email_default_format')#</cfoutput>:
-	</td>
-	<td>
-		<select name="frmselectdefaultemailformat">
-			<option value="plain" <cfoutput>#WriteSelectedElement(a_str_email_default_format, "plain")#</cfoutput>><cfoutput>#GetLangVal('cm_wd_text')#</cfoutput></option>
-			<option value="html" <cfoutput>#WriteSelectedElement(a_str_email_default_format, "html")#</cfoutput>>HTML</option>
-		</select>
-	</td>
-</tr>
-<tr>
-	<td class="field_name">
-		<input style="width:auto; " type="checkbox" class="noborder" name="frmcbemailinsertsignaturebydefault" value="1" <cfoutput>#WriteCheckedElement(a_str_insert_signature_by_default,1)#</cfoutput>>
-	</td>
-	<td>
-		<cfoutput>#GetLangVal('prf_ph_email_insert_sig_auto')#</cfoutput>
-	</td>
-</tr>
-<tr>
-	<td class="field_name">
-		<cfoutput>#GetLangVal('mail_ph_encoding_if_unknown_encoding')#</cfoutput>
-	</td>
-	<td>
-		<cfoutput>
-		<select name="frm_default_encoding_if_unknown_encoding">
-			<option value="utf-8" #WriteSelectedElement(a_str_email_default_encoding_if_unknown_encoding, 'UTF-8')#>UTF-8</option>
-			<option value="iso-8859-1" #WriteSelectedElement(a_str_email_default_encoding_if_unknown_encoding, 'iso-8859-1')#>ISO-8859-1</option>
-		</select>
-		</cfoutput>
-	</td>
-</tr>
-<tr>
-	<td class="field_name">
-		<input value="1" style="width:auto; " type="checkbox" <cfoutput>#WriteCheckedElement(a_int_surpress_external_elements_by_default, 1)#</cfoutput> class="noborder" name="frm_mail_surpress_external_elements_by_default">
-	</td>
-	<td>
-		<cfoutput>#GetLangVal('mail_ph_surpress_external_elements_by_default')#</cfoutput>
-	</td>
-</tr>
-<tr>
-	<td class="field_name">
-		
-	</td>
-	<td>
-		<cfoutput>#GetLangVal('mail_ph_surpress_external_elements_except_domains')#</cfoutput>
-		<br/>
-		<textarea name="frm_surpress_external_elements_exception_domains" cols="50" rows="5"><cfoutput>#a_str_surpress_external_elements_exception_domains#</cfoutput></textarea>
-	</td>
-</tr>
-<!---<tr>
-	<td>&nbsp;
-	
-	</td>
-	<td>
-		Darstellung der Ordnerliste links:<br>
-		<input type="radio" class="noborder" name="frmradioemailfolderviewleft" value="box" <cfoutput>#WriteCheckedElement(a_str_email_default_folder_display_left,'box')#</cfoutput>> Box
-		&nbsp;&nbsp;
-		<input type="radio" class="noborder" name="frmradioemailfolderviewleft" value="full" <cfoutput>#WriteCheckedElement(a_str_email_default_folder_display_left,'full')#</cfoutput>> vollstaendige Darstellung
-	</td>
-</tr>--->
-<input type="hidden" name="frmradioemailfolderviewleft" value="box">
-</table>
-</div>
 
-<div class="b_all" id="<cfoutput>#a_str_tab_id_calendar#</cfoutput>">
+<div class="b_all">
 
 <table class="table table_details table_edit">
 <tr>
 	<td class="field_name"><cfoutput>#GetLangVal('cal_ph_set_standard_view')#</cfoutput>:</td>
 	<td>
-		
+
 	<select name="frmCalendarDefaultView">
 		<option value="Overview" #WriteSelectedElement(a_str_startview_calendar, 'Overview')#><cfoutput>#GetLangVal('cm_wd_overview')#</cfoutput>
 		<option value="ViewDay" #WriteSelectedElement(a_str_startview_calendar, 'ViewDay')#><cfoutput>#GetLangVal('cal_wd_day')#</cfoutput>
@@ -393,7 +242,7 @@
 		<option value="ViewWeek" #WriteSelectedElement(a_str_startview_calendar, 'ViewWeek')#><cfoutput>#GetLangVal('cal_wd_week')#</cfoutput>
 		<option value="ViewMonth" #WriteSelectedElement(a_str_startview_calendar, 'ViewMonth')#><cfoutput>#GetLangVal('cal_Wd_month')#</cfoutput>
 	</select>
-	
+
 	</td>
 </tr>
 <tr>
@@ -411,7 +260,7 @@
 			<cfoutput>
 			<option value="#ii#" #WriteSelectedElement(ii, a_int_day_endhour)#>#ii#</option>
 			</cfoutput>
-		</cfloop>	
+		</cfloop>
 	</select>&nbsp;h
 	</td>
 </tr>
@@ -426,7 +275,7 @@
 </table>
 </div>
 
-<div class="b_all" id="<cfoutput>#a_str_tab_id_addressbook#</cfoutput>">
+<div class="b_all">
 
 <table class="table table_details table_edit">
 <tr>
@@ -461,7 +310,7 @@
 </table>
 </div>
 
-<div class="b_all" id="<cfoutput>#a_str_tab_id_security#</cfoutput>">
+<div class="b_all">
 
 <table class="table table_details table_edit">
 <tr>
@@ -499,7 +348,7 @@
 	<td valign="top" align="right">Logo einbinden</td>
 	<td valign="top" style="line-height:20px;">
 	Aktuelles Logo:
-	
+
 	<cfif q_select_logo_filename.recordcount is 0 OR Len(q_select_logo_filename.LogoFilename) is 0>
 	(keines)
 	<cfelse>
@@ -510,7 +359,7 @@
 	<br>
 	Neue Datei: <input type="file" name="frmNewLogoFile"><br>
 	Hinweis: GIF/JPEG/PNG Datei mit max. 30kb. Empfohlene Gr&ouml;&szlig;e: 300x45
-	
+
 	</td>
 </tr>--->
 

@@ -7,7 +7,7 @@
 
 // --->
 
-<cfset tmp = SetHeaderTopInfoString( GetLangVal('cm_wd_tasks') ) />
+<cfset SetHeaderTopInfoString( GetLangVal('cm_wd_tasks') ) />
 
 <cfset a_arr_get_multi_pref = ArrayNew(1)>
 

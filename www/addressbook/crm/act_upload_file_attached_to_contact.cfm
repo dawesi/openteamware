@@ -37,7 +37,7 @@
 
 <cfif Len(form.frmdirectorykey) IS 0>
 	<!--- get home directory of this contact in the storage ... --->
-	<cfset tmp = a_cmp_sales.CheckAndCreateDirectoryForContactInStorage(securitycontext = request.stSecurityContext,
+	<cfset a_cmp_sales.CheckAndCreateDirectoryForContactInStorage(securitycontext = request.stSecurityContext,
 					usersettings = request.stUserSettings,
 					contactkey = form.frmcontactkey)>
 					

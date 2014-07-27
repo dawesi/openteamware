@@ -23,10 +23,10 @@ FROM
 </cfquery>
 
 <cfloop query="q_select_old_companies">
-	<cfset tmp = QueryAddRow(q_select_companies, 1)>
+	<cfset QueryAddRow(q_select_companies, 1)>
 	
 	<cfloop list="#q_select_companies.columnlist#" index="a_str_column" delimiters=",">
-		<cfset tmp = QuerySetCell(q_select_companies, a_str_column, q_select_companies[a_str_column][q_select_old_companies.currentrow], q_select_companies.recordcount)>
+		<cfset QuerySetCell(q_select_companies, a_str_column, q_select_companies[a_str_column][q_select_old_companies.currentrow], q_select_companies.recordcount)>
 	</cfloop>
 </cfloop>
 
@@ -229,17 +229,17 @@ FROM
 	;
 	</cfquery>
 	
-	<cfset tmp = QueryAddRow(q_stat, 1)>
-	<cfset tmp = QuerySetCell(q_stat, 'theday', DateFormat(a_dt_begin, 'yyyymmdd'), q_stat.recordcount)>
-	<cfset tmp = QuerySetCell(q_stat, 'companies', q_select_companies_this_day.recordcount, q_stat.recordcount)>
-	<cfset tmp = QuerySetCell(q_stat, 'accounts', q_select_accounts_this_day.recordcount, q_stat.recordcount)>
-	<cfset tmp = QuerySetCell(q_stat, 'paid', q_select_paid_this_day.recordcount, q_stat.recordcount)>
+	<cfset QueryAddRow(q_stat, 1)>
+	<cfset QuerySetCell(q_stat, 'theday', DateFormat(a_dt_begin, 'yyyymmdd'), q_stat.recordcount)>
+	<cfset QuerySetCell(q_stat, 'companies', q_select_companies_this_day.recordcount, q_stat.recordcount)>
+	<cfset QuerySetCell(q_stat, 'accounts', q_select_accounts_this_day.recordcount, q_stat.recordcount)>
+	<cfset QuerySetCell(q_stat, 'paid', q_select_paid_this_day.recordcount, q_stat.recordcount)>
 	
 	<cfif q_select_paid_this_day.recordcount IS 0>
-		<cfset tmp = QuerySetCell(q_stat, 'percentpaid',0, q_stat.recordcount)>
+		<cfset QuerySetCell(q_stat, 'percentpaid',0, q_stat.recordcount)>
 	<cfelse>
 		<cfset a_int_percent = q_select_paid_this_day.recordcount / (q_select_companies_this_day.recordcount / 100)>
-		<cfset tmp = QuerySetCell(q_stat, 'percentpaid', DecimalFormat(a_int_percent), q_stat.recordcount)>
+		<cfset QuerySetCell(q_stat, 'percentpaid', DecimalFormat(a_int_percent), q_stat.recordcount)>
 	</cfif>
 	
 	<!---<cfoutput>
@@ -360,17 +360,17 @@ ORDER BY
 		<cfset a_int_weekno = Week(a_dt_begin)>
 	</cfif>
 	
-	<cfset tmp = QueryAddRow(q_stat_weeks, 1)>
-	<cfset tmp = QuerySetCell(q_stat_weeks, 'theweek', DateFormat(a_dt_begin, 'yy')&a_int_weekno, q_stat_weeks.recordcount)>
-	<cfset tmp = QuerySetCell(q_stat_weeks, 'companies', q_select_companies_week.sum_companies, q_stat_weeks.recordcount)>	
-	<cfset tmp = QuerySetCell(q_stat_weeks, 'accounts', q_select_accounts_week.sum_accounts, q_stat_weeks.recordcount)>
-	<cfset tmp = QuerySetCell(q_stat_weeks, 'paid', q_select_paid_week.sum_paid, q_stat_weeks.recordcount)>
+	<cfset QueryAddRow(q_stat_weeks, 1)>
+	<cfset QuerySetCell(q_stat_weeks, 'theweek', DateFormat(a_dt_begin, 'yy')&a_int_weekno, q_stat_weeks.recordcount)>
+	<cfset QuerySetCell(q_stat_weeks, 'companies', q_select_companies_week.sum_companies, q_stat_weeks.recordcount)>	
+	<cfset QuerySetCell(q_stat_weeks, 'accounts', q_select_accounts_week.sum_accounts, q_stat_weeks.recordcount)>
+	<cfset QuerySetCell(q_stat_weeks, 'paid', q_select_paid_week.sum_paid, q_stat_weeks.recordcount)>
 	
 	<cfif q_select_companies_week.sum_companies IS 0>
-		<cfset tmp = QuerySetCell(q_stat_weeks, 'percentpaid', 0, q_stat_weeks.recordcount)>
+		<cfset QuerySetCell(q_stat_weeks, 'percentpaid', 0, q_stat_weeks.recordcount)>
 	<cfelse>
 		<cfset a_int_percent = q_select_paid_week.sum_paid / (q_select_companies_week.sum_companies / 100)>
-		<cfset tmp = QuerySetCell(q_stat_weeks, 'percentpaid', DecimalFormat(a_int_percent), q_stat_weeks.recordcount)>
+		<cfset QuerySetCell(q_stat_weeks, 'percentpaid', DecimalFormat(a_int_percent), q_stat_weeks.recordcount)>
 	</cfif>	
 
 </cfloop>

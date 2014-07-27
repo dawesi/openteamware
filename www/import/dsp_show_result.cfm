@@ -6,7 +6,7 @@
 
 // --->
 
-<cfset tmp = SetHeaderTopInfoString(GetLangVal('import_ph_import_done')) />
+<cfset SetHeaderTopInfoString(GetLangVal('import_ph_import_done')) />
 
 <cfparam name="url.jobkey" type="string">
 

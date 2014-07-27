@@ -45,12 +45,12 @@
 	</cfif>
 	
 	<!--- set page title / header info string --->
-	<cfset tmp = SetHeaderTopInfoString(a_str_action_page_title) />
+	<cfset SetHeaderTopInfoString(a_str_action_page_title) />
 </cfif>
 
 <!--- did an error occur? fire an error message? --->
 <cfif val(url.ibxerrorno) GT 0>
-	<cfset tmp = AddJSToExecuteAfterPageLoad('OpenErrorMessagePopup(''' & url.ibxerrorno & ''',''' & JsStringFormatEx(url.ibxerrormsg) & ''');', '') />
+	<cfset AddJSToExecuteAfterPageLoad('OpenErrorMessagePopup(''' & url.ibxerrorno & ''',''' & JsStringFormatEx(url.ibxerrormsg) & ''');', '') />
 </cfif>
 
 <cfif request.a_struct_current_service_action.type IS 'popup'>
@@ -140,7 +140,7 @@
 <cfset a_str_show_left_bar = GetUserPrefPerson('display_interface', 'displayleftnavbar', '1', '', false) />
 
 <cfif a_str_show_left_bar IS 0>
-	<cfset tmp = AddJSToExecuteAfterPageLoad('HideLeftNavSide(false, false)', '') />
+	<cfset AddJSToExecuteAfterPageLoad('HideLeftNavSide(false, false)', '') />
 </cfif>
 	
 

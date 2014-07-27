@@ -61,7 +61,7 @@ ORDER BY
 	<cfset a_str_to = q_select.username>
 </cfif>
 
-<cfset tmp = a_cmp_contacts.CreateContact(categories = '', entrykey = createUUID(), securitycontext = variables.stSecurityContext, usersettings = variables.stUserSettings, firstname = q_select.firstname, surname = q_select.surname, email_prim = a_str_to, sex = q_select.sex)>
+<cfset a_cmp_contacts.CreateContact(categories = '', entrykey = createUUID(), securitycontext = variables.stSecurityContext, usersettings = variables.stUserSettings, firstname = q_select.firstname, surname = q_select.surname, email_prim = a_str_to, sex = q_select.sex)>
 
 <cfflush>
 </cfloop>

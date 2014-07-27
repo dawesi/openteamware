@@ -55,7 +55,7 @@
 </cfif>
 
 <!--- start form with action and method ... --->
-<cfset tmp = StartNewForm(action = a_str_action,
+<cfset StartNewForm(action = a_str_action,
 						  action_type = arguments.action,
 						  method = q_select_form.method,
 						  onSubmit = q_select_form.onsubmit,
@@ -220,7 +220,7 @@
 		
 		<!--- database given? ... --->
 		<cfif (ListFindNoCase(a_str_column_list_of_query, q_select_fields.db_fieldname & '_displayvalue') GT 0)>
-			<cfset tmp = QuerySetCell(arguments.query, q_select_fields.db_fieldname & '_displayvalue', a_str_set_display_value_to_data, 1) />
+			<cfset QuerySetCell(arguments.query, q_select_fields.db_fieldname & '_displayvalue', a_str_set_display_value_to_data, 1) />
 		</cfif>
 
 	</cfif>
@@ -289,7 +289,7 @@
 	<cfset a_str_CallBackFunctionNameNecessaryArguments = q_select_fields.CallBackFunctionNameNecessaryArguments />
 	
 	<!--- add form element ... --->
-	<cfset tmp = AddFormElement(securitycontext = arguments.securitycontext,
+	<cfset AddFormElement(securitycontext = arguments.securitycontext,
 								usersettings = arguments.usersettings,
 								datatype = a_str_datatype,
 								field_name = a_str_fieldname,

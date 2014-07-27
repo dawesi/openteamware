@@ -63,7 +63,7 @@
 		
 		<cfif ListFindNoCase(arguments.entrykeys_fields_force_to_show, q_select_fields.entrykey) GT 0>
 		
-			<cfset tmp = QuerySetCell(q_select_fields, 'ignorebydefault', 0, q_select_fields.currentrow) />
+			<cfset QuerySetCell(q_select_fields, 'ignorebydefault', 0, q_select_fields.currentrow) />
 		
 		</cfif>
 		

@@ -28,10 +28,10 @@ WHERE
 </cfquery>
 
 <cfloop query="q_select_old_companies">
-	<cfset tmp = QueryAddRow(q_select_customers, 1)>
+	<cfset QueryAddRow(q_select_customers, 1)>
 	
 	<cfloop list="#q_select_customers.columnlist#" index="a_str_column" delimiters=",">
-		<cfset tmp = QuerySetCell(q_select_customers, a_str_column, q_select_customers[a_str_column][q_select_old_companies.currentrow], q_select_customers.recordcount)>
+		<cfset QuerySetCell(q_select_customers, a_str_column, q_select_customers[a_str_column][q_select_old_companies.currentrow], q_select_customers.recordcount)>
 	</cfloop>
 </cfloop>
 
@@ -95,7 +95,7 @@ WHERE
 		
 	<!---<cfoutput>#a_dt#</cfoutput><br>--->
 	
-	<cfset tmp = Queryaddrow(q_stat, 1)>
+	<cfset Queryaddrow(q_stat, 1)>
 	<cfset QuerySetCell(q_stat, 'dt_sort', a_dt, q_stat.recordcount)>
 	<cfset tmp=QuerySetCell(q_stat, 'yearweek', year(a_dt)&'-'&week(a_dt), q_stat.recordcount)>
 	<cfset tmp=QuerySetCell(q_stat, 'yearweekint', year(a_dt)&week(a_dt), q_stat.recordcount)>

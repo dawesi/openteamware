@@ -7,7 +7,7 @@
 
 // --->
 
-<cfset tmp = SetHeaderTopInfoString(GetLangVal('adrb_ph_own_contactcard')) />
+<cfset SetHeaderTopInfoString(GetLangVal('adrb_ph_own_contactcard')) />
 <cfset CreateEditItem = StructNew() />
 
 <!--- datatype = own vcard ... --->
@@ -38,20 +38,20 @@
 	<cfset CreateEditItem.action = 'create' />
 	<cfset CreateEditItem.Query = QueryNew('firstname,surname,title,email_prim,b_city,b_country,b_street,b_zipcode,sex') />
 	
-	<cfset tmp = QueryAddRow(CreateEditItem.Query, 1) />
+	<cfset QueryAddRow(CreateEditItem.Query, 1) />
 	
 	<!--- load userdata and set in query object .. --->
 	<cfset q_select_user_data = application.components.cmp_user.GetUserData(request.stSecurityContext.myuserkey) />
 	
-	<cfset tmp = QuerySetCell(CreateEditItem.Query, 'firstname', q_select_user_data.firstname) />
-	<cfset tmp = QuerySetCell(CreateEditItem.Query, 'surname', q_select_user_data.surname) />
-	<cfset tmp = QuerySetCell(CreateEditItem.Query, 'email_prim', q_select_user_data.username) />
-	<cfset tmp = QuerySetCell(CreateEditItem.Query, 'title', q_select_user_data.title) />
-	<cfset tmp = QuerySetCell(CreateEditItem.Query, 'b_city', q_select_user_data.city) />
-	<cfset tmp = QuerySetCell(CreateEditItem.Query, 'b_country', q_select_user_data.country) />
-	<cfset tmp = QuerySetCell(CreateEditItem.Query, 'b_street', q_select_user_data.address1) />
-	<cfset tmp = QuerySetCell(CreateEditItem.Query, 'b_zipcode', q_select_user_data.zipcode) />
-	<cfset tmp = QuerySetCell(CreateEditItem.Query, 'sex', q_select_user_data.sex) />
+	<cfset QuerySetCell(CreateEditItem.Query, 'firstname', q_select_user_data.firstname) />
+	<cfset QuerySetCell(CreateEditItem.Query, 'surname', q_select_user_data.surname) />
+	<cfset QuerySetCell(CreateEditItem.Query, 'email_prim', q_select_user_data.username) />
+	<cfset QuerySetCell(CreateEditItem.Query, 'title', q_select_user_data.title) />
+	<cfset QuerySetCell(CreateEditItem.Query, 'b_city', q_select_user_data.city) />
+	<cfset QuerySetCell(CreateEditItem.Query, 'b_country', q_select_user_data.country) />
+	<cfset QuerySetCell(CreateEditItem.Query, 'b_street', q_select_user_data.address1) />
+	<cfset QuerySetCell(CreateEditItem.Query, 'b_zipcode', q_select_user_data.zipcode) />
+	<cfset QuerySetCell(CreateEditItem.Query, 'sex', q_select_user_data.sex) />
 	
 <cfelse>
 	<!--- contact exists --->

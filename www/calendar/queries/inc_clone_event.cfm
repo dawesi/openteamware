@@ -32,6 +32,6 @@
 </cftry>
 
 <!--- update table --->
-<cfset tmp = QuerySetCell(MainCalendar, "date_start", DateAdd("h", a_int_hours_diff, MainCalendar.date_start), AColNumber)>
-<cfset tmp = QuerySetCell(MainCalendar, "date_end", DateAdd("h", a_int_hours_diff, MainCalendar.date_end), AColNumber)>
-<cfset tmp = QuerySetCell(MainCalendar, "dt_start_iso", DateFormat(DateAdd("h", a_int_hours_diff, MainCalendar.date_start), "yyyy-mm-dd")&" "&TimeFormat(DateAdd("d", EventCloneRequest.DayDiff, MainCalendar.date_start), "HH:mm:ss"), AColNumber)>
+<cfset QuerySetCell(MainCalendar, "date_start", DateAdd("h", a_int_hours_diff, MainCalendar.date_start), AColNumber)>
+<cfset QuerySetCell(MainCalendar, "date_end", DateAdd("h", a_int_hours_diff, MainCalendar.date_end), AColNumber)>
+<cfset QuerySetCell(MainCalendar, "dt_start_iso", DateFormat(DateAdd("h", a_int_hours_diff, MainCalendar.date_start), "yyyy-mm-dd")&" "&TimeFormat(DateAdd("d", EventCloneRequest.DayDiff, MainCalendar.date_start), "HH:mm:ss"), AColNumber)>

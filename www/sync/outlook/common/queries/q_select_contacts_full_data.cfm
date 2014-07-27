@@ -92,7 +92,7 @@ WHERE
 <cflog text="data mapped loop q_select_ol_meta_data #(ab - GetTickCount())#" type="Information" log="Application" file="ib_load_data_contacts">
 
 <!--- add the column ... --->
-<cfset tmp = QueryAddColumn(q_select_contacts, 'outlook_id', ArrayNew(1))>
+<cfset QueryAddColumn(q_select_contacts, 'outlook_id', ArrayNew(1))>
 
 <cfloop query="q_select_contacts">
 	<cfif StructKeyExists(a_struct_ol_data, q_select_contacts.entrykey)>

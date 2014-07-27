@@ -12,7 +12,7 @@
 <!--- type of item ... --->
 <cfparam name="url.filterdatatype" type="numeric" default="0">
 
-<cfset tmp = SetHeaderTopInfoString(GetLangVal('adrb_ph_advanced_search')) />
+<cfset SetHeaderTopInfoString(GetLangVal('adrb_ph_advanced_search')) />
 
 <!--- load all criterias of the current searchkey --->
 <cfinvoke component="#application.components.cmp_crmsales#" method="GetViewFilters" returnvariable="q_select_filter">

@@ -57,6 +57,6 @@
 $("#id_ul_nace").Treeview();
 </cfsavecontent>
 
-<cfset tmp = AddJSToExecuteAfterPageLoad(a_str_js, '') />
+<cfset AddJSToExecuteAfterPageLoad(a_str_js, '') />
 
 

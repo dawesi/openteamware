@@ -21,7 +21,7 @@ WHERE
 
 <cfset variables.q_select_tasks = queryRemoveColumns(theQuery = variables.q_select_tasks, columnsToRemove = 'workgroupkeys,entrykey,userkey,createdbyuserkey')>
 
-<cfset tmp = LogMessage('tasks: ' & q_select_tasks.recordcount)>
+<cfset LogMessage('tasks: ' & q_select_tasks.recordcount)>
 
 <cfset variables.a_csv_tasks = QueryToCSV2(variables.q_select_tasks)>
 

@@ -116,7 +116,7 @@ WHERE
 </cfloop>
 </cfif> --->
 
-<!---<cfset tmp = QueryAddColumn(q_select_contacts, "workgroupkeys", ArrayNew(1))>--->
+<!---<cfset QueryAddColumn(q_select_contacts, "workgroupkeys", ArrayNew(1))>--->
 
 
 <cfloop query="q_select_projects">

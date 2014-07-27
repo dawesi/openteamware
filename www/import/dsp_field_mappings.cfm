@@ -9,7 +9,7 @@
 <cfparam name="url.jobkey" type="string">
 <cfparam name="url.advancedcriteriaselection" type="numeric" default="0">
 
-<cfset tmp = SetHeaderTopInfoString(GetLangVal('crm_ph_edit_assignment')) />
+<cfset SetHeaderTopInfoString(GetLangVal('crm_ph_edit_assignment')) />
 
 <cfinvoke component="#application.components.cmp_import#" method="GetImportTable" returnvariable="a_struct_fields_source">
 	<cfinvokeargument name="securitycontext" value="#request.stSecurityContext#">

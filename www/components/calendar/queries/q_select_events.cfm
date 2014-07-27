@@ -464,7 +464,7 @@ WHERE
 								<!--- only certain days are affected --->
 								<cfset a_arr_days = ArrayNew(1)>
 								<!--- create an arreay from one to seven ... --->
-								<cfset tmp = ArraySet(a_arr_days, 1, 7, 0)>
+								<cfset ArraySet(a_arr_days, 1, 7, 0)>
 								
 								<!--- get the real dayofweek, not utc ... otherwise
 									we would get this event on days where it does not exist --->

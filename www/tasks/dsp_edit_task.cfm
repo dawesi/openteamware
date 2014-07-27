@@ -1,6 +1,6 @@
 
 
-<cfset tmp = SetHeaderTopInfoString(GetLangVal('tsk_ph_edit_task'))>
+<cfset SetHeaderTopInfoString(GetLangVal('tsk_ph_edit_task'))>
 
 <cfparam name="url.entrykey" type="string" default="">
 

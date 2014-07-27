@@ -27,7 +27,7 @@
 
 <cfif Variables.NewOrEditEvent.action is 'create'>
 	<!--- new event ... --->
-	<cfset tmp = QueryAddRow(Variables.NewOrEditEvent.Query, 1)>
+	<cfset QueryAddRow(Variables.NewOrEditEvent.Query, 1)>
 	
 	<!--- check if valid data have been provided from URL scope ... --->
 	<cfif Len(Variables.NewOrEditEvent.startdate) GT 0 AND isDate(Variables.NewOrEditEvent.startdate)>
@@ -50,8 +50,8 @@
 		<cfinvokeargument name="userkey" value="#request.stSecurityContext.myuserkey#">
 	</cfinvoke>
 	
-	<cfset tmp = QuerySetCell(Variables.NewOrEditEvent.query, 'entrykey', CreateUUID(), 1) />
-	<cfset tmp = QuerySetCell(Variables.NewOrEditEvent.query, 'repeat_type', 0, 1) />
+	<cfset QuerySetCell(Variables.NewOrEditEvent.query, 'entrykey', CreateUUID(), 1) />
+	<cfset QuerySetCell(Variables.NewOrEditEvent.query, 'repeat_type', 0, 1) />
 
     <!--- construct the location from current user's address --->
     <cfset a_str_location = '' />
@@ -69,16 +69,16 @@
         <cfset a_str_location = ListAppend(a_str_location, q_select_user_data.country) />
     </cfif>
     
-	<cfset tmp = QuerySetCell(Variables.NewOrEditEvent.query, 'location', replacenocase(a_str_location, ',', ', ', 'ALL'), 1)>
-	<cfset tmp = QuerySetCell(Variables.NewOrEditEvent.Query, 'date_start', DateFormat(a_dt_now_start, request.a_str_default_dt_format)&" "&TimeFormat(a_dt_now_start, "HH:mm:ss"), 1)>
-	<cfset tmp = QuerySetCell(Variables.NewOrEditEvent.Query, 'date_end', DateFormat(a_dt_now_end, request.a_str_default_dt_format)&" "&TimeFormat(a_dt_now_end, "HH:mm:ss"), 1)>	
+	<cfset QuerySetCell(Variables.NewOrEditEvent.query, 'location', replacenocase(a_str_location, ',', ', ', 'ALL'), 1)>
+	<cfset QuerySetCell(Variables.NewOrEditEvent.Query, 'date_start', DateFormat(a_dt_now_start, request.a_str_default_dt_format)&" "&TimeFormat(a_dt_now_start, "HH:mm:ss"), 1)>
+	<cfset QuerySetCell(Variables.NewOrEditEvent.Query, 'date_end', DateFormat(a_dt_now_end, request.a_str_default_dt_format)&" "&TimeFormat(a_dt_now_end, "HH:mm:ss"), 1)>	
 	
 	<cfif Len(Variables.NewOrEditEvent.title) GT 0>
-		<cfset tmp = QuerySetCell(Variables.NewOrEditEvent.query, 'title', Variables.NewOrEditEvent.title, 1)>
+		<cfset QuerySetCell(Variables.NewOrEditEvent.query, 'title', Variables.NewOrEditEvent.title, 1)>
 	</cfif>
 	
 	<cfif Len(Variables.NewOrEditEvent.location) GT 0>
-		<cfset tmp = QuerySetCell(Variables.NewOrEditEvent.query, 'location', Variables.NewOrEditEvent.location, 1)>
+		<cfset QuerySetCell(Variables.NewOrEditEvent.query, 'location', Variables.NewOrEditEvent.location, 1)>
 	</cfif>	
 	
 	<cfloop list="#Variables.NewOrEditEvent.assigned_addressbookkeys#" delimiters="," index="a_str_parameter">
@@ -97,7 +97,7 @@
 
 <cfif Variables.NewOrEditEvent.action is 'create'>
 	<cfset a_str_form_action = 'index.cfm?action=createEvent'>
-	<!--- <cfset tmp = QuerySetCell(Variables.NewOrEditEvent.query, 'entrykey', CreateUUID(), 1) /> --->
+	<!--- <cfset QuerySetCell(Variables.NewOrEditEvent.query, 'entrykey', CreateUUID(), 1) /> --->
 <cfelse>
 	<cfset a_str_form_action = 'index.cfm?action=updateEvent' />
 </cfif>
@@ -112,9 +112,9 @@
 	<cfinvokeargument name="userkey" value="#request.stSecurityContext.myuserkey#">
 </cfinvoke>
 
-<cfset tmp = ExportTranslationValuesAsJS('cal_wd_participants,cm_wd_resources') />
+<cfset ExportTranslationValuesAsJS('cal_wd_participants,cm_wd_resources') />
 
-<cfset tmp = StartNewTabNavigation() />
+<cfset StartNewTabNavigation() />
 <cfset a_str_id_overview = AddTabNavigationItem(GetLangVal('cm_wd_overview'), '', '') /> 
 <cfset a_str_id_participants = AddTabNavigationItem(GetLangVal('cal_wd_participants') & '/' & GetLangVal('cm_wd_resources'), '', '') />
 <cfset a_str_id_repeating = AddTabNavigationItem(GetLangVal('cal_wd_newedit_repeatings'), '', '') /> 
@@ -191,6 +191,6 @@ function CancelEdit() {
 	
 </cfsavecontent>
 
-<cfset tmp = AddJSToExecuteAfterPageLoad('CheckOtherEvents();', a_str_js) />
+<cfset AddJSToExecuteAfterPageLoad('CheckOtherEvents();', a_str_js) />
 
 

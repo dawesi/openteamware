@@ -7,7 +7,7 @@
 // --->
 
 
-<cfset tmp = SetHeaderTopInfoString(GetLangVal('cm_ph_select_file')) />
+<cfset SetHeaderTopInfoString(GetLangVal('cm_ph_select_file')) />
 
 <form action="index.cfm?action=DoUploadFile" method="post" enctype="multipart/form-data" onsubmit="DisplayPleaseWaitMsgOnLocChange();">
 <input type="hidden" name="frm_jobkey" value="<cfoutput>#CreateUUID()#</cfoutput>"/>

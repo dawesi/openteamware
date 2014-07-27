@@ -30,7 +30,7 @@
 
 </cfif>
 
-<cfset tmp = SetHeaderTopInfoString(GetLangVal('crm_ph_enable_follow_up') & ' ' & url.title) />
+<cfset SetHeaderTopInfoString(GetLangVal('crm_ph_enable_follow_up') & ' ' & url.title) />
 
 <cfset CreateEditFollowupJob = StructNew() />
 <cfinclude template="dsp_inc_create_edit_followup.cfm">

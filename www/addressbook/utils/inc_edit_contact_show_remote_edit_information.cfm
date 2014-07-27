@@ -35,7 +35,7 @@
 			<cfset a_str_set_value = q_select_re_data[a_str_column_name][1]>
 		</cfif>
 		
-		<cfset tmp = QuerySetCell(EditOrCreateContact.query, a_str_column_name, a_str_set_value, 1)>
+		<cfset QuerySetCell(EditOrCreateContact.query, a_str_column_name, a_str_set_value, 1)>
 	</cfif>			
 
 </cfloop>

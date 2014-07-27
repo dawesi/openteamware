@@ -13,7 +13,7 @@
 
 <cfinclude template="utils/inc_check_security.cfm">
 
-<cfset tmp = SetHeaderTopInfoString(GetLangVal('adm_ph_page_title')) />
+<cfset SetHeaderTopInfoString(GetLangVal('adm_ph_page_title')) />
 
 <cfoutput>#GetRenderCmp().GenerateServiceDefaultFile(servicekey = request.sCurrentServiceKey,
 										pagetitle = GetLangVal('adm_ph_page_title'))#</cfoutput>

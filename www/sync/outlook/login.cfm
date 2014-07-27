@@ -9,7 +9,7 @@
 // ---><?xml version="1.0" encoding="utf-8"?>
 
 <!---<cfif cgi.REMOTE_ADDR NEQ '62.99.232.51'>
-	<cfset tmp = StructClear(session)>
+	<cfset StructClear(session)>
 	<code>400</code>
 	<msg>Das Sync Service steht aufgrund technischer Probleme derzeit nicht zur Verfuegung - die Technik arbeitet daran. Due to technical problems the sync service is not available now. Our staff is working on it.</msg>
 	<serverutctime></serverutctime>
@@ -65,7 +65,7 @@
 	</cfinvoke>
 	
 	<cfif a_bol_trial_expired>
-		<cfset tmp = StructClear(session)>
+		<cfset StructClear(session)>
 		<code>400</code>
 		<msg>Ihre Testphase ist abgelaufen - bestellen Sie bitte online! Wenden Sie sich bei Fragen bitte an feedback@openTeamWare.com</msg>
 		<serverutctime><cfoutput>#xmlformat(a_str_utc_time)#</cfoutput></serverutctime>
@@ -143,7 +143,7 @@
 	
 <cfelse>
 	<!--- fehler --->
-	<cfset tmp = StructClear(session)>
+	<cfset StructClear(session)>
 	<code>400</code>
 	<msg>Ein falsches Passwort wurde eingegeben!</msg>
 	<serverutctime><cfoutput>#xmlformat(a_str_utc_time)#</cfoutput></serverutctime>

@@ -4,7 +4,7 @@
 
 <cfset aTerminInfo = ArrayNew(1)>
 <cfset aTerminInfo[1] = "test">
-<cfset tmp = StructInsert(Atermine, "Titel", aTerminInfo)>
-<cfset tmp = StructCount(ATermine)>
+<cfset StructInsert(Atermine, "Titel", aTerminInfo)>
+<cfset StructCount(ATermine)>
 
 <cfoutput>#tmp#</cfoutput>

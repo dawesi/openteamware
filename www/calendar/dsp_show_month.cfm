@@ -36,10 +36,10 @@
 <cfset a_arr_days = ArrayNew(1) />
 
 <cfif q_select_events.recordcount GT 0>
-	<cfset tmp = ArraySet(a_arr_days, 1, q_select_events.recordcount, 0) />
+	<cfset ArraySet(a_arr_days, 1, q_select_events.recordcount, 0) />
 </cfif>
 
-<cfset tmp = QueryAddColumn(q_select_events, 'days', a_arr_days) />
+<cfset QueryAddColumn(q_select_events, 'days', a_arr_days) />
 <cfset a_struct_events = QueryToArrayOfStructures(q_select_events) />
 
 <!--- welcher monat? --->
@@ -54,7 +54,7 @@
 	</cfoutput>
 </div>
 
-<cfset tmp = SetHeaderTopInfoString(LsDateFormat(a_dt_start, 'mmmm yyyy')) />
+<cfset SetHeaderTopInfoString(LsDateFormat(a_dt_start, 'mmmm yyyy')) />
 
 <!--- Create the date variables to search the Database by. --->
 <cfset a_dt_month_end = CreateDateTime(a_int_year, a_int_month, DaysInMonth(a_dt_start), 23, 59, 59) />
@@ -102,7 +102,7 @@
 		<cfset a_str_days = a_str_days & "," & a_int_day>
 	</cfloop>
 
-	<cfset tmp = StructInsert(a_struct_events[ii], 'days',  a_str_days, true)>
+	<cfset StructInsert(a_struct_events[ii], 'days',  a_str_days, true)>
 
 </cfloop>	
 	
@@ -162,7 +162,7 @@
 					<cfset a_arr_birthdays = ArrayNew(1) />
 					<cfset a_str_birthdays_text_replace = '' />
 	
-					<cfset tmp = ArraySet(a_arr_hours_with_events, 1, 24, 0) />
+					<cfset ArraySet(a_arr_hours_with_events, 1, 24, 0) />
 					
 					<cfsavecontent variable="a_str_cal_day">
 					<div>
@@ -209,7 +209,7 @@
 								  <br>
 							  <cfelse>
 								<!--- type is different from 0 ... ---> 
-								<cfset tmp = ArrayAppend(a_arr_birthdays, a_struct_events[a_int_jj])>
+								<cfset ArrayAppend(a_arr_birthdays, a_struct_events[a_int_jj])>
 							  </cfif>
 							  
 						</cfif>

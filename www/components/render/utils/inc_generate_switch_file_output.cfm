@@ -48,7 +48,7 @@
 	</cfif>
 
 	<!--- set page title / header info string --->
-	<cfset tmp = SetHeaderTopInfoString(a_str_action_page_title) />
+	<cfset SetHeaderTopInfoString(a_str_action_page_title) />
 </cfif>
 
 <!--- did an error occur? fire an error message? --->

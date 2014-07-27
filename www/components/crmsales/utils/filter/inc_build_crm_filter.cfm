@@ -85,15 +85,15 @@ WHERE
 	<!--- merge criterias ... --->
 	
 	<cfloop from="1" to="#ArrayLen(stReturn.metadata)#" index="ii">
-		<cfset tmp = ArrayAppend(stReturn.criterias, stReturn.metadata[ii]) />
+		<cfset ArrayAppend(stReturn.criterias, stReturn.metadata[ii]) />
 	</cfloop>
 	
 	<cfloop from="1" to="#ArrayLen(stReturn.crm)#" index="ii">
-		<cfset tmp = ArrayAppend(stReturn.criterias, stReturn.crm[ii]) />
+		<cfset ArrayAppend(stReturn.criterias, stReturn.crm[ii]) />
 	</cfloop>
 	
 	<cfloop from="1" to="#ArrayLen(stReturn.contact)#" index="ii">
-		<cfset tmp = ArrayAppend(stReturn.criterias, stReturn.contact[ii]) />
+		<cfset ArrayAppend(stReturn.criterias, stReturn.contact[ii]) />
 	</cfloop>			
 </cfif>
 

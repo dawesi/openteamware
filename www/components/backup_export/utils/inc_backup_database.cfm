@@ -29,7 +29,7 @@ WHERE
 ;
 </cfquery>
 
-<cfset tmp = LogMessage('databases: ' & q_select_databases.recordcount)>
+<cfset LogMessage('databases: ' & q_select_databases.recordcount)>
 
 <cfloop query="q_select_databases">
 
@@ -56,8 +56,8 @@ WHERE
 	<!--- create directory for this database --->
 	<cfdirectory directory="#variables.a_str_current_backup_database_dir#" action="create">
 	
-	<cfset tmp = LogMessage('next database: ' & q_select_databases.name)>
-	<cfset tmp = LogMessage('tables count: ' & q_select_tables.recordcount)>
+	<cfset LogMessage('next database: ' & q_select_databases.name)>
+	<cfset LogMessage('tables count: ' & q_select_tables.recordcount)>
 	
 	<cfloop query="q_select_tables">
 	
@@ -81,7 +81,7 @@ WHERE
 		
 		<cffile action="write" addnewline="no" charset="utf-8" file="#a_str_tmp_filename#" output="#stReturn_table.csv#">		
 		
-		<cfset tmp = LogMessage('table done: ' & q_select_tables.tablename)>
+		<cfset LogMessage('table done: ' & q_select_tables.tablename)>
 		
 		<cfcatch type="any">
 		<!--- if something happens during backup of a table --->

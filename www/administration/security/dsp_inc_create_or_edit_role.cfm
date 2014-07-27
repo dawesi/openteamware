@@ -16,13 +16,13 @@
 <input type="Hidden" name="frmresellerkey" value="<cfoutput>#htmleditformat(url.resellerkey)#</cfoutput>">
 
 <cfif CreateOrEditRole.action IS 'create'>
-	<cfset tmp = QueryAddRow(CreateOrEditRole.query, 1)>
-	<cfset tmp = QuerySetCell(CreateOrEditRole.query, 'protocol_depth', 5, 1)>
-	<cfset tmp = QuerySetCell(CreateOrEditRole.query, 'allow_ftp_access', 1, 1)>
-	<cfset tmp = QuerySetCell(CreateOrEditRole.query, 'allow_pda_login', 1, 1)>
-	<cfset tmp = QuerySetCell(CreateOrEditRole.query, 'allow_wap_login', 1, 1)>
-	<cfset tmp = QuerySetCell(CreateOrEditRole.query, 'allow_outlooksync', 1, 1)>
-	<cfset tmp = QuerySetCell(CreateOrEditRole.query, 'allow_mailaccessdata_access', 1, 1)>
+	<cfset QueryAddRow(CreateOrEditRole.query, 1)>
+	<cfset QuerySetCell(CreateOrEditRole.query, 'protocol_depth', 5, 1)>
+	<cfset QuerySetCell(CreateOrEditRole.query, 'allow_ftp_access', 1, 1)>
+	<cfset QuerySetCell(CreateOrEditRole.query, 'allow_pda_login', 1, 1)>
+	<cfset QuerySetCell(CreateOrEditRole.query, 'allow_wap_login', 1, 1)>
+	<cfset QuerySetCell(CreateOrEditRole.query, 'allow_outlooksync', 1, 1)>
+	<cfset QuerySetCell(CreateOrEditRole.query, 'allow_mailaccessdata_access', 1, 1)>
 </cfif>
 
 <tr>

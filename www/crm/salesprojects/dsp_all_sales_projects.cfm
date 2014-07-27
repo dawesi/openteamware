@@ -4,7 +4,7 @@
 	
 	// --->
 	
-<cfset tmp = SetHeaderTopInfoString(GetLangVal('crm_ph_sales_projects'))>
+<cfset SetHeaderTopInfoString(GetLangVal('crm_ph_sales_projects'))>
 
 <br/>
 

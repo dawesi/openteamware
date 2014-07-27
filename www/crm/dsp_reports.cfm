@@ -7,7 +7,7 @@
 
 // --->
 
-<cfset tmp = SetHeaderTopInfoString(GetLangVal('crm_wd_reports')) />
+<cfset SetHeaderTopInfoString(GetLangVal('crm_wd_reports')) />
 
 <cfinvoke component="#application.components.cmp_crm_reports#" method="GetDefaultReports" returnvariable="q_select_default_reports">
 	<cfinvokeargument name="securitycontext" value="#request.stSecurityContext#">

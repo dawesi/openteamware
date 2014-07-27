@@ -43,7 +43,7 @@
 	<cfexit method="exittemplate">
 </cfif>
 
-<cfset tmp = SetHeaderTopInfoString(q_select_event.title) />
+<cfset SetHeaderTopInfoString(q_select_event.title) />
 
 <cfsavecontent variable="a_str_buttons">
 

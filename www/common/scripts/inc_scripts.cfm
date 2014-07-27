@@ -1727,93 +1727,10 @@ function CompressJavaScriptOutput(s) {
 	return a_return;
 	}
 	
-// start a new tab navigation ...
-function StartNewTabNavigation() {
-	request.a_struct_current_tab_nav = StructNew();
-	request.a_struct_current_tab_nav.name = 'tab_' & CreateUUIDJS();
-	request.a_struct_current_tab_nav.items = ArrayNew(1);
-	}
-		
-// add an item to the array containing the navigation elements
-function AddTabNavigationItem(title, href, alt) {
-	var ii = ArrayLen(request.a_struct_current_tab_nav.items) + 1;
-	var a_str_new_id = request.a_struct_current_tab_nav.name & '_element_' & ii;
-	
-	// blank href = use default paging mechanismn
-	if (href IS '') {
-		href = 'javascript:SelectNewTabDefaultPagingMechanismn(''#jsstringformat(request.a_struct_current_tab_nav.name)#'', ''#jsstringformat(a_str_new_id)#'')';
-		}
-	
-	request.a_struct_current_tab_nav.items[ii] = StructNew();
-	request.a_struct_current_tab_nav.items[ii].title = title;
-	request.a_struct_current_tab_nav.items[ii].href = href;
-	request.a_struct_current_tab_nav.items[ii].alt = alt;
-	request.a_struct_current_tab_nav.items[ii].tabid = a_str_new_id;
-	
-	// return the newly generated ID for this tab element
-	return a_str_new_id;
-	}
 		
 // create a uuid without -
 function CreateUUIDJS() {
 	return ReplaceNoCase(CreateUUID(), '-', '', 'ALL');
-	}
-
-// build a navigation box on top
-// items: array with structures containing the tab items
-// id_content_box: id of the content box
-// huge_tab_nav: true = huge, false = small tab navigation
-function BuildTabNavigation(id_content_box, huge_tab_nav) {
-	var loop = 1;
-	var a_li_id = '';
-	var a_ul_id = 'ul_tab_nav_' & CreateUUIDJS();
-	var a_str_class_main_div = 'div_module_tabs';
-	
-	// small or huge tab navigation?
-	if (huge_tab_nav IS false) {
-		a_str_class_main_div = 'div_module_tabs div_module_tabs_small_tab_nav';
-		}
-	
-	// main div around the whole tab nav
-	writeoutput('<div class="' & a_str_class_main_div & '">');
-	writeoutput('<ul id="' & a_ul_id & '">');
-	
-	// write tab items
-	// first one is always selected
-	for(loop=1; loop LTE ArrayLen(request.a_struct_current_tab_nav.items); loop=loop+1) {
-		a_li_id = 'li_tab_nav_' & CreateUUIDJS();
-		
-		writeOutput('<li id="' & a_li_id & '"');
-		
-		if (loop IS 1) {
-			writeOutput(' class="active_tab"');
-			}
-		writeOutput('>');
-		
-		// output link
-		// 
-		writeOutput('<a onClick="SelectNewTab(''' & a_ul_id & ''',''' & a_li_id & ''');" href="' & request.a_struct_current_tab_nav.items[loop].href & '" title="' & htmleditformat(request.a_struct_current_tab_nav.items[loop].alt) & '">&nbsp;&nbsp;' & htmleditformat(request.a_struct_current_tab_nav.items[loop].title) & '&nbsp;&nbsp;</a>');
-		
-		// close list
-		writeOutput('</li>');
-		}
-	
-	writeoutput('</ul>');
-	writeoutput('</div>');
-	
-	// clear
-	writeOutput('<div style="clear:both;"></div>');
-	
-	// write module tabs content box? if id is given yes, otherwise no
-	if (Len(id_content_box) GT 0) {
-		writeOutput('<div class="div_module_tabs_content_box" id="' & id_content_box & '"></div>');
-		}
-		
-	// call default show/hide method (try to show first div)
-	if (ArrayLen(request.a_struct_current_tab_nav.items) GT 0) {
-		AddJSToExecuteAfterPageLoad('SelectNewTabDefaultPagingMechanismn(''' & request.a_struct_current_tab_nav.name & ''',''' & request.a_struct_current_tab_nav.items[1].tabid &''');', '');
-		}
-		
 	}
 		
 function MakeFirstCharUCase(s) {
@@ -1833,29 +1750,8 @@ function AddParamStringItem(param_string, item, value) {
 	return ListAppend(param_string, item & '=' & urlencodedformat(value), '&');
 	}
 		
-function CreateDefaultTopHeader(title) {
-	var a_str_content = '';
-	var a_str_link = '';
-	
-	// if link is given ...
-	if (arrayLen(arguments) gte 2) a_str_link = arguments[2];
-	
-	// if not, use current directory ...
-	if (Len(a_str_link) IS 0) a_str_link = GetDirectoryFromPath(cgi.SCRIPT_NAME);
-	
-	// compose header ...
-	a_str_content = a_str_content & '<table class="tablemaincontenttop"><tr><td class="addinfotext" style="font-weight:bold;">';
-	
-	a_str_content = a_str_content & '&nbsp;&nbsp;&nbsp;&nbsp;<a class="addinfotext" href="' & a_str_link & '">' & htmleditformat(title) & '</a>';
-	
-	a_str_content = a_str_content & '<span style="color:rgb(051,051,051);" id="id_span_header_top_info"/>';
-	
-	a_str_content = a_str_content & '</td></tr></table>';
-	
-	// return ...
-	return a_str_content;
-	}// set "title" of current page
 function SetHeaderTopInfoString(s) {
+	writeoutput('<h2>' & htmleditformat( s ) & '</h2>' );
 	return true;
 	}
 // read an entry of properties file and return default value if empty

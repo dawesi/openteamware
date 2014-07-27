@@ -49,9 +49,9 @@
 </div>
 </cfoutput>
 
-<cfset tmp = SetHeaderTopInfoString(GetLangVal('cal_wd_week') & ' ' & CalculateRealStandardISOWeek(request.a_dt_current_date)) />
+<cfset SetHeaderTopInfoString(GetLangVal('cal_wd_week') & ' ' & CalculateRealStandardISOWeek(request.a_dt_current_date)) />
 
-<cfset tmp = StartNewTabNavigation() />
+<cfset StartNewTabNavigation() />
 <cfset a_arr_nav_items = AddTabNavigationItem(GetLangValJS('cal_ph_own_calendar'), 'javascript:ShowCalendarForUser(''#request.stSecurityContext.myuserkey#'');', '')> 
 
 <!--- create structure containing all appointments for all users / resources  ... --->
@@ -73,7 +73,7 @@
 		<!--- is a user ... --->
 	
 		<!--- add to nav struct --->
-		<cfset tmp = AddTabNavigationItem(application.components.cmp_user.GetFullNameByentrykey(a_str_userkey), 'javascript:ShowCalendarForUser(''#a_str_userkey#'');', '') /> 
+		<cfset AddTabNavigationItem(application.components.cmp_user.GetFullNameByentrykey(a_str_userkey), 'javascript:ShowCalendarForUser(''#a_str_userkey#'');', '') /> 
 
 		<!--- load security context or use exising one ... --->
 		<cfif NOT StructKeyExists(session.a_struct_other_securitycontext, a_str_userkey)>
@@ -109,7 +109,7 @@
 		<cfif a_bol_resource_exists>
 			load "appointments" of this resource
 			TODO hp: find a way to do that in an easy way
-			<cfset tmp = AddTabNavigationItem(application.components.cmp_resources.GetResourcesByEntrykeys(a_str_userkey).title, 'javascript:ShowCalendarForUser(''#a_str_userkey#'');', '') /> 
+			<cfset AddTabNavigationItem(application.components.cmp_resources.GetResourcesByEntrykeys(a_str_userkey).title, 'javascript:ShowCalendarForUser(''#a_str_userkey#'');', '') /> 
 		</cfif>
 	
 	</cfif>

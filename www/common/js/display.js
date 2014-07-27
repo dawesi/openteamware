@@ -1122,30 +1122,7 @@ function doExeCuteAsyncOperation(servicekey, action, entrykey, query_string, met
 	return true;
 	}
 	
-// select a new tab in the tab menu system
-function SelectNewTab(ul_holder_id, li_sender_id) {
-	var a_ul_holder = findObj(ul_holder_id);
-	var a_li_sender = findObj(li_sender_id);
-	var i = 0;
-	var a_li_elements;
 	
-	// get all li elements
-	a_li_elements = a_ul_holder.getElementsByTagName('li');
-	
-	for (var i=0;i<a_li_elements.length;i++) { 
-		a_li_elements[i].className = '';			
-		}		
-	
-	// set new active tab
-	a_li_sender.className = 'active_tab';
-	}
-	
-// select a new div in the autopage mode ... hide all known DIVs of
-// this tab and show the given tab element
-function SelectNewTabDefaultPagingMechanismn(tabid, tabitemid_toselect) {
-	$('div[@id*="' + tabid + '"]').hide();
-	$('#' + tabitemid_toselect).show();
-	}
 	
 function submitenter(myfield,e)	{
 	var keycode;

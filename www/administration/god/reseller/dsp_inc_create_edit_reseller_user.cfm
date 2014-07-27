@@ -4,10 +4,10 @@
 <cfparam name="CreateEditResellerUser.query" type="query" default="#QueryNew('resellerkey,userkey,permissions,contacttype')#">
 
 <cfif CreateEditResellerUser.action IS 'create'>
-	<cfset tmp = QueryAddRow(CreateEditResellerUser.query, 1)>
-	<cfset tmp = QuerySetCell(CreateEditResellerUser.query, 'contacttype', 'technical,sales', 1)>
-	<cfset tmp = QuerySetCell(CreateEditResellerUser.query, 'resellerkey', url.resellerkey, 1)>
-	<cfset tmp = QuerySetCell(CreateEditResellerUser.query, 'userkey', url.userkey, 1)>
+	<cfset QueryAddRow(CreateEditResellerUser.query, 1)>
+	<cfset QuerySetCell(CreateEditResellerUser.query, 'contacttype', 'technical,sales', 1)>
+	<cfset QuerySetCell(CreateEditResellerUser.query, 'resellerkey', url.resellerkey, 1)>
+	<cfset QuerySetCell(CreateEditResellerUser.query, 'userkey', url.userkey, 1)>
 </cfif>
 
 <cfoutput query="CreateEditResellerUser.query">

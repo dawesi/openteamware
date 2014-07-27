@@ -54,7 +54,7 @@ WHERE
 	;
 	</cfquery>
 	
-	<cfset tmp = QuerySetCell(q_select_invoices, 'resellerkey', q_select_company_data.resellerkey, q_select_invoices.currentrow)>
-	<cfset tmp = QuerySetCell(q_select_invoices, 'distributorkey', q_select_company_data.distributorkey, q_select_invoices.currentrow)>
+	<cfset QuerySetCell(q_select_invoices, 'resellerkey', q_select_company_data.resellerkey, q_select_invoices.currentrow)>
+	<cfset QuerySetCell(q_select_invoices, 'distributorkey', q_select_company_data.distributorkey, q_select_invoices.currentrow)>
 
 </cfloop>

@@ -35,7 +35,7 @@
 	<cfinvokeargument name="projectkey" value="#url.entrykey#">
 </cfinvoke>
 
-<cfset tmp = SetHeaderTopInfoString(GetLangVal('cm_wd_project') & ' ' & q_select_project.title) />
+<cfset SetHeaderTopInfoString(GetLangVal('cm_wd_project') & ' ' & q_select_project.title) />
 
 <cfsavecontent variable="a_str_content">
 <cfoutput query="q_select_project">
@@ -210,7 +210,7 @@ function DoCloseProject(title, entrykey) {
 	}
 </cfsavecontent>
 
-<cfset tmp = AddJSToExecuteAfterPageLoad('', a_str_js) />
+<cfset AddJSToExecuteAfterPageLoad('', a_str_js) />
 
 
 

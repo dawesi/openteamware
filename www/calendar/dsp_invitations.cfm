@@ -9,7 +9,7 @@
 <cfset a_cmp_users = application.components.cmp_user>
 <cfset a_cmp_addressbook = application.components.cmp_addressbook>
 
-<cfset tmp = SetHeaderTopInfoString(GetLangVal('cal_wd_invitations'))>
+<cfset SetHeaderTopInfoString(GetLangVal('cal_wd_invitations'))>
 
 <cfset a_str_text = GetLangVal('cal_ph_invitations_open_number')>
 <cfset a_str_text = ReplaceNoCase(a_str_text, '%recordcount', q_select_invitations.recordcount)>

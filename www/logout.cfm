@@ -19,7 +19,7 @@
 <cfinclude template="settings/queries/q_select_display_settings.cfm">
 
 <cfif q_select_display_settings.confirmlogout is 0>
-	<cfset tmp = StructClear(session)>
+	<cfset StructClear(session)>
 	<!--- get forwarding target ... --->
 	<html>
 		<head>

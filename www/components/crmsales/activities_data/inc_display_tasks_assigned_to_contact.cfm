@@ -90,7 +90,7 @@ ORDER BY
 		<!---<span title="#q_select_tasks.percentdone# %" style="width:50px;height:14px;padding:0px;margin:0px;text-align:left;" class="b_all"><div style="height:14px;padding:0px;margin:0px;background-color:<cfif IsDate(q_select_tasks.dt_due) AND (q_select_tasks.dt_due LTE Now())>red<cfelse>silver</cfif>;width:#(q_select_tasks.percentdone/2)#px;"><img src="/images/space_1_1.gif"></span></span>--->
 		
 		<cfif (Len(q_select_tasks.assignedtouserkeys) IS 0)>
-			<cfset tmp = QuerySetCell(q_select_tasks, 'assignedtouserkeys', arguments.securitycontext.myuserkey)>
+			<cfset QuerySetCell(q_select_tasks, 'assignedtouserkeys', arguments.securitycontext.myuserkey)>
 		</cfif>
 		<cfloop list="#q_select_tasks.assignedtouserkeys#" index="a_str_userkey">
 			<a href="/workgroups/index.cfm?action=showuser&userkey=#a_str_userkey#">#htmleditformat(a_cmp_users.GetFullNameByentrykey(a_str_userkey))#</a>&nbsp;

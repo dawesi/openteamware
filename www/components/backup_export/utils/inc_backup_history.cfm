@@ -25,7 +25,7 @@
 									
 <cfset q_select_history_items = a_struct_history.q_select_history_items />
 
-<cfset tmp = LogMessage('history items: ' & q_select_history_items.recordcount) />
+<cfset LogMessage('history items: ' & q_select_history_items.recordcount) />
 
 <!--- generate CSV --->
 <cfset a_csv_history = QueryToCSV2(q_select_history_items) />

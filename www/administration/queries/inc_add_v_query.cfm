@@ -30,7 +30,7 @@
 
 
 
-<cfset tmp = QueryAddRow(q_select_reseller, 1)>
+<cfset QueryAddRow(q_select_reseller, 1)>
 
 
 
@@ -50,28 +50,28 @@
 
 
 
-<cfset tmp = QuerySetCell(q_select_reseller, "companyname", AddSelectQuery.Query.companyname, ii)>
+<cfset QuerySetCell(q_select_reseller, "companyname", AddSelectQuery.Query.companyname, ii)>
 
-<cfset tmp = QuerySetCell(q_select_reseller, "entrykey", AddSelectQuery.Query.entrykey, ii)>
+<cfset QuerySetCell(q_select_reseller, "entrykey", AddSelectQuery.Query.entrykey, ii)>
 
-<cfset tmp = QuerySetCell(q_select_reseller, "parentkey", AddSelectQuery.Query.parentkey, ii)>
+<cfset QuerySetCell(q_select_reseller, "parentkey", AddSelectQuery.Query.parentkey, ii)>
 
-<cfset tmp = QuerySetCell(q_select_reseller, "delegaterights", AddSelectQuery.delegaterights, ii)>
+<cfset QuerySetCell(q_select_reseller, "delegaterights", AddSelectQuery.delegaterights, ii)>
 
-<cfset tmp = QuerySetCell(q_select_reseller, "resellerlevel", AddSelectQuery.level, ii)>
+<cfset QuerySetCell(q_select_reseller, "resellerlevel", AddSelectQuery.level, ii)>
 
-<cfset tmp = QuerySetCell(q_select_reseller, "domains", AddSelectQuery.query.domains, ii)>
+<cfset QuerySetCell(q_select_reseller, "domains", AddSelectQuery.query.domains, ii)>
 
-<cfset tmp = QuerySetCell(q_select_reseller, "emailadr", AddSelectQuery.query.emailadr, ii)>
+<cfset QuerySetCell(q_select_reseller, "emailadr", AddSelectQuery.query.emailadr, ii)>
 
-<cfset tmp = QuerySetCell(q_select_reseller, "isdistributor", val(AddSelectQuery.query.isdistributor), ii)>
+<cfset QuerySetCell(q_select_reseller, "isdistributor", val(AddSelectQuery.query.isdistributor), ii)>
 
-<cfset tmp = QuerySetCell(q_select_reseller, "isprojectpartner", val(AddSelectQuery.query.isprojectpartner), ii)>
+<cfset QuerySetCell(q_select_reseller, "isprojectpartner", val(AddSelectQuery.query.isprojectpartner), ii)>
 
-<cfset tmp = QuerySetCell(q_select_reseller, "issystempartner", val(AddSelectQuery.query.issystempartner), ii)>
+<cfset QuerySetCell(q_select_reseller, "issystempartner", val(AddSelectQuery.query.issystempartner), ii)>
 
-<cfset tmp = QuerySetCell(q_select_reseller, "contractingparty", val(AddSelectQuery.query.contractingparty), ii)>
+<cfset QuerySetCell(q_select_reseller, "contractingparty", val(AddSelectQuery.query.contractingparty), ii)>
 
-<cfset tmp = QuerySetCell(q_select_reseller, "default_settlement_type", val(AddSelectQuery.query.default_settlement_type), ii)>
+<cfset QuerySetCell(q_select_reseller, "default_settlement_type", val(AddSelectQuery.query.default_settlement_type), ii)>
 
-<cfset tmp = QuerySetCell(q_select_reseller, "allow_modify_settlement_type", val(AddSelectQuery.query.allow_modify_settlement_type), ii)>
+<cfset QuerySetCell(q_select_reseller, "allow_modify_settlement_type", val(AddSelectQuery.query.allow_modify_settlement_type), ii)>

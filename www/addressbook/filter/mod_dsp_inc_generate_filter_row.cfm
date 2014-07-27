@@ -60,7 +60,7 @@
 </cfswitch>
 </cfsavecontent>
 
-<cfset tmp = AddJSToExecuteAfterPageLoad('', a_str_js) />
+<cfset AddJSToExecuteAfterPageLoad('', a_str_js) />
 
 <cfoutput>
 <input type="hidden" name="frmfieldnames" value="#htmleditformat(attributes.fieldname)#">

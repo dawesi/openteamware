@@ -160,7 +160,7 @@
 													entrykey = a_str_itemkey) />
 													
 				<cfloop query="q_select_wg_shares">
-					<cfset tmp = application.components.cmp_security.RemoveWorkgroupShare(securitycontext = request.stSecurityContext,
+					<cfset application.components.cmp_security.RemoveWorkgroupShare(securitycontext = request.stSecurityContext,
 													servicekey = request.sCurrentServiceKey,
 													entrykey = a_str_itemkey,
 													workgroupkey = q_select_wg_shares.workgroupkey) />

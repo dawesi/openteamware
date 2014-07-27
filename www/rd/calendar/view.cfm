@@ -5,7 +5,7 @@
 <cfparam name="url.View" default="">
 
 <!--- die toolbar liefert (leider noch) ein datum im format dd.mm.yyyy --->
-<cfset tmp = GetLocale()>
+<cfset GetLocale()>
 <cfset SetLocale("German (Austrian)")>
 <cfset Adate = LSParseDateTime(url.date)>
 

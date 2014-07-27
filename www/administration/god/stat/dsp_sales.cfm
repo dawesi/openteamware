@@ -49,7 +49,7 @@ FROM
 	;
 	</cfquery>
 	
-	<cfset tmp = QuerySetCell(q_select_distinct_resellers, 'companies_count', q_select_count.count_invoices, q_select_distinct_resellers.currentrow)>
+	<cfset QuerySetCell(q_select_distinct_resellers, 'companies_count', q_select_count.count_invoices, q_select_distinct_resellers.currentrow)>
 	
 	<cfquery name="q_select_sum" dbtype="query">
 	SELECT
@@ -61,7 +61,7 @@ FROM
 	;
 	</cfquery>	
 	
-	<cfset tmp = QuerySetCell(q_select_distinct_resellers, 'sum_sales', q_select_sum.sum_totalsum, q_select_distinct_resellers.currentrow)>
+	<cfset QuerySetCell(q_select_distinct_resellers, 'sum_sales', q_select_sum.sum_totalsum, q_select_distinct_resellers.currentrow)>
 	
 	<cfquery name="q_select_avg_sum" dbtype="query">
 	SELECT
@@ -73,7 +73,7 @@ FROM
 	;
 	</cfquery>	
 	
-	<cfset tmp = QuerySetCell(q_select_distinct_resellers, 'avg_sum', q_select_avg_sum.avg_sum, q_select_distinct_resellers.currentrow)>	
+	<cfset QuerySetCell(q_select_distinct_resellers, 'avg_sum', q_select_avg_sum.avg_sum, q_select_distinct_resellers.currentrow)>	
 	
 </cfoutput>
 

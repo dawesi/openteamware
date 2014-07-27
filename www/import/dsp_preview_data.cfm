@@ -20,7 +20,7 @@ function CheckAllItems() {
 
 <cfparam name="url.jobkey" type="string">
 
-<cfset tmp = SetHeaderTopInfoString(GetLangVal('cm_Wd_preview')) />
+<cfset SetHeaderTopInfoString(GetLangVal('cm_Wd_preview')) />
 		
 <cfinvoke component="#application.components.cmp_import#" method="GetImportTable" returnvariable="a_struct_fields_source">
 	<cfinvokeargument name="securitycontext" value="#request.stSecurityContext#">
@@ -88,20 +88,20 @@ function CheckAllItems() {
 
 <cfset a_str_form_id = 'form' & CreateUUIDJS() />
 
-<cfset tmp = application.components.cmp_forms.StartNewForm(action = 'index.cfm?Action=DoImportData',
+<cfset application.components.cmp_forms.StartNewForm(action = 'index.cfm?Action=DoImportData',
 				action_type = 'create',
 				method = 'POST',
 				onSubmit = 'DisplayPleaseWaitMsgOnLocChange()',
 				form_id = a_str_form_id,
 				write_table = false) />
 				
-<cfset tmp = application.components.cmp_forms.AddFormElement(securitycontext = request.stSecurityContext,
+<cfset application.components.cmp_forms.AddFormElement(securitycontext = request.stSecurityContext,
 				usersettings = request.stUserSettings,
 				datatype = 'hidden',
 				input_name = 'frm_jobkey',
 				input_value = url.jobkey) />
 				
-<cfset tmp = application.components.cmp_forms.AddFormElement(securitycontext = request.stSecurityContext,
+<cfset application.components.cmp_forms.AddFormElement(securitycontext = request.stSecurityContext,
 				usersettings = request.stUserSettings,
 				datatype = 'selector',
 				field_name = GetLangVal('crm_wd_criteria'),
@@ -109,7 +109,7 @@ function CheckAllItems() {
 				useuniversalselectorjsfunction = 1,
 				useuniversalselectorjsfunction_type = 'criteria') />
 				
-<cfset tmp = application.components.cmp_forms.AddFormElement(securitycontext = request.stSecurityContext,
+<cfset application.components.cmp_forms.AddFormElement(securitycontext = request.stSecurityContext,
 				usersettings = request.stUserSettings,
 				datatype = 'text',
 				field_name = GetLangVal('cm_wd_categories'),

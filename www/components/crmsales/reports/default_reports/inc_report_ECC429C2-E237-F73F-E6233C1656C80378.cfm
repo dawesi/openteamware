@@ -59,19 +59,19 @@ FROM
 
 <!--- create table with information about fields ... --->
 <cfset q_select_fieldnames = QueryNew('showname,fieldname,fieldtype,fielddescription')>
-<cfset tmp = QueryAddRow(q_select_fieldnames, 1)>
+<cfset QueryAddRow(q_select_fieldnames, 1)>
 <cfset QuerySetCell(q_select_fieldnames, 'showname', '%', q_select_fieldnames.recordcount)>
 <cfset QuerySetCell(q_select_fieldnames, 'fieldname', 'percent_country', q_select_fieldnames.recordcount)>
 <cfset QuerySetCell(q_select_fieldnames, 'fieldtype', '1', q_select_fieldnames.recordcount)>
 <cfset QuerySetCell(q_select_fieldnames, 'fielddescription', '', q_select_fieldnames.recordcount)>	
 
-<cfset tmp = QueryAddRow(q_select_fieldnames, 1)>
+<cfset QueryAddRow(q_select_fieldnames, 1)>
 <cfset QuerySetCell(q_select_fieldnames, 'showname', 'Anzahl', q_select_fieldnames.recordcount)>
 <cfset QuerySetCell(q_select_fieldnames, 'fieldname', 'count_country', q_select_fieldnames.recordcount)>
 <cfset QuerySetCell(q_select_fieldnames, 'fieldtype', '1', q_select_fieldnames.recordcount)>
 <cfset QuerySetCell(q_select_fieldnames, 'fielddescription', '', q_select_fieldnames.recordcount)>	
 
-<cfset tmp = QueryAddRow(q_select_fieldnames, 1)>
+<cfset QueryAddRow(q_select_fieldnames, 1)>
 <cfset QuerySetCell(q_select_fieldnames, 'showname', 'Land', q_select_fieldnames.recordcount)>
 <cfset QuerySetCell(q_select_fieldnames, 'fieldname', 'b_country', q_select_fieldnames.recordcount)>
 <cfset QuerySetCell(q_select_fieldnames, 'fieldtype', '0', q_select_fieldnames.recordcount)>
@@ -88,11 +88,11 @@ FROM
 	;
 	</cfquery>
 	
-	<cfset tmp = QuerySetCell(q_select_distinct_countries, 'count_country', val(q_select_distinct_country_count.count_country), q_select_distinct_countries.currentrow)>
-	<cfset tmp = QuerySetCell(q_select_distinct_countries, 'percent_country', DecimalFormat(q_select_distinct_country_count.count_country / a_one_percent), q_select_distinct_countries.currentrow)>
+	<cfset QuerySetCell(q_select_distinct_countries, 'count_country', val(q_select_distinct_country_count.count_country), q_select_distinct_countries.currentrow)>
+	<cfset QuerySetCell(q_select_distinct_countries, 'percent_country', DecimalFormat(q_select_distinct_country_count.count_country / a_one_percent), q_select_distinct_countries.currentrow)>
 
 	<cfif Len(q_select_distinct_countries.b_country) IS 0>
-		<cfset tmp = QuerySetCell(q_select_distinct_countries, 'b_country', 'leer/unbekannt', q_select_distinct_countries.currentrow)>	
+		<cfset QuerySetCell(q_select_distinct_countries, 'b_country', 'leer/unbekannt', q_select_distinct_countries.currentrow)>	
 	</cfif>
 </cfloop>
 

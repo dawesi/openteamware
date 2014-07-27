@@ -13,22 +13,22 @@
 <cfparam name="CreateorEditCustomer.Query" type="query" default="#QueryNew("language,billingcontact,domains,rating,contactperson,status,shortname,resellerkey,companyname,entrykey,description,customheader,domain,customertype,street,zipcode,telephone,fax,uidnumber,countryisocode,city,fbnumber,email,industry,settlement_type")#">
 
 <cfif CreateorEditCustomer.Query.recordcount is 0>
-	<cfset tmp = QueryAddRow(CreateorEditCustomer.Query, 1)>
+	<cfset QueryAddRow(CreateorEditCustomer.Query, 1)>
 </cfif>
 
 <!--- do we have already a reseller key and are we in the create action? --->
 <cfif (CreateorEditCustomer.action is "create") AND (StructKeyExists(url, "resellerkey"))>
-	<cfset tmp = QuerySetCell(CreateorEditCustomer.query, "resellerkey", url.resellerkey, 1) />
-	<cfset tmp = QuerySetCell(CreateorEditCustomer.query, "domain", "openTeamware.com", 1) />
-	<cfset tmp = QuerySetCell(CreateorEditCustomer.query, "domains", "openTeamware.com", 1) />
-	<cfset tmp = QuerySetCell(CreateorEditCustomer.query, "status", "1", 1) />
-	<cfset tmp = QuerySetCell(CreateorEditCustomer.query, "rating", "3", 1) />
-	<cfset tmp = QuerySetCell(CreateorEditCustomer.query, "language", "0", 1) />
+	<cfset QuerySetCell(CreateorEditCustomer.query, "resellerkey", url.resellerkey, 1) />
+	<cfset QuerySetCell(CreateorEditCustomer.query, "domain", "openTeamware.com", 1) />
+	<cfset QuerySetCell(CreateorEditCustomer.query, "domains", "openTeamware.com", 1) />
+	<cfset QuerySetCell(CreateorEditCustomer.query, "status", "1", 1) />
+	<cfset QuerySetCell(CreateorEditCustomer.query, "rating", "3", 1) />
+	<cfset QuerySetCell(CreateorEditCustomer.query, "language", "0", 1) />
 </cfif>
 
 <!--- do we have a single reseller (only one entry)? than no selection is necessary ... --->
 <!--- <cfif (request.q_select_reseller.recordcount is 1)>
-	<cfset tmp = QuerySetCell(CreateorEditCustomer.query, "resellerkey", request.q_select_reseller.entrykey, 1)>
+	<cfset QuerySetCell(CreateorEditCustomer.query, "resellerkey", request.q_select_reseller.entrykey, 1)>
 </cfif> --->
 
 
@@ -45,8 +45,8 @@ WHERE
 
 <!--- set default settlement type if action = create --->
 <cfif CreateorEditCustomer.action is "create">
-	<cfset tmp = QuerySetCell(CreateorEditCustomer.query, "settlement_type", q_select_current_reseller.default_settlement_type, 1) />
-	<cfset tmp = QuerySetCell(CreateorEditCustomer.query, "domain", ListGetAt(q_select_current_reseller.domains, 1), 1) />
+	<cfset QuerySetCell(CreateorEditCustomer.query, "settlement_type", q_select_current_reseller.default_settlement_type, 1) />
+	<cfset QuerySetCell(CreateorEditCustomer.query, "domain", ListGetAt(q_select_current_reseller.domains, 1), 1) />
 </cfif>
 
 <form name="frmneworeditcustomer" action="<cfoutput>#CreateOrEditCustomer.Formaction#</cfoutput>" method="post">
@@ -132,7 +132,7 @@ WHERE
 	</cfquery>
 	
 	<cfif Len(q_select_domains.domains) IS 0>
-		<cfset tmp = QuerySetCell(q_select_domains, 'domains', 'openTeamware.com', 1)>
+		<cfset QuerySetCell(q_select_domains, 'domains', 'openTeamware.com', 1)>
 	</cfif>
 	
 	<cfloop list="#q_select_domains.domains#" delimiters="," index="a_str_domain">

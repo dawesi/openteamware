@@ -9,7 +9,7 @@
 <cfparam name="url.title" type="string" />
 <cfparam name="url.productquantitykey" type="string" />
 
-<cfset tmp = SetHeaderTopInfoString('Set available quantity') />
+<cfset SetHeaderTopInfoString('Set available quantity') />
 
 <cfset a_str_product_action = 'edit'/>
 

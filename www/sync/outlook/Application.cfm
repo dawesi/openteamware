@@ -9,7 +9,7 @@
 // ---><cfapplication name="ib_ol_sync_new" clientmanagement="yes" sessionmanagement="yes" setclientcookies="no" setdomaincookies="yes" sessiontimeout="#createtimespan(0,10,0,0)#">
 <cfsetting requesttimeout="2000000" showdebugoutput="no">
 
-<cfset tmp = SetLocale("German (Austrian)")>
+<cfset SetLocale("German (Austrian)")>
 
 <cfset request.a_str_request_entrykey = CreateUUID()>
 <cfset request.a_tick_start = GetTickCount()>

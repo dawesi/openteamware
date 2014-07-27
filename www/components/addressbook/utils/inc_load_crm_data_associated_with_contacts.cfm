@@ -37,105 +37,105 @@
 	</cfquery>
 	
 	<!--- add own fields ... --->
-	<cfset tmp = QueryAddRow(q_table_fields, 1)>
+	<cfset QueryAddRow(q_table_fields, 1)>
 	<cfset QuerySetCell(q_table_fields, 'showname', a_cmp_lang.GetLangValExt(entryid = 'adrb_wd_telephone', langno = arguments.usersettings.language), q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fieldname', 'b_telephone', q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fieldtype', '0', q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fielddescription', '', q_table_fields.recordcount)>
 	
-	<cfset tmp = QueryAddRow(q_table_fields, 1)>
+	<cfset QueryAddRow(q_table_fields, 1)>
 	<cfset QuerySetCell(q_table_fields, 'showname', a_cmp_lang.GetLangValExt(entryid = 'adrb_wd_fax', langno = arguments.usersettings.language), q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fieldname', 'b_fax', q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fieldtype', '0', q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fielddescription', '', q_table_fields.recordcount)>
 		
 
-	<cfset tmp = QueryAddRow(q_table_fields, 1)>
+	<cfset QueryAddRow(q_table_fields, 1)>
 	<cfset QuerySetCell(q_table_fields, 'showname', a_cmp_lang.GetLangValExt(entryid = 'cm_wd_mobile', langno = arguments.usersettings.language), q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fieldname', 'b_mobile', q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fieldtype', '0', q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fielddescription', '', q_table_fields.recordcount)>
 				
-	<cfset tmp = QueryAddRow(q_table_fields, 1)>
+	<cfset QueryAddRow(q_table_fields, 1)>
 	<cfset QuerySetCell(q_table_fields, 'showname', a_cmp_lang.GetLangValExt(entryid = 'cm_wd_categories', langno = arguments.usersettings.language), q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fieldname', 'categories', q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fieldtype', '0', q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fielddescription', '', q_table_fields.recordcount)>
 								
-	<cfset tmp = QueryAddRow(q_table_fields, 1)>
+	<cfset QueryAddRow(q_table_fields, 1)>
 	<cfset QuerySetCell(q_table_fields, 'showname', a_cmp_lang.GetLangValExt(entryid = 'adrb_wd_surname', langno = arguments.usersettings.language), q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fieldname', 'surname', q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fieldtype', '0', q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fielddescription', '', q_table_fields.recordcount)>	
 	
-	<cfset tmp = QueryAddRow(q_table_fields, 1)>
+	<cfset QueryAddRow(q_table_fields, 1)>
 	<cfset QuerySetCell(q_table_fields, 'showname', a_cmp_lang.GetLangValExt(entryid = 'adrb_wd_title', langno = arguments.usersettings.language), q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fieldname', 'title', q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fieldtype', '0', q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fielddescription', '', q_table_fields.recordcount)>	
 		
-	<cfset tmp = QueryAddRow(q_table_fields, 1)>
+	<cfset QueryAddRow(q_table_fields, 1)>
 	<cfset QuerySetCell(q_table_fields, 'showname', a_cmp_lang.GetLangValExt(entryid = 'adrb_wd_firstname', langno = arguments.usersettings.language), q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fieldname', 'firstname', q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fieldtype', '0', q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fielddescription', '', q_table_fields.recordcount)>	
 	
-	<cfset tmp = QueryAddRow(q_table_fields, 1)>
+	<cfset QueryAddRow(q_table_fields, 1)>
 	<cfset QuerySetCell(q_table_fields, 'showname', 'EMail', q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fieldname', 'email_prim', q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fieldtype', '0', q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fielddescription', '', q_table_fields.recordcount)>	
-	<cfset tmp = QueryAddRow(q_table_fields, 1)>
+	<cfset QueryAddRow(q_table_fields, 1)>
 	<cfset QuerySetCell(q_table_fields, 'showname', a_cmp_lang.GetLangValExt(entryid = 'adrb_wd_company', langno = arguments.usersettings.language), q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fieldname', 'company', q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fieldtype', '0', q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fielddescription', '', q_table_fields.recordcount)>	
 	
-	<cfset tmp = QueryAddRow(q_table_fields, 1)>
+	<cfset QueryAddRow(q_table_fields, 1)>
 	<cfset QuerySetCell(q_table_fields, 'showname', a_cmp_lang.GetLangValExt(entryid = 'adrb_wd_department', langno = arguments.usersettings.language), q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fieldname', 'department', q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fieldtype', '0', q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fielddescription', '', q_table_fields.recordcount)>	
 
-	<cfset tmp = QueryAddRow(q_table_fields, 1)>
+	<cfset QueryAddRow(q_table_fields, 1)>
 	<cfset QuerySetCell(q_table_fields, 'showname', a_cmp_lang.GetLangValExt(entryid = 'adrb_wd_position', langno = arguments.usersettings.language), q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fieldname', 'aposition', q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fieldtype', '0', q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fielddescription', '', q_table_fields.recordcount)>	
 		
 		
-	<cfset tmp = QueryAddRow(q_table_fields, 1)>
+	<cfset QueryAddRow(q_table_fields, 1)>
 	<cfset QuerySetCell(q_table_fields, 'showname', a_cmp_lang.GetLangValExt(entryid = 'adrb_wd_country', langno = arguments.usersettings.language), q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fieldname', 'b_country', q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fieldtype', '0', q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fielddescription', '', q_table_fields.recordcount)>	
-	<cfset tmp = QueryAddRow(q_table_fields, 1)>
+	<cfset QueryAddRow(q_table_fields, 1)>
 	<cfset QuerySetCell(q_table_fields, 'showname', 'Letztkontakt', q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fieldname', 'dt_lastcontact', q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fieldtype', '0', q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fielddescription', '', q_table_fields.recordcount)>	
-	<cfset tmp = QueryAddRow(q_table_fields, 1)>
+	<cfset QueryAddRow(q_table_fields, 1)>
 	<cfset QuerySetCell(q_table_fields, 'showname', 'Betreuer', q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fieldname', 'custodians', q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fieldtype', '0', q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fielddescription', '', q_table_fields.recordcount)>
-	<cfset tmp = QueryAddRow(q_table_fields, 1)>
+	<cfset QueryAddRow(q_table_fields, 1)>
 	<cfset QuerySetCell(q_table_fields, 'showname', a_cmp_lang.GetLangValExt(entryid = 'adrb_wd_city', langno = arguments.usersettings.language), q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fieldname', 'b_city', q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fieldtype', '0', q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fielddescription', '', q_table_fields.recordcount)>	
-	<cfset tmp = QueryAddRow(q_table_fields, 1)>
+	<cfset QueryAddRow(q_table_fields, 1)>
 	<cfset QuerySetCell(q_table_fields, 'showname', a_cmp_lang.GetLangValExt(entryid = 'adrb_wd_zipcode', langno = arguments.usersettings.language), q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fieldname', 'b_zipcode', q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fieldtype', '0', q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fielddescription', '', q_table_fields.recordcount)>		
-	<cfset tmp = QueryAddRow(q_table_fields, 1)>
+	<cfset QueryAddRow(q_table_fields, 1)>
 	<cfset QuerySetCell(q_table_fields, 'showname', a_cmp_lang.GetLangValExt(entryid = 'adrb_wd_country', langno = arguments.usersettings.language), q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fieldname', 'b_country', q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fieldtype', '0', q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fielddescription', '', q_table_fields.recordcount)>		
 	
-	<cfset tmp = QueryAddRow(q_table_fields, 1)>
+	<cfset QueryAddRow(q_table_fields, 1)>
 	<cfset QuerySetCell(q_table_fields, 'showname', a_cmp_lang.GetLangValExt(entryid = 'cm_wd_created', langno = arguments.usersettings.language), q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fieldname', 'dt_created', q_table_fields.recordcount)>
 	<cfset QuerySetCell(q_table_fields, 'fieldtype', '0', q_table_fields.recordcount)>
@@ -215,8 +215,8 @@
 	<cfloop list="#sEntrykeys_of_contact_query#" index="a_str_key">
 		<cfif ListFindNoCase(sEntrykeys_of_own_database, a_str_key) IS 0>
 			<!--- contact has NO crm data, therefore add dummy row ... --->
-			<cfset tmp = QueryAddRow(q_select_crm_data, 1)>
-			<cfset tmp = QuerySetCell(q_select_crm_data, q_select_addressbook_field.fieldname, a_str_key, q_select_crm_data.recordcount)>
+			<cfset QueryAddRow(q_select_crm_data, 1)>
+			<cfset QuerySetCell(q_select_crm_data, q_select_addressbook_field.fieldname, a_str_key, q_select_crm_data.recordcount)>
 		</cfif>
 	</cfloop>
 	

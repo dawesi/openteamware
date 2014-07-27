@@ -35,7 +35,7 @@
 		companykey IN (<cfqueryparam cfsqltype="cf_sql_varchar" value="#a_str_company_keys#" list="yes">)
 	;
 	</cfquery>	
-	<cfset tmp = QuerySetCell(q_return, 'data1', val(q_select_sales_paid.sum_invoicetotalsum), q_return.currentrow)>
+	<cfset QuerySetCell(q_return, 'data1', val(q_select_sales_paid.sum_invoicetotalsum), q_return.currentrow)>
 	
 	<cfquery name="q_select_sales_total" datasource="#request.a_str_db_users#">
 	SELECT
@@ -48,7 +48,7 @@
 		companykey IN (<cfqueryparam cfsqltype="cf_sql_varchar" value="#a_str_company_keys#" list="yes">)		
 	;
 	</cfquery>	
-	<cfset tmp = QuerySetCell(q_return, 'data2', val(q_select_sales_total.sum_invoicetotalsum), q_return.currentrow)>
+	<cfset QuerySetCell(q_return, 'data2', val(q_select_sales_total.sum_invoicetotalsum), q_return.currentrow)>
 	
 	<cfquery name="q_select_sales_new" datasource="#request.a_str_db_users#">
 	SELECT
@@ -65,7 +65,7 @@
 		companykey IN (<cfqueryparam cfsqltype="cf_sql_varchar" value="#a_str_company_keys#" list="yes">)		
 	;
 	</cfquery>	
-	<cfset tmp = QuerySetCell(q_return, 'data3', val(q_select_sales_new.count_new), q_return.currentrow)>
+	<cfset QuerySetCell(q_return, 'data3', val(q_select_sales_new.count_new), q_return.currentrow)>
 	
 	<cfquery name="q_select_sales_renew" datasource="#request.a_str_db_users#">
 	SELECT
@@ -82,7 +82,7 @@
 		companykey IN (<cfqueryparam cfsqltype="cf_sql_varchar" value="#a_str_company_keys#" list="yes">)		
 	;
 	</cfquery>	
-	<cfset tmp = QuerySetCell(q_return, 'data4', val(q_select_sales_renew.count_renew), q_return.currentrow)>	
+	<cfset QuerySetCell(q_return, 'data4', val(q_select_sales_renew.count_renew), q_return.currentrow)>	
 	
 	<cfquery name="q_select_invoice_avg_sum" datasource="#request.a_str_db_users#">
 	SELECT
@@ -99,7 +99,7 @@
 		companykey IN (<cfqueryparam cfsqltype="cf_sql_varchar" value="#a_str_company_keys#" list="yes">)		
 	;
 	</cfquery>	
-	<cfset tmp = QuerySetCell(q_return, 'data5', val(q_select_invoice_avg_sum.avg_sum), q_return.currentrow)>		
+	<cfset QuerySetCell(q_return, 'data5', val(q_select_invoice_avg_sum.avg_sum), q_return.currentrow)>		
 	
 	<cfquery name="q_select_invoices_count" datasource="#request.a_str_db_users#">
 	SELECT
@@ -112,7 +112,7 @@
 		companykey IN (<cfqueryparam cfsqltype="cf_sql_varchar" value="#a_str_company_keys#" list="yes">)		
 	;
 	</cfquery>	
-	<cfset tmp = QuerySetCell(q_return, 'data6', Val(q_select_invoices_count.count_invoices), q_return.currentrow)>		
+	<cfset QuerySetCell(q_return, 'data6', Val(q_select_invoices_count.count_invoices), q_return.currentrow)>		
 	
 	<cfquery name="q_select_unpaid_invoices_sum" datasource="#request.a_str_db_users#">
 	SELECT
@@ -142,6 +142,6 @@
 	<cfset a_int_share_not_paid = q_select_unpaid_invoices_sum.sum_invoices / a_int_one_perc>
 	<cfcatch type="any"> </cfcatch></cftry>
 	
-	<cfset tmp = QuerySetCell(q_return, 'data7', DecimalFormat(a_int_share_not_paid), q_return.currentrow)>		
+	<cfset QuerySetCell(q_return, 'data7', DecimalFormat(a_int_share_not_paid), q_return.currentrow)>		
 	
 </cfloop>

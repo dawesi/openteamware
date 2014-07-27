@@ -6,7 +6,7 @@
 	<cflocation addtoken="No" url="../email/">
 </cfif>
 
-<cfset tmp = SetHeaderTopInfoString(GetLangVal('adrb_ph_quickadd')) />
+<cfset SetHeaderTopInfoString(GetLangVal('adrb_ph_quickadd')) />
 
 
 <form action="act_quicksave.cfm" method="POST" enablecab="No">

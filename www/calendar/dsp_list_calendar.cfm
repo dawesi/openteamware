@@ -51,7 +51,7 @@ ORDER BY
 </cfquery>
 
 <!--- listenweise ausgabe --->
-<cfset tmp = SetHeaderTopInfoString(GetLangVal('cal_wd_listview'))>
+<cfset SetHeaderTopInfoString(GetLangVal('cal_wd_listview'))>
 
 
 <br>

@@ -50,21 +50,21 @@ WHERE
 
 <cfloop query="q_select_connected_tasks">
 		<!--- add a new row to the output table --->
-		<cfset tmp = QueryAddRow(q_select_data, 1)>
+		<cfset QueryAddRow(q_select_data, 1)>
 		
 		<!--- set the address book key --->
-		<cfset tmp = QuerySetCell(q_select_data, 'addressbookkey', q_select_connected_tasks.contactkey, q_select_data.recordcount)>
+		<cfset QuerySetCell(q_select_data, 'addressbookkey', q_select_connected_tasks.contactkey, q_select_data.recordcount)>
 		
 		<!--- set common data like subject, item_Type ... these fields have ALWAYS to exist! --->
-		<cfset tmp = QuerySetCell(q_select_data, 'VIRT_ITEMTYPE', request.a_cmp_lang.GetLangValExt(entryid = 'cm_wd_task', langno = arguments.usersettings.language), q_select_data.recordcount)>
-		<cfset tmp = QuerySetCell(q_select_data, 'VIRT_SUBJECT', q_select_connected_tasks.title, q_select_data.recordcount)>
+		<cfset QuerySetCell(q_select_data, 'VIRT_ITEMTYPE', request.a_cmp_lang.GetLangValExt(entryid = 'cm_wd_task', langno = arguments.usersettings.language), q_select_data.recordcount)>
+		<cfset QuerySetCell(q_select_data, 'VIRT_SUBJECT', q_select_connected_tasks.title, q_select_data.recordcount)>
 
 		<cfset a_str_task_status_langval = 'tsk_wd_status_' & q_select_connected_tasks.status>		
-		<cfset tmp = QuerySetCell(q_select_data, 'virt_task_status', request.a_cmp_lang.GetLangValExt(entryid = a_str_task_status_langval, langno = arguments.usersettings.language), q_select_data.recordcount)>
+		<cfset QuerySetCell(q_select_data, 'virt_task_status', request.a_cmp_lang.GetLangValExt(entryid = a_str_task_status_langval, langno = arguments.usersettings.language), q_select_data.recordcount)>
 		
-		<cfset tmp = QuerySetCell(q_select_data, 'VIRT_createdbyuserkey', q_select_connected_tasks.userkey, q_select_data.recordcount)>
+		<cfset QuerySetCell(q_select_data, 'VIRT_createdbyuserkey', q_select_connected_tasks.userkey, q_select_data.recordcount)>
 		<!--- creation date --->
-		<cfset tmp = QuerySetCell(q_select_data, 'virt_itemcreated', q_select_connected_tasks.dt_created, q_select_data.recordcount)>
+		<cfset QuerySetCell(q_select_data, 'virt_itemcreated', q_select_connected_tasks.dt_created, q_select_data.recordcount)>
 		
 		
 		<cfsavecontent variable="a_str_description">
@@ -76,7 +76,7 @@ WHERE
 			</cfoutput>
 		</cfsavecontent>
 		
-	<cfset tmp = QuerySetCell(q_select_data, 'virt_description', trim(a_str_description), q_select_data.recordcount)>
+	<cfset QuerySetCell(q_select_data, 'virt_description', trim(a_str_description), q_select_data.recordcount)>
 
 </cfloop>
 

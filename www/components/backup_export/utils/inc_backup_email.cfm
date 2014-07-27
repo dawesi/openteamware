@@ -38,7 +38,7 @@
 
 	<!--- backup all folders except junkmail --->
 	<cfif ListFindNoCase('INBOX.Junkmail', variables.q_select_folders.fullfoldername) IS 0>
-		<cfset tmp = LogMessage('current folder: ' & variables.q_select_folders.fullfoldername)>
+		<cfset LogMessage('current folder: ' & variables.q_select_folders.fullfoldername)>
 	
 		
 		<cfset a_str_current_backup_dir = a_str_backup_dir & request.a_str_dir_separator & variables.q_select_folders.fullfoldername & request.a_str_dir_separator>
@@ -74,7 +74,7 @@
 			
 			<!--- // loop through folders // --->
 			
-			<cfset tmp = LogMessage('messagecount: ' & ArrayLen(ar_Messages))>
+			<cfset LogMessage('messagecount: ' & ArrayLen(ar_Messages))>
 			
 			<cfscript>
 			for(loop=1; loop LTE ArrayLen(ar_Messages); loop=loop+1)

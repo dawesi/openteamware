@@ -23,7 +23,7 @@
 	;
 	</cfquery>
 	
-	<cfset tmp = QuerySetCell(q_return, 'data1', val(q_select_subscr.count_id), q_return.currentrow)>
+	<cfset QuerySetCell(q_return, 'data1', val(q_select_subscr.count_id), q_return.currentrow)>
 	
 	<!--- paid --->
 	<cfquery name="q_select_subscr_paid" dbtype="query">
@@ -44,7 +44,7 @@
 	;
 	</cfquery>
 	
-	<cfset tmp = QuerySetCell(q_return, 'data2', val(q_select_subscr_paid.count_id), q_return.currentrow)>
+	<cfset QuerySetCell(q_return, 'data2', val(q_select_subscr_paid.count_id), q_return.currentrow)>
 	
 	<!--- created by self registration --->
 	<cfquery name="q_select_createdby_reseller" dbtype="query">
@@ -59,7 +59,7 @@
 	;
 	</cfquery>		
 	
-	<cfset tmp = QuerySetCell(q_return, 'data3', val(q_select_createdby_reseller.count_id), q_return.currentrow)>
+	<cfset QuerySetCell(q_return, 'data3', val(q_select_createdby_reseller.count_id), q_return.currentrow)>
 	
 	<!--- AGB accepted --->
 	<cfquery name="q_select_active" dbtype="query">
@@ -81,7 +81,7 @@
 	<!--- select count logins ... --->
 	
 	
-	<cfset tmp = QuerySetCell(q_return, 'data4', val(q_select_active.count_id), q_return.currentrow)>
+	<cfset QuerySetCell(q_return, 'data4', val(q_select_active.count_id), q_return.currentrow)>
 	
 	<!--- netto ... --->
 	

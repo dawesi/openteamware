@@ -7,7 +7,7 @@
 // --->
 
 <cfif isStruct("application.forms")>
-	<cfset tmp = StructClear(application.forms)>
+	<cfset StructClear(application.forms)>
 </cfif>
 
 <cfinvoke component="#application.components.cmp_forms#" method="UpdateFormDefinitionsFromXML" returnvariable="a_bol_init">

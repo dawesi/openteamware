@@ -9,7 +9,7 @@
 
 <cfset a_str_categories = GetUserPrefPerson('common', 'personalcategories', '', '', false) />
 
-<cfset tmp = SetHeaderTopInfoString( GetLangVal('prf_ph_personal_data_own_categories') ) />
+<cfset SetHeaderTopInfoString( GetLangVal('prf_ph_personal_data_own_categories') ) />
 
 <cfoutput>#GetLangVal('prf_ph_own_categories_description')#</cfoutput>
 <br /><br />
@@ -18,7 +18,7 @@
 <ul class="img_points">
 <cfloop list="#a_str_categories#" index="a_str_category" delimiters=",">
 <cfoutput>
-	<li>#htmleditformat(a_str_category)# <a href="javascript:deletecategory('#jsstringformat(a_str_category)#');"><span class="glyphicon glyphicon-trashÓ></span></a></li>
+	<li>#htmleditformat(a_str_category)# <a href="javascript:deletecategory('#jsstringformat(a_str_category)#');"><span class="glyphicon glyphicon-trashï¿½></span></a></li>
 </cfoutput>
 
 </cfloop>

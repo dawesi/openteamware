@@ -91,7 +91,7 @@ ORDER BY
 
 		</cfif>
 		
-		<cfset tmp = QuerySetCell(q_return, 'data'&a_int_service_no, val(q_select_service_day.count_clicks), a_int_currentrow_return_query)>
+		<cfset QuerySetCell(q_return, 'data'&a_int_service_no, val(q_select_service_day.count_clicks), a_int_currentrow_return_query)>
 		
 	</cfloop>
 </cfloop>

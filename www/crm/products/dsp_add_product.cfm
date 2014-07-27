@@ -7,7 +7,7 @@
 <cfparam name="url.entrykey" type="string" default="" />
 <cfparam name="url.contactkey" type="string" />
 
-<cfset tmp = SetHeaderTopInfoString(GetLangVal('crm_ph_assign_product')) />
+<cfset SetHeaderTopInfoString(GetLangVal('crm_ph_assign_product')) />
 
 <cfset a_str_product_action = 'create'/>
 <cfset q_select_products_of_contact = QueryNew('') />

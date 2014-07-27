@@ -25,7 +25,7 @@ LIMIT #SelectClickStreamRequest.maxrows#
 
 
 
-<cfset tmp = ArraySet(a_arr_path, 1, q_select_clickstream.recordcount, StructNew())>
+<cfset ArraySet(a_arr_path, 1, q_select_clickstream.recordcount, StructNew())>
 
 
 

@@ -20,7 +20,7 @@
 	a_arr_fields_meta = new Array();
 </cfsavecontent>
 
-<cfset tmp = AddJSToExecuteAfterPageLoad('', a_str_js) />
+<cfset AddJSToExecuteAfterPageLoad('', a_str_js) />
  --->
 
 

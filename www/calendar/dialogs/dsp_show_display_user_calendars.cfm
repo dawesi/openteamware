@@ -46,7 +46,7 @@
 	</table>
 </cfif>
 
-<cfset tmp = StartNewTabNavigation() />
+<cfset StartNewTabNavigation() />
 <cfset a_str_id_workgroups = AddTabNavigationItem(GetLangValJS('cm_wd_workgroups'), '', '') />
 <cfset a_str_id_secretary = AddTabNavigationItem(GetLangValJS('adm_ph_secretary_entries'), '', '') />
 <cfset a_str_id_resources = AddTabNavigationItem(GetLangValJS('cm_wd_resources'), '', '') />

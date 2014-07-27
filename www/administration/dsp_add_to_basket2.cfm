@@ -46,10 +46,10 @@
 	
 	<cfset q_select_price = QueryNew('quantity,price1')>
 	
-	<cfset tmp = QueryAddRow(q_select_price, 1)>
+	<cfset QueryAddRow(q_select_price, 1)>
 	
-	<cfset tmp = QuerySetCell(q_select_price, 'quantity', form.frmownquantity, 1)>
-	<cfset tmp = QuerySetCell(q_select_price, 'price1', form.frmpriceown, 1)>
+	<cfset QuerySetCell(q_select_price, 'quantity', form.frmownquantity, 1)>
+	<cfset QuerySetCell(q_select_price, 'price1', form.frmpriceown, 1)>
 	
 	<!--- check if OK --->
 

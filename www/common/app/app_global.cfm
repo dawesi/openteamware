@@ -218,7 +218,7 @@
 
 <cfif Len(a_str_langs_to_load) GT 0>
 	<cfloop list="#a_str_langs_to_load#" index="iLangNo">
-	<cfset tmp = application.components.cmp_lang.LoadTranslationData(langno = iLangNo) />
+	<cfset application.components.cmp_lang.LoadTranslationData(langno = iLangNo) />
 	</cfloop>
 </cfif>
 

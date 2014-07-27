@@ -61,7 +61,7 @@
 <cfset q_userlogin = stReturn.q_userdata />
 
 <!--- set various session vars ... add structure to session scope ... --->
-<!--- <cfset tmp = StructAppend(session, application.components.cmp_session.CreateInternalSessionVars(userkey = q_userlogin.entrykey)) />
+<!--- <cfset StructAppend(session, application.components.cmp_session.CreateInternalSessionVars(userkey = q_userlogin.entrykey)) />
  --->
 <!--- add permission management ... --->
 <cfset session.stSecurityContext = application.components.cmp_security.GetSecurityContextStructure(userkey = q_userlogin.entrykey) />

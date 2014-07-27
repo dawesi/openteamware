@@ -16,10 +16,10 @@
 
 <cfset q_select_avaliable_actions = cmp_security.LoadAvaliableActionsofService('')>
 
-<cfset tmp = QueryAddColumn(q_select_avaliable_actions, "ok", ArrayNew(1))>
+<cfset QueryAddColumn(q_select_avaliable_actions, "ok", ArrayNew(1))>
 
 <cfoutput query="q_select_avaliable_actions">
-	<cfset tmp = QuerySetCell(q_select_avaliable_actions, "ok", 0, q_select_avaliable_actions.currentrow)>
+	<cfset QuerySetCell(q_select_avaliable_actions, "ok", 0, q_select_avaliable_actions.currentrow)>
 </cfoutput>
 
 
@@ -42,7 +42,7 @@
 	</cfquery>--->
 	
 	<cfif ii gt 0>
-			<cfset tmp = QuerySetCell(q_select_avaliable_actions, "ok", 1, q_select_avaliable_actions.currentrow)>
+			<cfset QuerySetCell(q_select_avaliable_actions, "ok", 1, q_select_avaliable_actions.currentrow)>
 	</cfif>
 	
 </cfoutput>

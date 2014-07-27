@@ -92,8 +92,6 @@
 
 <cfset request.a_str_current_page_title = a_str_display_header />
 
-<h2><cfoutput>#htmleditformat( a_str_display_header )#</cfoutput></h2>
-
 <cfset SetHeaderTopInfoString(a_str_display_header) />
 
 

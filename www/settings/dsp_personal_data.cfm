@@ -10,7 +10,7 @@
 
 <cfparam name="url.message" type="string" default="">
 
-<cfset tmp = SetHeaderTopInfoString(GetLangVal('prf_ph_personal_data_name_tel'))>
+<cfset SetHeaderTopInfoString(GetLangVal('prf_ph_personal_data_name_tel'))>
 
 
 <!--- load personal data --->

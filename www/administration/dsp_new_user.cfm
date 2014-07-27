@@ -12,7 +12,7 @@
 <!--- is company in trial phase? --->
 <cfset LoadCompanyData.entrykey = url.companykey>
 <cfinclude template="queries/q_select_company_data.cfm">
-<cfset tmp = SetHeaderTopInfoString(GetLangVal('adm_ph_add_user_now')) />
+<cfset SetHeaderTopInfoString(GetLangVal('adm_ph_add_user_now')) />
 	
 <!--- check if there are still users avaliable ... otherwise move to shop ... --->
 

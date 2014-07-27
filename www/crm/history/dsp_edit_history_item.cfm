@@ -9,7 +9,7 @@
 
 <cfparam name="url.entrykey" type="string">
 
-<cfset tmp = SetHeaderTopInfoString( GetLangVal('cm_wd_edit') ) />
+<cfset SetHeaderTopInfoString( GetLangVal('cm_wd_edit') ) />
 
 <cfset sEntrykeys_fields_to_ignore = '3D42AD67-C5AA-7AF2-1276E7948DA1BEC8' />
 

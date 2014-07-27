@@ -25,7 +25,7 @@
 	<cfexit method="exittemplate">
 </cfif>
 
-<cfset tmp = SetHeaderTopInfoString(GetLangVal('crm_ph_sales_project') & ' ' & htmleditformat(q_select_sales_project.title))>
+<cfset SetHeaderTopInfoString(GetLangVal('crm_ph_sales_project') & ' ' & htmleditformat(q_select_sales_project.title))>
 
 <cfset a_cmp_addressbook = CreateObject('component', request.a_str_component_addressbook)>
 <cfset a_cmp_users = CreateObject('component', request.a_str_component_users)>

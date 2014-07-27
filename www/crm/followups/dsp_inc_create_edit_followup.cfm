@@ -15,7 +15,7 @@
 
 <!--- create a new follow up ... --->
 <cfif CreateEditFollowupJob.action IS 'create'>
-	<cfset tmp = QueryAddRow(CreateEditFollowupJob.query, 1)>
+	<cfset QueryAddRow(CreateEditFollowupJob.query, 1)>
 	<cfset QuerySetCell(CreateEditFollowupJob.query, 'objecttitle', url.title) />
 	<cfset QuerySetCell(CreateEditFollowupJob.query, 'servicekey', url.servicekey) />
 	<cfset QuerySetCell(CreateEditFollowupJob.query, 'userkey', url.userkey) />

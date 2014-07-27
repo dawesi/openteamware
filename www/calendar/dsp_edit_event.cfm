@@ -16,7 +16,7 @@
 	<cfinvokeargument name="eventkey" value="#url.entrykey#">
 </cfinvoke>
 
-<cfset tmp = SetHeaderTopInfoString(GetLangVal('cal_wd_caption_edit'))>
+<cfset SetHeaderTopInfoString(GetLangVal('cal_wd_caption_edit'))>
 
 <cfif NOT stReturn.rights.edit>
 	<h4>No Permissions to edit this item.</h4>

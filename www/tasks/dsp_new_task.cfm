@@ -9,7 +9,7 @@
 <cfparam name="url.assigned_addressbookkeys" type="string" default="">
 <cfparam name="url.assigned_userkey" type="string" default="">
 
-<cfset tmp = SetHeaderTopInfoString(GetLangVal('tsk_ph_createnewtask'))>
+<cfset SetHeaderTopInfoString(GetLangVal('tsk_ph_createnewtask'))>
 
 <!--- set the new uuid ... --->
 <cfset a_str_new_uuid = CreateUUID()>

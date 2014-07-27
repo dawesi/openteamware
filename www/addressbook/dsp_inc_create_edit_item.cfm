@@ -68,10 +68,10 @@
 					</cfquery>
 					
 					<cfset a_str_old_value = '<br /><span>' & JsStringFormatEx(CreateEditItem.query[a_str_col][1]) & '</span>' />
-					<cfset tmp = AddJSToExecuteAfterPageLoad('$("###q_select_form_element.input_name#").parent().append(''#a_str_old_value#'').css(''backgroundColor'', ''orange'');', '') />
+					<cfset AddJSToExecuteAfterPageLoad('$("###q_select_form_element.input_name#").parent().append(''#a_str_old_value#'').css(''backgroundColor'', ''orange'');', '') />
 						
 					<cftry>
-					<cfset tmp = QuerySetCell(CreateEditItem.query, a_str_col, a_str_possible_new_value, 1) />
+					<cfset QuerySetCell(CreateEditItem.query, a_str_col, a_str_possible_new_value, 1) />
 					<cfcatch type="any"></cfcatch>
 					</cftry>
 					

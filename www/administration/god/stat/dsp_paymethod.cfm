@@ -296,10 +296,10 @@ FROM
 	
 	<cfswitch expression="#q_select_distinct_invoicetypes.invoicetype#">
 		<cfcase value="0">
-			<cfset tmp = QuerySetCell(q_select_distinct_invoicetypes, 'invoicetype', 'Erstrechnung', q_select_distinct_invoicetypes.currentrow)>
+			<cfset QuerySetCell(q_select_distinct_invoicetypes, 'invoicetype', 'Erstrechnung', q_select_distinct_invoicetypes.currentrow)>
 		</cfcase>
 		<cfcase value="1">
-			<cfset tmp = QuerySetCell(q_select_distinct_invoicetypes, 'invoicetype', 'Verlaengerung', q_select_distinct_invoicetypes.currentrow)>
+			<cfset QuerySetCell(q_select_distinct_invoicetypes, 'invoicetype', 'Verlaengerung', q_select_distinct_invoicetypes.currentrow)>
 		</cfcase>
 		
 	</cfswitch>
@@ -343,13 +343,13 @@ FROM
 	
 	<cfswitch expression="#q_select_distinct_createdbytypes.createdbytype#">
 		<cfcase value="0">
-			<cfset tmp = QuerySetCell(q_select_distinct_createdbytypes, 'createdbytype', 'Kunde selbst', q_select_distinct_createdbytypes.currentrow)>
+			<cfset QuerySetCell(q_select_distinct_createdbytypes, 'createdbytype', 'Kunde selbst', q_select_distinct_createdbytypes.currentrow)>
 		</cfcase>
 		<cfcase value="1">
-			<cfset tmp = QuerySetCell(q_select_distinct_createdbytypes, 'createdbytype', 'Systempartner', q_select_distinct_createdbytypes.currentrow)>
+			<cfset QuerySetCell(q_select_distinct_createdbytypes, 'createdbytype', 'Systempartner', q_select_distinct_createdbytypes.currentrow)>
 		</cfcase>
 		<cfcase value="2">
-			<cfset tmp = QuerySetCell(q_select_distinct_createdbytypes, 'createdbytype', 'Automatisch (System)', q_select_distinct_createdbytypes.currentrow)>
+			<cfset QuerySetCell(q_select_distinct_createdbytypes, 'createdbytype', 'Automatisch (System)', q_select_distinct_createdbytypes.currentrow)>
 		</cfcase>		
 	</cfswitch>
 	

@@ -19,14 +19,12 @@
 <body style="padding:15px;">
 <br/>
 
-<!--- log exception ... ---><!---
 <cfset application.components.cmp_log.LogException(error = arguments.exception,
 				session = session,
 				message = arguments.exception.RootCause.message,
 				url = url,
 				form = form,
-				cgi = cgi) /> --->
-
+				cgi = cgi) />
 
 <h2><img src="/images/si/error.png" /> Wichtige Systemmeldung</h2>
 <h4>Ein Fehler ist aufgetreten - der Webmaster wurde soeben benachrichtigt!</h4>

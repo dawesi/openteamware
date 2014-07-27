@@ -1,8 +1,8 @@
 <!--- //
 
 	Module:		Framework
-	Description:check login data and load session variables 
-	
+	Description:check login data and load session variables
+
 
 // --->
 
@@ -43,7 +43,7 @@
 
 <!--- an error occured ... --->
 <cfif NOT stReturn.result>
-	
+
 	<cfswitch expression="#stReturn.error#">
 		<cfcase value="201">
 			<!--- open invoices ... --->
@@ -54,7 +54,7 @@
 			<cflocation addtoken="No" url="index.cfm?loginfailed=true&ibxerrorno=#stReturn.error#">
 		</cfdefaultcase>
 	</cfswitch>
-	
+
 </cfif>
 
 <!--- query holding the user data ... --->
@@ -80,23 +80,18 @@
 <!--- client variable setzen --->
 <cfset client.LastLoginUsername = a_str_username />
 
-<!--- catc accepted? ... --->
-<cfif NOT application.components.cmp_licence.CommonTermsAndConditionsAccepted(companykey = q_userlogin.companykey)>
-	<cflocation addtoken="no" url="../content/pages/specials/acceptctac/">
-</cfif>
-
 <!--- get forwarding target ... --->
 <cfset alocation = "/" />
 
 <cfif StructKeyExists(form, 'url') AND Len(trim(form.url)) GT 0>
 	<cfset ALocation = UrlDecode(form.URL) />
-</cfif>			
+</cfif>
 
 <cfset a_struct_medium_logo = application.components.cmp_customize.GetCustomStyleData(usersettings = session.stUserSettings, entryname = 'medium_logo') />
 
 <html>
 	<head>
-	
+
 	<meta http-equiv="refresh" content="1;URL=<cfoutput>#alocation#</cfoutput>" />
 
 	<script type="text/javascript">
@@ -104,24 +99,24 @@
 	</script>
 	</head>
 <body>
-	
+
 <table width="100%" height="98%" border="0">
 	<tr>
 		<td align="center" valign="middle">
 
 		<div style="width:420px;padding:10px;background-color:white; " class="b_all">
-		
+
 		<cfoutput>#GetLangVal('lg_ph_title')#</cfoutput>
-			
+
 		<table width="100%" border="0" cellpadding="4" cellspacing="0">
 		    <tr>
 				<td align="center">
-				
+
 				<cftry>
 				<cfoutput>
 					<a href="/"><img src="#a_struct_medium_logo.path#" width="#a_struct_medium_logo.width#" height="#a_struct_medium_logo.height#" hspace="10" vspace="10" border="0"></a>
 				</cfoutput>
-				
+
 				<cfcatch type="any">
 				</cfcatch>
 				</cftry>
@@ -140,7 +135,7 @@
 
 				<cfoutput>#GetLangVal('lg_ph_login_success_2')#</cfoutput><br>
 
-				(<a href="<cfoutput>#alocation#</cfoutput>"><cfoutput>#GetLangVal('lg_ph_login_auto_forward')#</cfoutput> ...</a>) 
+				(<a href="<cfoutput>#alocation#</cfoutput>"><cfoutput>#GetLangVal('lg_ph_login_auto_forward')#</cfoutput> ...</a>)
 
 				</td>
 			</tr>
@@ -164,7 +159,7 @@
 	</cfquery>
 
 <cfcatch type="any">
-	
+
 </cfcatch>
 </cftry>
 

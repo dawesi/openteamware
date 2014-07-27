@@ -15,6 +15,8 @@
 
 			<cfset applications.components = StructNew() />
 
+			<cfset application.components.cmp_log = CreateObject('component', request.a_str_component_logs) />
+
 			<!--- important: load these components first ... --->
 			<cfset application.components.cmp_datatypeconvert = CreateObject('component', request.a_str_component_datatypeconvert) />
 
@@ -29,6 +31,10 @@
 			<cfset application.components.cmp_history = CreateObject("component", "/components/tools/cmp_history") />
 
 			<cfset application.components.cmp_followups = CreateObject("component", request.a_str_component_followups) />
+
+			<cfset application.components.cmp_calendar = createObject( '/components/calendar/cmp_calendar' ) />
+
+			<cfset application.components.cmp_customer = createObject( '/components/management/customers/cmp_customer') />
 
 			<cfset application.components.cmp_load_user_data = CreateObject("component", "/components/management/users/cmp_load_userdata") />
 
@@ -49,8 +55,6 @@
 			<cfset application.components.cmp_addressbook = CreateObject('component', request.a_str_component_addressbook) />
 
 			<cfset application.components.cmp_crmsales = CreateObject('component', request.a_str_component_crm_sales) />
-
-			<cfset application.components.cmp_log = CreateObject('component', request.a_str_component_logs) />
 
 			<cfset application.components.cmp_assigned_items = CreateObject('component', request.a_str_component_assigned_items) />
 

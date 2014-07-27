@@ -3,11 +3,11 @@
 	Module:        CRM
 	Action:        CreateEditHistoryItem
 	Description:   Add a history element to an object, e.g. a contact
-	
+
 	Params:        url.entrykey (entrykey of history element (if update)
 				   url.objectkey ... entrykey of object
 				   url.servicekey ... entrykey of service
-				   
+
 				   plus other parameters given maybe in the url scope (see form definition)
 
 // --->
@@ -32,8 +32,6 @@
 <cfset url.type = val(url.type) />
 
 <cfset a_struct_force_element_values.object_title_display = 'sdfsdfdsf' />
-
-<cfset SetHeaderTopInfoString('123') />
 
 <cfset sEntrykeys_fields_to_ignore = '3D42AD67-C5AA-7AF2-1276E7948DA1BEC8' />
 

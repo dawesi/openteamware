@@ -1632,7 +1632,7 @@ function AddJSToExecuteAfterPageLoad(js_function_2call, js_function) {
 	
 	request.a_arr_js_scripts_to_execute_on_load[i] = StructNew();
 	request.a_arr_js_scripts_to_execute_on_load[i].js_function_2call = trim(js_function_2call);
-	request.a_arr_js_scripts_to_execute_on_load[i].js_function = CompressJavaScriptOutput(js_function);
+	request.a_arr_js_scripts_to_execute_on_load[i].js_function = js_function;
 	}
 		
 // return a very simple div with id and and nothing else **
@@ -1701,32 +1701,6 @@ function WriteNewContentBox(title, button_area, content) {
 	return sReturn;
 	}	
 
-// compress a javascript output
-function CompressJavaScriptOutput(s) {
-	var a_return = s;
-	
-	
-	
-	// made many problems (e.g. with line breaks ...)
-	
-	// had to be removed because did not work with // in code (e.g. http:// ...)
-	var lineRem = '\/\/[^#chr(13)##chr(10)#1wl]*';
-	var blockRem1 = '/\*';
-	var blockRem2 = '\*/';
-	var spaces = '[\s]*([\=|\{|\}|\(|\)|\;|[|\]|\+|\-|\n|\r]+)[\s]*';
-	var retornos = '[\r\n\f]*';
-	
-	return trim(a_return);
-
-	a_return = REReplaceNoCase(a_return,blockRem1,"¬","ALL");
-	a_return = REReplaceNoCase(a_return,blockRem2,"¬","ALL");
-	//a_return = REReplaceNoCase(a_return,lineRem,"","ALL");
-	a_return = REReplaceNoCase(a_return,spaces,"\1","ALL");
-	// a_return = REReplaceNoCase(a_return,retornos,"","ALL");
-	
-	return a_return;
-	}
-	
 		
 // create a uuid without -
 function CreateUUIDJS() {

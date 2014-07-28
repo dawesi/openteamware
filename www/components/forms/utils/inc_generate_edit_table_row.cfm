@@ -216,21 +216,23 @@
 
 					<!--- smaller if date + time --->
 					<cfif a_struct_form_element.datatype IS 'datetime'>
-						<cfset a_str_style_date_input = 'width:140px;' />
+						<cfset a_str_style_date_input = 'width:180px;' />
 					<cfelse>
 						<cfset a_str_style_date_input = '' />
 					</cfif>
 
 
-					<input class="" style="#a_str_style_date_input# " type="date" size="8" id="#a_struct_form_element.input_name#" name="#a_struct_form_element.input_name#" value="#htmleditformat(a_str_date_value)#" />
+					<input class="" style="#a_str_style_date_input# " type="text" size="8" id="#a_struct_form_element.input_name#" name="#a_struct_form_element.input_name#" value="#htmleditformat(a_str_date_value)#" />
 
-					<!---
+
+<!---
 <cfsavecontent variable="js">
 					$('###a_struct_form_element.input_name#').calendar();
 					</cfsavecontent>
 
 					<cfset AddJSToExecuteAfterPageLoad('', js) />
  --->
+
 
 					<!--- write time selector? --->
 					<cfif a_struct_form_element.datatype IS 'datetime'>

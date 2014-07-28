@@ -1623,6 +1623,9 @@ function WriteClassNameIfNotLastRow(q, class_name) {
 function AddJSToExecuteAfterPageLoad(js_function_2call, js_function) {
 	var i = 0;
 
+	writeOutput( '<script>' & js_function & '</script><script>' & js_function_2call & '</script>');
+	return;
+
 	// if the array does not exists yet, create it
 	if (NOT StructKeyExists(request, 'a_arr_js_scripts_to_execute_on_load')) {
 		request.a_arr_js_scripts_to_execute_on_load = ArrayNew(1);

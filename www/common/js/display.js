@@ -1138,29 +1138,7 @@ function submitenter(myfield,e)	{
 	   return true;
 	}
 	
-function OpenEmailQuickSearch() {
-	var url = '/email/show_popup_search.cfm';
-	window.open(url, 'show_email_search','resizable=no,width=750,height=450');
-	}
-
-// add comment ...
-function AddComment(servicekey,objectkey) {
-	var mywindow=open('/tools/comments/show_add_comment.cfm?servicekey='+escape(servicekey)+'&objectkey='+escape(objectkey),'show_add_comment','resizable=no,width=380,height=250');
-	mywindow.location.href = '/tools/comments/show_add_comment.cfm?servicekey='+escape(servicekey)+'&objectkey='+escape(objectkey);
-	if (mywindow.opener == null) mywindow.opener = self;
-	mywindow.focus();		
-	}
 	
-// load user switch data ...
-function LoadUserSwitchData() {
-	var a_simple_modal_dialog = new cSimpleModalDialog();
-	a_simple_modal_dialog.type = 'custom';
-	a_simple_modal_dialog.customtitle = 'Single Sign On';
-	a_simple_modal_dialog.customwidth = '70%';
-	a_simple_modal_dialog.customcontent_load_from_url = '/tools/switch/show_switch_to_other_user.cfm';
-	a_simple_modal_dialog.ShowDialog();	
-	}
-
 // background operation has been finished	
 function onBGPostOperationFinished(rt) {
 	DisplayStatusInformation('bg operation' + rt);
@@ -1282,18 +1260,9 @@ function GetDirectoryByServiceKey(s) {
 		case '5222B55D-B96B-1960-70BF55BD1435D273':
 			return 'calendar'
 			break;
-		case '52228B55-B4D7-DFDF-4AC7CFB5BDA95AC5':
-			return 'email';
-			break;
 		case '7E70C2DD-9866-2B68-C78B1C805A2905F6':
 			return 'settings';
 			break;
-		case '5222ECD3-06C4-3804-E92ED804C82B68A2':
-			return 'storage';
-			break;
-		case '66A3CE92-923A-0620-7656393EA07FAB3B':
-			return 'forum';
-			break;			
 		default:
 			return 'unknownrequest';
 			break;

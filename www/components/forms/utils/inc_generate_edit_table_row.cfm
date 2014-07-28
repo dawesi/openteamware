@@ -221,27 +221,16 @@
 						<cfset a_str_style_date_input = '' />
 					</cfif>
 
-					<!--- www --->
-					<input class="" style="#a_str_style_date_input# " readonly="yes" type="text" size="8" id="#a_struct_form_element.input_name#" name="#a_struct_form_element.input_name#" value="#htmleditformat(a_str_date_value)#" />
 
-					<!--- <cfset a_str_anchor_name = 'anchor_' & ReplaceNoCase(CreateUUID(), '-', '', 'ALL') />
-					<cfset a_str_cal_name = 'cal_' & ReplaceNoCase(CreateUUID(), '-', '', 'ALL') />
+					<input class="" style="#a_str_style_date_input# " type="date" size="8" id="#a_struct_form_element.input_name#" name="#a_struct_form_element.input_name#" value="#htmleditformat(a_str_date_value)#" />
 
-					<a onClick="#a_str_cal_name#.select(document.#request.a_struct_form_properties.form_id#.#a_struct_form_element.input_name#,'#a_str_anchor_name#','dd.MM.yy'); return false;" href="##" id="#a_str_anchor_name#"><img alt="..." src="/images/si/calendar.png" width="16" height="16" border="0" align="top" vspace="0" hspace="0" /></a>
-
-					<cfsavecontent variable="a_str_js_cal">var #a_str_cal_name# = new CalendarPopup();</cfsavecontent>
-
-					<cfset AddJSToExecuteAfterPageLoad('', a_str_js_cal) /> --->
-
-					<cfset a_str_add_cal_name = RandRange(1, 9999) />
-
-					<cfsavecontent variable="a_str_js_to_add">
-						function DoAddCal<cfoutput>#a_str_add_cal_name#</cfoutput>() {
-						$('###a_struct_form_element.input_name#').calendar();
-						}
+					<!---
+<cfsavecontent variable="js">
+					$('###a_struct_form_element.input_name#').calendar();
 					</cfsavecontent>
 
-					<cfset AddJSToExecuteAfterPageLoad('DoAddCal#a_str_add_cal_name#()', a_str_js_to_add) />
+					<cfset AddJSToExecuteAfterPageLoad('', js) />
+ --->
 
 					<!--- write time selector? --->
 					<cfif a_struct_form_element.datatype IS 'datetime'>

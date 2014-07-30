@@ -1,6 +1,0 @@
-<!--- //
-
-	lookup information ...
-	
-	// --->
-	

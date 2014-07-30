@@ -1,4 +1,0 @@
-<!--- // update calendar
-
-
-	scope: UpdateMetaDataRequest --->

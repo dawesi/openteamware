@@ -1,6 +1,0 @@
-<!--- //
-
-	send invoice by email
-	
-	// --->
-	

@@ -28,8 +28,6 @@
 
 			<cfset application.components.cmp_security = CreateObject("component", request.a_str_component_security) />
 
-			<cfset application.components.cmp_history = CreateObject("component", "/components/tools/cmp_history") />
-
 			<cfset application.components.cmp_followups = CreateObject("component", request.a_str_component_followups) />
 
 			<cfset application.components.cmp_calendar = createObject( '/components/calendar/cmp_calendar' ) />

@@ -36,30 +36,6 @@ OPTIMIZE TABLE
 ;
 </cfquery>
 
-<!--- // updata clickstream table ... set empty title for older items // --->
-
-<cfset a_dt_clickstream = DateAdd('d', -14, Now())>
-
-<cfquery name="q_update_clickstream">
-UPDATE
-	clickstream
-SET
-	title = ''
-WHERE
-	(dt_created < <cfqueryparam cfsqltype="cf_sql_timestamp" value="#CreateODBCDateTime(a_dt_clickstream)#">)
-	AND
-	(Length(userkey) > 0)
-	AND
-	(Length(title) > 0)
-;
-</cfquery>
-
-<cfquery name="q_optimize_clickstream">
-OPTIMIZE TABLE
-	clickstream
-;
-</cfquery>
-
 <!--- // outlooksync log // --->
 
 <cfset a_dt_olsync = DateAdd('d', -21, Now())>

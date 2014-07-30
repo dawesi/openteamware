@@ -1,6 +1,6 @@
 
 
-<cfquery name="q_insert_task" datasource="#request.a_str_db_tools#">
+<cfquery name="q_insert_task">
 INSERT INTO tasks
 	(userkey,
 	 entrykey,

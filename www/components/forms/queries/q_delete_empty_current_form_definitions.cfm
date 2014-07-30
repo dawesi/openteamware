@@ -7,13 +7,13 @@
 
 // --->
 
-<cfquery name="q_delete_forms" datasource="#request.a_str_db_tools#">
+<cfquery name="q_delete_forms">
 DELETE FROM
 	forms
 ;
 </cfquery>
 
-<cfquery name="q_delete_form_fields" datasource="#request.a_str_db_tools#">
+<cfquery name="q_delete_form_fields">
 DELETE FROM
 	form_fields
 ;

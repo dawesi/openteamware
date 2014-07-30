@@ -1,4 +1,4 @@
-<cfquery name="q_update_set_default_sig_1" datasource="#request.a_str_db_tools#">
+<cfquery name="q_update_set_default_sig_1">
 UPDATE
 	email_signatures
 SET
@@ -10,7 +10,7 @@ WHERE
 ;
 </cfquery>
 
-<cfquery name="q_update_set_default_sig" datasource="#request.a_str_db_tools#">
+<cfquery name="q_update_set_default_sig">
 UPDATE
 	email_signatures
 SET

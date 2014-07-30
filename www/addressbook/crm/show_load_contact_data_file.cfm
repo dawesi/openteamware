@@ -1,11 +1,11 @@
 <!--- //
 
 	download file from CRM system ...
-	
+
 	TODO hp: UPDATE
-	
+
 	// --->
-	
+
 <cfinclude template="/login/check_logged_in.cfm">
 
 <cfset a_struct_binding = application.components.cmp_crmsales.GetCRMSalesBinding(companykey = request.stSecurityContext.mycompanykey)>
@@ -26,21 +26,21 @@
 
 <cfset variables.stUserSettings_download_file = a_struct_settings>
 
-<cfinvoke   
-	component = "#application.components.cmp_storage#"   
-	method = "GetFileInformation"   
-	returnVariable = "a_struct_file"   
+<cfinvoke
+	component = "#application.components.cmp_storage#"
+	method = "GetFileInformation"
+	returnVariable = "a_struct_file"
 	entrykey = "#url.entrykey#"
 	securitycontext="#variables.stSecurityContext_download_file#"
 	usersettings="#variables.stUserSettings_download_file#"
 	download=true></cfinvoke>
-	
+
 <cfset q_query_file = a_struct_file.q_select_file_info />
 
 <cfset sEntrykey_dl = CreateUUID()>
 <cfset a_str_newfilename=createUUID()>
-	
-<cfquery name="q_insert_dl_link" datasource="#request.a_str_db_tools#">
+
+<cfquery name="q_insert_dl_link">
 INSERT INTO
 	download_links
 	(

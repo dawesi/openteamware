@@ -13,7 +13,7 @@
 	<cfset arguments.objectkeys = '123' />
 </cfif>
 
-<cfquery name="q_select_assignments" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_assignments">
 SELECT
 	dt_created,
 	objectkey,

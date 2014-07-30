@@ -14,7 +14,7 @@
 	--->
 	
 <!--- tasks --->
-<cfquery name="q_update_tasks" datasource="#request.a_str_db_tools#">
+<cfquery name="q_update_tasks">
 UPDATE
 	tasks
 SET
@@ -26,7 +26,7 @@ WHERE
 </cfquery>
 
 <!--- events --->
-<cfquery name="q_update_calendar" datasource="#request.a_str_db_tools#">
+<cfquery name="q_update_calendar">
 UPDATE
 	calendar
 SET
@@ -38,7 +38,7 @@ WHERE
 </cfquery>
 
 <!--- address book --->
-<cfquery name="q_update_contacts" datasource="#request.a_str_db_tools#">
+<cfquery name="q_update_contacts">
 UPDATE
 	addressbook
 SET
@@ -50,7 +50,7 @@ WHERE
 </cfquery>
 
 <!--- followups --->
-<cfquery name="q_update_followups" datasource="#request.a_str_db_tools#">
+<cfquery name="q_update_followups">
 UPDATE
 	followups
 SET

@@ -8,9 +8,9 @@
 <cfparam name="form.id" default="">
 <cfparam name="form.frmComment" default="">
 
-<cfquery name="q_select_event" datasource="myCalendar" dbtype="ODBC">
+<cfquery name="q_select_event">
 SELECT eventid,emailaddress FROM meeting_members where RandomKey = <cfqueryparam cfsqltype="cf_sql_varchar" value="#form.id#">;
-</cfquery>	
+</cfquery>
 
 <cfif q_select_event.recordcount is 0>
 	<!--- event does not exist any more --->
@@ -18,7 +18,7 @@ SELECT eventid,emailaddress FROM meeting_members where RandomKey = <cfqueryparam
 	<cfabort>
 </cfif>
 
-<cfquery name="q_Select_cal_event" datasource="myCalendar" dbtype="ODBC">
+<cfquery name="q_Select_cal_event">
 SELECT title,username FROM calendar
 WHERE id = <cfqueryparam cfsqltype="cf_sql_integer" value="#q_select_event.eventid#">;
 </cfquery>

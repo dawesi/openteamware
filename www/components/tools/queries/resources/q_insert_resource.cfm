@@ -7,7 +7,7 @@
 // --->
 
 
-<cfquery name="q_insert_resource" datasource="#request.a_str_db_tools#">
+<cfquery name="q_insert_resource">
 INSERT INTO
 	resources
 	(

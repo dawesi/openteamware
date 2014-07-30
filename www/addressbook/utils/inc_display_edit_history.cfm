@@ -1,4 +1,4 @@
-<cfquery name="q_select_history" datasource="#request.a_str_db_log#">
+<cfquery name="q_select_history">
 SELECT
 	editedfields,usercomment,
 	new_data_wddx,old_data_wddx,

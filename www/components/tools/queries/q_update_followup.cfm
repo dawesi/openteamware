@@ -7,7 +7,7 @@
 
 // --->
 
-<cfquery name="q_update_followup" datasource="#request.a_str_db_tools#">
+<cfquery name="q_update_followup">
 UPDATE
 	followups
 SET

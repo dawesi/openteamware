@@ -1,4 +1,4 @@
-<cfquery name="q_select_company_custom_element" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_company_custom_element">
 SELECT
 	content
 FROM

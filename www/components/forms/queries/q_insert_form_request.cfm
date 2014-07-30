@@ -8,7 +8,7 @@
 
 // --->
 
-<cfquery name="q_insert_form_request" datasource="#request.a_str_db_tools#">
+<cfquery name="q_insert_form_request">
 INSERT INTO
 	form_requests
 	(

@@ -2,7 +2,7 @@
 
 	// --->
 	
-<cfquery name="q_delete_reminders" datasource="#request.a_str_db_tools#">
+<cfquery name="q_delete_reminders">
 DELETE FROM
 	cal_remind
 WHERE

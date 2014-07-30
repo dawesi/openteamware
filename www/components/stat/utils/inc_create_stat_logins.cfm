@@ -2,7 +2,7 @@
 
 <cfloop query="q_return">
 
-	<cfquery name="q_select_login_count" datasource="#request.a_str_db_log#">
+	<cfquery name="q_select_login_count">
 	SELECT
 		COUNT(id) AS count_id
 	FROM

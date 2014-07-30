@@ -6,7 +6,7 @@
 	
 // --->
 
-<cfquery name="q_update_virtual_calendar" datasource="#request.a_str_db_tools#">
+<cfquery name="q_update_virtual_calendar">
 UPDATE
 	virtualcalendars
 SET	

@@ -1,4 +1,4 @@
-  <cfquery name="q_get_old_values"  datasource="#request.a_str_db_tools#">
+  <cfquery name="q_get_old_values" >
   SELECT timesseen,firstvisit,lastvisit from scenarioseen WHERE (userid = 
   <cfqueryparam cfsqltype="cf_sql_integer" value="#attributes.userid#">
   ) AND (pagesection = 

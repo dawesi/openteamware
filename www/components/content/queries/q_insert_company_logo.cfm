@@ -6,7 +6,7 @@
 
 // --->
 
-<cfquery name="q_insert_company_logo" datasource="#request.a_str_db_tools#">
+<cfquery name="q_insert_company_logo">
 INSERT INTO
 	companylogos
 	(

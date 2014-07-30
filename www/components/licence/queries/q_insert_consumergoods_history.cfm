@@ -1,4 +1,4 @@
-<cfquery name="q_insert_consumergoods_history" datasource="#request.a_str_db_log#">
+<cfquery name="q_insert_consumergoods_history">
 INSERT INTO
 	consumergoodshistory
 	(

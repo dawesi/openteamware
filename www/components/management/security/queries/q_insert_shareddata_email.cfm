@@ -1,7 +1,7 @@
 
 
 
-<cfquery name="q_insert_shareddata_tasks" datasource="#request.a_Str_db_tools#">
+<cfquery name="q_insert_shareddata_tasks">
 INSERT INTO
 	shareddata_email
 	(

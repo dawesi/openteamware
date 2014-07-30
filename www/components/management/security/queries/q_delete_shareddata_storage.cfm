@@ -1,4 +1,4 @@
-<cfquery name="q_delete_shareddata_storage" datasource="#request.a_str_db_tools#">
+<cfquery name="q_delete_shareddata_storage">
 DELETE FROM
 	directories_shareddata
 WHERE

@@ -1,6 +1,6 @@
 
 
-<cfquery name="q_select_reminders" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_reminders">
 SELECT
 	entrykey,dt_remind,status,type,remind_email_adr,
 	DATE_ADD(dt_remind, INTERVAL -#val(arguments.usersettings.utcdiff)# HOUR) AS dt_remind_local

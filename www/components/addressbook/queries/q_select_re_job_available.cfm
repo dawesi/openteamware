@@ -1,5 +1,5 @@
 
-<cfquery name="q_select_re_job_available" datasource="#GetDSName()#">
+<cfquery name="q_select_re_job_available">
 SELECT
 	COUNT(id) AS count_id
 FROM

@@ -5,7 +5,7 @@
 
 	
 // --->
-<cfquery name="q_delete_virtual_calendar" datasource="#request.a_str_db_tools#">
+<cfquery name="q_delete_virtual_calendar">
 
 DELETE FROM
 	virtualcalendars

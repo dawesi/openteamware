@@ -1,5 +1,5 @@
 
-<cfquery name="q_select_task" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_task">
 SELECT
 	title,status,percentdone,notice,
 	priority,mileage,totalwork,actualwork,

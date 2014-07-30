@@ -28,7 +28,7 @@
 
 <cfsavecontent variable="as">
 
-<cfquery name="q_select_tasks" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_tasks">
 SELECT
 	actualwork,userkey,categories,dt_created,dt_due,assignedtouserkeys,userkey,
 	dt_done,dt_start,entrykey,notice,mileage,percentdone,status,priority,title

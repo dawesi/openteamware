@@ -69,7 +69,7 @@
 	
 <cfset a_str_url = a_str_url & "&sortorder="&a_str_sortorder>
 
-<cfquery name="q_insert_view" datasource="#request.a_str_db_tools#">
+<cfquery name="q_insert_view">
 INSERT INTO
 	savedtaskviews 
 	(entrykey,userkey,href,dt_created,viewname)

@@ -7,7 +7,7 @@
 
 // --->
 
-<cfquery name="q_delete_old_translations" datasource="#request.a_str_db_tools#">
+<cfquery name="q_delete_old_translations">
 DELETE FROM
 	langdata
 ;

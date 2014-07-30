@@ -14,7 +14,7 @@
 <cfwddx action="cfml2wddx" output="a_str_wddx_arguments" input="#arguments.args#">
 <cfwddx action="cfml2wddx" output="a_str_wddx_form" input="#arguments.form#">
 
-<cfquery name="q_insert_exception_log" datasource="#request.a_str_db_log#">
+<cfquery name="q_insert_exception_log">
 INSERT INTO
 	exceptionlog
 (

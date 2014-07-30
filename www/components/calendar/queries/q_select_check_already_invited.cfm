@@ -4,7 +4,7 @@
 	Description:       select amount of meeting member assigned to an event with specified parameter and type
 // --->
 
-<cfquery name="q_select_check_already_invited" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_check_already_invited">
 SELECT
 	COUNT(id) AS count_id
 FROM

@@ -23,7 +23,7 @@
 
 <cfset actual_action =  ''/>
 
-<!--- if productquantitykey is submitted, updates, else insert --->								
+<!--- if productquantitykey is submitted, updates, else insert --->
 <cfif Len(form.frmproductquantitykey) IS 0>
 	<cfset actual_action = 'INSERT'/>
 	<cfset a_struct_available_quantity_of_product.entrykey = CreateUUID() />
@@ -39,7 +39,6 @@
 <cfinvoke component="#application.components.cmp_sql#" method="InsertUpdateRecord" returnvariable="stReturn_db">
 	<cfinvokeargument name="securitycontext" value="#request.stSecurityContext#">
 	<cfinvokeargument name="usersettings" value="#request.stUserSettings#">
-	<cfinvokeargument name="database" value="#request.a_str_db_crm#">
 	<cfinvokeargument name="table" value="productquantity">
 	<cfinvokeargument name="primary_field" value="entrykey">
 	<cfinvokeargument name="data" value="#a_struct_available_quantity_of_product#">

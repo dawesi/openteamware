@@ -675,7 +675,7 @@
 		<!--- the message id --->
 		<cfset stReturn.message_id = a_str_msgid>
 		
-		<cfquery name="q_update_uid_attachments" datasource="#request.a_str_db_tools#">
+		<cfquery name="q_update_uid_attachments">
 		UPDATE
 			emailattachments
 		SET

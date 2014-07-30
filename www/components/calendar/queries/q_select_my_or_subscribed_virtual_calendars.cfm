@@ -3,7 +3,7 @@
 	Description:Selects all virtual calendars of the current user + virtual calendar the users is subscribed in.
 // --->
 
-<cfquery name="q_select_my_or_subscribed_virtual_calendars" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_my_or_subscribed_virtual_calendars">
 <!--- select user's calendars --->
 SELECT
 	vc.entrykey,

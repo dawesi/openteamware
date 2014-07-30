@@ -3,7 +3,7 @@
 	Description: selects meetingmember records for specified event key(s) (entrykey or entrykeys in arguments scope)
 // --->
 
-<cfquery name="q_select_meeting_members" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_meeting_members">
 SELECT
 	type,parameter,status,dt_answered,comment,sendinvitation
 FROM

@@ -1,5 +1,5 @@
 
-<cfquery name="q_select_re_data_available_for_user" datasource="#GetDSName()#">
+<cfquery name="q_select_re_data_available_for_user">
 SELECT
 	redata.entrykey
 FROM

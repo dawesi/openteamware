@@ -1,4 +1,4 @@
-<cfquery name="q_delete_filter_criterias" datasource="#request.a_str_db_tools#">
+<cfquery name="q_delete_filter_criterias">
 DELETE FROM
 	crmfiltersearchsettings
 WHERE

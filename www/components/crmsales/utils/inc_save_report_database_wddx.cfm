@@ -1,8 +1,6 @@
 <cfwddx action="cfml2wddx" input="#stReturn#" output="a_str_wddx" usetimezoneinfo="no">
 
-<!---<cffile action="write" addnewline="no" charset="utf-8" file="/tmp/wddx.xml" output="#a_str_wddx#">--->
-
-<cfquery name="q_insert_report_output" datasource="#request.a_str_Db_databases#">
+<cfquery name="q_insert_report_output">
 INSERT INTO
 	crm_reports_output
 	(

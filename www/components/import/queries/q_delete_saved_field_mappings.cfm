@@ -7,7 +7,7 @@
 
 // --->
 
-<cfquery name="q_delete_saved_field_mappings" datasource="#request.a_str_db_tools#">
+<cfquery name="q_delete_saved_field_mappings">
 DELETE FROM
  	importfieldmappings
 WHERE

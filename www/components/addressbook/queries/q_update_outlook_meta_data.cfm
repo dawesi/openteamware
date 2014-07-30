@@ -1,5 +1,5 @@
 
-<cfquery name="q_update_outlook_meta_data" datasource="#GetDSName('UPDATE')#">
+<cfquery name="q_update_outlook_meta_data">
 UPDATE
 	addressbook_outlook_data
 SET

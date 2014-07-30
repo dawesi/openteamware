@@ -6,7 +6,7 @@
 
 // --->
 
-<cfquery name="q_delete_cached_ids_of_company" datasource="#request.a_str_db_tools#">
+<cfquery name="q_delete_cached_ids_of_company">
 DELETE FROM
 	cached_ids
 WHERE

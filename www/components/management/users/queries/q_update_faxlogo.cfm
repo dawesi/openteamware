@@ -2,7 +2,7 @@
 <cffile action="readbinary" file="#arguments.filename#" variable="a_str_data">
 
 <!--- delete old photo --->
-<cfquery name="q_delete_old_photo" datasource="#request.a_str_db_tools#">
+<cfquery name="q_delete_old_photo">
 DELETE FROM
 	faxlogo   
 WHERE
@@ -10,7 +10,7 @@ WHERE
 ;
 </cfquery>
 
-<cfquery name="q_insert_data" datasource="#request.a_str_db_tools#">
+<cfquery name="q_insert_data">
 INSERT INTO faxlogo 
 (imagedata,userkey,contenttype)
 VALUES

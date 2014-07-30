@@ -1,4 +1,4 @@
-<cfquery name="q_select_owner_userkey" datasource="#request.a_Str_db_tools#">
+<cfquery name="q_select_owner_userkey">
 SELECT
 	userkey
 FROM

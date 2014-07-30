@@ -7,7 +7,7 @@
 
 // --->
 	
-<cfquery name="q_insert_follow_up" datasource="#request.a_str_db_tools#">
+<cfquery name="q_insert_follow_up">
 INSERT INTO
 	followups
 	(

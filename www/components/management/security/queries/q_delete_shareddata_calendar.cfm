@@ -1,6 +1,6 @@
 
 
-<cfquery name="q_delete_shareddata_calendar" datasource="#request.a_str_db_tools#">
+<cfquery name="q_delete_shareddata_calendar">
 DELETE FROM
 	calendar_shareddata
 WHERE

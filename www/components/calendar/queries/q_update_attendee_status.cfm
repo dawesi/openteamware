@@ -7,7 +7,7 @@
 
 // --->
 
-<cfquery name="q_update_attendee_status" datasource="#request.a_str_db_tools#">
+<cfquery name="q_update_attendee_status">
 UPDATE
 	meetingmembers
 SET

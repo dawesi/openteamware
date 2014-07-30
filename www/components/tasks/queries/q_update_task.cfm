@@ -8,7 +8,7 @@
 	
 	// --->
 	
-<cfquery name="q_update_task" datasource="#request.a_str_db_tools#">
+<cfquery name="q_update_task">
 UPDATE
 	tasks
 SET

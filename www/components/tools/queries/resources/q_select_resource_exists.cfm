@@ -7,7 +7,7 @@
 
 // --->
 
-<cfquery name="q_select_resource_exists" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_resource_exists">
 SELECT
 	COUNT(id) AS count_id
 FROM

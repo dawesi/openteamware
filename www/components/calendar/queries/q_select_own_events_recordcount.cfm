@@ -1,4 +1,4 @@
-<cfquery name="q_select_own_events_recordcount" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_own_events_recordcount">
 SELECT
 	COUNT(id) AS count_id
 FROM

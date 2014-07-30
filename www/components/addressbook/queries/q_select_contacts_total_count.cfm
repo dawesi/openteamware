@@ -1,4 +1,4 @@
-<cfquery name="q_select_contacts_total_count" datasource="#GetDSName()#">
+<cfquery name="q_select_contacts_total_count">
 SELECT
 	COUNT(entrykey) AS count_id
 FROM

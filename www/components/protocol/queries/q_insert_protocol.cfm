@@ -1,4 +1,4 @@
-<cfquery name="q_insert_protocol" datasource="#request.a_Str_db_log#">
+<cfquery name="q_insert_protocol">
 INSERT INTO
 	action_protocol
 	(

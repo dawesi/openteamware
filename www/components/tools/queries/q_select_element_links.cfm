@@ -4,7 +4,7 @@
 	
 	// --->
 
-<cfquery name="q_select_element_links" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_element_links">
 SELECT
 	dt_created,dest_name,source_name,entrykey,connection_type,dest_entrykey,source_entrykey,comment,
 	source_servicekey,dest_servicekey

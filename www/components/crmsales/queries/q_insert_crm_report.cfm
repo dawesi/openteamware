@@ -1,4 +1,4 @@
-<cfquery name="q_insert_crm_report" datasource="#request.a_str_custom_database#">
+<cfquery name="q_insert_crm_report">
 INSERT INTO
 	crm_reports
 	(

@@ -1,4 +1,4 @@
-<cfquery name="q_delete_follow_up" datasource="#request.a_str_db_tools#">
+<cfquery name="q_delete_follow_up">
 DELETE FROM
 	followups
 WHERE

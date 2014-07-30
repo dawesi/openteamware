@@ -5,7 +5,7 @@
 		email address ... so check if a signature for this
 		address exists --->
 	
-	<cfquery name="q_select_signature_count_for_certain_address" datasource="#request.a_str_db_tools#">
+	<cfquery name="q_select_signature_count_for_certain_address">
 	SELECT
 		entrykey
 	FROM
@@ -38,7 +38,7 @@
 </cfif>
 
 
-<cfquery name="q_select_signatures" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_signatures">
 SELECT
 	entrykey,userkey,email_adr,sig_type,sig_data,dt_created,title,default_sig
 FROM

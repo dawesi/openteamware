@@ -1,4 +1,4 @@
-<cfquery name="q_select_assigned_items" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_assigned_items">
 SELECT
 	objectkey
 FROM

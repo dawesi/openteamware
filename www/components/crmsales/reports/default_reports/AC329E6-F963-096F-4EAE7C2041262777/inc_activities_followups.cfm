@@ -14,7 +14,7 @@
 	<cfset a_str_userkeys_created_by = ValueList(q_select_users.entrykey)>
 </cfif>
 
-<cfquery name="q_select_followups" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_followups">
 SELECT
 	followups.objecttitle,
 	followups.comment,

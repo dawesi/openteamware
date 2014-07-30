@@ -7,7 +7,7 @@
 
 // --->
 
-<cfquery name="q_delete_resource" datasource="#request.a_str_db_tools#">
+<cfquery name="q_delete_resource">
 DELETE FROM
 	resources
 WHERE

@@ -19,7 +19,7 @@ WHERE
 <cfset a_str_accounts = ValueList(q_select_accounts.entrykey)>
 <cfset a_str_accounts = ListAppend(a_str_accounts, 'dummyitem')>
 
-<cfquery name="q_select_sub_contacts" datasource="#GetDSName()#">
+<cfquery name="q_select_sub_contacts">
 SELECT
 	firstname,surname,department,aposition,entrykey,parentcontactkey
 FROM

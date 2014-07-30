@@ -3,7 +3,7 @@
 	Description: deletes temporary meetingmember record(s) of specified type and/or 'parameter' (if specified) for specified eventkey
 // --->
 
-<cfquery name="q_delete_attendee" datasource="#request.a_str_db_tools#">
+<cfquery name="q_delete_attendee">
 DELETE FROM
 	meetingmembers
 WHERE

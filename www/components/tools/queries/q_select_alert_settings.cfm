@@ -1,4 +1,4 @@
-<cfquery name="q_select_alert_settings" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_alert_settings">
 SELECT
 	userkey,servicekey,events,notifyemail,notifysms,notifyreminder
 FROM

@@ -3,7 +3,7 @@
 	Description: Select meeting members that are not newly added (created) and should be notified (about the changes).
 // --->
 
-<cfquery name="q_select_old_meeting_members_to_notify" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_old_meeting_members_to_notify">
 SELECT 
     new. *
 FROM 

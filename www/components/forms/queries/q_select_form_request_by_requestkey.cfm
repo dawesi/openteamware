@@ -6,7 +6,7 @@
 
 // --->
 
-<cfquery name="q_select_form_request_by_requestkey" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_form_request_by_requestkey">
 SELECT
 	requestkey,
 	formkey,

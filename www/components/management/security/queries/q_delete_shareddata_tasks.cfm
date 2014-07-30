@@ -1,6 +1,6 @@
 
 
-<cfquery name="q_delete_shareddata_tasks" datasource="#request.a_str_db_tools#">
+<cfquery name="q_delete_shareddata_tasks">
 DELETE FROM
 	tasks_shareddata
 WHERE

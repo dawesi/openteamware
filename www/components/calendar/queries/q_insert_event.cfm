@@ -3,7 +3,7 @@
 	Description: Creates new record in the calendar table
 // --->
 
-<cfquery name="q_insert_event" datasource="#request.a_str_db_tools#">
+<cfquery name="q_insert_event">
 INSERT INTO
 	calendar
 	(

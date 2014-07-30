@@ -5,7 +5,7 @@
 
 
 // --->
-<cfquery name="q_select_import_table" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_import_table">
 SELECT
 	servicekey,
 	table_wddx,

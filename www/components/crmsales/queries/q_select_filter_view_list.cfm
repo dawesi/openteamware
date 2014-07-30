@@ -1,4 +1,4 @@
-<cfquery name="q_select_filter_view_list" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_filter_view_list">
 SELECT
 	viewname,description,dt_created,entrykey
 FROM

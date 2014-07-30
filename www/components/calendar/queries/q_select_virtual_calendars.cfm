@@ -6,7 +6,7 @@
 	
 // --->
 
-<cfquery name="q_select_virtual_calendars" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_virtual_calendars">
 SELECT
 	entrykey,userkey,createdbyuserkey,title,description,companykey,public,dt_created,language,colour
 FROM

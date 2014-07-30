@@ -7,20 +7,20 @@
 </head>
 <body>
 
-<!--- zurückschreiben --->
+<!--- zurï¿½ckschreiben --->
 <cfparam name="url.id" default="">
 
-<cfquery name="q_select_event" datasource="myCalendar" dbtype="ODBC">
+<cfquery name="q_select_event">
 SELECT eventid FROM meeting_members where RandomKey = '#url.id#';
-</cfquery>	
+</cfquery>
 
 <cfif q_select_event.recordcount is 0>
 	<!--- event does not exist any more --->
-	Dieser Termin existiert leider nicht mehr und Sie können auch keine Zu- oder Absage mehr erteilen.
+	Dieser Termin existiert leider nicht mehr und Sie kï¿½nnen auch keine Zu- oder Absage mehr erteilen.
 	<cfabort>
 </cfif>
 
-<cfquery name="q_Select_cal_event" datasource="myCalendar" dbtype="ODBC">
+<cfquery name="q_Select_cal_event">
 SELECT title,username FROM calendar
 WHERE id = '#q_select_event.eventid#';
 </cfquery>

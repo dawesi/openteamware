@@ -1,4 +1,4 @@
-<cfquery name="q_insert_signature" datasource="#request.a_str_db_tools#">
+<cfquery name="q_insert_signature">
 INSERT INTO
 	email_signatures
 	(
@@ -26,7 +26,7 @@ VALUES
 <!--- check count of this type of signature ... if just one, make this signature
 	the default signature --->
 
-<cfquery name="q_select_count_of_this_type" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_count_of_this_type">
 SELECT
 	COUNT(id) AS count_id
 FROM
@@ -40,7 +40,7 @@ WHERE
 
 <cfif q_select_count_of_this_type.count_id IS 1>
 
-	<cfquery name="q_update_set_default_signature" datasource="#request.a_str_db_tools#">
+	<cfquery name="q_update_set_default_signature">
 	UPDATE
 		email_signatures
 	SET

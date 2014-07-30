@@ -1,7 +1,7 @@
 
 
 
-<cfquery name="q_check_entry"   datasource="#request.a_str_db_tools#">
+<cfquery name="q_check_entry"  >
 SELECT
 	count(id) AS count_id
 FROM

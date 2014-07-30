@@ -1,4 +1,4 @@
-<cfquery name="q_delete_task" datasource="#request.a_str_db_tools#">
+<cfquery name="q_delete_task">
 DELETE FROM
 	tasks
 WHERE

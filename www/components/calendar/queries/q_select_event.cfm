@@ -3,7 +3,7 @@
 	Description: selects event by specified entrykey argument
 // --->
 
-<cfquery name="q_select_event" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_event">
 SELECT
 	entrykey,userkey,createdbysecretarykey,
 	DATE_ADD(date_start, INTERVAL -#val(arguments.usersettings.utcdiffonly)#-daylightsavinghoursoncreate HOUR) AS date_start,	

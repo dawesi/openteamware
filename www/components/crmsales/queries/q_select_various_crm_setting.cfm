@@ -1,4 +1,4 @@
-<cfquery name="q_select_various_crm_setting" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_various_crm_setting">
 SELECT
 	setting_value
 FROM

@@ -7,7 +7,7 @@
 
 // --->
 
-<cfquery name="q_select_sub_items" datasource="#GetDSName()#">
+<cfquery name="q_select_sub_items">
 SELECT
 	addressbook.entrykey,
 	addressbook.firstname,

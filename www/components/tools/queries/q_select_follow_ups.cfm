@@ -7,7 +7,7 @@
 
 // --->
 
-<cfquery name="q_select_follow_ups" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_follow_ups">
 SELECT
 	createdbyuserkey,
 	comment,

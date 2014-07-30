@@ -1,4 +1,4 @@
-<cfquery name="q_update_empty_view_filter_items" datasource="#request.a_str_db_tools#">
+<cfquery name="q_update_empty_view_filter_items">
 UPDATE
 	crmfiltersearchsettings
 SET

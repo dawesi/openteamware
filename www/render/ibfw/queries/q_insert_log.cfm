@@ -25,7 +25,7 @@
 </cfif>
 
 <cftry>
-<cfquery name="q_insert_log_clickstream" datasource="#request.a_str_db_log#">
+<cfquery name="q_insert_log_clickstream">
 INSERT DELAYED INTO
 	clickstream
 	(

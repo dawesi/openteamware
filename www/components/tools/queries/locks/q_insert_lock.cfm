@@ -7,7 +7,7 @@
 
 // --->
 
-<cfquery name="q_insert_lock" datasource="#request.a_str_db_tools#">
+<cfquery name="q_insert_lock">
 INSERT INTO
 	exclusive_locks
 	(

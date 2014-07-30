@@ -1,6 +1,6 @@
 
 
-<cfquery name="q_insert_deleted_data" datasource="#request.a_str_db_log#">
+<cfquery name="q_insert_deleted_data">
 INSERT INTO
 	deleteddata
 	(

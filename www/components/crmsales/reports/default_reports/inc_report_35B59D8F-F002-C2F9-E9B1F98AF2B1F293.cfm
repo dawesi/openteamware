@@ -68,7 +68,7 @@
 	<cfset stReturn_contacts.crm_filter_returned_meta_data.entrykeys_followup_items = 'dummyitem'>
 </cfif>
 
-<cfquery name="q_select_follow_ups_items" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_follow_ups_items">
 SELECT
 	objectkey,userkey,createdbyuserkey,dt_due,comment,followuptype,priority,done 
 FROM

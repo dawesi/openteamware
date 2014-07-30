@@ -1,4 +1,4 @@
-<cfquery name="q_select_item_exists" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_item_exists">
 SELECT
 	COUNT(id) AS count_id
 FROM
@@ -13,7 +13,7 @@ WHERE
 <cfif q_select_item_exists.count_id IS 0>
 
 	<!--- insert --->
-	<cfquery name="q_insert_setting" datasource="#request.a_str_db_tools#">
+	<cfquery name="q_insert_setting">
 	INSERT INTO
 		various_crm_settings
 		(
@@ -37,7 +37,7 @@ WHERE
 <cfelse>
 
 	<!--- update --->
-	<cfquery name="q_update_setting" datasource="#request.a_str_db_tools#">
+	<cfquery name="q_update_setting">
 	UPDATE
 		various_crm_settings
 	SET

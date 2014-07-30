@@ -2,7 +2,7 @@
 
 <cfset q_tmp_referer = QueryNew('http_referer,referer_count')>
 
-<cfquery name="q_select_distinct_http_referer" datasource="#request.a_str_db_log#">
+<cfquery name="q_select_distinct_http_referer">
 SELECT
 	DISTINCT(LEFT(referer, 50)) AS http_referer
 FROM
@@ -14,7 +14,7 @@ FROM
 	<cfset QueryAddRow(q_tmp_referer, 1)>
 	<cfset QuerySetCell(q_tmp_referer, 'http_referer', q_select_distinct_http_referer.http_referer, q_tmp_referer.recordcount)>
 		
-	<cfquery name="q_count_ref" datasource="#request.a_str_db_log#">
+	<cfquery name="q_count_ref">
 	SELECT
 		COUNT(id) AS count_id
 	FROM
@@ -41,7 +41,7 @@ ORDER BY
 
 	<cfloop query="q_tmp_referer" startrow="1" endrow="10">
 
-		<cfquery name="q_count_ref" datasource="#request.a_str_db_log#">
+		<cfquery name="q_count_ref">
 		SELECT
 			COUNT(id) AS count_id
 		FROM

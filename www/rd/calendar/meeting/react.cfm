@@ -15,16 +15,16 @@
 
 <cfinclude template="../../../content/static/common/header_top.html">
 
-<!--- 2 possibilities ... 
+<!--- 2 possibilities ...
 
 	a) id is the auto-generated id that points to an entry in the meeting_members table
 	b) just eventid and email address ... compose an email --->
-	
 
-<cfquery name="q_select_event" datasource="myCalendar" dbtype="ODBC">
+
+<cfquery name="q_select_event">
 SELECT eventid,emailaddress FROM meeting_members
 WHERE RandomKey = <cfqueryparam cfsqltype="cf_sql_varchar" value="#url.id#">;
-</cfquery>	
+</cfquery>
 
 <cfif q_select_event.recordcount is 0>
 	<!--- event does not exist any more --->
@@ -32,12 +32,12 @@ WHERE RandomKey = <cfqueryparam cfsqltype="cf_sql_varchar" value="#url.id#">;
 	<cfabort>
 </cfif>
 
-<cfquery name="q_select_cal_event" datasource="myCalendar" dbtype="ODBC">
+<cfquery name="q_select_cal_event">
 SELECT username,title FROM calendar
 WHERE id = <cfqueryparam cfsqltype="cf_sql_integer" value="#q_select_event.eventid#">;
 </cfquery>
 
-<cfquery name="q_update" datasource="myCalendar" dbtype="ODBC" debug>
+<cfquery name="q_update">
 UPDATE meeting_members
 SET status = <cfqueryparam cfsqltype="cf_sql_integer" value="#val(url.status)#">,
 dt_react = current_timestamp

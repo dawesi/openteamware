@@ -1,4 +1,4 @@
-<cfquery name="q_insert_element_link" datasource="#request.a_str_db_tools#">
+<cfquery name="q_insert_element_link">
 INSERT INTO
 	element_links
 	(

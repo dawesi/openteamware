@@ -1,5 +1,5 @@
 
-<cfquery name="q_select_check_already_assigned"  datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_check_already_assigned" >
 SELECT
 	COUNT(id) AS count_id
 FROM

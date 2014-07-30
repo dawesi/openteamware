@@ -1,4 +1,4 @@
-<cfquery name="q_select_open_invitations" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_open_invitations">
 SELECT
 	calendar.title,
 	meetingmembers.parameter,

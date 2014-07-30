@@ -17,7 +17,7 @@
 <cfset a_dt_check_publicsharestraffic = DateAdd('d', -90, Now())>
 
 <!--- admin actions --->
-<cfquery name="q_delete_old_admin_actions" datasource="#request.a_str_db_log#">
+<cfquery name="q_delete_old_admin_actions">
 DELETE FROM
 	adminactions
 WHERE
@@ -26,7 +26,7 @@ WHERE
 </cfquery>
 
 <!--- deleteddata --->
-<cfquery name="q_delete_old_admin_actions" datasource="#request.a_str_db_log#">
+<cfquery name="q_delete_old_admin_actions">
 DELETE FROM
 	deleteddata
 WHERE
@@ -35,7 +35,7 @@ WHERE
 </cfquery>
 
 <!--- editeddata --->
-<cfquery name="q_delete_old_admin_actions" datasource="#request.a_str_db_log#">
+<cfquery name="q_delete_old_admin_actions">
 DELETE FROM
 	editeddata
 WHERE
@@ -44,7 +44,7 @@ WHERE
 </cfquery>
 
 <!--- storage.publictraffic --->
-<cfquery name="q_delete_old_admin_actions" datasource="#request.a_str_db_tools#">
+<cfquery name="q_delete_old_admin_actions">
 DELETE FROM
 	publicshares_traffic
 WHERE

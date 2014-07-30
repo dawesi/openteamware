@@ -12,7 +12,7 @@
 	
 // --->
 
-<cfquery name="q_select_filter_criteria" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_filter_criteria">
 SELECT
 	entrykey,
 	dt_created,

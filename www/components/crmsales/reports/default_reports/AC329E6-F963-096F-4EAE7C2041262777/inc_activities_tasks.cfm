@@ -17,7 +17,7 @@
 </cfif>
 	
 <!--- load all connected tasks --->
-<cfquery name="q_select_connected_tasks" datasource="#request.a_Str_Db_tools#">
+<cfquery name="q_select_connected_tasks">
 SELECT
 	tasks.userkey,
 	tasks.entrykey,

@@ -3,11 +3,11 @@
 	Component:	SQL
 	Function:	InsertRecord
 	Description:call the insert SQL command
-	
+
 
 // --->
 
-<cfquery name="q_insert_data" datasource="#arguments.database#">
+<cfquery name="q_insert_data">
 INSERT INTO
 	#arguments.table#
 	(

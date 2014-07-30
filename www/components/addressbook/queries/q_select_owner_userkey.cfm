@@ -1,4 +1,4 @@
-<cfquery name="q_select_owner_userkey" datasource="#GetDSName()#">
+<cfquery name="q_select_owner_userkey">
 SELECT
 	userkey
 FROM

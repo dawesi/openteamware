@@ -1,4 +1,4 @@
-<cfquery name="q_select_contact_connections" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_contact_connections">
 SELECT
 	contactkey
 FROM

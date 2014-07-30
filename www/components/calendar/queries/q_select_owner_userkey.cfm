@@ -1,6 +1,6 @@
 
 
-<cfquery name="q_select_owner_userkey" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_owner_userkey">
 SELECT
 	userkey
 FROM

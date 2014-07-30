@@ -9,7 +9,7 @@
 // --->
 
 
-<cfquery name="q_select_translation_data" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_translation_data">
 SELECT
 	entryid,entryvalue
 FROM

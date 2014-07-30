@@ -8,7 +8,7 @@
 		<cfset var q_select = 0 />
 		<cfset var a_str_value = '' />
 		
-		<cfquery name="q_select" datasource="#request.a_str_db_tools#">
+		<cfquery name="q_select">
 		SELECT
 			entryvalue
 		FROM

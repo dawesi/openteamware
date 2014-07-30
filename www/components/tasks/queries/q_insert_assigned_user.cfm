@@ -1,5 +1,5 @@
 
-<cfquery name="q_insert_assigned_user" datasource="#request.a_str_db_tools#">
+<cfquery name="q_insert_assigned_user">
 INSERT INTO
 	tasks_assigned_users
 (

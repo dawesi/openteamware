@@ -5,7 +5,7 @@
 	
 
 // --->
-<cfquery name="q_select_field_mappings" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_field_mappings">
 SELECT 
 	jobkey,
 	ibxfield_md5,

@@ -6,7 +6,7 @@
 	
 // --->
 
-<cfquery name="q_delete_events_from_calendar" datasource="#request.a_str_db_tools#">
+<cfquery name="q_delete_events_from_calendar">
 DELETE FROM
 	calendar
 WHERE

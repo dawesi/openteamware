@@ -1,4 +1,4 @@
-<cfquery name="q_select_contact_quick_display_data" datasource="#GetDSName()#">
+<cfquery name="q_select_contact_quick_display_data">
 SELECT
 	firstname,surname,title,company,department
 FROM

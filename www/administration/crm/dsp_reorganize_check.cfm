@@ -43,7 +43,7 @@ WHERE
 <cfset SelectCompanyUsersRequest.companykey = url.companykey>
 <cfinclude template="../queries/q_select_company_users.cfm">
 
-<cfquery name="q_select_all_contacts_of_company" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_all_contacts_of_company">
 SELECT
 	id
 FROM

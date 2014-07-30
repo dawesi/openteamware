@@ -14,7 +14,7 @@
 <!--- insert now all forms into database ... --->
 <cfloop query="q_select_forms">
 
-	<cfquery name="q_insert_form" datasource="#request.a_str_db_tools#">
+	<cfquery name="q_insert_form">
 	INSERT INTO
 		forms
 		(
@@ -85,7 +85,7 @@
 				<cfset a_str_db_fieldname_selector_displayvalue =  ''/>			
 			</cfif>
 			  	 	 	 	 	 	
-			<cfquery name="q_insert_element" datasource="#request.a_str_db_tools#">
+			<cfquery name="q_insert_element">
 			INSERT INTO
 				form_fields
 				(

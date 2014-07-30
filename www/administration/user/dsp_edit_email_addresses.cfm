@@ -3,7 +3,7 @@
 	Component:	Admintool
 	Action:		EmailAddresses
 	Description:
-		Header:		
+		Header:
 
 // --->
 
@@ -68,7 +68,7 @@
 <!--- select aliases ... --->
 <b><img src="/images/si/email.png" class="si_img" /> <cfoutput>#GetLangVal('prf_ph_email_alias_addresses')#</cfoutput> (<cfoutput>#q_select_alias_addresses.recordcount#</cfoutput>)</b><br>
 <cfoutput>#GetLangVal('adm_ph_alias_address_explanation')#</cfoutput>
-<br /><br />  
+<br /><br />
 
 <table border="0" cellspacing="0" cellpadding="4">
 <cfoutput query="q_select_alias_addresses">
@@ -83,7 +83,7 @@
 </cfoutput>
 </table>
 
-<br /><br />  
+<br /><br />
 
 <form action="user/act_create_alias.cfm" method="post" name="formnewalias">
 <input type="hidden" name="frmuserkey" value="<cfoutput>#htmleditformat(url.entrykey)#</cfoutput>">
@@ -117,7 +117,7 @@ FROM
 q_select_pop3_data
 WHERE
 origin = 1
-;	
+;
 </cfquery>
 
 <br><hr size="1" noshade />
@@ -126,7 +126,7 @@ origin = 1
 
 
 <cfif q_select_external_addresses.recordcount GT 0>
-	<br /> 
+	<br />
 	<table border="0" cellspacing="0" cellpadding="4">
 	  <tr>
 		<td>&nbsp;</td>
@@ -145,46 +145,18 @@ origin = 1
 			#q_select_external_addresses.pop3username#
 		</td>
 	  </tr>
-	  
-	  <cfquery name="q_select_exitcodes" datasource="#request.a_str_db_mailusers#">
-	  	SELECT
-	  		exitcode,dt_check
-		FROM
-			fetchmailexitcodes
-		WHERE
-			account = <cfqueryparam cfsqltype="cf_sql_varchar" value="#q_userdata.username#">
-			AND
-			emailadr = <cfqueryparam cfsqltype="cf_sql_varchar" value="#q_select_external_addresses.emailadr#@#q_select_external_addresses.pop3server#">
-		ORDER BY
-			dt_check DESC
-		LIMIT
-			0,20
-		;
-	  </cfquery>
-	  	  
 	  <tr>
 	  	<td></td>
 		<td colspan="3">
-			<cfloop query="q_select_exitcodes">
-				#DateFormat(q_select_exitcodes.dt_check, 'dd.mm.yy')#&nbsp;#TimeFormat(q_select_exitcodes.dt_check, 'HH:mm')#
-				&nbsp;
-				<cfswitch expression="#q_select_exitcodes.exitcode#">
-					<cfcase value="1">#GetLangVal('adm_ph_pop3_collector_result_no_new_messages')#</cfcase>
-					<cfcase value="0">#GetLangVal('adm_ph_pop3_collector_result_messages_downloaded')#</cfcase>
-					<cfcase value="3">#GetLangVal('adm_ph_pop3_collector_result_wrong_username_pwd')#</cfcase>
-					<cfdefaultcase>#q_select_exitcodes.exitcode#</cfdefaultcase>
-				</cfswitch>
-				<br>
-			</cfloop>
 		</td>
 	  </tr>
-	  
+
 	  </cfoutput>
 	</table>
-	
+
 </cfif>
 
-<br /><br />  
+<br /><br />
 <hr size="1" noshade />
 <cfoutput>
 <a href="index.cfm?action=userproperties&entrykey=#urlencodedformat(url.entrykey)#&companykey=#urlencodedformat(url.companykey)#&resellerkey=#urlencodedformat(url.resellerkey)#"><cfoutput>#GetLangVal('adm_ph_back_to_user_properties')#</cfoutput></a>
@@ -198,5 +170,5 @@ objForm = new qForm("formnewalias");
 // make these fields required
 objForm.required("frmusername");
 //-->
-</SCRIPT> 
+</SCRIPT>
 

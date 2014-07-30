@@ -1,4 +1,4 @@
-<cfquery name="q_select" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select">
 SELECT
 	objectkey,servicekey,entrykey
 FROM
@@ -15,7 +15,7 @@ FROM
 		<cfcase value="52227624-9DAA-05E9-0892A27198268072">
 		<!--- address book --->
 		
-		<cfquery name="q_select_contact_exists" datasource="#request.a_str_db_tools#">
+		<cfquery name="q_select_contact_exists">
 		SELECT
 			COUNT(id) AS count_id
 		FROM
@@ -40,7 +40,7 @@ FROM
 	<cfif a_bol_delete>
 		<!--- delete --->
 		delete
-		<cfquery name="q_delete_followup" datasource="#request.a_str_db_tools#">
+		<cfquery name="q_delete_followup">
 		DELETE FROM
 			followups
 		WHERE

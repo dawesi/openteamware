@@ -1,4 +1,4 @@
-<cfquery name="q_select_resources" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_resources">
 SELECT
 	entrykey,
 	createdbyuserkey,

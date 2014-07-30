@@ -7,7 +7,7 @@
 
 // --->
 
-<cfquery name="q_delete_all_assignment" datasource="#request.a_str_db_tools#">
+<cfquery name="q_delete_all_assignment">
 DELETE FROM
 	assigned_items
 WHERE

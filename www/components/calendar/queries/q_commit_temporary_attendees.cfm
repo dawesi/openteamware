@@ -4,7 +4,7 @@
                        for attendees of specified event (publish/comit) assigned attendees
 // --->
 
-<cfquery name="q_commit_temporary_attendees" datasource="#request.a_str_db_tools#">
+<cfquery name="q_commit_temporary_attendees">
 DELETE FROM
 	meetingmembers
 WHERE
@@ -14,7 +14,7 @@ WHERE
 ;
 </cfquery>
 
-<cfquery name="q_commit_temporary_attendees" datasource="#request.a_str_db_tools#">
+<cfquery name="q_commit_temporary_attendees">
 UPDATE 
 	meetingmembers
 SET

@@ -10,7 +10,7 @@
 <cfparam name="url.id" default="0">
 
 <!--- daten zum event laden ---->
-<cfquery name="q_select" debug datasource="myCalendar" dbtype="ODBC">
+<cfquery name="q_select">
 SELECT userid,title,location,date_Start,date_end,description FROM calendar
 WHERE ID = (SELECT eventid FROM meeting_members WHERE RandomKey = '#url.id#');
 </cfquery>
@@ -19,7 +19,7 @@ WHERE ID = (SELECT eventid FROM meeting_members WHERE RandomKey = '#url.id#');
 <b>Event nicht gefunden</b><cfabort>
 </cfif>
 
-<cfquery name="q_select_utcdiff" datasource="inboxccusers" dbtype="ODBC">
+<cfquery name="q_select_utcdiff">
 SELECT utcdiff FROM users WHERE userid = #q_select.userid#;
 </cfquery>
 

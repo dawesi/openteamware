@@ -87,7 +87,7 @@
 	<cfif StructKeyExists(arguments.filter, 'entrykeys') AND
 		  Len(arguments.filter.entrykeys) GT 0>
 		
-		<cfquery name="q_select_ids_from_entrkeys" datasource="#GetDSName()#">
+		<cfquery name="q_select_ids_from_entrkeys">
 		SELECT	id
 		FROM	addressbook
 		WHERE	entrykey IN (<cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.filter.entrykeys#" list="yes">)
@@ -105,7 +105,7 @@
 	<!--- are workgroups available? --->
 	<cfif a_bol_workgroups_available>
 		
-		<cfquery name="q_select_workgroup_entrykeys" datasource="#GetDSName()#">
+		<cfquery name="q_select_workgroup_entrykeys">
 		SELECT
 			addressbook.id,			
 			UCASE(LEFT(CONCAT(#PreserveSingleQuotes(sOrderBy)#, ' '), 30)) AS str_sort,
@@ -160,7 +160,7 @@
 	</cfif>
 
 	<!--- select now PERSONAL items ... --->
-	<cfquery name="q_select_own_entrykeys" datasource="#GetDSName()#">
+	<cfquery name="q_select_own_entrykeys">
 	SELECT
 		addressbook.id,
 		<!--- 2do: include all sorting columns ... --->
@@ -414,7 +414,7 @@
 </cfsavecontent>
 		
 <!--- now we've got a list of ids to load!! --->
-<cfquery name="q_select_contacts" datasource="#GetDSName()#">
+<cfquery name="q_select_contacts">
 SELECT
 	#a_str_sql_select_fields#			
 FROM

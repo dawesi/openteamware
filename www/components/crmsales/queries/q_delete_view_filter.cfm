@@ -1,4 +1,4 @@
-<cfquery name="q_delete_view_filter" datasource="#request.a_str_db_tools#">
+<cfquery name="q_delete_view_filter">
 DELETE FROM
 	crmfilterviews
 WHERE

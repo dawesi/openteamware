@@ -7,7 +7,7 @@
 
 // --->
 
-<cfquery name="q_select_cached_ids_available" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_cached_ids_available">
 SELECT
 	ids,
 	data1,

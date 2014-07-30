@@ -6,7 +6,7 @@
 	
 // --->
 
-<cfquery name="q_remove_subscriptions_from_calendar" datasource="#request.a_str_db_tools#">
+<cfquery name="q_remove_subscriptions_from_calendar">
 DELETE FROM 
 	virtualcalendarsubscriptions
 WHERE

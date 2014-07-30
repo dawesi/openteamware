@@ -7,7 +7,7 @@
 
 // --->
 
-<cfquery name="q_select_posted_form_data" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_posted_form_data">
 SELECT
 	wddx_formdata
 FROM

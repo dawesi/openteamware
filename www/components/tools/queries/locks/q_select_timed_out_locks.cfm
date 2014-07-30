@@ -7,7 +7,7 @@
 
 // --->
 
-<cfquery name="q_select_timed_out_locks" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_timed_out_locks">
 SELECT
 	objectkey,
 	servicekey,

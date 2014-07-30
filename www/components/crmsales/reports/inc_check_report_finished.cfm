@@ -6,7 +6,7 @@
 	
 	// --->
 	
-<cfquery name="q_select_report_job" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_report_job">
 SELECT
 	alert_user_by_email_when_finished
 FROM
@@ -27,7 +27,7 @@ https://www.openTeamWare.com/crm/index.cfm?action=reports
 </cfif>
 
 <!--- delete from running reports --->
-<cfquery name="q_delete_report_job" datasource="#request.a_str_db_tools#">
+<cfquery name="q_delete_report_job">
 DELETE FROM
 	crm_running_reports 
 WHERE

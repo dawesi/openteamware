@@ -1,4 +1,4 @@
-<cfquery name="q_select_own_tasks_recordcount" datasource="#request.a_Str_db_tools#">
+<cfquery name="q_select_own_tasks_recordcount">
 SELECT
 	COUNT(id) AS count_id
 FROM

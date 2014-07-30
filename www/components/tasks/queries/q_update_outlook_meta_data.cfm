@@ -1,5 +1,5 @@
 
-<cfquery name="q_update_outlook_meta_data" datasource="#request.a_str_db_tools#">
+<cfquery name="q_update_outlook_meta_data">
 UPDATE
 	tasks_outlook_data
 SET

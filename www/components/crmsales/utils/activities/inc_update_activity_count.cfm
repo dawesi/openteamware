@@ -11,7 +11,7 @@
 	<cfcase value="followups">
 	
 		<!--- get number of open followup items ... --->
-		<cfquery name="q_select_open_followups" datasource="#request.a_str_db_tools#">
+		<cfquery name="q_select_open_followups">
 		SELECT
 			COUNT(entrykey) AS count_id
 		FROM
@@ -45,7 +45,7 @@
 	<cfcase value="appointments">
 	
 		<!--- update the number of open appointments ... --->
-		<cfquery name="q_select_open_appointments" datasource="#request.a_str_db_tools#">
+		<cfquery name="q_select_open_appointments">
 		SELECT
 			meetingmembers.id,
 			calendar.entrykey,
@@ -67,7 +67,7 @@
 
 		<cfset a_int_number_appointments = q_select_open_appointments.recordcount />
 		
-		<cfquery name="q_update_appointments_index" datasource="#request.a_str_db_tools#">
+		<cfquery name="q_update_appointments_index">
 		UPDATE
 			addressbook
 		SET

@@ -17,20 +17,7 @@
 	<cfscript>
 	// admin actions
 	request.a_str_admin_actions = 'editmasterdata,order,resetpassword,useradministration,groupadministration,securityadministration,newsadministration,viewlog,viewusercontent,forumadmin';
-	// user, workgroups & reseller database
-	request.a_str_db_users = 'mycrm';
-	// database for email application (courier)
-	request.a_str_db_mailusers = "mycrm";
-	// tools database ...
-	request.a_str_db_tools = "mycrm";
-	// logging
-	request.a_str_db_log = "mycrm";
-	// email meta data
-	request.a_str_db_email = 'mycrm';
-	// CRM
-	request.a_str_db_crm = 'mycrm';
-	// backups
-	request.a_str_db_backup = 'mycrm';
+
 	// ************ further properties ************
 	// product name
 	request.a_str_product_name = "openTeamWare";

@@ -8,47 +8,6 @@
 <!--- display a string ... and shorten it with "abc ..." if necessary --->
 <cfscript>
 	
-// return the database name for a certain operation
-// works without any parameters
-// optional:
-// 1st parameter ... operation ... e.g. SELECT, UPDATE, DELETE ... default is always SELECT
-// 2nd parameter: securitycontext (otherwise securitycontext stored in request scope is taken)
-// 3rd parameter: ?
-function GetDSName() {
-	var a_str_request_servicekey = '';
-	var a_ds_name = '';
-	var a_str_operation = 'SELECT';
-	var stSecurityContext = 0;
-	
-	// logged in user?
-	if (StructKeyExists(request, 'stSecurityContext')) {
-		stSecurityContext = request.stSecurityContext;
-		}
-	
-	if (ArrayLen(arguments) GTE 1) a_str_operation = arguments[1];
-	if (ArrayLen(arguments) GTE 2) stSecurityContext = arguments[2];
-	
-	// called from a component? there in the var scope the servicekey is stored
-	// otherwise use the default request service key
-	if (StructKeyExists(variables, 'sServiceKey')) {
-		a_str_request_servicekey = variables.sServiceKey;
-		} else a_str_request_servicekey = request.sCurrentServiceKey;
-	
-	switch (a_str_request_servicekey)
-		{
-		case '52227624-9DAA-05E9-0892A27198268072': {
-			a_ds_name = request.a_str_db_crm;
-			break;
-			}
-		case 'form': {
-			aResult = form;
-			break;
-			}
-		}
-		
-	return(a_ds_name);
-	
-	}
 	
 // check if a user is logged in the simply way ...
 // we do this by checking if the structure "stSecurityContext" exists
@@ -1110,8 +1069,8 @@ function GenerateReturnStruct() {
 	}
 		
 // se	t the error code ...
-function SetReturnStructErrorCode(struct, code) {
-	var stReturn = arguments.struct;
+function SetReturnStructErrorCode(st, code) {
+	var stReturn = st;
 	
 	if (ArrayLen(arguments) GTE 3) {
 		stReturn.errormessage = arguments[3];

@@ -13,7 +13,7 @@
 <!--- categories ... --->
 <cfwddx action="cfml2wddx" input="#a_struct_categories#" output="a_str_data_2">
 
-<cfquery name="q_delete_cached_ids" datasource="#request.a_str_db_tools#">
+<cfquery name="q_delete_cached_ids">
 DELETE FROM
 	cached_ids
 WHERE
@@ -25,7 +25,7 @@ WHERE
 ;
 </cfquery>
 
-<cfquery name="q_insert_cached_ids" datasource="#request.a_str_db_tools#">
+<cfquery name="q_insert_cached_ids">
 INSERT INTO
 	cached_ids
 	(

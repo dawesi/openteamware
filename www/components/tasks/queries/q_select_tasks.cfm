@@ -7,7 +7,7 @@
 <!--- select now entrykey of workgroup items ... --->
 <cfif q_select_workgroups.recordcount GT 0>
 	<cfset a_bol_workgroups_avaliable = true>
-	<cfquery name="q_select_workgroup_entrykeys" datasource="#request.a_str_db_tools#">
+	<cfquery name="q_select_workgroup_entrykeys">
 	SELECT
 		tasks_shareddata.taskkey,
 		tasks_shareddata.workgroupkey,
@@ -42,7 +42,7 @@
 </cfif>
 
 <!--- select assigned items ... --->
-<cfquery name="q_select_assigned_items" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_assigned_items">
 SELECT
 	<!---tasks_assigned_users.taskkey,--->
 	tasks.id
@@ -73,7 +73,7 @@ WHERE
 
 
 <!--- select now PERSONAL items ... --->
-<cfquery name="q_select_own_entrykeys" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_own_entrykeys">
 SELECT
 	<!---entrykey,--->
 	id
@@ -134,7 +134,7 @@ WHERE
 
 
 <!--- now we've got a list of entrykeys to load!! --->
-<cfquery name="q_select_tasks" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_tasks">
 SELECT
 	title,
 	

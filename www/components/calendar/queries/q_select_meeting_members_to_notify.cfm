@@ -4,7 +4,7 @@
                  that have newly checked sendinvitation flag.
 // --->
 
-<cfquery name="q_select_meeting_members_to_notify" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_meeting_members_to_notify">
 SELECT 
     new.*
 FROM 

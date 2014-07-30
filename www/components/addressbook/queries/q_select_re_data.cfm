@@ -1,4 +1,4 @@
-<cfquery name="q_select_re_data" datasource="#GetDSName()#">
+<cfquery name="q_select_re_data">
 SELECT
 	*
 FROM

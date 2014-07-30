@@ -1,4 +1,4 @@
-<cfquery name="q_delete_company_custom_element" datasource="#request.a_str_db_tools#">
+<cfquery name="q_delete_company_custom_element">
 DELETE FROM
 	company_custom_elements
 WHERE
@@ -9,7 +9,7 @@ WHERE
 </cfquery>
 
 <cfif Len(arguments.elementvalue) GT 0>
-	<cfquery name="q_delete_company_custom_element" datasource="#request.a_str_db_tools#">
+	<cfquery name="q_delete_company_custom_element">
 	INSERT INTO
 		company_custom_elements
 		(

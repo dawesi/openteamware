@@ -6,7 +6,7 @@
 	
 // --->
 
-<cfquery name="q_select_own_vcard_entrykey" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_own_vcard_entrykey">
 SELECT
 	contactkey
 FROM

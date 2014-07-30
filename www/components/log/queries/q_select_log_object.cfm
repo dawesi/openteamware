@@ -1,6 +1,6 @@
 
 
-<cfquery name="q_select_log_object" datasource="#request.a_str_db_log#">
+<cfquery name="q_select_log_object">
 SELECT
 	userkey,
 	DATE_ADD(dt_done, INTERVAL -#val(arguments.usersettings.utcdiff)# HOUR) AS dt_done

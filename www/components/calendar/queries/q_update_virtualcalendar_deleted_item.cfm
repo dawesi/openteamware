@@ -6,7 +6,7 @@
 	
 // --->
 
-<cfquery name="q_update_virtualcalendar_deleted_item" datasource="#request.a_str_db_tools#">
+<cfquery name="q_update_virtualcalendar_deleted_item">
 UPDATE
 	calendar
 SET

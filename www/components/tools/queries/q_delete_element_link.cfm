@@ -1,4 +1,4 @@
-﻿<cfquery name="q_delete_element_link" datasource="#request.a_str_db_tools#">
+﻿<cfquery name="q_delete_element_link">
 DELETE FROM
 	element_links
 WHERE

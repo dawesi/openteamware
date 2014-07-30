@@ -14,7 +14,7 @@
 	<cfset a_str_userkeys_created_by = ValueList(q_select_users.entrykey)>
 </cfif>
 
-<cfquery name="q_select_events" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_events">
 SELECT
 	meetingmembers.dt_created,
 	meetingmembers.parameter,

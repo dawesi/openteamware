@@ -90,7 +90,7 @@ WHERE
 
 
 
-<cfquery name="q_insert_log" datasource="#request.a_str_db_log#">
+<cfquery name="q_insert_log">
 INSERT INTO
 	adminactions
 	(

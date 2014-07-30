@@ -1,6 +1,6 @@
 
 
-<cfquery name="q_insert_clickstream" datasource="#request.a_str_db_tools#">
+<cfquery name="q_insert_clickstream">
 INSERT INTO
 	clickstream
 	(

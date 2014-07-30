@@ -16,7 +16,7 @@
 
 <cfset variables.stUserSettings = a_struct_settings>
 
-<cfquery name="q_select_contacts_count" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_contacts_count">
 DELETE FROM
 	addressbook
 WHERE

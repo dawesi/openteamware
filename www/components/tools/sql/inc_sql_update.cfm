@@ -3,18 +3,18 @@
 	Module:		SQL
 	Function.	UpdateRecord
 	Description:Update a record
-	
+
 
 // --->
 
 
-<cfquery name="q_update" datasource="#arguments.database#">
+<cfquery name="q_update">
 UPDATE
 	#arguments.table#
 SET
 	<cfloop from="1" to="#ArrayLen(a_arr_data)#" index="ii">
 		#a_arr_data[ii].fieldname# = <cfqueryparam cfsqltype="#a_arr_data[ii].cfmxtype#" value="#a_arr_data[ii].data#">
-		
+
 		<cfif ii LT ArrayLen(a_arr_data)>,</cfif>
 	</cfloop>
 WHERE

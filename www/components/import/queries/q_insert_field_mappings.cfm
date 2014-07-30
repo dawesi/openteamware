@@ -5,7 +5,7 @@
 	
 
 // --->
-<cfquery name="q_insert" datasource="#request.a_str_db_tools#">
+<cfquery name="q_insert">
 	INSERT INTO importfieldmappings 
 		(
 			jobkey,

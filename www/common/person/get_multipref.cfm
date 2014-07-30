@@ -21,7 +21,7 @@
 	<cfset a_str_check_keys = ListAppend(a_str_check_keys, attributes.LoadMultiPrefArray[ii].md5)>
 </cfloop>
 
-<cfquery name="q_select_multi_entry" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_multi_entry">
 SELECT
 	entryvalue1,
 	entrysection,

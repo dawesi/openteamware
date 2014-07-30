@@ -6,7 +6,7 @@
 	
 // --->
 
-<cfquery name="q_update_send_invitation_flag" datasource="#request.a_str_db_tools#">
+<cfquery name="q_update_send_invitation_flag">
 UPDATE
 	meetingmembers
 SET

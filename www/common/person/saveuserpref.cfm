@@ -49,7 +49,7 @@
 <cfif NOT attributes.userpref_item_exists>
 	<!--- check database ... otherwise, we've received the paramter about the existance
 		from the getuserpref.cfm template --->
-	<cfquery name="q_select_userpref_item_exists" datasource="#request.a_str_db_tools#">
+	<cfquery name="q_select_userpref_item_exists">
 	SELECT
 		COUNT(id) AS count_id
 	FROM
@@ -69,7 +69,7 @@
 <cfif NOT attributes.userpref_item_exists>
 	<!--- new item ... insert --->
 	
-	  <cfquery name="q_insert_person_entry" datasource="#request.a_str_db_tools#">
+	  <cfquery name="q_insert_person_entry">
 	  INSERT INTO
 		userpreferences
 		(
@@ -94,7 +94,7 @@
 	
 <cfelse>
 	<!--- existing item ... update! --->
-	  <cfquery name="q_update_userpref_item" datasource="#request.a_str_db_tools#">
+	  <cfquery name="q_update_userpref_item">
 	  UPDATE
 		userpreferences
 		SET

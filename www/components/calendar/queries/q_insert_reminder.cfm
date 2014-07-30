@@ -1,6 +1,6 @@
 
 
-<cfquery name="q_insert_reminder" datasource="#request.a_str_db_tools#">
+<cfquery name="q_insert_reminder">
 INSERT INTO
 	cal_remind
 	(

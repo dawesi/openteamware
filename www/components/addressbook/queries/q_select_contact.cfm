@@ -4,7 +4,7 @@
 	Description:Select contact ...
 // --->
 
-<cfquery name="q_select_contact" datasource="#GetDSName()#">
+<cfquery name="q_select_contact">
 SELECT
 	addressbook.firstname,
 	addressbook.surname,
@@ -73,7 +73,7 @@ WHERE
 ;
 </cfquery>
 
-<cfquery name="q_select_parent_contact" datasource="#GetDSName()#">
+<cfquery name="q_select_parent_contact">
 SELECT
 	addressbook.company,
 	addressbook.surname,

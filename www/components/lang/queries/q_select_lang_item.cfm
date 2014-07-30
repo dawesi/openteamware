@@ -1,4 +1,4 @@
-<cfquery name="q_select_lang_item" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_lang_item">
 SELECT
 	entryvalue
 FROM

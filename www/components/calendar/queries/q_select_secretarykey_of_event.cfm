@@ -1,4 +1,4 @@
-<cfquery name="q_select_secretarykey_of_event" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_secretarykey_of_event">
 SELECT
 	createdbysecretarykey
 FROM

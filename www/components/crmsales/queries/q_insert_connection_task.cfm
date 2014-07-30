@@ -1,4 +1,4 @@
-<cfquery name="q_insert_connection_task" datasource="#request.a_str_db_tools#">
+<cfquery name="q_insert_connection_task">
 INSERT INTO
 	tasks_assigned_to_contacts
 	(

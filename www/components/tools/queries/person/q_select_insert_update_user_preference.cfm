@@ -10,7 +10,7 @@
 
 <cftransaction action="begin">
 
-<cfquery name="q_select_userpref_item_exists" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_userpref_item_exists">
 SELECT
 	COUNT(id) AS count_id
 FROM
@@ -26,7 +26,7 @@ WHERE
 
 <cfif q_select_userpref_item_exists.count_id IS 0>
 	<!--- insert ... --->
-	 <cfquery name="q_insert_person_entry" datasource="#request.a_str_db_tools#">
+	 <cfquery name="q_insert_person_entry">
 	  INSERT INTO
 		userpreferences
 		(
@@ -48,7 +48,7 @@ WHERE
 	  </cfquery>
 <cfelse>
 	<!--- update ... --->
- 	<cfquery name="q_update_userpref_item" datasource="#request.a_str_db_tools#">
+ 	<cfquery name="q_update_userpref_item">
   	UPDATE
 		userpreferences
 	SET

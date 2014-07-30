@@ -53,7 +53,7 @@
 <cfif StructKeyExists(arguments.filter, 'meetingmember_contact_entrykeys') AND
 	  (Len(arguments.filter.meetingmember_contact_entrykeys) GT 0)>
 
-	<cfquery name="q_select_meeting_members_eventskeys_by_parameter" datasource="#request.a_str_db_tools#">
+	<cfquery name="q_select_meeting_members_eventskeys_by_parameter">
 	/* selecting appointment entrykeys by meetingmembers parameters ... */
 	SELECT
 		meetingmembers.eventkey,
@@ -97,7 +97,7 @@
 	entrykey AS eventkey, id, workgroupkey, virtualcalendarkey, item_type, repeat ...
 	// --->
 	
-<cfquery name="q_select_collect_items_to_load" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_collect_items_to_load">
 SELECT * FROM 
 (
 /* select all own items of the user ... */
@@ -326,7 +326,7 @@ WHERE
 </cfif>
 
 <!--- Now, select the appointments on the collected IDs --->
-<cfquery name="q_select_events" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_events">
 SELECT
 	calendar.entrykey,
 	calendar.userkey,

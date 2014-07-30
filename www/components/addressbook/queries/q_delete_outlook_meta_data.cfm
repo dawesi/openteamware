@@ -2,12 +2,12 @@
 
 	Module:		AddressBook
 	Function:	DeleteContact
-	Description: 
-	
+	Description:
+
 
 // --->
 
-<cfquery name="q_delete_outlook_meta_data" datasource="#GetDSName('DELETE')#">
+<cfquery name="q_delete_outlook_meta_data">
 DELETE FROM
 	addressbook_outlook_data
 WHERE

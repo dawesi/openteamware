@@ -3,7 +3,7 @@
 	Description:       Deletes all temporary meeting members (of specified calendar) and creates temporary clones 
                        of non temporary meetingmembers.
 // --->
-<cfquery name="q_begin_temporary_attendees" datasource="#request.a_str_db_tools#">
+<cfquery name="q_begin_temporary_attendees">
 DELETE FROM
 	meetingmembers
 WHERE
@@ -12,7 +12,7 @@ WHERE
     temporary = 1
 ;
 </cfquery>
-<cfquery name="q_begin_temporary_attendees" datasource="#request.a_str_db_tools#">
+<cfquery name="q_begin_temporary_attendees">
 INSERT INTO
 	meetingmembers
 	(

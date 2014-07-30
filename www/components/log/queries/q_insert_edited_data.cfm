@@ -1,7 +1,7 @@
 <cfwddx action="cfml2wddx" input="#a_struct_new_data#" output="a_str_xml_new_data">
 <cfwddx action="cfml2wddx" input="#a_struct_old_data#" output="a_str_xml_old_data">
 
-<cfquery name="q_insert_edited_data" datasource="#request.a_str_db_log#">
+<cfquery name="q_insert_edited_data">
 INSERT INTO
 	editeddata
 	(

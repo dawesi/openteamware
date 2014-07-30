@@ -1,4 +1,4 @@
-<cfquery name="q_insert_crm_report_running" datasource="#request.a_str_db_tools#">
+<cfquery name="q_insert_crm_report_running">
 INSERT INTO
 	crm_running_reports
 	(

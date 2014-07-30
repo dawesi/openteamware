@@ -6,7 +6,7 @@
 
 // --->
 
-<cfquery name="q_select_contact_raw" datasource="#GetDSName()#">
+<cfquery name="q_select_contact_raw">
 SELECT
 	*
 FROM

@@ -1,5 +1,5 @@
 
-<cfquery name="q_select_views" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_views">
 SELECT
 	entrykey,href,dt_created,viewname
 FROM

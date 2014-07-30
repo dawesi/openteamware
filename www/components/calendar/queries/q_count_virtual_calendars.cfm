@@ -6,7 +6,7 @@
 
 	
 // --->
-<cfquery name="q_count_virtual_calendars" datasource="#request.a_str_db_tools#">
+<cfquery name="q_count_virtual_calendars">
 SELECT
 	COUNT(id) AS count_id
 FROM

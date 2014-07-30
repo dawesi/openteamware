@@ -28,7 +28,7 @@ VALUES
 </cfquery>
 
 <!--- update ... --->
-<cfquery name="q_update_customer" datasource="myusers">
+<cfquery name="q_update_customer">
 UPDATE
 	companies
 SET

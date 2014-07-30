@@ -1,5 +1,5 @@
 
-<cfquery name="q_select_commissiongoods_history" datasource="#request.a_str_db_log#">
+<cfquery name="q_select_commissiongoods_history">
 SELECT
 	points,companykey,userkey,dt_created
 FROM

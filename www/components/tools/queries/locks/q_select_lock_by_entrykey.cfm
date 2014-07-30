@@ -8,7 +8,7 @@
 
 // --->
 
-<cfquery name="q_select_lock_by_entrykey" datasource="#request.a_str_db_tools#">
+<cfquery name="q_select_lock_by_entrykey">
 SELECT
 	userkey,
 	dt_created,

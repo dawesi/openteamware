@@ -6,7 +6,7 @@
 	
 <cfset q_select_users = application.components.cmp_customer.GetAllCompanyUsers(companykey = arguments.filter.companykey)>
 
-<cfquery name="q_select_clickstream" datasource="#request.a_str_db_log#">
+<cfquery name="q_select_clickstream">
 SELECT
 	servicekey,dt_created
 FROM

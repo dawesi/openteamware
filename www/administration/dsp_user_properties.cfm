@@ -37,7 +37,7 @@
 		<cfelse>
 		<a style="color:darkgreen;" href="index.cfm?action=user.enable&entrykey=<cfoutput>#urlencodedformat(url.entrykey)##writeurltags()#</cfoutput>"><b><cfoutput>#GetLangVal('adm_wd_activate_again')#</cfoutput></b> ...</a>
 		</cfif>
-		<a href="index.cfm?action=user.delete&entrykey=<cfoutput>#urlencodedformat(url.entrykey)##WriteURLTags()#</cfoutput>"><cfoutput><span class="glyphicon glyphicon-trashÓ></span> #GetLangVal('adm_wd_delete_user')#</cfoutput></a>
+		<a href="index.cfm?action=user.delete&entrykey=<cfoutput>#urlencodedformat(url.entrykey)##WriteURLTags()#</cfoutput>"><cfoutput><span class="glyphicon glyphicon-trashï¿½></span> #GetLangVal('adm_wd_delete_user')#</cfoutput></a>
 		
 <h4 style="margin-bottom:3px;"><cfoutput>#ReplaceNoCase(GetLangVal('adm_ph_properties_of_user'), '%USERNAME%', q_userdata.username)#</cfoutput></h4>
 <cfif q_userdata.bigphotoavaliable IS 1>
@@ -389,7 +389,7 @@
 		  <tr>
 		  	 <td class="field_name">#GetLangVal('cm_wd_contacts')#:</td>
 			<td>
-				<cfquery name="q_select_addresses" datasource="#request.a_str_db_tools#">
+				<cfquery name="q_select_addresses">
 				SELECT
 					COUNT(id) AS count_id
 				FROM
@@ -405,7 +405,7 @@
 		  <tr>
 		  	 <td class="field_name">#GetLangVal('cm_wd_events')#:</td>
 			<td>
-				<cfquery name="q_select_calendar" datasource="#request.a_str_db_tools#">
+				<cfquery name="q_select_calendar">
 				SELECT
 					COUNT(id) AS count_id
 				FROM
@@ -421,7 +421,7 @@
 		  <tr>
 		  	 <td class="field_name">#GetLangVal('cm_wd_files')#:</td>
 			<td>
-				<cfquery name="q_select_storage" datasource="#request.a_str_db_tools#">
+				<cfquery name="q_select_storage">
 				SELECT
 					COUNT(id) AS count_id
 				FROM
@@ -437,7 +437,7 @@
 		  <tr>
 		  	 <td class="field_name">#GetLangVal('cm_wd_tasks')#:</td>
 			<td>
-				<cfquery name="q_select_tasks" datasource="#request.a_str_db_tools#">
+				<cfquery name="q_select_tasks">
 				SELECT
 					COUNT(id) AS count_id
 				FROM

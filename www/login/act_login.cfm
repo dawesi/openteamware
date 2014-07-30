@@ -148,7 +148,7 @@
 
 <cftry>
 
-	<cfquery name="q_update_homepage_tracking" datasource="#request.a_Str_db_log#">
+	<cfquery name="q_update_homepage_tracking">
 	UPDATE
 		homepage_tracking
 	SET

@@ -6,7 +6,7 @@
 
 // --->
 
-<cfquery name="q_update_set_wddx_posted_form_content" datasource="#request.a_str_db_tools#">
+<cfquery name="q_update_set_wddx_posted_form_content">
 UPDATE
 	form_requests
 SET

@@ -8,7 +8,7 @@ CFML Open Source CRM (ColdFusion, Railo, mysql)
 - Manage your contacts & accounts
 - Activity & Project management - what's going on on which account (follow ups, sales projects, tasks)
 
-
+![](https://openteamware.s3-eu-west-1.amazonaws.com/wiki/contact.png)
 
 == Requirements ==
 

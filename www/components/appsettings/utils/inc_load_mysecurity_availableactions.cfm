@@ -11,7 +11,7 @@
 
 <cfset q_select_actions = application.components.cmp_datatypeconvert.xmltoquery(xmlObj = XmlParse(a_str_actions))>
 
-<cfquery name="q_delete_old_items" datasource="#request.a_str_db_users#">
+<cfquery name="q_delete_old_items">
 DELETE FROM
 	avaliableactions
 ;
@@ -19,7 +19,7 @@ DELETE FROM
 
 <cfloop query="q_select_actions">
 	
-	<cfquery name="q_insert_action" datasource="#request.a_str_db_users#">
+	<cfquery name="q_insert_action">
 	INSERT INTO
 		avaliableactions
 		(

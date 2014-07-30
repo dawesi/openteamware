@@ -1,5 +1,5 @@
 
-<cfquery name="q_select_reload_settings" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_reload_settings">
 SELECT
 	reloadpermissions
 FROM

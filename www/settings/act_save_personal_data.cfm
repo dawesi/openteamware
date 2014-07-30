@@ -5,7 +5,7 @@
 
 
 <!-- checken ob sich die rufnummer ge�ndert hat - dann auf stautus 0 setzen --->
-<cfquery name="q_insert" datasource="#request.a_str_db_users#">
+<cfquery name="q_insert">
 INSERT INTO users_saved_data
 (userid,username,dt,ip,firstname,surname,sex,address1,plz,city)
 VALUES
@@ -20,7 +20,7 @@ VALUES
 	--->
 
 <!--- update database --->
-<cfquery name="q_update" datasource="#request.a_str_db_users#">
+<cfquery name="q_update">
 UPDATE
 	users
 SET

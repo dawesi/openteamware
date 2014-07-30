@@ -33,7 +33,7 @@
 
 
 <!--- select the properties of the current reseller --->
-<cfquery name="q_select_current_reseller" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_current_reseller">
 SELECT
 	*
 FROM
@@ -71,7 +71,7 @@ WHERE
 		
 		<!--- display the reseller name ... --->
 		
-		<cfquery name="q_select_reseller_name" datasource="#request.a_str_db_users#">
+		<cfquery name="q_select_reseller_name">
 		SELECT
 			companyname
 		FROM

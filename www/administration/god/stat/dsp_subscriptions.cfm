@@ -1,7 +1,7 @@
 <cfparam name="attributes.resellerkey" type="string" default="">
 
 
-<cfquery name="q_select_companies" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_companies">
 SELECT
 	DATE_FORMAT(dt_created, '%Y%m%d') AS dt_created_int,dt_created,
 	entrykey,companyname,resellerkey,id,status
@@ -13,7 +13,7 @@ ORDER BY
 </cfquery>
 
 <!--- add customers where the trial phase has expired --->
-<cfquery name="q_select_old_companies" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_old_companies">
 SELECT
 	dt_created,entrykey,companyname,resellerkey,id,status,zipcode,createdbyuserkey,
 	DATE_FORMAT(dt_created, '%Y%m%d') AS dt_created_int
@@ -61,7 +61,7 @@ FROM
 	</cfquery>
 	
 	<cfoutput>#q_select_distinct_days.dt_created_int#</cfoutput>
-	<cfquery name="q_s" datasource="#request.a_str_db_users#">
+	<cfquery name="q_s">
 	SELECT
 		companyname,customerid
 	FROM
@@ -151,7 +151,7 @@ green = paid; silver = total
 
 <cfabort>
 
-<cfquery name="q_select_companies" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_companies">
 SELECT
 	dt_created,entrykey,companyname,resellerkey,id,status
 FROM
@@ -159,7 +159,7 @@ FROM
 ;
 </cfquery>
 
-<cfquery name="q_select_accounts" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_accounts">
 SELECT
 	companykey
 FROM

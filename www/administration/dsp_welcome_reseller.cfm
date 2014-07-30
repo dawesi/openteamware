@@ -6,7 +6,7 @@
 	
 <h4><cfoutput>#GetLangVal('adm_ph_welcome')#</cfoutput></h4>
 
-<cfquery name="q_select_customers" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_customers">
 SELECT
 	companyname,entrykey,createdbyuserkey,zipcode,city,countryisocode,status,dt_created,resellerkey,customerid
 FROM
@@ -24,7 +24,7 @@ LIMIT 14
 ;
 </cfquery>
 
-<cfquery name="q_select_customers_trial_end" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_customers_trial_end">
 SELECT
 	companyname,entrykey,createdbyuserkey,zipcode,city,countryisocode,status,dt_created,resellerkey,customerid,dt_trialphase_end
 FROM

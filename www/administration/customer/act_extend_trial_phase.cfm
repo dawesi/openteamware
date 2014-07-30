@@ -6,7 +6,7 @@
 
 <cfoutput>#a_dt_trial_end#</cfoutput>
 
-<cfquery name="q_update_trial_phase" datasource="#request.a_str_db_users#">
+<cfquery name="q_update_trial_phase">
 UPDATE
 	companies
 SET

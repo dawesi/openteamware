@@ -9,7 +9,7 @@
 
 <!--- update --->
 
-<cfquery name="q_update_invoice" datasource="#request.a_str_db_users#">
+<cfquery name="q_update_invoice">
 UPDATE
 	invoices
 SET

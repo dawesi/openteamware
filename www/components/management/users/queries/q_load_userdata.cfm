@@ -16,7 +16,7 @@
 	</cfif>
 </cfif>
 
-<cfquery name="q_load_userdata" datasource="#request.a_str_db_users#">
+<cfquery name="q_load_userdata">
 SELECT
 	<cfif Len(arguments.fieldnames) IS 0>
 	*

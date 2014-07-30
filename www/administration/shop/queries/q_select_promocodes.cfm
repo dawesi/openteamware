@@ -1,4 +1,4 @@
-<cfquery name="q_select_promocodes" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_promocodes">
 SELECT
 	*
 FROM

@@ -1,4 +1,4 @@
-<cfquery name="q_delete_old_items" datasource="#request.a_str_db_users#">
+<cfquery name="q_delete_old_items">
 DELETE FROM
 	trialendaccountaction
 WHERE

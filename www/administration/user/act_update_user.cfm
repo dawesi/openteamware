@@ -1,6 +1,6 @@
 <cfparam name="form.frmactivitystatus" type="numeric" default="1">
 
-<cfquery name="q_update_user" datasource="#request.a_str_db_users#">
+<cfquery name="q_update_user">
 UPDATE
 	users
 SET

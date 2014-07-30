@@ -7,7 +7,7 @@
 <cfparam name="url.resellerkey" type="string" default="">
 <cfparam name="url.includesubresellers" type="numeric" default="0">
 
-<cfquery name="q_select_reseller" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_reseller">
 SELECT
 	*
 FROM

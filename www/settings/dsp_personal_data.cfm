@@ -115,7 +115,7 @@
 	</td>
 </tr>
 <input type="hidden" name="frmICQNumber" value="" />
-<cfquery name="q_select" datasource="#request.a_str_db_users#">
+<cfquery name="q_select">
 SELECT
 	SubscrNewsletter,SubscrNewsletterAddress,email,SubscribeTippsntricks,email
 FROM

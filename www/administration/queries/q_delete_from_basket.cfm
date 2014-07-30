@@ -8,7 +8,7 @@
 
 
 
-<cfquery name="q_delete_from_basket" datasource="#request.a_str_db_users#">
+<cfquery name="q_delete_from_basket">
 
 	DELETE FROM bookedservices WHERE
 

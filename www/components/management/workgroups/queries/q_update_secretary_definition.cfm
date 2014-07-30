@@ -1,4 +1,4 @@
-<cfquery name="q_update_secretary_definition" datasource="#request.a_str_db_users#">
+<cfquery name="q_update_secretary_definition">
 UPDATE
 	secretarydefinitions
 SET

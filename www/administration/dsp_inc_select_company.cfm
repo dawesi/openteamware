@@ -202,7 +202,7 @@
 		
 </cfif>
 
-<cfquery name="q_select_company_name_2_display" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_company_name_2_display">
 SELECT
 	companyname,resellerkey,status
 FROM

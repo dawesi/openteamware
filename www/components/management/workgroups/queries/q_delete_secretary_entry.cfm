@@ -1,6 +1,6 @@
 
 
-<cfquery name="q_delete_secretary_entry" datasource="#request.a_str_db_users#">
+<cfquery name="q_delete_secretary_entry">
 DELETE FROM
 	secretarydefinitions
 WHERE

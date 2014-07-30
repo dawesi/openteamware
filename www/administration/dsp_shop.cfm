@@ -315,7 +315,7 @@ WHERE
 
 			<!--- select the lowest price ... --->
 
-			<cfquery name="q_select_lowest_price" datasource="#request.a_str_db_users#">
+			<cfquery name="q_select_lowest_price">
 			SELECT
 				MIN(price1) AS min_price
 			FROM

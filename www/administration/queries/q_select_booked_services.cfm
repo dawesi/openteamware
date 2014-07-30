@@ -14,7 +14,7 @@
 
 <cfparam name="SelectBookedServices.SettledType" type="numeric" default="0">
 
-<cfquery name="q_select_booked_services" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_booked_services">
 SELECT
 	entrykey,companykey,productkey,paid,durationinmonths,totalamount,dt_contractend,
 	createdbyuserkey,productname,quantity,unit,specialdiscount,settled

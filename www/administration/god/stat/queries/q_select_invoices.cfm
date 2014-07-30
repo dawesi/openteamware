@@ -1,4 +1,4 @@
-<cfquery name="q_select_invoices" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_invoices">
 SELECT
 	invoicetotalsum,companykey,'' AS resellerkey,'' AS distributorkey,paid
 FROM
@@ -10,7 +10,7 @@ WHERE
 ;
 </cfquery>
 
-<cfquery name="q_select_companies" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_companies">
 SELECT
 	entrykey
 FROM
@@ -44,7 +44,7 @@ WHERE
 <cfloop query="q_select_invoices">
 	
 	<!--- ... --->
-	<cfquery name="q_select_company_data"  datasource="#request.a_str_db_users#">
+	<cfquery name="q_select_company_data" >
 	SELECT
 		resellerkey,distributorkey
 	FROM

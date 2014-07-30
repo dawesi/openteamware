@@ -6,7 +6,7 @@
 	
 
 // --->
-<cfquery name="q_select_login_count" datasource="#request.a_Str_db_users#">
+<cfquery name="q_select_login_count">
 SELECT
 	login_count
 FROM
@@ -19,7 +19,7 @@ WHERE
 <cfset a_int_new_count = val(q_select_login_count.login_count) + 1 />
 
 <!--- login count updaten --->
-<cfquery name="q_update_login" datasource="#request.a_Str_db_users#">
+<cfquery name="q_update_login">
 UPDATE
 	users
 SET

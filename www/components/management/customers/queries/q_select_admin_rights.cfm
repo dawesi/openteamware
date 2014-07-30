@@ -1,4 +1,4 @@
-<cfquery name="q_select_admin_rights" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_admin_rights">
 SELECT
 	contacttype,user_level,permissions 
 FROM

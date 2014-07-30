@@ -1,4 +1,4 @@
-<cfquery name="q_select_session_exists" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_session_exists">
 SELECT
 	COUNT(id) AS count_id
 FROM

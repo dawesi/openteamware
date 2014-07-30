@@ -8,7 +8,7 @@
 
 // --->
 
-<cfquery name="q_select_company_users" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_company_users">
 SELECT
 	firstname,surname,username,entrykey,title,
 	aposition,department,telephone,mobilenr,

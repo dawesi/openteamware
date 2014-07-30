@@ -7,7 +7,7 @@
 
 // --->
 
-<cfquery name="q_insert_switch_user_relation.cfm" datasource="#request.a_str_db_users#">
+<cfquery name="q_insert_switch_user_relation.cfm">
 INSERT INTO
 	switchuserrelations
 	(

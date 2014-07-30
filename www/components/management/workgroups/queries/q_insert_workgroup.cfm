@@ -16,7 +16,7 @@
 
 <cfparam name="CreateWorkgroupRequest.colour" type="string" default="white">
 
-<cfquery name="q_insert_workgroup" datasource="#request.a_str_db_users#">
+<cfquery name="q_insert_workgroup">
 INSERT INTO
 	workgroups
 	(

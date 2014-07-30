@@ -1,4 +1,4 @@
-<cfquery name="q_select_entrykey_by_username" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_entrykey_by_username">
 SELECT
 	entrykey
 FROM

@@ -8,7 +8,7 @@
 <cfwddx action="cfml2wddx" input="#q_select_company_data#" output="a_str_wddx" usetimezoneinfo="yes">
 <cfoutput>#htmleditformat(a_str_wddx)#</cfoutput>
 
-<cfquery name="q_insert_wddx" datasource="#request.a_str_db_users#">
+<cfquery name="q_insert_wddx">
 INSERT INTO
 	companies_saved_data
 	(

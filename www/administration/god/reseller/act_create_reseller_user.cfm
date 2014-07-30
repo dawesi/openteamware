@@ -4,7 +4,7 @@
 
 <!--- insert --->
 
-<cfquery name="q_select" datasource="#request.a_str_db_users#">
+<cfquery name="q_select">
 SELECT
 	*
 FROM
@@ -21,7 +21,7 @@ WHERE
 	<cfabort>
 </cfif>
 
-<cfquery name="q_insert_reseller_user" datasource="#request.a_str_db_users#">
+<cfquery name="q_insert_reseller_user">
 INSERT INTO
 	resellerusers
 	(

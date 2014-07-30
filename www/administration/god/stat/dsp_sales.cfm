@@ -99,7 +99,7 @@ ORDER BY
   <cfoutput query="q_select_distinct_resellers">
   <tr>
     <td>
-		<cfquery name="q_select_resellername" datasource="#request.a_str_db_users#">
+		<cfquery name="q_select_resellername">
 		SELECT
 			companyname
 		FROM

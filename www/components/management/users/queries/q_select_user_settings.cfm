@@ -1,4 +1,4 @@
-<cfquery name="q_select_user_settings" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_user_settings">
 SELECT
 	utcdiff,daylightsavinghours,mailcharset,charset,countryisocode,
 	mailusertype,mailprofilekey,productkey,defaultlanguage

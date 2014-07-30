@@ -1,5 +1,5 @@
 
-<cfquery name="q_insert_security_role" datasource="#request.a_str_db_users#">
+<cfquery name="q_insert_security_role">
 INSERT INTO	
 	securityroles
 	(

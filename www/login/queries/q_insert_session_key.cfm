@@ -27,7 +27,7 @@
 
 
 
-<cfquery name="q_insert_session_key" datasource="#request.a_str_db_users#">
+<cfquery name="q_insert_session_key">
 INSERT INTO
 	sessionkeys
 	(userid,userkey,dt_lastcontact,id,dt_expires)

@@ -1,7 +1,7 @@
 <cfparam name="SelectCustomRolePermissions.entrykey" type="string" default="">
 <cfparam name="SelectCustomRolePermissions.servicekey" type="string" default="">
 
-<cfquery name="q_select_custom_role_permissions" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_custom_role_permissions">
 SELECT
 	allowedactions
 FROM

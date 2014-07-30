@@ -6,7 +6,7 @@
 
 <cfdump var="#form#">
 
-<cfquery name="q_select_companykey" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_companykey">
 SELECT
 	entrykey
 FROM
@@ -18,7 +18,7 @@ WHERE
 
 <cfset a_str_companykey = q_select_companykey.entrykey>
 
-<cfquery name="q_update_reseller" datasource="#request.a_str_db_users#">
+<cfquery name="q_update_reseller">
 UPDATE
 	reseller
 SET

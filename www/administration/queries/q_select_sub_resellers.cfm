@@ -9,7 +9,7 @@
 	
 // --->
 
-<cfquery name="q_select_all_resellers" datasource="#request.a_Str_db_users#">
+<cfquery name="q_select_all_resellers">
 SELECT
 	entrykey,companyname,delegaterights,parentkey,domains,emailadr,
 	isdistributor,isprojectpartner,issystempartner,contractingparty,
@@ -19,7 +19,7 @@ FROM
 ;
 </cfquery>
 
-<cfquery name="q_select_sub_resellers" datasource="#request.a_Str_db_users#">
+<cfquery name="q_select_sub_resellers">
 SELECT
 	entrykey,companyname,delegaterights,parentkey,domains,emailadr,isdistributor,isprojectpartner,issystempartner,contractingparty,
 	default_settlement_type,allow_modify_settlement_type
@@ -35,7 +35,7 @@ ORDER BY
 </cfquery>
 
 	<!---
-	<cfquery name="q_select_sub_sub_reseller" datasource="#request.a_str_db_users#">
+	<cfquery name="q_select_sub_sub_reseller">
 	SELECT
 		companyname,entrykey,delegaterights,parentkey,domains,emailadr,isdistributor,isprojectpartner,issystempartner,contractingparty
 	FROM
@@ -127,7 +127,7 @@ ORDER BY
 
 			<cfinclude template="inc_add_v_query.cfm">
 
-				<cfquery name="q_select_sub_sub_sub_reseller_4" datasource="#request.a_str_db_users#">
+				<cfquery name="q_select_sub_sub_sub_reseller_4">
 		
 				SELECT companyname,entrykey,delegaterights,parentkey,domains,emailadr,isdistributor,
 				isprojectpartner,issystempartner,contractingparty,

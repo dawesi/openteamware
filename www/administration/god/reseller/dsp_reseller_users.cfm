@@ -1,6 +1,6 @@
 <!--- users of a reseller --->
 
-<cfquery name="q_select_reseller_users" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_reseller_users">
 SELECT
 	resellerusers.userkey,users.username,users.firstname,users.surname,resellerusers.permissions,resellerusers.contacttype,
 	users.department,users.aposition
@@ -13,7 +13,7 @@ WHERE
 ;
 </cfquery>
 
-<cfquery name="q_select_companykey" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_companykey">
 SELECT
 	companykey
 FROM
@@ -24,7 +24,7 @@ WHERE
 </cfquery>
 
 
-<cfquery name="q_select_users" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_users">
 SELECT
 	username,firstname,surname,email,aposition,department,entrykey
 FROM

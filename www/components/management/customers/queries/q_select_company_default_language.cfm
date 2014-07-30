@@ -1,4 +1,4 @@
-<cfquery name="q_select_company_default_language" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_company_default_language">
 SELECT
 	language
 FROM

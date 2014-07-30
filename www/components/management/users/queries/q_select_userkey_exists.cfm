@@ -1,4 +1,4 @@
-<cfquery name="q_select_userkey_exists" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_userkey_exists">
 SELECT
 	COUNT(userid) AS count_id
 FROM

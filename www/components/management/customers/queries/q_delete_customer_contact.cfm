@@ -1,4 +1,4 @@
-<cfquery name="q_delete_customer_contact" datasource="#request.a_str_db_users#">
+<cfquery name="q_delete_customer_contact">
 DELETE FROM
 	companycontacts
 WHERE

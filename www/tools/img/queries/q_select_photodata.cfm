@@ -1,6 +1,6 @@
 
 
-<cfquery name="q_select_photodata" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_photodata">
 SELECT
 	photodata,contenttype
 FROM

@@ -1,4 +1,4 @@
-<cfquery name="q_select_ctac_accepted" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_ctac_accepted">
 SELECT
 	generaltermsandconditions_accepted,
 	settlement_type

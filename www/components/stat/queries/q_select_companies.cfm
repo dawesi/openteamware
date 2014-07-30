@@ -1,4 +1,4 @@
-<cfquery name="q_select_companies" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_companies">
 SELECT
 	companies.entrykey,
 	companies.dt_created,
@@ -65,7 +65,7 @@ WHERE
 </cfif>
 
 <!--- add old companies? --->
-<cfquery name="q_select_old_companies" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_old_companies">
 SELECT
 	entrykey,dt_created,entrykey,customertype,disabled,openinvoices,signupsource,LOWER(countryisocode) AS countryisocode,zipcode,
 	0 AS dt_created_int,id,createdbyuserkey,generaltermsandconditions_accepted,status,httpreferer

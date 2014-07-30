@@ -7,7 +7,7 @@
 <cfparam name="url.createdbytype" type="numeric" default="-1">
 <cfparam name="url.invoicetype" type="numeric" default="-1">
 
-<cfquery name="q_select_reseller" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_reseller">
 SELECT
 	entrykey,companyname
 FROM
@@ -75,7 +75,7 @@ ORDER BY
 	
 
 	
-<cfquery name="q_select_invoices" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_invoices">
 SELECT
 	entrykey,paymethod,dunninglevel,dt_created,dt_paid,paid,invoicetotalsum,
 	companykey,0 AS int_days_until_paid,invoicetype,createdbytype
@@ -95,7 +95,7 @@ WHERE
 </cfquery>
 
 <!--- remove disabled customers ... --->
-<cfquery name="q_select_companies" datasource="#request.a_Str_db_users#">
+<cfquery name="q_select_companies">
 SELECT
 	entrykey
 FROM

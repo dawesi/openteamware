@@ -8,7 +8,7 @@
 <!--- small (0) or big (1) --->
 <cfparam name="url.type" type="numeric">
 
-<cfquery name="q_delete_old_photo" datasource="#request.a_str_db_users#">
+<cfquery name="q_delete_old_photo">
 DELETE FROM
 	userphotos
 WHERE
@@ -18,7 +18,7 @@ WHERE
 ;
 </cfquery>
 
-<cfquery name="q_update_photo" datasource="#request.a_Str_Db_users#">
+<cfquery name="q_update_photo">
 UPDATE
 	users
 SET

@@ -1,5 +1,5 @@
 
-<cfquery name="q_update_user_roles" datasource="#request.a_str_db_users#">
+<cfquery name="q_update_user_roles">
 UPDATE
 	workgroup_members
 SET

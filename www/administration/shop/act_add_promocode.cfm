@@ -5,7 +5,7 @@
 	<cfabort>
 </cfif>
 
-<cfquery name="q_select_promo_code" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_promo_code">
 SELECT
 	resellerkey,used,codevalue
 FROM
@@ -18,7 +18,7 @@ WHERE
 <cfif q_select_promo_code.recordcount GT 0>
 
 	<!--- insert --->
-	<cfquery name="q_insert_assign_promocode" datasource="#request.a_str_db_users#">
+	<cfquery name="q_insert_assign_promocode">
 	INSERT INTO
 		assigned_promocodes
 		(

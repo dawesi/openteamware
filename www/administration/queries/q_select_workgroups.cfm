@@ -10,7 +10,7 @@
 
 	
 
-<cfquery name="q_select_workgroups" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_workgroups">
 SELECT
 	entrykey,groupname,description,dt_created,parentkey,createdbyuserkey,companykey,colour,shortname
 FROM

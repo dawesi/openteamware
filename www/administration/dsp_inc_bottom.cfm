@@ -1,7 +1,7 @@
 
 <cfif StructKeyExists(request, 'q_company_admin') AND request.q_company_admin.recordcount IS 1 AND (IsDefined("url.companykey") OR IsDefined("url.frmcompanykey"))>
 
-	<cfquery name="q_select_resellerkey" datasource="#request.a_str_db_users#">
+	<cfquery name="q_select_resellerkey">
 	SELECT
 		resellerkey
 	FROM
@@ -15,7 +15,7 @@
 	;
 	</cfquery>
 	
-	<cfquery name="q_select_reseller" datasource="#request.a_str_db_users#">
+	<cfquery name="q_select_reseller">
 	SELECT
 		companyname,street,zipcode,city,telephone,emailadr,customercontact
 	FROM

@@ -1,4 +1,4 @@
-<cfquery name="q_insert_trialendaccountaction" datasource="#request.a_str_db_users#">
+<cfquery name="q_insert_trialendaccountaction">
 INSERT INTO
 	trialendaccountaction
 	(
@@ -15,7 +15,7 @@ VALUES
 ;
 </cfquery>
 
-<cfquery name="q_insert_trialendaccountaction" datasource="#request.a_str_db_users#">
+<cfquery name="q_insert_trialendaccountaction">
 INSERT INTO
 	trialendaccountaction
 	(
@@ -33,7 +33,7 @@ VALUES
 </cfquery>
 
 
-<cfquery name="q_insert_trialendaccountaction" datasource="#request.a_str_db_users#">
+<cfquery name="q_insert_trialendaccountaction">
 INSERT INTO
 	trialendaccountaction
 	(

@@ -1,4 +1,4 @@
-<cfquery name="q_select_attended_users" datasource="#request.a_Str_Db_users#">
+<cfquery name="q_select_attended_users">
 SELECT
 	userkey,dt_created	
 FROM

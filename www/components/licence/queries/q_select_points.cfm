@@ -1,4 +1,4 @@
-<cfquery name="q_select_points" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_points">
 SELECT
 	companykey,productkey,availableunits
 FROM

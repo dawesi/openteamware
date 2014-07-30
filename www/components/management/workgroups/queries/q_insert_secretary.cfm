@@ -1,6 +1,6 @@
 
 
-<cfquery name="q_insert_secretary" datasource="#request.a_str_db_users#">
+<cfquery name="q_insert_secretary">
 INSERT INTO
 	secretarydefinitions
 	(

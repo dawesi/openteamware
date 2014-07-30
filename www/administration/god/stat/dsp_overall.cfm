@@ -4,7 +4,7 @@
 
 <cfset q_stat = QueryNew('yearweek,customers,trialcustomers,sales,percentpaid,yearweekint,dt_sort')>
 
-<cfquery name="q_select_customers" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_customers">
 SELECT
 	dt_created AS dt_created_original,status,entrykey,disabled,
 	DATE_FORMAT(dt_created, '%Y%m%d') AS dt_created
@@ -16,7 +16,7 @@ WHERE
 </cfquery>
 
 <!--- add customers where the trial phase has expired --->
-<cfquery name="q_select_old_companies" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_old_companies">
 SELECT
 	dt_created AS dt_created_original,status,entrykey,disabled,
 	DATE_FORMAT(dt_created, '%Y%m%d') AS dt_created
@@ -79,7 +79,7 @@ WHERE
 	</cfif>
 	
 	<!--- sales --->
-	<cfquery name="q_select_sales" datasource="#request.a_str_db_users#">
+	<cfquery name="q_select_sales">
 	SELECT
 		sum(invoicetotalsum) AS sum_total
 	FROM

@@ -10,7 +10,7 @@
 
 	
 
-<cfquery name="q_select_companies" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_companies">
 SELECT
 	entrykey,companyname,dt_created,resellerkey,dt_contractstart,dt_contractend,
 	status,rating,description,customertype,contactperson,email,distributorkey,

@@ -7,7 +7,7 @@
 
 <body>
 
-<cfquery name="q_select_company" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_company">
 SELECT
 	companyname,entrykey,description,telephone,contactperson,email,resellerkey,customerid
 FROM
@@ -29,7 +29,7 @@ WHERE
 
 <!--- disable all accounts ... --->
 
-<cfquery name="q_update" datasource="#request.a_str_db_users#">
+<cfquery name="q_update">
 UPDATE
 	companies
 SET

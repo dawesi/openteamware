@@ -12,7 +12,7 @@
 
 	
 
-<cfquery name="q_select_email_account" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_email_account">
 SELECT
 	*
 FROM

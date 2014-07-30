@@ -1,5 +1,5 @@
 
-<cfquery name="q_select_securityroles_ip_restrictions" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_securityroles_ip_restrictions">
 SELECT
 	restrictiontype,restrictionvalue,active,createdbyuserkey,dt_created,direction,rolekey
 FROM

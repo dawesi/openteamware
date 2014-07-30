@@ -10,7 +10,7 @@
 
 	
 
-<cfquery name="q_select_reseller" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_reseller">
 SELECT
 	companyname,entrykey,delegaterights,parentkey,domains,emailadr,
 	isdistributor,issystempartner,isprojectpartner,contractingparty,

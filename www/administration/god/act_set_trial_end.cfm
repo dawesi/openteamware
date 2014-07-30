@@ -1,5 +1,5 @@
 
-<cfquery name="q_select_company" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_company">
 SELECT
 	companyname,entrykey
 FROM
@@ -9,7 +9,7 @@ WHERE
 ;
 </cfquery>
 
-<cfquery name="q_update_company" datasource="#request.a_str_db_users#">
+<cfquery name="q_update_company">
 UPDATE
 	companies
 SET

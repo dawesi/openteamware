@@ -1,5 +1,5 @@
 
-<cfquery name="q_select_user_fullname_by_entrykey" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_user_fullname_by_entrykey">
 SELECT
 	firstname,surname
 FROM

@@ -1,4 +1,4 @@
-<cfquery name="q_select_basic_user_data" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_basic_user_data">
 SELECT
 	firstname,surname,username,identificationcode
 FROM

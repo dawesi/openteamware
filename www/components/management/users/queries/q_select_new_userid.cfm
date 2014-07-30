@@ -7,7 +7,7 @@
 <cfparam name="SelectNewUseridRequest.entrykey" type="string" default="">
 	
 <!--- get the new userid --->
-<cfquery name="q_select_new_userid" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_new_userid">
 SELECT
 	userid
 FROM

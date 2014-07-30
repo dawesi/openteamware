@@ -1,5 +1,5 @@
 <!--- load next free customer id ... --->
-<cfquery name="q_select_max_customer_id" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_max_customer_id">
 SELECT
 	MAX(customerid) AS max_customerid
 FROM
@@ -9,7 +9,7 @@ FROM
 
 <cfset a_int_new_customer_id = Val(q_select_max_customer_id.max_customerid) + 1>
 
-<cfquery name="q_insert_customer" datasource="#request.a_str_db_users#">
+<cfquery name="q_insert_customer">
 INSERT INTO companies
 	(
 	resellerkey,

@@ -1,4 +1,4 @@
-<cfquery name="q_select_user_is_admin" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_user_is_admin">
 SELECT
 	companycontacts.companykey,companycontacts.contacttype,companycontacts.user_level,companies.companyname,companies.countryisocode
 FROM

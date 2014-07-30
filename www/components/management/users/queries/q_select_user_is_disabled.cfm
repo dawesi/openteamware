@@ -1,4 +1,4 @@
-<cfquery name="q_select_user_is_disabled" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_user_is_disabled">
 SELECT
 	allow_login
 FROM

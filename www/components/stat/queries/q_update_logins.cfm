@@ -4,7 +4,7 @@
 
 <cfloop query="q_select_companies">
 
-	<cfquery name="q_select_login_sum" datasource="#request.a_str_db_users#">
+	<cfquery name="q_select_login_sum">
 	SELECT
 		SUM(login_count) AS sum_logins
 	FROM

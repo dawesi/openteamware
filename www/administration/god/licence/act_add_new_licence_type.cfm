@@ -5,7 +5,7 @@
 	
 // --->
 
-<cfquery name="q_update_status" datasource="#request.a_str_db_users#">
+<cfquery name="q_update_status">
 INSERT INTO
 	licencing   
 	(

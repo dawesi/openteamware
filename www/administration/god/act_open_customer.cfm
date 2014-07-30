@@ -7,7 +7,7 @@
 
 <body>
 
-<cfquery name="q_select_company" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_company">
 SELECT
 	companyname,entrykey,description,telephone,contactperson,email,resellerkey,customerid,oldpasswords
 FROM
@@ -24,7 +24,7 @@ WHERE
 <cfset SelectAccounts.CompanyKey = q_select_company.entrykey>
 <cfinclude template="../queries/q_select_accounts.cfm">
 
-<cfquery name="q_update" datasource="#request.a_str_db_users#">
+<cfquery name="q_update">
 UPDATE
 	companies
 SET

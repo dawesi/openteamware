@@ -1,6 +1,6 @@
 
 
-<cfquery name="q_select_session_lastcontact" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_session_lastcontact">
 SELECT
 	dt_lastcontact
 FROM

@@ -28,7 +28,7 @@ FROM
 ;
 </cfquery>
 
-<cfquery name="q_select_usernames" datasource="#request.a_Str_db_users#">
+<cfquery name="q_select_usernames">
 SELECT
 	username,entrykey
 FROM

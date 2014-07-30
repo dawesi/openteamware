@@ -30,7 +30,7 @@
 	<!--- customerid provided? --->
 	<cfif StructKeyExists(url, 'customerid')>
 		<!--- load data --->
-		<cfquery name="q_select_company" datasource="#request.a_str_db_users#">
+		<cfquery name="q_select_company">
 		SELECT
 			companyname,zipcode,email,telephone,customerid,country,city,street
 		FROM
@@ -53,7 +53,7 @@
 	</cfif>
 </cfif>
 
-<cfquery name="q_select_customerid" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_customerid">
 SELECT
 	customerid
 FROM

@@ -1,7 +1,7 @@
 
 <cfparam name="SelectWorkgroupMembersRequest.entrykey" type="string" default="">
 
-<cfquery name="q_select_workgroup_members" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_workgroup_members">
 SELECT
 	entrykey,userkey
 FROM

@@ -1,6 +1,6 @@
 
 
-<cfquery name="q_select_secretaries" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_secretaries">
 SELECT
 	userkey,
 	secretarykey,

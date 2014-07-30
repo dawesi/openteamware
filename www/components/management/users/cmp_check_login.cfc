@@ -27,7 +27,7 @@
 			<cfset arguments.username = arguments.username&"@"&arguments.defaultdomain>
 		</cfif>
 		
-		<cfquery name="q_check_data" datasource="#request.a_str_db_users#">
+		<cfquery name="q_check_data">
 		SELECT
 			userid,entrykey
 		FROM
@@ -64,7 +64,7 @@
 		
 		<cfset var a_bol_allowed = true />
 		
-		<!--- <cfquery name="q_select_restrictions" datasource="#request.a_str_db_users#">
+		<!--- <cfquery name="q_select_restrictions">
 		SELECT
 			restrictiontype,restrictionvalue,direction
 		FROM

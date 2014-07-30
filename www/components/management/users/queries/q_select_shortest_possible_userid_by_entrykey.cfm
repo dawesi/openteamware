@@ -7,7 +7,7 @@
 
 // --->
 
-<cfquery name="q_select_shortest_possible_userid_by_entrykey" datasource="#request.a_Str_db_users#">
+<cfquery name="q_select_shortest_possible_userid_by_entrykey">
 SELECT
 	username,identificationcode
 FROM

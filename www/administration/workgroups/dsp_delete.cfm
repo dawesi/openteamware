@@ -25,7 +25,7 @@ Gruppe wurde geloescht.
 
 
 <!--- check if this workgroup has subgroups or still members ... --->
-<cfquery name="q_select_sub_workgroups" datasource="#request.a_str_Db_users#">
+<cfquery name="q_select_sub_workgroups">
 SELECT
 	COUNT(id) AS count_id
 FROM

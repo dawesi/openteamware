@@ -1,4 +1,4 @@
-<cfquery name="q_update_price" datasource="#request.a_str_db_users#">
+<cfquery name="q_update_price">
 UPDATE prices
 SET price1 = <cfqueryparam cfsqltype="cf_sql_float" value="#form.frmprice#">,
 quantity = <cfqueryparam cfsqltype="cf_sql_integer" value="#form.frmquantity#">

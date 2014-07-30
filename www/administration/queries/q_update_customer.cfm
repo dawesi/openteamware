@@ -6,7 +6,7 @@
 		
 <cfparam name="form.frmshortname" type="string" default="">
 
-<cfquery name="q_update_customer" datasource="#request.a_str_db_users#">
+<cfquery name="q_update_customer">
 UPDATE
 	companies
 SET

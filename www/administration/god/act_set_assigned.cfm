@@ -1,7 +1,7 @@
 
 <cfparam name="url.entrykey" type="string" default="">
 
-<cfquery name="q_select_companies" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_companies">
 UPDATE
 	companies
 SET

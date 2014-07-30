@@ -25,7 +25,7 @@
 </cfif>
 
 
-<cfquery name="q_select_company" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_company">
 SELECT
 	companyname,entrykey,status,language,email
 FROM
@@ -42,7 +42,7 @@ WHERE
 
 <h4><cfoutput>#q_select_company.companyname# (#url.frmcustomerid#)</cfoutput></h4>
 
-<cfquery name="q_select_licences" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_licences">
 SELECT
 	*
 FROM
@@ -56,7 +56,7 @@ WHERE
 <table width="100%"  border="0" cellspacing="0" cellpadding="8">
 	<cfoutput query="q_select_licences">
 	
-	<cfquery name="q_select_product_name" datasource="#request.a_str_db_users#">
+	<cfquery name="q_select_product_name">
 	SELECT
 		productname
 	FROM
@@ -90,7 +90,7 @@ WHERE
   </cfoutput>
 </table>
 
-<cfquery name="q_select_products" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_products">
 SELECT
 	productname,entrykey
 FROM

@@ -8,7 +8,7 @@
 
 <!--- for which resellers is this company responsible? --->
 
-<cfquery name="q_select_companykey" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_companykey">
 SELECT
 	companykey,username
 FROM
@@ -21,7 +21,7 @@ WHERE
 <cfoutput><h4>#q_select_companykey.username#</h4></cfoutput>
 
 
-<cfquery name="q_select_reseller" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_reseller">
 SELECT
 	companyname,entrykey,description
 FROM

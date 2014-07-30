@@ -6,7 +6,7 @@
 	<cfexit method="exittemplate">
 </cfif>
 
-<cfquery name="q_select_important_userdata" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_important_userdata">
 SELECT
 	utcdiff,username,entrykey,firstname,surname,sex,companykey
 FROM

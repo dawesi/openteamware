@@ -1,5 +1,5 @@
 
-<cfquery name="q_update_pwd" datasource="#request.a_str_db_users#">
+<cfquery name="q_update_pwd">
 UPDATE
 	users
 SET

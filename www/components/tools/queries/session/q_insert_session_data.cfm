@@ -1,4 +1,4 @@
-<cfquery name="q_insert_session_data" datasource="#request.a_str_db_users#">
+<cfquery name="q_insert_session_data">
 INSERT INTO
 	sessionkeys
 	(

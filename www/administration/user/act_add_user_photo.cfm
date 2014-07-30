@@ -13,7 +13,7 @@
 	<cffile action="readbinary" file="#sFilename#" variable="a_str_data">
 	
 	<!--- delete old photo --->
-	<cfquery name="q_delete_old_photo" datasource="#request.a_str_db_users#">
+	<cfquery name="q_delete_old_photo">
 	DELETE FROM
 		userphotos
 	WHERE
@@ -23,7 +23,7 @@
 	;
 	</cfquery>
 	
-	<cfquery name="q_insert_data" datasource="#request.a_str_db_users#">
+	<cfquery name="q_insert_data">
 	INSERT INTO userphotos 
 	(photodata,type,userkey,contenttype)
 	VALUES
@@ -33,7 +33,7 @@
 	<cfqueryparam cfsqltype="cf_sql_varchar" value="#file.ContentType#/#file.ContentSubType#">);
 	</cfquery>
 	
-	<cfquery name="q_update_user" datasource="#request.a_str_db_users#">
+	<cfquery name="q_update_user">
 	UPDATE
 		users
 	SET
@@ -52,7 +52,7 @@
 	
 	<cffile action="readbinary" file="#sFilename#" variable="a_str_data">
 	
-	<cfquery name="q_delete_old_photo" datasource="#request.a_str_db_users#">
+	<cfquery name="q_delete_old_photo">
 	DELETE FROM
 		userphotos
 	WHERE
@@ -62,7 +62,7 @@
 	;
 	</cfquery>	
 	
-	<cfquery name="q_insert_data" datasource="#request.a_str_db_users#">
+	<cfquery name="q_insert_data">
 	INSERT INTO userphotos 
 	(photodata,type,userkey,contenttype)
 	VALUES
@@ -72,7 +72,7 @@
 	<cfqueryparam cfsqltype="cf_sql_varchar" value="#file.ContentType#/#file.ContentSubType#">);
 	</cfquery>
 	
-	<cfquery name="q_update_user" datasource="#request.a_str_db_users#">
+	<cfquery name="q_update_user">
 	UPDATE
 		users
 	SET

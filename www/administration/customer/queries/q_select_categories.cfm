@@ -1,4 +1,4 @@
-<cfquery name="q_select_categories" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_categories">
 SELECT
 	company_default_categories
 FROM

@@ -1,6 +1,6 @@
 
 
-<cfquery name="q_select_photo_settings" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_photo_settings">
 SELECT
 	bigphotoavaliable,smallphotoavaliable,username,entrykey
 FROM

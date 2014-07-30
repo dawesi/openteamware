@@ -1,4 +1,4 @@
-<cfquery name="q_select_companykey" datasource="#request.a_Str_db_users#">
+<cfquery name="q_select_companykey">
 SELECT
 	entrykey
 FROM
@@ -17,7 +17,7 @@ WHERE
 
 
 
-<cfquery name="q_update_companykey" datasource="#request.a_Str_db_users#">
+<cfquery name="q_update_companykey">
 UPDATE
 	users
 SET

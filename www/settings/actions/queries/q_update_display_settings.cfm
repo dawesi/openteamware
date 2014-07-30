@@ -25,7 +25,7 @@
 	<cfset a_int_confirmlogout = 0>
 </cfif>
 	
-<cfquery name="q_update_settings" datasource="#request.a_str_db_users#">
+<cfquery name="q_update_settings">
 UPDATE
 	users
 SET

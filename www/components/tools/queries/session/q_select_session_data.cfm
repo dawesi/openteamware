@@ -1,4 +1,4 @@
-<cfquery name="q_select_session_data" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_session_data">
 SELECT
 	struct_securitycontext,struct_usersettings
 FROM

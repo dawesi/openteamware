@@ -4,7 +4,7 @@
 
 
 
-<cfquery name="q_select_workgroup_name_by_key" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_workgroup_name_by_key">
 SELECT
 	shortname,groupname
 FROM

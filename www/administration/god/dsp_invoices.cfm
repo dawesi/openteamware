@@ -1,6 +1,6 @@
 <h4>Rechnungen</h4>
 <!---
-<cfquery name="q_select_invoices" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_invoices">
 SELECT
 	invoicenumber,
 	companykey,
@@ -18,7 +18,7 @@ FROM
 	
 	<cfset a_dt_due = DateAdd('d', 10, q_select_invoices.dt_created)>
 
-	<cfquery name="q_update" datasource="#request.a_str_db_users#">
+	<cfquery name="q_update">
 	UPDATE
 		invoices
 	SET
@@ -31,7 +31,7 @@ FROM
 </cfloop>--->
 <cfif IsDefined("url.frmshowcustomer")>
 	<!--- check the customerid --->
-	<cfquery name="q_select_companykey" datasource="#request.a_str_db_users#">
+	<cfquery name="q_select_companykey">
 	SELECT
 		entrykey
 	FROM
@@ -42,7 +42,7 @@ FROM
 	</cfquery>
 </cfif>
 
-<cfquery name="q_select_invoices" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_invoices">
 SELECT
 	invoicenumber,
 	companykey,
@@ -142,7 +142,7 @@ ORDER BY
   <cfoutput query="q_select_invoices">
   
 
-	<cfquery name="q_select_company" datasource="#request.a_Str_db_users#">
+	<cfquery name="q_select_company">
 	SELECT
 		companyname,resellerkey,entrykey
 	FROM

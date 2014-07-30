@@ -32,7 +32,7 @@
 	
 	// --->
 	
-<cfquery name="q_select_autologinkey" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_autologinkey">
 SELECT username,pwd FROM users
 WHERE autologin_key = <cfqueryparam cfsqltype="cf_sql_varchar" value="#SelectAutologinkeyRequest.key#">;
 </cfquery>

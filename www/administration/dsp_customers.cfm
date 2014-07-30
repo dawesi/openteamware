@@ -66,7 +66,7 @@ WHERE
 <cfif len(url.search) gt 0>
 
 	<!--- search ... --->
-	<cfquery name="q_select_users" datasource="#request.a_str_db_users#">
+	<cfquery name="q_select_users">
 	SELECT
 		firstname,surname,username,companykey
 	FROM
@@ -320,7 +320,7 @@ WHERE
 
   <cfoutput query="q_select_companies" startrow="#url.startrow#" maxrows="#a_int_maxrows#">
   
-  <cfquery name="q_select_is_reseller" datasource="#request.a_str_db_users#">
+  <cfquery name="q_select_is_reseller">
   SELECT
   	COUNT(id) AS count_id
   FROM

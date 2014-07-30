@@ -1,4 +1,4 @@
-<cfquery name="q_select_is_secretary_of_user" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_is_secretary_of_user">
 SELECT
 	COUNT(id) AS count_id
 FROM

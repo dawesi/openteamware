@@ -13,7 +13,7 @@
 <cfset form.frmresellerkey = '' />  
  --->
 <!--- check if the user is a reseller ... --->
-<cfquery name="q_select_resellerkey" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_resellerkey">
 SELECT
 	resellerkey
 FROM
@@ -23,7 +23,7 @@ WHERE
 ; 
 </cfquery>
 
-<cfquery name="q_select_reseller" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_reseller">
 SELECT
 	companyname,country,dt_created,entrykey,id,parentid,domains,emailadr,
 	isprojectpartner,issystempartner,isdistributor,contractingparty,
@@ -52,7 +52,7 @@ WHERE
 
 
 <!--- is company administrator (technical contact ...)? --->
-<cfquery name="request.q_select_company_admin" datasource="#request.a_str_db_users#">
+<cfquery name="request.q_select_company_admin">
 SELECT
 	companycontacts.companykey,
 	companycontacts.contacttype,

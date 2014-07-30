@@ -16,7 +16,7 @@
 
 
 
-<cfquery name="q_select_emailadr" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_emailadr">
 SELECT
 	id,Displayname,emailadr,pop3username,pop3server,pop3password,deletemsgonserver,autocheckeachhours,AutoCheckMinutes
 FROM

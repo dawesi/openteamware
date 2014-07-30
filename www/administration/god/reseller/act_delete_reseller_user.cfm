@@ -2,7 +2,7 @@
 
 <cfdump var="#url#">
 
-<cfquery name="q_delete" datasource="#request.a_str_db_users#">
+<cfquery name="q_delete">
 DELETE FROM
 	resellerusers
 WHERE

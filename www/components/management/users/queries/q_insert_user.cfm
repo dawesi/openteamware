@@ -10,7 +10,7 @@
 	
 <cflock name="lck_insert_new_user" timeout="30" type="exclusive">
 	
-<cfquery name="q_select_max_userid" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_max_userid">
 SELECT
 	MAX(userid) AS max_userid
 FROM
@@ -20,7 +20,7 @@ FROM
 
 <cfset a_int_userid = (Val(q_select_max_userid.max_userid) + 1) />
 
-<cfquery name="q_insert_user" datasource="#request.a_str_db_users#">
+<cfquery name="q_insert_user">
 INSERT INTO
 	users
 	(

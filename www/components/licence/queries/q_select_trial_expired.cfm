@@ -1,4 +1,4 @@
-<cfquery name="q_select_trial_expired" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_trial_expired">
 SELECT
 	COUNT(id) AS count_id
 FROM

@@ -1,6 +1,6 @@
 
 
-<cfquery name="q_select_first_workgroup_level" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_first_workgroup_level">
 SELECT
 	workgroup_members.workgroupkey
 FROM

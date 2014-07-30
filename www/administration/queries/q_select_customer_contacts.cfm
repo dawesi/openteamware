@@ -16,7 +16,7 @@
 
 
 
-<cfquery name="q_select_customer_contacts" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_customer_contacts">
 SELECT
 	userkey,user_level,contacttype,permissions,contacttype
 FROM

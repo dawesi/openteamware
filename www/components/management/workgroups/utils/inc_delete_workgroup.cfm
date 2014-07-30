@@ -1,5 +1,5 @@
 <!--- some checks ... --->
-<cfquery name="q_select_sub_workgroups" datasource="#request.a_str_Db_users#">
+<cfquery name="q_select_sub_workgroups">
 SELECT
 	COUNT(id) AS count_id
 FROM
@@ -15,7 +15,7 @@ AND
 	<cfexit method="exittemplate">
 </cfif>
 
-<cfquery name="q_select_members_count" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_members_count">
 SELECT
 	COUNT(entrykey) AS count_id
 FROM
@@ -30,7 +30,7 @@ WHERE
 </cfif>
 
 <!--- delete roles ... --->
-<cfquery name="q_delete_roles" datasource="#request.a_str_db_users#">
+<cfquery name="q_delete_roles">
 DELETE FROM
 	roles
 WHERE
@@ -39,7 +39,7 @@ WHERE
 </cfquery>
 
 <!--- delete entry ... --->
-<cfquery name="q_delete_workgroup" datasource="#request.a_str_db_users#">
+<cfquery name="q_delete_workgroup">
 DELETE FROM
 	workgroups
 WHERE

@@ -1,5 +1,5 @@
 
-<cfquery name="q_select_hased_login" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_hased_login">
 SELECT
 	entrykey
 FROM

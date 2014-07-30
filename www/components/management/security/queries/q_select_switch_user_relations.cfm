@@ -7,7 +7,7 @@
 
 // --->
 
-<cfquery name="q_select_switch_user_relations" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_switch_user_relations">
 SELECT
 	dt_created,
 	createdbyuserkey,

@@ -1,4 +1,4 @@
-<cfquery name="q_select_userkey_from_sessionkey" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_userkey_from_sessionkey">
 SELECT
 	userkey
 FROM

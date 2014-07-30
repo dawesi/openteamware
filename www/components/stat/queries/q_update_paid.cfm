@@ -2,7 +2,7 @@
 	<cfexit method="exittemplate">
 </cfif>
 
-<cfquery name="q_select_open_invoices" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_open_invoices">
 SELECT
 	companykey
 FROM
@@ -14,7 +14,7 @@ WHERE
 ;
 </cfquery>
 
-<cfquery name="q_update_companies" datasource="#request.a_str_db_users#">
+<cfquery name="q_update_companies">
 UPDATE
 	companies
 SET
@@ -28,7 +28,7 @@ SET
 
 <!--- update ... --->
 	
-	<cfquery name="q_update_companies" datasource="#request.a_str_db_users#">
+	<cfquery name="q_update_companies">
 	UPDATE
 		companies
 	SET

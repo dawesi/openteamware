@@ -1,4 +1,4 @@
-<cfquery name="q_update_session_key" datasource="#request.a_str_db_users#">
+<cfquery name="q_update_session_key">
 UPDATE
 	sessionkeys
 SET

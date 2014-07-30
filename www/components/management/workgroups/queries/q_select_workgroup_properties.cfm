@@ -1,4 +1,4 @@
-<cfquery name="q_select_workgroup_properties" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_workgroup_properties">
 SELECT
 	shortname,groupname,description,entrykey,companykey
 FROM

@@ -1,6 +1,6 @@
 
 
-<cfquery name="q_update_price" datasource="#request.a_str_db_users#">
+<cfquery name="q_update_price">
 INSERT INTO prices
 (entrykey,price1,quantity,productkey)
 VALUES

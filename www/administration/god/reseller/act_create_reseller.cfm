@@ -6,7 +6,7 @@
 
 <cfdump var="#form#">
 
-<cfquery name="q_select_companykey" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_companykey">
 SELECT
 	entrykey,status
 FROM
@@ -25,7 +25,7 @@ WHERE
 
 <cfset a_str_resellerkey = CreateUUID()>
 
-<cfquery name="q_update_reseller" datasource="#request.a_str_db_users#">
+<cfquery name="q_update_reseller">
 INSERT INTO
 	reseller
 	(
@@ -95,7 +95,7 @@ VALUES
 
 <cfset a_dt_contract_end = DateAdd('yyyy', 1, Now())>
 
-<cfquery name="q_update" datasource="#request.a_str_db_users#">
+<cfquery name="q_update">
 UPDATE
 	companies
 SET

@@ -1,4 +1,4 @@
-<cfquery name="q_select_style_partner" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_style_partner">
 SELECT
 	style
 FROM

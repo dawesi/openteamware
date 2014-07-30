@@ -8,7 +8,7 @@
 
 <cfinclude template="../utils/inc_check_security.cfm">
 
-<cfquery name="q_select_own_company" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_own_company">
 SELECT
 	companykey
 FROM
@@ -18,7 +18,7 @@ WHERE
 ;
 </cfquery>
 
-<cfquery name="q_select_company_data" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_company_data">
 SELECT
 	companyname,dt_created,entrykey,uidnumber,description,telephone,customheader,customss,resellerkey,
 	status,domains,dt_trialphase_end,billingcontact,createdbyuserkey,

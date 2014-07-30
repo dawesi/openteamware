@@ -1,6 +1,6 @@
 
 
-<cfquery name="q_select_record_available" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_record_available">
 SELECT
 	totalseats,availableseats,inuse
 FROM
@@ -15,7 +15,7 @@ WHERE
 <cfif q_select_record_available.recordcount IS 0>
 	<!--- insert new --->
 	
-	<cfquery name="q_insert_available_seats" datasource="#request.a_str_db_users#">
+	<cfquery name="q_insert_available_seats">
 	INSERT INTO
 		licencing
 		(
@@ -47,7 +47,7 @@ WHERE
 	<cfset a_int_new_number_availableseats = q_select_record_available.availableseats + arguments.addseats>
 	<cfset a_int_new_number_totalseats = q_select_record_available.totalseats + arguments.addseats>
 	
-	<cfquery name="q_insert_available_seats" datasource="#request.a_str_db_users#">
+	<cfquery name="q_insert_available_seats">
 	UPDATE
 		licencing
 	SET

@@ -1,5 +1,5 @@
 
-<cfquery name="q_select_quota_entry" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_quota_entry">
 SELECT
 	companykey,productkey,availableunits
 FROM
@@ -14,7 +14,7 @@ WHERE
 <cfif q_select_quota_entry.recordcount IS 1>
 
 <!--- update --->
-<cfquery name="q_insert_quota_entry" datasource="#request.a_str_db_users#">
+<cfquery name="q_insert_quota_entry">
 UPDATE
 	consumergoods
 SET
@@ -29,7 +29,7 @@ WHERE
 <cfelse>
 
 <!--- insert --->
-<cfquery name="q_insert_quota_entry" datasource="#request.a_str_db_users#">
+<cfquery name="q_insert_quota_entry">
 INSERT INTO
 	consumergoods
 	(

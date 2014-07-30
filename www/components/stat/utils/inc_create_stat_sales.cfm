@@ -20,7 +20,7 @@
 	
 	
 
-	<cfquery name="q_select_sales_paid" datasource="#request.a_str_db_users#">
+	<cfquery name="q_select_sales_paid">
 	SELECT
 		SUM(invoicetotalsum) AS sum_invoicetotalsum
 	FROM
@@ -37,7 +37,7 @@
 	</cfquery>	
 	<cfset QuerySetCell(q_return, 'data1', val(q_select_sales_paid.sum_invoicetotalsum), q_return.currentrow)>
 	
-	<cfquery name="q_select_sales_total" datasource="#request.a_str_db_users#">
+	<cfquery name="q_select_sales_total">
 	SELECT
 		SUM(invoicetotalsum) AS sum_invoicetotalsum
 	FROM
@@ -50,7 +50,7 @@
 	</cfquery>	
 	<cfset QuerySetCell(q_return, 'data2', val(q_select_sales_total.sum_invoicetotalsum), q_return.currentrow)>
 	
-	<cfquery name="q_select_sales_new" datasource="#request.a_str_db_users#">
+	<cfquery name="q_select_sales_new">
 	SELECT
 		COUNT(id) AS count_new
 	FROM
@@ -67,7 +67,7 @@
 	</cfquery>	
 	<cfset QuerySetCell(q_return, 'data3', val(q_select_sales_new.count_new), q_return.currentrow)>
 	
-	<cfquery name="q_select_sales_renew" datasource="#request.a_str_db_users#">
+	<cfquery name="q_select_sales_renew">
 	SELECT
 		COUNT(id) AS count_renew
 	FROM
@@ -84,7 +84,7 @@
 	</cfquery>	
 	<cfset QuerySetCell(q_return, 'data4', val(q_select_sales_renew.count_renew), q_return.currentrow)>	
 	
-	<cfquery name="q_select_invoice_avg_sum" datasource="#request.a_str_db_users#">
+	<cfquery name="q_select_invoice_avg_sum">
 	SELECT
 		AVG(invoicetotalsum) AS avg_sum
 	FROM
@@ -101,7 +101,7 @@
 	</cfquery>	
 	<cfset QuerySetCell(q_return, 'data5', val(q_select_invoice_avg_sum.avg_sum), q_return.currentrow)>		
 	
-	<cfquery name="q_select_invoices_count" datasource="#request.a_str_db_users#">
+	<cfquery name="q_select_invoices_count">
 	SELECT
 		COUNT(id) AS count_invoices
 	FROM
@@ -114,7 +114,7 @@
 	</cfquery>	
 	<cfset QuerySetCell(q_return, 'data6', Val(q_select_invoices_count.count_invoices), q_return.currentrow)>		
 	
-	<cfquery name="q_select_unpaid_invoices_sum" datasource="#request.a_str_db_users#">
+	<cfquery name="q_select_unpaid_invoices_sum">
 	SELECT
 		SUM(invoicetotalsum) AS sum_invoices
 	FROM

@@ -1,4 +1,4 @@
-<cfquery name="q_select_open_dunningletters" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_open_dunningletters">
 SELECT
 	invoicenumber,entrykey,dt_created,dunninglevel
 FROM

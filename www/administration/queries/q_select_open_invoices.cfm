@@ -6,7 +6,7 @@
 
 
 
-<cfquery name="q_Select_open_invoices" datasource="#request.a_str_db_users#">
+<cfquery name="q_Select_open_invoices">
 SELECT * FROM
 	invoices
 WHERE

@@ -5,7 +5,7 @@
 	
 	--->
 	
-<cfquery name="q_select_companies" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_companies">
 SELECT
 	companyname,entrykey,description,telephone,contactperson,email,resellerkey,customerid
 FROM
@@ -27,7 +27,7 @@ ORDER BY
 <br><br><br>
 <b>Gesperrte Kunden</b>
 
-<cfquery name="q_select_companies" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_companies">
 SELECT
 	companyname,entrykey,description,telephone,contactperson,email,resellerkey,customerid,disabled_reason,dt_disabled
 FROM

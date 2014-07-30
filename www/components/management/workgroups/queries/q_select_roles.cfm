@@ -1,4 +1,4 @@
-<cfquery name="q_select_roles" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_roles">
 SELECT
 	entrykey, rolename, description, dt_created,createdbyuserkey,active,standardtype
 FROM

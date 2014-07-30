@@ -5,7 +5,7 @@
 	<cfset a_int_status = -1>
 </cfif>
 
-<cfquery name="q_update_allowlogin" datasource="#request.a_str_db_users#">
+<cfquery name="q_update_allowlogin">
 UPDATE
 	users
 SET

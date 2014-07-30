@@ -267,7 +267,7 @@
 		--->
 		<!--- <cfwddx action="cfml2wddx" input="#q_select_user#" output="a_str_wddx">
 
-		<cfquery name="q_insert_wddx" datasource="#request.a_str_db_users#">
+		<cfquery name="q_insert_wddx">
 		INSERT INTO oldusers
 		(userid,username,userkey,wddx,dt_deleted)
 		VALUES
@@ -615,7 +615,7 @@
 		<cfargument name="userkey" type="string" required="true">
 		<cfset var q_select_companykey = 0 />
 
-		<cfquery name="q_select_companykey" datasource="#request.a_str_db_users#">
+		<cfquery name="q_select_companykey">
 		SELECT
 			companykey
 		FROM

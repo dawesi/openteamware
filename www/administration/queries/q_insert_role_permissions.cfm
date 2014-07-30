@@ -9,7 +9,7 @@
 <cfparam name="InsertRolePermissions.servicekey" type="string" default="">
 <cfparam name="InsertRolePermissions.allowedactions" type="string" default="">
 	
-<cfquery name="q_insert_role_permissions" datasource="#request.a_str_db_users#">
+<cfquery name="q_insert_role_permissions">
 INSERT INTO rolepermissions
 (workgroupkey,rolekey,dt_created,servicekey,allowedactions)
 VALUES

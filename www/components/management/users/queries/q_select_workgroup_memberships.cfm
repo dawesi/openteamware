@@ -5,7 +5,7 @@
 
 <cfparam name="SelectWorkgroupMemberships.entrykey" type="string" default="">
 
-<cfquery name="q_select_workgroup_memberships" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_workgroup_memberships">
 SELECT
 	workgroupkey,roles,dt_created
 FROM

@@ -3,7 +3,7 @@
 <cfparam name="form.frmcomment" type="string">
 <cfparam name="form.frmtitle" type="string">
 
-<cfquery name="q_select_company" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_company">
 SELECT
 	companyname,entrykey,status,language,email
 FROM
@@ -32,7 +32,7 @@ WHERE
 
 <cfset a_str_productkey = CreateUUID()>
 
-<cfquery name="q_insert_product" datasource="#request.a_str_db_users#">
+<cfquery name="q_insert_product">
 INSERT INTO
 	products
 	(
@@ -55,7 +55,7 @@ VALUES
 ;
 </cfquery>
 
-<cfquery datasource="#request.a_str_db_users#" name="q_insert_price">
+<cfquery name="q_insert_price">
 INSERT INTO
 	prices
 	(
@@ -118,7 +118,7 @@ VALUES
 	<cfinvokeargument name="entrykey" value="#a_str_invoicekey#">
 </cfinvoke>
 
-<cfquery datasource="#request.a_str_db_users#" name="q_delete_product">
+<cfquery name="q_delete_product">
 DELETE FROM
 	products
 WHERE
@@ -126,7 +126,7 @@ WHERE
 ;
 </cfquery>
 
-<cfquery datasource="#request.a_str_db_users#" name="q_delete_prices">
+<cfquery name="q_delete_prices">
 DELETE FROM
 	prices
 WHERE

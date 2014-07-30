@@ -7,7 +7,7 @@
 
 // --->
 
-<cfquery name="q_update_user_data" datasource="#request.a_str_db_users#">
+<cfquery name="q_update_user_data">
 UPDATE
 	users
 SET

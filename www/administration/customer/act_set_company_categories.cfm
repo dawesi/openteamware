@@ -1,7 +1,7 @@
 
 <cfdump var="#form#">
 
-<cfquery name="q_update_company_default_categories" datasource="#request.a_str_db_users#">
+<cfquery name="q_update_company_default_categories">
 UPDATE
 	companies
 SET

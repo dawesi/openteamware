@@ -377,7 +377,7 @@
 			</td>
 			<td valign="top">
 			
-			<cfquery name="q_select_resellerkey" datasource="#request.a_str_db_users#">
+			<cfquery name="q_select_resellerkey">
 			SELECT
 				resellerkey
 			FROM
@@ -387,7 +387,7 @@
 			;
 			</cfquery>
 			
-			<cfquery name="q_select_reseller" datasource="#request.a_str_db_users#">
+			<cfquery name="q_select_reseller">
 			SELECT
 				companyname,street,zipcode,city,telephone,emailadr,customercontact
 			FROM

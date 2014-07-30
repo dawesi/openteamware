@@ -1,7 +1,7 @@
 
 <cfparam name="url.entrykey" type="string" default="">
 
-<cfquery name="q_select_invoices" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_invoices">
 SELECT
 	pdffile
 FROM

@@ -14,7 +14,7 @@
 
 	
 
-<cfquery name="q_select_display_settings" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_display_settings">
 SELECT
 	confirmlogout,daylightsavinghours,utcdiff,charset,mailcharset
 FROM

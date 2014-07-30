@@ -1,5 +1,5 @@
 
-<cfquery name="q_delete_workgroup_member" datasource="#request.a_str_db_users#">
+<cfquery name="q_delete_workgroup_member">
 DELETE FROM
 	workgroup_members
 WHERE

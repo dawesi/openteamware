@@ -14,7 +14,7 @@
 	<b><cfoutput>#GetLangVal('prf_ph_pwd_change_enter_current_pwd')#</cfoutput></b><cfabort>
 </cfif>
 
-<cfquery name="q_select_pwd" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_pwd">
 SELECT
 	pwd
 FROM
@@ -43,7 +43,7 @@ WHERE
 
 
 <!--- in der db &auml;ndern --->
-<!---<cfquery name="q_update_pwd" datasource="#request.a_str_db_users#" dbtype="ODBC">
+<!---<cfquery name="q_update_pwd" dbtype="ODBC">
 update users
 set pwd = <cfqueryparam cfsqltype="cf_sql_varchar" value="#form.frmNewPassword1#">
 where userid = <cfqueryparam cfsqltype="cf_sql_integer" value="#request.stSecurityContext.myuserid#">;

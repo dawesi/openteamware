@@ -1,6 +1,6 @@
 
 
-<cfquery name="q_select_companies" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_companies">
 SELECT
 	companyname,entrykey,description,telephone,contactperson,email,resellerkey
 FROM

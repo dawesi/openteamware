@@ -1,4 +1,4 @@
-<cfquery name="q_insert_licence_history" datasource="#request.a_str_db_users#">
+<cfquery name="q_insert_licence_history">
 INSERT INTO
 	licencehistory
 	(

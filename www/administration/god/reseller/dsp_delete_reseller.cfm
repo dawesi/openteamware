@@ -1,7 +1,7 @@
 <cfparam name="url.entrykey" type="string">
 <cfparam name="url.confirmed" type="boolean" default="false">
 
-<cfquery name="q_select_reseller" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_reseller">
 SELECT
 	*
 FROM
@@ -23,7 +23,7 @@ WHERE
 	
 	<cfwddx action="cfml2wddx" input="#q_select_reseller#" output="a_str_wddx">
 		
-	<cfquery name="q_insert_old_resellers" datasource="#request.a_str_db_users#">
+	<cfquery name="q_insert_old_resellers">
 	INSERT INTO
 		oldresellers 
 		(
@@ -44,7 +44,7 @@ WHERE
 	;
 	</cfquery>
 	
-	<cfquery name="q_delete_reseller" datasource="#request.a_str_Db_users#">
+	<cfquery name="q_delete_reseller">
 	DELETE FROM
 		reseller
 	WHERE
@@ -56,7 +56,7 @@ WHERE
 
 <cfelse>
 
-	<cfquery name="q_Select_customers" datasource="#request.a_str_db_users#">
+	<cfquery name="q_Select_customers">
 	SELECT
 		companyname,customerid
 	FROM

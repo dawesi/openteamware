@@ -1,5 +1,5 @@
 
-<cfquery name="q_select_securityrolekey_of_user" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_securityrolekey_of_user">
 SELECT
 	securityrolekey
 FROM

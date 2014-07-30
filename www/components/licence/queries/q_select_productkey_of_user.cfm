@@ -1,5 +1,5 @@
 
-<cfquery name="q_select_productkey_of_user" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_productkey_of_user">
 SELECT
 	productkey
 FROM

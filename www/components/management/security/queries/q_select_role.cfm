@@ -1,6 +1,6 @@
 <cfparam name="SelectRoleRequest.entrykey" type="string" default="">
 
-<cfquery name="q_select_role" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_role">
 SELECT
 	rolename,description,standardtype,entrykey,workgroupkey
 FROM

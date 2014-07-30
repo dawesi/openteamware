@@ -1,4 +1,4 @@
-<cfquery name="q_select_partnerkey_of_customer" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_partnerkey_of_customer">
 SELECT
 	<cfswitch expression="#arguments.partnertype#">
 		<cfcase value="distributor">

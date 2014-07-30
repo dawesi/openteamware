@@ -1,5 +1,5 @@
 
-<cfquery name="q_select_available_seats" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_available_seats">
 SELECT
 	companykey,productkey,availableseats,inuse,totalseats
 FROM

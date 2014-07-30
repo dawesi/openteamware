@@ -3,7 +3,7 @@
 --->
 
 
-<cfquery name="q_update_email_account" datasource="#request.a_str_db_users#">
+<cfquery name="q_update_email_account">
 UPDATE
 	pop3_data
 SET

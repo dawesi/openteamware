@@ -42,7 +42,7 @@
 	<cfabort>
 </cfif>
 
-<cfquery debug="yes" name="q_select_workgroup_members" datasource="#request.a_Str_db_users#">
+<cfquery debug="yes" name="q_select_workgroup_members">
 SELECT
 	workgroup_members.username,users.surname,users.firstname
 FROM

@@ -66,7 +66,7 @@
 
 
 
-<cfquery name="q_insert_order" datasource="#request.a_str_db_users#">
+<cfquery name="q_insert_order">
 
 INSERT INTO bookedservices
 

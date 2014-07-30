@@ -32,7 +32,7 @@ function thisWeek() {
 
 <cfparam name="attributes.includetrialcustomers" type="boolean" default="true">
 
-<cfquery name="q_select_companies" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_companies">
 SELECT
 	entrykey,companyname,resellerkey,id,status,signupsource,createdbyuserkey,
 	countryisocode,zipcode,DATE_FORMAT(dt_created, '%Y%m%d') AS date_created,
@@ -47,7 +47,7 @@ WHERE
 </cfquery>
 
 <cfif attributes.includetrialcustomers>
-	<cfquery name="q_select_old_companies" datasource="#request.a_str_db_users#">
+	<cfquery name="q_select_old_companies">
 	SELECT
 		signupsource,DATE_FORMAT(dt_created, '%Y%m%d') AS date_created,dt_created AS dt_created_original,0 AS weekno
 	FROM

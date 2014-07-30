@@ -24,7 +24,7 @@
 <cfparam name="attributes.level" type="numeric" default="0">
 
 <!--- load workgroup properties ... --->
-<cfquery name="q_select_workgroup_properties" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_workgroup_properties">
 SELECT
 	groupname,shortname,colour
 FROM
@@ -40,7 +40,7 @@ WHERE
 </cfif>
 
 <!--- load roles ... --->
-<cfquery name="q_select_roles" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_roles">
 SELECT
 	roles
 FROM
@@ -62,7 +62,7 @@ WHERE
 <!--- load all avaliable actions ... --->
 <cfloop list="a_str_roles" delimiters="," index="a_str_role">
 	<!--- load properties of all roles ... --->
-	<cfquery name="q_select_standard_permissions" datasource="#request.a_str_db_users#">
+	<cfquery name="q_select_standard_permissions">
 	SELECT
 		standardallowedactions,standardtype
 	FROM
@@ -111,7 +111,7 @@ WHERE
 </cfscript>
 
 <!--- load subgroups and execute this routine ... --->
-<cfquery name="q_select_subgroups" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_subgroups">
 SELECT
 	entrykey
 FROM

@@ -1,4 +1,4 @@
-<cfquery name="q_select_customer_contacts" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_customer_contacts">
 SELECT
 	LEFT(companycontacts.userkey, 36) AS userkey,
 	companycontacts.user_level,

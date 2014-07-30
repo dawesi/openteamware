@@ -1,6 +1,6 @@
 <cfparam name="attributes.includetrialcustomers" type="boolean" default="true">
 
-<cfquery name="q_select_countries" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_countries">
 SELECT
 	countryisocode
 FROM
@@ -13,7 +13,7 @@ WHERE
 </cfquery>
 
 <cfif attributes.includetrialcustomers>
-<cfquery name="q_select_old_companies" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_old_companies">
 SELECT
 	countryisocode
 FROM

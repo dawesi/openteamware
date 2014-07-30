@@ -4,7 +4,7 @@
 
 <!--- check if first user exists ... --->
 
-<cfquery name="q_select_user_exists" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_user_exists">
 SELECT
 	COUNT(userid) AS count_id
 FROM
@@ -21,7 +21,7 @@ WHERE
 
 <!--- check if second user exists ... --->
 
-<cfquery name="q_select_user_exists" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_user_exists">
 SELECT
 	COUNT(userid) AS count_id
 FROM
@@ -37,7 +37,7 @@ WHERE
 </cfif>
 
 <!--- select the new user ... --->
-<cfquery name="q_select_new_user" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_new_user">
 SELECT
 	*
 FROM
@@ -48,7 +48,7 @@ WHERE
 </cfquery>
 
 <!--- ok, here we go ... first of all make backups of old user ... --->
-<cfquery name="q_select_user" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_user">
 SELECT
 	*
 FROM
@@ -89,7 +89,7 @@ VALUES
 
 
 
-<cfquery name="q_select_pop3_data" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_pop3_data">
 SELECT
 	*
 FROM
@@ -207,7 +207,7 @@ VALUES
 
 
 <!--- select MAX new userid ... --->
-<cfquery name="q_select_new_userid" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_new_userid">
 SELECT
 	MAX(userid) AS max_userid
 FROM
@@ -224,7 +224,7 @@ FROM
 
 	--->
 	
-<cfquery name="q_update_old_user" datasource="#request.a_str_db_users#">
+<cfquery name="q_update_old_user">
 UPDATE
 	users
 SET
@@ -238,7 +238,7 @@ WHERE
 </cfquery>
 
 <!--- update pop3_data item with origin = 0 ... that means the main address ... --->
-<cfquery name="q_update_pop3_data" datasource="#request.a_str_db_users#">
+<cfquery name="q_update_pop3_data">
 UPDATE
 	pop3_data
 SET
@@ -270,7 +270,7 @@ WHERE
 	we do that by using the entrykey and userid of the old user
 
 	--->
-<cfquery name="q_update_new_user" datasource="#request.a_str_db_users#">
+<cfquery name="q_update_new_user">
 UPDATE
 	users
 SET
@@ -284,7 +284,7 @@ WHERE
 ;
 </cfquery>
 
-<cfquery name="q_update_pop3_data" datasource="#request.a_str_db_users#">
+<cfquery name="q_update_pop3_data">
 UPDATE
 	pop3_data
 SET
@@ -323,7 +323,7 @@ WHERE
 </cfquery>
 
 <!--- update alias adresses table ... --->
-<cfquery name="q_update_alias_table" datasource="#request.a_str_db_users#">
+<cfquery name="q_update_alias_table">
 UPDATE
 	emailaliases
 SET

@@ -1,5 +1,5 @@
 
-<cfquery name="q_select_item" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_item">
 SELECT
 	*
 FROM

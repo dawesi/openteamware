@@ -1,7 +1,7 @@
 
 <cfparam name="SelectCustomerRecordRequest.Entrykey" type="string" default="">
 
-<cfquery name="q_Select_customer_record" datasource="#request.a_str_db_users#">
+<cfquery name="q_Select_customer_record">
 SELECT
 	domain,companyname,description,uidnumber,dt_contractend,street,zipcode,city,country,
 	telephone,fax,countryisocode,customerid,resellerkey,domains,billingcontact,status,email,

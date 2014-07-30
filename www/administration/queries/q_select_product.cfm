@@ -16,7 +16,7 @@
 
 
 
-<cfquery name="q_select_product" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_product">
 SELECT
 	entrykey,productname,dt_created,description,productgroupkey,itemindex,ongoing,unit,allowownquantities
 FROM

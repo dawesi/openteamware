@@ -12,7 +12,7 @@
 
 
 
-<cfquery name="q_update_contract_end" datasource="#request.a_str_db_users#">
+<cfquery name="q_update_contract_end">
 UPDATE
 	companies
 SET

@@ -10,7 +10,7 @@
 <cftransaction>
 
 <!--- get the newest customerid ... --->
-<cfquery name="q_select_max_customer_id" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_max_customer_id">
 SELECT MAX(customerid) AS max_customerid FROM companies;
 </cfquery>
 
@@ -22,7 +22,7 @@ SELECT MAX(customerid) AS max_customerid FROM companies;
 	<cfset a_dt_trialphase_end = DateAdd('d', 30, Now())>
 </cfif> 
 	
-<cfquery name="q_insert_customer" datasource="#request.a_str_db_users#">
+<cfquery name="q_insert_customer">
 INSERT INTO companies
 	(
 	resellerkey,

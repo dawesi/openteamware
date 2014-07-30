@@ -10,7 +10,7 @@
 <cfparam name="AddWorkgroupMemberRequest.roles" type="string" default="">
 <cfparam name="AddWorkgroupMemberRequest.createdbyuserkey" type="string" default="">
 
-<cfquery name="q_insert_workgroup_member" datasource="#request.a_str_db_users#">
+<cfquery name="q_insert_workgroup_member">
 INSERT INTO workgroup_members
 (entrykey,userkey,workgroupkey,dt_created,roles,createdbyuserkey)
 VALUES

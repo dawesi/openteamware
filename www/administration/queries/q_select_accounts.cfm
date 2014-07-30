@@ -7,7 +7,7 @@
 <cfparam name="SelectAccounts.CompanyKey" type="string" default="">
 
 <!--- check if resellerkey is ok ... --->
-<cfquery name="q_check_resellerkey" datasource="#request.a_str_db_users#">
+<cfquery name="q_check_resellerkey">
 SELECT
 	entrykey
 FROM
@@ -21,7 +21,7 @@ WHERE
 	<cfabort>
 </cfif>
 
-<cfquery name="q_select_accounts" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_accounts">
 SELECT
 	firstname,surname,username,entrykey,pwd,login_count,lasttimelogin,login_count,activitystatus
 FROM

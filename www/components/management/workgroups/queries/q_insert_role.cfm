@@ -5,7 +5,7 @@
 	
 	// --->
 	
-<cfquery name="q_insert_role" datasource="#request.a_str_db_users#">
+<cfquery name="q_insert_role">
 INSERT INTO roles
 (entrykey,rolename,description,workgroupkey,dt_created,createdbyuserkey,active,standardtype,standardallowedactions)
 VALUES

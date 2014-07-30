@@ -4,7 +4,7 @@
 	
 	// --->
 	
-<cfquery name="q_select_users" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_users">
 SELECT firstname,surname,username,entrykey FROM users
 WHERE companykey = <cfqueryparam cfsqltype="cf_sql_varchar" value="#url.company#">
 

@@ -1,4 +1,4 @@
-<cfquery name="q_select_secretary_permission" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_secretary_permission">
 SELECT
 	permission
 FROM

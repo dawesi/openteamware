@@ -3,7 +3,7 @@
 
 <cfdump var="#form#">
 
-<cfquery name="q_insert_reseller_user" datasource="#request.a_str_db_users#">
+<cfquery name="q_insert_reseller_user">
 UPDATE
 	resellerusers
 SET

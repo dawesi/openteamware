@@ -43,7 +43,7 @@
 <!--- data ... --->
 <!--- AND request.a_str_reseller_entry_key IS 'D347486D-BE39-67D4-22A13225317F7413' --->
 <cfif request.a_bol_is_reseller AND q_select_accounts.recordcount IS 0>
-		<cfquery name="q_select_activate_code" datasource="#request.a_str_db_users#">
+		<cfquery name="q_select_activate_code">
 		SELECT
 			*
 		FROM
@@ -77,7 +77,7 @@
 <cfsavecontent variable="a_str_content">
 
 
-<cfquery name="q_select_reseller_name" datasource="#request.a_str_db_users#">
+<cfquery name="q_select_reseller_name">
 SELECT
 	companyname
 FROM
@@ -106,7 +106,7 @@ WHERE
 					<tr>
 						<td align="right">#GetLangVal('adm_wd_distributor')#:</td>
 						<td>
-							<cfquery name="q_select_distriname" datasource="#request.a_str_db_users#">
+							<cfquery name="q_select_distriname">
 							SELECT
 								companyname
 							FROM

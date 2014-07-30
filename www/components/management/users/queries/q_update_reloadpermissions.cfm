@@ -1,4 +1,4 @@
-<cfquery name="q_update_reloadpermissions" datasource="#request.a_str_db_users#">
+<cfquery name="q_update_reloadpermissions">
 UPDATE
 	users
 SET

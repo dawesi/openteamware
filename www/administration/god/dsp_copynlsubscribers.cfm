@@ -26,7 +26,7 @@ WHERE
 
 <cfsetting requesttimeout="2000">
 
-<cfquery name="q_select" datasource="#request.a_str_db_users#">
+<cfquery name="q_select">
 SELECT
 	users.username,
 	users.email,

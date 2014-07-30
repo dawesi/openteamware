@@ -92,9 +92,14 @@
 
 <cfset request.a_str_current_page_title = a_str_display_header />
 
+<cfsavecontent variable="pageHeader">
 <cfset SetHeaderTopInfoString(a_str_display_header) />
+</cfsavecontent>
 
 
+
+<div class="row">
+	<div class="col-md-12">
 <cfsavecontent variable="a_str_js">
 function NewElementClickEv(item_type) {
 	call_new_item_for_contact('<cfoutput>#jsstringformat(url.entrykey)#</cfoutput>', item_type);
@@ -122,15 +127,22 @@ function NewElementClickEv(item_type) {
 	AddNewJSPopupMenuToPage();
 </cfscript>
 
+<cfsavecontent variable="pageHeaderBtns">
 <cfoutput>
-<div style="padding:6px;">
+<div style="float:right">
 	<input type="button" class="btn btn-success" onclick="ShowHTMLActionPopup('id_btn_new_activity', a_pop_crm_new_activity);return false;" value="<cfoutput>#GetLangVal('crm_ph_set_new_activity_collect_data')#</cfoutput>" id="id_btn_new_activity" />
 
 	<input type="button" value="#GetLangVal('cm_ph_more_actions')# ..." id="id_btn_contacts_further_actions" class="btn btn-default" onClick="ShowHTMLActionPopup('id_btn_contacts_further_actions', a_pop_further_actions);return false;">
 
-	<input type="button" class="btn btn-default" onclick="ShowSimpleConfirmationDialog('index.cfm?action=deletecontacts&entrykeys=#url.entrykey#&confirmed=true&redirect_start_contacts=true');return false;" value="#MakeFirstCharUCase(GetLangVal('cm_wd_delete'))#" />
 </div>
 </cfoutput>
+</cfsavecontent>
+
+<cfset pageHeader = replace( pageHeader, '<h1>', pageHeaderBtns & '<h1>' ) />
+
+<cfoutput>#pageHeader#</cfoutput>
+
+<!--- further basic data --->
 
 <cfset ExportTranslationValuesAsJS('adrb_wd_activities') />
 
@@ -170,6 +182,9 @@ function NewElementClickEv(item_type) {
 		AddNewJSPopupMenuItem(MakeFirstCharUCase(GetLangValJS('adrb_ph_actions_forward')), 'index.cfm?action=forward&entrykeys=#urlencodedformat(url.entrykey)#');
 		AddNewJSPopupMenuItem('-', '');
 		AddNewJSPopupMenuItem(GetLangValJS('crm_ph_update_last_contact'), 'javascript:DoUpdateLastContactOfContact(\''#url.entrykey#\'');');
+		AddNewJSPopupMenuItem('-', '');
+		AddNewJSPopupMenuItem(MakeFirstCharUCase(GetLangValJS('cm_wd_delete')), 'javascript:ShowSimpleConfirmationDialog(\''index.cfm?action=deletecontacts&entrykeys=#jsstringformat( url.entrykey ) #&confirmed=true&redirect_start_contacts=true\'')'  );
+
 
 		AddNewJSPopupMenuToPage();
 		</cfscript>
@@ -189,16 +204,6 @@ function NewElementClickEv(item_type) {
 <cfsavecontent variable="contactData">
 	<table class="table table_details">
 
-		<cfif (val(q_select_contact_data.id_re_job_available) GT 0) AND NOT a_bol_re_available>
-			<tr>
-				<td class="field_name">
-					<img src="/images/si/information.png" class="si_img" /> #GetLangVal('adrb_ph_remoteedit')#
-				</td>
-				<td colspan="3">
-					#GetLangVal('adrb_ph_remoteedit_contact_not_reacted_yet')#<img alt="" src="/images/space_1_1.gif" class="si_img" />
-				</td>
-			</tr>
-		</cfif>
 		  <cfif q_select_contact_data.contacttype NEQ 1>
 		  <tr>
 			 <cfif q_select_contact_data.photoavailable IS 1>
@@ -372,6 +377,25 @@ function NewElementClickEv(item_type) {
 					</cfif>
 				</td>
 				<td class="field_name">
+					#GetLangVal('cm_wd_mobile')#
+
+				</td>
+				<td>
+					<a href="javascript:OpenCallPopup('#q_select_contact_data.entrykey#', '#jsstringformat(q_select_contact_data.b_mobile)#', 'mobile');">#htmleditformat(q_select_contact_data.b_mobile)#</a>
+
+				</td>
+			  </tr>
+
+
+		  <cfif Len(q_select_contact_data.b_fax) GT 0 OR Len(q_select_contact_data.skypeusername) GT 0>
+			  <tr style="">
+				<td class="field_name">
+					#GetLangVal('adrb_wd_fax')#
+				</td>
+				<td>
+					<a href="/fax/index.cfm?action=composefax&faxto=#urlencodedformat(q_select_contact_data.b_fax)#">#htmleditformat(q_select_contact_data.b_fax)#</a>
+				</td>
+				<td class="field_name">
 					<cfif (Len(q_select_contact_data.skypeusername) GT 0)>
 					Skype
 					</cfif>
@@ -381,23 +405,6 @@ function NewElementClickEv(item_type) {
 					<cfif (Len(q_select_contact_data.skypeusername) GT 0)>
 						<cfset AddJSToExecuteAfterPageLoad('ShowSkypeOnlineStatusData(''#jsstringformat(q_select_contact_data.skypeusername)#'', ''#jsstringformat(url.entrykey)#'')', '') />
 					</cfif>
-				</td>
-			  </tr>
-
-
-		  <cfif Len(q_select_contact_data.b_fax) GT 0 OR Len(q_select_contact_data.b_mobile) GT 0>
-			  <tr style="">
-				<td class="field_name">
-					#GetLangVal('adrb_wd_fax')#
-				</td>
-				<td>
-					<a href="/fax/index.cfm?action=composefax&faxto=#urlencodedformat(q_select_contact_data.b_fax)#">#htmleditformat(q_select_contact_data.b_fax)#</a>
-				</td>
-				<td class="field_name">
-					#GetLangVal('cm_wd_mobile')#
-				</td>
-				<td>
-					<a href="javascript:OpenCallPopup('#q_select_contact_data.entrykey#', '#jsstringformat(q_select_contact_data.b_mobile)#', 'mobile');">#htmleditformat(q_select_contact_data.b_mobile)#</a>
 				</td>
 			  </tr>
 		  </cfif>
@@ -412,7 +419,7 @@ function NewElementClickEv(item_type) {
 					#htmleditformat(q_select_contact_data.b_street)#
 
 					<cfif Len(q_select_contact_data.b_zipcode) GT 0 OR Len(q_select_contact_data.b_city) GT 0>
-						<cfif Len(q_select_contact_data.b_street) GT 0><br /></cfif>
+						<cfif Len(q_select_contact_data.b_street) GT 0>/</cfif>
 						#htmleditformat(q_select_contact_data.b_zipcode)# #htmleditformat(q_select_contact_data.b_city)#
 					</cfif>
 
@@ -649,10 +656,29 @@ function NewElementClickEv(item_type) {
 	<cfoutput>#WriteNewContentBox(GetLangVal('cm_wd_contacts') & ' (' & q_select_sub_items.recordcount & ')', a_str_buttons, a_str_sub_contacts)#</cfoutput>
 </cfif>
 
-<!--- go ahead with CRM data ... --->
-	<cfinclude template="crm/dsp_inc_show_item_data_ex.cfm">
-	<br />
-	<cfinclude template="crm/dsp_inc_history.cfm">
+	<!--- row end --->
+		</div>
+	</div>
+
+	<!--- go ahead with CRM data ... --->
+	<div class="row">
+		<div class="col-md-6">
+
+			<cfsavecontent variable="panel">
+				<cfinclude template="crm/dsp_inc_show_item_data_ex.cfm">
+			</cfsavecontent>
+
+			<cfset panel = Trim( replacenocase( panel, 'panel-default', 'panel-info', 'ONE' )) />
+
+			<cfoutput>#panel#</cfoutput>
+
+		</div>
+		<div class="col-md-6">
+			<cfinclude template="crm/dsp_inc_history.cfm">
+		</div>
+
+</div>
+
 
 	<cfoutput>
 
@@ -668,9 +694,7 @@ function NewElementClickEv(item_type) {
 			</cfif>
 		</p>
 
-	</td>
-  </tr>
-</table></cfoutput>
+	</cfoutput>
 
 
 

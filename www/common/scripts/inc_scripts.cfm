@@ -1728,7 +1728,7 @@ function AddParamStringItem(param_string, item, value) {
 	}
 		
 function SetHeaderTopInfoString(s) {
-	writeoutput('<h2>' & htmleditformat( s ) & '</h2>' );
+	writeoutput('<div class="page-header"><h1>' & htmleditformat( s ) & '</h1></div>');
 	return true;
 	}
 // read an entry of properties file and return default value if empty

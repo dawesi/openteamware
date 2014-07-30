@@ -40,21 +40,3 @@
 
 <cfoutput>#WriteNewContentBox(GetLangVal('crm_ph_products'), a_str_buttons, a_str_products_of_contact, 'id_div_fieldset_contacts_products')#</cfoutput>
 </cfif>
-
-<!--- attached files --->
-<cfif Len(request.stSecurityContext.crmsales_bindings.USERKEY_DATA) GT 0>
-
-	<!--- buttons --->
-	<cfsavecontent variable="a_str_buttons">
-		<input onClick="call_edit_contact('<cfoutput>#jsstringformat(url.entrykey)#</cfoutput>', 'files');" type="button" value=" <cfoutput>#htmleditformat(GetLangVal('cm_wd_edit'))#</cfoutput> " class="btn btn-primary">
-		<input onClick="call_edit_contact('<cfoutput>#jsstringformat(url.entrykey)#</cfoutput>', 'files');" type="button" value=" <cfoutput>#htmleditformat(GetLangVal('cm_wd_new'))#</cfoutput> " class="btn btn-primary">
-	</cfsavecontent>
-
-	<!--- write --->
-	<cfoutput>#WriteNewContentBox(GetLangVal('cm_wd_files'), a_str_buttons, GenerateSimpleDivWithID('id_div_crm_show_contact_files'), 'id_div_fieldset_files_assigned_to_user')#</cfoutput>
-
-	<cfscript>
-		AddJSToExecuteAfterPageLoad('DisplayFilesAttachedToContact("#jsstringformat(url.entrykey)#", "")', '', false);
-	</cfscript>
-
-</cfif>

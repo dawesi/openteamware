@@ -346,7 +346,7 @@ $('#myTab a').click(function (e) {
 						</td>
 --->
 
-</div>
+
 
 
 <cfset ShowViewFilterCriteriaRequest = StructNew() />

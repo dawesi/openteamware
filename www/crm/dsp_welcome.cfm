@@ -9,7 +9,7 @@
 
 // --->
 
-<h2><cfoutput>#GetLangVal('cm_wd_today')# (#LsDateFormat(now(), 'dddd, ' & request.stUserSettings.DEFAULT_DATEFORMAT)#)</cfoutput></h2>
+<cfset SetHeaderTopInfoString( "#GetLangVal('cm_wd_today')# (#LsDateFormat(now(), 'dddd, ' & request.stUserSettings.DEFAULT_DATEFORMAT)#)" ) />
 
 <cfinclude template="/common/scripts/script_utils.cfm" />
 

@@ -109,8 +109,8 @@
 </cfif>
 
 <div class="container-fluid">
-<div class="row">
-		 <div class="12">
+<!--- <div class="row">
+		 <div class="12"> --->
 
 		<cftry>
 				<cfinclude template="#variables.a_str_action_file_directory##request.a_struct_current_service_action.template#">
@@ -129,9 +129,9 @@
 				</cfcatch>
 			</cftry>
 
-	</div>
+	<!--- </div>
 
-</div>
+</div> --->
 </div>
 
 <div class="bottom_info_box" id="id_bottom_info"></div>

@@ -35,14 +35,18 @@
 <cfset a_str_display_email_col = (a_str_display_data_type NEQ 1)>
 
 
-<!--- CRM ... check what to display exactly ... --->
-<cfswitch expression="#a_str_display_data_type#">
-	<cfcase value="0">
-		<!--- contacts only ... --->
-		<cfinclude template="utils/dsp_inc_display_all_list_contacts.cfm">
-	</cfcase>
-	<cfcase value="1">
-		<!--- accounts only ... --->
-		<cfinclude template="utils/dsp_inc_display_all_list_accounts.cfm">
-	</cfcase>
-</cfswitch>
+<div class="row">
+	 <div class="12">
+		<!--- CRM ... check what to display exactly ... --->
+		<cfswitch expression="#a_str_display_data_type#">
+			<cfcase value="0">
+				<!--- contacts only ... --->
+				<cfinclude template="utils/dsp_inc_display_all_list_contacts.cfm">
+			</cfcase>
+			<cfcase value="1">
+				<!--- accounts only ... --->
+				<cfinclude template="utils/dsp_inc_display_all_list_accounts.cfm">
+			</cfcase>
+		</cfswitch>
+	</div>
+</div>

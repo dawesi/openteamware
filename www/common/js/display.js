@@ -1031,7 +1031,7 @@ function cBasicBgOperation() {
 				
 			// if *not* empty, show an element?
 			if ((_self.id_obj_show_if_not_empty_display_content != null) && (Trim(a_str_last_http_call_responseText).length > 0)) {
-				$('#' + _self.id_obj_show_if_not_empty_display_content).slideDown();
+				$('#' + _self.id_obj_show_if_not_empty_display_content).show();
 				}
 			
 			// call callback function?

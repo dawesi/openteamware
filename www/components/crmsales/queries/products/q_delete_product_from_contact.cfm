@@ -7,7 +7,7 @@
 <cfinclude template="q_select_productsassignedtocontact.cfm" />
 
 <cfquery name="q_delete_product">
-DELETE FROM 
+DELETE FROM
     productsassignedtocontact
 WHERE
     entrykey = <cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.entrykey#"/>
@@ -29,7 +29,6 @@ WHERE
 <cfinvoke component="#application.components.cmp_sql#" method="InsertUpdateRecord" returnvariable="stReturn_db">
 	<cfinvokeargument name="securitycontext" value="#arguments.securitycontext#">
 	<cfinvokeargument name="usersettings" value="#arguments.usersettings#">
-	<cfinvokeargument name="database" value="#request.a_str_db_crm#">
 	<cfinvokeargument name="table" value="productassignment_history">
 	<cfinvokeargument name="primary_field" value="entrykey">
 	<cfinvokeargument name="data" value="#a_struct_history_data#">

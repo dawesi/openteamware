@@ -10,7 +10,7 @@ INSERT INTO
 	entrykey,
     dt_created,
     createdbyuserkey,
-    
+
     contactkey,
     projectkey,
     quantity,
@@ -25,7 +25,7 @@ VALUES
 	<cfqueryparam cfsqltype="cf_sql_varchar" value="#CreateUUID()#">,
 	<cfqueryparam cfsqltype="cf_sql_timestamp" value="#createodbcdatetime(GetUTCTime(now()))#"/>,
 	<cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.securitycontext.myuserkey#"/>,
-    
+
 	<cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.database_values.contactkey#"/>,
 	<cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.database_values.projectkey#"/>,
    	<cfqueryparam cfsqltype="cf_sql_integer" value="#val(arguments.database_values.quantity)#"/>,
@@ -53,7 +53,6 @@ VALUES
 <cfinvoke component="#application.components.cmp_sql#" method="InsertUpdateRecord" returnvariable="stReturn_db">
 	<cfinvokeargument name="securitycontext" value="#arguments.securitycontext#">
 	<cfinvokeargument name="usersettings" value="#arguments.usersettings#">
-	<cfinvokeargument name="database" value="#request.a_str_db_crm#">
 	<cfinvokeargument name="table" value="productassignment_history">
 	<cfinvokeargument name="primary_field" value="entrykey">
 	<cfinvokeargument name="data" value="#a_struct_history_data#">
@@ -64,7 +63,7 @@ VALUES
 <cfquery name="q_add_product_to_contact">
 UPDATE
 	productquantity
-SET	
+SET
     quantity = quantity - <cfqueryparam cfsqltype="cf_sql_integer" value="#val(arguments.database_values.quantity)#"/>
 WHERE
 	userkey = <cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.securitycontext.myuserkey#"/>

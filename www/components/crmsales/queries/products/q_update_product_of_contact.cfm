@@ -32,7 +32,7 @@
 <cfquery name="q_update_product_of_contact">
 UPDATE
 	productsassignedtocontact
-SET	
+SET
     quantity = <cfqueryparam cfsqltype="cf_sql_integer" value="#val(arguments.database_values.quantity)#"/>,
     dt_added = <cfqueryparam cfsqltype="cf_sql_date" value="#arguments.database_values.dt_added#"/>,
     comment = <cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.database_values.comment#"/>,
@@ -47,7 +47,6 @@ WHERE
 <cfinvoke component="#application.components.cmp_sql#" method="InsertUpdateRecord" returnvariable="stReturn_db">
 	<cfinvokeargument name="securitycontext" value="#arguments.securitycontext#">
 	<cfinvokeargument name="usersettings" value="#arguments.usersettings#">
-	<cfinvokeargument name="database" value="#request.a_str_db_crm#">
 	<cfinvokeargument name="table" value="productassignment_history">
 	<cfinvokeargument name="primary_field" value="entrykey">
 	<cfinvokeargument name="data" value="#a_struct_history_data#">
@@ -57,7 +56,7 @@ WHERE
 <cfquery name="q_update_product_of_contact_available">
 UPDATE
 	productquantity
-SET	
+SET
     quantity = quantity - <cfqueryparam cfsqltype="cf_sql_integer" value="#val(a_delta_quantity)#"/>
 WHERE
 	userkey = <cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.securitycontext.myuserkey#"/>

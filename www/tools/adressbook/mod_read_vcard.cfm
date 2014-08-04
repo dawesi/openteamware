@@ -10,8 +10,6 @@
 
 <cfparam name="Caller.Home_Address1" default="">
 
-<cfparam name="Caller.Home_Address2" default="">
-
 <cfparam name="Caller.Home_City" default="">
 
 <cfparam name="Caller.Home_State" default="">
@@ -21,8 +19,6 @@
 <cfparam name="Caller.Home_Country" default="">
 
 <cfparam name="Caller.Work_Address1" default="">
-
-<cfparam name="Caller.Work_Address2" default="">
 
 <cfparam name="Caller.Work_City" default="">
 

@@ -1503,16 +1503,6 @@
 		<attributes></attributes>
 	</item>
 	<item>
-		<name>RequestSMSCode</name>
-		<description></description>
-		<template>dsp_request_sms_code.cfm</template>
-		<checkframeset>1</checkframeset>
-		<setservice>0</setservice>
-		<directory></directory>
-		<productkeysincluded></productkeysincluded>
-		<attributes></attributes>
-	</item>
-	<item>
 		<name>Password</name>
 		<description></description>
 		<template>dsp_password.cfm</template>

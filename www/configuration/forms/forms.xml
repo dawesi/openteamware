@@ -90,7 +90,7 @@
 	<row>
 		<autopickup>1</autopickup>
 		<autopickup_functionname>CreateOrUpdatePostingEx</autopickup_functionname>
-		<db_datasource>#request.a_str_db_tools#</db_datasource>
+		<db_datasource></db_datasource>
 		<db_table>postings</db_table>
 		<db_primary>entrykey</db_primary>
 		<columns>1</columns>

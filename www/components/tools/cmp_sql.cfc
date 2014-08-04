@@ -23,8 +23,6 @@
 			hint="if the servicekey is given, check the security permissions as well ...">
 		<cfargument name="action" type="string" required="true"
 			hint="INSERT or UPDATE">
-		<cfargument name="database" type="string" required="true"
-			hint="name of the database">
 		<cfargument name="table" type="string" required="true"
 			hint="name of the table">
 		<cfargument name="primary_field" type="string" required="true"
@@ -35,8 +33,7 @@
 		<cfset var stReturn = GenerateReturnStruct() />
 
 		<!--- analyze and check table ... --->
-		<cfset var a_struct_analyze_table = AnalyzeTableStructure(database = arguments.database,
-												table = arguments.table) />
+		<cfset var a_struct_analyze_table = AnalyzeTableStructure(table = arguments.table) />
 		<cfset var a_arr_fields = 0 />
 		<cfset var a_struct_match_data = 0 />
 		<cfset var a_arr_data = 0 />
@@ -137,8 +134,6 @@
 
 	<cffunction access="public" name="AnalyzeTableStructure" output="false" returntype="struct"
 			hint="Analyze a certain table and store field information">
-		<cfargument name="database" type="string" required="true"
-			hint="name of the database">
 		<cfargument name="table" type="string" required="true"
 			hint="name of the table">
 

@@ -1,10 +1,10 @@
 <!--- //
-	
+
 	daten editieren
-	
+
 	// --->
-	
-	
+
+
 <cfoutput query="q_userdata">
 <form action="user/act_update_user.cfm" method="post">
 <input type="hidden" name="frmentrykey" value="#q_userdata.entrykey#">
@@ -50,12 +50,6 @@
 	</td>
   </tr>
   <tr>
-  	<td align="right">#GetLangVal('cm_ph_iden_code_short_member')#:</td>
-	<td>
-		<input type="text" name="frm_identification_code" value="#htmleditformat(q_userdata.IDENTIFICATIONCODE)#" size="10" maxlength="10">
-	</td>
-  </tr>
-  <tr>
 	<td align="right">
 		#GetLangVal('cm_wd_language')#:
 	</td>
@@ -64,9 +58,9 @@
 			<cfloop from="0" to="5" index="ii">
 				<option #writeSelectedElement(q_userdata.defaultlanguage, ii)# value="#ii#">#application.components.cmp_lang.GetLanguageShortNameByNumber(ii)#</option>
 			</cfloop>
-		</select>		
+		</select>
 	</td>
-  </tr>  
+  </tr>
   <tr>
     <td align="right">#GetLangVal('adrb_wd_street')#:</td>
     <td>
@@ -122,7 +116,7 @@
 			<option value="-9" #writeselectedelement(q_userdata.utcdiff, -9)#> GMT +09:30 Cen. Australia : Adelaide
 			<option value="-10" #writeselectedelement(q_userdata.utcdiff, -10)#> GMT +10:00 E. Australia : Brisbane, Vladivostok, Guam
 			<option value="-11" #writeselectedelement(q_userdata.utcdiff, -11)#> GMT +11:00 Central Pacific : Magadan, Sol. Is.
-		</select>	
+		</select>
 	</td>
   </tr>
   <tr>
@@ -154,7 +148,7 @@
 	<td>
 		<input type="text" name="frmexternalemail" value="#htmleditformat(q_userdata.email)#" size="30">
 	</td>
-  </tr>  
+  </tr>
   <tr>
   	<td></td>
 	<td>

@@ -314,55 +314,9 @@
 
 <table class="table table_details table_edit">
 <tr>
-	<td class="field_name">Session-Timeout:</td>
-	<td>
-		<select name="frmSessionTimeout">
-			<cfoutput>
-			<option value="5" #writeselectedelement(a_int_timeout, 5)#>5</option>
-			<option value="10" #writeselectedelement(a_int_timeout, 10)#>10</option>
-			<option value="20" #writeselectedelement(a_int_timeout, 20)#>20</option>
-			<option value="30" #writeselectedelement(a_int_timeout, 30)#>30</option>
-			<option value="60" #writeselectedelement(a_int_timeout, 60)#>60</option>
-			<option value="120" #writeselectedelement(a_int_timeout, 120)#>120</option>
-			</cfoutput>
-		</select>
-		&nbsp;
-		<cfoutput>#GetLangVal('cal_wd_minutes')#</cfoutput>
-	</td>
-</tr>
-<!---<tr>
-	<td class="field_name"><input type="checkbox" class="noborder" name="frmCBForceSSL" value="1"></td>
-	<td>Immer die SSL-Version nutzen</td>
-</tr>--->
-<tr>
 	<td class="field_name"><input style="width:auto; " type="checkbox" name="frmCBConfirmLogout" value="1" class="noborder" <cfif q_select_display_settings.confirmlogout is 1>checked</cfif>></td>
 	<td><cfoutput>#GetLangVal('prf_ph_logout_confirmation')#</cfoutput></td>
 </tr>
-
-<!---<tr>
-	<td colspan="2" class="bb"><b>Farben &amp; Logo</b></td>
-</tr>
-<!--- logo --->
-<cfinclude template="queries/q_select_logo_filename.cfm">
-<tr>
-	<td valign="top" align="right">Logo einbinden</td>
-	<td valign="top" style="line-height:20px;">
-	Aktuelles Logo:
-
-	<cfif q_select_logo_filename.recordcount is 0 OR Len(q_select_logo_filename.LogoFilename) is 0>
-	(keines)
-	<cfelse>
-	<img vspace="5" vspace="5" align="absmiddle" src="<cfoutput>#Application.a_str_customize_logos_web_path##q_select_logo_filename.LogoFilename#</cfoutput>">
-	<br>
-	<a href="act_remove_custom_logo.cfm" class="simplelink">Eigenes Logo entfernen</a><br>
-	</cfif>
-	<br>
-	Neue Datei: <input type="file" name="frmNewLogoFile"><br>
-	Hinweis: GIF/JPEG/PNG Datei mit max. 30kb. Empfohlene Gr&ouml;&szlig;e: 300x45
-
-	</td>
-</tr>--->
-
 </table>
 </div>
 <div style="padding:10px; ">

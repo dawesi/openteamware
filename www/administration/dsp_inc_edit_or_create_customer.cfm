@@ -1,6 +1,6 @@
 <!--- //
 
-	Module:		
+	Module:
 	Action:		create or edit a customer
 	Description:// --->
 
@@ -10,7 +10,7 @@
 <cfparam name="CreateOrEditCustomer.Formaction" type="string" default="act_new_customer.cfm">
 
 <!--- the query with the data (or empty) --->
-<cfparam name="CreateorEditCustomer.Query" type="query" default="#QueryNew("language,billingcontact,domains,rating,contactperson,status,shortname,resellerkey,companyname,entrykey,description,customheader,domain,customertype,street,zipcode,telephone,fax,uidnumber,countryisocode,city,fbnumber,email,industry,settlement_type")#">
+<cfparam name="CreateorEditCustomer.Query" type="query" default="#QueryNew("language,billingcontact,domains,rating,contactperson,status,shortname,resellerkey,companyname,entrykey,description,domain,customertype,street,zipcode,telephone,fax,uidnumber,countryisocode,city,fbnumber,email,industry,settlement_type")#">
 
 <cfif CreateorEditCustomer.Query.recordcount is 0>
 	<cfset QueryAddRow(CreateorEditCustomer.Query, 1)>
@@ -63,14 +63,14 @@ WHERE
   	<td class="field_name">#GetLangVal('adm_wd_partner')#:</td>
 	<td>
 	<!--- select the reseller ...
-	
+
 		if none has been selected let the user decide which reseller should be used ... --->
-		
+
 	<cfif len(CreateorEditCustomer.query.resellerkey) GT 0>
 		<input type="hidden" name="frmresellerkey" value="#htmleditformat(CreateorEditCustomer.query.resellerkey)#">
-		
+
 		<!--- display the reseller name ... --->
-		
+
 		<cfquery name="q_select_reseller_name">
 		SELECT
 			companyname
@@ -80,15 +80,15 @@ WHERE
 			entrykey = <cfqueryparam cfsqltype="cf_sql_varchar" value="#CreateorEditCustomer.query.resellerkey#">
 		;
 		</cfquery>
-		
+
 		#htmleditformat(q_select_reseller_name.companyname)#
-		
+
 	<cfelse>
 		<select name="frmresellerkey">
 			<cfloop query="request.q_select_reseller">
 			<option #writeselectedelement(request.q_select_reseller.entrykey, CreateorEditCustomer.Query.resellerkey)# value="#htmleditformat(request.q_select_reseller.entrykey)#"><cfloop from="1" to="#request.q_select_reseller.resellerlevel#" index="ii">&nbsp;</cfloop>#htmleditformat(request.q_select_reseller.companyname)#</option>
 			</cfloop>
-		</select>	
+		</select>
 	</cfif>
 
 	</td>
@@ -108,19 +108,19 @@ WHERE
 		location.href='index.cfm?action=newcustomer&resellerkey='+escape(document.frmneworeditcustomer.frmresellerkey.value);
 		}
   </script>
-  
+
   <cfexit method="exittemplate">
   </cfif>
-  
-  
+
+
   <tr>
   	<td class="field_name">#GetLangVal('cm_wd_domain')#:</td>
 	<td valign="top">
 	<!---<input type="radio" name="frmdomain" value="openTeamware.com" checked> openTeamWare.com/--->
 	<!--- load the domains used by this special reseller ... --->
-	
+
 	<cfif CreateorEditCustomer.action is "create">
-	
+
 	<cfquery name="q_select_domains" dbtype="query">
 	SELECT
 		domains
@@ -130,11 +130,11 @@ WHERE
 		entrykey = <cfqueryparam cfsqltype="cf_sql_varchar" value="#CreateorEditCustomer.Query.resellerkey#">
 	;
 	</cfquery>
-	
+
 	<cfif Len(q_select_domains.domains) IS 0>
 		<cfset QuerySetCell(q_select_domains, 'domains', 'openTeamware.com', 1)>
 	</cfif>
-	
+
 	<cfloop list="#q_select_domains.domains#" delimiters="," index="a_str_domain">
 	<input class="noborder" #writecheckedelement(CreateorEditCustomer.query.domain, a_str_domain)# type="radio" name="frmdomain" value="#htmleditformat(a_str_domain)#"> #htmleditformat(a_str_domain)#
 	</cfloop>
@@ -142,7 +142,7 @@ WHERE
 	<input type="Radio"  class="noborder" name="frmdomain" value="own"> <input type="Text" name="frmowndomain" value="" size="10">
 	&nbsp;&nbsp;
 	<!--- // check if domain is supported // --->
-	
+
 	<cfelse>
 		<!--- edit operation ... --->
 		<input type="text" name="frmdomain" value="#CreateorEditCustomer.query.domains#" size="50"> <b>[R]</b>
@@ -155,7 +155,7 @@ WHERE
 	<td>
 	<input type="radio" name="frmradiostatus" value="0" class="noborder" #Writecheckedelement(CreateorEditCustomer.query.status, 0)#> #GetLangVal('adm_wd_customer')#
 	&nbsp;&nbsp;
-	<input type="radio" name="frmradiostatus" value="1" class="noborder" #Writecheckedelement(CreateorEditCustomer.query.status, 1)#> #GetLangVal('adm_ph_interested_party')#	
+	<input type="radio" name="frmradiostatus" value="1" class="noborder" #Writecheckedelement(CreateorEditCustomer.query.status, 1)#> #GetLangVal('adm_ph_interested_party')#
 	</td>
   </tr>
   <cfif CreateorEditCustomer.action IS 'create'>
@@ -167,8 +167,8 @@ WHERE
 	</td>
   </tr>
   </cfif>
-  
-  
+
+
   	<cfif q_select_current_reseller.ALLOW_MODIFY_SETTLEMENT_TYPE IS 1>
   	<tr>
 		<td class="field_name">
@@ -179,7 +179,7 @@ WHERE
 				<option #WriteSelectedElement(CreateorEditCustomer.Query.settlement_type, 0)# value="0">#GetLangVal('adm_ph_settlement_type_0')#</option>
 				<option #WriteSelectedElement(CreateorEditCustomer.Query.settlement_type, 1)# value="1">#GetLangVal('adm_ph_settlement_type_1')#</option>
 				<option #WriteSelectedElement(CreateorEditCustomer.Query.settlement_type, 2)# value="2">#GetLangVal('adm_ph_settlement_type_2')#</option>
-			</select>		
+			</select>
 		</td>
 	</tr>
 	<cfelse>
@@ -187,7 +187,7 @@ WHERE
 		<input type="hidden" name="frm_settlement_type" value="0">
 	</cfif>
 
-  
+
   <tr>
   	<td class="field_name">#GetLangVal('adm_wd_type')#:</td>
 	<td>
@@ -215,7 +215,7 @@ WHERE
 		<option value="AerospaceDefense" #writeselectedelement(CreateorEditCustomer.Query.industry, 'AerospaceDefense')#>#GetLangVal('cm_ph_industry_AerospaceDefense')#</option>
 		<option value="ApparelFootwear" #writeselectedelement(CreateorEditCustomer.Query.industry, 'ApparelFootwear')#>#GetLangVal('cm_ph_industry_ApparelFootwear')#</option>
 		<option value="Automotive" #writeselectedelement(CreateorEditCustomer.Query.industry, 'Automotive')#>#GetLangVal('cm_ph_industry_Automotive')#</option>
-		
+
 		<option value="Banking" #writeselectedelement(CreateorEditCustomer.Query.industry, 'Banking')#>#GetLangVal('cm_ph_industry_Banking')#</option>
 		<option value="Brokerage" #writeselectedelement(CreateorEditCustomer.Query.industry, 'Brokerage')#>#GetLangVal('cm_ph_industry_Brokerage')#</option>
 		<option value="Chemicals" #writeselectedelement(CreateorEditCustomer.Query.industry, 'Chemicals')#>#GetLangVal('cm_ph_industry_Chemicals')#</option>
@@ -225,7 +225,7 @@ WHERE
 		<option value="Education" #writeselectedelement(CreateorEditCustomer.Query.industry, 'Education')#>#GetLangVal('cm_ph_industry_Education')#</option>
 		<option value="Electronics" #writeselectedelement(CreateorEditCustomer.Query.industry, 'Electronics')#>#GetLangVal('cm_ph_industry_Electronics')#</option>
 		<option value="Energy" #writeselectedelement(CreateorEditCustomer.Query.industry, 'Energy')#>#GetLangVal('cm_ph_industry_Energy')#</option>
-		
+
 		<option value="Entertainment" #writeselectedelement(CreateorEditCustomer.Query.industry, 'Entertainment')#>#GetLangVal('cm_ph_industry_Entertainment')#</option>
 		<option value="Finance" #writeselectedelement(CreateorEditCustomer.Query.industry, 'Finance')#>#GetLangVal('cm_ph_industry_Finance')#</option>
 		<option value="Craft" #writeselectedelement(CreateorEditCustomer.Query.industry, 'Craft')#>#GetLangVal('cm_ph_industry_Craft')#</option>
@@ -236,7 +236,7 @@ WHERE
 		<option value="LifeSciences" #writeselectedelement(CreateorEditCustomer.Query.industry, 'LifeSciences')#>Life Sciences</option>
 		<option value="Manufacturing" #writeselectedelement(CreateorEditCustomer.Query.industry, 'Manufacturing')#>#GetLangVal('cm_ph_industry_Manufacturing')#</option>
 		<option value="Media" #writeselectedelement(CreateorEditCustomer.Query.industry, 'Media')#>#GetLangVal('cm_ph_industry_Media')#</option>
-		
+
 		<option value="Medical" #writeselectedelement(CreateorEditCustomer.Query.industry, 'Medical')#>#GetLangVal('cm_ph_industry_Medical')#</option>
 		<option value="Networking" #writeselectedelement(CreateorEditCustomer.Query.industry, 'Networking')#>#GetLangVal('cm_ph_industry_Networking')#</option>
 		<option value="Non-profit" #writeselectedelement(CreateorEditCustomer.Query.industry, 'Non-profit')#>#GetLangVal('cm_ph_industry_Non-profit')#</option>
@@ -246,11 +246,11 @@ WHERE
 		<option value="Process" #writeselectedelement(CreateorEditCustomer.Query.industry, 'Process')#>#GetLangVal('cm_ph_industry_Process')#</option>
 		<option value="PublicSector" #writeselectedelement(CreateorEditCustomer.Query.industry, 'PublicSector')#>#GetLangVal('cm_ph_industry_PublicSector')#</option>
 		<option value="Retail" #writeselectedelement(CreateorEditCustomer.Query.industry, 'Retail')#>#GetLangVal('cm_ph_industry_Retail')#</option>
-		
+
 		<option value="Software" #writeselectedelement(CreateorEditCustomer.Query.industry, 'Software')#>Software</option>
 		<option value="Transportation" #writeselectedelement(CreateorEditCustomer.Query.industry, 'Transportation')#>#GetLangVal('cm_ph_industry_Transportation')#</option>
 		<option value="Utilities" #writeselectedelement(CreateorEditCustomer.Query.industry, 'Utilities')#>#GetLangVal('cm_ph_industry_Utilities')#</option>
-	</select> 
+	</select>
 	</td>
   </tr>
   <tr>
@@ -274,13 +274,13 @@ WHERE
   	<td align="right">Kurzname (f&uuml;r URL):</td>
 	<td>
 	https://www.openTeamWare.com/go/<input type="Text" name="frmshortname" size="20" value="#htmleditformat(CreateorEditCustomer.query.shortname)#">/
-	
+
 	</td>
   </tr>--->
   <tr>
     <td class="field_name">#GetLangVal('cm_wd_description')#:</td>
     <td><input type="text" name="frmdescription" size="50" value="#htmleditformat(CreateOrEditCustomer.query.description)#"></td>
-  </tr>  
+  </tr>
   <tr>
   	<td class="field_name">#GetLangVal('adm_ph_responsible_persons')#:</td>
 	<td>
@@ -294,11 +294,11 @@ WHERE
   <tr>
     <td class="field_name">#GetLangVal('adrb_wd_zipcode')#:</td>
     <td><input type="text" name="frmcompanyzipcode" size="10" value="#htmleditformat(CreateorEditCustomer.Query.zipcode)#"> <b>[R]</b></td>
-  </tr>    
+  </tr>
   <tr>
     <td class="field_name">#GetLangVal('adrb_wd_city')#:</td>
     <td><input type="text" name="frmcompanycity" size="50" value="#htmleditformat(CreateorEditCustomer.Query.city)#"> <b>[R]</b></td>
-  </tr>   
+  </tr>
   <tr>
   	<td class="field_name">
 		#GetLangVal('adrb_wd_country')#:
@@ -317,38 +317,38 @@ WHERE
 		<!---
 		<cfinvoke method="GetCountries" returnvariable="a_return" webservice="http://www.webservicex.net/country.asmx?wsdl"></cfinvoke>
 		<cfdump var="#a_return#">
-		
+
 		<cfset a_xml_doc = XMLParse(a_return)>
-		
+
 		<cfdump var="#a_xml_doc#">--->
 	</td>
-  </tr> 
+  </tr>
   <tr>
     <td class="field_name">#GetLangVal('adm_ph_telephone_numer')#:</td>
     <td><input type="text" name="frmcompanytelephone" size="50" value="#htmleditformat(CreateorEditCustomer.Query.telephone)#"></td>
-  </tr>    
+  </tr>
   <tr>
     <td class="field_name">#GetLangVal('adrb_wd_fax')#:</td>
     <td><input type="text" name="frmcompanyfax" size="50" value="#htmleditformat(CreateorEditCustomer.Query.fax)#"></td>
-  </tr>    
+  </tr>
   <tr>
     <td class="field_name">#GetLangVal('cm_wd_email')#:</td>
     <td><input type="text" name="frmcompanyemail" size="50" value="#htmleditformat(CreateorEditCustomer.Query.email)#"> [RC]</td>
-  </tr>    
+  </tr>
   <tr>
     <td class="field_name">#GetLangVal('adm_ph_uid_number')#:</td>
     <td><input type="text" name="frmcompanyuidnumber" size="50" value="#htmleditformat(CreateorEditCustomer.Query.uidnumber)#"></td>
-  </tr>    
+  </tr>
   <tr>
     <td class="field_name">#GetLangVal('adm_ph_fb_number')#:</td>
     <td><input type="text" name="frmfbnumber" size="50" value="#htmleditformat(CreateorEditCustomer.Query.fbnumber)#"></td>
-  </tr>  
+  </tr>
   <tr>
   	<td class="field_name">#GetLangVal('adm_ph_invoice_address')#:</td>
 	<td>
 		<textarea name="frmbillingcontact" rows="4" style="font-family:Verdana;font-size:11px;" cols="50">#htmleditformat(CreateorEditCustomer.Query.billingcontact)#</textarea><br><font color="gray">#GetLangVal('adm_ph_invoice_address_empty')#</font>
 	</td>
-  </tr>   
+  </tr>
   <!---<tr>
   	<td align="right">Institut:</td>
 	<td>
@@ -367,7 +367,7 @@ WHERE
 	<input type="text" name="frmbankaccountnumber" size="50">
 	</td>
   </tr>--->
-  
+
 <cfif CreateorEditCustomer.action is "create">
 <!---  <tr class="lightbg">
     <td colspan="2">Kaufm&auml;nnischer Ansprechpartner</td>
@@ -379,14 +379,14 @@ WHERE
   <tr>
     <td align="right">Telefon:</td>
     <td><input type="text" name="frmbusinesscontacttelephone" size="50"></td>
-  </tr>    
+  </tr>
   <tr>
     <td align="right">E-Mail:</td>
     <td><input type="text" name="frmbusinesscontactemail" size="50"></td>
-  </tr>  
+  </tr>
   <tr class="lightbg">
     <td colspan="2">Technischer Ansprechpartner</td>
-  </tr>  
+  </tr>
   <tr>
   	<td colspan="2" align="center">
 	<input type="radio" name="frmtechnicalcontact" value="customer" checked> Kunde
@@ -397,22 +397,22 @@ WHERE
   <tr>
     <td align="right">Firma:</td>
     <td><input type="text" name="frmtechnicalcontactcompany" size="50"></td>
-  </tr>  
+  </tr>
   <tr>
     <td align="right">Name:</td>
     <td><input type="text" name="frmtechnicalcontactname" size="50"></td>
-  </tr>  
+  </tr>
   <tr>
     <td align="right">Telefon:</td>
     <td><input type="text" name="frmtechnicalcontacttelephone" size="50"></td>
-  </tr>    
+  </tr>
   <tr>
     <td align="right">E-Mail:</td>
     <td><input type="text" name="frmtechnicalcontactemail" size="50"></td>
   </tr>   --->
   <!---<tr class="lightbg">
     <td colspan="2"><b>Bestellung</b></td>
-  </tr>    
+  </tr>
   <tr>
     <td align="right">Laufzeit:</td>
     <td>

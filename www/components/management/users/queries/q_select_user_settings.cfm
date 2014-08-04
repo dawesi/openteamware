@@ -1,7 +1,7 @@
 <cfquery name="q_select_user_settings">
 SELECT
-	utcdiff,daylightsavinghours,mailcharset,charset,countryisocode,
-	mailusertype,mailprofilekey,productkey,defaultlanguage
+	utcdiff,daylightsavinghours,charset,countryisocode,
+	productkey,defaultlanguage
 FROM
 	users
 WHERE

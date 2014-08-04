@@ -8,15 +8,15 @@
 
 	scope: request
 
-		
+
 
 	// --->
 
-	
+
 
 <cfquery name="q_select_display_settings">
 SELECT
-	confirmlogout,daylightsavinghours,utcdiff,charset,mailcharset
+	confirmlogout,daylightsavinghours,utcdiff,charset
 FROM
 	users
 WHERE

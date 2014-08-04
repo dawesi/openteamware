@@ -1,7 +1,7 @@
 <!--- //
 
-	load the company data 
-	
+	load the company data
+
 	// --->
 
 <cfparam name="LoadCompanyData.entrykey" type="string" default="">
@@ -20,7 +20,7 @@ WHERE
 
 <cfquery name="q_select_company_data">
 SELECT
-	companyname,dt_created,entrykey,uidnumber,description,telephone,customheader,customss,resellerkey,
+	companyname,dt_created,entrykey,uidnumber,description,telephone,customss,resellerkey,
 	status,domains,dt_trialphase_end,billingcontact,createdbyuserkey,
 	domain,customertype,uidnumber,street,fax,fbnumber,shortname,
 	zipcode,city,email,country,countryisocode,customerid,contactperson,

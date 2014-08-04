@@ -3,10 +3,10 @@
 	Module:		Admintool
 	Action:		UserProperties
 	Description:display properties of a user ...
-	
+
 // --->
 
-	
+
 <cfparam name="url.entrykey" type="string" default="">
 
 <cfinclude template="dsp_inc_select_company.cfm">
@@ -25,7 +25,7 @@
 
 
 <b><cfoutput>#GetLangVal('cm_wd_actions')#</cfoutput></b>:
-		
+
 		<a href="index.cfm?action=user.createdatasheet&entrykey=<cfoutput>#urlencodedformat(url.entrykey)##WriteURLTags()#</cfoutput>"><cfoutput>#si_img('page_white_acrobat')# #GetLangVal('adm_ph_create_datasheet')#</cfoutput></a>
 		<a href="index.cfm?action=user.edit&section=data&entrykey=<cfoutput>#urlencodedformat(url.entrykey)##WriteURLTags()#</cfoutput>"><cfoutput>#si_img('pencil')# #GetLangVal('adm_ph_edit_userdata')#</cfoutput></a>
 		<a href="index.cfm?action=user.setphoto&entrykey=<cfoutput>#urlencodedformat(url.entrykey)##WriteURLTags()#</cfoutput>"><cfoutput>#si_img('photo')# #GetLangVal('adm_ph_set_photo')#</cfoutput></a>
@@ -38,7 +38,7 @@
 		<a style="color:darkgreen;" href="index.cfm?action=user.enable&entrykey=<cfoutput>#urlencodedformat(url.entrykey)##writeurltags()#</cfoutput>"><b><cfoutput>#GetLangVal('adm_wd_activate_again')#</cfoutput></b> ...</a>
 		</cfif>
 		<a href="index.cfm?action=user.delete&entrykey=<cfoutput>#urlencodedformat(url.entrykey)##WriteURLTags()#</cfoutput>"><cfoutput><span class="glyphicon glyphicon-trash�></span> #GetLangVal('adm_wd_delete_user')#</cfoutput></a>
-		
+
 <h4 style="margin-bottom:3px;"><cfoutput>#ReplaceNoCase(GetLangVal('adm_ph_properties_of_user'), '%USERNAME%', q_userdata.username)#</cfoutput></h4>
 <cfif q_userdata.bigphotoavaliable IS 1>
 					<img src="../tools/img/show_big_userphoto.cfm?entrykey=<cfoutput>#urlencodedformat(url.entrykey)#</cfoutput>&source=admintool" border="0" align="right" />
@@ -46,15 +46,15 @@
 				<img src="../tools/img/show_small_userphoto.cfm?entrykey=<cfoutput>#urlencodedformat(url.entrykey)#</cfoutput>&source=admintool" border="0" align="right" />
 			<cfelse>
 				(<cfoutput>#GetLangVal('adm_ph_no_photo_avaliable')#</cfoutput>
-				
-				<a href="index.cfm?action=user.setphoto&entrykey=<cfoutput>#urlencodedformat(url.entrykey)##WriteURLTags()#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_set_photo')#</cfoutput></a> 
+
+				<a href="index.cfm?action=user.setphoto&entrykey=<cfoutput>#urlencodedformat(url.entrykey)##WriteURLTags()#</cfoutput>"><cfoutput>#GetLangVal('adm_ph_set_photo')#</cfoutput></a>
 				)
 			</cfif>
 
 
-     <cfoutput query="q_userdata"> 
-	 
-	 
+     <cfoutput query="q_userdata">
+
+
 	<cfsavecontent variable="a_str_content">
 		  <table class="table table_details">
 		  <cfif IsInternalIPOrUser()>
@@ -73,16 +73,10 @@
 				</cfif>
 			</td>
 		  </tr>
- 			<tr> 
+ 			<tr>
             <td class="field_name">#GetLangVal('cm_wd_name')#:</td>
             <td>#htmleditformat(q_userdata.surname)#, #htmleditformat(q_userdata.firstname)#</td>
           </tr>
-		  <tr>
-		  	<td class="field_name">#GetLangVal('cm_ph_iden_code_short_member')#:</td>
-			<td>
-				#htmleditformat(q_userdata.identificationcode)#
-			</td>
-		  </tr>		
 		  <tr>
 		  	<td class="field_name">
 				#GetLangVal('cm_wd_language')#:
@@ -90,10 +84,10 @@
 			<td>
 				#application.components.cmp_lang.GetLanguageShortNameByNumber(q_userdata.defaultlanguage)#
 			</td>
-		  </tr>  
-          <tr> 
+		  </tr>
+          <tr>
             <td class="field_name">#GetLangVal('adm_ph_account_type')#:</td>
-            <td> 
+            <td>
 			<cfswitch expression="#q_userdata.productkey#">
 				<cfcase value="AD4262D0-98D5-D611-4763153818C89190">
 					Mobile Office
@@ -115,7 +109,7 @@
 			<td>
 				#htmleditformat(q_userdata.aposition)#
 			</td>
-		  </tr>		
+		  </tr>
 		  <tr>
 		  	<td class="field_name">#GetLangVal('cm_wd_status')#:</td>
 			<td>
@@ -125,55 +119,55 @@
 					#GetLangVal('cm_wd_inactive')#
 				</cfif>
 			</td>
-		  </tr>  
+		  </tr>
 		  </table>
 	</cfsavecontent>
-	
+
 	<cfsavecontent variable="a_str_btn">
 		<cfoutput >
 		<input type="button" class="btn btn-primary" value="#GetLangVal('cm_wd_edit')#" onclick="location.href='index.cfm?action=user.edit&section=data&entrykey=#urlencodedformat(url.entrykey)##WriteURLTags()#';"/>
 		</cfoutput>
 	</cfsavecontent>
-	
+
 	<cfoutput>#WriteNewContentBox(q_userdata.username, a_str_btn, a_str_content)#</cfoutput>
 
-	
+
 	<br/>
-	
+
     <!--- load workgroup memberships ... --->
     <cfset q_select_workgroups = cmp_get_workgroup_memberships.GetWorkgroupMemberships(q_userdata.entrykey)>
-	
+
 	<cfsavecontent variable="a_str_content">
-		
-		
+
+
 		<table class="table table_details">
   			<cfloop query="q_select_workgroups">
-            <tr> 
+            <tr>
               <td class="field_name">###q_select_workgroups.currentrow#</td>
-              <td> 
+              <td>
                 <a href="index.cfm?action=workgroupproperties&entrykey=#urlencodedformat(q_select_workgroups.workgroupkey)##writeurltags()#">#htmleditformat(checkzerostring(cmp_get_workgroup_name.GetWorkgroupNameByEntryKey(q_select_workgroups.workgroupkey)))#</a>
-				
+
 				&nbsp;&nbsp;#GetLangVal('adm_wd_roles')#:
 				 <cfloop index="a_str_role_key" list="#q_select_workgroups.roles#" delimiters=",">
                   <cfset a_str_rolename = cmp_get_workgroup_name.getrolenamebyentrykey(a_str_role_key)>
                   #a_str_rolename# </cfloop>
-				
+
 				</td>
             </tr>
           </cfloop>
 
           <cfif q_select_workgroups.recordcount is 0>
-            <tr> 
+            <tr>
               <td></td>
               <td>n/a</td>
             </tr>
           </cfif>
-		  
-		  
+
+
 		  <cfinvoke component="/components/management/workgroups/cmp_secretary" method="GetAllAttendedUsers" returnvariable="q_select_attended_users">
 		  	<cfinvokeargument name="userkey" value="#q_userdata.entrykey#">
 		  </cfinvoke>
-		  
+
 		  <tr>
 		  	<td></td>
 			<td>
@@ -192,21 +186,21 @@
 		  </cfif>
 		</table>
 	</cfsavecontent>
-	
+
 	<cfsavecontent variable="a_str_btn">
 		<cfoutput >
 		<input type="button" class="btn btn-primary" value="#GetLangVal('cm_wd_edit')#" onclick="location.href='index.cfm?action=user.edit&section=workgroups&entrykey=#urlencodedformat(url.entrykey)##WriteURLTags()#';"/>
 		</cfoutput>
 	</cfsavecontent>
-	
+
 	<cfoutput>#WriteNewContentBox(GetLangVal('adm_ph_group_memberships'), a_str_btn, a_str_content)#</cfoutput>
 
-	
+
 	<br/>
-	
+
 	<cfsavecontent variable="a_str_content">
-		
-		
+
+
 		<table class="table table-hover">
  			<tr class="tbl_overview_header">
             	<td>#GetLangVal('adm_ph_security_role')#</td>
@@ -221,15 +215,15 @@
 				<cfinvokeargument name="companykey" value="#url.companykey#">
 				<cfinvokeargument name="entrykey" value="#q_userdata.securityrolekey#">
 			</cfinvoke>
-			
+
 			<a href="index.cfm?action=securityrole.display&entrykey=#urlencodedformat(stReturn.q_select_security_role.entrykey)##WriteURLTags()#">#stReturn.q_select_security_role.rolename#</a>
 
 			</td>
           </tr>
 		</table>
-		
+
 		<cfset q_select_sso_settings = application.components.cmp_security.LoadSwitchUsersData(userkey = q_userdata.entrykey)>
-		
+
 		<cfif q_select_sso_settings.recordcount GT 0>
 			<br/>
 			<b>Single Sign On</b>
@@ -252,36 +246,36 @@
 		</cfif>
 
 	</cfsavecontent>
-	
+
 	<cfsavecontent variable="a_str_btn">
 		<cfoutput >
 		<input type="button" class="btn btn-primary" value="#GetLangVal('cm_wd_edit')#" onclick="location.href='index.cfm?action=user.edit&section=security&entrykey=#urlencodedformat(url.entrykey)##WriteURLTags()#';"/>
 		<input type="button" class="btn btn-primary" value="#GetLangVal('cm_wd_edit')# SSO" onclick="location.href='index.cfm?action=user.managesso&entrykey=#urlencodedformat(url.entrykey)##WriteURLTags()#'"/>
 		</cfoutput>
 	</cfsavecontent>
-	
+
 	<cfoutput>#WriteNewContentBox(GetLangVal('cm_wd_security'), a_str_btn, a_str_content)#</cfoutput>
 
-	
+
 	<br/>
-		
+
 		<cfsavecontent variable="a_str_content">
-		
+
 		<table class="table table-hover">
 			<tr class="tbl_overview_header">
 				<td><cfoutput>#GetLangVal('cm_wd_type')#</cfoutput></td>
 				<td><cfoutput>#GetLangVal('cm_wd_email_address')#</cfoutput></td>
 			</tr>
-			
+
  		<!--- // select all external addresses and aliases ... //--->
 		  <cfinvoke component="/components/email/cmp_accounts" method="GetEmailAccounts" returnvariable="q_select_pop3_data">
 		  	<cfinvokeargument name="userkey" value="#url.entrykey#">
 		  </cfinvoke>
-		  
+
 		  <cfinvoke component="/components/email/cmp_accounts" method="GetAliasAddresses" returnvariable="q_select_alias_addresses">
 			<cfinvokeargument name="userkey" value="#url.entrykey#">
 		</cfinvoke>
-		  
+
 		  <!--- select aliases ... --->
 		  <cfquery name="q_select_external_addresses" dbtype="query">
 		  SELECT
@@ -290,9 +284,9 @@
 		  	q_select_pop3_data
 		  WHERE
 		  	origin = 1
-		  ;	
-		  </cfquery>		  
-		  
+		  ;
+		  </cfquery>
+
 		  <cfloop query="q_select_alias_addresses">
 		  	<tr>
 				<td>#GetLangVal('adm_ph_alias_addresses')#</td>
@@ -302,35 +296,35 @@
 		  <cfloop query="q_select_external_addresses">
 		  	<tr>
 				<td>#GetLangVal('adm_ph_pop3_collector_addresses')#</td>
-				<td>				
+				<td>
 					#htmleditformat(q_select_external_addresses.emailadr)# (#htmleditformat(q_select_external_addresses.pop3server)#)
 				</td>
 			</tr>
 		  </cfloop>
 		</table>
 	</cfsavecontent>
-		
+
 	<cfsavecontent variable="a_str_btn">
 		<input type="button" class="btn btn-primary" value="#GetLangVal('cm_wd_edit')#" onclick="location.href='index.cfm?action=user.edit&section=emailaddresses&entrykey=#urlencodedformat(url.entrykey)##WriteURLTags()#';"/>
 	</cfsavecontent>
-	
+
 	<cfoutput>#WriteNewContentBox(GetLangVal('prf_ph_email_addresses'), a_str_btn, a_str_content)#</cfoutput>
-	
-	<br /> 
-	
+
+	<br />
+
 	<cfsavecontent variable="a_str_content">
 		<table class="table table_details">
-  <!--- edit mailbox limit ... --->		  
+  <!--- edit mailbox limit ... --->
 		  <cfinvoke component="#application.components.cmp_email_tools#" method="GetQuotaDataForUser" returnvariable="a_struct_quota">
 		  	<cfinvokeargument name="username" value="#q_userdata.username#">
 		  </cfinvoke>
-		  
-          <tr> 
+
+          <tr>
              <td class="field_name">#GetLangVal('adm_ph_mailbox_limit')#:</td>
             <td valign="top">
-			
+
 			#GetLangVal('adm_ph_mailbox_limit_ava_used')#: #byteConvert(a_struct_quota.maxsize)# / #byteConvert(a_struct_quota.currentsize)#
-						
+
 			</td>
           </tr>
 		  <tr>
@@ -347,14 +341,14 @@
 			</td>
 		  </tr>
 		  <cfset a_struct_tmp_securitycontext = StructNew()>
-		  
+
 		  <cfset a_struct_tmp_securitycontext.myuserkey = q_userdata.entrykey>
-		<cfinvoke   
-			component = "#application.components.cmp_storage#"   
-			method = "GetUsageInfo"   
-			returnVariable = "q_query_usage"   
-			securitycontext="#a_struct_tmp_securitycontext#"></cfinvoke>		  
-          <tr> 
+		<cfinvoke
+			component = "#application.components.cmp_storage#"
+			method = "GetUsageInfo"
+			returnVariable = "q_query_usage"
+			securitycontext="#a_struct_tmp_securitycontext#"></cfinvoke>
+          <tr>
              <td class="field_name">#GetLangVal('cm_wd_storage')#:</td>
             <td>
 				#GetLangVal('adm_ph_mailbox_limit_ava_used')#: #ByteConvert(q_query_usage.maxsize)# / #ByteConvert(q_query_usage.bused)#
@@ -367,22 +361,22 @@
 			</td>
 		  </tr>
 		</table>
-		
+
 		</cfsavecontent>
-			
+
 	<cfoutput>#WriteNewContentBox(GetLangVal('adm_wd_quota'), '', a_str_content)#</cfoutput>
-	
-	
-	
-	<br /> 
-		
+
+
+
+	<br />
+
 		<cfsavecontent variable="a_str_content">
 		<table class="table table_details">
- 			<tr> 
+ 			<tr>
              <td class="field_name">#GetLangVal('adm_wd_logins')#:</td>
             <td>#val(q_userdata.login_count)#</td>
           </tr>
-          <tr> 
+          <tr>
             <td class="field_name">#GetLangVal('adm_ph_last_login')#:</td>
             <td> #lsdateformat(q_userdata.lasttimelogin, "dd.mm.yy")# #TimeFormat(q_userdata.lasttimelogin, "HH:mm")# </td>
           </tr>
@@ -398,7 +392,7 @@
 					userkey = <cfqueryparam cfsqltype="cf_sql_varchar" value="#q_userdata.entrykey#">
 				;
 				</cfquery>
-				
+
 				#q_select_addresses.count_id#
 			</td>
 		  </tr>
@@ -414,7 +408,7 @@
 					userkey = <cfqueryparam cfsqltype="cf_sql_varchar" value="#q_userdata.entrykey#">
 				;
 				</cfquery>
-				
+
 				#q_select_calendar.count_id#
 			</td>
 		  </tr>
@@ -430,7 +424,7 @@
 					userkey = <cfqueryparam cfsqltype="cf_sql_varchar" value="#q_userdata.entrykey#">
 				;
 				</cfquery>
-				
+
 				#q_select_storage.count_id#
 			</td>
 		  </tr>
@@ -446,15 +440,15 @@
 					userkey = <cfqueryparam cfsqltype="cf_sql_varchar" value="#q_userdata.entrykey#">
 				;
 				</cfquery>
-				
+
 				#q_select_tasks.count_id#
 			</td>
-		  </tr>		  		  
+		  </tr>
 		  <tr>
 		  	 <td class="field_name"></td>
 			<td>
 			<a href="index.cfm?action=security.logbook&companykey=#urlencodedformat(url.companykey)#&resellerkey=#urlencodedformat(url.resellerkey)#&userkey=#urlencodedformat(url.entrykey)#">#GetLangVal('adm_ph_show_security_log')#</a>
-			
+
 			<cfif request.a_bol_is_reseller>
 			<br>
 			<a href="index.cfm?action=activity&#WriteURLTags()#&userkey=#urlencodedformat(url.entrykey)#">#GetLangVal('adm_ph_show_user_usage')#</a>
@@ -463,12 +457,12 @@
 		  </tr>
 		</table>
 		</cfsavecontent>
-			
+
 	<cfoutput>#WriteNewContentBox(GetLangVal('adm_wd_statistics'), '', a_str_content)#</cfoutput>
-	
-	
+
+
 	</cfoutput>
-	
+
 
 
 

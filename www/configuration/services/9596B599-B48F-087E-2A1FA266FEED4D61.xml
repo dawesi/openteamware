@@ -299,12 +299,6 @@
 		<directory>forum</directory>
 	</item>
 	<item>
-		<name>customheaderfooter</name>
-		<description></description>
-		<template>dsp_custom_header_footer.cfm</template>
-		<directory>customer</directory>
-	</item>
-	<item>
 		<name>companycategories</name>
 		<description></description>
 		<template>dsp_categories.cfm</template>
@@ -315,12 +309,6 @@
 		<description></description>
 		<template>inc_crm_action.cfm</template>
 		<directory>crm</directory>
-	</item>
-	<item>
-		<name>createactivatecode</name>
-		<description></description>
-		<template>dsp_activate.cfm</template>
-		<directory>activate</directory>
 	</item>
 	<item>
 		<name>activity</name>

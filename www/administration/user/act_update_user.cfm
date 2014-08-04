@@ -16,7 +16,6 @@ SET
 	daylightsavinghours = <cfqueryparam cfsqltype="cf_sql_integer" value="#form.frmdaylightsavinghours#">,
 	mobilenr = <cfqueryparam cfsqltype="cf_sql_varchar" value="#form.frmmobilrnr#">,
 	email = <cfqueryparam cfsqltype="cf_sql_varchar" value="#form.frmexternalemail#">,
-	identificationcode = <cfqueryparam cfsqltype="cf_sql_varchar" value="#trim(form.frm_identification_code)#">,
 	defaultlanguage = <cfqueryparam cfsqltype="cf_sql_integer" value="#form.frmlanguage#">,
 	activitystatus = <cfqueryparam cfsqltype="cf_sql_integer" value="#form.frmactivitystatus#">
 WHERE

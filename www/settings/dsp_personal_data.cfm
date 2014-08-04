@@ -3,7 +3,7 @@
 	Module:		Settings
 	Action:		Personaldata
 	Description:Let the user edit personal data
-	
+
 
 // --->
 
@@ -111,35 +111,15 @@
 	<input class="noborder" <cfif request.a_struct_personal_properties.myDefaultLanguage is 3>checked</cfif> type="Radio" name="frmDefaultLanguage" value="3"> SK
 	&nbsp;
 	<input class="noborder" <cfif request.a_struct_personal_properties.myDefaultLanguage is 5>checked</cfif> type="Radio" name="frmDefaultLanguage" value="5"> RO
-	
+
 	</td>
 </tr>
 <input type="hidden" name="frmICQNumber" value="" />
-<cfquery name="q_select">
-SELECT
-	SubscrNewsletter,SubscrNewsletterAddress,email,SubscribeTippsntricks,email
-FROM
-	users
-WHERE
-	entrykey = <cfqueryparam cfsqltype="cf_sql_varchar" value="#request.stSecurityContext.myuserkey#">
-;
-</cfquery>
 <tr>
 	<td class="field_name">
 		<cfoutput>#GetLangVal('prf_ph_misc_settings_newsletters')#</cfoutput>
 	</td>
 	<td><input class="noborder" type="checkbox" name="frmSubScrNewsletter" value="1" <cfif q_select.subscrNewsletter is 1>checked</cfif>></td>
-</tr>
-<tr>
-	<td class="field_name"><cfoutput>#GetLangVal('prf_ph_address_for_newsletters')#</cfoutput></td>
-	<td>
-	<cfif q_select.SubscrNewsletterAddress is "">
-		<cfset ANewsletterAdr = request.stSecurityContext.myuserid>
-	<cfelse>
-		<cfset ANewsletteradr = q_Select.SubscrNewsletterAddress>
-	</cfif>
-	<input type="text" value="<cfoutput>#ANewsletterAdr#</cfoutput>" name="frmSubscrNewsletterAddress" size="30" maxlength="150">
-	</td>
 </tr>
 <tr>
 	<td class="field_name"><cfoutput>#GetLangVal('prf_ph_address_for_password')#</cfoutput></td>

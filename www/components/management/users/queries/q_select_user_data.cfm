@@ -3,7 +3,7 @@
 	Component:	Users
 	Function:	Load user data
 	Description:Load user data by entrykey
-	
+
 
 // --->
 
@@ -11,8 +11,8 @@
 SELECT
 	city,firstname,title,surname,zipcode,username,email,address1,entrykey,companykey,
 	date_subscr,mobilenr,utcdiff,country,userid,allow_login,plz,defaultlanguage,style,
-	customheader,sessiontimeout,daylightsavinghours,sex,mobilenr,wirelessstatus,MailboxSizeLimit,
-	autologinkey,NotProperlyLoggedOut,smallphotoavaliable,bigphotoavaliable
+	daylightsavinghours,sex,mobilenr,
+	NotProperlyLoggedOut,smallphotoavaliable,bigphotoavaliable
 FROM
 	users
 WHERE

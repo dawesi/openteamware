@@ -2,13 +2,13 @@
 
 	Module:		Session
 	Function:	CreateInternalSessionVars
-	Description: 
-	
+	Description:
 
-	
-	
+
+
+
 	TODO hp: cleanup and remove old data ...
-	
+
 // --->
 
 <cfset stReturn.myuserkey = q_select_user.entrykey />
@@ -22,16 +22,12 @@
 <cfset stReturn.myplz = val(q_select_user.plz) />
 <cfset stReturn.myusername = q_select_user.username />
 <cfset stReturn.mydefaultlanguage = val(q_select_user.defaultlanguage) />
-<!--- <cfset stReturn.myownheaderdata = q_select_user.customheader /> --->
 
 <!--- language --->
 <cfset client.langno = val(q_select_user.defaultlanguage) />
 
 <!--- timeout --->
-<cfset stReturn.myTimeout = q_select_user.SessionTimeout />
-<cfif val(stReturn.mytimeout) is 0>
-	<cfset stReturn.mytimeout = 20 />
-</cfif>
+<cfset stReturn.mytimeout = 20 />
 
 <cfset client.mySessionTimeout = stReturn.mytimeout />
 
@@ -50,8 +46,5 @@
 <cfset stReturn.mycountry = q_select_user.country />
 <cfset stReturn.mysex = q_select_user.sex />
 <cfset stReturn.myMobileTelNr = q_select_user.mobilenr />
-<cfset stReturn.mywirelessstatus = q_select_user.wirelessstatus />
 
-<!--- login key --->
-<cfset stReturn.AutologinKey = q_select_user.autologinkey />
 

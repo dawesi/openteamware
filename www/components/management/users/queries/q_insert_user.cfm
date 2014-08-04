@@ -3,13 +3,13 @@
 	Component:	Users
 	Function:	CreateUser
 	Description:Insert new user
-	
-	Header:		
+
+	Header:
 
 // --->
-	
+
 <cflock name="lck_insert_new_user" timeout="30" type="exclusive">
-	
+
 <cfquery name="q_select_max_userid">
 SELECT
 	MAX(userid) AS max_userid
@@ -38,7 +38,6 @@ INSERT INTO
 	zipcode,
 	address1,
 	city,
-	SubscribeTippsntricks,
 	utcdiff,
 	daylightsavinghours,
 	sex,
@@ -67,7 +66,6 @@ VALUES
 	<cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.zipcode#">,
 	<cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.address1#">,
 	<cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.city#">,
-	1,
 	<cfqueryparam cfsqltype="cf_sql_integer" value="#arguments.utcdiff#">,
 	<cfqueryparam cfsqltype="cf_sql_integer" value="#arguments.daylightsavinghours#">,
 	<cfqueryparam cfsqltype="cf_sql_integer" value="#arguments.sex#">,

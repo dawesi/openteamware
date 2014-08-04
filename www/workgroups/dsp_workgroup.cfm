@@ -47,44 +47,44 @@ WHERE
 		<cfloop list="#q_select_workgroup.permissions#" delimiters="," index="a_str_permission">
 			<li>#GetLangVal('cm_wd_right_' & a_str_permission)#</li>
 		</cfloop>
-		</ul>	
+		</ul>
 	</td>
   </tr>
-<cfif ListFind(q_select_workgroup.permissions, 'managepermissions') GT 0>  
+<cfif ListFind(q_select_workgroup.permissions, 'managepermissions') GT 0>
 
 			<cfinvoke component="#variables.a_cmp_workgroup#" method="GetWorkgroupMembers" returnvariable=q_select_users>
 				<cfinvokeargument name="workgroupkey" value=#q_select_workgroup.workgroup_key#>
-			</cfinvoke>		
+			</cfinvoke>
   <tr>
     <td align="right" valign="top">
 		#GetLangVal('cm_wd_members')# (#q_select_users.recordcount#):
 	</td>
     <td>
-	
-			
+
+
 			<cfif q_select_users.recordcount GT 0>
-			
+
 			<cfloop query="q_select_users">
 				<cfinvoke component="#variables.a_cmp_load_user_data#" method="LoadUserData" returnvariable="a_struct_userdata">
 					<cfinvokeargument name="entrykey" value="#q_select_users.userkey#">
 				</cfinvoke>
-								
+
 				<cfif (a_struct_userdata.result IS 'OK') AND (a_struct_userdata.query.allow_login IS 1)>
-				
+
 					<!--- ok, here we go --->
 					<cfset q_select_user = a_struct_userdata.query>
-					
+
 					<table border="0" cellspacing="0" cellpadding="4" class="bb bt" width="100%" style="margin:20px; ">
 					  <tr>
 					  	<td rowspan="4" valign="top">
 					  	<cfif q_select_user.smallphotoavaliable IS 1>
-							
+
 							<img src="/tools/img/show_small_userphoto.cfm?entrykey=#q_select_user.entrykey#">
-							
+
 						</cfif>
 						</td>
 						<td colspan="2" style="font-weight:bold; ">
-							#q_select_user.surname#, #q_select_user.firstname# <cfif Len(q_select_user.identificationcode) GT 0>(#q_select_user.identificationcode#)</cfif>
+							#q_select_user.surname#, #q_select_user.firstname#
 						</td>
 					  </tr>
 					  <tr>
@@ -112,10 +112,10 @@ WHERE
 						</td>
 					  </tr>
 					</table>
-					
+
 				</cfif>
 			</cfloop>
-			
+
 			</cfif>
 	</td>
   </tr>

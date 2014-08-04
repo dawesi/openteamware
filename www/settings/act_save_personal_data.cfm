@@ -14,9 +14,9 @@ VALUES
 
 <!--- //
 
-	migrate to cmp_user.UpdateData!! 
-	
-	
+	migrate to cmp_user.UpdateData!!
+
+
 	--->
 
 <!--- update database --->
@@ -36,7 +36,6 @@ SET
 	sex = <cfqueryparam cfsqltype="cf_sql_integer" value="#val(form.frmSex)#">,
 	defaultlanguage = <cfqueryparam cfsqltype="cf_sql_integer" value="#val(form.frmDefaultLanguage)#">,
 	SubscrNewsletter = <cfif isDefined("form.frmSubScrNewsletter")>1<cfelse>0</cfif>,
-	SubscrNewsletterAddress = <cfqueryparam cfsqltype="cf_sql_varchar" value="#form.frmSubscrNewsletterAddress#">,
 	email = <cfqueryparam cfsqltype="cf_sql_varchar" value="#form.frmEmail#">
 WHERE
 	(entrykey= <cfqueryparam cfsqltype="cf_sql_varchar" value="#request.stSecurityContext.myuserkey#">)

@@ -1,6 +1,6 @@
 <cfquery name="q_select_basic_user_data">
 SELECT
-	firstname,surname,username,identificationcode
+	firstname,surname,username
 FROM
 	users
 WHERE

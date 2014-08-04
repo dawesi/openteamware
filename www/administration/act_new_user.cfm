@@ -1,11 +1,11 @@
 <!--- //
 
 	create the user now ...
-	
+
 	// --->
-	
+
 <cfinclude template="utils/inc_check_security.cfm">
-	
+
 <cfparam name="form.frmpasswordtype" type="numeric" default="0">
 <cfparam name="form.frmproductkey" type="string" default="">
 
@@ -28,7 +28,7 @@
 	<br><br>
 	<cfoutput>#GetLangVal('adm_ph_error_no_more_licences_3')#</cfoutput>
 	<cfexit method="exittemplate">
-</cfif>	
+</cfif>
 
 <cfif form.frmpasswordtype is 1>
 	<cfset a_str_password = Mid(ReplaceNoCase(CreateUUID(), "-", "", "ALL"), 1, 6)>
@@ -63,12 +63,12 @@
 </cfif>
 
 <cfif q_select_company_data.status IS 1>
-	
+
 	<cfif Len(form.frmexternalemail) IS 0>
 		<b>E: <cfoutput>#GetLangVal('adm_ph_error_external_adr_needed')#</cfoutput></b>
 		<cfabort>
 	</cfif>
-	
+
 </cfif>
 
 <!--- call the create user method --->
@@ -123,10 +123,8 @@
 		<cfinvokeargument name="userkey" value="#stReturn.entrykey#">
 		<cfinvokeargument name="level" value="100">
 	</cfinvoke>
-	
-	<!--- send freischalt link ... --->
-	<!---<cfmodule template="customer/inc_send_confirm_mail.cfm" to=#form.frmexternalemail# userkey=#stReturn.entrykey# autologinkey='123' sex=#form.frmsex# surname=#form.frmsurname#>/--->
-	
+
+
 </cfif>
 
 <cfif Len(form.frmexternalemail) GT 0>
@@ -153,7 +151,7 @@
 
 <cftry>
 <cfmail from="#a_str_sender_address#" to="#form.frmexternalemail#" subject="#a_str_subject#">
-#form.frmfirstname# #form.frmsurname#, 
+#form.frmfirstname# #form.frmsurname#,
 
 #a_str_body#
 </cfmail>
@@ -170,5 +168,5 @@
 </cfcatch>
 </cftry>
 
-	
+
 <cflocation addtoken="no" url="index.cfm?action=useradministration&companykey=#urlencodedformat(form.frmcompanykey)#&resellerkey=#urlencodedformat(form.frmresellerkey)#">

@@ -3,13 +3,13 @@
 	Component:	User
 	Functino:	GetShortestPossibleUserIDByEntrykey
 	Description:Return shortest possible id (id code or username without domain)
-	
+
 
 // --->
 
 <cfquery name="q_select_shortest_possible_userid_by_entrykey">
 SELECT
-	username,identificationcode
+	username
 FROM
 	users
 WHERE
@@ -22,10 +22,6 @@ WHERE
 	<cfexit method="exittemplate">
 </cfif>
 
-<cfif Len(q_select_shortest_possible_userid_by_entrykey.identificationcode) GT 0>
-	<cfset sReturn = q_select_shortest_possible_userid_by_entrykey.identificationcode>
-<cfelse>
-	<cfset sReturn = Mid(q_select_shortest_possible_userid_by_entrykey.username, 1, FindNoCase('@', q_select_shortest_possible_userid_by_entrykey.username)-1)>
-</cfif>
+<cfset sReturn = Mid(q_select_shortest_possible_userid_by_entrykey.username, 1, FindNoCase('@', q_select_shortest_possible_userid_by_entrykey.username)-1)>
 
 

@@ -514,8 +514,6 @@
 		<cfset stReturn.daylightsavinghoursonly = q_select_user_settings.daylightsavinghours />
 		<cfset stReturn.utcdiffonly = q_select_user_settings.utcdiff />
 		<cfset stReturn.charset = q_select_user_settings.charset />
-		<cfset stReturn.mailcharset = q_select_user_settings.mailcharset />
-		<cfset stReturn.mailusertype = val(q_select_user_settings.mailusertype) />
 		<cfset stReturn.default_dateformat = 'dd.mm.yy' />
 		<cfset stReturn.default_timeformat = 'HH:mm' />
 
@@ -551,17 +549,6 @@
 		<cfset stReturn.device.screen_height = 0 />
 		<cfset stReturn.device.screen_width = 0 />
 		<cfset stReturn.device.BitsPerPixel = 0 />
-
-		<cfif q_select_user_settings.mailusertype IS 0>
-			<cfset stReturn.struct_mailprofile = StructNew() />
-		<cfelse>
-			<!--- load mail profile ... --->
-			<cfset q_select_mailprofile = CreateObject('component', '/components/email/cmp_accounts').GetMailProfile(userkey = arguments.userkey) />
-
-			<cfloop list="#q_select_mailprofile.columnlist#" index="a_str_index">
-				<cfset stReturn.struct_mailprofile[a_str_index] = q_select_mailprofile[a_str_index][1] />
-			</cfloop>
-		</cfif>
 
 		<cfreturn stReturn />
 	</cffunction>

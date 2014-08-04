@@ -186,9 +186,6 @@
 		<!--- get style of user ... --->
 		<cfset a_str_used_style = a_cmp_user.GetUserCustomStyle(userkey = arguments.userkey)>
 
-		<!--- get header --->
-		<cfset a_str_include_header = a_cmp_customize.GetMailCustomHeader(style = a_str_used_style, langno = q_user_data.defaultlanguage)>
-
 		<!--- get footer --->
 		<cfset a_str_include_footer = a_cmp_customize.GetMailCustomFooter(style = a_str_used_style, langno = q_user_data.defaultlanguage)>
 

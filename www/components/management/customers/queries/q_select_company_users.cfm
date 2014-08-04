@@ -1,10 +1,10 @@
 <!--- //
 
-	Component:	Customers	
+	Component:	Customers
 	Function:	GetAllCompanyUsers
 	Description:Return all users of a given company (basic data only)
-	
-	Header:		
+
+	Header:
 
 // --->
 
@@ -12,8 +12,7 @@
 SELECT
 	firstname,surname,username,entrykey,title,
 	aposition,department,telephone,mobilenr,
-	smallphotoavaliable,login_count,userid,
-	identificationcode
+	smallphotoavaliable,login_count,userid
 FROM
 	users
 WHERE

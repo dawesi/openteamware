@@ -144,7 +144,6 @@
 	request.a_str_storage_directory = request.appsettings.properties.StorageDirectory;
 	request.a_str_temp_directory_local = request.appsettings.properties.LocalTempDirectory;
 	request.a_str_temp_directory = request.appsettings.properties.GlobalTempDirectory;
-	request.a_str_data_replication_path = request.appsettings.properties.DataReplicationDirectory;
 
 	request.a_str_wwwroot_www_inbox_cc = request.appsettings.properties.wwwroot;
 	request.a_str_storage_datadir = request.appsettings.properties.StorageDirectory;

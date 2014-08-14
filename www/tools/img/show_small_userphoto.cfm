@@ -2,11 +2,14 @@
 
 	Module:		Display
 	Description:Show small userphoto
-	
+
 
 // --->
 
 <cfparam name="url.source" type="string" default="">
+
+<cfabort>
+<!--- ignore feature for now --->
 
 <cfif CheckSimpleLoggedIn() IS FALSE AND Len(url.source) IS 0>
 	<cfabort>
@@ -30,7 +33,7 @@
 <cfset SelectPhotoRequest.type = url.type>
 <cfinclude template="queries/q_select_photodata.cfm">
 
-<cfif q_select_photodata.recordcount is 0>	
+<cfif q_select_photodata.recordcount is 0>
 	<!--- no photo avaliable ... return space_1_1 --->
 	<cfcontent deletefile="no" file="#request.a_str_img_1_1_pixel_location#" type="image/gif">
 	<cfexit method="exittemplate">

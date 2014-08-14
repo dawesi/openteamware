@@ -1,7 +1,7 @@
 <!--- //
 
 	Module:		Application Framework
-	
+
 // --->
 
 <!--- global --->
@@ -23,14 +23,9 @@
 <!--- mail --->
 <cfset stReturn.properties.DefaultMailServer = ReadPropertiesFileProperty('Mail', 'DefaultMailServer', 'mail.openTeamware.com')>
 <cfset stReturn.properties.DefaultIMAPServer = ReadPropertiesFileProperty('Mail', 'DefaultIMAPServer', 'imap.openTeamware.com')>
-<cfset stReturn.properties.SpoolDirectory1 = ReadPropertiesFileProperty('Mail', 'SpoolDirectory1', '/mnt/mailspool01/')>
-<cfset stReturn.properties.SpoolDirectory2 = ReadPropertiesFileProperty('Mail', 'SpoolDirectory2', '/mnt/freespool01/')>
-<cfset stReturn.properties.MailSpeedEnabled = ReadPropertiesFileProperty('Mail', 'MailSpeedEnabled', '0')>
 
 <!--- various --->
 <cfset stReturn.properties.PixelLocation = ReadPropertiesFileProperty('Various', 'PixelLocation', '/mnt/www-source/www.openTeamWare.com/images/space_1_1.gif') />
-<cfset stReturn.properties.IMServername = ReadPropertiesFileProperty('Various', 'IMServername', 'im.openTeamware.com') />
-<cfset stReturn.properties.SMSDefaultSender = ReadPropertiesFileProperty('Various', 'SMSDefaultSender', 'openTeamWare') />
 <cfset stReturn.properties.GoogleMapsAPIKey = ReadPropertiesFileProperty('Various', 'GoogleMapsAPIKey', '') />
 
 <!--- error handling --->

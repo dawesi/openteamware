@@ -44,6 +44,7 @@ FROM
 	<cfoutput>
     <td>#GetLangVal('cm_wd_title')#</td>
 	<td>#GetLangVal('cm_wd_stage')#</td>
+	<td>#GetLangVal( 'cm_ph_probability' )#</td>
     <td>#GetLangVal('crm_ph_expected_sales')#</td>
 	<td>#GetLangVal('cm_wd_contact')#</td>
 	<td>#GetLangVal('cm_wd_responsible_person')#</td>
@@ -55,10 +56,16 @@ FROM
 <cfoutput query="q_select_sales_projects">
   <tr>
     <td>
-		<a href="index.cfm?action=ShowProject&entrykey=#q_select_sales_projects.entrykey#"><span class="glyphicon glyphicon-usd"></span>#htmleditformat(CheckZeroString(q_select_sales_projects.title))#</a>
+		<a href="index.cfm?action=ShowProject&entrykey=#q_select_sales_projects.entrykey#">#htmleditformat(CheckZeroString(q_select_sales_projects.title))#</a>
 	</td>
 	<td>
 		#GetLangVal('crm_wd_sales_stage_' & q_select_sales_projects.stage)#
+	</td>
+	<td>
+		<div class="progress">
+		  <div class="progress-bar" role="progressbar" aria-valuenow="#q_select_sales_projects.probability#" aria-valuemin="0" aria-valuemax="100" style="width: #q_select_sales_projects.probability#%;">
+		  </div>
+		</div>
 	</td>
     <td>
 		#Val(q_select_sales_projects.sales)# #q_select_sales_projects.currency#
@@ -67,7 +74,7 @@ FROM
 		<a href="/addressbook/?action=ShowItem&entrykey=#q_select_sales_projects.contactkey#">#application.components.cmp_addressbook.GetContactDisplayNameData(entrykey = q_select_sales_projects.contactkey)#</a>
 	</td>
     <td>
-		#application.components.cmp_user.GetUsernameByEntrykey(q_select_sales_projects.projectleaderuserkey)#
+		#application.components.cmp_user.GetShortestPossibleUserIDByEntrykey(q_select_sales_projects.projectleaderuserkey)#
 	</td>
 	<td>
 		<cfif IsDate(q_select_sales_projects.dt_closing)>

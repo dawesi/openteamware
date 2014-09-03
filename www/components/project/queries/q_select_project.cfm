@@ -2,8 +2,8 @@
 
 	Module:		Projects
 	Function	GetProject
-	Description: 
-	
+	Description:
+
 
 // --->
 
@@ -39,8 +39,7 @@ SELECT
 	closedbyuserkey,
 	dt_closed,
 	'' AS contactkey_displayvalue,
-	'' AS projectleaderuserkey_displayvalue,
-	CAST((probability * sales / 100) AS SIGNED) AS sales_probability
+	'' AS projectleaderuserkey_displayvalue
 FROM
 	projects
 WHERE

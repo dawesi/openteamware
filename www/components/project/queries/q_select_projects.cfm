@@ -89,8 +89,7 @@ SELECT
 	'' AS workgroupkeys,
 	closed,
 	dt_closed,
-	closedbyuserkey,
-	CAST((probability * sales / 100) AS SIGNED) AS sales_probability
+	closedbyuserkey
 FROM
 	projects
 WHERE

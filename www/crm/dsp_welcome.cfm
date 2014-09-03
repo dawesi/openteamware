@@ -288,7 +288,7 @@ ORDER BY
 
 <cfsavecontent variable="a_str_content">
 
-
+<cfdump var="#q_select_sales_projects#">
 
 <table class="table table-hover">
   <tr class="tbl_overview_header">

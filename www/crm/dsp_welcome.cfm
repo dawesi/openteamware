@@ -303,8 +303,8 @@ ORDER BY
 
 <cfoutput query="q_select_sales_projects">
   <tr>
-    <td>
-		<a href="/project/index.cfm?action=ShowProject&amp;entrykey=#q_select_sales_projects.entrykey#"><span class="glyphicon glyphicon-usd"></span>#htmleditformat(CheckZeroString(q_select_sales_projects.title))#</a>
+    <td style="font-weight:bold">
+		<a href="/project/index.cfm?action=ShowProject&amp;entrykey=#q_select_sales_projects.entrykey#">#htmleditformat(CheckZeroString(q_select_sales_projects.title))#</a>
 	</td>
 	<td>
 		#GetLangVal('crm_wd_sales_stage_' & q_select_sales_projects.stage)#

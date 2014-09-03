@@ -274,7 +274,7 @@ FROM	qFollowUpsAssignedToOthers
 
 <cfset a_dt_closing = DateAdd('d', -21, Now()) />
 
-<cfquery name="q_select_sales_projects" dbtype="query" maxrows="5">
+<cfquery name="q_select_sales_projects" dbtype="query" maxrows="20">
 SELECT
 	*
 FROM

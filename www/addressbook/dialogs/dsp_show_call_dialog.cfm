@@ -78,8 +78,6 @@
 </cfif>
 
 
-
-<!--- <cfoutput>#WriteSimpleHeaderDiv(GetLangVal('cm_wd_crm'))#</cfoutput> --->
 <cfoutput>
 <div style="padding:8px;">
 <form>

@@ -8,6 +8,7 @@
 
 <form action="utils/act_export.cfm" method="post" target="_blank" style="margin:0px; ">
 <input type="hidden" name="frmentrykeys" value="<cfoutput>#session.a_struct_temp_data.addressbook_selected_entrykeys#</cfoutput>">
+<input type="hidden" name="frmformat" value="csv" />
 <table border="0" cellspacing="0" cellpadding="4" class="table">
   <tr>
     <td>
@@ -17,17 +18,6 @@
 		<cfoutput>#ListLen(session.a_struct_temp_data.addressbook_selected_entrykeys)#</cfoutput>
 	</td>
   </tr>
-  <tr>
-    <td>
-		Format:
-	</td>
-    <td>
-		<select name="frmformat">
-			<option value="csv">CSV (Textdatei)</option>
-		</select>
-	</td>
-  </tr>
-
   <tr>
     <td>
 		Trennzeichen:

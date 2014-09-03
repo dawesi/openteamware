@@ -94,7 +94,7 @@ FROM
 ;
 </cfquery>
 <br />
-<cfchart format="png" gridlines="true" show3d="false" showlegend="false" title="#GetLangVal('prj_ph_sales_pipeline_total_is')#: #q_select_sum.sum_sales#">
+<cfchart format="png" gridlines="true" show3d="false" showlegend="false" title="#GetLangVal('prj_ph_sales_pipeline_total_is')#: #q_select_sum.sum_sales#" chartwidth="600">
 	<cfchartseries type="bar">
 
 	<cfloop from="10" to="50" step="10" index="ii">
@@ -121,6 +121,10 @@ FROM
 		<input type="button" class="btn btn-primary" value="<cfoutput>#GetLangval('cm_wd_new')#</cfoutput>" onclick="GotoLocHref('index.cfm?action=NewProject&type=1');" />
 
 </cfsavecontent>
+
+<!--- make xhtml conform for pdf export --->
+<cfset a_Str_content = replacenocase( a_str_content, 'type=png">', 'type=png" />' ) />
+
 <cfoutput>#WriteNewContentBox(GetLangVal('crm_ph_project_type_1') & ' (' & q_select_sales_projects.recordcount & ')', a_str_buttons, a_str_content)#</cfoutput>
 <br />
 

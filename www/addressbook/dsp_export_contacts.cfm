@@ -8,7 +8,7 @@
 <br><br>
 <form action="utils/act_export.cfm" method="post" target="_blank" style="margin:0px; ">
 <input type="hidden" name="frmentrykeys" value="<cfoutput>#session.a_struct_temp_data.addressbook_selected_entrykeys#</cfoutput>">
-<table border="0" cellspacing="0" cellpadding="4">
+<table border="0" cellspacing="0" cellpadding="4" class="table">
   <tr>
     <td>
 		<cfoutput>#GetLangVal('cm_wd_contacts')#</cfoutput>:
@@ -46,7 +46,7 @@
 	<td>
 		<select name="frmencoding">
 			<option value="iso-8859-1">ISO-8859-1</option>
-			<option value="utf-8">UTF-8</option>			
+			<option value="utf-8">UTF-8</option>
 		</select>
 	</td>
   </tr>

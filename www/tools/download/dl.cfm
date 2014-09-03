@@ -1,9 +1,4 @@
-<!--- //
-
-	Module:		Framwork
-	Description:Routine for delivering file downloads
-	
-// --->
+<!--- Routine for delivering file downloads --->
 
 <cfparam name="url.filename" type="string" default="">
 <cfparam name="url.contenttype" type="string" default="">
@@ -37,14 +32,14 @@
 		entrykey = <cfqueryparam cfsqltype="cf_sql_varchar" value="#url.dl_entrykey#">
 	;
 	</cfquery>
-	
+
 	<cfheader name="Content-disposition" value="attachment;filename=""#sFilename#""">
-	
+
 	<cfcontent type="#a_str_contenttype#"
 			   file="#q_select_dl_link.filelocation#"
 			   deletefile="No">
 <cfelse>
-	
+
 	<cfif url.local>
 		<!--- local temp directory --->
 		<cfset sSourceFile = request.a_str_temp_directory_local & request.a_str_dir_separator & url.source />
@@ -52,14 +47,14 @@
 		<!--- global temp directory --->
 		<cfset sSourceFile = request.a_str_temp_directory & request.a_str_dir_separator & url.source />
 	</cfif>
-	
+
 	<cfif NOT FileExists(sSourceFile)>
 		<h1>file does not exist</h1>
 		<cfabort>
 	</cfif>
-	
+
 	<cfheader name="Content-disposition" value="attachment;filename=""#sFilename#""">
-	
+
 	<cfcontent type="#url.contenttype#"
 			   file="#sSourceFile#"
 			   deletefile="Yes">

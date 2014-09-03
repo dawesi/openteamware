@@ -136,13 +136,9 @@
 	request.a_str_url_updatemaildirsizeurl = request.appsettings.properties.UpdateMaildirSizeScript;
 	// create mail dir ...
 	request.a_str_url_createmaildirurl = request.appsettings.properties.CreateMailDirScript;
-	// default sms sender ...
-	request.a_str_sms_sender = request.appsettings.properties.SMSDefaultSender;
-	// im server name
-	request.a_str_im_server_name = request.appsettings.properties.IMServername;
+
 	// NEW: Linux paths
 	request.a_str_storage_directory = request.appsettings.properties.StorageDirectory;
-	request.a_str_temp_directory_local = request.appsettings.properties.LocalTempDirectory;
 	request.a_str_temp_directory = request.appsettings.properties.GlobalTempDirectory;
 
 	request.a_str_wwwroot_www_inbox_cc = request.appsettings.properties.wwwroot;
@@ -161,7 +157,7 @@
 </cfif>
 
 <!--- directory for transfer files --->
-<cfset a_str_transfer_dir = request.a_str_temp_directory_local & '/transfer/' />
+<cfset a_str_transfer_dir = getTempDirectory() & '/transfer/' />
 
 <cfif NOT DirectoryExists( a_str_transfer_dir )>
 	<cfdirectory action="create" directory="#a_str_transfer_dir#">

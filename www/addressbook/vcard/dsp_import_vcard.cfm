@@ -11,7 +11,7 @@
 </cfif>
 <cfdump var="#form#">
 
-<cffile action="upload" destination="#request.a_str_temp_directory_local#" filefield="frmfileupload" nameconflict="makeunique">
+<cffile action="upload" destination="#getTempDirectory()#" filefield="frmfileupload" nameconflict="makeunique">
 
 <cfset sFilename = cffile.ServerDirectory & request.a_Str_dir_separator & cffile.ServerFile />
 

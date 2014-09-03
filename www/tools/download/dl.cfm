@@ -42,7 +42,7 @@
 
 	<cfif url.local>
 		<!--- local temp directory --->
-		<cfset sSourceFile = request.a_str_temp_directory_local & request.a_str_dir_separator & url.source />
+		<cfset sSourceFile = getTempDirectory() & request.a_str_dir_separator & url.source />
 	<cfelse>
 		<!--- global temp directory --->
 		<cfset sSourceFile = request.a_str_temp_directory & request.a_str_dir_separator & url.source />

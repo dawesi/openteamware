@@ -25,7 +25,7 @@
 
 <cfinvoke component="#application.components.cmp_addressbook#" method="GetAllContacts" returnvariable="stReturn">
 	<cfinvokeargument name="securitycontext" value="#request.stSecurityContext#">
-	<cfinvokeargument name="usersettings" value="#request.stUserSettings#">	
+	<cfinvokeargument name="usersettings" value="#request.stUserSettings#">
 	<cfinvokeargument name="filter" value="#a_struct_filter#">
 	<cfinvokeargument name="loadowndatafields" value="true">
 	<cfinvokeargument name="loadfulldata" value="true">
@@ -51,7 +51,7 @@ FROM
 
 <!--- deliver file ... --->
 <cfset a_str_uuid = createuuid()>
-<cfset sFilename = request.a_str_temp_directory_local & a_str_uuid>
+<cfset sFilename = getTempDirectory() & a_str_uuid>
 
 <cffile charset="#form.frmencoding#" action="write" output="#a_str_csv#" file="#sFilename#" addnewline="no">
 

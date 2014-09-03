@@ -1,12 +1,9 @@
 <!--- //
 
 	prepare the template
-	
+
 	// --->
-	
-<!--- write to request.a_str_temp_directory_local ...
-		
-			logical path is otw_temp --->
+
 
 <cfset a_str_file_content = q_select_template_properties.content>
 
@@ -32,7 +29,7 @@
 	<cfset a_str_file_content = ReplaceNoCase(a_str_file_content, '<br/>', '<br>', 'ALL')>
 	<cfset a_str_file_content = ReplaceNoCase(a_str_file_content, 'or=##', 'or=####', 'ALL')>
 	<cfset a_str_file_content = ReplaceNoCase(a_str_file_content, '-COLOR: ##', 'o-COLOR: ####', 'ALL')>
-	
+
 <cfelse>
 	<!--- test ... --->
 	<!---<cfset a_str_file_content = ReplaceNoCase(a_str_file_content, '=##', '=####', 'ALL')>--->

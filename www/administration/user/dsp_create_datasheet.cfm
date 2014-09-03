@@ -4,7 +4,7 @@
 <cfparam name="url.entrykey" type="string" default="">
 
 <!--- check security --->
-	
+
 
 <cfinvoke component="/components/management/users/cmp_load_userdata" method="LoadUserData" returnvariable="stReturn">
 	<cfinvokeargument name="entrykey" value="#url.entrykey#">
@@ -30,7 +30,7 @@
 
 		<META NAME="AUTHOR" CONTENT="#htmleditformat(request.stSecurityContext.myusername)#">
 
-		<META NAME="GENERATOR" CONTENT="AdminTool"> 
+		<META NAME="GENERATOR" CONTENT="AdminTool">
 
 		<META NAME="SUBJECT" CONTENT="#GetLangVal('adm_ph_create_datasheet')# #htmleditformat(q_select_user.username)#">
 
@@ -48,7 +48,7 @@
 	<cfinvokeargument name="htmlcontent" value="#a_str_pagecontent#">
 </cfinvoke>
 
-<cfset a_str_new_filename = request.a_str_temp_directory&GetFileFromPath(sFilename)>
+<cfset a_str_new_filename = getTempDirectory() & GetFileFromPath(sFilename)>
 
 <cffile action="move" destination="#a_str_new_filename#" source="#sFilename#">
 

@@ -2,8 +2,8 @@
 
 	Module:		Address Book
 	Action:		UploadPhotoForContact
-	Description: 
-	
+	Description:
+
 // --->
 
 <cfparam name="form.frmfile" type="string" default="">
@@ -11,13 +11,13 @@
 
 <!--- remove picture ... --->
 <cfif StructKeyExists(form, 'frmsubmit_removephoto')>
-	
+
 	<cfinvoke component="#application.components.cmp_Addressbook#" method="RemoveContactPhoto" returnvariable="stReturn">
 		<cfinvokeargument name="securitycontext" value="#request.stSecurityContext#">
 		<cfinvokeargument name="usersettings" value="#request.stUserSettings#">
 		<cfinvokeargument name="entrykey" value="#form.frmentrykey#">
 	</cfinvoke>
-	
+
 	<cflocation addtoken="false" url="index.cfm?action=ShowItem&entrykey=#form.frmentrykey#">
 </cfif>
 
@@ -26,7 +26,7 @@
 	<cfexit method="exittemplate">
 </cfif>
 
-<cffile action="upload" destination="#request.a_str_temp_directory#" filefield="form.frmfile" nameconflict="makeunique">
+<cffile action="upload" destination="#getTempDirectory()#" filefield="form.frmfile" nameconflict="makeunique">
 
 <cfif cffile.ContentType NEQ 'image'>
 	Invalid. Only images are allowed (PNG/JPG/GIF)

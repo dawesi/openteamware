@@ -3,7 +3,7 @@
 	Module:		Administrationtool
 	Action:		Companylogo
 	Description:Let the user set / delete the company logo
-	
+
 // --->
 
 <!--- TODO: ADD TRANSLATION --->
@@ -24,25 +24,25 @@
 	<cfinvoke component="#application.components.cmp_content#" method="DeleteCompanyLogo" returnvariable="ab">
 		<cfinvokeargument name="companykey" value="#url.companykey#">
 	</cfinvoke>
-	
+
 	done.
 	</cfcase>
 	<cfcase value="upload">
 	<!--- uploaded a new image? --->
 	<cfif (cgi.REQUEST_METHOD IS 'POST') AND (Len(form.frmfile) GT 0)>
-	
-		<cfset sFilename = request.a_str_temp_directory & request.a_str_dir_separator & CreateUUID()>
-		<cffile action="upload" destination="#sFilename#" filefield="form.frmfile" nameconflict="makeunique">	
-	
+
+		<cfset sFilename = getTempDirectory() & request.a_str_dir_separator & CreateUUID()>
+		<cffile action="upload" destination="#sFilename#" filefield="form.frmfile" nameconflict="makeunique">
+
 		<cffile action="readbinary" file="#sFilename#" variable="a_str_data">
-	
+
 		<cfinvoke component="#request.a_Str_component_content#" method="UpdateCompanyLogo" returnvariable="stUpdate">
 			<cfinvokeargument name="securitycontext" value="#request.stSecurityContext#">
 			<cfinvokeargument name="companykey" value="#url.companykey#">
 			<cfinvokeargument name="imagedata" value="#a_str_data#">
 			<cfinvokeargument name="contenttype" value="#cffile.ContentType#/#cffile.ContentSubType#">
 		</cfinvoke>
-	
+
 	</cfif>
 	</cfcase>
 </cfswitch>

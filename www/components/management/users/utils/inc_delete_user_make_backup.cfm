@@ -1,13 +1,13 @@
 <!--- //
 
-	Module:		
+	Module:
 	Action:		Delete a user and make backup
-	Description:	
-	
+	Description:
+
 
 // --->
-	
-<cfset a_str_backup_directory = request.a_str_temp_directory & request.a_str_dir_separator & createUUID()>
+
+<cfset a_str_backup_directory = getTempDirectory() & request.a_str_dir_separator & createUUID()>
 
 <cfdirectory action="create" directory="#a_str_backup_directory#">
 

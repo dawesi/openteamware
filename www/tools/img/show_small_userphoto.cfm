@@ -21,7 +21,7 @@
 <!--- type (0 = small; 1 = big) --->
 <cfparam name="url.type" type="numeric" default="0">
 
-<cfset a_str_tmp_filename = request.a_str_temp_directory & request.a_str_dir_separator & 'photo_small_' & url.entrykey />
+<cfset a_str_tmp_filename = getTempDirectory() & request.a_str_dir_separator & 'photo_small_' & url.entrykey />
 
 <!--- temo file exists? --->
 <cfif FileExists(a_str_tmp_filename)>

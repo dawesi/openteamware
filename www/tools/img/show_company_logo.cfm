@@ -2,7 +2,7 @@
 
 	Module:		Framework
 	Description:Display company logo
-	
+
 
 // --->
 
@@ -17,7 +17,7 @@
 	<cfabort>
 </cfif>
 
-<cfset a_str_tmp_filename = request.a_str_temp_directory & request.a_str_dir_separator & 'company_logo_' & a_struct_logo.entrykey>
+<cfset a_str_tmp_filename = getTempDirectory() & request.a_str_dir_separator & 'company_logo_' & a_struct_logo.entrykey>
 
 <!--- temo file exists? --->
 <cfif FileExists(a_str_tmp_filename)>

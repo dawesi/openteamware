@@ -139,7 +139,6 @@
 
 	// NEW: Linux paths
 	request.a_str_storage_directory = request.appsettings.properties.StorageDirectory;
-	request.a_str_temp_directory = request.appsettings.properties.GlobalTempDirectory;
 
 	request.a_str_wwwroot_www_inbox_cc = request.appsettings.properties.wwwroot;
 	request.a_str_storage_datadir = request.appsettings.properties.StorageDirectory;

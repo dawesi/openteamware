@@ -2,7 +2,7 @@
 
 	Module:        Import
 	Description:   Upload file, initiate parsing and forward to field mapping
-	
+
 
 // --->
 
@@ -26,12 +26,12 @@
 </cfif>
 
 <!--- save the uploaded file --->
-<cfset a_str_temp_file = request.a_str_temp_directory & request.a_str_dir_separator & createUUID() & '.xls' />
+<cfset a_str_temp_file = getTempDirectory() & request.a_str_dir_separator & createUUID() & '.xls' />
 <cffile action="upload" filefield="frm_filename" destination="#a_str_temp_file#">
 
 <cfinvoke component="#application.components.cmp_import#" method="ParseUploadedFileAndReturnResult" returnvariable="stReturn">
 	<cfinvokeargument name="securitycontext" value="#request.stSecurityContext#">
-	<cfinvokeargument name="usersettings" value="#request.stUserSettings#">	
+	<cfinvokeargument name="usersettings" value="#request.stUserSettings#">
 	<cfinvokeargument name="servicekey" value="#form.frm_servicekey#">
 	<cfinvokeargument name="datatype" value="#form.frm_datatype#">
 	<cfinvokeargument name="jobkey" value="#form.frm_jobkey#">

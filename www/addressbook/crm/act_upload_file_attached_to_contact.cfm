@@ -1,7 +1,7 @@
 <!--- //
 
 	Module: Address Book
-	
+
 // --->
 
 
@@ -18,7 +18,7 @@
 
 <!--- try to upload the file --->
 <cftry>
-<cffile action="upload" destination="#request.a_str_temp_directory#" filefield="frmfile" nameconflict="makeunique">
+<cffile action="upload" destination="#getTempDirectory()#" filefield="frmfile" nameconflict="makeunique">
 
 <cfcatch type="any">
 	<h4>upload failed.</h4>
@@ -40,13 +40,13 @@
 	<cfset a_cmp_sales.CheckAndCreateDirectoryForContactInStorage(securitycontext = request.stSecurityContext,
 					usersettings = request.stUserSettings,
 					contactkey = form.frmcontactkey)>
-					
+
 	<cfset sDirectorykey = a_cmp_sales.GetStorageDirectoryKeyOfContact(securitycontext = request.stSecurityContext,
 					usersettings = request.stUserSettings,
 					contactkey = form.frmcontactkey)>
-					
-	<cfset form.frmdirectorykey = sDirectorykey>	
-	
+
+	<cfset form.frmdirectorykey = sDirectorykey>
+
 	<cfoutput>#form.frmdirectorykey#</cfoutput>
 </cfif>
 

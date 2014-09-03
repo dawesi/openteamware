@@ -40,13 +40,7 @@
 			   deletefile="No">
 <cfelse>
 
-	<cfif url.local>
-		<!--- local temp directory --->
-		<cfset sSourceFile = getTempDirectory() & request.a_str_dir_separator & url.source />
-	<cfelse>
-		<!--- global temp directory --->
-		<cfset sSourceFile = request.a_str_temp_directory & request.a_str_dir_separator & url.source />
-	</cfif>
+	<cfset sSourceFile = getTempDirectory() & request.a_str_dir_separator & url.source />
 
 	<cfif NOT FileExists(sSourceFile)>
 		<h1>file does not exist</h1>

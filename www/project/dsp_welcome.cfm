@@ -25,6 +25,8 @@ WHERE
 	project_type = 1
 	AND
 	closed = 0
+ORDER BY
+	probability DESC
 ;
 </cfquery>
 

@@ -96,13 +96,14 @@
 
 		<cfif arguments.managemode>
 
-			<br/>
 			<cfset sReturn_url = cgi.SCRIPT_NAME&'?'&cgi.QUERY_STRING>
-			<button type="button" class="btn btn-default" onclick="SetFollowUpDone('#jsstringformat(q_select_follow_ups.entrykey)#', '#JsStringFormat(q_select_follow_ups.objectkey)#');CloseSimpleModalDialog();location.reload();return false;">
+			<button type="button" class="btn btn-success" onclick="SetFollowUpDone('#jsstringformat(q_select_follow_ups.entrykey)#', '#JsStringFormat(q_select_follow_ups.objectkey)#');CloseSimpleModalDialog();location.reload();return false;">
 				<span class="glyphicon glyphicon-ok"></span>
 				#GetLangVal('tsk_ph_set_done')#
 			</button>
-			&nbsp;
+
+			<br />
+
 			<a href="/crm/?action=EditFollowup&entrykey=#q_select_follow_ups.entrykey#&returnurl=#urlencodedformat(sReturn_url)#"><span class="glyphicon glyphicon-pencil"></span> #MakeFirstCharUCase(GetLangVal('cm_wd_edit'))#</a>
 
 			<a href="##" onClick="ShowSimpleConfirmationDialog('/crm/index.cfm?action=DeleteFollowups&entrykeys=#q_select_follow_ups.entrykey#');"><span class="glyphicon glyphicon-trash"></span> #MakeFirstCharUCase(GetLangVal('cm_wd_delete'))#</a>

@@ -1,11 +1,11 @@
-<cfoutput>#SetHeaderTopInfoString(GetLAngVal('adrb_ph_actions_export'))#</cfoutput>
+<cfset SetHeaderTopInfoString(GetLAngVal('adrb_ph_actions_export')) />
 
 <cfif NOT IsDefined('session.a_struct_temp_data.addressbook_selected_entrykeys')>
 	<cflocation addtoken="no" url="index.cfm">
 </cfif>
 
 
-<br><br>
+
 <form action="utils/act_export.cfm" method="post" target="_blank" style="margin:0px; ">
 <input type="hidden" name="frmentrykeys" value="<cfoutput>#session.a_struct_temp_data.addressbook_selected_entrykeys#</cfoutput>">
 <table border="0" cellspacing="0" cellpadding="4" class="table">
@@ -50,14 +50,6 @@
 		</select>
 	</td>
   </tr>
-  <!---<tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>
-  <tr>
-    <td>&nbsp;</td>
-    <td>&nbsp;</td>
-  </tr>--->
   <tr>
     <td>&nbsp;</td>
     <td>

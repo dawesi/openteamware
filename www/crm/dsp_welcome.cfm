@@ -322,7 +322,7 @@ ORDER BY
 		<a href="/addressbook/?action=ShowItem&amp;entrykey=#q_select_sales_projects.contactkey#">#application.components.cmp_addressbook.GetContactDisplayNameData(entrykey = q_select_sales_projects.contactkey)#</a>
 	</td>
     <td>
-		#application.components.cmp_user.GetUsernameByEntrykey(q_select_sales_projects.projectleaderuserkey)#
+		#application.components.cmp_user.GetShortestPossibleUserIDByEntrykey(q_select_sales_projects.projectleaderuserkey)#
 	</td>
 	<td>
 		<cfif IsDate(q_select_sales_projects.dt_closing)>

@@ -290,11 +290,11 @@
 					<!--- some sort of rating ... --->
 					<input type="hidden" name="#a_struct_form_element.input_name#" id="#a_struct_form_element.input_name#" value="#htmleditformat(a_struct_form_element.input_value)#" />
 
-					<a href="##" onclick="ResetRatingToUnknownValue('#jsstringformat(a_struct_form_element.input_name)#');return false;" class="nl"><img border="0" src="/images/si/bullet_black.png" /></a>
+					<a href="##" onclick="ResetRatingToUnknownValue('#jsstringformat(a_struct_form_element.input_name)#');return false;"><img border="0" src="/images/si/bullet_black.png" /></a>
 
 					<span id="id_div_rating_images_#a_struct_form_element.input_name#">
 					<cfloop from="1" to="5" index="a_int_rating">
-						<a class="nl" href="##" onclick="DoSetCurrentRating('#jsstringformat(a_struct_form_element.input_name)#', '#a_int_rating#');return false;"><img id="#a_struct_form_element.input_name#_#a_int_rating#" class="nl" src="/images/si/bullet_orange.png" border="0" /></a>
+						<a href="##" onclick="DoSetCurrentRating('#jsstringformat(a_struct_form_element.input_name)#', '#a_int_rating#');return false;"><img id="#a_struct_form_element.input_name#_#a_int_rating#" src="/images/si/bullet_orange.png" border="0" /></a>
 					</cfloop>
 					</span>
 				</cfcase>

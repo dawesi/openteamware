@@ -88,7 +88,6 @@
 <div class="div_top_header_info" id="id_top_header_navigation">
 openTeamware.com &gt;
 <span id="id_span_header_top_info"></span>
-<span><a href="#" class="nl"><img src="/images/space_1_1.gif" class="si_img" /></a></span>
 </div>
 
 <div style="clear:both"></div>

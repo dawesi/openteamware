@@ -86,8 +86,8 @@
 				<a href="/workgroups/?action=ShowUser&amp;entrykey=#q_select_follow_ups.userkey#">#application.components.cmp_user.GetShortestPossibleUserIDByEntrykey(q_select_follow_ups.userkey)#</a>
 			</td>
 			<td align="right" nowrap="true">
-				<a href="/crm/?action=EditFollowup&amp;entrykey=#q_select_follow_ups.entrykey#" class="nl"><span class="glyphicon glyphicon-pencil"></span></a>
-				<a class="nl" href="##" onclick="ShowSimpleConfirmationDialog('index.cfm?action=DeleteFollowups&amp;entrykeys=#q_select_follow_ups.entrykey#');"><span class="glyphicon glyphicon-trash"></span></a>
+				<a href="/crm/?action=EditFollowup&amp;entrykey=#q_select_follow_ups.entrykey#"><span class="glyphicon glyphicon-pencil"></span></a>
+				<a href="##" onclick="ShowSimpleConfirmationDialog('index.cfm?action=DeleteFollowups&amp;entrykeys=#q_select_follow_ups.entrykey#');"><span class="glyphicon glyphicon-trash"></span></a>
 			</td>
 		</tr>
 	</cfoutput>
@@ -245,8 +245,8 @@ FROM	qFollowUpsAssignedToOthers
 				#username#
 			</td>
 			<td align="right" nowrap="true" class="hideprint">
-				<a href="index.cfm?action=EditFollowup&amp;entrykey=#q_select_follow_ups.entrykey#" class="nl"><span class="glyphicon glyphicon-pencil"></span></a>
-				<a class="nl" href="##" onclick="ShowSimpleConfirmationDialog('index.cfm?action=DeleteFollowups&amp;entrykeys=#q_select_follow_ups.entrykey#');"><span class="glyphicon glyphicon-trash"></span></a>
+				<a href="index.cfm?action=EditFollowup&amp;entrykey=#q_select_follow_ups.entrykey#"><span class="glyphicon glyphicon-pencil"></span></a>
+				<a href="##" onclick="ShowSimpleConfirmationDialog('index.cfm?action=DeleteFollowups&amp;entrykeys=#q_select_follow_ups.entrykey#');"><span class="glyphicon glyphicon-trash"></span></a>
 			</td>
 		</tr>
 	</cfoutput>

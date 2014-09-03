@@ -2,16 +2,16 @@
 
 	Module:		Cmp_FollowUp
 	Function:	DisplayShortFollowupInfos
-	Description: 
-	
+	Description:
+
 
 // --->
-	
+
 <cfif (Len(arguments.servicekey) IS 0) OR (Len(arguments.objectkeys) IS 0)>
 	<!--- invalid data --->
 	<cfexit method="exittemplate">
 </cfif>
-	
+
 <cfset a_struct_filter = StructNew() />
 <!---<cfset a_struct_filter.done = 0>--->
 
@@ -19,7 +19,7 @@
 								objectkeys = arguments.objectkeys,
 								usersettings = arguments.usersettings,
 								filter = a_struct_filter) />
-								
+
 <cfquery name="q_select_follow_ups" dbtype="query">
 SELECT
 	*
@@ -61,8 +61,8 @@ WHERE
 			#LSDateFormat(q_select_follow_ups.dt_due, request.stUserSettings.default_dateformat)#
 		</td>
 		<td>
-			<a href="/crm/?action=EditFollowup&entrykey=#q_select_follow_ups.entrykey#" class="nl"><img src="/images/si/pencil.png" class="si_img" alt="#GetLangVal('cm_wd_edit')#" /></a>
-			<a class="nl" href="##" onclick="ShowSimpleConfirmationDialog('index.cfm?action=DeleteFollowups&entrykeys=#q_select_follow_ups.entrykey#');"><img src="/images/si/delete.png" class="si_img" alt="Delete" /></a>
+			<a href="/crm/?action=EditFollowup&entrykey=#q_select_follow_ups.entrykey#"><img src="/images/si/pencil.png" class="si_img" alt="#GetLangVal('cm_wd_edit')#" /></a>
+			<a href="##" onclick="ShowSimpleConfirmationDialog('index.cfm?action=DeleteFollowups&entrykeys=#q_select_follow_ups.entrykey#');"><img src="/images/si/delete.png" class="si_img" alt="Delete" /></a>
 		</td>
 	</tr>
 	</cfoutput>

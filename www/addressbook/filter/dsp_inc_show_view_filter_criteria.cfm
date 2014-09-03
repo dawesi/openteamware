@@ -141,7 +141,7 @@
 </td>
 <cfif ShowViewFilterCriteriaRequest.AllowDeleteCriteria>
 	<td>
-		<a href="index.cfm?Action=DoDeleteFilterCriteria&entrykey=#a_struct_crm_filter.criterias[ii].entrykey#&viewkey=#a_struct_crm_filter.criterias[ii].viewkey#" class="nl"><span class="glyphicon glyphicon-trash"></span></a>
+		<a href="index.cfm?Action=DoDeleteFilterCriteria&entrykey=#a_struct_crm_filter.criterias[ii].entrykey#&viewkey=#a_struct_crm_filter.criterias[ii].viewkey#"><span class="glyphicon glyphicon-trash"></span></a>
 	</td>
 </cfif>
 </tr>

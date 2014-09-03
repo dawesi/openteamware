@@ -60,7 +60,6 @@
 <div class="panel panel-default" style="margin-top:120px;box-shadow:rgba(255, 255, 255, 0.317647) 0px 5px 400px 0px;width:600px;margin-left: auto; margin-right: auto">
   <div class="panel-heading">
     <h3 class="panel-title">
-		<!--- <a href="/" class="nl"><img alt="<cfoutput>#GetLangVal('lg_ph_goto_homepage')#</cfoutput>" src="<cfoutput>#a_struct_medium_logo.path#</cfoutput>" width="<cfoutput>#a_struct_medium_logo.width#</cfoutput>" height="<cfoutput>#a_struct_medium_logo.height#</cfoutput>" hspace="12" vspace="12" border="0" align="absmiddle"></a> --->
 		<cfoutput>#htmleditformat(request.appsettings.description)# #GetLangVal('lg_ph_title')#</cfoutput>
 	</h3>
   </div>

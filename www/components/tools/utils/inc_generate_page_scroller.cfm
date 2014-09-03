@@ -26,17 +26,17 @@
 			<cfset a_str_link_first = ReplaceNoCase(arguments.current_url, "%startrow%", 1) />
 			<cfset a_str_link_previous = ReplaceNoCase(arguments.current_url, "%startrow%", a_int_tmp_index) />
 
-			<a class="nl" href="<cfoutput>#a_str_link_first#</cfoutput>"><img src="/images/si/resultset_first.png" class="si_img" /></a>
-			<a class="nl" href="<cfoutput>#a_str_link_previous#</cfoutput>"><img src="/images/si/resultset_previous.png" class="si_img" /></a>
+			<a href="<cfoutput>#a_str_link_first#</cfoutput>"><img src="/images/si/resultset_first.png" class="si_img" /></a>
+			<a href="<cfoutput>#a_str_link_previous#</cfoutput>"><img src="/images/si/resultset_previous.png" class="si_img" /></a>
 
 		<cfelse>
 
 			<!--- default link ... --->
 			<cfset a_str_link_first = ReplaceOrAddURLParameter(arguments.current_url, "startrow", 1) />
-			<a class="nl" href="<cfoutput>#arguments.main_template_filename#</cfoutput>?<cfoutput>#a_str_link_first#</cfoutput>"><img src="/images/si/resultset_first.png" class="si_img" /></a>
+			<a href="<cfoutput>#arguments.main_template_filename#</cfoutput>?<cfoutput>#a_str_link_first#</cfoutput>"><img src="/images/si/resultset_first.png" class="si_img" /></a>
 
 			<cfset a_str_link_previous = ReplaceOrAddURLParameter(arguments.current_url, "startrow", a_int_tmp_index) />
-			<a class="nl" href="<cfoutput>#arguments.main_template_filename#</cfoutput>?<cfoutput>#a_str_link_previous#</cfoutput>"><img src="/images/si/resultset_previous.png" class="si_img" /></a>
+			<a href="<cfoutput>#arguments.main_template_filename#</cfoutput>?<cfoutput>#a_str_link_previous#</cfoutput>"><img src="/images/si/resultset_previous.png" class="si_img" /></a>
 
 		</cfif>
 
@@ -67,20 +67,20 @@
 			<cfset a_int_tmp_index = arguments.recordcount - arguments.step />
 			<cfset a_str_link_last = ReplaceNoCase(arguments.current_url, "%startrow%", a_int_tmp_index) />
 
-			<a class="nl" href="<cfoutput>#a_str_link_next#</cfoutput>"><img src="/images/si/resultset_next.png" class="si_img" /></a>
-			<a class="nl" href="<cfoutput>#a_str_link_last#</cfoutput>"><img src="/images/si/resultset_last.png" class="si_img" /></a>
+			<a href="<cfoutput>#a_str_link_next#</cfoutput>"><img src="/images/si/resultset_next.png" class="si_img" /></a>
+			<a href="<cfoutput>#a_str_link_last#</cfoutput>"><img src="/images/si/resultset_last.png" class="si_img" /></a>
 
 		<cfelse>
 
 			<!--- go to next page --->
 			<cfset a_int_tmp_index = arguments.current_record + arguments.step />
 			<cfset a_str_link_next = ReplaceOrAddURLParameter(arguments.current_url, "startrow", a_int_tmp_index) />
-			<a class="nl" href="<cfoutput>#arguments.main_template_filename#</cfoutput>?<cfoutput>#a_str_link_next#</cfoutput>"><img src="/images/si/resultset_next.png" class="si_img" /></a>
+			<a href="<cfoutput>#arguments.main_template_filename#</cfoutput>?<cfoutput>#a_str_link_next#</cfoutput>"><img src="/images/si/resultset_next.png" class="si_img" /></a>
 
 			<cfset a_int_tmp_index = arguments.recordcount - arguments.step />
 			<cfset a_str_link_last = ReplaceOrAddURLParameter(arguments.current_url, "startrow", a_int_tmp_index) />
 
-			<a class="nl" href="<cfoutput>#arguments.main_template_filename#</cfoutput>?<cfoutput>#a_str_link_last#</cfoutput>"><img src="/images/si/resultset_last.png" class="si_img" /></a>
+			<a href="<cfoutput>#arguments.main_template_filename#</cfoutput>?<cfoutput>#a_str_link_last#</cfoutput>"><img src="/images/si/resultset_last.png" class="si_img" /></a>
 		</cfif>
 	</cfif>
 

@@ -34,14 +34,7 @@
 	<cfexit method="exittemplate">
 </cfif>
 
-<!--- device specific ... on PDA just use / as separator --->
-<cfif arguments.usersettings.device.type IS 'pda'>
-	<cfset a_str_td_break = ' / '>
-	<cfset a_int_shortenstring = 20>
-<cfelse>
-	<cfset a_str_td_break = '</td><td valign="top">'>
-	<cfset a_int_shortenstring = 50>
-</cfif>
+<cfset a_int_shortenstring = 50>
 
 <cfsavecontent variable="sReturn">
 <cfset arguments.filter.display_border = false>
@@ -51,35 +44,20 @@
 </cfif>
 
 <table class="table table-hover">
-  <tr class="tbl_overview_header">
-	<cfif arguments.usersettings.device.type IS 'pda'>
-
-		<td>
-			<cfoutput>#GetLangVal('crm_wd_follow_ups')# (#q_select_follow_ups.recordcount#)</cfoutput>
-			/
+  <tr class="tbl_overview_header">		<td width="50%">
+		<cfoutput>#GetLangVal('crm_wd_follow_ups')# (#q_select_follow_ups.recordcount#)</cfoutput></td>
+		<td width="25%">
 			<cfoutput>#GetLangVal('task_ph_assignedto')#</cfoutput>
 			/
 			<cfoutput>#GetLangVal('tsk_ph_due_to')#</cfoutput>
+		</td>
+		<td width="25%">
+
 			<cfif arguments.managemode>
 				/
 				<cfoutput>#GetLangVal('cm_wd_Action')#</cfoutput>
 			</cfif>
 		</td>
-
-	<cfelse>
-		<td width="50%">
-			<cfoutput>#GetLangVal('crm_wd_follow_ups')# (#q_select_follow_ups.recordcount#)</cfoutput></td>
-		<td width="25%">
-			<cfoutput>#GetLangVal('task_ph_assignedto')#</cfoutput>
-		</td>
-		<td width="25%">
-			<cfoutput>#GetLangVal('tsk_ph_due_to')#</cfoutput>
-			<cfif arguments.managemode>
-				/
-				<cfoutput>#GetLangVal('cm_wd_Action')#</cfoutput>
-			</cfif>
-		</td>
-	</cfif>
   </tr>
   <cfoutput query="q_select_follow_ups">
   <tr>
@@ -98,17 +76,23 @@
 		</cfif>
 		</a>
 
-	#a_str_td_break#
+	</td>
+	<td>
 
 		<a href="/workgroups/?action=ShowUser&entrykey=#q_select_follow_ups.userkey#">#application.components.cmp_user.GetShortestPossibleUserIDByEntrykey(q_select_follow_ups.userkey)#</a>
 
-	#a_str_td_break#
+		/
 
 		#LsDateFormat(q_select_follow_ups.dt_due, arguments.usersettings.default_dateformat)#<cfif Hour(q_select_follow_ups.dt_due) NEQ 0> #TimeFormat(q_select_follow_ups.dt_due, arguments.usersettings.default_timeformat)#</cfif>
 
 		<cfif q_select_follow_ups.done IS 0 AND q_select_follow_ups.dt_due LT Now()>
 			<span class="glyphicon glyphicon-exclamation-sign"></span>
 		</cfif>
+
+	</td>
+	<td>
+
+
 
 		<cfif arguments.managemode>
 

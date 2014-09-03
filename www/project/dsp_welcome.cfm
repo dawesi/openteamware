@@ -37,7 +37,7 @@ FROM
 ;
 </cfquery>
 
-
+<div id="activeprojects">
 <cfsavecontent variable="a_str_content">
 <table class="table table-hover">
   <tr class="tbl_overview_header">
@@ -84,6 +84,8 @@ FROM
 </cfoutput>
 </table>
 
+</div>
+
 <cfquery name="q_select_sum" dbtype="query">
 SELECT
 	SUM(sales) AS sum_sales
@@ -114,7 +116,10 @@ FROM
 
 </cfsavecontent>
 <cfsavecontent variable="a_str_buttons">
-	<input type="button" class="btn btn-primary" value="<cfoutput>#GetLangval('cm_wd_new')#</cfoutput>" onclick="GotoLocHref('index.cfm?action=NewProject&type=1');" />
+		<a style="font-weight:normal" href="<cfoutput>#cgi.SCRIPT_NAME#?#cgi.QUERY_STRING#</cfoutput>&amp;format=pdf&amp;extractcontentid=activeprojects"><span class="glyphicon glyphicon-circle-arrow-down"></span>PDF</a>
+		&nbsp;
+		<input type="button" class="btn btn-primary" value="<cfoutput>#GetLangval('cm_wd_new')#</cfoutput>" onclick="GotoLocHref('index.cfm?action=NewProject&type=1');" />
+
 </cfsavecontent>
 <cfoutput>#WriteNewContentBox(GetLangVal('crm_ph_project_type_1') & ' (' & q_select_sales_projects.recordcount & ')', a_str_buttons, a_str_content)#</cfoutput>
 <br />

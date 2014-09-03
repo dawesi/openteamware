@@ -1670,11 +1670,13 @@ function WriteSimpleHeaderDiv(txt) {
 function AddParamStringItem(param_string, item, value) {
 	return ListAppend(param_string, item & '=' & urlencodedformat(value), '&');
 	}
-		
+	
+// top string	
 function SetHeaderTopInfoString(s) {
 	writeoutput('<div class="page-header"><h1>' & htmleditformat( s ) & '</h1></div>');
 	return true;
 	}
+	
 // read an entry of properties file and return default value if empty
 function ReadPropertiesFileProperty(section, property, defaultvalue) {
 	var sReturn = '';

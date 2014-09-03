@@ -19,7 +19,7 @@ WHERE
 <cfset variables.a_cmp_workgroup = CreateObject('component', request.a_str_component_workgroups)>
 <cfset variables.a_cmp_load_user_data = CreateObject('component', '/components/management/users/cmp_load_userdata')>
 
-<cfoutput>#WriteMainContentTopHeaderLine(GetLangVal('cm_wd_workgroup') & ': ' & q_select_workgroup.workgroup_name)#</cfoutput>
+<cfoutput>#SetHeaderTopInfoString(GetLangVal('cm_wd_workgroup') & ': ' & q_select_workgroup.workgroup_name)#</cfoutput>
 
 <br/><br/>
 

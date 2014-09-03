@@ -1,4 +1,4 @@
-<cfoutput>#WriteMainContentTopHeaderLine(GetLAngVal('adrb_ph_actions_export'))#</cfoutput>
+<cfoutput>#SetHeaderTopInfoString(GetLAngVal('adrb_ph_actions_export'))#</cfoutput>
 
 <cfif NOT IsDefined('session.a_struct_temp_data.addressbook_selected_entrykeys')>
 	<cflocation addtoken="no" url="index.cfm">
@@ -61,7 +61,7 @@
   <tr>
     <td>&nbsp;</td>
     <td>
-		<input type="submit" value="Export">
+		<input type="submit" value="Export" class="btn btn-primary" />
 	</td>
   </tr>
 </table>

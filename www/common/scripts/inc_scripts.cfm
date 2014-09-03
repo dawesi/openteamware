@@ -1414,21 +1414,6 @@ function ListSameItems(list1,list2)	{
   }
   return listReturn;
 }		
-function WriteMainContentTopHeaderLine(l) {
-	var a_right = '';
-	
-	if(arraylen(arguments) GT 1) a_right = arguments[2];
-	
-	WriteOutput('<div class="bb PageBanner" style="padding:2px; ">');
-	
-	if (Len(a_right) GT 0) {
-		WriteOutput('<span style="float:right " class="PageBannerSmall">' & htmleditformat(a_right) & '</span>');
-		}
-	
-	WriteOutput(htmleditformat(l));
-	WriteOutput('</div>');
-	}
-	
 // return the currently used style
 function GetCurrentStyleUsed() {
 	if	(StructKeyExists(request, 'stUserSettings') AND Len(request.stUserSettings.style) GT 0)

@@ -8,7 +8,7 @@
   this.clientmanagement= "yes";
   this.loginstorage = "session";
   this.sessionmanagement = "yes";
-  this.sessiontimeout = createTimeSpan(0,0,20,0);
+  this.sessiontimeout = createTimeSpan(0,0,60,0);
   this.setClientCookies = "yes";
   this.setDomainCookies = "no";
   this.datasource		= 'mycrm';

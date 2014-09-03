@@ -52,10 +52,8 @@
 			<cfoutput>#GetLangVal('tsk_ph_due_to')#</cfoutput>
 		</td>
 		<td width="25%">
-
 			<cfif arguments.managemode>
-				/
-				<cfoutput>#GetLangVal('cm_wd_Action')#</cfoutput>
+			<cfoutput>#GetLangVal('cm_wd_Action')#</cfoutput>
 			</cfif>
 		</td>
   </tr>

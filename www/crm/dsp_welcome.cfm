@@ -256,7 +256,7 @@ FROM	qFollowUpsAssignedToOthers
 
 
 <cfsavecontent variable="a_str_btn">
-	<a style="font-weight:normal" href="<cfoutput>#cgi.SCRIPT_NAME#?#cgi.QUERY_STRING#</cfoutput>&amp;format=pdf&amp;extractcontentid=followuplist"><span class="glyphicon glyphicon-circle-arrow-down"></span> PDF</a>
+	<a style="font-weight:normal" href="<cfoutput>#cgi.SCRIPT_NAME#?#cgi.QUERY_STRING#</cfoutput>&amp;format=pdf&amp;extractcontentid=followuplist"><span class="glyphicon glyphicon-circle-arrow-down"></span>PDF</a>
 </cfsavecontent>
 
 <!--- <cfset a_str_btn = '' /> --->

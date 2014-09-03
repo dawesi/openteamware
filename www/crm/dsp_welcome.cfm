@@ -288,8 +288,6 @@ ORDER BY
 
 <cfsavecontent variable="a_str_content">
 
-<cfdump var="#q_select_sales_projects#">
-
 <table class="table table-hover">
   <tr class="tbl_overview_header">
 	<cfoutput>
@@ -313,7 +311,7 @@ ORDER BY
 	</td>
 	<td>
 		<div class="progress">
-		  <div class="progress-bar" role="progressbar" aria-valuenow="#q_select_sales_projects.probability#" aria-valuemin="0" aria-valuemax="100" style="width: #q_select_sales_projects.probability#%;">
+		  <div class="progress-bar" role="progressbar" aria-valuenow="#q_select_sales_projects.sales_probability#" aria-valuemin="0" aria-valuemax="100" style="width: #q_select_sales_projects.sales_probability#%;">
 		  </div>
 		</div>
 	</td>

@@ -294,7 +294,8 @@ ORDER BY
   <tr class="tbl_overview_header">
 	<cfoutput>
     <td>#GetLangVal('cm_wd_title')#</td>
-	<td>#GetLangVal('cm_wd_stage')# / #GetLangVal( 'cm_ph_probability' )#</td>
+	<td>#GetLangVal('cm_wd_stage')#</td>
+	<td>#GetLangVal( 'cm_ph_probability' )#</td>
     <td>#GetLangVal('crm_ph_expected_sales')#</td>
 	<td>#GetLangVal('cm_wd_contact')#</td>
 	<td>#GetLangVal('cm_wd_responsible_person')#</td>
@@ -309,7 +310,12 @@ ORDER BY
 	</td>
 	<td>
 		#GetLangVal('crm_wd_sales_stage_' & q_select_sales_projects.stage)#
-		(#q_select_sales_projects.probability#)
+	</td>
+	<td>
+		<div class="progress">
+		  <div class="progress-bar" role="progressbar" aria-valuenow="#q_select_sales_projects.probability#" aria-valuemin="0" aria-valuemax="100" style="width: #q_select_sales_projects.probability#%;">
+		  </div>
+		</div>
 	</td>
     <td>
 		#Val(q_select_sales_projects.sales)# #q_select_sales_projects.currency#

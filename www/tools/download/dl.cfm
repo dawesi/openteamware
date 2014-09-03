@@ -23,7 +23,7 @@
 
 <cfif Len(url.dl_entrykey) GT 0>
 
-	<cfquery name="q_select_dl_link" datasource="#request.a_str_db_tools#">
+	<cfquery name="q_select_dl_link">
 	SELECT
 		filelocation
 	FROM

@@ -282,7 +282,7 @@ FROM
 WHERE
 	closed = 0
 ORDER BY
-	sales_probability DESC
+	probability DESC
 ;
 </cfquery>
 
@@ -311,7 +311,7 @@ ORDER BY
 	</td>
 	<td>
 		<div class="progress">
-		  <div class="progress-bar" role="progressbar" aria-valuenow="#q_select_sales_projects.sales_probability#" aria-valuemin="0" aria-valuemax="100" style="width: #q_select_sales_projects.sales_probability#%;">
+		  <div class="progress-bar" role="progressbar" aria-valuenow="#q_select_sales_projects.probability#" aria-valuemin="0" aria-valuemax="100" style="width: #q_select_sales_projects.probability#%;">
 		  </div>
 		</div>
 	</td>

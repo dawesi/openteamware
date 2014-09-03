@@ -46,23 +46,25 @@
 <cfsavecontent variable="a_str_content">
 
 <table class="table table-hover">
+	<cfoutput>
 	<tr class="tbl_overview_header">
 		<td width="25%">
-			<cfoutput>#GetLangVal('cm_wd_contact')#</cfoutput>
+			#GetLangVal('cm_wd_contact')#
 		</td>
 		<td width="25%">
-			<cfoutput>#GetLangVal('cm_wd_comment')# / #GetLangVal('cm_wd_categories')#</cfoutput>
+			#GetLangVal('cm_wd_comment')# / #GetLangVal('cm_wd_categories')#
 		</td>
 		<td width="25%">
-			<cfoutput>#GetLangVal('cm_ph_timestamp')#</cfoutput>
+			#GetLangVal('cm_ph_timestamp')#
 		</td>
 		<td width="25%">
-			<cfoutput>#GetLangVal('cm_wd_user')#</cfoutput>
+			#GetLangVal('cm_wd_user')#
 		</td>
 		<td align="right">
-			<cfoutput>#GetLangVal('cm_wd_action')#</cfoutput>
+			#GetLangVal('cm_wd_action')#
 		</td>
 	</tr>
+	</cfoutput>
 	<cfoutput query="q_select_follow_ups">
 		<tr>
 			<td>

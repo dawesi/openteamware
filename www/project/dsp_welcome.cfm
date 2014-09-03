@@ -165,7 +165,7 @@ WHERE
 <cfoutput query="q_select_closed_projects">
   <tr>
     <td>
-		<a href="index.cfm?action=ShowProject&entrykey=#q_select_closed_projects.entrykey#"><img src="/images/si/chart_organisation.png" class="si_img" />#htmleditformat(CheckZeroString(q_select_closed_projects.title))#</a>
+		<a href="index.cfm?action=ShowProject&entrykey=#q_select_closed_projects.entrykey#">#htmleditformat(CheckZeroString(q_select_closed_projects.title))#</a>
 	</td>
 	<td>
 		#FormatDateTimeAccordingToUserSettings(q_select_closed_projects.dt_begin)#
@@ -179,24 +179,12 @@ WHERE
     <td>
 		#application.components.cmp_user.GetUsernameByEntrykey(q_select_closed_projects.projectleaderuserkey)#
 	</td>
-	<td align="right">
+	<!--- <td align="right">
 		<a  href="##" onclick="ShowSimpleConfirmationDialog('index.cfm?action=DoDeleteproject&entrykey=#q_select_sales_projects.entrykey#');"><span class="glyphicon glyphicon-trash”></span></a>
-	</td>
-  </tr>	<!---
-  <tr>
-    <td colspan="9">
-		<img src="/images/space_1_1.gif" class="si_img" />#htmleditformat(q_select_common_projects.description)#
-	</td>
-  </tr> --->
+	</td> --->
+  </tr>
 </cfoutput>
 </table>
 </cfsavecontent>
 
 <cfoutput>#WriteNewContentBox('Abgeschlossene Projekte (' & q_select_closed_projects.recordcount & ')', '', a_str_content)#</cfoutput>
-
-<cfsavecontent variable="a_str_js">
-	function DoDeleteProject(entrykey, title) {
-
-		}
-</cfsavecontent>
-

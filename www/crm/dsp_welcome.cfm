@@ -256,7 +256,7 @@ FROM	qFollowUpsAssignedToOthers
 
 
 <cfsavecontent variable="a_str_btn">
-	<input onClick="window.open('<cfoutput>#cgi.SCRIPT_NAME#?#cgi.QUERY_STRING#</cfoutput>&amp;format=pdf&amp;extractcontentid=followuplist');return false" type="button" value=" Export as PDF " class="btn btn-primary" />
+	<a href="<cfoutput>#cgi.SCRIPT_NAME#?#cgi.QUERY_STRING#</cfoutput>&amp;format=pdf&amp;extractcontentid=followuplist');"><span class="glyphicon glyphicon-circle-arrow-down"></span> Export as PDF</a>
 </cfsavecontent>
 
 <!--- <cfset a_str_btn = '' /> --->

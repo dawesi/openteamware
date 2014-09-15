@@ -155,19 +155,19 @@ FROM	qFollowUpsAssignedToOthers
 
 <table class="table table-hover">
 	<tr class="tbl_overview_header">
-		<td width="20%">
+		<td width="30%">
 			<cfoutput>#GetLangVal('cm_wd_title')#</cfoutput>
 		</td>
-		<td width="20%">
+		<td width="25%">
 			<cfoutput>#GetLangVal('cm_wd_comment')#/#GetLangVal('cm_wd_categories')#</cfoutput>
 		</td>
 		<td width="20%">
 			<cfoutput>#GetLangVal('adrb_ph_contact_data')#</cfoutput>
 		</td>
-		<td width="20%">
+		<td width="10%">
 			<cfoutput>#GetLangVal('cm_ph_timestamp')#</cfoutput>
 		</td>
-		<td width="15%">
+		<td width="10%">
 			<cfoutput>#GetLangVal('cm_wd_user')#</cfoutput>
 		</td>
 		<td align="right" class="hideprint">
@@ -188,6 +188,11 @@ FROM	qFollowUpsAssignedToOthers
 			<td style="font-weight:bold">
 				#application.components.cmp_tools.GenerateLinkToItem(usersettings = request.stUserSettings, servicekey = q_select_follow_ups.servicekey, title = q_select_follow_ups.objecttitle, objectkey = q_select_follow_ups.objectkey)#
 
+				<cfif Len( qContact.b_city )>
+					<br />
+					<span style="color:gray;font-weight:normal">#htmleditformat(qContact.b_city)#</span>
+				</cfif>
+
 			</td>
 			<td title="#htmleditformat(q_select_follow_ups.comment)#">
 				<!--- TODO: print mode? --->
@@ -200,16 +205,16 @@ FROM	qFollowUpsAssignedToOthers
 						#htmleditformat( q_select_follow_ups.comment )#
 					</cfcase>
 					<cfdefaultcase>
-						#htmleditformat( ShortenString( q_select_follow_ups.comment, 140 ))#
+						#htmleditformat( ShortenString( q_select_follow_ups.comment, 255 ))#
 					</cfdefaultcase>
 				</cfswitch>
 
-				#htmleditformat( q_select_follow_ups.categories )#
+				<!--- #htmleditformat( q_select_follow_ups.categories )# --->
 
-				<cfif q_select_follow_ups.followuptype GT 0>
+				<!--- <cfif q_select_follow_ups.followuptype GT 0>
 					<br />
 					<span class="addinfotext">#GetLangVal('crm_ph_followup_type_' & q_select_follow_ups.followuptype)#</span>
-				</cfif>
+				</cfif> --->
 			</td>
 			<td>
 				<cfsavecontent variable="sContactData">
@@ -222,13 +227,17 @@ FROM	qFollowUpsAssignedToOthers
 						/ <a href="javascript:OpenCallPopup('#urlencodedformat(qContact.p_telephone)#', 'mobile');">#htmleditformat(qContact.p_telephone)#</a>
 					</cfif>
 
+					<cfif Len( qContact.email_adr )>
+						<br />
+						<a href="mailto:#htmleditformat( qContact.email_prim )#">E-Mail</a>
+					</cfif>
+
 				</cfsavecontent>
 
 				<cfset sContactData = ReReplace(Trim(sContactData), '^/', '', 'one') />
 
 				<cfif Len(sContactData)>#sContactData#<br /></cfif>
 
-				#htmleditformat(qContact.b_zipcode)# #htmleditformat(qContact.b_city)#
 			</td>
 			<td>
 				#FormatDateTimeAccordingToUserSettings(q_select_follow_ups.dt_due)#

@@ -12,7 +12,7 @@ SELECT
 	city,firstname,title,surname,zipcode,username,email,address1,entrykey,companykey,
 	date_subscr,mobilenr,utcdiff,country,userid,allow_login,plz,defaultlanguage,style,
 	daylightsavinghours,sex,mobilenr,
-	NotProperlyLoggedOut,smallphotoavaliable,bigphotoavaliable
+	smallphotoavaliable,bigphotoavaliable
 FROM
 	users
 WHERE

@@ -116,12 +116,6 @@
 </tr>
 <input type="hidden" name="frmICQNumber" value="" />
 <tr>
-	<td class="field_name">
-		<cfoutput>#GetLangVal('prf_ph_misc_settings_newsletters')#</cfoutput>
-	</td>
-	<td><input class="noborder" type="checkbox" name="frmSubScrNewsletter" value="1" <cfif q_select.subscrNewsletter is 1>checked</cfif>></td>
-</tr>
-<tr>
 	<td class="field_name"><cfoutput>#GetLangVal('prf_ph_address_for_password')#</cfoutput></td>
 	<td>
 	<input type="text" name="frmEmail" value="<cfoutput>#q_select.email#</cfoutput>" size="30" maxlength="100">

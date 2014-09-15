@@ -51,28 +51,28 @@
 			/
 			<cfoutput>#GetLangVal('tsk_ph_due_to')#</cfoutput>
 		</td>
+		<cfif arguments.managemode>
 		<td width="25%">
-			<cfif arguments.managemode>
+
 			<cfoutput>#GetLangVal('cm_wd_Action')#</cfoutput>
-			</cfif>
+
 		</td>
+		</cfif>
   </tr>
   <cfoutput query="q_select_follow_ups">
   <tr>
   	<td <cfif q_select_follow_ups.done GT 0>style="text-decoration:line-through;"</cfif>>
 
-		<a href="/crm/?action=ShowFollowUp&entrykey=#q_select_follow_ups.entrykey#">
 		<cfswitch expression="#q_select_follow_ups.followuptype#">
-			<cfcase value="0"><span class="glyphicon glyphicon-flag"></span> #GetLangVal('crm_wd_follow_up')#</cfcase>
-			<cfcase value="1"><img align="absmiddle" src="/images/si/email.png" alt="" class="si_img" />#GetLangVal('cm_wd_email')#</cfcase>
-			<cfcase value="2"><span class="glyphicon glyphicon-earphone"></span> #GetLangVal('crm_wd_follow_up_call')#</cfcase>
-			<cfdefaultcase><span class="glyphicon glyphicon-flag"></span> #GetLangVal('crm_wd_follow_up')#</cfdefaultcase>
+			<cfcase value="0"><span class="glyphicon glyphicon-flag"></span></cfcase>
+			<cfcase value="1"><img align="absmiddle" src="/images/si/email.png" alt="" class="si_img" /></cfcase>
+			<cfcase value="2"><span class="glyphicon glyphicon-earphone"></span></cfcase>
+			<cfdefaultcase><span class="glyphicon glyphicon-flag"></span></cfdefaultcase>
 		</cfswitch>
 
 		<cfif Len(q_select_follow_ups.comment) GT 0>
-			- #ReplaceNoCase(htmleditformat(trim(shortenstring(q_select_follow_ups.comment, 100))), chr(10), ' ... ', 'ALL')#
+			#ReplaceNoCase(htmleditformat(trim( q_select_follow_ups.comment )), chr(10), ' ... ', 'ALL')#
 		</cfif>
-		</a>
 
 	</td>
 	<td>
@@ -88,11 +88,8 @@
 		</cfif>
 
 	</td>
+	<cfif arguments.managemode>
 	<td>
-
-
-
-		<cfif arguments.managemode>
 
 			<cfset sReturn_url = cgi.SCRIPT_NAME&'?'&cgi.QUERY_STRING>
 			<button type="button" class="btn btn-success" onclick="SetFollowUpDone('#jsstringformat(q_select_follow_ups.entrykey)#', '#JsStringFormat(q_select_follow_ups.objectkey)#');CloseSimpleModalDialog();location.reload();return false;">
@@ -105,8 +102,9 @@
 			<a href="/crm/?action=EditFollowup&entrykey=#q_select_follow_ups.entrykey#&returnurl=#urlencodedformat(sReturn_url)#"><span class="glyphicon glyphicon-pencil"></span> #MakeFirstCharUCase(GetLangVal('cm_wd_edit'))#</a>
 
 			<a href="##" onClick="ShowSimpleConfirmationDialog('/crm/index.cfm?action=DeleteFollowups&entrykeys=#q_select_follow_ups.entrykey#');"><span class="glyphicon glyphicon-trash"></span> #MakeFirstCharUCase(GetLangVal('cm_wd_delete'))#</a>
-		</cfif>
+
 	</td>
+	</cfif>
   </tr>
   </cfoutput>
  </table>

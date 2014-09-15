@@ -1,15 +1,8 @@
-<!--- //
-
-	Component:	Render
-	Description:Include neccessary JavaScripts
-
-	SUCCESSOR OF /COMMON/JS/INC_JS.CFM
-
-// --->
+<!--- // Include neccessary JavaScripts // --->
 
 <script src="/common/js/init.js" type="text/javascript"></script>
 <script src="/assets/js/jquery-1.11.1.min.js" type="text/javascript"></script>
-<script src="http://code.jquery.com/jquery-migrate-1.2.1.js"></script>
+<script src="/assets/js/jquery-migrate-1.2.1.js"></script>
 <script src="/common/js/display.js" type="text/javascript"></script>
 
 <!--- list of JavaScript files to load ... --->
@@ -61,10 +54,6 @@
 
 		<cfset a_str_js_files_2_load = ListAppend(a_str_js_files_2_load, '/common/js/jquery.calendar.js') />
 
-	</cfcase>
-	<cfcase value="7E6F3B98-F885-03B7-FC68D096FD692F66">
-		<cfset a_str_js_files_2_load = ListAppend(a_str_js_files_2_load, '/common/js/CalendarPopup.js')>
-		<cfset a_str_js_files_2_load = ListAppend(a_str_js_files_2_load, '/common/js/newsletter.js')>
 	</cfcase>
 	<cfcase value="7E6BDD88-FF3F-96D6-BD30172024704A60">
 		<!--- extras --->

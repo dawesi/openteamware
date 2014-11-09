@@ -61,14 +61,6 @@
 		<cfreturn true />
 	</cffunction>
 
-	<cffunction access="public" name="GetCompanyNews" returntype="query" output="false">
-		<cfargument name="companykey" type="string" required="true">
-
-		<cfinclude template="queries/q_select_company_news.cfm">
-
-		<cfreturn q_select_company_news>
-	</cffunction>
-
 	<!--- if a COMPANY has saved a custom element (e.g. custom header when sending remote edit mails
 		use them --->
 	<cffunction access="public" name="GetCompanyCustomElement" returntype="string">

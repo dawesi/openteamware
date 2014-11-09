@@ -64,7 +64,6 @@
 			<ul class="divleftpanelactions">
 				<li><a href="index.cfm?action=criteria"><cfoutput>#GetLangVal('crm_wd_criteria')#</cfoutput></a></li>
 				<li><a href="index.cfm?action=companycategories"><cfoutput>#GetLangVal('adm_ph_global_categories')#</cfoutput></a></li>
-				<li><a href="index.cfm?action=companynews"><cfoutput>#GetLangVal('adm_ph_nav_companynews')#</cfoutput></a></li>
 				<li><a href="index.cfm?action=companylogo"><cfoutput>#GetLangVal('adm_ph_include_logo')#</cfoutput></a></li>
 				<li><a href="index.cfm?action=resources"><cfoutput>#GetLangVal('cm_wd_resources')#</cfoutput></a></li>
 				<li><a href="index.cfm?action=crm"><cfoutput>#GetLangVal('cm_wd_crm')#</cfoutput></a></li>

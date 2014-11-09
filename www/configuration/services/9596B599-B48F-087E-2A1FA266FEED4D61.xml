@@ -497,12 +497,6 @@
 		<directory>security</directory>
 	</item>
 	<item>
-		<name>companynews</name>
-		<description></description>
-		<template>dsp_start.cfm</template>
-		<directory>companynews</directory>
-	</item>
-	<item>
 		<name>marketing</name>
 		<description></description>
 		<template>dsp_start.cfm</template>
@@ -513,18 +507,6 @@
 		<description></description>
 		<template>dsp_edit_workgroup.cfm</template>
 		<directory>workgroups</directory>
-	</item>
-	<item>
-		<name>companynews.new</name>
-		<description></description>
-		<template>dsp_new.cfm</template>
-		<directory>companynews</directory>
-	</item>
-	<item>
-		<name>companynews.edit</name>
-		<description></description>
-		<template>dsp_edit.cfm</template>
-		<directory>companynews</directory>
 	</item>
 </actions>
 </service>

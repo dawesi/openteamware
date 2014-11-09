@@ -26,14 +26,6 @@
 <cfset SelectBookedServices.SettledType = 1>
 <cfinclude template="queries/q_select_booked_services.cfm">
 
-<cfif request.a_bol_is_reseller>
-	<cfinvoke component="/components/tools/cmp_comments" method="GetCommentsInternal" returnvariable="stReturn">
-		<cfinvokeargument name="servicekey" value="#request.sCurrentServiceKey#">
-		<cfinvokeargument name="objectkey" value="#url.companykey#">
-	</cfinvoke>
-	<cfset q_select_comments = stReturn.q_select_comments>
-</cfif>
-
 <cfinvoke component="#request.a_str_component_billing#" method="GetBills" returnvariable="q_select_invoices">
 	<cfinvokeargument name="companykey" value="#url.companykey#">
 </cfinvoke>
@@ -211,15 +203,6 @@ WHERE
 				<tr>
 				  <td><b>#GetLangVal('adm_wd_additional_information')#</b></td>
 				</tr>
-				<cfif request.a_bol_is_reseller>
-				<tr>
-				  <td>
-				  #GetLangVal('cm_wd_comments')#: #q_select_comments.recordcount#
-				  <br><br>
-				  <a href="index.cfm?action=activity&#WriteURLTags()#">#GetLangVal('cm_ph_show_usage')#</a>
-				  </td>
-				</tr>
-				</cfif>
 				<tr>
 					<td>
 					#listlen(q_select_company_data.domains, ',')# #GetLangVal('cm_wd_domains')#<br>
@@ -426,34 +409,4 @@ WHERE
 
 <cfoutput>#WriteNewContentBox(GetLangVal('cm_wd_workgroups') & ' (' & q_select_workgroups.recordcount & ')', a_str_buttons, a_str_content)#</cfoutput>
 
-
-<cfif request.a_bol_is_reseller>
-	<br>
-	<cfif q_select_comments.recordcount GT 0>
-	<span style="background-color:#FFFF99;" style="padding:5px;">
-	</cfif>
-	<b><cfoutput>#GetLangVal('cm_wd_comments')#</cfoutput> (<cfoutput>#q_select_comments.recordcount#</cfoutput>) ...</b>
-	<cfif q_select_comments.recordcount GT 0>
-	</span>
-	</cfif>
-
-		<cfoutput>
-		&nbsp;[ <a href="javascript:AddComment('#jsstringformat(request.sCurrentServiceKey)#','#jsstringformat(url.companykey)#');">#GetLangVal('adm_wd_add_comment')#</a> ]
-		</cfoutput>
-	<br>
-	<table border="0" cellspacing="0" cellpadding="4">
-	  <cfoutput query="q_select_comments">
-
-		<cfinvoke component="#application.components.cmp_user#" method="GetUsernamebyentrykey" returnvariable="a_str_username">
-			<cfinvokeargument name="entrykey" value="#q_select_comments.userkey#">
-		</cfinvoke>
-
-	  <tr>
-		<td valign="top">#lsdateformat(q_select_comments.dt_created, "dd.mm.yy")# #TimeFormat(q_select_comments.dt_created, "HH:mm")#</td>
-		<td valign="top">#a_str_username#</td>
-		<td valign="top">#replacenocase(q_select_comments.comment, chr(10), "<br>", "ALL")#</td>
-	  </tr>
-	  </cfoutput>
-	</table>
-</cfif>
 

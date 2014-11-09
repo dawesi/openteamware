@@ -2,15 +2,10 @@
 
 	Module:		jobs / cleanup / logs
 	Description:Delete old log items ...
-	
 
-	
-	
-	move old clickstream to history ...
-	
+
 // --->
 
-<cfset a_dt_check_clickstream = DateAdd('d', -14, Now())>
 <cfset a_dt_check_adminactions = DateAdd('d', -90, Now())>
 <cfset a_dt_check_deleteddata = DateAdd('d', -90, Now())>
 <cfset a_dt_check_editeddata = DateAdd('d', -90, Now())>
@@ -42,13 +37,3 @@ WHERE
 	dt_edited < <cfqueryparam cfsqltype="cf_sql_timestamp" value="#CreateODBCDateTime(a_dt_check_editeddata)#">
 ;
 </cfquery>
-
-<!--- storage.publictraffic --->
-<cfquery name="q_delete_old_admin_actions">
-DELETE FROM
-	publicshares_traffic
-WHERE
-	dt_created < <cfqueryparam cfsqltype="cf_sql_timestamp" value="#CreateODBCDateTime(a_dt_check_publicsharestraffic)#">
-;
-</cfquery>
-

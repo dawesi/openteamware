@@ -5,9 +5,9 @@
 # http://www.sequelpro.com/
 # http://code.google.com/p/sequel-pro/
 #
-# Host: 127.0.0.1 (MySQL 5.1.72-2)
-# Database: mycrm
-# Generation Time: 2014-02-10 14:45:23 +0000
+# Host: 127.0.0.1 (MySQL 5.5.25a)
+# Database: otw
+# Generation Time: 2014-11-09 14:15:53 +0000
 # ************************************************************
 
 
@@ -35,30 +35,7 @@ CREATE TABLE `action_protocol` (
   `objectkey` varchar(40) NOT NULL DEFAULT '',
   `action` varchar(50) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table activatecodes
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `activatecodes`;
-
-CREATE TABLE `activatecodes` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `entrykey` varchar(36) NOT NULL DEFAULT '',
-  `companykey` varchar(36) NOT NULL DEFAULT '',
-  `dt_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `createdbyuserkey` varchar(36) NOT NULL DEFAULT '',
-  `code` varchar(10) NOT NULL DEFAULT '',
-  `activated` int(11) NOT NULL DEFAULT '0',
-  `dt_activated` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `emailsent` int(11) NOT NULL DEFAULT '0',
-  `linkclicked` int(11) NOT NULL DEFAULT '0',
-  `dt_link_clicked` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `companykey` (`companykey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -74,7 +51,7 @@ CREATE TABLE `addressbook` (
   `surname` varchar(255) NOT NULL DEFAULT '',
   `company` varchar(255) NOT NULL DEFAULT '',
   `department` varchar(255) NOT NULL DEFAULT '',
-  `aposition` varchar(255) NOT NULL DEFAULT '',
+  `aposition` varchar(500) NOT NULL DEFAULT '',
   `userkey` varchar(36) NOT NULL,
   `birthday` datetime DEFAULT NULL,
   `categories` varchar(255) NOT NULL DEFAULT '',
@@ -171,7 +148,7 @@ CREATE TABLE `addressbook_outlook_data` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `addressbookkey` (`addressbookkey`,`program_id`),
   KEY `program_id` (`program_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -194,22 +171,6 @@ CREATE TABLE `adminactions` (
 
 
 
-# Dump of table alert_on_change_postings
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `alert_on_change_postings`;
-
-CREATE TABLE `alert_on_change_postings` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `userkey` varchar(40) NOT NULL DEFAULT '',
-  `threadkey` varchar(40) NOT NULL DEFAULT '',
-  `dt_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `userkey` (`userkey`,`threadkey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
 # Dump of table alertsettings
 # ------------------------------------------------------------
 
@@ -226,7 +187,7 @@ CREATE TABLE `alertsettings` (
   `notifyreminder` int(11) NOT NULL DEFAULT '1',
   `dt_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -245,7 +206,7 @@ CREATE TABLE `assigned_criteria` (
   `criteriakey` varchar(40) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `criteria_id` (`criteria_id`,`objectkey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -268,7 +229,7 @@ CREATE TABLE `assigned_items` (
   KEY `servicekey_2` (`servicekey`,`objectkey`),
   KEY `servicekey_3` (`servicekey`),
   KEY `objectkey` (`objectkey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -286,7 +247,7 @@ CREATE TABLE `assignedcontacts` (
   `furtherinformation` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   KEY `contactkey` (`contactkey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -302,7 +263,7 @@ CREATE TABLE `avaliableactions` (
   `entrykey` varchar(50) NOT NULL DEFAULT '',
   `parentkey` varchar(50) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -330,24 +291,7 @@ CREATE TABLE `bookedservices` (
   `dt_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `currency` varchar(10) NOT NULL DEFAULT 'EUR',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table bounce_history
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `bounce_history`;
-
-CREATE TABLE `bounce_history` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `email_adr` varchar(255) NOT NULL DEFAULT '',
-  `dt_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `issuekey` varchar(40) NOT NULL DEFAULT '',
-  `listkey` varchar(40) NOT NULL DEFAULT '',
-  `bounced_reason` varchar(255) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -358,19 +302,19 @@ DROP TABLE IF EXISTS `cached_ids`;
 
 CREATE TABLE `cached_ids` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `parameters` varchar(40) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `userkey` varchar(40) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `servicekey` varchar(40) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `ids` longtext CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
+  `parameters` varchar(40) COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `userkey` varchar(40) COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `servicekey` varchar(40) COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `ids` longtext COLLATE latin1_general_ci NOT NULL,
   `dt_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `data1` longtext CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
-  `data2` longtext CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
-  `debug_params` longtext CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
-  `companykey` varchar(40) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL DEFAULT '',
+  `data1` longtext COLLATE latin1_general_ci NOT NULL,
+  `data2` longtext COLLATE latin1_general_ci NOT NULL,
+  `debug_params` longtext COLLATE latin1_general_ci NOT NULL,
+  `companykey` varchar(40) COLLATE latin1_general_ci NOT NULL DEFAULT '',
   `items_count` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `userkey` (`userkey`,`servicekey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 
 
@@ -391,7 +335,7 @@ CREATE TABLE `cal_remind` (
   `eventtitle` varchar(255) NOT NULL DEFAULT '',
   `eventstart` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -460,7 +404,7 @@ CREATE TABLE `calendar` (
   KEY `date_end` (`date_end`),
   KEY `repeat_weekday` (`repeat_weekday`),
   KEY `id` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -477,7 +421,7 @@ CREATE TABLE `calendar_outlook_data` (
   `lastupdate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`),
   KEY `eventkey` (`eventkey`,`program_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -496,102 +440,7 @@ CREATE TABLE `calendar_shareddata` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `eventkey` (`eventkey`,`workgroupkey`),
   KEY `workgroupkey` (`workgroupkey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table clickstream
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `clickstream`;
-
-CREATE TABLE `clickstream` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `userkey` varchar(40) NOT NULL DEFAULT '',
-  `dt_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `servicekey` varchar(40) DEFAULT NULL,
-  `action` varchar(51) DEFAULT NULL,
-  `runtime` int(11) NOT NULL DEFAULT '0',
-  `title` varchar(100) NOT NULL DEFAULT '',
-  `query_string` varchar(255) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`),
-  KEY `userkey` (`userkey`,`dt_created`,`title`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table clicktracking
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `clicktracking`;
-
-CREATE TABLE `clicktracking` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `recipientkey` varchar(40) NOT NULL DEFAULT '',
-  `issuekey` varchar(40) NOT NULL DEFAULT '',
-  `target` varchar(255) NOT NULL DEFAULT '',
-  `dt_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table comments
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `comments`;
-
-CREATE TABLE `comments` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `entrykey` varchar(50) NOT NULL DEFAULT '',
-  `servicekey` varchar(50) NOT NULL DEFAULT '',
-  `objectkey` varchar(50) NOT NULL DEFAULT '',
-  `userkey` varchar(50) NOT NULL DEFAULT '',
-  `dt_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `comment` text NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table communities
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `communities`;
-
-CREATE TABLE `communities` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `entrykey` varchar(40) NOT NULL DEFAULT '',
-  `dt_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `userkey` varchar(40) NOT NULL DEFAULT '',
-  `community_name` varchar(50) NOT NULL DEFAULT '',
-  `description` varchar(255) NOT NULL DEFAULT '',
-  `public` int(11) NOT NULL DEFAULT '1',
-  `lang` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `community_name` (`community_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table community_links
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `community_links`;
-
-CREATE TABLE `community_links` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `entrykey` varchar(40) NOT NULL DEFAULT '',
-  `communitykey` varchar(40) NOT NULL DEFAULT '',
-  `servicekey` varchar(40) NOT NULL DEFAULT '',
-  `objectkey` varchar(40) NOT NULL DEFAULT '',
-  `dt_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `object_title` varchar(255) NOT NULL DEFAULT '',
-  `object_description` varchar(255) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `objectkey` (`objectkey`,`communitykey`),
-  KEY `communitykey` (`communitykey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -667,7 +516,7 @@ CREATE TABLE `companies` (
   KEY `entrykey` (`entrykey`),
   KEY `entrykey_2` (`entrykey`,`resellerkey`,`distributorkey`),
   KEY `generaltermsandconditions_accepted` (`generaltermsandconditions_accepted`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -683,7 +532,7 @@ CREATE TABLE `companies_saved_data` (
   `wddx` text NOT NULL,
   `companykey` varchar(50) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -701,7 +550,7 @@ CREATE TABLE `company_custom_elements` (
   `createdbyuserkey` varchar(40) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `companykey` (`companykey`,`item_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -720,7 +569,7 @@ CREATE TABLE `companycontacts` (
   PRIMARY KEY (`id`),
   KEY `companykey` (`companykey`),
   KEY `userkey` (`userkey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -739,32 +588,7 @@ CREATE TABLE `companylogos` (
   `entrykey` varchar(40) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `companykey` (`companykey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table companynews
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `companynews`;
-
-CREATE TABLE `companynews` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `entrykey` varchar(50) NOT NULL DEFAULT '',
-  `companykey` varchar(50) NOT NULL DEFAULT '',
-  `dt_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `createdbyuserkey` varchar(50) NOT NULL DEFAULT '',
-  `title` varchar(255) NOT NULL DEFAULT '',
-  `href` varchar(255) NOT NULL DEFAULT '',
-  `forumid` int(11) NOT NULL DEFAULT '0',
-  `dt_valid_until` datetime DEFAULT NULL,
-  `showtimesperuser` int(11) NOT NULL DEFAULT '3',
-  `topnews` int(11) NOT NULL DEFAULT '0',
-  `deliver_to_customers_too` int(11) NOT NULL DEFAULT '0',
-  `furthertext` text NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `companykey` (`companykey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -785,41 +609,7 @@ CREATE TABLE `connecteditems` (
   `categories` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `projectkey` (`projectkey`,`servicekey`,`objectkey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table consumergoods
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `consumergoods`;
-
-CREATE TABLE `consumergoods` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `companykey` varchar(50) NOT NULL DEFAULT '',
-  `productkey` varchar(50) NOT NULL DEFAULT '',
-  `dt_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `availableunits` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`,`companykey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table consumergoodshistory
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `consumergoodshistory`;
-
-CREATE TABLE `consumergoodshistory` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `dt_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `companykey` varchar(50) NOT NULL DEFAULT '',
-  `userkey` varchar(50) NOT NULL DEFAULT '',
-  `points` int(11) NOT NULL DEFAULT '0',
-  `action` varchar(50) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`),
-  KEY `companykey` (`companykey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -843,7 +633,7 @@ CREATE TABLE `contact_links` (
   KEY `source_name` (`source_name`),
   KEY `dest_entrykey` (`dest_entrykey`),
   KEY `source_entrykey` (`source_entrykey`,`dest_entrykey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -861,7 +651,7 @@ CREATE TABLE `crm_default_reports` (
   `basedonaddressbook` int(11) NOT NULL DEFAULT '1',
   `allow_select_fields` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -889,7 +679,7 @@ CREATE TABLE `crm_reports` (
   `basedonaddressbook` int(11) NOT NULL,
   `allow_select_fields` int(11) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -924,7 +714,7 @@ CREATE TABLE `crm_running_reports` (
   `alert_user_by_email_when_finished` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `userkey` (`userkey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -944,7 +734,7 @@ CREATE TABLE `crmcriteria` (
   `servicekey` varchar(40) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `parent_id` (`parent_id`,`criterianame`,`companykey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -969,7 +759,7 @@ CREATE TABLE `crmfiltersearchsettings` (
   `servicekey` varchar(50) NOT NULL DEFAULT '',
   `itemtype` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -986,7 +776,7 @@ CREATE TABLE `crmfilterviews` (
   `description` varchar(255) NOT NULL DEFAULT '',
   `viewname` varchar(100) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -1006,7 +796,7 @@ CREATE TABLE `crmsalesmappings` (
   `userkey_data` varchar(40) NOT NULL,
   `activities_tablekey` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -1031,7 +821,7 @@ CREATE TABLE `custompermissions` (
   KEY `userkey` (`userkey`,`workgroupkey`),
   KEY `userkey_2` (`userkey`),
   KEY `workgroupkey` (`workgroupkey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -1048,7 +838,7 @@ CREATE TABLE `deleted_outlooksync_meta_data` (
   `servicekey` varchar(40) NOT NULL DEFAULT '',
   `program_id` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -1064,7 +854,7 @@ CREATE TABLE `deleted_postings` (
   `wddx` longtext NOT NULL,
   `reason` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -1083,7 +873,7 @@ CREATE TABLE `deleteddata` (
   `title` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   KEY `dt_deleted` (`dt_deleted`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -1112,7 +902,7 @@ CREATE TABLE `directories` (
   KEY `directoryname` (`directoryname`,`userkey`,`parentdirectorykey`),
   KEY `parentdirectorykey` (`parentdirectorykey`),
   KEY `userkey` (`userkey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -1131,7 +921,7 @@ CREATE TABLE `directories_shareddata` (
   KEY `directorykey` (`directorykey`),
   KEY `directorykey_2` (`directorykey`,`workgroupkey`),
   KEY `workgroupkey` (`workgroupkey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -1145,7 +935,7 @@ CREATE TABLE `download_links` (
   `entrykey` varchar(50) NOT NULL DEFAULT '',
   `filelocation` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -1169,7 +959,7 @@ CREATE TABLE `editeddata` (
   PRIMARY KEY (`id`),
   KEY `datakey` (`datakey`),
   KEY `dt_edited` (`dt_edited`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -1195,7 +985,7 @@ CREATE TABLE `element_links` (
   KEY `source_name` (`source_name`),
   KEY `dest_entrykey` (`dest_entrykey`),
   KEY `source_entrykey` (`source_entrykey`,`dest_entrykey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -1217,7 +1007,7 @@ CREATE TABLE `email_signatures` (
   PRIMARY KEY (`id`),
   KEY `userkey` (`userkey`),
   KEY `email_adr` (`email_adr`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -1237,7 +1027,7 @@ CREATE TABLE `emailaliases` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `aliasaddress` (`aliasaddress`),
   KEY `userkey` (`userkey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -1256,7 +1046,7 @@ CREATE TABLE `emailattachments` (
   `messageid` varchar(255) NOT NULL DEFAULT '',
   `filepath` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -1279,7 +1069,7 @@ CREATE TABLE `emailmetainformation` (
   KEY `userkey` (`userkey`,`folder`,`uid`),
   KEY `userkey_2` (`userkey`,`messageid`),
   KEY `userkey_3` (`userkey`,`reference_ids`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -1302,7 +1092,7 @@ CREATE TABLE `exceptionlog` (
   `data_wddx_arguments` longtext NOT NULL,
   `data_wddx_form` longtext NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -1313,16 +1103,16 @@ DROP TABLE IF EXISTS `exclusive_locks`;
 
 CREATE TABLE `exclusive_locks` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `entrykey` varchar(40) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
-  `servicekey` varchar(40) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
-  `objectkey` varchar(40) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
-  `userkey` varchar(40) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
+  `entrykey` varchar(40) COLLATE latin1_general_ci NOT NULL,
+  `servicekey` varchar(40) COLLATE latin1_general_ci NOT NULL,
+  `objectkey` varchar(40) COLLATE latin1_general_ci NOT NULL,
+  `userkey` varchar(40) COLLATE latin1_general_ci NOT NULL,
   `dt_created` datetime NOT NULL,
   `dt_timeout` datetime NOT NULL,
-  `comment` varchar(255) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
+  `comment` varchar(255) COLLATE latin1_general_ci DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `servicekey` (`servicekey`,`objectkey`,`userkey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 
 
@@ -1337,7 +1127,7 @@ CREATE TABLE `explicit_moderators` (
   `forumkey` varchar(40) NOT NULL DEFAULT '',
   `dt_created` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -1353,7 +1143,7 @@ CREATE TABLE `failedlogins` (
   `ip` varchar(50) NOT NULL DEFAULT '',
   `reason` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -1370,7 +1160,7 @@ CREATE TABLE `filterdata` (
   `acompare` int(11) NOT NULL DEFAULT '0',
   `acomparsevalue` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -1388,7 +1178,7 @@ CREATE TABLE `followups` (
   `userkey` varchar(50) NOT NULL DEFAULT '',
   `createdbyuserkey` varchar(50) NOT NULL DEFAULT '',
   `dt_due` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `comment` varchar(255) NOT NULL DEFAULT '',
+  `comment` text NOT NULL,
   `done` tinyint(4) NOT NULL DEFAULT '0',
   `alert_email` int(11) NOT NULL DEFAULT '0',
   `followuptype` tinyint(4) unsigned NOT NULL DEFAULT '0',
@@ -1401,7 +1191,7 @@ CREATE TABLE `followups` (
   KEY `objectkey` (`objectkey`,`done`),
   KEY `objectkey_2` (`objectkey`),
   KEY `userkey` (`userkey`,`done`,`dt_due`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -1425,7 +1215,7 @@ CREATE TABLE `foren` (
   `companynews_forum` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -1440,7 +1230,7 @@ CREATE TABLE `foren_shareddata` (
   `workgroupkey` varchar(50) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `forumkey` (`forumkey`,`workgroupkey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -1482,7 +1272,7 @@ CREATE TABLE `form_fields` (
   `ignorebydefault` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   KEY `formkey` (`formkey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -1501,7 +1291,7 @@ CREATE TABLE `form_requests` (
   `data_used` int(11) NOT NULL,
   `action_type` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -1534,7 +1324,7 @@ CREATE TABLE `forms` (
   PRIMARY KEY (`id`),
   KEY `entrykey` (`entrykey`),
   KEY `servicekey` (`servicekey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -1563,7 +1353,7 @@ CREATE TABLE `history` (
   PRIMARY KEY (`id`),
   KEY `objectkey` (`objectkey`,`servicekey`),
   KEY `hash_unique` (`hash_unique`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -1578,7 +1368,7 @@ CREATE TABLE `im_alerts_2send` (
   `msg` text NOT NULL,
   `recipient` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -1593,7 +1383,7 @@ CREATE TABLE `importfieldmappings` (
   `ibxfield_md5` varchar(100) DEFAULT NULL,
   `importfieldname` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -1611,7 +1401,7 @@ CREATE TABLE `importjobs` (
   `table_wddx` longtext NOT NULL,
   `datatype` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -1631,7 +1421,7 @@ CREATE TABLE `install_names` (
   `ip` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   KEY `userkey` (`userkey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -1674,7 +1464,7 @@ CREATE TABLE `invoices` (
   `currency` varchar(10) NOT NULL DEFAULT 'EUR',
   PRIMARY KEY (`id`),
   KEY `companykey` (`companykey`,`paid`,`dunninglevel`,`cancelled`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -1692,7 +1482,7 @@ CREATE TABLE `langdata` (
   UNIQUE KEY `langno_2` (`langno`,`entryid`),
   KEY `langno` (`langno`),
   KEY `entryid` (`entryid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -1709,7 +1499,7 @@ CREATE TABLE `licencehistory` (
   `addseats` int(11) NOT NULL DEFAULT '0',
   `createdbyuserkey` varchar(50) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -1727,7 +1517,7 @@ CREATE TABLE `licencing` (
   `totalseats` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `companykey` (`companykey`,`productkey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -1746,7 +1536,7 @@ CREATE TABLE `loginstat` (
   PRIMARY KEY (`id`),
   KEY `dt_created` (`dt_created`),
   KEY `userkey` (`userkey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -1767,7 +1557,7 @@ CREATE TABLE `mailprofiles` (
   `imappassword` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `userkey` (`userkey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -1795,24 +1585,7 @@ CREATE TABLE `meetingmembers` (
   KEY `type` (`type`,`status`,`eventkey`),
   KEY `eventkey_2` (`eventkey`),
   KEY `parameter` (`parameter`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table mobilesync_deleted_items_ignore
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `mobilesync_deleted_items_ignore`;
-
-CREATE TABLE `mobilesync_deleted_items_ignore` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `dt_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `entrykey` varchar(50) NOT NULL DEFAULT '',
-  `userkey` varchar(50) NOT NULL DEFAULT '',
-  `itemtype` varchar(50) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`),
-  KEY `userkey` (`userkey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -1828,7 +1601,7 @@ CREATE TABLE `nace_codes` (
   `lang` int(11) NOT NULL DEFAULT '0',
   `entrykey` varchar(40) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -1851,180 +1624,7 @@ CREATE TABLE `newmailalerts` (
   `nonightalerts` int(11) NOT NULL DEFAULT '0',
   `tmp` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table newsletter_attachments
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `newsletter_attachments`;
-
-CREATE TABLE `newsletter_attachments` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `entrykey` varchar(40) NOT NULL DEFAULT '',
-  `filekey` varchar(40) NOT NULL DEFAULT '',
-  `filename` varchar(255) NOT NULL DEFAULT '',
-  `contenttype` varchar(150) NOT NULL DEFAULT '',
-  `issuekey` varchar(40) NOT NULL DEFAULT '',
-  `filecontent` longtext NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `filekey` (`filekey`,`issuekey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table newsletter_ignored_items
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `newsletter_ignored_items`;
-
-CREATE TABLE `newsletter_ignored_items` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `listkey` varchar(40) NOT NULL DEFAULT '',
-  `contactkey` varchar(40) NOT NULL DEFAULT '',
-  `contacttype` int(11) NOT NULL DEFAULT '0',
-  `emailadr` varchar(255) NOT NULL DEFAULT '',
-  `dt_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table newsletter_issues
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `newsletter_issues`;
-
-CREATE TABLE `newsletter_issues` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `entrykey` varchar(40) NOT NULL DEFAULT '',
-  `listkey` varchar(40) NOT NULL DEFAULT '',
-  `issue_name` varchar(255) NOT NULL DEFAULT '',
-  `description` varchar(255) NOT NULL DEFAULT '',
-  `body_html` longtext NOT NULL,
-  `dt_send` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `approved` int(11) NOT NULL DEFAULT '0',
-  `subject` varchar(150) NOT NULL DEFAULT '',
-  `body_text` longtext NOT NULL,
-  `body_text_plain` longtext,
-  `autogenerate_text_version` int(11) NOT NULL DEFAULT '1',
-  `attachmentkeys` text NOT NULL,
-  `createdbyuserkey` varchar(40) NOT NULL DEFAULT '',
-  `dt_approved` datetime DEFAULT NULL,
-  `approvedbyuserkey` varchar(40) NOT NULL DEFAULT '',
-  `prepare_done` int(11) NOT NULL DEFAULT '0',
-  `hidden_issue` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `listkey` (`listkey`,`entrykey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table newsletter_profiles
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `newsletter_profiles`;
-
-CREATE TABLE `newsletter_profiles` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `entrykey` varchar(40) NOT NULL DEFAULT '',
-  `userkey` varchar(40) NOT NULL DEFAULT '',
-  `dt_created` datetime DEFAULT NULL,
-  `profile_name` varchar(150) NOT NULL DEFAULT '',
-  `description` varchar(255) NOT NULL DEFAULT '',
-  `manage_subscriptions` int(11) NOT NULL DEFAULT '0',
-  `default_format` varchar(10) NOT NULL DEFAULT '',
-  `open_tracking` tinyint(4) NOT NULL DEFAULT '0',
-  `listtype` tinyint(4) NOT NULL DEFAULT '0',
-  `crm_filter_key` varchar(255) NOT NULL DEFAULT '',
-  `sender_name` varchar(255) NOT NULL DEFAULT '',
-  `sender_address` varchar(255) NOT NULL DEFAULT '',
-  `template_body` longtext,
-  `replyto` varchar(120) NOT NULL DEFAULT '',
-  `confirmation_url_subscribed` varchar(255) NOT NULL DEFAULT '',
-  `confirmation_url_unsubscribed` varchar(255) NOT NULL DEFAULT '',
-  `default_header` longtext NOT NULL,
-  `default_footer` longtext NOT NULL,
-  `lang` int(11) NOT NULL DEFAULT '0',
-  `test_email_addresses` varchar(250) NOT NULL DEFAULT '',
-  `hidden_profile` tinyint(4) NOT NULL DEFAULT '0',
-  `delete_profile_after_sending` int(11) NOT NULL DEFAULT '0',
-  `addressbook_mailing` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `entrykey` (`entrykey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table newsletter_recipients
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `newsletter_recipients`;
-
-CREATE TABLE `newsletter_recipients` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `dt_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `listkey` varchar(40) NOT NULL DEFAULT '',
-  `issuekey` varchar(40) NOT NULL DEFAULT '',
-  `contactkey` varchar(40) NOT NULL DEFAULT '',
-  `status` int(11) NOT NULL DEFAULT '-1',
-  `dt_sent` datetime DEFAULT NULL,
-  `entrykey` varchar(40) NOT NULL DEFAULT '',
-  `subject` varchar(255) NOT NULL DEFAULT '',
-  `body_html` longtext NOT NULL,
-  `body_text` longtext NOT NULL,
-  `recipient` varchar(255) NOT NULL DEFAULT '',
-  `attachments` text NOT NULL,
-  `sender_value` varchar(255) NOT NULL DEFAULT '',
-  `replyto` varchar(120) NOT NULL DEFAULT '',
-  `recipient_source` int(11) NOT NULL DEFAULT '0',
-  `open_tracking` int(11) NOT NULL DEFAULT '1',
-  `opened` int(11) NOT NULL DEFAULT '0',
-  `dt_opened` datetime DEFAULT NULL,
-  `open_ip` varchar(40) NOT NULL DEFAULT '',
-  `test_sending` tinyint(4) NOT NULL DEFAULT '0',
-  `bounced` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `listkey` (`listkey`,`issuekey`,`contactkey`),
-  KEY `issuekey` (`issuekey`),
-  KEY `entrykey` (`entrykey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table newsletter_subscribers
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `newsletter_subscribers`;
-
-CREATE TABLE `newsletter_subscribers` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `entrykey` varchar(40) NOT NULL DEFAULT '',
-  `listkey` varchar(40) NOT NULL DEFAULT '',
-  `contactkey` varchar(40) NOT NULL DEFAULT '',
-  `dt_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `status` int(11) NOT NULL DEFAULT '0',
-  `createdbyuserkey` varchar(40) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `listkey` (`listkey`,`contactkey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table newsletter_subscribers_emailonly
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `newsletter_subscribers_emailonly`;
-
-CREATE TABLE `newsletter_subscribers_emailonly` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `entrykey` varchar(40) NOT NULL DEFAULT '',
-  `emailadr` varchar(100) NOT NULL DEFAULT '',
-  `dt_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `status` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -2045,25 +1645,7 @@ CREATE TABLE `oldversions` (
   `oldproperties` text NOT NULL,
   PRIMARY KEY (`id`),
   KEY `entrykey` (`entrykey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table oldversions_content_translation
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `oldversions_content_translation`;
-
-CREATE TABLE `oldversions_content_translation` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `dt_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `username` varchar(50) NOT NULL DEFAULT '',
-  `wddx` longtext NOT NULL,
-  `langno` int(11) NOT NULL DEFAULT '0',
-  `template_name` varchar(255) NOT NULL DEFAULT '',
-  `section` varchar(255) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -2084,7 +1666,7 @@ CREATE TABLE `outlooksettings` (
   `userkey` varchar(50) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   KEY `id` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -2102,7 +1684,7 @@ CREATE TABLE `outlooksync` (
   `ip` varchar(50) NOT NULL DEFAULT '',
   `referer` varchar(50) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -2125,7 +1707,7 @@ CREATE TABLE `outlooksync_app` (
   `runtime` int(11) NOT NULL DEFAULT '0',
   `hostname` varchar(20) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -2143,7 +1725,7 @@ CREATE TABLE `owncontactcards` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `ind_userkey` (`userkey`),
   UNIQUE KEY `userkey` (`userkey`,`contactkey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -2165,7 +1747,7 @@ CREATE TABLE `performedactions` (
   `additionalinformation` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   KEY `objectkey` (`objectkey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -2184,7 +1766,7 @@ CREATE TABLE `permissions` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `entrykey` (`entrykey`),
   KEY `entrykey_2` (`entrykey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -2231,51 +1813,7 @@ CREATE TABLE `pop3_data` (
   KEY `userkey` (`userkey`,`emailadr`),
   KEY `userkey_2` (`userkey`),
   KEY `userkey_3` (`userkey`,`confirmed`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table postings
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `postings`;
-
-CREATE TABLE `postings` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `entrykey` varchar(40) NOT NULL DEFAULT '',
-  `userkey` varchar(40) NOT NULL DEFAULT '',
-  `forumkey` varchar(40) NOT NULL DEFAULT '',
-  `dt_created` datetime DEFAULT NULL,
-  `dt_threadlastmodified` datetime DEFAULT NULL,
-  `subject` varchar(150) NOT NULL DEFAULT '',
-  `postingbody` text NOT NULL,
-  `priority` int(11) NOT NULL DEFAULT '3',
-  `parentpostingkey` varchar(40) NOT NULL DEFAULT '',
-  `mood` int(11) NOT NULL DEFAULT '1',
-  `lastpostinguserkey` varchar(40) NOT NULL DEFAULT '',
-  `subpostingscount` int(11) NOT NULL DEFAULT '0',
-  `postingid` int(11) NOT NULL DEFAULT '0',
-  `postingbody_plaintext` text NOT NULL,
-  `dt_last_updated_by_user` datetime DEFAULT NULL,
-  `closedthread` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  KEY `forumkey` (`forumkey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table postings_oldversion
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `postings_oldversion`;
-
-CREATE TABLE `postings_oldversion` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `dt_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `wddx` longtext NOT NULL,
-  `userkey` varchar(40) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -2296,7 +1834,7 @@ CREATE TABLE `productassignment_history` (
   `purchase_price` float NOT NULL,
   `retail_price` float NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -2318,7 +1856,7 @@ CREATE TABLE `productgroups` (
   `category2` varchar(255) DEFAULT NULL,
   `lasteditedbyuserkey` varchar(40) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -2334,7 +1872,7 @@ CREATE TABLE `productquantity` (
   `productkey` varchar(40) NOT NULL,
   `quantity` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -2366,9 +1904,11 @@ CREATE TABLE `products` (
   `defaultsupporttermindays` int(11) NOT NULL,
   `individualhandling` int(11) NOT NULL,
   `weight` int(11) NOT NULL,
+  `productname` varchar(255) DEFAULT NULL,
+  `itemindex` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `companykey` (`companykey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -2393,7 +1933,7 @@ CREATE TABLE `productsassignedtocontact` (
   `purchase_price` float NOT NULL,
   `retail_price` float NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -2407,7 +1947,7 @@ CREATE TABLE `project_members` (
   `dt_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `userkey` varchar(50) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -2451,7 +1991,7 @@ CREATE TABLE `projects` (
   `closedbyuserkey` varchar(40) DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `entrykey` (`entrykey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -2466,7 +2006,7 @@ CREATE TABLE `projects_shareddata` (
   `workgroupkey` varchar(50) NOT NULL DEFAULT '',
   `dt_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -2487,7 +2027,7 @@ CREATE TABLE `promocodes` (
   `used` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`),
   UNIQUE KEY `code` (`code`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -2502,7 +2042,7 @@ CREATE TABLE `promocodeusages` (
   `dt_used` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `companykey` varchar(50) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -2521,7 +2061,7 @@ CREATE TABLE `publicshares` (
   PRIMARY KEY (`id`),
   KEY `directorykey` (`directorykey`),
   KEY `userkey` (`userkey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -2539,22 +2079,7 @@ CREATE TABLE `publicshares_traffic` (
   `ip` varchar(50) NOT NULL,
   `http_referer` varchar(255) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table quota
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `quota`;
-
-CREATE TABLE `quota` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `userkey` varchar(40) NOT NULL,
-  `maxsize` bigint(20) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `userkey` (`userkey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -2602,7 +2127,7 @@ CREATE TABLE `redata` (
   `skypeusername` varchar(150) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `entrykey` (`entrykey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -2631,7 +2156,7 @@ CREATE TABLE `registrationblacklist` (
   `reason` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `emailadr` (`emailadr`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -2648,7 +2173,7 @@ CREATE TABLE `reminderalerts` (
   `lastsubject` varchar(250) NOT NULL DEFAULT '',
   PRIMARY KEY (`userid`),
   KEY `userid` (`userid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -2669,26 +2194,7 @@ CREATE TABLE `remoteedit` (
   UNIQUE KEY `objectkey` (`objectkey`),
   KEY `entrykey` (`entrykey`),
   KEY `userkey` (`userkey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table renameuser_log
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `renameuser_log`;
-
-CREATE TABLE `renameuser_log` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `dt_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `userkey` varchar(40) NOT NULL DEFAULT '',
-  `username` varchar(40) NOT NULL DEFAULT '',
-  `createdbyuserkey` varchar(40) NOT NULL DEFAULT '',
-  `tablename` varchar(255) NOT NULL DEFAULT '',
-  `wddx` text NOT NULL,
-  `userid` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -2739,24 +2245,7 @@ CREATE TABLE `reseller` (
   PRIMARY KEY (`id`),
   KEY `parentkey` (`parentkey`),
   KEY `parentkey_2` (`parentkey`,`contractingparty`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table reseller_promocode_mappings
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `reseller_promocode_mappings`;
-
-CREATE TABLE `reseller_promocode_mappings` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `resellerkey` varchar(50) NOT NULL DEFAULT '',
-  `startcode` int(20) NOT NULL DEFAULT '0',
-  `endcode` int(20) NOT NULL DEFAULT '0',
-  `dt_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `createdbyuserkey` varchar(50) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -2775,7 +2264,7 @@ CREATE TABLE `resellerusers` (
   `createdbyuserkey` varchar(50) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `resellerkey` (`resellerkey`,`userkey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -2796,7 +2285,27 @@ CREATE TABLE `resources` (
   `workgroupkeys` varchar(255) NOT NULL DEFAULT '',
   `location` varchar(255) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+
+
+# Dump of table restrictlogins
+# ------------------------------------------------------------
+
+DROP TABLE IF EXISTS `restrictlogins`;
+
+CREATE TABLE `restrictlogins` (
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `restrictiontype` int(11) DEFAULT NULL,
+  `restrictionvalue` varchar(500) DEFAULT NULL,
+  `active` int(11) DEFAULT NULL,
+  `createdbyuserkey` varchar(36) DEFAULT NULL,
+  `dt_created` datetime DEFAULT NULL,
+  `direction` int(11) DEFAULT NULL,
+  `rolekey` varchar(36) DEFAULT NULL,
+  `cursize` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -2813,7 +2322,7 @@ CREATE TABLE `rolepermissions` (
   `servicekey` varchar(50) NOT NULL DEFAULT '',
   `allowedactions` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -2835,7 +2344,7 @@ CREATE TABLE `roles` (
   `standardallowedactions` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `entrykey` (`entrykey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -2875,7 +2384,7 @@ CREATE TABLE `salesprojects` (
   UNIQUE KEY `entrykey` (`entrykey`),
   KEY `contactkey` (`contactkey`),
   KEY `companykey` (`companykey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -2896,7 +2405,7 @@ CREATE TABLE `salesprojects_assigned_contacts` (
   `internal_user` int(11) NOT NULL DEFAULT '0',
   `contact_type` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -2918,7 +2427,7 @@ CREATE TABLE `salesprojects_trend_history` (
   `dt_closing` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `salesprojectentrykey` (`salesprojectentrykey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -2935,7 +2444,7 @@ CREATE TABLE `savedtaskviews` (
   `dt_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `viewname` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -2957,7 +2466,7 @@ CREATE TABLE `scenarioseen` (
   PRIMARY KEY (`ID`),
   UNIQUE KEY `ID` (`ID`),
   KEY `ind_seen` (`userid`,`pagesection`,`pagename`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -2981,7 +2490,7 @@ CREATE TABLE `scratchpad` (
   `entrykey` varchar(40) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   KEY `userkey` (`userkey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -2997,7 +2506,7 @@ CREATE TABLE `scratchpad_outlook_id` (
   `lastupdate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `scratchpad_entrykey` varchar(50) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -3017,7 +2526,7 @@ CREATE TABLE `secretarydefinitions` (
   `permission` varchar(50) NOT NULL DEFAULT 'deletecreatedbysecretary',
   PRIMARY KEY (`id`),
   UNIQUE KEY `userkey` (`userkey`,`secretarykey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -3042,51 +2551,7 @@ CREATE TABLE `securityroles` (
   `allow_mailaccessdata_access` int(11) NOT NULL DEFAULT '1',
   `allow_www_ssl_only` int(11) NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table sendmailtempinfo
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `sendmailtempinfo`;
-
-CREATE TABLE `sendmailtempinfo` (
-  `entrykey` varchar(50) NOT NULL DEFAULT '',
-  `afrom` varchar(255) NOT NULL DEFAULT '',
-  `ato` text NOT NULL,
-  `cc` text NOT NULL,
-  `bcc` text NOT NULL,
-  `destinationfolder` varchar(255) NOT NULL DEFAULT '',
-  `subject` varchar(255) NOT NULL DEFAULT '',
-  `smjobkey` varchar(50) NOT NULL DEFAULT '',
-  `tmpfilename` varchar(255) NOT NULL DEFAULT '',
-  `dt_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `sm_action` varchar(255) NOT NULL DEFAULT '',
-  `messageid` varchar(255) NOT NULL DEFAULT '',
-  `format` varchar(100) NOT NULL,
-  `body` text NOT NULL,
-  PRIMARY KEY (`entrykey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table sentsms
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `sentsms`;
-
-CREATE TABLE `sentsms` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `userid` int(11) NOT NULL DEFAULT '0',
-  `asender` varchar(20) NOT NULL DEFAULT '',
-  `arecipient` varchar(20) NOT NULL DEFAULT '',
-  `addressbookid` int(11) NOT NULL DEFAULT '0',
-  `dt_sent` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `atext` text NOT NULL,
-  `adressbookkey` varchar(50) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -3111,9 +2576,9 @@ CREATE TABLE `serverlog` (
   `freeMemory` int(11) NOT NULL DEFAULT '0',
   `totalMemory` int(11) NOT NULL DEFAULT '0',
   `maxMemory` int(11) NOT NULL DEFAULT '0',
-  `hostname` varchar(50) CHARACTER SET latin1 COLLATE latin1_general_ci DEFAULT NULL,
+  `hostname` varchar(50) COLLATE latin1_general_ci DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
 
 
@@ -3136,7 +2601,7 @@ CREATE TABLE `servicerequests` (
   `ticketno` int(11) NOT NULL,
   `externalticketno` int(11) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -3160,7 +2625,7 @@ CREATE TABLE `sessionkeys` (
   UNIQUE KEY `id` (`id`),
   KEY `userkey` (`userkey`),
   KEY `appname` (`appname`,`id`,`ip`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -3180,24 +2645,7 @@ CREATE TABLE `shareddata` (
   UNIQUE KEY `addressbookkey` (`addressbookkey`,`workgroupkey`),
   KEY `workgroupkey` (`workgroupkey`),
   KEY `addressbookkey_2` (`addressbookkey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table shareddata_email
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `shareddata_email`;
-
-CREATE TABLE `shareddata_email` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `workgroupkey` varchar(50) NOT NULL DEFAULT '',
-  `folderdata` varchar(255) NOT NULL DEFAULT '',
-  `createdbyuserkey` varchar(50) NOT NULL DEFAULT '',
-  `dt_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `entrykey` varchar(50) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -3219,48 +2667,7 @@ CREATE TABLE `signup_saved_data` (
   `email` varchar(255) NOT NULL DEFAULT '',
   `resellerkey` varchar(40) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table signuptmpdata
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `signuptmpdata`;
-
-CREATE TABLE `signuptmpdata` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `entrykey` varchar(40) NOT NULL DEFAULT '',
-  `page` int(11) NOT NULL DEFAULT '0',
-  `ip` varchar(50) NOT NULL DEFAULT '',
-  `wddx` longtext NOT NULL,
-  `dt_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `urltoken` varchar(255) NOT NULL DEFAULT '',
-  `source` varchar(255) NOT NULL DEFAULT '',
-  `keyword` varchar(255) NOT NULL DEFAULT '',
-  `distributorkey` varchar(50) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table sms2send
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `sms2send`;
-
-CREATE TABLE `sms2send` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `userid` int(11) NOT NULL DEFAULT '0',
-  `asender` varchar(24) NOT NULL DEFAULT '',
-  `arecipient` varchar(24) NOT NULL DEFAULT '',
-  `atext` varchar(160) NOT NULL DEFAULT '',
-  `status` int(11) NOT NULL DEFAULT '0',
-  `dt_send` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `username` varchar(250) NOT NULL DEFAULT '',
-  `ownnumberassender` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -3297,7 +2704,7 @@ CREATE TABLE `storagefiles` (
   KEY `dt_lastmodified` (`dt_lastmodified`),
   KEY `parentdirectorykey` (`parentdirectorykey`),
   KEY `userkey` (`userkey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -3318,187 +2725,7 @@ CREATE TABLE `switchuserrelations` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `userkey_2` (`userkey`,`otheruserkey`),
   KEY `userkey` (`userkey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table syncml_compatible_devices
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `syncml_compatible_devices`;
-
-CREATE TABLE `syncml_compatible_devices` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `entrykey` varchar(40) NOT NULL DEFAULT '',
-  `manufactor` varchar(255) NOT NULL DEFAULT '',
-  `autoconfig` int(11) NOT NULL DEFAULT '0',
-  `image` varchar(255) NOT NULL DEFAULT '',
-  `device_name` varchar(255) NOT NULL DEFAULT '',
-  `notes` int(11) NOT NULL DEFAULT '0',
-  `tasks` int(11) NOT NULL DEFAULT '0',
-  `calendar` int(11) NOT NULL DEFAULT '0',
-  `contacts` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table syncml_log
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `syncml_log`;
-
-CREATE TABLE `syncml_log` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `entrykey` varchar(40) NOT NULL DEFAULT '',
-  `dt_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `request_headers` text NOT NULL,
-  `request_body` longtext NOT NULL,
-  `username` varchar(255) NOT NULL DEFAULT '',
-  `query_string` varchar(255) NOT NULL DEFAULT '',
-  `path_info` varchar(255) NOT NULL DEFAULT '',
-  `ip` varchar(25) NOT NULL DEFAULT '',
-  `runtime` int(11) NOT NULL DEFAULT '0',
-  `request_method` varchar(255) NOT NULL DEFAULT '',
-  `response_body` longtext NOT NULL,
-  `response_headers` longtext NOT NULL,
-  `hostname` varchar(50) NOT NULL DEFAULT '',
-  `virtualusername` varchar(150) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table tasks
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `tasks`;
-
-CREATE TABLE `tasks` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `entrykey` varchar(40) NOT NULL DEFAULT '',
-  `userkey` varchar(40) NOT NULL DEFAULT '',
-  `dt_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `dt_lastmodified` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `title` varchar(255) NOT NULL DEFAULT '',
-  `notice` text NOT NULL,
-  `priority` tinyint(4) NOT NULL DEFAULT '2',
-  `categories` varchar(255) NOT NULL DEFAULT '',
-  `status` tinyint(4) NOT NULL DEFAULT '0',
-  `dt_due` datetime DEFAULT NULL,
-  `percentdone` int(11) NOT NULL DEFAULT '0',
-  `mileage` varchar(250) NOT NULL DEFAULT '',
-  `actualwork` int(11) NOT NULL DEFAULT '0',
-  `totalwork` int(11) NOT NULL DEFAULT '0',
-  `billinginformation` varchar(255) NOT NULL DEFAULT '',
-  `projectkey` varchar(50) NOT NULL DEFAULT '',
-  `dt_done` datetime DEFAULT NULL,
-  `userid` int(11) NOT NULL DEFAULT '0',
-  `username` varchar(255) NOT NULL DEFAULT '',
-  `lasteditedbyuserkey` varchar(50) NOT NULL DEFAULT '',
-  `assignedtouserkeys` varchar(255) NOT NULL DEFAULT '',
-  `old_id` int(11) NOT NULL DEFAULT '0',
-  `private` int(11) NOT NULL DEFAULT '0',
-  `migrated` int(11) NOT NULL DEFAULT '0',
-  `dt_start` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `entrykey` (`entrykey`),
-  KEY `userkey` (`userkey`),
-  KEY `userkey_2` (`userkey`,`status`),
-  KEY `entrykey_2` (`entrykey`,`status`,`dt_due`),
-  KEY `userkey_3` (`userkey`,`status`,`dt_due`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table tasks_assigned_to_contacts
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `tasks_assigned_to_contacts`;
-
-CREATE TABLE `tasks_assigned_to_contacts` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `dt_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `taskkey` varchar(40) NOT NULL DEFAULT '',
-  `contactkey` varchar(40) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`),
-  KEY `contactkey` (`contactkey`),
-  KEY `taskkey` (`taskkey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table tasks_assigned_users
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `tasks_assigned_users`;
-
-CREATE TABLE `tasks_assigned_users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `taskkey` varchar(50) NOT NULL DEFAULT '',
-  `userkey` varchar(50) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `taskkey` (`taskkey`,`userkey`),
-  KEY `userkey` (`userkey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table tasks_outlook_data
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `tasks_outlook_data`;
-
-CREATE TABLE `tasks_outlook_data` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `taskkey` varchar(36) NOT NULL DEFAULT '',
-  `outlook_id` varchar(200) NOT NULL DEFAULT '',
-  `program_id` varchar(100) NOT NULL DEFAULT '',
-  `lastupdate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `ignoreitem` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `taskkey` (`taskkey`,`program_id`),
-  UNIQUE KEY `outlook_id` (`outlook_id`,`program_id`),
-  KEY `program_id` (`program_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table tasks_shareddata
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `tasks_shareddata`;
-
-CREATE TABLE `tasks_shareddata` (
-  `entrykey` varchar(40) NOT NULL DEFAULT '',
-  `taskkey` varchar(40) NOT NULL DEFAULT '',
-  `workgroupkey` varchar(40) NOT NULL DEFAULT '',
-  `createdbyuserkey` varchar(40) NOT NULL DEFAULT '',
-  `dt_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`entrykey`),
-  UNIQUE KEY `taskkey` (`taskkey`,`workgroupkey`),
-  KEY `taskkey_2` (`taskkey`),
-  KEY `workgroupkey` (`workgroupkey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table team_invitations
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `team_invitations`;
-
-CREATE TABLE `team_invitations` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `entrykey` varchar(40) NOT NULL DEFAULT '',
-  `companykey` varchar(40) NOT NULL DEFAULT '',
-  `emailadr` varchar(255) NOT NULL DEFAULT '',
-  `dt_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `createdbyuserkey` varchar(40) NOT NULL DEFAULT '',
-  `workgroupkey` varchar(40) NOT NULL DEFAULT '',
-  `language` tinyint(4) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -3519,7 +2746,7 @@ CREATE TABLE `templates` (
   `description` text NOT NULL,
   PRIMARY KEY (`id`),
   KEY `langno` (`langno`,`template_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -3536,39 +2763,7 @@ CREATE TABLE `thumbnails` (
   `dt_created` datetime NOT NULL,
   PRIMARY KEY (`id`),
   KEY `filekey` (`filekey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table trafficlimits
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `trafficlimits`;
-
-CREATE TABLE `trafficlimits` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `userkey` varchar(40) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
-  `kblimit` bigint(20) NOT NULL,
-  `kbused` bigint(20) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `userkey` (`userkey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table travellingkilometers
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `travellingkilometers`;
-
-CREATE TABLE `travellingkilometers` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `entrykey` varchar(40) NOT NULL,
-  `dt_added` date NOT NULL,
-  `createdbyuserkey` varchar(40) NOT NULL,
-  `kilometers` float NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -3585,7 +2780,7 @@ CREATE TABLE `userphotos` (
   `contenttype` varchar(50) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `userkey` (`userkey`,`type`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -3606,7 +2801,7 @@ CREATE TABLE `userpreferences` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `a_index_entry` (`entrysection`,`entryname`,`userid`),
   KEY `userid` (`userid`,`md5_section_entryname`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -3616,7 +2811,7 @@ CREATE TABLE `userpreferences` (
 DROP TABLE IF EXISTS `users`;
 
 CREATE TABLE `users` (
-  `userid` int(11) NOT NULL AUTO_INCREMENT,
+  `userid` int(11) NOT NULL DEFAULT '0',
   `plz` varchar(50) NOT NULL DEFAULT '',
   `zipcode` varchar(50) NOT NULL DEFAULT '',
   `city` varchar(255) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
@@ -3632,60 +2827,25 @@ CREATE TABLE `users` (
   `email` varchar(255) NOT NULL DEFAULT '',
   `pwd` varchar(255) NOT NULL DEFAULT '',
   `address1` varchar(255) NOT NULL DEFAULT '',
-  `address2` varchar(255) NOT NULL DEFAULT '',
   `signature` text,
-  `resolution` varchar(255) NOT NULL DEFAULT '',
   `date_subscr` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `allow_login` int(11) NOT NULL DEFAULT '1',
   `mobilenr` varchar(20) NOT NULL DEFAULT '',
-  `autologin_key` varchar(50) NOT NULL DEFAULT '',
   `account_type` int(11) NOT NULL DEFAULT '0',
-  `subscrnewsletter` int(11) NOT NULL DEFAULT '1',
-  `smscode` varchar(5) NOT NULL DEFAULT '',
-  `wirelessstatus` int(11) NOT NULL DEFAULT '0',
   `account_checked` int(11) NOT NULL DEFAULT '0',
-  `displayemailsperpage` int(11) NOT NULL DEFAULT '0',
-  `displayadrperpage` int(11) NOT NULL DEFAULT '0',
-  `mailboxsizelimit` int(11) NOT NULL DEFAULT '0',
-  `recalcmailboxquota` int(11) NOT NULL DEFAULT '0',
-  `mailboxlimitexceeded` int(11) NOT NULL DEFAULT '0',
-  `mailboxlimitreminded` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `recalcmboxquota` int(11) NOT NULL DEFAULT '0',
   `utcdiff` int(11) NOT NULL DEFAULT '0',
-  `loginfailures` int(11) NOT NULL DEFAULT '0',
-  `notproperlyloggedout` int(11) NOT NULL DEFAULT '0',
-  `accountchecked` int(11) NOT NULL DEFAULT '0',
   `login_count` int(11) NOT NULL DEFAULT '0',
   `defaultlanguage` int(11) NOT NULL DEFAULT '0',
-  `sendremindupdatedate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
   `rating` int(11) NOT NULL DEFAULT '0',
-  `sessiontimeout` int(11) NOT NULL DEFAULT '0',
-  `subscrnewsletteraddress` varchar(150) NOT NULL DEFAULT '',
   `stylesheet` varchar(50) NOT NULL DEFAULT '',
-  `autologinkey` varchar(50) NOT NULL DEFAULT '0',
-  `trialday` int(11) NOT NULL DEFAULT '0',
-  `contractexpirationdate` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `logofilename` varchar(50) NOT NULL DEFAULT '',
   `confirmlogout` int(11) NOT NULL DEFAULT '1',
-  `storagelimit` int(11) NOT NULL DEFAULT '204800',
-  `trialphaseendalertseen` int(11) NOT NULL DEFAULT '0',
-  `trialphaseday` int(11) NOT NULL DEFAULT '0',
-  `attractedby` varchar(50) NOT NULL DEFAULT '',
-  `signupip` varchar(50) NOT NULL DEFAULT '',
   `daylightsavinghours` int(11) NOT NULL DEFAULT '0',
   `organization` varchar(100) NOT NULL DEFAULT '',
-  `customheader` text,
-  `allow_login_pda` int(11) NOT NULL DEFAULT '1',
-  `allow_login_wap` int(11) NOT NULL DEFAULT '1',
   `entrykey` varchar(40) CHARACTER SET latin1 COLLATE latin1_general_ci NOT NULL,
   `companykey` varchar(50) NOT NULL DEFAULT '5CD14B02-EE6F-13D7-A7DDF2296ACA2C30',
-  `datasafehash` varchar(50) NOT NULL DEFAULT '',
   `activitystatus` int(11) NOT NULL DEFAULT '1',
   `country` varchar(255) NOT NULL DEFAULT '0',
-  `subscribetippsntricks` int(11) NOT NULL DEFAULT '1',
-  `tmp` int(11) NOT NULL DEFAULT '0',
   `reloadpermissions` int(11) NOT NULL DEFAULT '0',
-  `isallowedtocreatedprivatedata` int(11) NOT NULL DEFAULT '1',
   `smallphotoavaliable` int(11) NOT NULL DEFAULT '0',
   `bigphotoavaliable` int(11) NOT NULL DEFAULT '0',
   `accounttype` varchar(50) NOT NULL DEFAULT 'AD4262D0-98D5-D611-4763153818C89190',
@@ -3695,28 +2855,16 @@ CREATE TABLE `users` (
   `telephone` varchar(255) NOT NULL DEFAULT '',
   `securityrolekey` varchar(50) NOT NULL DEFAULT '',
   `title` varchar(255) NOT NULL DEFAULT '',
-  `imstatus` int(11) NOT NULL DEFAULT '0',
-  `dt_im_lastcontact` datetime DEFAULT NULL,
-  `mailcharset` varchar(20) NOT NULL DEFAULT 'UTF-8',
   `charset` varchar(20) NOT NULL DEFAULT 'UTF-8',
-  `mailusertype` int(11) NOT NULL DEFAULT '0',
-  `mailprofilekey` varchar(50) NOT NULL DEFAULT '',
-  `autoaddaddressbooktowhitelist` int(11) NOT NULL DEFAULT '1',
-  `afterfirstloginmailsent` tinyint(4) NOT NULL DEFAULT '0',
-  `activatecode` varchar(5) NOT NULL DEFAULT '',
-  `dt_activationlinksent` datetime DEFAULT NULL,
-  `activated` int(11) NOT NULL DEFAULT '0',
   `countryisocode` char(2) NOT NULL DEFAULT 'at',
   `style` varchar(40) NOT NULL DEFAULT '',
-  `identificationcode` varchar(10) NOT NULL DEFAULT '',
   `skypeusername` varchar(150) NOT NULL DEFAULT '',
-  `weather_com_location_id` varchar(40) NOT NULL DEFAULT '',
   PRIMARY KEY (`userid`),
   UNIQUE KEY `entrykey` (`entrykey`),
   KEY `username` (`username`),
   KEY `companykey` (`companykey`),
   KEY `ind_username` (`username`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -3738,7 +2886,7 @@ CREATE TABLE `users_saved_data` (
   `address1` varchar(160) DEFAULT NULL,
   `sex` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -3756,7 +2904,7 @@ CREATE TABLE `various_crm_settings` (
   `setting_value` varchar(255) NOT NULL DEFAULT '',
   PRIMARY KEY (`id`),
   UNIQUE KEY `companykey` (`companykey`,`setting_name`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -3781,213 +2929,7 @@ CREATE TABLE `versions` (
   PRIMARY KEY (`id`),
   KEY `filekey` (`filekey`),
   KEY `entrykey` (`entrykey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table virtual_mobilesync_users
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `virtual_mobilesync_users`;
-
-CREATE TABLE `virtual_mobilesync_users` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `userkey` varchar(40) NOT NULL DEFAULT '',
-  `principal_id` int(11) NOT NULL DEFAULT '0',
-  `username` varchar(20) NOT NULL DEFAULT '',
-  `dt_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `loginfailed` int(11) NOT NULL DEFAULT '0',
-  `dt_login_failed` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table virtualcalendars
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `virtualcalendars`;
-
-CREATE TABLE `virtualcalendars` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `entrykey` varchar(50) NOT NULL DEFAULT '',
-  `createdbyuserkey` varchar(50) NOT NULL DEFAULT '',
-  `title` varchar(255) NOT NULL DEFAULT '',
-  `description` varchar(255) NOT NULL DEFAULT '',
-  `companykey` varchar(50) NOT NULL DEFAULT '',
-  `public` int(11) NOT NULL DEFAULT '0',
-  `dt_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `language` int(11) NOT NULL DEFAULT '0',
-  `colour` varchar(20) NOT NULL,
-  `userkey` varchar(40) NOT NULL,
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `entrykey` (`entrykey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table virtualcalendarsubscriptions
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `virtualcalendarsubscriptions`;
-
-CREATE TABLE `virtualcalendarsubscriptions` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `userkey` varchar(50) NOT NULL DEFAULT '',
-  `virtualcalendarkey` varchar(50) NOT NULL DEFAULT '',
-  `dt_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `entrykey` varchar(40) NOT NULL,
-  PRIMARY KEY (`id`),
-  KEY `userkey` (`userkey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table weather_data
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `weather_data`;
-
-CREATE TABLE `weather_data` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `location_id` varchar(20) NOT NULL DEFAULT '',
-  `date_data_int` int(11) DEFAULT '0',
-  `current_temperature` int(11) NOT NULL DEFAULT '0',
-  `sunr` varchar(20) NOT NULL DEFAULT '',
-  `suns` varchar(20) NOT NULL DEFAULT '',
-  `temp_high` int(11) NOT NULL DEFAULT '0',
-  `temp_low` int(11) NOT NULL DEFAULT '0',
-  `feelslike` int(11) NOT NULL DEFAULT '0',
-  `humidity` int(11) NOT NULL DEFAULT '0',
-  `dewpoint` int(11) NOT NULL DEFAULT '0',
-  `windspeed` int(11) NOT NULL DEFAULT '0',
-  `is_today` int(11) NOT NULL DEFAULT '0',
-  `icon` int(11) NOT NULL DEFAULT '0',
-  `WINDDIRECTION` varchar(20) NOT NULL DEFAULT '',
-  `description` varchar(255) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`),
-  KEY `location_id` (`location_id`),
-  KEY `location_id_2` (`location_id`,`date_data_int`),
-  KEY `location_id_3` (`location_id`,`is_today`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table weather_location_mappings
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `weather_location_mappings`;
-
-CREATE TABLE `weather_location_mappings` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `location_name` varchar(255) NOT NULL DEFAULT '',
-  `location_id` varchar(50) NOT NULL DEFAULT '',
-  `dt_last_update` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  PRIMARY KEY (`id`),
-  UNIQUE KEY `location_id` (`location_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table webservice_event_handlers
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `webservice_event_handlers`;
-
-CREATE TABLE `webservice_event_handlers` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `dt_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `entrykey` varchar(36) NOT NULL DEFAULT '',
-  `applicationkey` varchar(36) NOT NULL DEFAULT '',
-  `clientkey` varchar(36) NOT NULL DEFAULT '',
-  `href` varchar(255) NOT NULL DEFAULT '',
-  `type` int(11) NOT NULL DEFAULT '0',
-  `userkey` varchar(36) NOT NULL DEFAULT '',
-  `companykey` varchar(36) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`),
-  KEY `ind_userkey` (`userkey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table webservices_actions
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `webservices_actions`;
-
-CREATE TABLE `webservices_actions` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `dt_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `ip` varchar(50) NOT NULL DEFAULT '',
-  `http_user_agent` varchar(255) NOT NULL DEFAULT '',
-  `script_name` varchar(255) NOT NULL DEFAULT '',
-  `query_string` varchar(255) NOT NULL DEFAULT '',
-  `arguments` longtext NOT NULL,
-  `httprequest` longtext NOT NULL,
-  `sessionkey` varchar(50) NOT NULL DEFAULT '',
-  `applicationkey` varchar(50) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table webservices_applications
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `webservices_applications`;
-
-CREATE TABLE `webservices_applications` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `entrykey` varchar(50) NOT NULL DEFAULT '',
-  `appname` varchar(255) NOT NULL DEFAULT '',
-  `description` varchar(255) NOT NULL DEFAULT '',
-  `homepage` varchar(255) NOT NULL DEFAULT '',
-  `dt_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `contact` varchar(255) NOT NULL DEFAULT '',
-  `createdbyuserkey` varchar(50) NOT NULL DEFAULT '',
-  `producer` varchar(255) NOT NULL DEFAULT '',
-  `restricted_ips` varchar(255) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table webservices_events
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `webservices_events`;
-
-CREATE TABLE `webservices_events` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `handlerkey` varchar(50) NOT NULL DEFAULT '',
-  `servicekey` varchar(50) NOT NULL DEFAULT '',
-  `dt_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `objectkey` varchar(36) NOT NULL DEFAULT '',
-  `actionname` varchar(50) NOT NULL DEFAULT '',
-  `applicationkey` varchar(36) NOT NULL DEFAULT '',
-  `clientkey` varchar(36) NOT NULL DEFAULT '',
-  `eventsent` int(11) NOT NULL DEFAULT '0',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
-
-
-# Dump of table webservices_log
-# ------------------------------------------------------------
-
-DROP TABLE IF EXISTS `webservices_log`;
-
-CREATE TABLE `webservices_log` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `entrykey` varchar(40) NOT NULL DEFAULT '',
-  `ip` varchar(50) NOT NULL DEFAULT '',
-  `script_name` varchar(255) NOT NULL DEFAULT '',
-  `query_string` varchar(255) NOT NULL DEFAULT '',
-  `dt_created` datetime NOT NULL DEFAULT '0000-00-00 00:00:00',
-  `runtime` int(11) NOT NULL DEFAULT '0',
-  `applicationkey` varchar(50) NOT NULL DEFAULT '',
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -4019,7 +2961,7 @@ CREATE TABLE `workgroup_members` (
   KEY `workgroupkey` (`workgroupkey`,`userkey`),
   KEY `userkey` (`userkey`),
   KEY `workgroupkey_2` (`workgroupkey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 
@@ -4044,7 +2986,7 @@ CREATE TABLE `workgroups` (
   PRIMARY KEY (`id`),
   KEY `entrykey` (`entrykey`),
   KEY `parentkey` (`parentkey`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 
 

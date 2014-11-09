@@ -16,7 +16,7 @@
 
 <!-- Tab panes -->
 <div class="tab-content">
-  <div class="tab-pane active" id="crmHistoryOutput">...</div>
+  <div class="tab-pane active" id="crmHistoryOutput"></div>
 </div>
 
 <script>
@@ -31,7 +31,6 @@ $('.crmHistory a').click(function (e) {
 		$('##crmHistoryOutput').html( data );
 
 	});
-  //$(this).tab('show')
 })
 
 $('.crmHistory a:first').click();
@@ -44,11 +43,6 @@ $('.crmHistory a:first').click();
 <cfoutput>
 	<form style="margin:0px;" name="form_set_crm_history_days">
 		<input class="btn btn-primary" type="button" style="width:auto;" onclick="call_new_item_for_contact('#jsstringformat(url.entrykey)#', 'history');return false;" value="#GetLangVal('crm_ph_record_event')#" />
-
-		<!--- <cfif a_struct_object.rights.delete>
-			<input type="button" class="btn btn-default" value="#MakeFirstCharUCase(GetLangVal('cm_wd_edit'))#" onclick="ShowActivitiesData('#jsstringformat(url.entrykey)#', 'activities', GetCurrentCRMHistoryDays(), true);" />
-		</cfif> --->
-
 	</form>
 </cfoutput>
 

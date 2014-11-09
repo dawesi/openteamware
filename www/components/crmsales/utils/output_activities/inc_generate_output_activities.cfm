@@ -71,18 +71,13 @@
 			<td>
 				<a href="/workgroups/?action=ShowUser&entrykey=#q_select_history_items.createdbyuserkey#">#htmleditformat(application.components.cmp_user.GetShortestPossibleUserIDByEntrykey(q_select_history_items.createdbyuserkey))#</a>
 			</td>
-			<!--- <td>
-				<a href="/addressbook/?action=ShowItem&entrykey=#q_select_history_items.objectkey#">#htmleditformat(application.components.cmp_addressbook.GetContactDisplayNameData(q_select_history_items.objectkey))#</a>
-			</td> --->
 			<td>
 				#FormatTextToHTML(q_select_history_items.comment)#
 			</td>
-				<cfif arguments.managemode>
-					<td>
-						<a href="/crm/?action=ShowEditHistoryItem&amp;entrykey=#q_select_history_items.entrykey#">#si_img('pencil')#</a>
-						<a href="##" onclick="ShowSimpleConfirmationDialog('/crm/?action=DeleteHistoryItem&amp;entrykey=#q_select_history_items.entrykey#');return false;"><span class="glyphicon glyphicon-trash�></span></a>
-					</td>
-			</cfif>
+			<td>
+				<a href="/crm/?action=ShowEditHistoryItem&amp;entrykey=#q_select_history_items.entrykey#"><span class="glyphicon glyphicon-pencil"></span></a>
+				<a href="##" onclick="ShowSimpleConfirmationDialog('/crm/?action=DeleteHistoryItem&amp;entrykey=#q_select_history_items.entrykey#');return false;"><span class="glyphicon glyphicon-trash"></span></a>
+			</td>
 		</tr>
 	</cfoutput>
 </table>

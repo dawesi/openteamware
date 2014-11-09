@@ -281,14 +281,6 @@ WHERE
 <cfset a_struct_filter = StructNew()>
 <cfset a_struct_filter.entrykeys = valueList(q_select_connected_tasks_meta_information.objectkey)>
 
-<cfinvoke component="#application.components.cmp_tasks#" method="GetTasks" returnvariable="stReturn_tasks">
-  <cfinvokeargument name="securitycontext" value="#request.stSecurityContext#">
-  <cfinvokeargument name="usersettings" value="#request.stUserSettings#">
-  <cfinvokeargument name="filter" value="#a_struct_filter#">
-</cfinvoke>
-
-<cfset q_select_tasks = stReturn_tasks.q_select_tasks>
-
 <!--- contacts ... --->
 <cfquery name="q_select_connected_contacts_meta_information" dbtype="query">
 SELECT
@@ -341,72 +333,6 @@ WHERE
 
 <!--- the return url --->
 <cfset sReturnurl = urlencodedformat(cgi.SCRIPT_NAME&"?"&cgi.QUERY_STRING)>
-
-<div class="mischeader" style="padding:3px;"><font class="contrasttext" style="font-weight:bold;"><img src="/images/hyperlink.gif" align="absmiddle">&nbsp;Verkn&uuml;pfte Elemente</font></div>
-
-<br>
-
-
-
-<div class="bb"><b><img src="/images/tasks/menu_neue_aufgabe.gif" align="absmiddle" border="0" hspace="4" vspace="4">Aufgaben (<cfoutput>#q_select_tasks.recordcount#</cfoutput>)</b></div>
-
-
-
-		<table border="0" cellspacing="0" cellpadding="3"  width="100%">
-
-		<tr class="mischeader">
-
-			<td class="bb">Betreff</td>
-
-			<td class="bb">Status</td>
-
-			<td class="bb">F&auml;llig</td>
-
-			<td class="bb">Zust&auml;ndig</td>
-
-		</tr>
-
-		<cfoutput query="q_select_tasks" startrow="1" maxrows="5">
-
-		  <tr>
-
-			<td><a href="../tasks/index.cfm?action=ShowTask&entrykey=#q_select_tasks.entrykey#&returnurl=#sReturnurl#"><img src="/images/icon/notizen.gif" align="absmiddle" vspace="0" hspace="0" border="0" height="12" width="12">&nbsp;#q_select_tasks.title#</a></td>
-
-			<td>#q_select_tasks.status#</td>
-
-			<td>
-
-			<cfif isDate(q_select_tasks.dt_due)>
-
-			<a href="../calendar/index.cfm?action=ViewDay&Date=#urlencodedformat(dateformat(q_select_tasks.dt_due, "mm/dd/yyyy"))#">#lsdateformat(q_select_tasks.dt_due, "ddd, dd.mm.yy")#</a>
-
-			</cfif>
-
-			</td>
-
-			<td></td>
-
-		  </tr>
-
-		 </cfoutput>
-
-		 <cfif q_select_tasks.recordcount gt 5>
-
-		 <tr>
-
-		 	<td colspan="4">&gt; <a href="../tasks/index.cfm?action=ShowTasks&filterprojectkey=<cfoutput>#url.entrykey#</cfoutput>">Alle verbundenen Aufgaben anzeigen</a></td>
-
-		 </tr>
-
-		 </cfif>
-
-		 <tr>
-
-		 	<td colspan="4">&gt; <a href="../tasks/index.cfm?action=NewEntry&projectkey=<cfoutput>#url.entrykey#</cfoutput>&returnurl=<cfoutput>#sReturnurl#</cfoutput>">Neue Aufgabe hinzuf&uuml;gen</a></td>
-
-		 </tr>
-
-		</table>
 
 
 

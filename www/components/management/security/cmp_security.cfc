@@ -60,16 +60,6 @@
 			<cfset a_str_owner_userkey = application.components.cmp_addressbook.GetOwnerUserkey(arguments.object_entrykey) />
 			</cfcase>
 
-			<cfcase value="52230718-D5B0-0538-D2D90BB6450697D1">
-			<!--- tasks --->
-			<cfset a_str_owner_userkey = application.components.cmp_tasks.GetOwnerUserkey(arguments.object_entrykey) />
-			</cfcase>
-
-			<cfcase value="5222ECD3-06C4-3804-E92ED804C82B68A2">
-			<!--- storage --->
-			<cfset a_str_owner_userkey = application.components.cmp_storage.GetOwnerUserkey(entrykey=arguments.object_entrykey, object_type=arguments.object_type) />
-			</cfcase>
-
 			<!--- <cfcase value="5084CF0A-0DAE-09E6-3C5171B204B4B26E">
 			<!--- own databases --->
 			<cfset a_str_owner_userkey = application.components.cmp_own_db.GetOwnerUserkey(entrykey = arguments.object_entrykey, object_type=arguments.object_type) />
@@ -357,10 +347,6 @@
 					<cfset a_bol_read_allowed = application.components.cmp_calendar.IsAttendeeOfEvent(eventkey = arguments.object_entrykey, userkey = arguments.securitycontext.myuserkey) />
 				</cfif>
 
-				</cfcase>
-				<cfcase value="52230718-D5B0-0538-D2D90BB6450697D1">
-					<!--- tasks is assigned to this user ... --->
-					<cfset a_bol_read_allowed = application.components.cmp_tasks.IsAssignedUserOfTask(taskkey = arguments.object_entrykey, userkey = arguments.securitycontext.myuserkey) />
 				</cfcase>
 			</cfswitch>
 

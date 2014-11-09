@@ -427,24 +427,7 @@
 
 				#q_select_storage.count_id#
 			</td>
-		  </tr>
-		  <tr>
-		  	 <td class="field_name">#GetLangVal('cm_wd_tasks')#:</td>
-			<td>
-				<cfquery name="q_select_tasks">
-				SELECT
-					COUNT(id) AS count_id
-				FROM
-					tasks
-				WHERE
-					userkey = <cfqueryparam cfsqltype="cf_sql_varchar" value="#q_userdata.entrykey#">
-				;
-				</cfquery>
-
-				#q_select_tasks.count_id#
-			</td>
-		  </tr>
-		  <tr>
+		  </tr>		  <tr>
 		  	 <td class="field_name"></td>
 			<td>
 			<a href="index.cfm?action=security.logbook&companykey=#urlencodedformat(url.companykey)#&resellerkey=#urlencodedformat(url.resellerkey)#&userkey=#urlencodedformat(url.entrykey)#">#GetLangVal('adm_ph_show_security_log')#</a>

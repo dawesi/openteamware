@@ -323,24 +323,6 @@
 		<directory></directory>
 	</item>
 	<item>
-		<name>promocodes</name>
-		<description></description>
-		<template>dsp_promocodes.cfm</template>
-		<directory>shop</directory>
-	</item>
-	<item>
-		<name>consumergoodshistory</name>
-		<description></description>
-		<template>dsp_consumergoodshistory.cfm</template>
-		<directory>log</directory>
-	</item>
-	<item>
-		<name>assigntootherreseller</name>
-		<description></description>
-		<template>dsp_assigntootherreseller.cfm</template>
-		<directory>reseller</directory>
-	</item>
-	<item>
 		<name>user.changeaccounttype</name>
 		<description></description>
 		<template>dsp_change_account_type.cfm</template>
@@ -350,12 +332,6 @@
 		<name>shop.trialphaseend.addtobasket2</name>
 		<description></description>
 		<template>dsp_trialphase_basket2.cfm</template>
-		<directory>shop</directory>
-	</item>
-	<item>
-		<name>shop.trialphaseend.addtobasket</name>
-		<description></description>
-		<template>dsp_trialphase_basket.cfm</template>
 		<directory>shop</directory>
 	</item>
 	<item>

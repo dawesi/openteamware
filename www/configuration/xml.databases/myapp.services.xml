@@ -26,32 +26,14 @@
 	</row>
 	<row>
 		<description></description>
-		<entrykey>52230718-D5B0-0538-D2D90BB6450697D1</entrykey>
-		<servicename>Tasks</servicename>
-		<version></version>
-	</row>
-	<row>
-		<description></description>
 		<entrykey>5220B02E-0133-5B37-F5E6B92CC3B3FC47</entrykey>
 		<servicename>Undefined</servicename>
-		<version></version>
-	</row>
-	<row>
-		<description>Forum</description>
-		<entrykey>66A3CE92-923A-0620-7656393EA07FAB3B</entrykey>
-		<servicename>forum</servicename>
 		<version></version>
 	</row>
 	<row>
 		<description>import module</description>
 		<entrykey>65CF16AB-D219-2662-A7B7189E96F9261A</entrykey>
 		<servicename>import</servicename>
-		<version></version>
-	</row>
-	<row>
-		<description>mailing tool</description>
-		<entrykey>7E6F3B98-F885-03B7-FC68D096FD692F66</entrykey>
-		<servicename>newsletter</servicename>
 		<version></version>
 	</row>
 	<row>

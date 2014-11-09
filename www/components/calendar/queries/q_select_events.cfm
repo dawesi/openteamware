@@ -3,7 +3,7 @@
 	Module:		Import
 	Function:	GetEventsFromTo
 	Description:Select all events of a given timeframe
-	
+
 
 // --->
 
@@ -24,11 +24,6 @@
 
 <cfset a_str_virtual_calendar_subscriptions = '' />
 
-<cfif a_bol_vcal_avaliable>
-	<!--- get subscriptions ... --->
-	<cfset a_str_virtual_calendar_subscriptions = GetVirtualCalendarSubscriptions(arguments.securitycontext.myuserkey) />
-</cfif>
-
 <cfset begin = GetTickCount() />
 
 <!--- ignore items of inherites workgroup memberships? by default, true ... --->
@@ -42,9 +37,9 @@
 		arguments.securitycontext.q_select_workgroup_permissions
 	WHERE
 		inherited_membership = 0
-	;	
+	;
 	</cfquery>
-	
+
 <cfelse>
 	<cfset variables.q_select_workgroups =  arguments.securitycontext.q_select_workgroup_permissions />
 </cfif>
@@ -67,7 +62,7 @@
         temporary = 0
 	;
 	</cfquery>
-	
+
 	<!--- if none found, return a dummy string ... otherwise, we filter for the given entrykeys --->
 	<cfif q_select_meeting_members_eventskeys_by_parameter.recordcount IS 0>
 		<cfset arguments.filter.entrykeys = 'thegivenentrykeydoesnotexist' />
@@ -80,25 +75,25 @@
 
 <!--- // Collect the entrykeys/Ids of items to load ...
 
-	Start with 
-	
+	Start with
+
 		0 = private items, continue with
 		3 = workgroup,
 		2 = virtual and
 		1 = meetingmembers
-		
+
 		These numbers have no further sense, they are just for a better handling of the data
-	
+
 	maybe apply filter to it afterwards
-	
-	
+
+
 	VERY IMPORTANT: THE CORRECT SELECT COLUMN ORDER (MUST BE THE VERY SAME IN EVERY QUERY !!
 
 	entrykey AS eventkey, id, workgroupkey, virtualcalendarkey, item_type, repeat ...
 	// --->
-	
+
 <cfquery name="q_select_collect_items_to_load">
-SELECT * FROM 
+SELECT * FROM
 (
 /* select all own items of the user ... */
 SELECT
@@ -119,17 +114,17 @@ WHERE
 		(calendar.userkey = <cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.securitycontext.myuserkey#">)
 	)
 	AND
-	(	
-		<cfinclude template="inc_q_select_events_timeframe.cfm">		
+	(
+		<cfinclude template="inc_q_select_events_timeframe.cfm">
 	)
-	
+
 <cfif variables.q_select_workgroups.recordcount GT 0>
 
 	<!--- continue with workgroup items ... --->
 	<cfset a_bol_workgroups_avaliable = true />
-	
+
 	/* union with all workgroup appointments ... */
-	
+
 	UNION
 	SELECT
 		calendar_shareddata.eventkey AS eventkey,
@@ -137,7 +132,7 @@ WHERE
 		calendar_shareddata.workgroupkey AS workgroupkey,
 		calendar.virtualcalendarkey AS virtualcalendarkey,
 		3 AS item_type,
-		
+
 		calendar.repeat_type,
 		calendar.repeat_until,
 		calendar.date_start,
@@ -153,10 +148,10 @@ WHERE
 		AND
 			(calendar.id > 0)
 		AND
-		(	
-			<cfinclude template="inc_q_select_events_timeframe.cfm">		
+		(
+			<cfinclude template="inc_q_select_events_timeframe.cfm">
 		)
-		
+
 </cfif>
 
 /* Continue with meeting members ... */
@@ -167,7 +162,7 @@ UNION
 		'' AS workgroupkey,
 		calendar.virtualcalendarkey AS virtualcalendarkey,
 		1 AS item_type,
-		
+
 		calendar.repeat_type,
 		calendar.repeat_until,
 		calendar.date_start,
@@ -182,8 +177,8 @@ UNION
 			(meetingmembers.type = 0)
         AND
             temporary = 0
-		AND NOT	
-			(status = -1)		
+		AND NOT
+			(status = -1)
 		AND
 			(calendar.id > 0)
 		AND
@@ -191,7 +186,7 @@ UNION
 
 
 	<cfif Len(a_str_virtual_calendar_subscriptions) GT 0>
-		
+
 	/* virtual calendar subscriptions ... */
 	UNION
 		SELECT
@@ -200,7 +195,7 @@ UNION
 			'' AS workgroupkey,
 			calendar.virtualcalendarkey AS virtualcalendarkey,
 			2 AS item_type,
-			
+
 			calendar.repeat_type,
 			calendar.repeat_until,
 			calendar.date_start,
@@ -208,21 +203,21 @@ UNION
 		FROM
 			calendar
 		WHERE
-			(	
+			(
 				virtualcalendarkey IN (<cfqueryparam cfsqltype="cf_sql_varchar" value="#a_str_virtual_calendar_subscriptions#" list="yes">)
-			)	
+			)
 			AND
-			(	
+			(
 				<cfinclude template="inc_q_select_events_timeframe.cfm">
 			)
-			
+
 	</cfif>
-	
+
 ) AS calendar_collect
 
 /* now continue with the general WHERE SQL causes */
 WHERE
-	
+
 	(
 		<cfinclude template="inc_q_select_events_common_filter.cfm">
 	)
@@ -233,7 +228,7 @@ WHERE
 
 <!--- // select the workgroup entries ... // --->
 <cfif variables.q_select_workgroups.recordcount GT 0>
-	
+
 	<cfquery name="q_select_workgroup_entrykeys" dbtype="query">
 	SELECT
 		eventkey,
@@ -247,11 +242,11 @@ WHERE
 	</cfquery>
 
 	<cfset a_bol_workgroups_avaliable = (q_select_workgroup_entrykeys.recordcount GT 0) />
-	
+
 <cfelse>
 	<!--- no wgs available (or selected ...) ... --->
 	<cfset a_bol_workgroups_avaliable = false />
-</cfif>	
+</cfif>
 
 <!--- get out events where meeting members are in the game ... --->
 <cfquery name="q_select_meeting_members_entrykeys" dbtype="query">
@@ -264,7 +259,7 @@ WHERE
 	item_type = 1
 ;
 </cfquery>
-	
+
 <cfset a_bol_meeting_members_avaliable = (q_select_meeting_members_entrykeys.recordcount GT 0) />
 
 <!--- select private items from full query ... --->
@@ -290,7 +285,7 @@ WHERE
 	item_type = 2
 ;
 </cfquery>
-	
+
 <cfset a_bol_vcal_avaliable = (q_select_virtual_calendars.recordcount GT 0)>
 
 <!--- combine private and workgroup entries ... --->
@@ -312,7 +307,7 @@ WHERE
 <!--- add possible meeting members only events ... --->
 <cfif a_bol_meeting_members_avaliable>
 	<cfset sEntrykeys = ListPrepend(sEntrykeys, ValueList(q_select_meeting_members_entrykeys.eventkey)) />
-	
+
 	<cfset sIDList = ListAppend(sIDList, ValueList(q_select_meeting_members_entrykeys.id)) />
 </cfif>
 
@@ -332,7 +327,7 @@ SELECT
 	calendar.userkey,
 	calendar.meetingmemberscount,
 	calendar.daylightsavinghoursoncreate,
-	
+
 	<cfif arguments.loadutctimes>
 		date_start,
 		date_end,
@@ -345,7 +340,7 @@ SELECT
 		DATE_ADD(dt_created, INTERVAL -#val(arguments.usersettings.utcdiffonly)#-daylightsavinghoursoncreate HOUR) AS dt_created,
 		DATE_ADD(dt_lastmodified, INTERVAL -#val(arguments.usersettings.utcdiffonly)#-daylightsavinghoursoncreate HOUR) AS dt_lastmodified,
 	</cfif>
-	
+
 	date_end - date_start AS dt_duration,
 	categories,
 	utcdiffoncreation,
@@ -371,9 +366,9 @@ WHERE
 	(
 		id IN (<cfqueryparam cfsqltype="cf_sql_integer" value="#sIDList#" list="yes">)
 	)
-	
+
 	<cfif StructCount(arguments.filter) GT 0>
-		
+
 		<cfif StructKeyExists(arguments.filter, 'search')>
 			AND
 				(
@@ -385,71 +380,71 @@ WHERE
 				)
 			</cfif>
 	</cfif>
-	
+
 	<!--- TODO: allow filter according to certain fields ... --->
-	
+
 	<!--- shared event or not? --->
 	AND
 		(
 			(
 				(repeat_type = 0)
-				
+
 				AND
-				
+
 						(
 							<!--- start in our timeframe --->
 							(date_start >= <cfqueryparam value="#CreateOdbcDateTime(a_dt_start)#" cfsqltype="cf_sql_timestamp">)
 							AND
 							(date_start < <cfqueryparam value="#CreateOdbcDateTime(a_dt_end)#" cfsqltype="cf_sql_timestamp">)
 						)
-						
+
 						OR
-						
+
 						(
 							<!--- start and end before and after our timeframe --->
 							(date_start < <cfqueryparam value="#CreateOdbcDateTime(a_dt_start)#" cfsqltype="cf_sql_timestamp">)
 							AND
 							(date_end > <cfqueryparam value="#CreateOdbcDateTime(a_dt_end)#" cfsqltype="cf_sql_timestamp">)
 						)
-						
+
 						OR
-						
+
 						(
 							<!--- end in our timeframe --->
 							(date_end > <cfqueryparam value="#CreateOdbcDateTime(a_dt_start)#" cfsqltype="cf_sql_timestamp">)
 							AND
 							(date_end < <cfqueryparam value="#CreateOdbcDateTime(a_dt_end)#" cfsqltype="cf_sql_timestamp">)
-						)				
-				
+						)
+
 			)
-		
+
 			OR
-		
+
 			(
-			
-				<!--- repeating events ... --->				
-				(repeat_type > 0)							
-					
+
+				<!--- repeating events ... --->
+				(repeat_type > 0)
+
 			)
-					
+
 				AND
-				
+
 					(
 						<!--- daily repeating event ... --->
 						(repeat_type = 1)
 						<!--- die tage herausfinden wo das stattfindet 1234567 --->
-						
+
 						<!--- dates are stored here:
 							repeat_day_1 ... (sunday)
 							repeat_day_2 ... (saturday)
-							
+
 							--->
-						
+
 						AND
-						
+
 							(
 							<!--- die betroffenen wochentage ermitteln --->
-							
+
 							<cfif a_int_days_diff GTE 6>
 								<!--- alle tage --->
 								(repeat_day_1 = 1) OR
@@ -460,40 +455,40 @@ WHERE
 								(repeat_day_6 = 1) OR
 								(repeat_day_7 = 1)
 							<cfelse>
-							
+
 								<!--- only certain days are affected --->
 								<cfset a_arr_days = ArrayNew(1)>
 								<!--- create an arreay from one to seven ... --->
 								<cfset ArraySet(a_arr_days, 1, 7, 0)>
-								
+
 								<!--- get the real dayofweek, not utc ... otherwise
 									we would get this event on days where it does not exist --->
 								<cfset a_dt_tmp_start = a_dt_start><!---Dateadd("h", -usersettings.utcdiff, a_dt_start)>--->
 								<cfset a_dt_tmp_end = a_dt_end><!--- Dateadd("h", -usersettings.utcdiff, a_dt_end)>--->
-								
+
 								<cfset a_int_dayofweek_start = dayofweek(GetLocalTime(a_dt_tmp_start))>
 								<cfset a_int_dayofweek_end = dayofweek(GetLocalTime(a_dt_tmp_end))>
 
 								<cfif a_int_dayofweek_start GT a_int_dayofweek_end>
-									
+
 									<!--- f.e. 7-1 (saturday to sunday) --->
 									<cfloop index="aii" from="#a_int_dayofweek_start#" to="7">
 										<cfset a_arr_days[aii] = 1>
 									</cfloop>
-									
+
 									<cfloop index="aii" from="1" to="#a_int_dayofweek_end#">
 										<cfset a_arr_days[aii] = 1>
-									</cfloop>																		
-									
+									</cfloop>
+
 								<cfelse>
-								
+
 									<!--- f.e. 3-5 --->
 									<cfloop index="aii" from="#dayofweek(a_int_dayofweek_start)#" to="#dayofweek(a_int_dayofweek_end)#">
 										<cfset a_arr_days[aii] = 1>
 									</cfloop>
 								</cfif>
-								
-								
+
+
 								(
 									<cfloop index="ii" from="1" to="7">
 										<cfif NOT CompareNoCase(a_arr_days[ii], 1)>
@@ -502,70 +497,70 @@ WHERE
 									</cfloop>
 								(1=0))
 							</cfif>
-							
+
 							)
-					
+
 					)
-					
+
 					OR
-					
+
 					<!--- weekly repeatment ... --->
-					(		
-		
+					(
+
 						<!--- wenn es gr��er w�re w�rde es den ganzen monat umfassen und egal sein --->
-					
-						(repeat_type = 2) 
-						
+
+						(repeat_type = 2)
+
 						<!--- der wochentag als ziffer steht in repeat_weekday drinnen --->
 						<cfif a_int_days_diff LTE 6>
 						<!--- not a full week ... check for the correct weekday ... --->
 						AND
-												
+
 						<!--- calculate user times in order to get correct weekdays --->
 						<cfset a_dt_tmp_start = Dateadd("h", -usersettings.utcdiff, a_dt_start)>
 						<cfset a_dt_tmp_end = Dateadd("h", -usersettings.utcdiff, a_dt_end)>
-						
+
 						<cfset a_int_dayofweek_start = DayofWeek(a_dt_tmp_start)>
 						<cfset a_int_dayofweek_end = DayofWeek(a_dt_tmp_end)>
-						
-						
-						
+
+
+
 							<cfif a_int_dayofweek_start GT a_int_dayofweek_end>
-							
+
 								<!--- f.e. 7-1 --->
-								
+
 								<cfset a_str_weekday_list = ''>
-								
+
 								<cfloop from="#a_int_dayofweek_start#" to="7" index="ii_weekday">
 									<cfset a_str_weekday_list = ListPrepend(a_str_weekday_list, ii_weekday)>
 								</cfloop>
-								
+
 								<cfloop from="#a_int_dayofweek_end#" to="1" index="ii_weekday">
 									<cfset a_str_weekday_list = ListPrepend(a_str_weekday_list, ii_weekday)>
-								</cfloop>								
-								
+								</cfloop>
+
 								(
 								repeat_weekday IN (<cfqueryparam cfsqltype="cf_sql_integer" value="#a_str_weekday_list#" list="yes">)
 								 )
-							
+
 							<cfelse>
-							
+
 							(repeat_weekday
-							
+
 								BETWEEN
-								
+
 								<cfqueryparam cfsqltype="cf_sql_integer" value="#a_int_dayofweek_start#">
 								AND
 								<cfqueryparam cfsqltype="cf_sql_integer" value="#a_int_dayofweek_end#">
-								
+
 								)
 
-							</cfif>								
-						
+							</cfif>
+
 						</cfif>
-					
+
 					)
-					
+
 					OR
 						<!--- monthly --->
 						(
@@ -573,10 +568,10 @@ WHERE
 
 							<!---AND
 							(
-								repeat_day 
-								
+								repeat_day
+
 									BETWEEN
-									
+
 										<cfqueryparam cfsqltype="cf_sql_integer" value="#a_int_converted_day_start#">
 							 			AND
 										<cfqueryparam cfsqltype="cf_sql_integer" value="#a_int_converted_day_end#">
@@ -586,13 +581,13 @@ WHERE
 						<!--- yearly --->
 						(
 						    (repeat_type = 4)
-							
+
 							<!---AND
 								(
 									repeat_day
-								
-										BETWEEN 
-											
+
+										BETWEEN
+
 											<cfqueryparam cfsqltype="cf_sql_integer" value="#a_int_converted_day_start#">
 											AND
 											<cfqueryparam cfsqltype="cf_sql_integer" value="#a_int_converted_day_end#">
@@ -600,16 +595,16 @@ WHERE
 							AND
 								(
 									repeat_month
-										
+
 										BETWEEN
-										
+
 											<cfqueryparam cfsqltype="cf_sql_integer" value="#a_int_converted_month_start#">
 											AND
 											<cfqueryparam cfsqltype="cf_sql_integer" value="#a_int_converted_month_end#">
 								)
-						)					
-				
-					
+						)
+
+
 		)
 ORDER BY
 	date_start
@@ -628,13 +623,13 @@ ORDER BY
 <cfif a_bol_workgroups_avaliable>
 
 	<cfloop query="q_select_workgroup_entrykeys">
-		
-		<cfif StructKeyExists(stWGInfo, q_select_workgroup_entrykeys.eventkey)>	
+
+		<cfif StructKeyExists(stWGInfo, q_select_workgroup_entrykeys.eventkey)>
 			<cfset stWGInfo[q_select_workgroup_entrykeys.eventkey] = stWGInfo[q_select_workgroup_entrykeys.eventkey]&","&q_select_workgroup_entrykeys.workgroupkey>
 		<cfelse>
 			<cfset stWGInfo[q_select_workgroup_entrykeys.eventkey] = q_select_workgroup_entrykeys.workgroupkey>
 		</cfif>
-	
+
 	</cfloop>
 </cfif>
 

@@ -56,8 +56,6 @@
 
 			<cfset application.components.cmp_assigned_items = CreateObject('component', request.a_str_component_assigned_items) />
 
-			<cfset application.components.cmp_tasks = CreateObject('component', request.a_str_component_tasks) />
-
 			<cfset application.components.cmp_workgroups = CreateObject('component', request.a_str_component_workgroups) />
 
 			<cfset application.components.cmp_lang = CreateObject('component', request.a_str_component_lang) />

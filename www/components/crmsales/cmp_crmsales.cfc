@@ -86,9 +86,6 @@
 			<cfcase value="followups">
 				<cfinclude template="activities_data/inc_display_followups_assigned_to_contacts.cfm">
 			</cfcase>
-			<cfcase value="tasks">
-				<cfinclude template="activities_data/inc_display_tasks_assigned_to_contact.cfm">
-			</cfcase>
 			<cfcase value="projects">
 				<cfinclude template="activities_data/inc_display_projects_assigned_to_contacts.cfm">
 			</cfcase>

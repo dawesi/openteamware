@@ -44,7 +44,6 @@
 	request.a_str_component_security = '/components/management/security/cmp_security';
 	request.a_str_component_users = '/components/management/users/cmp_user';
 	request.a_str_component_addressbook = '/components/addressbook/cmp_addressbook';
-	request.a_str_component_tasks = '/components/tasks/cmp_task';
 	request.a_str_component_customize = '/components/customize/cmp_customize';
 	request.a_str_component_content = '/components/content/cmp_content';
 	request.a_str_component_browser = '/components/tools/cmp_browser';

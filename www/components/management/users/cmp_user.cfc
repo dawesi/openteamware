@@ -567,52 +567,19 @@
 
 	</cffunction>
 
-	<!--- return the online status of an user ... --->
-	<cffunction access="public" name="GetWebOnlineStatus" returntype="struct" output="false">
-		<cfargument name="userkey" type="string" required="true">
-
-		<cfset var stReturn = StructNew()>
-		<cfset var q_select_session_lastcontact = 0 />
-		<!---
-
-			0 = offline
-			3 = online/offline (contact within the last 30 minutes)
-			5 = online (contact within the last 10 minutes)
-			10 = online (contact within the last 5 minutes)
-
-			--->
-
-		<cfinclude template="queries/q_select_session_lastcontact.cfm">
-
-		<cfset stReturn.status = 0>
-		<cfif IsDate(q_select_session_lastcontact.dt_lastcontact) is true>
-		<cfset stReturn.lastcontactminutes = DateDiff("n", q_select_session_lastcontact.dt_lastcontact, now())>
-		<cfset stReturn.lastcontact = q_select_session_lastcontact.dt_lastcontact>
-		<cfelse>
-		<cfset stReturn.lastcontactminutes = 9999>
-		<cfset stReturn.lastcontact = CreateDateTime(1900, 12, 31, 0, 0, 0)>
-		</cfif>
-
-
-		<cfreturn stReturn>
-	</cffunction>
-
 	<!--- return the companykey of a user ... --->
 	<cffunction access="public" name="GetCompanyKeyOfuser" output="false" returntype="string">
 		<cfargument name="userkey" type="string" required="true">
 		<cfset var q_select_companykey = 0 />
 
 		<cfquery name="q_select_companykey">
-		SELECT
-			companykey
-		FROM
-			users
-		WHERE
-			entrykey = <cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.userkey#">
-		;
+		SELECT	companykey
+		FROM	users
+		WHERE	entrykey = <cfqueryparam cfsqltype="cf_sql_varchar" value="#arguments.userkey#" />
 		</cfquery>
 
-		<cfreturn q_select_companykey.companykey>
+		<cfreturn q_select_companykey.companykey />
+
 	</cffunction>
 
 	<!--- set photo data ... --->

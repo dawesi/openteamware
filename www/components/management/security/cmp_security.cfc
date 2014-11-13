@@ -1149,11 +1149,6 @@
 
 		</cfif>
 
-		<!--- log this login (update lastlogin?) ... --->
-		<cfif arguments.log_login>
-			<cfset application.components.cmp_session.UpdateLastLoginAndLoginCount(userkey = sEntrykey, remote_ip = arguments.remote_ip) />
-		</cfif>
-
 		<cfreturn SetReturnStructSuccessCode(stReturn) />
 	</cffunction>
 

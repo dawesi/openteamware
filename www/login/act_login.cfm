@@ -68,18 +68,6 @@
 <cfset session.stUserSettings = application.components.cmp_user.GetUsersettings(userkey = q_userlogin.entrykey) />
 <cfset session.a_struct_personal_properties = application.components.cmp_session.CreateInternalSessionVars(userkey = q_userlogin.entrykey) />
 
-<!--- create session key ... --->
-<cfinvoke component="#application.components.cmp_session#" method="CreateSessionEntry" returnvariable="a_struct_create_session">
-	<cfinvokeargument name="userkey" value="#q_userlogin.entrykey#">
-	<cfinvokeargument name="applicationname" value="#application.applicationname#">
-	<cfinvokeargument name="ip" value="#cgi.REMOTE_ADDR#">
-	<cfinvokeargument name="securitycontext" value="#session.stSecurityContext#">
-	<cfinvokeargument name="usersettings" value="#session.stUserSettings#">
-</cfinvoke>
-
-<!--- client variable setzen --->
-<cfset client.LastLoginUsername = a_str_username />
-
 <!--- get forwarding target ... --->
 <cfset alocation = "/" />
 

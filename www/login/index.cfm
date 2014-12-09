@@ -27,11 +27,9 @@
 
 	<cfinclude template="/common/js/inc_js.cfm">
 
-	<link rel="shortcut icon" href="/images/si/server_key.png" type="image/png" />
-
 	<style type="text/css" media="all">
 		body {
-			background-color:rgb(87, 87, 87) !important;
+			background-color:#f2f2f2 !important;
 		}
 	</style>
 </head>
@@ -56,9 +54,9 @@
 </cfif>
 
 
-<div style="text-align:center">
-<div class="panel panel-default" style="margin-top:120px;box-shadow:rgba(255, 255, 255, 0.317647) 0px 5px 400px 0px;width:600px;margin-left: auto; margin-right: auto">
-  <div class="panel-heading">
+<div>
+<div class="panel panel-default" style="margin-top:120px;width:600px;margin-left: auto; margin-right: auto;border:1px solid #3276b1">
+  <div class="panel-heading" style="background-color:#3276b1;color:white;text-transform:uppercase;padding:18px">
     <h3 class="panel-title">
 		<cfoutput>#htmleditformat(request.appsettings.description)# #GetLangVal('lg_ph_title')#</cfoutput>
 	</h3>
@@ -119,7 +117,7 @@
 
   </div>
 	<div class="panel-footer">
-		<a href="https://github.com/funkymusic/openteamware">&copy; 2014 otw</a>
+		&copy; 2014 otw - Find us on <a href="https://github.com/funkymusic/openteamware">github</a>
 	</div>
 </div>
 </div>
